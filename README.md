@@ -36,6 +36,7 @@ Run `gulp`, you should now be running the thrasher locally at: //localhost:8000
 
 <br>
 ## Compiling and Deploying
+
 To push your thrasher to preview run:<br>
 ```
 gulp deploypreview
