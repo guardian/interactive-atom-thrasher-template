@@ -3287,7 +3287,7 @@ section#class-name {
 .class-name {
   width: 100%;
   height: 200px;
-  background-color: tomato; }
+  background-color: #69d1ca; }
   .class-name__headline {
     color: #121212;
     font-family: &quot;GuardianTitlepiece&quot;,&quot;Guardian Headline Full&quot;,&quot;Guardian Egyptian Web&quot;,Georgia,serif;
@@ -3300,9 +3300,10 @@ section#class-name {
     flex-direction: row;
     background-color: #121212;
     border-radius: 25px;
-    text-decoration: none; }
+    text-decoration: none;
+    cursor: pointer; }
     .class-name__component-button span {
-      color: white;
+      color: #fff;
       font-family: &quot;Guardian Text Sans Web&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;
       font-weight: bold;
       font-size: 17px;
@@ -3310,17 +3311,24 @@ section#class-name {
       margin-top: -2px;
       text-decoration: none; }
     .class-name__component-button svg {
-      padding: 10PX;
-      fill: white;
+      padding: 10px;
+      fill: #fff;
       padding-right: 16px;
-      transition: transform 0.3s; }
-  .class-name__component-button:hover {
-    background-color: #454545;
-    text-decoration: none; }
-    .class-name__component-button:hover span {
+      transition: transform 0.3s ease; }
+    .class-name__component-button:hover {
+      background-color: #767676;
       text-decoration: none; }
-    .class-name__component-button:hover svg {
-      transform: translateX(3px); }
+      .class-name__component-button:hover span {
+        text-decoration: none; }
+      .class-name__component-button:hover svg {
+        transform: translateX(3px); }
+  .class-name__roundel {
+    top: 4px;
+    right: 4px;
+    position: absolute; }
+    @media (min-width: 30em) {
+      .class-name__roundel {
+        right: 18px; } }
 
 .interactive-atom {
   margin: 0;

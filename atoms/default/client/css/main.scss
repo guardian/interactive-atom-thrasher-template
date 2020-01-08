@@ -1,7 +1,8 @@
-@import "mq";
-@import "fonts";
-@import "palette";
-@import "app-fonts.scss";
+@import "_mq";
+@import "_fonts";
+@import "_palette";
+@import "_app-fonts";
+@import "_mixins";
 
 // Uncomment for embeds
 //@import "embed";
@@ -22,15 +23,18 @@ $mq-breakpoints: (
 );
 
 
-// variables
-$backgroundColor:tomato;
-$textColor: #121212;
-$buttonColor:#121212;
-$buttonHoverColor:#454545;
+// update 'class-name' with yours
+$containerName:class-name;
+// colours pulled from shared/css/_palette.sass
+$backgroundColor:$labs-main;
+$textColor: $neutral-7;
+$buttonColor:$neutral-7;
+$buttonHoverColor:$neutral-46;
+
 
 
 // this targets the container your thrasher is put inside on Fronts
-section#class-name {
+section##{$containerName} {
     width:100%;
     position: relative;
     padding: 0 !important;
@@ -46,7 +50,7 @@ section#class-name {
     }
 }
 
-.class-name {
+.#{$containerName} {
     width:100%;
     height:200px;
     background-color:$backgroundColor;
@@ -59,37 +63,13 @@ section#class-name {
         }
     }
     &__component-button {
-        display: inline-flex;
-        flex-direction: row;
-        background-color:$buttonColor; 
-        border-radius: 25px;
-        text-decoration: none;
-        span {
-            color: white;
-            font-family:"Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-            font-weight:bold;
-            font-size:17px;
-            
-            padding: 10px 2px 10px 20px;
-            margin-top: -2px;
-            text-decoration: none;
-        }
-        svg {
-            padding: 10PX;
-            fill: white;
-            padding-right:16px;
-            transition: transform 0.3s;
-        }        
+        // mixin takes 3 variables:
+        // background-color, text-color, hover-background-color
+        @include component-button($bgColor: $neutral-7, $color: #fff, $hoverBgColor: $neutral-46);
     }
-    &__component-button:hover {
-        background-color:$buttonHoverColor;
-        text-decoration: none;
-        span {
-            text-decoration:none;
-        }
-        svg {
-            transform:translateX(3px);
-        }
+    &__roundel {
+        // mixin makes roundel sit top right of thrasher and move with grid
+        @include roundel-top-right;
     }
 }
 
@@ -101,7 +81,7 @@ section#class-name {
 }
 
 // iOS and Android specific styles
-.class-name {
+.#{$containerName} {
     .android &,
     .ios & {
         overflow:hidden;

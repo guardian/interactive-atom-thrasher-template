@@ -1,0 +1,47 @@
+// make your __component-button a pill
+// add background-color change and move arrow 3px
+@mixin component-button($bgColor: #ffe500, $color: #f71515, $hoverBgColor: #ffbb50) {
+    display: inline-flex;
+    flex-direction: row;
+    background-color:$bgColor; 
+    border-radius: 25px;
+    text-decoration: none;
+    cursor: pointer;
+    span {
+        color: $color;
+        font-family:"Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight:bold;
+        font-size:17px;
+        
+        padding: 10px 2px 10px 20px;
+        margin-top: -2px;
+        text-decoration: none;
+    }
+    svg {
+        padding: 10px;
+        fill: $color;
+        padding-right:16px;
+        transition: transform 0.3s ease;
+    }        
+    &:hover {
+        background-color:$hoverBgColor;
+        text-decoration: none;
+        span {
+            text-decoration:none;
+        }
+        svg {
+            transform:translateX(3px);
+        }
+    }
+}
+
+
+// make roundel sit top right
+@mixin roundel-top-right {
+    top: 4px;
+    right: 4px;
+    position: absolute;
+    @include mc(mobileLandscape){
+        right:18px;
+    }
+}
