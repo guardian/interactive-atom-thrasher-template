@@ -4,16 +4,20 @@
  * [Node.js](http://nodejs.org/)<br>
  * [Homebrew](https://brew.sh/)
 
-##Installation
+## Installation
  Install project dependencies with<br>
-```npm install```
+```
+npm install
+```
 
 and this script (which may take some time to run depending on how long it takes Homebrew to update)<br>
- ```./setup-certs.sh```
+ ```
+ ./setup-certs.sh
+ ```
 
-##Usage
+## Usage
 
-###Creating your Thrasher
+### Creating your Thrasher
 
 Run `gulp`, you should now be running the thrasher locally at: localhost:8000 
 
@@ -26,7 +30,7 @@ Add css to: **atoms/client/css/main.scss**
 Add js to: **atoms/client/js/app.js**
 
 
-##Compiling and Deploying
+## Compiling and Deploying
 
 
 
