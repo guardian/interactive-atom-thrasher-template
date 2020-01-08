@@ -31,10 +31,8 @@ Run `gulp`, you should now be running the thrasher locally at: //localhost:8000
  * Add css to: **atoms/client/css/main.scss**<br>
  * Add js to: **atoms/client/js/app.js**
 
-
-
-
 <br>
+
 ## Compiling and Deploying
 
 To push your thrasher to preview run:<br>
