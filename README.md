@@ -5,12 +5,14 @@
  * [Homebrew](https://brew.sh/)
 
 ## Installation
- Install project dependencies with<br>
+ Install project dependencies with
+ 
 ```
 npm install
 ```
 
-and this script (which may take some time to run depending on how long it takes Homebrew to update)<br>
+and this script (which may take some time to run depending on how long it takes Homebrew to update)
+
  ```
  ./setup-certs.sh
  ```
@@ -21,7 +23,10 @@ and this script (which may take some time to run depending on how long it takes 
 
 ### Creating your Thrasher
 
-Run `gulp`, you should now be running the thrasher locally at: //localhost:8000 
+```
+gulp
+```
+Run gulp, you should now be running the thrasher locally at: //localhost:8000 
 <br>To preview your thrasher use **Immersive Interactive** for DotCom or **Android Front Webview** for Apps.
 
 **To update the code of your thrasher use:**
@@ -35,17 +40,20 @@ Run `gulp`, you should now be running the thrasher locally at: //localhost:8000
 
 ## Compiling and Deploying
 
-To push your thrasher to preview run:<br>
+To push your thrasher to preview run:
+
 ```
 gulp deploypreview
 ```
 
-To push your thrasher to live run:<br>
+To push your thrasher to live run:
+
 ```
 gulp deploylive
 ```
 
-To get the URL of your thrasher run:<br>
+To get the URL of your thrasher run:
+
 ```
 gulp url
 ```
