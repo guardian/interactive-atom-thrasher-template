@@ -482,3 +482,28 @@ section#class-name {
   .android .class-name__component-button span,
   .ios .class-name__component-button span {
     letter-spacing: unset; }
+
+.both-thrashers {
+  position: relative; }
+
+.thrasher-1 {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.1s ease;
+  background-image: url("https://media.guim.co.uk/b9829aad5d9f8550c0ae0eb07ebec9b121ba1231/0_121_3500_2099/2000.jpg");
+  background-position: 0 -10px;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.thrasher-2 {
+  visibility: visible;
+  opacity: 1;
+  background-image: url("https://media.guim.co.uk/cbb7e0bf9390d70831303c293b443e030af5a681/0_78_2375_1425/2000.jpg");
+  background-position: 0 -70px;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.class-toggle {
+  visibility: visible;
+  opacity: 1; }

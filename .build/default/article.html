@@ -3343,24 +3343,77 @@ section#class-name {
   .ios .class-name__component-button span {
     letter-spacing: unset; }
 
+.both-thrashers {
+  position: relative; }
+
+.thrasher-1 {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.1s ease;
+  background-image: url(&quot;https://media.guim.co.uk/b9829aad5d9f8550c0ae0eb07ebec9b121ba1231/0_121_3500_2099/2000.jpg&quot;);
+  background-position: 0 -10px;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.thrasher-2 {
+  visibility: visible;
+  opacity: 1;
+  background-image: url(&quot;https://media.guim.co.uk/cbb7e0bf9390d70831303c293b443e030af5a681/0_78_2375_1425/2000.jpg&quot;);
+  background-position: 0 -70px;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.class-toggle {
+  visibility: visible;
+  opacity: 1; }
+
                  </style>
              </head>
              <body>
                  &lt;!-- thrasher content sits in this div --&gt;
-&lt;div class=&quot;class-name&quot;&gt;
-    &lt;h1 class=&quot;class-name__headline&quot;&gt;
-        Here is a headline
-    &lt;/h1&gt;
-    &lt;a href=&quot;https://guardian.ctdonate.org/?INTCMP=gdnwb_mawns_banner_edtrl_Marketing_CharityAppeal_1119_&quot; title=&quot;&quot; class=&quot;class-name__component-button&quot; data-link-name=&quot;&quot;&gt;
-        &lt;span&gt;A button&lt;/span&gt;
-        &lt;svg class=&quot;class-name__icon&quot; width=&quot;24&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 22&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;
-            &lt;path fill-rule=&quot;evenodd&quot; clip-rule=&quot;evenodd&quot; d=&quot;M0 12.0046H19.6395L11.9377 21.0205L12.939 22L23.6444 11.5023V10.4977L12.939 0L11.9377 0.979452L19.6395 9.99543H0V12.0046Z&quot;&gt;&lt;/path&gt;
-        &lt;/svg&gt;
-    &lt;/a&gt;
-    &lt;!-- black background roundel --&gt;
-    &lt;svg class=&quot;class-name__roundel&quot; width=&quot;42&quot; height=&quot;42&quot; viewBox=&quot;0 0 42 42&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;
-        &lt;g fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;&gt;&lt;path d=&quot;M21 0C9.402 0 0 9.402 0 21c0 11.597 9.402 21 21 21s21-9.403 21-21C42 9.402 32.598 0 21 0&quot; fill=&quot;#121212&quot;/&gt;&lt;path d=&quot;M24.15 5.269c3.287.423 6.887 2.245 8.296 3.537v5.942h-.743l-7.553-8.82v-.659zM22.57 5.968h-.084c-4.933 0-7.775 6.442-7.63 15.131v.032c-.145 8.69 2.697 15.132 7.63 15.132h.083v.669c-7.422.48-17.463-4.857-17.317-15.8v-.033C5.106 10.157 15.147 4.82 22.569 5.3v.669z&quot; fill=&quot;#ffffff&quot;/&gt;&lt;path d=&quot;M34.72 22.795l-2.384.954v9.837c-1.342 1.143-4.621 2.925-7.901 3.538v-13.59l-2.385-.801v-.603h12.67v.665z&quot; fill=&quot;#ffffff&quot;/&gt;&lt;/g&gt;
-    &lt;/svg&gt;  
+&lt;div class=&quot;both-thrashers&quot;&gt;
+    &lt;div class=&quot;class-name thrasher-1&quot; &gt;
+        &lt;h1 class=&quot;class-name__headline&quot;&gt;
+            Headline for thrasher number 1
+        &lt;/h1&gt;
+        &lt;a href=&quot;https://guardian.ctdonate.org/?INTCMP=gdnwb_mawns_banner_edtrl_Marketing_CharityAppeal_1119_&quot; title=&quot;&quot; class=&quot;class-name__component-button&quot; data-link-name=&quot;&quot;&gt;
+            &lt;span&gt;A button&lt;/span&gt;
+            &lt;svg class=&quot;class-name__icon&quot; width=&quot;24&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 22&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;
+                &lt;path fill-rule=&quot;evenodd&quot; clip-rule=&quot;evenodd&quot; d=&quot;M0 12.0046H19.6395L11.9377 21.0205L12.939 22L23.6444 11.5023V10.4977L12.939 0L11.9377 0.979452L19.6395 9.99543H0V12.0046Z&quot;&gt;&lt;/path&gt;
+            &lt;/svg&gt;
+        &lt;/a&gt;
+    
+    
+        &lt;!-- &lt;img class=&quot;switch&quot; src=&quot;https://media.guim.co.uk/574970c25e2964dde59f65d5e777baf32ba65330/0_116_3500_2101/2000.jpg&quot;/&gt;
+     --&gt;
+    
+        &lt;!-- black background roundel --&gt;
+        &lt;svg class=&quot;class-name__roundel&quot; width=&quot;42&quot; height=&quot;42&quot; viewBox=&quot;0 0 42 42&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;
+            &lt;g fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;&gt;&lt;path d=&quot;M21 0C9.402 0 0 9.402 0 21c0 11.597 9.402 21 21 21s21-9.403 21-21C42 9.402 32.598 0 21 0&quot; fill=&quot;#121212&quot;/&gt;&lt;path d=&quot;M24.15 5.269c3.287.423 6.887 2.245 8.296 3.537v5.942h-.743l-7.553-8.82v-.659zM22.57 5.968h-.084c-4.933 0-7.775 6.442-7.63 15.131v.032c-.145 8.69 2.697 15.132 7.63 15.132h.083v.669c-7.422.48-17.463-4.857-17.317-15.8v-.033C5.106 10.157 15.147 4.82 22.569 5.3v.669z&quot; fill=&quot;#ffffff&quot;/&gt;&lt;path d=&quot;M34.72 22.795l-2.384.954v9.837c-1.342 1.143-4.621 2.925-7.901 3.538v-13.59l-2.385-.801v-.603h12.67v.665z&quot; fill=&quot;#ffffff&quot;/&gt;&lt;/g&gt;
+        &lt;/svg&gt;  
+    &lt;/div&gt;
+    
+    &lt;div class=&quot;class-name thrasher-2&quot; &gt;
+        &lt;h1 class=&quot;class-name__headline&quot;&gt;
+            Headline for thrasher number 2
+        &lt;/h1&gt;
+        &lt;a href=&quot;https://guardian.ctdonate.org/?INTCMP=gdnwb_mawns_banner_edtrl_Marketing_CharityAppeal_1119_&quot; title=&quot;&quot; class=&quot;class-name__component-button&quot; data-link-name=&quot;&quot;&gt;
+            &lt;span&gt;A button&lt;/span&gt;
+            &lt;svg class=&quot;class-name__icon&quot; width=&quot;24&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 22&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;
+                &lt;path fill-rule=&quot;evenodd&quot; clip-rule=&quot;evenodd&quot; d=&quot;M0 12.0046H19.6395L11.9377 21.0205L12.939 22L23.6444 11.5023V10.4977L12.939 0L11.9377 0.979452L19.6395 9.99543H0V12.0046Z&quot;&gt;&lt;/path&gt;
+            &lt;/svg&gt;
+        &lt;/a&gt;
+    
+    
+        &lt;!-- &lt;img class=&quot;switch&quot; src=&quot;https://media.guim.co.uk/574970c25e2964dde59f65d5e777baf32ba65330/0_116_3500_2101/2000.jpg&quot;/&gt;
+     --&gt;
+    
+        &lt;!-- black background roundel --&gt;
+        &lt;svg class=&quot;class-name__roundel&quot; width=&quot;42&quot; height=&quot;42&quot; viewBox=&quot;0 0 42 42&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;
+            &lt;g fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;&gt;&lt;path d=&quot;M21 0C9.402 0 0 9.402 0 21c0 11.597 9.402 21 21 21s21-9.403 21-21C42 9.402 32.598 0 21 0&quot; fill=&quot;#121212&quot;/&gt;&lt;path d=&quot;M24.15 5.269c3.287.423 6.887 2.245 8.296 3.537v5.942h-.743l-7.553-8.82v-.659zM22.57 5.968h-.084c-4.933 0-7.775 6.442-7.63 15.131v.032c-.145 8.69 2.697 15.132 7.63 15.132h.083v.669c-7.422.48-17.463-4.857-17.317-15.8v-.033C5.106 10.157 15.147 4.82 22.569 5.3v.669z&quot; fill=&quot;#ffffff&quot;/&gt;&lt;path d=&quot;M34.72 22.795l-2.384.954v9.837c-1.342 1.143-4.621 2.925-7.901 3.538v-13.59l-2.385-.801v-.603h12.67v.665z&quot; fill=&quot;#ffffff&quot;/&gt;&lt;/g&gt;
+        &lt;/svg&gt;  
+    &lt;/div&gt;
 &lt;/div&gt;
                  <script>
                      /******/ (function(modules) { // webpackBootstrap
