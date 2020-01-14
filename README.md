@@ -5,6 +5,10 @@
  * [Homebrew](https://brew.sh/)
 
 ## Installation
+Clone this repo
+
+**Note:** New thrashers should live within their own branch
+
  Install project dependencies with
  
 ```
@@ -33,13 +37,14 @@ Run gulp, you should now be running the thrasher locally at: //localhost:8000
 
 ## Compiling and Deploying
 
-To push your thrasher to preview run:
+To push your thrasher to preview (pushes to a bucket in CAPI preview) run:
 
 ```
 gulp deploypreview
 ```
 
-To push your thrasher to live run:
+
+To push your thrasher to live (pushes to a bucket in CAPI live) run:
 
 ```
 gulp deploylive
