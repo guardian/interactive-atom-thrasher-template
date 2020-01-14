@@ -11,13 +11,6 @@
 npm install
 ```
 
-and this script (which may take some time to run depending on how long it takes Homebrew to update)
-
- ```
- ./setup-certs.sh
- ```
- 
- <br>
 
 ## Usage
 
