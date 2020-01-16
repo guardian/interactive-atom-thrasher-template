@@ -22,19 +22,19 @@ $mq-breakpoints: (
     wide:            1300px
 );
 
+@import "documentary";
 
 // update 'class-name' with yours
-$containerName:class-name;
+$containerName: documentary__a-childhood-on-fire;
 // colours pulled from shared/css/_palette.sass
-$backgroundColor:$labs-main;
-$textColor: $neutral-7;
-$buttonColor:$neutral-7;
-$buttonHoverColor:$neutral-46;
+$textColor: #fff;
 
 
 
 // this targets the container your thrasher is put inside on Fronts
-section##{$containerName} {
+section##{$containerName},
+section#documentary,
+section#documentaries {
     width:100%;
     position: relative;
     padding: 0 !important;
@@ -48,29 +48,13 @@ section##{$containerName} {
     .facia-snap {
         padding: 0;
     }
+    .fc-container--thrasher .fc-item {
+        padding: 0;
+    }
 }
 
+
 .#{$containerName} {
-    width:100%;
-    height:200px;
-    background-color:$backgroundColor;
-    &__headline {
-        color:$textColor;
-        font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
-        font-size: 34px;
-        @include mc ($from: mobileLandscape) {
-            color:$textColor;
-        }
-    }
-    &__component-button {
-        // mixin takes 3 variables:
-        // background-color, text-color, hover-background-color
-        @include component-button($bgColor: $neutral-7, $color: #fff, $hoverBgColor: $neutral-46);
-    }
-    &__roundel {
-        // mixin makes roundel sit top right of thrasher and move with grid
-        @include roundel-top-right;
-    }
 }
 
 
@@ -94,3 +78,4 @@ section##{$containerName} {
         }
     }
 }
+
