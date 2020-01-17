@@ -3,7 +3,6 @@
   width: auto;
   position: relative;
   z-index: 10;
-  background-color: #25110F;
   @include mq(tablet) {
     width: 100%;
     margin: 0;
@@ -14,22 +13,29 @@
   overflow: hidden;
   padding: 0 10px;
   background-color: #6B5840;
+  &:hover {
+    background-color: #63533F;
+  }
   @include mq(mobileLandscape) {
     padding: 0 20px;
   }
   .container-title {
-    display: none;
+    position: absolute;
+    display: block;
+    font-family: "Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
+    color: #fff;
+    font-size: 24px;
+    line-height: 26px;
+    font-weight: 700;
+    top: 4px;
+    z-index: 30;
+    @include mq(tablet) {
+      display: none;
+    }
     @include mq(wide) {
       display: block;
-      position: absolute;
-      left: 20px;
       top: 6px;
-      font-family: "Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
-      color: #fff;
-      font-size: 24px;
-      line-height: 26px;
-      font-weight: 700;
-      z-index: 30;
+      left: 20px;
     }
   }
   a.main-link {
@@ -41,9 +47,9 @@
     display: block;
     z-index: 20;
     &:hover {
-      & ~ .copy,
+      & ~ .copy .copy__logline,
       & ~ .title {
-        opacity: 0.9;
+        opacity: 0.95;
       }
       & ~ .copy .copy__button__icon {
         transform: scale(1.1);
@@ -52,7 +58,80 @@
   }
 
   .title {
+    font-size: 58px;
+    @include mq(mobileMedium) {
+      font-size: 70px;
+    }
+    @include mq(mobileLandscape) {
+      font-size: 86px;
+    }
 
+    @include mq(desktop) {
+      font-size: 116px;
+      margin-left: -2px;
+    }
+
+
+    line-height: 0.88em;
+    font-weight: 700;
+    color: #FFCB69;
+    margin: 36px 0 15px;
+    &__word {
+      font-family: "Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
+      display: block;
+    }
+    @include mq(tablet) {
+      margin: 8px 0 15px -7px;
+      .title__word {
+        display: inline;
+      }
+      .title__line {
+        display: block;
+        white-space: nowrap;
+        &.title__on-fire {
+          margin-top: -0.19em;
+        }
+      }
+    }
+
+    @include mq(desktop) {
+      margin-left: 0px;
+    }
+
+    @include mq(leftCol) {
+      margin-left: 150px;
+    }
+
+    @include mq(wide) {
+      margin-left: 230px;
+    }
+
+    &__a {
+      margin-left: 0.7em;
+      @include mq(tablet) {
+        margin-left: 0;
+      }
+    }
+    &__childhood {
+      margin-left: 0;
+      @include mq(tablet) {
+        margin-left: 0;
+      }
+    }
+    &__on {
+      margin-left: 3.8em;
+      margin-top: -0.16em;
+      @include mq(tablet) {
+        margin-left: 4.75em;
+      }
+    }
+    &__fire {
+      margin-left: 2.8em;
+      margin-top: -0.18em;
+      @include mq(tablet) {
+        margin-left: 0;
+      }
+    }
   }
 
   .copy {
@@ -62,23 +141,61 @@
     line-height: 26px;
     position: relative;
     z-index: 10;
-    padding: 6px 38px 0 0;
+    padding: 6px 0;
     margin-bottom: 18px;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: red;
+      top: 0;
+      left: 0;
+      right: -10px;
+      height: 1px;
+      background-color: #E7D4B9;
+      opacity: 0.25;
+    }
+
+    @include mq(mobileLandscape) {
+      &:before {
+        right: -20px;
+      }
+    }
+
+    @include mq(tablet) {
+      width: 340px;
+      padding-right: 10px;
+      margin-top: -66px;
+      margin-bottom: 9px;
+      &:before {
+        right: 0;
+        left: -20px;
+      }
+    }
+
+    @include mq(desktop) {
+      width: 368px;
+      margin-top: -86px;
+    }
+
     @include mq(leftCol) {
+      &:before {
+        display: none;
+      }
       margin-left: 150px;
-      border-left: 1px solid rgba(#fff, 0.5);
-      border-bottom: 1px solid rgba(#fff, 0.5);
+      border-left: 1px solid rgba(#E7D4B9, 0.25);
+      border-top: 1px solid rgba(#E7D4B9, 0.25);
       padding-left: 10px;
-      padding-bottom: 9px;
+      padding-bottom: 12px;
       width: 420px;
-      margin-bottom: 24px;
+      margin-bottom: 0;
     }
     @include mq(wide) {
       margin-left: 230px;
     }
     &__logline {
       font-weight: 600;
-      max-width: 340px;
+      max-width: 360px;
     }
     &__button {
       margin-top: 9px;
@@ -86,9 +203,7 @@
       font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
       font-size: 14px;
       color: #fff;
-      @include mq(desktop) {
-        margin-top: 36px;
-      }
+
       &__icon {
         width: 42px;
         height: 42px;
