@@ -1,3 +1,4 @@
+$text-colour: #1F1912;
 
 .documentary__a-childhood-on-fire__wrapper {
   width: auto;
@@ -12,10 +13,10 @@
 .documentary__a-childhood-on-fire {
   overflow: hidden;
   padding: 0 10px;
-  background-color: #6B5840;
+  background-color: #EACCA0;
   // transition: background-color 120ms ease-in-out;
   &:hover {
-    background-color: #66553F;
+    background-color: #E3C69B;
   }
   @include mq(mobileLandscape) {
     padding: 0 20px;
@@ -24,7 +25,7 @@
     position: absolute;
     display: block;
     font-family: "Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
-    color: #fff;
+    color: $text-colour;
     font-size: 24px;
     line-height: 26px;
     font-weight: 700;
@@ -135,9 +136,12 @@
     }
 
     @supports ((-webkit-background-clip: text) and (-webkit-text-fill-color: transparent)) or ((background-clip: text) and (text-fill-color: transparent)) {
-      background: linear-gradient(to top right, #FFA13B, #DC2727);
+      background: linear-gradient(to top right, #FBC610, #FFA13B, #DC2727, #E12635);
+      // @include mq(tablet) {
+      //   background: linear-gradient(to top right, #FBC610, #FFA13B, #DC2727, #E12635);
+      // }
       background-size: 2000px 600px;
-      background-position: 1000px 300px;
+      background-position: 0% 50%;
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -145,23 +149,23 @@
 
       animation-direction: alternate;
       animation-iteration-count: infinite;
-      animation-duration: 2s;
+      animation-duration: 3s;
       animation-name: moveGradient;
     }
 
     @keyframes moveGradient {
       0% {
-        background-position: 1000px 300px;
+        background-position: 0% 50%;
       }
       100% {
-        background-position: 2000px 300px;
+        background-position: 100% 50%;
       }
     }
   }
 
   .copy {
     font-family: "Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
-    color: #fff;
+    color: $text-colour;
     font-size: 24px;
     line-height: 26px;
     position: relative;
@@ -172,13 +176,12 @@
       content: '';
       display: block;
       position: absolute;
-      background-color: red;
       top: 0;
       left: 0;
       right: -10px;
       height: 1px;
-      background-color: #E7D4B9;
-      opacity: 0.25;
+      background-color: $text-colour;
+      opacity: 0.2;
     }
 
     @include mq(mobileLandscape) {
@@ -208,8 +211,8 @@
         display: none;
       }
       margin-left: 150px;
-      border-left: 1px solid rgba(#E7D4B9, 0.25);
-      border-top: 1px solid rgba(#E7D4B9, 0.25);
+      border-left: 1px solid rgba($text-colour, 0.2);
+      border-top: 1px solid rgba($text-colour, 0.2);
       padding-left: 10px;
       padding-bottom: 12px;
       width: 420px;
@@ -227,12 +230,13 @@
       margin-left: -1px;
       font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
       font-size: 14px;
-      color: #fff;
+      color: $text-colour;
 
       &__icon {
         width: 42px;
         height: 42px;
-        background-color: #ffe500;
+        // background-color: #ffe500;
+        background-color: $text-colour;
         border-radius: 100%;
         display: inline-block;
         vertical-align: middle;
@@ -242,6 +246,9 @@
           position: absolute;
           top: 13px;
           left: 13px;
+          path {
+            fill: #ffe500;
+          }
         }
       }
       &__time {
