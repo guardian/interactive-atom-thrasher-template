@@ -13,8 +13,9 @@
   overflow: hidden;
   padding: 0 10px;
   background-color: #6B5840;
+  // transition: background-color 120ms ease-in-out;
   &:hover {
-    background-color: #63533F;
+    background-color: #66553F;
   }
   @include mq(mobileLandscape) {
     padding: 0 20px;
@@ -132,6 +133,30 @@
         margin-left: 0;
       }
     }
+
+    @supports ((-webkit-background-clip: text) and (-webkit-text-fill-color: transparent)) or ((background-clip: text) and (text-fill-color: transparent)) {
+      background: linear-gradient(to top right, #FFA13B, #DC2727);
+      background-size: 2000px 600px;
+      background-position: 1000px 300px;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;
+
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+      animation-duration: 2s;
+      animation-name: moveGradient;
+    }
+
+    @keyframes moveGradient {
+      0% {
+        background-position: 1000px 300px;
+      }
+      100% {
+        background-position: 2000px 300px;
+      }
+    }
   }
 
   .copy {
@@ -224,10 +249,6 @@
         vertical-align: middle;
         margin-bottom: -1px;
         margin-left: 1px;
-        @include mq(desktop) {
-          text-shadow: none;
-          color: #ffe500;
-        }
       }
     }
   }
