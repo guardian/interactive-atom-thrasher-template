@@ -14,7 +14,16 @@ $text-colour: #1F1912;
   overflow: hidden;
   padding: 0 10px;
   background-color: #EACCA0;
-  // transition: background-color 120ms ease-in-out;
+
+  .ios &,
+  .android & {
+    width: 100%;
+    padding: 0 10px !important;
+    @include mq(tablet) {
+      padding: 0 20px !important;
+    }
+  }
+
   &:hover {
     background-color: #E3C69B;
   }
@@ -38,6 +47,14 @@ $text-colour: #1F1912;
       display: block;
       top: 6px;
       left: 20px;
+      .ios &,
+      .android & {
+        display: none;
+      }
+    }
+    .ios &,
+    .android & {
+      display: none;
     }
   }
   a.main-link {
@@ -69,15 +86,21 @@ $text-colour: #1F1912;
     }
 
     @include mq(desktop) {
-      font-size: 116px;
+      font-size: 86px;
       margin-left: -2px;
     }
 
 
     line-height: 0.88em;
     font-weight: 700;
-    color: #FFCB69;
+    color: #DD3737;
     margin: 36px 0 15px;
+
+    .ios &,
+    .android & {
+      margin-top: 12px;
+    }
+
     &__word {
       font-family: "Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
       display: block;
@@ -137,9 +160,6 @@ $text-colour: #1F1912;
 
     @supports ((-webkit-background-clip: text) and (-webkit-text-fill-color: transparent)) or ((background-clip: text) and (text-fill-color: transparent)) {
       background: linear-gradient(to top right, #FBC610, #FFA13B, #DC2727, #E12635);
-      // @include mq(tablet) {
-      //   background: linear-gradient(to top right, #FBC610, #FFA13B, #DC2727, #E12635);
-      // }
       background-size: 2000px 600px;
       background-position: 0% 50%;
       -webkit-background-clip: text;
@@ -152,6 +172,17 @@ $text-colour: #1F1912;
       animation-duration: 3s;
       animation-name: moveGradient;
     }
+
+    .ios &,
+    .android & {
+      background: transparent;
+      -webkit-background-clip: border-box;
+      background-clip: border-box;
+      -webkit-text-fill-color: #DD3737;
+      text-fill-color: #DD3737;
+      animation: none;
+    }
+
 
     @keyframes moveGradient {
       0% {
@@ -191,7 +222,9 @@ $text-colour: #1F1912;
     }
 
     @include mq(tablet) {
-      width: 340px;
+      font-size: 20px;
+      line-height: 22px;
+      width: 335px;
       padding-right: 10px;
       margin-top: -66px;
       margin-bottom: 9px;
@@ -203,7 +236,7 @@ $text-colour: #1F1912;
 
     @include mq(desktop) {
       width: 368px;
-      margin-top: -86px;
+      margin-top: -66px;
     }
 
     @include mq(leftCol) {
@@ -215,7 +248,7 @@ $text-colour: #1F1912;
       border-top: 1px solid rgba($text-colour, 0.2);
       padding-left: 10px;
       padding-bottom: 12px;
-      width: 420px;
+      width: 334px;
       margin-bottom: 0;
     }
     @include mq(wide) {
@@ -264,6 +297,11 @@ $text-colour: #1F1912;
     position: absolute;
     top: 9px;
     right: 10px;
+    .ios &,
+    .android & {
+      display: none;
+    }
+
     @include mq(mobileLandscape) {
       right: 20px;
     }
