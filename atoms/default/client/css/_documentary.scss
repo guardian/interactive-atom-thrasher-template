@@ -61,9 +61,10 @@ $text-colour: #1F1912;
     bottom: 0;
     display: block;
     z-index: 20;
+    opacity: 0;
     &:hover {
       & ~ .image {
-        opacity: 0.9;
+        opacity: 0.85;
       }
       & ~ .copy .copy__button__icon {
         transform: scale(1.1);
@@ -82,12 +83,13 @@ $text-colour: #1F1912;
     margin-bottom: 18px;
     @include mq(leftCol) {
       margin-left: 150px;
-      border-left: 1px solid rgba(#fff, 0.5);
-      border-bottom: 1px solid rgba(#fff, 0.5);
+      border-left: 1px solid rgba(#fff, 0.3);
+      border-bottom: 1px solid rgba(#fff, 0.3);
       padding-left: 10px;
       padding-bottom: 9px;
-      width: 420px;
-      margin-bottom: 24px;
+      width: 260px;
+      padding-right: 0;
+      margin-bottom: 72px;
     }
     @include mq(wide) {
       margin-left: 230px;
@@ -105,7 +107,10 @@ $text-colour: #1F1912;
       font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
       font-size: 16px;
       @include mq(desktop) {
-        margin-top: 36px;
+        margin-top: 72px;
+      }
+      @include mq(leftCol) {
+        margin-top: 24px;
       }
       &__icon {
         width: 42px;
@@ -148,16 +153,18 @@ $text-colour: #1F1912;
       left: 50%;
       transform: translate(-50%, 0);
       @include mq(tablet) {
-        opacity: 0;
+        width: 1200px;
       }
       @include mq(desktop) {
-        transform: translate(-24%, -60%);
+        top: 50%;
+        width: 1300px;
+        transform: translate(-57%, -46%);
       }
       @include mq(leftCol) {
-        transform: translate(-16%, -60%);
+        transform: translate(-49.5%, -46%);
       }
       @include mq(wide) {
-        transform: translate(-14%, -60%);
+        transform: translate(-49.5%, -46%);
       }
     }
   }
