@@ -25,7 +25,7 @@ $mq-breakpoints: (
 @import "documentary";
 
 // update 'class-name' with yours
-$containerName: documentary__a-childhood-on-fire;
+$containerName: documentary__teranga;
 // colours pulled from shared/css/_palette.sass
 $textColor: #fff;
 
@@ -53,9 +53,6 @@ section#documentaries {
     }
 }
 
-
-.#{$containerName} {
-}
 
 
 // this removes margins from Android / iOS view

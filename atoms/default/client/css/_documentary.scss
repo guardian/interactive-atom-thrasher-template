@@ -4,16 +4,17 @@ $text-colour: #1F1912;
   width: auto;
   position: relative;
   z-index: 10;
+  margin: 0;
+  background-color: #25110F;
   @include mq(tablet) {
     width: 100%;
-    margin: 0;
   }
 }
 
 .documentary__a-childhood-on-fire {
   overflow: hidden;
   padding: 0 10px;
-  background-color: #EACCA0;
+  background-color: #25110F;
 
   .ios &,
   .android & {
@@ -25,38 +26,33 @@ $text-colour: #1F1912;
   }
 
   &:hover {
-    background-color: #E3C69B;
+    // stuff here…
   }
+
   @include mq(mobileLandscape) {
     padding: 0 20px;
   }
+
   .container-title {
-    position: absolute;
-    display: block;
-    font-family: "Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
-    color: $text-colour;
-    font-size: 24px;
-    line-height: 26px;
-    font-weight: 700;
-    top: 4px;
-    z-index: 30;
-    @include mq(tablet) {
-      display: none;
-    }
+    display: none;
     @include mq(wide) {
       display: block;
-      top: 6px;
+      position: absolute;
       left: 20px;
+      top: 6px;
+      font-family: "Guardian Egyptian Web",Georgia,serif;
+      color: #fff;
+      font-size: 24px;
+      line-height: 26px;
+      font-weight: 700;
+      z-index: 30;
       .ios &,
       .android & {
         display: none;
       }
     }
-    .ios &,
-    .android & {
-      display: none;
-    }
   }
+
   a.main-link {
     position: absolute;
     top: 0;
@@ -66,9 +62,8 @@ $text-colour: #1F1912;
     display: block;
     z-index: 20;
     &:hover {
-      & ~ .copy .copy__logline,
-      & ~ .title {
-        opacity: 0.95;
+      & ~ .image {
+        opacity: 0.9;
       }
       & ~ .copy .copy__button__icon {
         transform: scale(1.1);
@@ -76,200 +71,46 @@ $text-colour: #1F1912;
     }
   }
 
-  .title {
-    font-size: 58px;
-    @include mq(mobileMedium) {
-      font-size: 70px;
-    }
-    @include mq(mobileLandscape) {
-      font-size: 86px;
-    }
-
-    @include mq(desktop) {
-      font-size: 86px;
-      margin-left: -2px;
-    }
-
-
-    line-height: 0.88em;
-    font-weight: 700;
-    color: #DD3737;
-    margin: 36px 0 15px;
-
-    .ios &,
-    .android & {
-      margin-top: 12px;
-    }
-
-    &__word {
-      font-family: "Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
-      display: block;
-    }
-    @include mq(tablet) {
-      margin: 8px 0 15px -7px;
-      .title__word {
-        display: inline;
-      }
-      .title__line {
-        display: block;
-        white-space: nowrap;
-        &.title__on-fire {
-          margin-top: -0.19em;
-        }
-      }
-    }
-
-    @include mq(desktop) {
-      margin-left: 0px;
-    }
-
-    @include mq(leftCol) {
-      margin-left: 150px;
-    }
-
-    @include mq(wide) {
-      margin-left: 230px;
-    }
-
-    &__a {
-      margin-left: 0.7em;
-      @include mq(tablet) {
-        margin-left: 0;
-      }
-    }
-    &__childhood {
-      margin-left: 0;
-      @include mq(tablet) {
-        margin-left: 0;
-      }
-    }
-    &__on {
-      margin-left: 3.8em;
-      margin-top: -0.16em;
-      @include mq(tablet) {
-        margin-left: 4.75em;
-      }
-    }
-    &__fire {
-      margin-left: 2.8em;
-      margin-top: -0.18em;
-      @include mq(tablet) {
-        margin-left: 0;
-      }
-    }
-
-    @supports ((-webkit-background-clip: text) and (-webkit-text-fill-color: transparent)) or ((background-clip: text) and (text-fill-color: transparent)) {
-      background: linear-gradient(to top right, #FBC610, #FFA13B, #DC2727, #E12635);
-      background-size: 2000px 600px;
-      background-position: 0% 50%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-fill-color: transparent;
-
-      animation-direction: alternate;
-      animation-iteration-count: infinite;
-      animation-duration: 3s;
-      animation-name: moveGradient;
-    }
-
-    .ios &,
-    .android & {
-      background: transparent;
-      -webkit-background-clip: border-box;
-      background-clip: border-box;
-      -webkit-text-fill-color: #DD3737;
-      text-fill-color: #DD3737;
-      animation: none;
-    }
-
-
-    @keyframes moveGradient {
-      0% {
-        background-position: 0% 50%;
-      }
-      100% {
-        background-position: 100% 50%;
-      }
-    }
-  }
-
   .copy {
-    font-family: "Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
-    color: $text-colour;
+    font-family: "Guardian Egyptian Web",Georgia,serif;
+    color: #fff;
     font-size: 24px;
     line-height: 26px;
     position: relative;
     z-index: 10;
-    padding: 6px 0;
+    padding: 6px 38px 0 0;
     margin-bottom: 18px;
-    &:before {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: -10px;
-      height: 1px;
-      background-color: $text-colour;
-      opacity: 0.2;
-    }
-
-    @include mq(mobileLandscape) {
-      &:before {
-        right: -20px;
-      }
-    }
-
-    @include mq(tablet) {
-      font-size: 20px;
-      line-height: 22px;
-      width: 335px;
-      padding-right: 10px;
-      margin-top: -66px;
-      margin-bottom: 9px;
-      &:before {
-        right: 0;
-        left: -20px;
-      }
-    }
-
-    @include mq(desktop) {
-      width: 368px;
-      margin-top: -66px;
-    }
-
     @include mq(leftCol) {
-      &:before {
-        display: none;
-      }
       margin-left: 150px;
-      border-left: 1px solid rgba($text-colour, 0.2);
-      border-top: 1px solid rgba($text-colour, 0.2);
+      border-left: 1px solid rgba(#fff, 0.5);
+      border-bottom: 1px solid rgba(#fff, 0.5);
       padding-left: 10px;
-      padding-bottom: 12px;
-      width: 334px;
-      margin-bottom: 0;
+      padding-bottom: 9px;
+      width: 420px;
+      margin-bottom: 24px;
     }
     @include mq(wide) {
       margin-left: 230px;
     }
+    &__title {
+      font-weight: 700;
+      max-width: 320px;
+    }
     &__logline {
-      font-weight: 600;
-      max-width: 360px;
+      font-weight: 200;
+      max-width: 320px;
     }
     &__button {
-      margin-top: 9px;
-      margin-left: -1px;
+      margin-top: 238px;
       font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-      font-size: 14px;
-      color: $text-colour;
-
+      font-size: 16px;
+      @include mq(desktop) {
+        margin-top: 36px;
+      }
       &__icon {
         width: 42px;
         height: 42px;
-        // background-color: #ffe500;
-        background-color: $text-colour;
+        background-color: #ffe500;
         border-radius: 100%;
         display: inline-block;
         vertical-align: middle;
@@ -279,16 +120,44 @@ $text-colour: #1F1912;
           position: absolute;
           top: 13px;
           left: 13px;
-          path {
-            fill: #ffe500;
-          }
         }
       }
       &__time {
         display: inline-block;
         vertical-align: middle;
-        margin-bottom: -1px;
-        margin-left: 1px;
+        margin-left: 3px;
+        opacity: 0.95;
+      }
+    }
+  }
+
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow: hidden;
+    transition: opacity 240ms;
+    &__img {
+      width: 1120px;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      @include mq(tablet) {
+        opacity: 0;
+      }
+      @include mq(desktop) {
+        transform: translate(-24%, -60%);
+      }
+      @include mq(leftCol) {
+        transform: translate(-16%, -60%);
+      }
+      @include mq(wide) {
+        transform: translate(-14%, -60%);
       }
     }
   }
@@ -297,11 +166,6 @@ $text-colour: #1F1912;
     position: absolute;
     top: 9px;
     right: 10px;
-    .ios &,
-    .android & {
-      display: none;
-    }
-
     @include mq(mobileLandscape) {
       right: 20px;
     }
@@ -309,4 +173,5 @@ $text-colour: #1F1912;
       display: block;
     }
   }
+
 }
