@@ -87,7 +87,7 @@ $text-colour: #1F1912;
       border-bottom: 1px solid rgba(#fff, 0.3);
       padding-left: 10px;
       padding-bottom: 9px;
-      width: 268px;
+      width: 90px;
       padding-right: 0;
       margin-bottom: 72px;
     }
@@ -101,6 +101,9 @@ $text-colour: #1F1912;
     &__logline {
       font-weight: 200;
       max-width: 320px;
+      @include mq(leftCol) {
+        width: 320px;
+      }
     }
     &__button {
       margin-top: 238px;
