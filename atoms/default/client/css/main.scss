@@ -59,6 +59,25 @@ section##{$containerName} {
     &:hover {
         background-color: #0a2652;
     }
+
+    &:before {
+        display: none;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 170px;
+        width: 1px;
+        bottom: 0;
+        background-color: #fff;
+        opacity: 0.25;
+        @include mq(leftCol) {
+            display: block;
+        }
+        @include mq(wide) {
+            left: 250px;
+        }
+    }
+
     @include mq(mobileLandscape) {
         padding: 3px 20px 18px;
     }
@@ -84,18 +103,7 @@ section##{$containerName} {
         }
         @include mq(leftCol) {
             margin-left: 160px;
-            padding-left: 10px;
-            max-width: 450px;
-            &:before {
-                content: '';
-                position: absolute;
-                top: -6px;
-                left: 0;
-                width: 1px;
-                bottom: 0;
-                background-color: #fff;
-                opacity: 0.25;
-            }
+            padding-left: 5px;
         }
         @include mq(wide) {
             margin-left: 240px;
@@ -126,6 +134,28 @@ section##{$containerName} {
                     transform: translate(-50%,-50%);
                 }
             }
+        }
+    }
+
+    &__series-description {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        font-family:"Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
+        font-size: 16px;
+        font-weight: 700;
+        z-index: 30;
+        padding: 3px 10px;
+        background-color: rgba(0,0,0,0.2);
+        @include mq(mobileLandscape) {
+            padding-left: 20px;
+            background-color: transparent;
+        }
+        @include mq(leftCol) {
+            padding-left: 185px;
+        }
+        @include mq(wide) {
+            padding-left: 265px;
         }
     }
 
