@@ -24,16 +24,15 @@ $mq-breakpoints: (
 
 
 // update 'class-name' with yours
-$containerName:class-name;
+$containerName:europeans;
 // colours pulled from shared/css/_palette.sass
-$backgroundColor:$labs-main;
-$textColor: $neutral-7;
 $buttonColor:$neutral-7;
 $buttonHoverColor:$neutral-46;
 
 
 
 // this targets the container your thrasher is put inside on Fronts
+section#thrasher-atom,
 section##{$containerName} {
     width:100%;
     position: relative;
@@ -51,25 +50,180 @@ section##{$containerName} {
 }
 
 .#{$containerName} {
-    width:100%;
-    height:200px;
-    background-color:$backgroundColor;
+
+    width: 100%;
+    height: 368px;
+    background-color: #062962;
+    color: #fff;
+    padding: 3px 10px 18px;
+    &:hover {
+        background-color: #0a2652;
+    }
+    @include mq(mobileLandscape) {
+        padding: 3px 20px 18px;
+    }
+    @include mq(tablet) {
+        height: 260px;
+    }
+    @include mq(desktop) {
+        padding-top: 6px;
+        height: 188px;
+    }
     &__headline {
-        color:$textColor;
-        font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
-        font-size: 34px;
-        @include mc ($from: mobileLandscape) {
-            color:$textColor;
+        position: relative;
+        z-index: 10;
+        color: #fff;
+        font-family:"Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
+        font-size: 24px;
+        line-height: 26px;
+        font-weight: 400;
+        max-width: 360px;
+        padding-right: 54px;
+        @include mq(desktop) {
+            max-width: 460px;
+        }
+        @include mq(leftCol) {
+            margin-left: 160px;
+            padding-left: 10px;
+            max-width: 450px;
+            &:before {
+                content: '';
+                position: absolute;
+                top: -6px;
+                left: 0;
+                width: 1px;
+                bottom: 0;
+                background-color: #fff;
+                opacity: 0.25;
+            }
+        }
+        @include mq(wide) {
+            margin-left: 240px;
+        }
+
+        strong {
+            display: block;
+            font-weight: 700;
+        }
+
+        .play-button {
+            margin-top: 9px;
+            font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+            font-size: 16px;
+            i {
+                margin-right: 3px;
+                width: 40px;
+                height: 40px;
+                background-color: #ffe500;
+                display: inline-block;
+                border-radius: 100%;
+                position: relative;
+                vertical-align: middle;
+                svg {
+                    position: absolute;
+                    top: 50%;
+                    left: 55%;
+                    transform: translate(-50%,-50%);
+                }
+            }
         }
     }
-    &__component-button {
-        // mixin takes 3 variables:
-        // background-color, text-color, hover-background-color
-        @include component-button($bgColor: $neutral-7, $color: #fff, $hoverBgColor: $neutral-46);
+
+    &__furniture {
+        display: none;
+        @include mq(leftCol) {
+            display: block;
+        }
+        position: absolute;
+        z-index: 20;
+        top: 0;
+        left: 0;
+        .badge {
+            // display: none;
+            // @include mq(wide) {
+            //     display: block;
+            // }
+            position: absolute;
+            top: 3px;
+            left: 14px;
+
+        }
+        .labels {
+            display: block;
+            padding-left: 18px;
+            padding-top: 60px;
+            @include mq(wide) {
+                padding-top: 0;
+                padding-left: 72px;
+            }
+            &__europeans {
+                font-family:"Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
+                font-size: 24px;
+                font-weight: 700;
+            }
+            &__part-of {
+                display: block;
+                font-family: "Guardian Text Egyptian Web",Georgia,serif;
+                font-style: italic;
+                font-size: 14px;
+                line-height: 14px;
+            }
+        }
     }
+
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 0;
+        .map,
+        .person {
+            position: absolute;
+        }
+        .map {
+            width: 522px;
+            right: -221px;
+            top: -124px;
+            @include mq(tablet) {
+                top: -220px;
+                right: -100px;
+            }
+            @include mq(desktop) {
+                width: 680px;
+                top: -398px;
+                right: -154px;
+            }
+            @include mq(wide) {
+                right: -74px;
+            }
+        }
+        .person {
+            width: 296px;
+            right: -68px;
+            top: 108px;
+            @include mq(tablet) {
+                right: 40px;
+                top: 10px;
+            }
+            @include mq(desktop) {
+                width: 354px;
+                top: -100px;
+                right: 40px;
+            }
+            @include mq(wide) {
+                right: 120px;
+            }
+        }
+    }
+
     &__roundel {
         // mixin makes roundel sit top right of thrasher and move with grid
         @include roundel-top-right;
+        top: 6px;
+        @include mq(desktop) {
+            top: 9px;
+        }
     }
 }
 
