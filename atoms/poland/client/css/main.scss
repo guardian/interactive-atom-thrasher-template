@@ -97,7 +97,7 @@ section##{$containerName} {
         font-weight: 400;
         max-width: 360px;
         padding-right: 54px;
-        text-shadow: 0 0 12px rgba(0,0,20,0.3);
+        text-shadow: 0 0 12px rgba(0,0,20,0.5);
 
         @include mq(tablet) {
             text-shadow: none;
@@ -122,6 +122,10 @@ section##{$containerName} {
             margin-top: 9px;
             font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
             font-size: 16px;
+            text-shadow: 0 0 12px rgba(0,0,20,0.5);
+            @include mq(tablet) {
+                text-shadow: none;
+            }
             i {
                 margin-right: 3px;
                 width: 40px;
@@ -230,19 +234,19 @@ section##{$containerName} {
         }
         .map {
             width: 522px;
-            right: -221px;
-            top: -124px;
+            right: -71px;
+            top: -64px;
             @include mq(tablet) {
-                top: -220px;
-                right: -100px;
+                top: -122px;
+                right: -40px;
             }
             @include mq(desktop) {
                 width: 680px;
-                top: -398px;
-                right: -154px;
+                top: -308px;
+                right: -88px;
             }
             @include mq(wide) {
-                right: -74px;
+                right: -28px;
             }
         }
         .person {
@@ -250,16 +254,16 @@ section##{$containerName} {
             right: -68px;
             top: 108px;
             @include mq(tablet) {
-                right: 40px;
-                top: 10px;
+                right: -50px;
+                top: 30px;
             }
             @include mq(desktop) {
                 width: 354px;
                 top: -100px;
-                right: 40px;
+                right: -28px;
             }
             @include mq(wide) {
-                right: 120px;
+                right: 0px;
             }
         }
     }

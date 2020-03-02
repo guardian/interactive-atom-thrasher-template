@@ -95,7 +95,7 @@ section##{$containerName} {
         font-size: 24px;
         line-height: 26px;
         font-weight: 400;
-        max-width: 360px;
+        max-width: 280px;
         padding-right: 54px;
         text-shadow: 0 0 12px rgba(0,0,20,0.3);
 
@@ -230,36 +230,40 @@ section##{$containerName} {
         }
         .map {
             width: 522px;
-            right: -221px;
-            top: -124px;
+            right: -92px;
+            top: -44px;
             @include mq(tablet) {
-                top: -220px;
-                right: -100px;
+                top: -180px;
+                right: -43px;
             }
             @include mq(desktop) {
                 width: 680px;
-                top: -398px;
-                right: -154px;
+                top: -348px;
+                right: -87px;
+            }
+            @include mq(leftCol) {
+                right: -96px;
             }
             @include mq(wide) {
-                right: -74px;
+                right: -30px;
             }
         }
         .person {
+            transform: scaleX(-1);
             width: 296px;
-            right: -68px;
-            top: 108px;
+            right: -90px;
+            top: 132px;
             @include mq(tablet) {
-                right: 40px;
+                right: -40px;
                 top: 10px;
             }
             @include mq(desktop) {
                 width: 354px;
                 top: -100px;
-                right: 40px;
+                right: -40px;
             }
             @include mq(wide) {
-                right: 120px;
+                right: -5px;
             }
         }
     }
