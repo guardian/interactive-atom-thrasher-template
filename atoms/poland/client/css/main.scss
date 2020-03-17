@@ -55,6 +55,7 @@ section##{$containerName} {
     background-color: #062962;
     color: #fff;
     padding: 3px 10px 18px;
+
     &:hover {
         background-color: #0a2652;
     }
@@ -310,5 +311,8 @@ body.android {
     }
     @include mq(desktop) {
         height: 214px;
+    }
+    .europeans {
+        position: relative;
     }
 }

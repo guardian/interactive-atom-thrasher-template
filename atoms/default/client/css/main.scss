@@ -230,36 +230,36 @@ section##{$containerName} {
         }
         .map {
             width: 522px;
-            right: -221px;
-            top: -124px;
+            right: -290px;
+            top: -100px;
             @include mq(tablet) {
                 top: -220px;
                 right: -100px;
             }
             @include mq(desktop) {
                 width: 680px;
-                top: -398px;
-                right: -154px;
+                top: -290px;
+                right: -120px;
             }
             @include mq(wide) {
-                right: -74px;
+                right: -44px;
             }
         }
         .person {
             width: 296px;
-            right: -68px;
+            right: -34px;
             top: 108px;
+            transform: scaleX(-1);
             @include mq(tablet) {
-                right: 40px;
+                right: 0;
                 top: 10px;
             }
             @include mq(desktop) {
                 width: 354px;
                 top: -100px;
-                right: 40px;
             }
             @include mq(wide) {
-                right: 120px;
+                right: 0px;
             }
         }
     }
@@ -270,6 +270,7 @@ section##{$containerName} {
         top: 6px;
         @include mq(desktop) {
             top: 9px;
+            right: 8px;
         }
     }
 }
@@ -306,5 +307,8 @@ body.android {
     }
     @include mq(desktop) {
         height: 214px;
+    }
+    .europeans {
+        position: relative;
     }
 }

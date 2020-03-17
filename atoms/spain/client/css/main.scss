@@ -304,4 +304,7 @@ body.android {
     @include mq(desktop) {
         height: 214px;
     }
+    .europeans {
+        position: relative;
+    }
 }
