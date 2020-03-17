@@ -24,12 +24,9 @@ $mq-breakpoints: (
 
 
 // update 'class-name' with yours
-$containerName:class-name;
+$containerName:coronavirus-newsletter;
 // colours pulled from shared/css/_palette.sass
-$backgroundColor:$labs-main;
 $textColor: $neutral-7;
-$buttonColor:$neutral-7;
-$buttonHoverColor:$neutral-46;
 
 
 
@@ -51,9 +48,9 @@ section##{$containerName} {
 }
 
 .#{$containerName} {
-    width:100%;
-    height:200px;
-    background-color:$backgroundColor;
+    width: 100%;
+    height: 200px;
+    background-color: #fff;
     &__headline {
         color:$textColor;
         font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
@@ -65,8 +62,27 @@ section##{$containerName} {
     &__component-button {
         // mixin takes 3 variables:
         // background-color, text-color, hover-background-color
-        @include component-button($bgColor: $neutral-7, $color: #fff, $hoverBgColor: $neutral-46);
+        @include component-button($bgColor: #E20613, $color: #fff, $hoverBgColor: #D10A16);
     }
+
+    &__container-title {
+        &__icon {
+
+        }
+        &__title {
+
+        }
+    }
+
+    &__copy {
+        &__description {
+
+        }
+        &__cta {
+            
+        }
+    }
+
     &__roundel {
         // mixin makes roundel sit top right of thrasher and move with grid
         @include roundel-top-right;
