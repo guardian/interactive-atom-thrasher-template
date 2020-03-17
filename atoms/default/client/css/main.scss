@@ -224,7 +224,8 @@ section##{$containerName} {
     .ios & {
         overflow:hidden;
         margin:0;
-        padding:0;
+        width: auto;
+        border: 0;
         &__component-button {
             span {
                 letter-spacing: unset;
