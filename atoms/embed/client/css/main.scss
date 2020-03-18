@@ -41,6 +41,7 @@ section##{$containerName} {
     // padding: 0 !important;
     // overflow: hidden;
     background-color:#fff;
+
     // .fc-container__inner,
     // .fc-slice,
     // .facia-snap {
@@ -54,9 +55,10 @@ section##{$containerName} {
 .#{$containerName} {
     background-color: #fff;
     background-color: #F5FCFF;
+    background-color: #e0e4e8;
     font-size: 1.5rem;
     line-height: 1.6875rem;
-    font-family: "Guardian Egyptian Web",Georgia,serif;
+    font-family: "Guardian Headline Full", "Guardian Headline", "Guardian Egyptian Web",Georgia,serif;
     font-weight: normal;
     color: #041f4a;
     position: relative;
@@ -235,3 +237,5 @@ section##{$containerName} {
         }
     }
 }
+
+
