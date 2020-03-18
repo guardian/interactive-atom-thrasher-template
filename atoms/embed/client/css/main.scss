@@ -1,0 +1,235 @@
+@import "_mq";
+@import "_fonts";
+@import "_palette";
+@import "_app-fonts";
+@import "_mixins";
+
+// Uncomment for embeds
+//@import "embed";
+// Uncomment for full screen (including immersive article main media)
+//@import "fullscreen";
+
+// Default breakpoints from Frontend
+// Use mc() in place of mq() so your thrashers don't get broken
+$mq-breakpoints: (
+    mobile:          320px,
+    mobileMedium:    375px,
+    mobileLandscape: 480px,
+    phablet:         660px,
+    tablet:          740px,
+    desktop:         980px,
+    leftCol:         1140px,
+    wide:            1300px
+);
+
+
+// update 'class-name' with yours
+$containerName:coronavirus-newsletter;
+// colours pulled from shared/css/_palette.sass
+
+body {
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// this targets the container your thrasher is put inside on Fronts
+section#coronavirus-the-week-explained,
+section#coronavirus-newsletter,
+section##{$containerName} {
+    // width:100%;
+    // position: relative;
+    // padding: 0 !important;
+    // overflow: hidden;
+    background-color:#fff;
+    // .fc-container__inner,
+    // .fc-slice,
+    // .facia-snap {
+    //     overflow: hidden;
+    // }
+    // .facia-snap {
+    //     padding: 0;
+    // }
+}
+
+.#{$containerName} {
+    background-color: #fff;
+    background-color: #F5FCFF;
+    font-size: 1.5rem;
+    line-height: 1.6875rem;
+    font-family: "Guardian Egyptian Web",Georgia,serif;
+    font-weight: normal;
+    color: #041f4a;
+    position: relative;
+
+    border-top: 1px solid #dcdcdc;
+
+    padding: 8px 5px 0;
+    overflow: hidden;
+    @include mq(mobileLandscape) {
+        padding: 6px 10px 0;
+    }
+    @include mq(tablet) {
+        margin: 0;
+        width: 100%;
+        border-left: 1px solid #dcdcdc;
+        border-right: 1px solid #dcdcdc;
+    }
+    @include mq(leftCol) {
+        padding-top: 4px;
+    }
+
+    // font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
+
+    &__component-button {
+        // mixin takes 3 variables:
+        // background-color, text-color, hover-background-color
+        @include component-button($bgColor: #E20613, $color: #fff, $hoverBgColor: #D10A16);
+    }
+
+    &__container-title {
+        font-weight: 700;
+        position: relative;
+        z-index: 20;
+
+        &__icon {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        &__title {
+            display: none;
+            vertical-align: top;
+            line-height: 1.5rem;
+            margin-top: -3px;
+            width: 160px;
+        }
+        @include mq(leftCol) {
+            position: absolute;
+            &__icon {
+                position: absolute;
+                top: 56px;
+                left: -2px;
+            }
+            &__title {
+                position: absolute;
+                top: 3px;
+                left: -2px;
+            }
+        }
+        @include mq(wide) {
+            width: auto;
+            margin-top: 3px;
+            &__title {
+                position: static;
+                // line-height: 1.6875rem;
+                // top: 3px;
+                // left: -4px;
+            }
+            &__icon {
+                position: static;
+                // left: -4px;
+                // top: 60px;
+            }
+        }
+
+    }
+
+    &__copy {
+        max-width: 460px;
+        position: relative;
+        z-index: 20;
+        &__description {
+            strong {
+                display: block;
+                padding-right: 60px;
+            }
+            font-weight: 300;
+        }
+        &__cta {
+            margin-top: 8px;
+            margin-bottom: 24px;
+            margin-left: -2px;
+        }
+        @include mq(leftCol) {
+            margin-left: 160px;
+            padding-left: 3px;
+            &__cta {
+                margin-bottom: 32px;
+            }
+            &:before {
+                content: '';
+                position: absolute;
+                top: -4px;
+                left: -9px;
+                width: 1px;
+                height: 142px;
+                background-color: #dcdcdc;
+                display: block;
+            }
+        }
+        @include mq(wide) {
+            margin-left: 240px;
+        }
+    }
+
+    &__dots {
+        position: absolute;
+        z-index: 10;
+        top: 200px;
+        right: -270px;
+        transform: rotate(90deg);
+        @include mq(tablet) {
+            right: -103px;
+            top: -10px;
+            transform: none;
+        }
+        @include mq(desktop) {
+            right: 0;
+            top: -3px;
+        }
+        @include mq(leftCol) {
+            right: -83px;
+            top: -10px;
+        }
+        @include mq(wide) {
+            right: 3px;
+        }
+
+
+    }
+
+    &__roundel {
+        // mixin makes roundel sit top right of thrasher and move with grid
+        display: none;
+        @include mq(desktop) {
+            display: block;
+        }
+        @include roundel-top-right;
+        top: 8px;
+        z-index: 20;
+
+    }
+}
+
+
+// this removes margins from Android / iOS view
+.interactive-atom {
+    margin:0;
+    overflow: hidden;
+}
+
+// iOS and Android specific styles
+.#{$containerName} {
+    .android &,
+    .ios & {
+        overflow:hidden;
+        margin:0;
+        width: auto;
+        border: 0;
+        &__component-button {
+            span {
+                letter-spacing: unset;
+            }
+        }
+    }
+}
