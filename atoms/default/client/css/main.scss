@@ -236,3 +236,19 @@ section##{$containerName} {
         }
     }
 }
+
+// Dynamo position:
+section#coronavirus-the-week-explained,
+section#coronavirus-newsletter,
+section##{$containerName} {
+    background-color: #e0e4e8;
+    margin-bottom: 0;
+}
+
+.facia-snap > .coronavirus-newsletter {
+    background-color: #e0e4e8;
+    border-color: #afafaf;
+    .coronavirus-newsletter__copy:before {
+        background-color: #afafaf;
+    }
+}
