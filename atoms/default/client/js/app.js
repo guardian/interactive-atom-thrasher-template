@@ -25,9 +25,9 @@ if (thrasher && !inApp && Element.prototype.closest) {
         nextSection = nextSection.previousElementSibling;
     }
 
-    if (nextSection.classList.contains('fc-container--thrasher')) {
-        section.classList.add('followed-by-thrasher');
-    }
+    // if (nextSection.classList.contains('fc-container--thrasher')) {
+    //     section.classList.add('followed-by-thrasher');
+    // }
     if (prevSection.classList.contains('fc-container--story-package')) {
         section.classList.add('preceded-by-dynamo');
     }
@@ -44,8 +44,8 @@ if (thrasher && !inApp && Element.prototype.closest) {
 }
 
 let inCoronaFront = (window.location.href.indexOf('/world/coronavirus-outbreak') >= 0);
-if (inCoronaFront || inApp) {
-    thrasher.classList.add('hide-full-coverage');
+if (!inCoronaFront || inApp) {
+    thrasher.classList.add('show-full-coverage');
     let fcThrasher = document.querySelector('section#coronavirus-in-depth');
     if (fcThrasher) {
         fcThrasher.style.display = 'none';

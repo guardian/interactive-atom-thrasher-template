@@ -175,8 +175,9 @@ section##{$containerName} {
         }
 
         &__full-coverage {
-            .hide-full-coverage & {
-                display: none;
+            display: none;
+            .show-full-coverage & {
+                display: block;
             }
             font-weight: 700;
             padding-bottom: 18px;
@@ -234,14 +235,9 @@ section##{$containerName} {
                 left: -10px;
                 width: 100vw;
                 height: 1px;
-                background-color: #000;
-                opacity: 0.15;
+                background-color: #dcdcdc;
                 @include mq(mobileLandscape) {
                     left: -20px;
-                }
-                @include mq(tablet) {
-                    background-color: #dcdcdc;
-                    opacity: 1;
                 }
                 @include mq(leftCol) {
                     left: -185px;
@@ -332,9 +328,9 @@ section##{$containerName} {
 
         }
     }
-    &.followed-by-thrasher {
-        margin-bottom: 0;
-    }
+    // &.followed-by-thrasher {
+    //     margin-bottom: 0;
+    // }
 }
 
 // Old dynamo position:
