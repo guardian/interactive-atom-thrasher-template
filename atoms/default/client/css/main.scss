@@ -163,9 +163,9 @@ section##{$containerName} {
                 content: '';
                 position: absolute;
                 top: -4px;
-                left: -9px;
+                left: -11px;
                 width: 1px;
-                height: 142px;
+                bottom: 0;
                 background-color: #dcdcdc;
                 display: block;
             }
@@ -173,12 +173,90 @@ section##{$containerName} {
         @include mq(wide) {
             margin-left: 240px;
         }
+
+        &__full-coverage {
+            .hide-full-coverage & {
+                display: none;
+            }
+            font-weight: 700;
+            padding-bottom: 18px;
+            padding-top: 4px;
+            position: relative;
+            @include mq($until: tablet) {
+                .mobile-typeset {
+                    display: block;
+                }
+            }
+            @include mq(tablet) {
+                width: 340px;
+            }
+            em {
+                font-style: normal;
+                color: #E20613;
+            }
+            a:hover {
+                text-decoration: none;
+                color: #081D45;
+                em {
+                    color: #BF0F1A;
+                }
+                .icon {
+                    background-color: #D10A16;
+                    svg {
+                        transform: translateX(2px);
+                    }
+                }
+            }
+            .icon {
+                width: 36px;
+                height: 36px;
+                display: inline-block;
+                margin-left: 4px;
+                margin-top: -4px;
+                border-radius: 100%;
+                position: absolute;
+                // background-color: #041f4a;
+                background-color: #E20613;
+                svg {
+                    transition: transform 0.3s ease;
+                    display: block;
+                    margin-top: 9px;
+                    margin-left: 7px;
+                    transform: translateX(0);
+                    width: 21px;
+                    height: 19.25px;
+                }
+            }
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -10px;
+                width: 100vw;
+                height: 1px;
+                background-color: #000;
+                opacity: 0.15;
+                @include mq(mobileLandscape) {
+                    left: -20px;
+                }
+                @include mq(tablet) {
+                    background-color: #dcdcdc;
+                    opacity: 1;
+                }
+                @include mq(leftCol) {
+                    left: -185px;
+                }
+                @include mq(wide) {
+                    left: -265px;
+                }
+            }
+        }
     }
 
     &__dots {
         position: absolute;
         z-index: 10;
-        top: 200px;
+        top: 203px;
         right: -270px;
         transform: rotate(90deg);
         @include mq(tablet) {
@@ -241,14 +319,36 @@ section##{$containerName} {
 section#coronavirus-the-week-explained,
 section#coronavirus-newsletter,
 section##{$containerName} {
-    background-color: #e0e4e8;
-    margin-bottom: 0;
-}
+    &.preceded-by-dynamo,
+    &.preceded-by-dynamo-like {
+        background-color: #e0e4e8;
+        .facia-snap > .coronavirus-newsletter {
+            background-color: #e0e4e8;
+            border-color: #afafaf;
+            .coronavirus-newsletter__copy__full-coverage:before,
+            .coronavirus-newsletter__copy:before {
+                background-color: #afafaf;
+            }
 
-.facia-snap > .coronavirus-newsletter {
-    background-color: #e0e4e8;
-    border-color: #afafaf;
-    .coronavirus-newsletter__copy:before {
-        background-color: #afafaf;
+        }
+    }
+    &.followed-by-thrasher {
+        margin-bottom: 0;
     }
 }
+
+// Old dynamo position:
+// section#coronavirus-the-week-explained,
+// section#coronavirus-newsletter,
+// section##{$containerName} {
+//     background-color: #e0e4e8;
+//     margin-bottom: 0;
+// }
+
+// .facia-snap > .coronavirus-newsletter {
+//     background-color: #e0e4e8;
+//     border-color: #afafaf;
+//     .coronavirus-newsletter__copy:before {
+//         background-color: #afafaf;
+//     }
+// }
