@@ -42,7 +42,8 @@ if (thrasher && Element.prototype.closest && thrasher.closest('section')) {
 }
 
 let inCoronaFront = (window.location.href.indexOf('/world/coronavirus-outbreak') >= 0);
-if (!inCoronaFront) {
+// only change: this version never shows the cv front link
+if (false) {
     thrasher.classList.add('show-full-coverage');
     let fcThrasher = document.querySelector('section#coronavirus-in-depth');
     if (fcThrasher) {
