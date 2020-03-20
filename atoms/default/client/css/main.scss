@@ -201,29 +201,31 @@ section##{$containerName} {
                 em {
                     color: #BF0F1A;
                 }
-                .icon {
+                .icon__inner {
                     background-color: #D10A16;
                     svg {
-                        transform: translateX(2px);
+                        transform: translateX(2px)
                     }
                 }
             }
-            .icon {
+            .icon__wrapper {
+                display: inline;
+                position: relative;
+            }
+            .icon__inner {
                 width: 36px;
                 height: 36px;
                 display: inline-block;
-                margin-left: 4px;
-                margin-top: -4px;
                 border-radius: 100%;
                 position: absolute;
+                transform: translate(4px, -4px);
                 // background-color: #041f4a;
                 background-color: #E20613;
                 svg {
                     transition: transform 0.3s ease;
                     display: block;
-                    margin-top: 9px;
+                    margin-top: 8px;
                     margin-left: 7px;
-                    transform: translateX(0);
                     width: 21px;
                     height: 19.25px;
                 }
