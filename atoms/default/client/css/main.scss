@@ -13,7 +13,7 @@
 // Use mc() in place of mq() so your thrashers don't get broken
 $mq-breakpoints: (
     mobile:          320px,
-    mobileMedium:    375px,
+    mobileMedium:    360px,
     mobileLandscape: 480px,
     phablet:         660px,
     tablet:          740px,
@@ -24,16 +24,17 @@ $mq-breakpoints: (
 
 
 // update 'class-name' with yours
-$containerName:class-name;
+$containerName:scars;
 // colours pulled from shared/css/_palette.sass
-$backgroundColor:$labs-main;
-$textColor: $neutral-7;
 $buttonColor:$neutral-7;
 $buttonHoverColor:$neutral-46;
 
 
 
 // this targets the container your thrasher is put inside on Fronts
+section#thrasher-atom,
+section#scars,
+section#documentary,
 section##{$containerName} {
     width:100%;
     position: relative;
@@ -51,25 +52,189 @@ section##{$containerName} {
 }
 
 .#{$containerName} {
-    width:100%;
-    height:200px;
-    background-color:$backgroundColor;
-    &__headline {
-        color:$textColor;
-        font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
-        font-size: 34px;
-        @include mc ($from: mobileLandscape) {
-            color:$textColor;
+    height: 368px;
+    overflow: hidden;
+    background-color: #E7D4B9;
+    color: #121212;
+    padding: 3px 10px 18px;
+    &:hover {
+        background-color: #DBCAB2;
+    }
+
+    &:before {
+        display: none;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 170px;
+        width: 1px;
+        bottom: 0;
+        background-color: #767676;
+        opacity: 0.25;
+        @include mq(wide) {
+            display: block;
+            left: 250px;
         }
     }
-    &__component-button {
-        // mixin takes 3 variables:
-        // background-color, text-color, hover-background-color
-        @include component-button($bgColor: $neutral-7, $color: #fff, $hoverBgColor: $neutral-46);
+
+    @include mq(mobileLandscape) {
+        padding: 3px 20px 18px;
     }
+    @include mq(tablet) {
+        height: 212px;
+        width: 100%;
+    }
+    @include mq(desktop) {
+        padding-top: 6px;
+        height: 188px;
+    }
+    &__headline {
+        position: relative;
+        z-index: 10;
+        color: #121212;
+        font-family:"Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
+        font-size: 32px;
+        line-height: 34px;
+        font-weight: 400;
+        max-width: 360px;
+
+        @include mq(desktop) {
+            max-width: 450px;
+        }
+        @include mq(leftCol) {
+            margin-left: 160px;
+            padding-left: 5px;
+        }
+        @include mq(wide) {
+            margin-left: 240px;
+        }
+
+        strong {
+            display: block;
+            font-weight: 700;
+        }
+
+        .play-button {
+            font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+            font-size: 16px;
+            margin-top: 226px;
+
+            @include mq(tablet) {
+                margin-top: 72px;
+            }
+            @include mq(desktop) {
+                margin-top: 9px;
+            }
+
+            i {
+                margin-right: 3px;
+                width: 40px;
+                height: 40px;
+                background-color: #ffe500;
+                display: inline-block;
+                border-radius: 100%;
+                position: relative;
+                vertical-align: middle;
+                svg {
+                    position: absolute;
+                    top: 50%;
+                    left: 55%;
+                    transform: translate(-50%,-50%);
+                }
+            }
+        }
+    }
+
+    &__image {
+        &__img {
+            position: absolute;
+            bottom: 0;
+        }
+        &__a {
+            left: -22px;
+            @include mq(mobileMedium) {
+                left: 0;
+            }
+            @include mq(tablet) {
+                bottom: -56px;
+                left: auto;
+                right: 232px;
+            }
+            @include mq(desktop) {
+                bottom: -60px;
+                right: 294px;
+                width: 247px;
+            }
+            @include mq(wide) {
+                right: 390px;
+            }
+        }
+        &__b {
+            left: 92px;
+            @include mq(mobileMedium) {
+                left: 114px;
+            }
+            @include mq(mobileLandscape) {
+                left: 208px;
+            }
+            @include mq(tablet) {
+                left: auto;
+                right: -72px;
+                bottom: -54px;
+            }
+            @include mq(desktop) {
+                bottom: -64px;
+                width: 376px;
+                right: -18px;
+            }
+            @include mq(wide) {
+                right: 62px;
+            }
+        }
+    }
+
+    .scars &__link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 60 !important;
+        color: transparent;
+        user-select: none;
+    }
+
+    &__furniture {
+        display: none;
+        @include mq(wide) {
+            display: block;
+        }
+        position: absolute;
+        z-index: 80;
+        top: 0;
+        left: 0;
+        .labels {
+            display: block;
+            padding-left: 20px;
+            &__title {
+                font-family:"Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
+                font-size: 24px;
+                font-weight: 700;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
     &__roundel {
         // mixin makes roundel sit top right of thrasher and move with grid
         @include roundel-top-right;
+        top: 6px;
+        @include mq(desktop) {
+            top: 9px;
+            right: 8px;
+        }
     }
 }
 
@@ -86,7 +251,6 @@ section##{$containerName} {
     .ios & {
         overflow:hidden;
         margin:0;
-        padding:0;
         &__component-button {
             span {
                 letter-spacing: unset;
@@ -94,3 +258,22 @@ section##{$containerName} {
         }
     }
 }
+
+
+body.ios,
+body.android {
+    background-color: #E7D4B9;
+    overflow: hidden;
+    height: 390px;
+    @include mq(tablet) {
+        height: 282px;
+    }
+    @include mq(desktop) {
+        height: 214px;
+    }
+    .scars {
+        position: relative;
+    }
+}
+
+
