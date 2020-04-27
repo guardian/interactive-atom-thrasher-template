@@ -97,11 +97,8 @@ section##{$containerName} {
         font-size: 32px;
         line-height: 34px;
         font-weight: 400;
-        max-width: 360px;
+        max-width: 300px;
 
-        @include mq(desktop) {
-            max-width: 450px;
-        }
         @include mq(leftCol) {
             margin-left: 160px;
             padding-left: 5px;
