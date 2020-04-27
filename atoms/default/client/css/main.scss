@@ -149,6 +149,7 @@ section##{$containerName} {
         &__img {
             position: absolute;
             bottom: 0;
+            transition: transform 0.6s ease-in-out;
         }
         &__a {
             left: -22px;
@@ -234,6 +235,26 @@ section##{$containerName} {
         @include mq(desktop) {
             top: 9px;
             right: 8px;
+        }
+    }
+
+    &[data-step='pre'] {
+        .scars__image__img {
+            transform: translateX(18px);
+            @include mq(desktop) {
+                transform: translateX(30px);
+            }
+        }
+        .scars__image__a {
+            transition-delay: 0.15s;
+        }
+    }
+    &[data-step='post'] {
+        .scars__image__img {
+            transform: translateX(0);
+        }
+        .scars__image__b {
+            transition-delay: 0.1s;
         }
     }
 }
