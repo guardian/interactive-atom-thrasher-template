@@ -63,21 +63,23 @@ section##{$containerName} {
         background-color: #99938D;
     }
 
-    &:before {
-        display: none;
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 170px;
-        width: 1px;
-        bottom: 0;
-        background-color: #767676;
-        opacity: 0.25;
-        @include mq(wide) {
-            display: block;
-            left: 250px;
-        }
-    }
+    // &:before {
+    //     display: none;
+    //     content: '';
+    //     position: absolute;
+    //     top: 0;
+    //     left: 170px;
+    //     width: 1px;
+    //     bottom: 0;
+    //     background-color: #767676;
+    //     opacity: 0.25;
+    //     @include mq(leftCol) {
+    //         display: block;
+    //     }
+    //     @include mq(wide) {
+    //         left: 250px;
+    //     }
+    // }
 
     @include mq(mobileLandscape) {
         padding: 3px 20px 18px;
