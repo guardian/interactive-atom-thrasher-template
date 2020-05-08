@@ -24,7 +24,7 @@ $mq-breakpoints: (
 
 
 // update 'class-name' with yours
-$containerName:scars;
+$containerName:our-iranian-lockdown;
 // colours pulled from shared/css/_palette.sass
 $buttonColor:$neutral-7;
 $buttonHoverColor:$neutral-46;
@@ -33,7 +33,8 @@ $buttonHoverColor:$neutral-46;
 
 // this targets the container your thrasher is put inside on Fronts
 section#thrasher-atom,
-section#scars,
+section#our-iranian-lockdown,
+section#quarantine-iranian-style,
 section#documentary,
 section#documentaries,
 section##{$containerName} {
@@ -55,11 +56,11 @@ section##{$containerName} {
 .#{$containerName} {
     height: 368px;
     overflow: hidden;
-    background-color: #E7D4B9;
+    background-color: #A8A19B;
     color: #121212;
     padding: 3px 10px 18px;
     &:hover {
-        background-color: #DBCAB2;
+        background-color: #99938D;
     }
 
     &:before {
@@ -87,17 +88,24 @@ section##{$containerName} {
     }
     @include mq(desktop) {
         padding-top: 6px;
-        height: 188px;
+        height: 200px;
     }
     &__headline {
         position: relative;
         z-index: 10;
-        color: #121212;
+        color: #7D0068;
         font-family:"Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
-        font-size: 32px;
-        line-height: 34px;
+        font-size: 24px;
+        line-height: 26px;
         font-weight: 400;
         max-width: 300px;
+        .logline {
+            display: block;
+            width: 260px;
+            // @include mq(mobileMedium) {
+            //     width: auto;
+            // }
+        }
 
         @include mq(leftCol) {
             margin-left: 160px;
@@ -116,8 +124,10 @@ section##{$containerName} {
             font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
             font-size: 16px;
             margin-top: 226px;
+            color: #fff;
 
             @include mq(tablet) {
+                color: #121212;
                 margin-top: 72px;
             }
             @include mq(desktop) {
@@ -146,53 +156,34 @@ section##{$containerName} {
     &__image {
         &__img {
             position: absolute;
-            bottom: 0;
-            transition: transform 0.6s ease-in-out;
-        }
-        &__a {
-            left: -22px;
-            @include mq(mobileMedium) {
-                left: 0;
-            }
-            @include mq(tablet) {
-                bottom: -56px;
-                left: auto;
-                right: 232px;
-            }
-            @include mq(desktop) {
-                bottom: -60px;
-                right: 294px;
-                width: 247px;
-            }
-            @include mq(wide) {
-                right: 390px;
-            }
-        }
-        &__b {
-            left: 92px;
-            @include mq(mobileMedium) {
-                left: 114px;
-            }
+            top: 0;
+            left: -195px;
+            width: 850px;
             @include mq(mobileLandscape) {
-                left: 208px;
+                left: -189px;
+                width: 998px;
+                top: -52px;
             }
             @include mq(tablet) {
-                left: auto;
-                right: -72px;
-                bottom: -54px;
+                top: -70px;
             }
             @include mq(desktop) {
-                bottom: -64px;
-                width: 376px;
-                right: -18px;
+                width: 1300px;
+                left: auto;
+                right: -70px;
+                top: -94px;
+            }
+            @include mq(leftCol) {
+                right: -76px;
             }
             @include mq(wide) {
-                right: 62px;
+                width: 1300px;
+                right: 0;
             }
         }
     }
 
-    .scars &__link {
+    .our-iranian-lockdown &__link {
         position: absolute;
         top: 0;
         left: 0;
@@ -219,7 +210,7 @@ section##{$containerName} {
                 font-family:"Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
                 font-size: 24px;
                 font-weight: 700;
-                color: #121212;
+                color: #fff;
                 &:hover {
                     text-decoration: underline;
                 }
@@ -234,26 +225,6 @@ section##{$containerName} {
         @include mq(desktop) {
             top: 9px;
             right: 8px;
-        }
-    }
-
-    &[data-step='pre'] {
-        .scars__image__img {
-            transform: translateX(18px);
-            @include mq(desktop) {
-                transform: translateX(30px);
-            }
-        }
-        .scars__image__a {
-            transition-delay: 0.15s;
-        }
-    }
-    &[data-step='post'] {
-        .scars__image__img {
-            transform: translateX(0);
-        }
-        .scars__image__b {
-            transition-delay: 0.1s;
         }
     }
 }
@@ -291,7 +262,7 @@ body.android {
     @include mq(desktop) {
         height: 214px;
     }
-    .scars {
+    .our-iranian-lockdown {
         position: relative;
     }
 }
