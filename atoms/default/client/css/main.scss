@@ -108,9 +108,9 @@ section##{$containerName} {
         .logline {
             display: block;
             width: 260px;
-            // @include mq(mobileMedium) {
-            //     width: auto;
-            // }
+            @include mq(tablet) {
+                width: auto;
+            }
         }
 
         @include mq(leftCol) {
