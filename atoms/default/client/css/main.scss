@@ -134,10 +134,10 @@ section##{$containerName} {
 
             @include mq(tablet) {
                 color: #121212;
-                margin-top: 72px;
+                margin-top: 98px;
             }
             @include mq(desktop) {
-                margin-top: 80px;
+                margin-top: 106px;
             }
 
             i {
