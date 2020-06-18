@@ -11,85 +11,319 @@
 
 // Default breakpoints from Frontend
 // Use mc() in place of mq() so your thrashers don't get broken
-$mq-breakpoints: (
-    mobile:          320px,
-    mobileMedium:    375px,
+$mq-breakpoints: (mobile: 320px,
+    mobileMedium: 375px,
     mobileLandscape: 480px,
-    phablet:         660px,
-    tablet:          740px,
-    desktop:         980px,
-    leftCol:         1140px,
-    wide:            1300px
+    phablet: 660px,
+    tablet: 740px,
+    desktop: 980px,
+    leftCol: 1140px,
+    wide: 1300px,
 );
 
-
 // update 'class-name' with yours
-$containerName:class-name;
+$containerName: forgotten-stories;
 // colours pulled from shared/css/_palette.sass
-$backgroundColor:$labs-main;
-$textColor: $neutral-7;
-$buttonColor:$neutral-7;
-$buttonHoverColor:$neutral-46;
-
-
+$backgroundColor: #00b2ff;
+$textColor: white;
+$buttonColor: #005689;
+$buttonHoverColor: #052962;
 
 // this targets the container your thrasher is put inside on Fronts
-section##{$containerName} {
-    width:100%;
+#forgotten-football {
+    width: 100%;
     position: relative;
     padding: 0 !important;
     overflow: hidden;
-    background-color:#fff;
+    background-color: #90dcff;
+
     .fc-container__inner,
     .fc-slice,
     .facia-snap {
         overflow: hidden;
     }
+
     .facia-snap {
         padding: 0;
     }
 }
 
 .#{$containerName} {
-    width:100%;
-    height:200px;
-    background-color:$backgroundColor;
-    &__headline {
-        color:$textColor;
-        font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
-        font-size: 34px;
-        @include mc ($from: mobileLandscape) {
-            color:$textColor;
+    width: 100%;
+    height: 300px;
+    background-color: $backgroundColor;
+
+    @include mc(mobileLandscape) {
+        height: 250px;
+    }
+
+    @include mc(phablet) {
+        height: 200px;
+    }
+
+    @include mc(desktop) {
+        height: 165px;
+    }
+
+    &__wrapper {
+        display: flex;
+        padding-left: 10px;
+
+        @include mc(phablet) {
+            padding-left: 20px;
         }
     }
+
+    &__headline {
+        color: $textColor;
+        font-family: "Guardian Headline Full",
+            "Guardian Egyptian Web", Georgia, serif;
+        font-size: 26px;
+        line-height: 115%;
+        width: 76%;
+
+        @include mc(mobileMedium) {
+            font-size: 28px;
+            width: 66%;
+        }
+
+        @include mc(mobileLandscape) {
+            width: 100%;
+        }
+
+        @include mc (phablet) {
+            width: 68%;
+        }
+
+        @include mc(tablet) {
+            font-size: 32px;
+            width: 63%;
+        }
+
+        @include mc(desktop) {
+            width: 100%;
+        }
+
+
+    }
+
+    &__subheadline {
+        color: white;
+        font-family: "Guardian Headline Full",
+            "Guardian Egyptian Web",
+            Georgia,
+            serif;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 115%;
+        width: 76%;
+
+        @include mq(mobileMedium) {
+            width: 80%;
+        }
+
+        @include mc(phablet) {
+            width: 64%;
+        }
+
+    }
+
+    &__left {}
+
+    &__right {
+        position: absolute;
+        top: 10px;
+        right: -25px;
+        z-index: 10;
+
+        @include mc(phablet) {
+            top: -40px;
+            right: 70px;
+        }
+
+        @include mc(tablet) {
+            top: -40px;
+            right: 60px;
+        }
+
+        @include mc(desktop) {
+            transform: scale(0.8);
+            top: -70px;
+            right: 150px;
+        }
+
+        @include mc(leftCol) {
+            right: 250px;
+        }
+
+        &__boots {
+            animation: swing ease-in-out 1s infinite alternate;
+            transform-origin: center -20px;
+
+            &__left {
+                position: relative;
+                top: -67px;
+                right: -29px;
+            }
+        }
+
+        &__shirt {
+            display: none;
+
+            @include mc(phablet) {
+                display: block;
+                position: absolute;
+                top: -90px;
+                right: 30px;
+            }
+
+            @include mc(tablet) {
+                right: 100px;
+            }
+
+            @include mc(desktop) {
+                display: block;
+                top: -100px;
+                position: absolute;
+                right: 40px;
+            }
+
+            @include mc(leftCol) {
+                right: 120px;
+            }
+        }
+    }
+
     &__component-button {
         // mixin takes 3 variables:
         // background-color, text-color, hover-background-color
-        @include component-button($bgColor: $neutral-7, $color: #fff, $hoverBgColor: $neutral-46);
+        margin-top: 12px;
+        @include component-button($bgColor: #005689,
+            $color: #fff,
+            $hoverBgColor: #052962);
     }
+
     &__roundel {
         // mixin makes roundel sit top right of thrasher and move with grid
         @include roundel-top-right;
+        right: 4px;
+        height: 38px;
+        z-index: 20;
+
+        @include mc(mobileLandscape) {
+            right: 8px;
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 90%;
+        position: absolute;
+        bottom: 8px;
+
+        @include mc(mobileMedium) {
+            width: 80%;
+        }
+
+        @include mc(mobileLandscape) {
+            width: 100%;
+        }
+
+        @include mc(desktop) {
+            bottom: 25px;
+            left: 200px;
+        }
+
+        .pod-link {
+            height: 20px;
+            width: auto;
+            padding-right: 8px;
+            margin-top: 8px;
+
+            @include mc(phablet) {
+                height: 22px;
+                padding-right: 12px;
+            }
+
+            &__smaller {
+                height: 16px;
+                margin-bottom: 2px;
+
+                @include mc(phablet) {
+                    height: 18px;
+                    margin-bottom: -9px;
+                }
+            }
+        }
     }
 }
 
-
 // this removes margins from Android / iOS view
 .interactive-atom {
-    margin:0;
+    margin: 0;
     overflow: hidden;
 }
 
 // iOS and Android specific styles
 .#{$containerName} {
+
     .android &,
     .ios & {
-        overflow:hidden;
-        margin:0;
-        padding:0;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+
+        &__headline {
+            margin-top: 2px;
+            margin-bottom: 0;
+        }
+
+        &__subheadline {
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
         &__component-button {
             span {
                 letter-spacing: unset;
+            }
+        }
+    }
+}
+
+
+
+@keyframes swing {
+    0% {
+        transform: rotate(3deg);
+    }
+
+    100% {
+        transform: rotate(-3deg);
+    }
+}
+
+
+
+
+
+@media (prefers-color-scheme: dark) {
+    .#{$containerName} {
+        .ios & {
+            background-color: #005689;
+
+            &__component-button {
+                background-color: #00b2ff;
+            }
+
+            &__right__boots {
+                svg {
+                    path:nth-child(1) {
+                        stroke: #fff;
+                    }
+                }
             }
         }
     }
