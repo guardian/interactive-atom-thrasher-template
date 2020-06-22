@@ -22,20 +22,20 @@ $mq-breakpoints: (mobile: 320px,
 );
 
 // update 'class-name' with yours
-$containerName: forgotten-stories;
+$containerName: innermost;
 // colours pulled from shared/css/_palette.sass
-$backgroundColor: #00b2ff;
+$backgroundColor: #121212;
 $textColor: white;
-$buttonColor: #005689;
-$buttonHoverColor: #052962;
+$buttonColor: #f6f6f6;
+$buttonHoverColor: #999999;
 
 // this targets the container your thrasher is put inside on Fronts
-#forgotten-football {
+#innermost {
     width: 100%;
     position: relative;
     padding: 0 !important;
     overflow: hidden;
-    background-color: #90dcff;
+    background-color: #767676;
 
     .fc-container__inner,
     .fc-slice,
@@ -61,8 +61,8 @@ $buttonHoverColor: #052962;
         height: 200px;
     }
 
-    @include mc(desktop) {
-        height: 165px;
+    @include mq(leftCol) {
+        height: 160px;
     }
 
     &__wrapper {
@@ -78,33 +78,13 @@ $buttonHoverColor: #052962;
         color: $textColor;
         font-family: "Guardian Headline Full",
             "Guardian Egyptian Web", Georgia, serif;
-        font-size: 26px;
+        font-size: 38px;
         line-height: 115%;
         width: 76%;
 
-        @include mc(mobileMedium) {
-            font-size: 28px;
-            width: 66%;
-        }
-
-        @include mc(mobileLandscape) {
-            width: 100%;
-        }
-
-        @include mc (phablet) {
-            width: 68%;
-        }
-
         @include mc(tablet) {
-            font-size: 32px;
-            width: 63%;
+            font-size: 50px;
         }
-
-        @include mc(desktop) {
-            width: 100%;
-        }
-
-
     }
 
     &__subheadline {
@@ -116,49 +96,71 @@ $buttonHoverColor: #052962;
         font-weight: 400;
         font-size: 20px;
         line-height: 115%;
-        width: 76%;
+        width: 80%;
+        margin-bottom: -4px;
 
-        @include mq(mobileMedium) {
-            width: 80%;
+        @include mq(tablet) {
+            width: 100%;
         }
 
-        @include mc(phablet) {
-            width: 64%;
+        @include mq(desktop) {
+            margin-bottom: 4px;
         }
-
     }
 
-    &__left {}
 
     &__right {
         position: absolute;
-        top: 10px;
-        right: -25px;
+        top: 90px;
+        right: 11px;
         z-index: 10;
 
-        @include mc(phablet) {
-            top: -40px;
-            right: 70px;
+        @include mq(mobileMedium) {
+            top: 99px;
+            right: 18px;
+            z-index: 10;
+            transform: scale(1.1);
         }
 
-        @include mc(tablet) {
-            top: -40px;
-            right: 60px;
+        @include mq(mobileLandscape) {
+            transform: scale(1);
+            top: 60px;
+        }
+
+        @include mq(phablet) {
+            right: 112px;
+            top: 10px;
         }
 
         @include mc(desktop) {
-            transform: scale(0.8);
-            top: -70px;
-            right: 150px;
+            top: 28px;
+            right: 220px;
+            transform: scale(1.2);
         }
 
         @include mc(leftCol) {
-            right: 250px;
+            transform: scale(1);
+            top: 8px;
+            right: 220px;
         }
 
-        &__boots {
-            animation: swing ease-in-out 1s infinite alternate;
-            transform-origin: center -20px;
+        &__pink {
+            svg {
+                width: 100%;
+                height: 100%;
+            }
+
+            .pink-window-bg {
+                fill: #767676;
+                animation: pink-lights-on 11s infinite;
+                animation-delay: 5s;
+            }
+
+            .pink-face {
+                // fill: #121212;
+                // animation: pink-face-on 11s infinite;
+                animation-delay: 3s;
+            }
 
             &__left {
                 position: relative;
@@ -167,44 +169,97 @@ $buttonHoverColor: #052962;
             }
         }
 
-        &__shirt {
+        &__green {
+            box-shadow: 0 0 0 #000;
+            transform: translate3d(0, 0, 0);
+            position: absolute;
+            right: 100px;
+            top: 75px;
+            width: 80px;
+            height: auto;
+
+            .green-square-head {
+                // animation: nodhead 5s infinite;
+                // animation: green-face-on 9s infinite;
+            }
+
+            .green-window-bg {
+                animation: green-light-on 9s infinite;
+            }
+
+            svg {
+                width: 100%;
+                height: 100%;
+            }
+
+            @include mq(desktop) {
+                // animation: greenwindow 5s infinite;
+                right: 102px;
+                top: 49px;
+                width: 110px;
+            }
+        }
+
+        &__yellow {
             display: none;
 
-            @include mc(phablet) {
+            @include mq(desktop) {
+                // animation: yellowwindow 5s infinite;
                 display: block;
                 position: absolute;
-                top: -90px;
-                right: 30px;
+                top: 2px;
+                left: 100px;
             }
 
-            @include mc(tablet) {
-                right: 100px;
+            .yellow-window-background {
+                fill: #767676;
+                animation: yellow-lights-on 15s infinite;
+                // fill: rgb(244, 238, 164);
             }
 
-            @include mc(desktop) {
-                display: block;
-                top: -100px;
-                position: absolute;
-                right: 40px;
-            }
-
-            @include mc(leftCol) {
-                right: 120px;
+            .yellow-window-face {
+                fill: #121212;
+                // animation: yellow-face-on 15s infinite;
             }
         }
     }
 
     &__component-button {
-        // mixin takes 3 variables:
-        // background-color, text-color, hover-background-color
         margin-top: 12px;
-        @include component-button($bgColor: #005689,
-            $color: #fff,
-            $hoverBgColor: #052962);
+        @include component-button($bgColor: $buttonColor,
+            $color: #121212,
+            $hoverBgColor: #dcdcdc);
+    }
+
+    &__vodafonelogo {
+        text-align: left;
+        bottom: 38px;
+        left: 8px;
+        position: absolute;
+
+        z-index: 20;
+
+        @include mq(phablet) {
+            text-align: right;
+            bottom: 8px;
+            left: unset;
+            right: 14px;
+        }
+
+        &__text {
+            font-size: 0.75rem;
+            line-height: 1rem;
+            font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            color: white;
+            margin-bottom: 4px;
+
+            @include mq(phablet) {
+                margin-bottom: 0;
+            }
+        }
     }
 
     &__roundel {
-        // mixin makes roundel sit top right of thrasher and move with grid
         @include roundel-top-right;
         right: 4px;
         height: 38px;
@@ -224,20 +279,21 @@ $buttonHoverColor: #052962;
         bottom: 8px;
 
         @include mc(mobileMedium) {
-            width: 80%;
-        }
-
-        @include mc(mobileLandscape) {
-            width: 100%;
+            width: auto;
         }
 
         @include mc(desktop) {
+            bottom: 6px;
+            left: 22px;
+        }
+
+        @include mq(leftCol) {
             bottom: 25px;
             left: 200px;
         }
 
         .pod-link {
-            height: 20px;
+            height: 14px;
             width: auto;
             padding-right: 8px;
             margin-top: 8px;
@@ -248,8 +304,9 @@ $buttonHoverColor: #052962;
             }
 
             &__smaller {
-                height: 16px;
-                margin-bottom: 2px;
+                height: 9px;
+                margin-bottom: -1px;
+                padding-right: 0;
 
                 @include mc(phablet) {
                     height: 18px;
@@ -257,6 +314,258 @@ $buttonHoverColor: #052962;
                 }
             }
         }
+    }
+}
+
+
+
+@keyframes yellow-lights-on {
+    4% {
+        fill: #767676;
+    }
+
+    5% {
+        fill: rgb(244, 238, 164);
+    }
+
+    79% {
+        fill: rgb(244, 238, 164);
+    }
+
+    80% {
+        fill: #767676;
+    }
+}
+
+@keyframes yellow-face-on {
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes pink-lights-on {
+    0% {
+        fill: #767676;
+    }
+
+    4% {
+        fill: #767676;
+    }
+
+    5% {
+        fill: rgb(232, 146, 177);
+    }
+
+    79% {
+        fill: rgb(232, 146, 177);
+    }
+
+    80% {
+        fill: #767676;
+    }
+
+    100% {
+        fill: #767676;
+    }
+}
+
+@keyframes pink-face-on {
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes green-light-on {
+    0% {
+        fill: #767676;
+    }
+
+    4% {
+        fill: #767676;
+    }
+
+    5% {
+        fill: rgb(35, 193, 163);
+    }
+
+    69% {
+        fill: rgb(35, 193, 163);
+    }
+
+    70% {
+        fill: #767676;
+    }
+
+    100% {
+        fill: #767676;
+    }
+}
+
+@keyframes green-face-on {
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes green-face-on {
+    0% {
+        fill: #767676;
+    }
+
+    4% {
+        fill: #767676;
+    }
+
+    6% {
+        fill: #121212;
+    }
+
+    78% {
+        fill: #121212;
+    }
+
+    80% {
+        fill: #767676;
+    }
+
+    100% {
+        fill: #767676;
+    }
+}
+
+@keyframes nodhead {
+    1% {
+        transform: translateY(-5px);
+        margin-left: 0;
+    }
+
+    25% {
+        transform: translateY(5px);
+        margin-left: -50px;
+    }
+
+    50% {
+        transform: translateY(5px);
+        margin-left: -50px;
+    }
+
+    90% {
+        transform: translateY(-5px);
+        margin-left: 0;
+    }
+}
+
+@keyframes leftright {
+    1% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-50px);
+    }
+
+    50% {
+        transform: translateX(-50px);
+    }
+
+    90% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes yellowwindow {
+    0% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: 41px;
+    }
+
+    // 75% {
+    //     margin-top: 41px;
+    // }
+
+    100% {
+        margin-top: 0;
+    }
+}
+
+@keyframes greenwindow {
+    0% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -41px;
+    }
+
+    // 75% {
+    //     margin-top: 41px;
+    // }
+
+    100% {
+        margin-top: 0;
     }
 }
 
@@ -290,41 +599,39 @@ $buttonHoverColor: #052962;
                 letter-spacing: unset;
             }
         }
-    }
-}
 
+        &__right__pink {
+            transform-origin: right;
+            position: absolute;
+            top: 5px;
+            right: -50px;
+            width: 200px;
+            height: 130px;
+        }
 
-
-@keyframes swing {
-    0% {
-        transform: rotate(3deg);
-    }
-
-    100% {
-        transform: rotate(-3deg);
-    }
-}
-
-
-
-
-
-@media (prefers-color-scheme: dark) {
-    .#{$containerName} {
-        .ios & {
-            background-color: #005689;
-
-            &__component-button {
-                background-color: #00b2ff;
-            }
-
-            &__right__boots {
-                svg {
-                    path:nth-child(1) {
-                        stroke: #fff;
-                    }
-                }
-            }
+        &__right__green {
+            position: absolute;
+            right: 100px;
+            top: 75px;
+            width: 80px;
+            height: 60px;
+            transform-origin: center;
         }
     }
 }
+
+
+
+
+
+
+
+
+
+// @media (prefers-color-scheme: dark) {
+//     .#{$containerName} {
+//         .ios & {
+//             background-color: #005689;
+//         }
+//     }
+// }
