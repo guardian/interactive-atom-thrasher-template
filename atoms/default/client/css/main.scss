@@ -239,6 +239,10 @@ $buttonHoverColor: #999999;
 
         z-index: 20;
 
+        .makered {
+            fill: #E60000;
+        }
+
         @include mq(phablet) {
             text-align: right;
             bottom: 8px;
