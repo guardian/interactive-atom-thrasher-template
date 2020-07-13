@@ -12,85 +12,214 @@
 // Default breakpoints from Frontend
 // Use mc() in place of mq() so your thrashers don't get broken
 $mq-breakpoints: (
-    mobile:          320px,
-    mobileMedium:    375px,
-    mobileLandscape: 480px,
-    phablet:         660px,
-    tablet:          740px,
-    desktop:         980px,
-    leftCol:         1140px,
-    wide:            1300px
+  mobile: 320px,
+  mobileMedium: 375px,
+  mobileLandscape: 480px,
+  phablet: 660px,
+  tablet: 740px,
+  desktop: 980px,
+  leftCol: 1140px,
+  wide: 1300px,
 );
 
-
 // update 'class-name' with yours
-$containerName:class-name;
+$containerName: black-history-timeline;
 // colours pulled from shared/css/_palette.sass
-$backgroundColor:$labs-main;
-$textColor: $neutral-7;
-$buttonColor:$neutral-7;
-$buttonHoverColor:$neutral-46;
-
-
+$backgroundColor: #121212;
+$textColor: white;
+$buttonColor: $neutral-7;
+$buttonHoverColor: $neutral-46;
 
 // this targets the container your thrasher is put inside on Fronts
 section##{$containerName} {
-    width:100%;
-    position: relative;
-    padding: 0 !important;
+  width: 100%;
+  position: relative;
+  padding: 0 !important;
+  overflow: hidden;
+  background-color: #333333;
+  .fc-container__inner,
+  .fc-slice,
+  .facia-snap {
     overflow: hidden;
-    background-color:#fff;
-    .fc-container__inner,
-    .fc-slice,
-    .facia-snap {
-        overflow: hidden;
-    }
-    .facia-snap {
-        padding: 0;
-    }
+  }
+  .facia-snap {
+    padding: 0;
+  }
 }
 
 .#{$containerName} {
-    width:100%;
-    height:200px;
-    background-color:$backgroundColor;
-    &__headline {
-        color:$textColor;
-        font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
-        font-size: 34px;
-        @include mc ($from: mobileLandscape) {
-            color:$textColor;
-        }
-    }
-    &__component-button {
-        // mixin takes 3 variables:
-        // background-color, text-color, hover-background-color
-        @include component-button($bgColor: $neutral-7, $color: #fff, $hoverBgColor: $neutral-46);
-    }
-    &__roundel {
-        // mixin makes roundel sit top right of thrasher and move with grid
-        @include roundel-top-right;
-    }
-}
+  //   width: 100%;
+  height: 300px;
+  background-color: $backgroundColor;
+  padding: 4px 12px;
 
+  @include mq(mobileMedium) {
+    height: 320px;
+  }
+  @include mq(mobileLandscape) {
+    height: 200px;
+    padding: 4px 20px;
+  }
+  @include mq(phablet) {
+    height: 215px;
+  }
+  @include mq(tablet) {
+    width: 100%;
+    height: 210px;
+  }
+  @include mq(desktop) {
+    height: 170px;
+    height: 185px;
+  }
+  @include mq(leftCol) {
+    height: 205px;
+  }
+  @include mq(wide) {
+    height: 215px;
+  }
+
+  &__headline {
+    color: $textColor;
+    font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia,
+      serif;
+    font-size: 34px;
+    @include mc($from: mobileLandscape) {
+      color: $textColor;
+    }
+  }
+  &__headlinepic {
+    width: 100%;
+    height: auto;
+    @include mq(mobileLandscape) {
+      width: 85%;
+    }
+    @include mq(phablet) {
+      width: 85%;
+    }
+    @include mq(tablet) {
+      width: 70%;
+    }
+    @include mq(leftCol) {
+      width: 70%;
+    }
+  }
+
+  .mob-pic {
+    display: block;
+
+    @include mq(mobileLandscape) {
+      display: none;
+    }
+  }
+
+  .desk-pic {
+    display: none;
+    @include mq(mobileLandscape) {
+      display: block;
+    }
+  }
+
+  &__standfirst {
+    font-size: 17px;
+    line-height: 115%;
+    color: white;
+    margin-top: 4px;
+    span {
+      font-weight: 700;
+      color: #ffe500;
+    }
+    @include mq(mobileLandscape) {
+      width: 85%;
+    }
+    @include mq(phablet) {
+      width: 85%;
+    }
+    @include mq(desktop) {
+      width: 70%;
+      margin-top: 12px;
+      font-size: 20px;
+    }
+    @include mq(leftCol) {
+      width: 50%;
+    }
+  }
+
+  &__component-button {
+    // mixin takes 3 variables:
+    // background-color, text-color, hover-background-color
+    @include component-button(
+      $bgColor: white,
+      $color: #121212,
+      $hoverBgColor: #dcdcdc
+    );
+    position: absolute !important;
+    bottom: 10px;
+    left: 10px;
+
+    @include mq(mobileLandscape) {
+      left: 20px;
+    }
+
+    @include mq(desktop) {
+      left: unset;
+      right: 20px;
+      bottom: 20px;
+    }
+  }
+  &__roundel {
+    // mixin makes roundel sit top right of thrasher and move with grid
+    @include roundel-top-right;
+    right: 12px;
+  }
+  .headline-animation path {
+    opacity: 0%;
+  }
+}
 
 // this removes margins from Android / iOS view
 .interactive-atom {
-    margin:0;
-    overflow: hidden;
+  margin: 0;
+  overflow: hidden;
 }
 
 // iOS and Android specific styles
 .#{$containerName} {
-    .android &,
-    .ios & {
-        overflow:hidden;
-        margin:0;
-        padding:0;
-        &__component-button {
-            span {
-                letter-spacing: unset;
-            }
-        }
+  .android &,
+  .ios & {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    &__component-button {
+      span {
+        letter-spacing: unset;
+      }
     }
+  }
+}
+
+.step1 {
+  .headline-animation path {
+    opacity: 0%;
+    animation: turnon 0.5s linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-direction: forwards;
+    animation-delay: 500ms;
+  }
+
+  @keyframes turnon {
+    0% {
+      opacity: 0%;
+    }
+
+    100% {
+      opacity: 100%;
+    }
+  }
+
+  @for $i from 1 through 12 {
+    .headline-animation path:nth-child(#{$i}) {
+      animation-delay: $i * 100ms;
+    }
+  }
 }
