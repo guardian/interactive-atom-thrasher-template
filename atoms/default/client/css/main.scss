@@ -11,8 +11,7 @@
 
 // Default breakpoints from Frontend
 // Use mc() in place of mq() so your thrashers don't get broken
-$mq-breakpoints: (
-  mobile: 320px,
+$mq-breakpoints: (mobile: 320px,
   mobileMedium: 375px,
   mobileLandscape: 480px,
   phablet: 660px,
@@ -37,11 +36,13 @@ section##{$containerName} {
   padding: 0 !important;
   overflow: hidden;
   background-color: #fff;
+
   .fc-container__inner,
   .fc-slice,
   .facia-snap {
     overflow: hidden;
   }
+
   .facia-snap {
     padding: 0;
   }
@@ -55,13 +56,14 @@ section##{$containerName} {
   background-image: url("https://uploads.guim.co.uk/2020/07/13/the-circle-mobile-bg.png");
   background-size: 203%;
   background-position-x: -170px;
-  background-position-y: 0;
+  background-position-y: -30px;
 
   @include mq(mobileLandscape) {
     background-size: 143%;
     background-position-x: -100px;
     padding: 4px 20px;
   }
+
   @include mq(phablet) {
     background-size: 123%;
     background-position-y: -60px;
@@ -84,11 +86,13 @@ section##{$containerName} {
     background-position-x: 70px;
     background-position-y: -100px;
   }
+
   @include mq(leftCol) {
     background-size: 88%;
     background-position-x: 210px;
     background-position-y: -100px;
   }
+
   @include mq(wide) {
     background-size: 1110px;
     background-position-x: 250px;
@@ -101,25 +105,28 @@ section##{$containerName} {
       serif;
     font-size: 42px;
     margin-top: -10px;
+
     @include mc(mobileLandscape) {
       color: $textColor;
     }
+
     @include mq(leftCol) {
-      margin-left: 160px;
+      margin-left: 150px;
     }
+
     @include mc(wide) {
-      margin-left: 240px;
+      margin-left: 230px;
     }
   }
+
   &__component-button {
     // mixin takes 3 variables:
     // background-color, text-color, hover-background-color
-    @include component-button(
-      $bgColor: $neutral-7,
+    @include component-button($bgColor: $neutral-7,
       $color: #fff,
-      $hoverBgColor: $neutral-46
-    );
+      $hoverBgColor: $neutral-46);
   }
+
   &__roundel {
     // mixin makes roundel sit top right of thrasher and move with grid
     @include roundel-top-right;
@@ -134,6 +141,7 @@ section##{$containerName} {
     line-height: 26px;
     font-weight: 700;
     z-index: 30;
+
     a {
       color: white;
     }
@@ -150,6 +158,7 @@ section##{$containerName} {
       left: 20px;
     }
   }
+
   &__copy {
     font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia,
       serif;
@@ -196,15 +205,14 @@ section##{$containerName} {
       }
     }
 
-    @include mq(desktop) {
-    }
+    @include mq(desktop) {}
 
     @include mq(leftCol) {
       &:before {
         display: none;
       }
 
-      margin-left: 160px;
+      margin-left: 150px;
       border-left: 1px solid rgba(white, 0.2);
       border-top: 1px solid rgba(white, 0.2);
       padding-left: 10px;
@@ -213,7 +221,7 @@ section##{$containerName} {
     }
 
     @include mq(wide) {
-      margin-left: 240px;
+      margin-left: 230px;
     }
 
     &__logline {
@@ -261,11 +269,38 @@ section##{$containerName} {
 
       &__time {
         margin-top: -9px;
+
         @include mq(tablet) {
           margin-top: -6px;
         }
       }
     }
+  }
+}
+
+a.main-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  z-index: 20;
+
+  transition: background-color 0.3s linear;
+
+  &:hover {
+
+    &~.the-circle__copy .the-circle__copy__logline,
+    &~.title {
+      opacity: 0.95;
+    }
+
+    &~.the-circle__copy .the-circle__copy__button__icon {
+      transform: scale(1.1);
+    }
+
+    // background-color:rgba(#121212, 0.2);
   }
 }
 
@@ -277,15 +312,30 @@ section##{$containerName} {
 
 // iOS and Android specific styles
 .#{$containerName} {
+
   .android &,
   .ios & {
     overflow: hidden;
     margin: 0;
-    padding: 0;
+
     &__component-button {
       span {
         letter-spacing: unset;
       }
+    }
+
+    &__container-title {
+      a {
+        text-decoration: none;
+      }
+    }
+
+    &__copy__button__icon {
+      transform: scale(1);
+    }
+
+    &__headline {
+      margin-top: -4px;
     }
   }
 }
