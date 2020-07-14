@@ -11,8 +11,7 @@
 
 // Default breakpoints from Frontend
 // Use mc() in place of mq() so your thrashers don't get broken
-$mq-breakpoints: (
-  mobile: 320px,
+$mq-breakpoints: (mobile: 320px,
   mobileMedium: 375px,
   mobileLandscape: 480px,
   phablet: 660px,
@@ -37,11 +36,13 @@ section##{$containerName} {
   padding: 0 !important;
   overflow: hidden;
   background-color: #333333;
+
   .fc-container__inner,
   .fc-slice,
   .facia-snap {
     overflow: hidden;
   }
+
   .facia-snap {
     padding: 0;
   }
@@ -54,26 +55,32 @@ section##{$containerName} {
   padding: 4px 12px;
 
   @include mq(mobileMedium) {
-    height: 320px;
+    height: 340px;
   }
+
   @include mq(mobileLandscape) {
     height: 200px;
     padding: 4px 20px;
   }
+
   @include mq(phablet) {
     height: 215px;
   }
+
   @include mq(tablet) {
     width: 100%;
     height: 210px;
   }
+
   @include mq(desktop) {
     height: 170px;
     height: 185px;
   }
+
   @include mq(leftCol) {
     height: 205px;
   }
+
   @include mq(wide) {
     height: 215px;
   }
@@ -83,22 +90,28 @@ section##{$containerName} {
     font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia,
       serif;
     font-size: 34px;
+
     @include mc($from: mobileLandscape) {
       color: $textColor;
     }
   }
+
   &__headlinepic {
     width: 100%;
     height: auto;
+
     @include mq(mobileLandscape) {
       width: 85%;
     }
+
     @include mq(phablet) {
       width: 85%;
     }
+
     @include mq(tablet) {
       width: 70%;
     }
+
     @include mq(leftCol) {
       width: 70%;
     }
@@ -114,31 +127,41 @@ section##{$containerName} {
 
   .desk-pic {
     display: none;
+
     @include mq(mobileLandscape) {
       display: block;
     }
   }
 
   &__standfirst {
+    font-family: "Guardian Headline Full",
+      "Guardian Egyptian Web",
+      Georgia,
+      serif;
     font-size: 17px;
     line-height: 115%;
     color: white;
     margin-top: 4px;
+
     span {
       font-weight: 700;
       color: #ffe500;
     }
+
     @include mq(mobileLandscape) {
       width: 85%;
     }
+
     @include mq(phablet) {
       width: 85%;
     }
+
     @include mq(desktop) {
       width: 70%;
       margin-top: 12px;
       font-size: 20px;
     }
+
     @include mq(leftCol) {
       width: 50%;
     }
@@ -147,11 +170,9 @@ section##{$containerName} {
   &__component-button {
     // mixin takes 3 variables:
     // background-color, text-color, hover-background-color
-    @include component-button(
-      $bgColor: white,
+    @include component-button($bgColor: white,
       $color: #121212,
-      $hoverBgColor: #dcdcdc
-    );
+      $hoverBgColor: #dcdcdc);
     position: absolute !important;
     bottom: 10px;
     left: 10px;
@@ -166,11 +187,13 @@ section##{$containerName} {
       bottom: 20px;
     }
   }
+
   &__roundel {
     // mixin makes roundel sit top right of thrasher and move with grid
     @include roundel-top-right;
     right: 12px;
   }
+
   .headline-animation path {
     opacity: 0%;
   }
@@ -180,21 +203,6 @@ section##{$containerName} {
 .interactive-atom {
   margin: 0;
   overflow: hidden;
-}
-
-// iOS and Android specific styles
-.#{$containerName} {
-  .android &,
-  .ios & {
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    &__component-button {
-      span {
-        letter-spacing: unset;
-      }
-    }
-  }
 }
 
 .step1 {
@@ -222,4 +230,27 @@ section##{$containerName} {
       animation-delay: $i * 100ms;
     }
   }
+}
+
+
+// iOS and Android specific styles
+.#{$containerName} {
+
+  .android &,
+  .ios & {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+
+    &__component-button {
+      span {
+        letter-spacing: unset;
+      }
+    }
+
+    .headline-animation path {
+      opacity: 100%;
+    }
+  }
+
 }
