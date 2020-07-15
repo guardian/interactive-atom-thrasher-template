@@ -195,7 +195,7 @@ section##{$containerName} {
   }
 
   .headline-animation path {
-    opacity: 0%;
+    fill: #121212;
   }
 }
 
@@ -207,27 +207,32 @@ section##{$containerName} {
 
 .step1 {
   .headline-animation path {
-    opacity: 0%;
+    fill: #121212;
     animation: turnon 0.5s linear;
+    // -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    // -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
+    // -webkit-animation-direction: forwards;
     animation-direction: forwards;
+    // -webkit-animation-delay: 500ms;
     animation-delay: 500ms;
   }
 
   @keyframes turnon {
     0% {
-      opacity: 0%;
+      fill: #121212;
     }
 
     100% {
-      opacity: 100%;
+      fill: #fff;
     }
   }
 
   @for $i from 1 through 12 {
     .headline-animation path:nth-child(#{$i}) {
-      animation-delay: $i * 100ms;
+      // -webkit-animation-delay: $i * 70ms;
+      animation-delay: $i * 70ms;
     }
   }
 }
@@ -240,7 +245,6 @@ section##{$containerName} {
   .ios & {
     overflow: hidden;
     margin: 0;
-    padding: 0;
 
     &__component-button {
       span {
@@ -249,7 +253,7 @@ section##{$containerName} {
     }
 
     .headline-animation path {
-      opacity: 100%;
+      fill: #fff;
     }
   }
 
