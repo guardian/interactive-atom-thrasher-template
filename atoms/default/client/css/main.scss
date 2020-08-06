@@ -98,3 +98,9 @@ section##{$containerName} {
 
 
 @import "live-css";
+
+.android .blm-young,
+.ios .blm-young {
+    position: relative;
+    width: auto;
+}
