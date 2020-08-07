@@ -51,8 +51,6 @@ section##{$containerName} {
 .#{$containerName} {
   height: 320px;
   padding: 4px 12px;
-  background-color: $backgroundColor;
-  background-repeat: no-repeat;
 
   @include mq(mobileLandscape) {
     padding: 4px 20px;
@@ -128,9 +126,69 @@ section##{$containerName} {
   }
 
   &__image {
-    background-image: url("https://uploads.guim.co.uk/2020/08/07/UNITED-VOICES-OF-THE-WOLRD-Hazel-Falck-still-2.jpg");
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+    background-image: url("https://uploads.guim.co.uk/2020/08/07/UNITED-VOICES-OF-THE-WOLRD-Hazel-Falck-still-2-22.jpg");
     background-size: cover;
     background-position: center;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
+    &:before {
+      top: 50%;
+      bottom: 0;
+      background: linear-gradient(0deg, rgba(18,18,18,1) 0%, rgba(18,18,18,0) 100%);
+    }
+    &:after {
+      top: 0;
+      bottom: auto;
+      height: 70px;
+      background: linear-gradient(0deg, rgba(18,18,18,0) 0%, rgba(18,18,18,1) 100%);
+      opacity: 0.5;
+    }
+
+    @include mq(tablet) {
+      left: 260px;
+      &:before {
+        top: 0;
+        left: -260px;
+        right: 100%;
+        bottom: 0;
+        background: #121212;
+      }
+      &:after {
+        background: linear-gradient(90deg, rgba(18,18,18,1) 0%, rgba(18,18,18,0) 100%);
+        bottom: 0;
+        left: 0;
+        right: auto;
+        width: 260px;
+        height: auto;
+        opacity: 1;
+      }
+    }
+    @include mq(leftCol) {
+      left: 400px;
+      &:before {
+        left: -400px;
+      }
+    }
+    @include mq(wide) {
+      left: 480px;
+      &:before {
+        left: -480px;
+      }
+    }
+
 
   }
 
