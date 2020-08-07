@@ -22,7 +22,7 @@ $mq-breakpoints: (mobile: 320px,
 );
 
 // update 'class-name' with yours
-$containerName: the-circle;
+$containerName: united-voices;
 // colours pulled from shared/css/_palette.sass
 $backgroundColor: #121212;
 $textColor: white;
@@ -53,50 +53,18 @@ section##{$containerName} {
   padding: 4px 12px;
   background-color: $backgroundColor;
   background-repeat: no-repeat;
-  background-image: url("https://uploads.guim.co.uk/2020/08/03/the-circle-mobile-bg.jpg");
-  background-size: 203%;
-  background-position-x: -170px;
-  background-position-y: -30px;
 
   @include mq(mobileLandscape) {
-    background-size: 143%;
-    background-position-x: -100px;
     padding: 4px 20px;
   }
 
   @include mq(phablet) {
-    background-size: 123%;
-    background-position-y: -60px;
-    background-position-x: -40px;
     height: 260px;
   }
 
   @include mq(tablet) {
     height: 260px;
     width: 100%;
-
-    background-size: 107%;
-    background-position-x: 60px;
-    background-position-y: -60px;
-    background-image: url("https://uploads.guim.co.uk/2020/08/03/the-circle-desktop-bg.jpg");
-  }
-
-  @include mq(desktop) {
-    background-size: 98%;
-    background-position-x: 70px;
-    background-position-y: -100px;
-  }
-
-  @include mq(leftCol) {
-    background-size: 88%;
-    background-position-x: 210px;
-    background-position-y: -100px;
-  }
-
-  @include mq(wide) {
-    background-size: 1110px;
-    background-position-x: 250px;
-    background-position-y: -130px;
   }
 
   &__headline {
@@ -157,6 +125,13 @@ section##{$containerName} {
       top: 6px;
       left: 20px;
     }
+  }
+
+  &__image {
+    background-image: url("https://uploads.guim.co.uk/2020/08/07/UNITED-VOICES-OF-THE-WOLRD-Hazel-Falck-still-2.jpg");
+    background-size: cover;
+    background-position: center;
+
   }
 
   &__copy {
