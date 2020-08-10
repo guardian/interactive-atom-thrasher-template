@@ -35,6 +35,16 @@ Run gulp, you should now be running the thrasher locally at: //localhost:8000
 
 <br>
 
+## Image compression
+
+Some things to remember:
+1. Avoid GIF. Ideally, provide video, maybe with a GIF fallback. All GIFs for a front shouldn’t go over 120KB. FOr article, maybe 250KB. https://ezgif.com/ is your friend (resize, delete frames, colour reduction, lossy)
+2. Always resize assets to how big they appear, makes no sense to provide them bigger (yeah, retina, but only if weight can be controlled) and no sense to not crop stuff that’s never shown!
+3. Handbrake for videos: ideally multiple formats with a mp4 fallback for Safari. Resized to size, remove uneeded tracks incl. audio!, 2-pass, set bitrate as low as possible
+4. Use squoosh.app/ for images. If no transparency: JPEG. If PNG: always PNG8!
+
+<br>
+
 ## Compiling and Deploying
 
 To push your thrasher to preview (pushes to a bucket in CAPI preview) run:
