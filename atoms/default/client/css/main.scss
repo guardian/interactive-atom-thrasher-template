@@ -350,6 +350,7 @@ a.main-link {
   .ios & {
     overflow: hidden;
     margin: 0;
+    position: relative;
 
     &__component-button {
       span {
