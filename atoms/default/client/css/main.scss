@@ -35,7 +35,7 @@ section##{$containerName} {
   position: relative;
   padding: 0 !important;
   overflow: hidden;
-  background-color: #fff;
+  background-color: #121212;
 
   .fc-container__inner,
   .fc-slice,
@@ -50,10 +50,10 @@ section##{$containerName} {
 
 .#{$containerName} {
   height: 320px;
-  padding: 4px 12px;
+  padding: 4px 0;
 
   @include mq(mobileLandscape) {
-    padding: 4px 20px;
+    padding: 4px 10px;
   }
 
   @include mq(phablet) {
@@ -133,7 +133,7 @@ section##{$containerName} {
     bottom: 0;
     z-index: -1;
 
-    background-image: url("https://uploads.guim.co.uk/2020/08/07/somalinimo-OF-THE-WOLRD-Hazel-Falck-still-2-22.jpg");
+    background-image: url("https://uploads.guim.co.uk/2020/08/24/Somalinimo_019_1.thrasher-mobile.jpg");
     background-size: cover;
     background-position: center;
 
@@ -158,6 +158,8 @@ section##{$containerName} {
     }
 
     @include mq(tablet) {
+      background-image: url("https://uploads.guim.co.uk/2020/08/24/Somalinimo_021_1.thrasher-desktop.jpg");
+      background-position-y: 20%;
       left: 260px;
       &:before {
         top: 0;
@@ -171,7 +173,7 @@ section##{$containerName} {
         bottom: 0;
         left: 0;
         right: auto;
-        width: 260px;
+        width: 30px;
         height: auto;
         opacity: 1;
       }
@@ -209,7 +211,7 @@ section##{$containerName} {
       position: absolute;
       top: 0;
       left: 0;
-      right: -10px;
+      right: -20px;
       height: 1px;
       background-color: white;
       opacity: 0.2;
@@ -237,8 +239,6 @@ section##{$containerName} {
         left: -20px;
       }
     }
-
-    @include mq(desktop) {}
 
     @include mq(leftCol) {
       &:before {
@@ -309,33 +309,37 @@ section##{$containerName} {
       }
     }
   }
-}
 
-a.main-link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: block;
-  z-index: 20;
+  a.main-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    z-index: 20;
 
-  transition: background-color 0.3s linear;
+    transition: background-color 0.3s linear;
 
-  &:hover {
+    &:hover {
 
-    &~.the-circle__copy .the-circle__copy__logline,
-    &~.title {
-      opacity: 0.95;
+      &~.somalinimo__copy .somalinimo__copy__logline,
+      &~.title {
+        opacity: 0.95;
+      }
+
+      &~.somalinimo__image {
+        opacity: 0.9;
+      }
+
+      &~.somalinimo__copy .somalinimo__copy__button__icon {
+        transform: scale(1.1);
+      }
+
     }
-
-    &~.the-circle__copy .the-circle__copy__button__icon {
-      transform: scale(1.1);
-    }
-
-    // background-color:rgba(#121212, 0.2);
   }
 }
+
 
 // this removes margins from Android / iOS view
 .interactive-atom {
