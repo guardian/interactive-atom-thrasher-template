@@ -1,14 +1,20 @@
 .uni-guide-2021 {
-  padding: 0 10px 60px;
+  padding: 6px 10px 60px;
   &__link {
 
+  }
+
+  &__lead-image {
+    img {
+      width: 100%;
+    }
   }
 
   &__copy {
     color: #052962;
     font-family: "Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
     font-size: 24px;
-    line-height: 24px;;
+    line-height: 24px;
     &__headline {
       font-weight: 700;
       span {
@@ -19,6 +25,16 @@
       font-weight: 200;
       position: absolute;
       bottom: 24px;
+      &:before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: -10px;
+        width: 272px;
+        height: 1px;
+        background: currentColor;
+        opacity: 0.2;
+      }
       .label {
 
       }
