@@ -1,5 +1,5 @@
 .uni-guide-2021 {
-  padding: 0 10px 0;
+  padding: 0 10px 60px;
   &__link {
 
   }
@@ -17,6 +17,8 @@
     }
     &__cta {
       font-weight: 200;
+      position: absolute;
+      bottom: 24px;
       .label {
 
       }
