@@ -29,9 +29,7 @@ function selectVersion() {
     let n = Math.floor(Math.random() * 2) + 1;
 
     const thrasherEl = document.querySelector('.uni-guide-2021');
-    console.log('hi', thrasherEl);
     if (thrasherEl) {
-        console.log('it exists');
         thrasherEl.classList.add(`version-${n}`);
     }
 }
