@@ -53,10 +53,11 @@ section##{$containerName} {
 }
 
 .#{$containerName} {
-    width:100%;
-    height:200px;
+    width: auto;
+    margin: 0 -10px;
     @include mq(tablet) {
         width: auto;
+        margin: 0;
     }
     &__component-button {
         // mixin takes 3 variables:
