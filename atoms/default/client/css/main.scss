@@ -30,7 +30,8 @@ $buttonColor: $neutral-7;
 $buttonHoverColor: $neutral-46;
 
 // this targets the container your thrasher is put inside on Fronts
-section##{$containerName} {
+section##{$containerName},
+section#the-circle {
   width: 100%;
   position: relative;
   padding: 0 !important;
@@ -50,7 +51,7 @@ section##{$containerName} {
 
 .#{$containerName} {
   height: 320px;
-  padding: 4px 0;
+  padding: 4px 10px;
 
   @include mq(mobileLandscape) {
     padding: 4px 10px;
