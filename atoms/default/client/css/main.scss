@@ -31,6 +31,8 @@ $buttonHoverColor: $neutral-46;
 
 // this targets the container your thrasher is put inside on Fronts
 section##{$containerName},
+section#documentaries,
+section#documentary,
 section#the-circle {
   width: 100%;
   position: relative;
