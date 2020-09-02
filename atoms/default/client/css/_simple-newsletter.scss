@@ -66,6 +66,7 @@
       .ask {
             font-size: 20px;
           line-height: 24px;
+          margin-bottom: 0;
 
           @include mq(leftCol) {
               padding-top: 5px;
