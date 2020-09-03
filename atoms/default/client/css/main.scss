@@ -37,7 +37,11 @@ $buttonHoverColor:$neutral-46;
 
 // this targets the container your thrasher is put inside on Fronts
 section##{$containerName},
-section#thrasher-atom {
+section#thrasher-atom,
+section#uni-guide,
+section#university-guide,
+section#uni-guide-20201,
+section#university-guide-2021 {
     width:100%;
     position: relative;
     overflow: hidden;
