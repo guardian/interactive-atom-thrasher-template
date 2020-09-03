@@ -1,5 +1,9 @@
 .uni-guide-2021 {
   background-color: #D0E8D5;
+  transition: all 200ms ease-out;
+  &:hover {
+    background-color: #C7E1CC;
+  }
   &__lead-image {
     img {
       &.v1 {

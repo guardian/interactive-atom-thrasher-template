@@ -36,16 +36,16 @@ $buttonHoverColor:$neutral-46;
 
 
 // this targets the container your thrasher is put inside on Fronts
-section##{$containerName} {
+section##{$containerName},
+section#thrasher-atom {
     width:100%;
     position: relative;
-    padding: 0 !important;
     overflow: hidden;
     background-color:#fff;
     .fc-container__inner,
     .fc-slice,
     .facia-snap {
-        overflow: hidden;
+        overflow: visible;
     }
     .facia-snap {
         padding: 0;
@@ -53,12 +53,6 @@ section##{$containerName} {
 }
 
 .#{$containerName} {
-    width: auto;
-    margin: 0 -10px;
-    @include mq(tablet) {
-        width: auto;
-        margin: 0;
-    }
     &__component-button {
         // mixin takes 3 variables:
         // background-color, text-color, hover-background-color
