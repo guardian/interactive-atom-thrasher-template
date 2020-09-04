@@ -1,6 +1,5 @@
 .uni-guide-2021 {
   background-color: #D0E8D5;
-  transition: all 200ms ease-out;
   &:hover {
     background-color: #C7E1CC;
   }
@@ -38,6 +37,9 @@
 
   &.version-2 {
     background-color: #E1E2DD;
+    &:hover {
+      background-color: #D8D9D4;
+    }
     .uni-guide-2021 {
       &__pops {
         &__a {
