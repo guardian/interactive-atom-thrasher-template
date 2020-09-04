@@ -12,7 +12,6 @@ checkExists(thrasherMain);
 
 function thrasherMain() {
     trackLoad();
-    console.log('this is science');
 }
 
 // data capture for ophan
