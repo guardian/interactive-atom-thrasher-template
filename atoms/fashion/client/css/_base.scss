@@ -1,0 +1,131 @@
+.uni-guide-2021 {
+  padding: 6px 10px 60px;
+  width: auto;
+  position: relative;
+  transition: background-color 200ms ease-out;
+  @include mq(tablet) {
+    padding: 8px 20px 42px;
+    width: 100%;
+  }
+
+  & a.uni-guide-2021__link {
+    z-index: 10;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    &:hover {
+      & ~ .uni-guide-2021__copy .icon {
+        transform: scale(1.1) translate(-1px,-2px);
+      }
+    }
+  }
+
+  &__lead-image {
+    img {
+      width: 100%;
+      margin-top: -18px;
+    }
+    @include mq(tablet) {
+      margin-top: 0;
+      position: absolute;
+      width: 370px;
+    }
+  }
+
+  &__copy {
+    color: #052962;
+    font-family: "Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
+    font-size: 24px;
+    line-height: 100%;
+    @include mq(tablet) {
+      font-size: 28px;
+    }
+    @include mq(desktop) {
+      font-size: 34px;
+    }
+    @include mq(leftCol) {
+      margin-left: 160px;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 170px;
+        bottom: 0;
+        width: 1px;
+        background: currentColor;
+        opacity: 0.2;
+      }
+    }
+    @include mq(wide) {
+      margin-left: 240px;
+      &:before {
+        left: 250px;
+      }
+    }
+
+    &__headline {
+      font-weight: 700;
+      span {
+        display: block;
+      }
+    }
+    &__cta {
+      font-weight: 200;
+      position: absolute;
+      bottom: 24px;
+      @include mq(tablet) {
+        position: relative;
+        bottom: 0;
+        margin-top: 84px;
+      }
+      @include mq(desktop) {
+        margin-top: 90px;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: -10px;
+        width: 272px;
+        height: 1px;
+        background: currentColor;
+        opacity: 0.2;
+        @include mq(tablet) {
+          left: -20px;
+          width: 322px;
+        }
+        @include mq(desktop) {
+          width: 368px;
+        }
+        @include mq(leftCol) {
+          left: -10px;
+        }
+
+      }
+      .label {
+
+      }
+      .icon {
+        display: inline-block;
+        vertical-align: text-top;
+        position: relative;
+        bottom: 3px;
+        left: 4px;
+        &,
+        rect {
+          transition: all 200ms ease-out;
+        }
+        @include mq(desktop) {
+          bottom: -3px;
+        }
+        svg {
+          position: absolute;
+        }
+      }
+    }
+  }
+}
+

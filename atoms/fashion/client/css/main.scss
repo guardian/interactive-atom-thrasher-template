@@ -1,0 +1,93 @@
+@import "_mq";
+@import "_fonts";
+@import "_palette";
+@import "_app-fonts";
+@import "_mixins";
+
+@import "base";
+@import "pops-position";
+@import "pops-animation";
+@import "versions";
+
+// Uncomment for embeds
+//@import "embed";
+// Uncomment for full screen (including immersive article main media)
+//@import "fullscreen";
+
+// Default breakpoints from Frontend
+// Use mc() in place of mq() so your thrashers don't get broken
+$mq-breakpoints: (
+    mobile:          320px,
+    mobileMedium:    375px,
+    mobileLandscape: 480px,
+    phablet:         660px,
+    tablet:          740px,
+    desktop:         980px,
+    leftCol:         1140px,
+    wide:            1300px
+);
+
+
+// update 'class-name' with yours
+$containerName:uni-guide-2021;
+// colours pulled from shared/css/_palette.sass
+$textColor: $neutral-7;
+$buttonColor:$neutral-7;
+$buttonHoverColor:$neutral-46;
+
+
+
+// this targets the container your thrasher is put inside on Fronts
+section##{$containerName},
+section#thrasher-atom,
+section#uni-guide,
+section#university-guide,
+section#uni-guide-20201,
+section#university-guide-2021 {
+    width:100%;
+    position: relative;
+    overflow: visible;
+    background-color:#fff;
+    .fc-container__inner,
+    .fc-slice,
+    .facia-snap {
+        overflow: visible;
+    }
+    .facia-snap {
+        padding: 0;
+    }
+}
+
+.#{$containerName} {
+    &__component-button {
+        // mixin takes 3 variables:
+        // background-color, text-color, hover-background-color
+        @include component-button($bgColor: $neutral-7, $color: #fff, $hoverBgColor: $neutral-46);
+    }
+    &__roundel {
+        // mixin makes roundel sit top right of thrasher and move with grid
+        @include roundel-top-right;
+    }
+}
+
+
+// this removes margins from Android / iOS view
+.interactive-atom {
+    margin:0;
+    overflow: hidden;
+}
+
+// iOS and Android specific styles
+.#{$containerName} {
+    .android &,
+    .ios & {
+        overflow:hidden;
+        margin:0;
+        padding:0;
+        &__component-button {
+            span {
+                letter-spacing: unset;
+            }
+        }
+    }
+}

@@ -1,0 +1,151 @@
+.uni-guide-2021__pops {
+
+  &__pop {
+    display: none;
+    height: auto;
+    position: absolute;
+    @include mq(leftCol) {
+      display: block;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    // A
+    &.atom-blue {
+      width: 23px;
+      @include mq(leftCol) {
+        display: none;
+      }
+      @include mq(wide) {
+        display: block;
+        top: 21px;
+        left: 186px;
+      }
+    }
+    &.atom-teal {
+      width: 24px;
+      @include mq(leftCol) {
+        top: 209px;
+        left: 35px;
+      }
+      @include mq(wide) {
+        top: 213px;
+        left: 41px;
+      }
+    }
+    &.double-blue {
+      width: 61px;
+      @include mq(desktop) {
+        display: block;
+        top: 86px;
+        left: 410px;
+      }
+      @include mq(leftCol) {
+        left: 570px;
+      }
+      @include mq(wide) {
+        left: 642px;
+      }
+    }
+    &.double-pink {
+      width: 66px;
+      @include mq(leftCol) {
+        top: 125px;
+        left: 81px;
+      }
+      @include mq(wide) {
+        top: 150px;
+        left: 129px;
+      }
+    }
+    &.triple {
+      width: 91px;
+      @include mq(leftCol) {
+        top: -16px;
+        left: 0px;
+      }
+      @include mq(wide) {
+        top: -14px;
+        left: 6px;
+      }
+    }
+
+    // B
+    &.blue-h {
+      width: 54px;
+      @include mq(leftCol) {
+        display: none;
+      }
+      @include mq(wide) {
+        display: block;
+        top: 177px;
+        left: 22px;
+      }
+    }
+    &.blue-v {
+      width: 31px;
+      @include mq(leftCol) {
+        display: none;
+      }
+      @include mq(wide) {
+        display: block;
+        top: 76px;
+        left: 129px;
+      }
+    }
+    &.circle {
+      width: 32px;
+      @include mq(leftCol) {
+        display: none;
+      }
+      @include mq(wide) {
+        display: block;
+        top: 190px;
+        left: 170px;
+        z-index: 10;
+      }
+    }
+    &.green {
+      width: 60px;
+      @include mq(leftCol) {
+        top: 12px;
+        left: 40px;
+        z-index: 10;
+      }
+    }
+    &.shape {
+      width: 36px;
+      @include mq(leftCol) {
+        top: 101px;
+        left: 85px;
+      }
+      @include mq(wide) {
+        left: 113px;
+      }
+    }
+    &.yellow {
+      width: 18px;
+      @include mq(leftCol) {
+        top: 201px;
+        left: 44px;
+      }
+      @include mq(wide) {
+        top: 199px;
+        left: 162px;
+      }
+    }
+    &.white {
+      width: 50px;
+      @include mq(leftCol) {
+        top: 53px;
+        left: 20px;
+      }
+    }
+
+  }
+}
+
+
