@@ -32,6 +32,33 @@ function selectVersion() {
     if (thrasherEl) {
         thrasherEl.classList.add(`version-${n}`);
     }
+
+
+    // runTest();
 }
 
 
+
+// function runTest() {
+//     const tests = 100000;
+//     let score = {'1': 0, '2': 0}
+//     for (let i = 0; i < tests; i++) {
+//         let n = Math.floor(Math.random() * 2) + 1;
+//         score[n]++;
+//     }
+//     console.log('—');
+//     console.log('—');
+//     console.log('—');
+//     console.log('—');
+//     console.log('—');
+//     console.log('—');
+//     console.log(score);
+//     console.log(score[1]-score[2]);
+//     console.log((score[1] - score[2])/tests*100);
+//     console.log('—');
+//     console.log('—');
+//     console.log('—');
+//     console.log('—');
+//     console.log('—');
+//     console.log('—');
+// }

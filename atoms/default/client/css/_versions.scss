@@ -4,6 +4,15 @@
   &:hover {
     background-color: #C7E1CC;
   }
+  &__pops {
+    &__a {
+      display: block;
+    }
+    &__b {
+      display: none;
+    }
+  }
+
   &__lead-image {
     @include mq(tablet) {
       top: 8px;
@@ -29,30 +38,37 @@
 
   &.version-2 {
     background-color: #E1E2DD;
-    .uni-guide-2021__lead-image {
-      @include mq(tablet) {
-        top: 11px;
-        right: 7px;
-      }
-      @include mq(desktop) {
-        right: 0px;
-        top: -28px;
-        width: 495px;
-      }
-      @include mq(wide) {
-        right: 84px;
-      }
-      img {
-        &.v1 {
+    .uni-guide-2021 {
+      &__pops {
+        &__a {
           display: none;
         }
-        &.v2 {
+        &__b {
           display: block;
         }
       }
+      &__lead-image {
+        @include mq(tablet) {
+          top: 11px;
+          right: 7px;
+        }
+        @include mq(desktop) {
+          right: 0px;
+          top: -28px;
+          width: 495px;
+        }
+        @include mq(wide) {
+          right: 84px;
+        }
+        img {
+          &.v1 {
+            display: none;
+          }
+          &.v2 {
+            display: block;
+          }
+        }
+      }
     }
-
   }
-
-
 }
