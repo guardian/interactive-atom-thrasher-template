@@ -30,17 +30,7 @@
     @include mq(tablet) {
       margin-top: 0;
       position: absolute;
-      top: -12px;
-      right: 7px;
       width: 370px;
-    }
-    @include mq(desktop) {
-      width: 485px;
-      right: 24px;
-      top: -45px;
-    }
-    @include mq(wide) {
-      right: 80px;
     }
   }
 

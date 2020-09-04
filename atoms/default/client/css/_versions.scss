@@ -5,6 +5,18 @@
     background-color: #C7E1CC;
   }
   &__lead-image {
+    @include mq(tablet) {
+      top: 8px;
+      right: 7px;
+    }
+    @include mq(desktop) {
+      right: 24px;
+      top: -22px;
+      width: 485px;
+    }
+    @include mq(wide) {
+      right: 80px;
+    }
     img {
       &.v1 {
         display: block;
@@ -18,6 +30,18 @@
   &.version-2 {
     background-color: #E1E2DD;
     .uni-guide-2021__lead-image {
+      @include mq(tablet) {
+        top: 11px;
+        right: 7px;
+      }
+      @include mq(desktop) {
+        right: 0px;
+        top: -28px;
+        width: 495px;
+      }
+      @include mq(wide) {
+        right: 84px;
+      }
       img {
         &.v1 {
           display: none;
