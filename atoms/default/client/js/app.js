@@ -17,10 +17,13 @@ function thrasherMain() {
 
 // data capture for ophan
 function trackLoad() {
-    window.guardian.ophan.record({
-        component: 'thrasher : uni guide 2021 : load',
-        value: 1
-    });
+    document.body.dataset.uniGuide = '0941';
+    if (!document.body.classList.contains('app')) {
+        window.guardian.ophan.record({
+            component: 'thrasher : uni guide 2021 : load',
+            value: 1
+        });
+    }
 }
 
 function selectVersion() {
