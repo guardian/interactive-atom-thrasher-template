@@ -16,7 +16,7 @@ function thrasherMain() {
 
 // data capture for ophan
 function trackLoad() {
-    document.body.dataset.uniGuide='0940';
+    document.body.dataset.uniGuide='0941';
     if (!document.body.classList.contains('app')) {
         window.guardian.ophan.record({
             component: 'thrasher : uni guide 2021 : load',
