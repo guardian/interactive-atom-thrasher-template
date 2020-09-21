@@ -11,7 +11,7 @@
 
     display: block;
     position: relative;
-    margin-top: 40px;
+    padding-top: 40px;
     font-size: 46px;
     line-height: calc(115% + 1px);
 
@@ -19,7 +19,7 @@
       content: '';
       position: absolute;
       z-index: 0;
-      top: 0;
+      top: 40px;
       left: -10px;
       right: -10px;
       bottom: 0;
@@ -40,7 +40,7 @@
       display: block;
       position: absolute;
       width: 57px;
-      top: -40px;
+      top: 0px;
       left: 6px;
       img {
         width: 100%;
@@ -63,7 +63,7 @@
   }
 
   &__buttons {
-    padding: 10px 0 10px;
+    padding: 4px 0 10px;
     &__button {
       border-radius: 32px;
       line-height: 34px;
@@ -76,22 +76,31 @@
       font-size: 17px;
       // display: inline-block;
       display: none;
+      &:hover {
+        text-decoration: none;
+      }
 
       &.primary {
         background-color: #121212;
         border-color: #121212;
         color: #fff;
+        &:hover {
+          background-color: rgba(#121212,0.85);
+        }
       }
       &.secondary {
         color: #121212;
         border-color: #121212;
         background-color: transparent;
+        &:hover {
+          background-color: rgba($neutral-92,0.67);
+        }
       }
     }
   }
 
   &__roundel {
-    top: -30px;
+    top: 10px;
     right: 12px;
   }
 
