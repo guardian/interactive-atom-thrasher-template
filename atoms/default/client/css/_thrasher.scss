@@ -1,5 +1,6 @@
 .environment-moment-2020 {
   background-color: #f6f6f6;
+  position: relative;
 
   @include mq(tablet) {
       border-left: 1px solid #dedede;
@@ -7,38 +8,86 @@
   }
 
   &__headline {
-    &__pen {
-      img {
 
+    display: block;
+    position: relative;
+    margin-top: 40px;
+    font-size: 46px;
+    line-height: calc(115% + 1px);
+
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: -10px;
+      right: -10px;
+      bottom: 0;
+      background: repeating-linear-gradient(
+        rgba(255,0,0,0),
+        rgba(255,0,0,0) calc(1.15em + 0px),
+        $neutral-86 calc(1.15em + 0px),
+        $neutral-86 calc(1.15em + 1px),
+        rgba(0,0,0,0) calc(1.15em + 1px)
+      );
+    }
+    &__pen {
+      display: block;
+      position: absolute;
+      width: 57px;
+      top: -40px;
+      left: 6px;
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
       }
     }
     &__text {
+      position: relative;
+      z-index: 1;
       font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
       color: tomato;
-
+      text-indent: 65px;
+      padding-bottom: 12px;
     }
-
-    &__copy {
-
-    }
-
-    &__buttons {
-      &__button {
-        &.primary {
-
-        }
-        &.secondary {
-
-        }
-      }
-    }
-
-    &__roundel {
-
-    }
-
+  }
+  &__copy {
+    font-size: 15px;
+    line-height: 130%;
   }
 
+  &__buttons {
+    padding: 10px 0 10px;
+    &__button {
+      border-radius: 32px;
+      line-height: 34px;
+      padding: 0 18px 2px 18px;
+      border: 1px solid transparent;
+      margin: 6px 0;
+      font-weight: bold;
+      border-radius: 36px;
+      font-family: "Guardian Text Sans Web","Guardian Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+      font-size: 17px;
+      // display: inline-block;
+      display: none;
+
+      &.primary {
+        background-color: #121212;
+        border-color: #121212;
+        color: #fff;
+      }
+      &.secondary {
+        color: #121212;
+        border-color: #121212;
+        background-color: transparent;
+      }
+    }
+  }
+
+  &__roundel {
+    top: -30px;
+    right: 12px;
+  }
 
 }
-
