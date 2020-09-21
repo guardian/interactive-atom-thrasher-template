@@ -30,6 +30,11 @@
         $neutral-86 calc(1.15em + 1px),
         rgba(0,0,0,0) calc(1.15em + 1px)
       );
+
+      @include mq(mobileLandscape) {
+        left: -20px;
+        right: -20px;
+      }
     }
     &__pen {
       display: block;

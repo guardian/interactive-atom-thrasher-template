@@ -16,14 +16,16 @@ section#environment-moment {
 }
 
 .environment-moment-2020 {
-  width:100%;
+  width:auto;
   margin: 0 -10px;
   padding: 0 10px;
   @include mq(mobileLandscape) {
-    padding: 0 20px;
+    margin: 0;
+    padding: 0 10px;
   }
   @include mq(tablet) {
     margin: 0;
+    padding: 0 20px;
   }
 
 
