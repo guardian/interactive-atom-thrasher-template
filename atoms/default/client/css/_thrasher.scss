@@ -1,0 +1,44 @@
+.environment-moment-2020 {
+  background-color: #f6f6f6;
+
+  @include mq(tablet) {
+      border-left: 1px solid #dedede;
+      border-right: 1px solid #dedede;
+  }
+
+  &__headline {
+    &__pen {
+      img {
+
+      }
+    }
+    &__text {
+      font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
+      color: tomato;
+
+    }
+
+    &__copy {
+
+    }
+
+    &__buttons {
+      &__button {
+        &.primary {
+
+        }
+        &.secondary {
+
+        }
+      }
+    }
+
+    &__roundel {
+
+    }
+
+  }
+
+
+}
+
