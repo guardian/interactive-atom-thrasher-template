@@ -42,8 +42,8 @@
       bottom: 0;
       background: repeating-linear-gradient(
         rgba(255,0,0,0),
-        rgba(255,0,0,0) calc(1.15em + 0px),
-        $neutral-86 calc(1.15em + 0px),
+        rgba(255,0,0,0) calc(1.15em),
+       $neutral-86 calc(1.15em),
         $neutral-86 calc(1.15em + 1px),
         rgba(0,0,0,0) calc(1.15em + 1px)
       );
@@ -53,8 +53,8 @@
         right: -20px;
         background: repeating-linear-gradient(
           rgba(255,0,0,0),
-          rgba(255,0,0,0) calc(1.15em + 0px),
-          $neutral-86 calc(1.15em + 0px),
+          rgba(255,0,0,0) calc(1.15em),
+          $neutral-86 calc(1.15em),
           $neutral-86 calc(1.15em + 1px),
           rgba(0,0,0,0) calc(1.15em + 1px)
         );
@@ -63,8 +63,8 @@
         top: 2px;
         background: repeating-linear-gradient(
           rgba(255,0,0,0),
-          rgba(255,0,0,0) calc(1.1em + 0px),
-          $neutral-86 calc(1.1em + 0px),
+          rgba(255,0,0,0) calc(1.1em),
+          $neutral-86 calc(1.1em),
           $neutral-86 calc(1.1em + 1px),
           rgba(0,0,0,0) calc(1.1em + 1px)
         );
@@ -73,8 +73,8 @@
         top: 2px;
         background: repeating-linear-gradient(
           rgba(255,0,0,0),
-          rgba(255,0,0,0) calc(1.06em + 0px),
-          $neutral-86 calc(1.06em + 0px),
+          rgba(255,0,0,0) calc(1.06em),
+          $neutral-86 calc(1.06em),
           $neutral-86 calc(1.06em + 1px),
           rgba(0,0,0,0) calc(1.06em + 1px)
         );
@@ -106,11 +106,9 @@
         width: 95px;
       }
       @include mq(leftCol) {
-        // overhang:
         left: -100px;
       }
       @include mq(wide) {
-        // overhang:
         left: -124px;
       }
     }
@@ -118,7 +116,7 @@
       position: relative;
       z-index: 1;
       font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
-      color: tomato;
+      color: #C70000;
       text-indent: 65px;
       padding-bottom: 12px;
       @include mq(tablet) {
@@ -129,8 +127,31 @@
         padding-left: 102px;
       }
       @include mq(leftCol) {
-        // overhang:
         padding-left: 0;
+      }
+      @supports (-webkit-background-clip: text) {
+        // color: teal;
+        background: #c70000;
+        background: linear-gradient(90deg, rgba(7,74,173,1) 0%, rgba(0,127,136,1) 15%, rgba(57,120,95,1) 26%, rgba(161,105,19,1) 44%, rgba(188,96,1,1) 51%, rgba(194,48,1,1) 65%, rgba(136,53,55,1) 78%, rgba(7,74,173,1) 100%);
+        background: linear-gradient(117deg, rgba(7,74,173,1) 0%, rgba(0,127,136,1) 15%, rgba(57,120,95,1) 26%, rgba(161,105,19,1) 44%, rgba(188,96,1,1) 51%, rgba(194,48,1,1) 65%, rgba(136,53,55,1) 78%, rgba(7,74,173,1) 100%);
+        background-size: 42em;
+        background-position: 1em;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        animation-name: shiftGradient;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(0,.25,1,.75);
+
+      }
+      @keyframes shiftGradient {
+        0% {
+          background-position: 0em;
+        }
+        100% {
+          background-position: 42em;
+        }
       }
     }
   }
