@@ -6,6 +6,13 @@
       border-left: 1px solid #dedede;
       border-right: 1px solid #dedede;
   }
+  @include mq(leftCol) {
+    padding-left: 180px;
+  }
+  @include mq(wide) {
+    padding-left: 260px;
+    padding-right: 100px;
+  }
 
   &__headline {
 
@@ -14,6 +21,16 @@
     padding-top: 40px;
     font-size: 46px;
     line-height: calc(115% + 1px);
+
+    @include mq(tablet) {
+      font-size: 52px;
+      line-height: calc(105% + 1px);
+      padding-top: 2px;
+    }
+    @include mq(desktop) {
+      font-size: 72px;
+      line-height: calc(101% + 1px);
+    }
 
     &:before {
       content: '';
@@ -34,6 +51,40 @@
       @include mq(mobileLandscape) {
         left: -20px;
         right: -20px;
+        background: repeating-linear-gradient(
+          rgba(255,0,0,0),
+          rgba(255,0,0,0) calc(1.15em + 0px),
+          $neutral-86 calc(1.15em + 0px),
+          $neutral-86 calc(1.15em + 1px),
+          rgba(0,0,0,0) calc(1.15em + 1px)
+        );
+      }
+      @include mq(tablet) {
+        top: 2px;
+        background: repeating-linear-gradient(
+          rgba(255,0,0,0),
+          rgba(255,0,0,0) calc(1.1em + 0px),
+          $neutral-86 calc(1.1em + 0px),
+          $neutral-86 calc(1.1em + 1px),
+          rgba(0,0,0,0) calc(1.1em + 1px)
+        );
+      }
+      @include mq(desktop) {
+        top: 2px;
+        background: repeating-linear-gradient(
+          rgba(255,0,0,0),
+          rgba(255,0,0,0) calc(1.06em + 0px),
+          $neutral-86 calc(1.06em + 0px),
+          $neutral-86 calc(1.06em + 1px),
+          rgba(0,0,0,0) calc(1.06em + 1px)
+        );
+      }
+      @include mq(leftCol) {
+        left: -180px;
+      }
+      @include mq(leftCol) {
+        left: -260px;
+        right: -100px;
       }
     }
     &__pen {
@@ -47,6 +98,21 @@
         height: auto;
         display: block;
       }
+      @include mq(tablet) {
+        width: 72px;
+        left: -4px;
+      }
+      @include mq(desktop) {
+        width: 95px;
+      }
+      @include mq(leftCol) {
+        // overhang:
+        left: -100px;
+      }
+      @include mq(wide) {
+        // overhang:
+        left: -124px;
+      }
     }
     &__text {
       position: relative;
@@ -55,15 +121,27 @@
       color: tomato;
       text-indent: 65px;
       padding-bottom: 12px;
+      @include mq(tablet) {
+        text-indent: 0;
+        padding-left: 76px;
+      }
+      @include mq(desktop) {
+        padding-left: 102px;
+      }
+      @include mq(leftCol) {
+        // overhang:
+        padding-left: 0;
+      }
     }
   }
   &__copy {
     font-size: 15px;
     line-height: 130%;
+    padding-top: 5px;
   }
 
   &__buttons {
-    padding: 4px 0 10px;
+    padding: 4px 0 12px;
     &__button {
       border-radius: 32px;
       line-height: 34px;
