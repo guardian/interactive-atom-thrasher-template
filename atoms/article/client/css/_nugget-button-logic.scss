@@ -1,0 +1,15 @@
+.environment-moment-2020__buttons__button {
+
+  // add .web to nugget if separate app/web links
+  &.nugget {
+    display: inline-block;
+  }
+
+  // only if separate app/web lnks
+  // .ios &,
+  // .android & {
+  //   &.nugget.app {
+  //     display: inline-block;
+  //   }
+  // }
+}

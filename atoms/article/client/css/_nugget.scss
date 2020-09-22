@@ -1,0 +1,60 @@
+html {
+  -webkit-font-smoothing: antialiased;
+}
+.environment-moment-2020 {
+  margin: 0;
+  &__earth {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    top: -454px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 620px;
+
+    &__globe {
+      position: absolute;
+      width: 100%;
+      &.layer-b {
+        opacity: 0.6;
+        @supports (mix-blend-mode: screen) {
+          mix-blend-mode: screen;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__headline {
+    font-size: 40px;
+    padding-top: 162px;
+    &:before {
+      top: calc(163px - 1.15em + 1px);
+    }
+    &__pen {
+      width: 29px;
+      top: 163px;
+    }
+    &__text {
+      text-indent: 42px;
+    }
+  }
+
+  &__copy {
+    display: none;
+  }
+
+  &__buttons {
+    &__button {
+      text-decoration: none;
+    }
+  }
+
+  &__roundel {
+    z-index: 20;
+    top: 10px;
+    right: 12px;
+  }
+
+}
+
