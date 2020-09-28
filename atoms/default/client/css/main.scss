@@ -11,7 +11,8 @@
 
 // Default breakpoints from Frontend
 // Use mc() in place of mq() so your thrashers don't get broken
-$mq-breakpoints: (mobile: 320px,
+$mq-breakpoints: (
+  mobile: 320px,
   mobileMedium: 375px,
   mobileLandscape: 480px,
   phablet: 660px,
@@ -22,7 +23,7 @@ $mq-breakpoints: (mobile: 320px,
 );
 
 // update 'class-name' with yours
-$containerName: somalinimo;
+$containerName: noballgames;
 // colours pulled from shared/css/_palette.sass
 $backgroundColor: #121212;
 $textColor: white;
@@ -80,20 +81,22 @@ section#the-circle {
     }
 
     @include mq(leftCol) {
-      margin-left: 150px;
+      margin-left: 160px;
     }
 
     @include mc(wide) {
-      margin-left: 230px;
+      margin-left: 240px;
     }
   }
 
   &__component-button {
     // mixin takes 3 variables:
     // background-color, text-color, hover-background-color
-    @include component-button($bgColor: $neutral-7,
+    @include component-button(
+      $bgColor: $neutral-7,
       $color: #fff,
-      $hoverBgColor: $neutral-46);
+      $hoverBgColor: $neutral-46
+    );
   }
 
   &__roundel {
@@ -116,10 +119,14 @@ section#the-circle {
     }
 
     @include mq(tablet) {
-      display: none;
+      // display: none;
+    }
+    @include mq(leftCol) {
+      margin-left: 160px;
     }
 
     @include mq(wide) {
+      margin-left: 0;
       font-size: 24px;
       position: absolute;
       display: block;
@@ -136,13 +143,13 @@ section#the-circle {
     bottom: 0;
     z-index: -1;
 
-    background-image: url("https://uploads.guim.co.uk/2020/08/24/Somalinimo_019_1.thrasher-mobile.jpg");
+    background-image: url("https://uploads.guim.co.uk/2020/09/25/noballgames-mobile-min.jpg");
     background-size: cover;
     background-position: center;
 
     &:before,
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       right: 0;
@@ -150,18 +157,26 @@ section#the-circle {
     &:before {
       top: 50%;
       bottom: 0;
-      background: linear-gradient(0deg, rgba(18,18,18,1) 0%, rgba(18,18,18,0) 100%);
+      background: linear-gradient(
+        0deg,
+        rgba(18, 18, 18, 1) 0%,
+        rgba(18, 18, 18, 0) 100%
+      );
     }
     &:after {
       top: 0;
       bottom: auto;
       height: 70px;
-      background: linear-gradient(0deg, rgba(18,18,18,0) 0%, rgba(18,18,18,1) 100%);
+      background: linear-gradient(
+        0deg,
+        rgba(18, 18, 18, 0) 0%,
+        rgba(18, 18, 18, 1) 100%
+      );
       opacity: 0.5;
     }
 
     @include mq(tablet) {
-      background-image: url("https://uploads.guim.co.uk/2020/08/24/Somalinimo_021_1.thrasher-desktop.jpg");
+      background-image: url("https://uploads.guim.co.uk/2020/09/25/noballgames-desktop-min.jpg");
       background-position-y: 20%;
       left: 260px;
       &:before {
@@ -172,7 +187,11 @@ section#the-circle {
         background: #121212;
       }
       &:after {
-        background: linear-gradient(90deg, rgba(18,18,18,1) 0%, rgba(18,18,18,0) 100%);
+        background: linear-gradient(
+          90deg,
+          rgba(18, 18, 18, 1) 0%,
+          rgba(18, 18, 18, 0) 100%
+        );
         bottom: 0;
         left: 0;
         right: auto;
@@ -181,20 +200,38 @@ section#the-circle {
         opacity: 1;
       }
     }
+    @include mq(mobileLandscape) {
+      background-position: center -10px;
+    }
+    @include mq(phablet) {
+      background-position: center -80px;
+    }
+    @include mq(tablet) {
+      background-position: center;
+      &:after {
+        width: 70px;
+      }
+    }
     @include mq(leftCol) {
       left: 400px;
+      left: 350px;
       &:before {
         left: -400px;
+      }
+      &:after {
+        width: 100px;
       }
     }
     @include mq(wide) {
       left: 480px;
+      left: 367px;
       &:before {
         left: -480px;
       }
+      &:after {
+        width: 110px;
+      }
     }
-
-
   }
 
   &__copy {
@@ -242,22 +279,27 @@ section#the-circle {
         left: -20px;
       }
     }
+    @include mq(desktop) {
+      margin-top: 54px;
+    }
 
     @include mq(leftCol) {
       &:before {
         display: none;
       }
 
-      margin-left: 150px;
+      margin-left: 160px;
       border-left: 1px solid rgba(white, 0.2);
       border-top: 1px solid rgba(white, 0.2);
       padding-left: 10px;
       padding-bottom: 12px;
-      margin-top: -3px;
+      margin-top: 49px;
     }
 
     @include mq(wide) {
       margin-left: 230px;
+      margin-left: 240px;
+      margin-top: 76px;
     }
 
     &__logline {
@@ -325,24 +367,21 @@ section#the-circle {
     transition: background-color 0.3s linear;
 
     &:hover {
-
-      &~.somalinimo__copy .somalinimo__copy__logline,
-      &~.title {
+      & ~ .somalinimo__copy .somalinimo__copy__logline,
+      & ~ .title {
         opacity: 0.95;
       }
 
-      &~.somalinimo__image {
+      & ~ .somalinimo__image {
         opacity: 0.97;
       }
 
-      &~.somalinimo__copy .somalinimo__copy__button__icon {
+      & ~ .somalinimo__copy .somalinimo__copy__button__icon {
         transform: scale(1.1);
       }
-
     }
   }
 }
-
 
 // this removes margins from Android / iOS view
 .interactive-atom {
@@ -352,7 +391,6 @@ section#the-circle {
 
 // iOS and Android specific styles
 .#{$containerName} {
-
   .android &,
   .ios & {
     overflow: hidden;
