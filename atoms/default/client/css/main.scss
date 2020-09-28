@@ -11,7 +11,8 @@
 
 // Default breakpoints from Frontend
 // Use mc() in place of mq() so your thrashers don't get broken
-$mq-breakpoints: (mobile: 320px,
+$mq-breakpoints: (
+  mobile: 320px,
   mobileMedium: 375px,
   mobileLandscape: 480px,
   phablet: 660px,
@@ -53,47 +54,75 @@ section##{$containerName} {
 .#{$containerName} {
   width: 100%;
   height: 200px;
+  height: 250px;
   background-color: $backgroundColor;
   padding: 0 12px;
 
   @include mq(mobileLandscape) {
     padding: 0 20px;
   }
+  @include mq(desktop) {
+    height: 160px;
+  }
 
   &__headline {
     color: $textColor;
     font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia,
       serif;
-    font-size: 34px;
+    font-size: 26px;
     line-height: 115%;
-    width: 400px;
+    width: 85%;
+    padding-top: 4px;
 
     @include mc($from: mobileLandscape) {
       color: $textColor;
+      font-size: 34px;
+      width: 400px;
     }
   }
 
   &__covers {
     position: absolute;
-    right: 790px;
-    top: 35px;
+    right: 360px;
+    top: 175px;
+    @include mq(phablet) {
+      right: 520px;
+      top: 135px;
+    }
+    @include mq(desktop) {
+      right: 520px;
+      top: 55px;
+    }
+    @include mq(leftCol) {
+      right: 690px;
+    }
+    @include mq(wide) {
+      right: 780px;
+    }
 
     &__image {
       position: absolute;
-      width: 170px;
-      height: 170px;
+      width: 110px;
+      height: 110px;
       transition: transform 0.8s;
       box-shadow: 5px 7px 4px rgba(#121212, 0.3);
+      @include mq(wide) {
+        width: 150px;
+        height: 150px;
+      }
     }
   }
 
   &__component-button {
     // mixin takes 3 variables:
     // background-color, text-color, hover-background-color
-    @include component-button($bgColor: transparent,
+    @include component-button(
+      $bgColor: white,
       $color: #121212,
-      $hoverBgColor: black);
-    border: white 1px;
+      $hoverBgColor: #ededed
+    );
+    margin-top: 10px;
+    // border: white 1px;
   }
 
   &__roundel {
@@ -111,7 +140,6 @@ section##{$containerName} {
 
 // iOS and Android specific styles
 .#{$containerName} {
-
   .android &,
   .ios & {
     overflow: hidden;
