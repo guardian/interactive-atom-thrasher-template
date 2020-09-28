@@ -7,7 +7,7 @@ html {
     display: block;
     position: absolute;
     z-index: 10;
-    top: -454px;
+    top: -420px;
     left: 50%;
     transform: translateX(-50%);
     width: 620px;
@@ -113,13 +113,13 @@ html {
 
   &__headline {
     font-size: 40px;
-    padding-top: 162px;
+    padding-top: 208px;
     &:before {
-      top: calc(163px - 1.15em + 1px);
+      top: calc(208px - 1.15em + 2px);
     }
     &__pen {
       width: 29px;
-      top: 163px;
+      top: 209px;
     }
     &__text {
       text-indent: 42px;
