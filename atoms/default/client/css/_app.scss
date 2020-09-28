@@ -1,0 +1,35 @@
+.ios &,
+.android & {
+  .environment-moment-2020 {
+
+    &__earth {
+    }
+
+    &__headline {
+      &:before {
+      }
+      &__pen {
+        img {
+        }
+      }
+      &__text {
+      }
+    }
+    &__copy {
+    }
+
+    &__buttons {
+      &__button {
+        &.primary {
+        }
+        &.secondary {
+        }
+      }
+    }
+
+    &__roundel {
+    }
+
+  }
+
+}
