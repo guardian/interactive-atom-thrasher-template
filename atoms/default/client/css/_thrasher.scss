@@ -145,18 +145,10 @@
         -webkit-text-fill-color: transparent;
 
         animation-name: shiftGradient;
-        animation-duration: 6s;
+        animation-duration: 9s;
         animation-iteration-count: infinite;
         animation-timing-function: cubic-bezier(0,.25,1,.75);
 
-      }
-      @keyframes shiftGradient {
-        0% {
-          background-position: 0em;
-        }
-        100% {
-          background-position: 42em;
-        }
       }
     }
   }
