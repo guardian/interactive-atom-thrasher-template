@@ -11,8 +11,7 @@
 
 // Default breakpoints from Frontend
 // Use mc() in place of mq() so your thrashers don't get broken
-$mq-breakpoints: (
-  mobile: 320px,
+$mq-breakpoints: (mobile: 320px,
   mobileMedium: 375px,
   mobileLandscape: 480px,
   phablet: 660px,
@@ -61,6 +60,7 @@ section##{$containerName} {
   @include mq(mobileLandscape) {
     padding: 0 20px;
   }
+
   @include mq(desktop) {
     height: 160px;
   }
@@ -85,17 +85,21 @@ section##{$containerName} {
     position: absolute;
     right: 360px;
     top: 175px;
+
     @include mq(phablet) {
       right: 520px;
       top: 135px;
     }
+
     @include mq(desktop) {
       right: 520px;
       top: 55px;
     }
+
     @include mq(leftCol) {
       right: 690px;
     }
+
     @include mq(wide) {
       right: 780px;
     }
@@ -104,8 +108,14 @@ section##{$containerName} {
       position: absolute;
       width: 110px;
       height: 110px;
+      transform: translate(-20px, 100px);
       transition: transform 0.8s;
       box-shadow: 5px 7px 4px rgba(#121212, 0.3);
+
+      @include mq(desktop) {
+        transform: translate(100px, 100px);
+      }
+
       @include mq(wide) {
         width: 150px;
         height: 150px;
@@ -116,13 +126,12 @@ section##{$containerName} {
   &__component-button {
     // mixin takes 3 variables:
     // background-color, text-color, hover-background-color
-    @include component-button(
-      $bgColor: white,
+    @include component-button($bgColor: white,
       $color: #121212,
-      $hoverBgColor: #ededed
-    );
+      $hoverBgColor: #ededed);
     margin-top: 10px;
-    // border: white 1px;
+    position: relative;
+    z-index: 100 !important;
   }
 
   &__roundel {
@@ -140,6 +149,7 @@ section##{$containerName} {
 
 // iOS and Android specific styles
 .#{$containerName} {
+
   .android &,
   .ios & {
     overflow: hidden;
@@ -147,9 +157,16 @@ section##{$containerName} {
     padding: 0;
 
     &__component-button {
+      margin-left: 10px;
+
       span {
         letter-spacing: unset;
       }
+    }
+
+    .best-music__headline {
+      margin: 0;
+      margin-left: 10px;
     }
   }
 }

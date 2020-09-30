@@ -1,7 +1,7 @@
 // data capture for ophan
 function trackLoad() {
   window.guardian.ophan.record({
-    component: "thrasher : add-your-thrasher-name : load",
+    component: "thrasher : all-music-reviews : load",
     value: 1,
   });
 }
@@ -11,8 +11,6 @@ const albumCovers = document.querySelectorAll(".best-music__covers__image");
 let currentCover = 0;
 let z = 1;
 
-// move covers on load
-allCovers.addEventListener("load", loadMove());
 
 function loadMove() {
   albumCovers.forEach((cover) => {
@@ -30,54 +28,25 @@ document.addEventListener("scroll", function (event) {
     currentCover = 0;
   }
   z = z + 1;
-  albumCovers[currentCover].style.zIndex = z;
+  if (albumCovers && albumCovers[currentCover]) {
+    albumCovers[currentCover].style.zIndex = z;
+  }
 });
 
-// var thrasher = document.querySelector(".best-music");
 
-// var isInViewport = function (thrasher) {
-//   var bounding = thrasher.getBoundingClientRect();
-//   return (
-//     bounding.top >= 0 &&
-//     bounding.left >= 0 &&
-//     bounding.bottom <=
-//       (window.innerHeight || document.documentElement.clientHeight) &&
-//     bounding.right <=
-//       (window.innerWidth || document.documentElement.clientWidth)
-//   );
-// };
+const wrapper = document.querySelector(".best-music")
 
-// const allCovers = document.querySelector(".best-music__covers");
-// const albumCovers = document.querySelectorAll(".best-music__covers__image");
-// let currentCover = 0;
-// let z = 1;
+if (document.body.classList.contains(".ios") || document.body.classList.contains(".android")) {
+  loadMove()
+} else {
+  document.addEventListener("scroll", function () {
+    const offset = wrapper.getBoundingClientRect().top - (window.innerHeight * 0.8)
+    console.log((offset < 0), !wrapper.classList.contains("animate"))
+    if ((offset < 0) && !wrapper.classList.contains("animate")) {
 
-// // move covers on load
-// // allCovers.addEventListener("load", loadMove());
-
-// function loadMove() {
-//   albumCovers.forEach((cover) => {
-//     const x = 600 * Math.random() - 25;
-//     const r = 30 * Math.random() - 5;
-//     const y = 20 * Math.random() - 40;
-//     cover.style.transform = `translate(${x}px, ${y}px) rotate(${r}deg)`;
-//   });
-// }
-
-// function moveBack() {
-//   albumCovers.forEach((cover) => {
-//     const x = 0;
-//     const r = 0;
-//     const y = 0;
-//     cover.style.transform = `translate(${x}px, ${y}px) rotate(${r}deg)`;
-//   });
-// }
-
-// document.addEventListener("scroll", function (event) {
-//   if (isInViewport(thrasher)) {
-//     thrasher.classList.add("step1");
-//     loadMove();
-//   } else {
-//     moveBack();
-//   }
-// });
+      wrapper.classList.add("animate")
+      loadMove()
+      console.log("animate")
+    }
+  })
+}
