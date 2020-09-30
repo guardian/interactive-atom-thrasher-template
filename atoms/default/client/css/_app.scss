@@ -1,12 +1,15 @@
 body.ios,
 body.android {
+  background-color: #f6f6f6;
   .environment-moment-2020 {
-
+    border-top: 1px solid #dedede;
+    padding: 0;
     &__earth {
     }
 
     &__headline {
       &:before {
+        font-size: 112%;
       }
       &__pen {
         img {
@@ -28,6 +31,7 @@ body.android {
     }
 
     &__roundel {
+      display: none;
     }
 
   }
