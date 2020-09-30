@@ -143,6 +143,14 @@
         background-position: 1em;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        @keyframes shiftGradient {
+          0% {
+            background-position: 0em;
+          }
+          100% {
+            background-position: 42em;
+          }
+        }
 
         animation-name: shiftGradient;
         animation-duration: 9s;
