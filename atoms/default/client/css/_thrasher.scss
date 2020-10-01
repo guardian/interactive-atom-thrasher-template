@@ -136,8 +136,8 @@
       @supports (-webkit-background-clip: text) {
         // color: teal;
         background: #c70000;
+        // background: linear-gradient(90deg, rgba(7,74,173,1) 0%, rgba(0,127,136,1) 15%, rgba(57,120,95,1) 26%, rgba(161,105,19,1) 44%, rgba(188,96,1,1) 51%, rgba(194,48,1,1) 65%, rgba(136,53,55,1) 78%, rgba(7,74,173,1) 100%);
         background: linear-gradient(90deg, rgba(7,74,173,1) 0%, rgba(0,127,136,1) 15%, rgba(57,120,95,1) 26%, rgba(161,105,19,1) 44%, rgba(188,96,1,1) 51%, rgba(194,48,1,1) 65%, rgba(136,53,55,1) 78%, rgba(7,74,173,1) 100%);
-        background: linear-gradient(117deg, rgba(7,74,173,1) 0%, rgba(0,127,136,1) 15%, rgba(57,120,95,1) 26%, rgba(161,105,19,1) 44%, rgba(188,96,1,1) 51%, rgba(194,48,1,1) 65%, rgba(136,53,55,1) 78%, rgba(7,74,173,1) 100%);
         background-size: 42em;
         background-position: 1em;
         -webkit-background-clip: text;
