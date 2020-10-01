@@ -126,9 +126,11 @@
       @include mq(tablet) {
         text-indent: 0;
         padding-left: 76px;
+        padding-right: 180px;
       }
       @include mq(desktop) {
         padding-left: 102px;
+        // width: 600px;
       }
       @include mq(leftCol) {
         padding-left: 0;
