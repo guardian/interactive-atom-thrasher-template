@@ -124,6 +124,9 @@ html {
     }
     &__text {
       text-indent: 42px;
+      .nugget-only {
+        display: inline;
+      }
     }
   }
 

@@ -31,4 +31,13 @@ if (
   setTimeout(() => {
     window.resize();
   }, 100);
+  setTimeout(() => {
+    window.resize();
+  }, 1000);
+  setTimeout(() => {
+    window.resize();
+  }, 3000);
+  setTimeout(() => {
+    window.resize();
+  }, 10000);
 }
