@@ -157,6 +157,9 @@
         animation-timing-function: cubic-bezier(0,.25,1,.75);
 
       }
+      .nugget-only {
+        display: none;
+      }
     }
   }
   &__copy {
