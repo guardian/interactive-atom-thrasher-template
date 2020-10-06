@@ -20,4 +20,16 @@
       display: inline-block;
     }
   }
+
+  .ios & {
+    &.ios {
+      display: inline-block;
+    }
+  }
+
+  .android & {
+    &.android {
+      display: inline-block;
+    }
+  }
 }
