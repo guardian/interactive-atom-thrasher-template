@@ -11,7 +11,8 @@
 
 // Default breakpoints from Frontend
 // Use mc() in place of mq() so your thrashers don't get broken
-$mq-breakpoints: (mobile: 320px,
+$mq-breakpoints: (
+  mobile: 320px,
   mobileMedium: 375px,
   mobileLandscape: 480px,
   phablet: 660px,
@@ -30,7 +31,7 @@ $buttonColor: #fff;
 $buttonHoverColor: rgba(#fff, 0.5);
 
 // this targets the container your thrasher is put inside on Fronts
-section##{$containerName} {
+#best-music-reviews {
   width: 100%;
   position: relative;
   padding: 0 !important;
@@ -84,6 +85,7 @@ section##{$containerName} {
   &__covers {
     position: absolute;
     right: 360px;
+    right: 450px;
     top: 175px;
 
     @include mq(phablet) {
@@ -126,9 +128,11 @@ section##{$containerName} {
   &__component-button {
     // mixin takes 3 variables:
     // background-color, text-color, hover-background-color
-    @include component-button($bgColor: white,
+    @include component-button(
+      $bgColor: white,
       $color: #121212,
-      $hoverBgColor: #ededed);
+      $hoverBgColor: #ededed
+    );
     margin-top: 10px;
     position: relative;
     z-index: 100 !important;
@@ -149,7 +153,6 @@ section##{$containerName} {
 
 // iOS and Android specific styles
 .#{$containerName} {
-
   .android &,
   .ios & {
     overflow: hidden;
