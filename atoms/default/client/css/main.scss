@@ -26,12 +26,11 @@ $mq-breakpoints: (
 // update 'class-name' with yours
 $containerName:first-thing-election-special;
 // colours pulled from shared/css/_palette.sass
-$backgroundColor: #DFDCD1;
+$backgroundColor: #edeade;
+$lighterBackgroundColor: rgba(237, 234, 222, 0.7);
 $textColor: $news-red;
 $buttonColor:$neutral-7;
 $buttonHoverColor:$neutral-46;
-
-
 
 // this targets the container your thrasher is put inside on Fronts
 section##{$containerName} {
@@ -39,7 +38,7 @@ section##{$containerName} {
     position: relative;
     padding: 0 !important;
     overflow: hidden;
-    background-color:$backgroundColor;
+    background-color: $lighterBackgroundColor;
     .fc-container__inner,
     .fc-slice,
     .facia-snap {
@@ -51,51 +50,118 @@ section##{$containerName} {
 }
 
 .#{$containerName} {
-    display: flex;
-    flex-direction: column-reverse;
-    width:100%;
-    height:200px;
+    width: 100%;
+    height: 240px;
     background-color: $backgroundColor;
-    @include mc($from: phablet) {
-        display: flex;
-        flex-direction: row;
+    background-image: url("https://uploads.guim.co.uk/2020/10/01/TwinsArtworkMobDesktop.png");
+    background-repeat: no-repeat;
+    background-size: auto 45%;
+    background-position: bottom 0px right 0px;
+
+    &__content {
+        padding-top: 4px;
+        padding-right: 11px;
+        padding-left: 11px;
     }
+
+    @include mc(mobileMedium) {
+        background-size: auto 50%;
+        &__content {
+            //padding-right: 20%;
+            padding-left: 11px;
+        }
+    }
+
+    @include mc(mobileLandscape) {
+        background-size: auto 50%;
+        &__content {
+            //padding-right: 40%;
+            padding-left: 11px;
+        }
+    }
+
+    @include mc(phablet) {
+        background-size: auto 60%;
+        background-position: bottom 0px right 10px;
+        &__content {
+            //padding-right: 40%;
+            padding-left: 11px;
+        }
+    }
+
+    @include mc(tablet) {
+        &__content {
+            padding-top: 7px;
+            //padding-right: 11px;
+            padding-left: 50%;
+        }
+        border-right: solid 1px $neutral-86;
+        border-left: solid 1px $neutral-86;
+        background-size: auto 80%;
+        background-position: bottom 0px left -200px;
+    }
+
+    @include mc(desktop) {
+        background-position: bottom 0px left -100px;
+    }
+
+    @include mc(leftCol) {
+        &__content {
+            padding-left: 57%;
+        }
+        background-size: auto 90%;
+        background-position: bottom 0px left 0px;
+    }
+
     &__headline {
         line-height: 1;
         color:$textColor;
-        font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
-        font-size: 34px;
+        font-family:"Guardian Headline Bold","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
+        font-size: 32px;
+        @include mc(phablet) {
+            font-size: 36px;
+        }
+        @include mc(desktop) {
+            font-size: 50px;
+        }
+    }
+    &__blurb {
+        line-height: 1.3;
+        font-weight: 700;
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        max-width: 350px;
+        @include mc(phablet) {
+            font-size: 18px;
+            max-width: 400px;
+        }
     }
     &__component-button {
         // mixin takes 3 variables:
         // background-color, text-color, hover-background-color
         @include component-button($bgColor: $news-red, $color: #fff, $hoverBgColor: $feature-red);
         span {
-            padding: 10px 20px 10px 20px;
+            padding: 7px 17px 7px 17px;
         }
     }
     &__roundel {
         // mixin makes roundel sit top right of thrasher and move with grid
         @include roundel-top-right;
+        top: 7px;
     }
-    .#{$containerName}__blurb {
-        font-weight: 700;
-        font-size: 18px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    .#{$containerName}__img-container {
+
+    &__election-badge {
+        top: 7px;
+        left: 1.25rem;
+        height: 63px;
+        position: absolute;
         display: none;
-        @include mc($from: phablet) {
-            display: block;
-            height: 100%;
+        @include mc(mobileLandscape){
+            right:18px;
         }
-        img {
-            height: 100%;
-            margin-left: -100px;
-            @include mc($from: desktop) {
-                margin-left: 0px;
-            }
+        @include mc(leftCol) {
+            display: block;
         }
     }
 }
