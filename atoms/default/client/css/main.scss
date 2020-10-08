@@ -53,10 +53,11 @@ section##{$containerName} {
     width: 100%;
     height: 240px;
     background-color: $backgroundColor;
-    background-image: url("https://uploads.guim.co.uk/2020/10/06/FirstThingThrasher-2020.png");
+    background-image: url("https://uploads.guim.co.uk/2020/10/08/FirstThingThrasher-2020_opt.png");
     background-repeat: no-repeat;
     background-size: auto 45%;
     background-position: bottom 0px right 0px;
+    @include guss-typography-defaults();
 
     &__content {
         padding-top: 4px;
@@ -114,9 +115,10 @@ section##{$containerName} {
     }
 
     &__headline {
+        margin: 0;
         line-height: 1;
-        color:$textColor;
-        font-family:"Guardian Headline Bold","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
+        color: $textColor;
+        font-family: "Guardian Headline Bold","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
         font-size: 32px;
         @include mc(phablet) {
             font-size: 36px;
@@ -129,6 +131,7 @@ section##{$containerName} {
         line-height: 1.3;
         font-weight: 700;
         font-size: 16px;
+        font-family: "Guardian Headline Bold","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
         margin-top: 10px;
         margin-bottom: 10px;
         max-width: 350px;
