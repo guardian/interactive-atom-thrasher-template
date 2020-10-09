@@ -5,23 +5,26 @@ section#environment-pledge,
 section#environment-pledge-2020,
 section#climate-pledge,
 section#climate-pledge-2020,
-section#thrasher-atom, {
-  width:100%;
-  position: relative;
-  padding: 0 !important;
-  overflow: hidden;
-  background-color:#fff;
-  .fc-container__inner,
-  .fc-slice,
-  .facia-snap {
-      overflow: hidden;
-  }
-  .facia-snap {
-      padding: 0;
-  }
+section#thrasher-atom {
+  &.fc-container--thrasher {
+    width:100%;
+    position: relative;
+    padding: 0 !important;
+    overflow: hidden;
+    background-color:#fff;
+    .fc-container__inner,
+    .fc-slice,
+    .facia-snap {
+        overflow: hidden;
+    }
+    .facia-snap {
+        padding: 0;
+    }
 
-  .environment-moment-2020 {
-    margin: 0;
+    .environment-moment-2020 {
+      margin: 0;
+    }
+
   }
 }
 
