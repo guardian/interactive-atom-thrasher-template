@@ -144,7 +144,11 @@ section#newsletter-thrasher {
         width: calc(50% - 10px);
       }
 
+      a {
+        text-decoration: none;
+      }
       a:hover {
+        text-decoration: underline;
         color: #c60000;
       }
 
@@ -152,11 +156,13 @@ section#newsletter-thrasher {
         display: block;
         position: relative;
         align: left;
+        margin: 0;
         // color: $textColor;
         color: #c60000;
         font-family: "Guardian Headline Bold", "Guardian Headline Full",
           "Guardian Egyptian Web", Georgia, serif;
         font-weight: 700;
+        // text-decoration: none;
         font-size: 15pt;
         line-height: 16pt;
       }
@@ -167,6 +173,8 @@ section#newsletter-thrasher {
         font-family: "Guardian Headline Bold", "Guardian Headline Full",
           "Guardian Egyptian Web", Georgia, serif;
         padding-top: 5px;
+        // text-decoration: none;
+        margin: 0;
         font-weight: 500;
         font-size: 11pt;
         line-height: 14pt;
