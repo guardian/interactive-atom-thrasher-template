@@ -23,6 +23,7 @@ const ws = require('webpack-stream')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const mkdirp = require("mkdirp")
 const rp = require("request-promise")
+const AWS = require('aws-sdk');
 
 const isDeploy = gutil.env._.indexOf('deploylive') > -1 || gutil.env._.indexOf('deploypreview') > -1
 const live = gutil.env._.indexOf('deploylive') > -1
@@ -199,8 +200,13 @@ const serve = () => {
   watch(["atoms/**/*.scss","shared/**/*.scss"], series(buildCSS, local))
 }
 
+const awsCredentials = new AWS.CredentialProviderChain([
+    function() { return new AWS.EnvironmentCredentials('AWS')},
+    function() { return new AWS.SharedIniFileCredentials({profile: 'interactives'})}
+]);
+
 const s3Upload = (cacheControl, keyPrefix) => {
-  return s3()({
+  return s3({credentialProvider: awsCredentials})({
       'Bucket': 'gdn-cdn',
       'ACL': 'public-read',
       'CacheControl': cacheControl,
