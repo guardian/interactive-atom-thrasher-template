@@ -1,6 +1,5 @@
 const { series, dest, src, parallel, watch } = require("gulp");
 const del = require("del");
-const tap = require("gulp-tap");
 const gutil = require("gulp-util");
 const rename = require("gulp-rename");
 const requireUncached = require("require-uncached");
@@ -11,11 +10,9 @@ const replace = require('gulp-replace');
 const sass = require("gulp-sass");
 const file = require("gulp-file");
 sass.compiler = require("node-sass");
-const browserSync = require("browser-sync");3
+const browserSync = require("browser-sync");
 const browser = browserSync.create();
-const uglify = require("gulp-uglify")
 const cleanCSS = require('gulp-clean-css');
-const es = require('event-stream');
 const mergeStream = require('merge-stream');
 const config = require("./config.json")
 const path = require("path")
@@ -120,7 +117,7 @@ const buildJS = () => {
     })
     .pipe(rename((path) => {
       path.dirname = path.dirname.replace(/client/g, "");
-    })) 
+    }))
     .pipe(replace('<%= path %>', assetPath))
     .pipe(dest(".build/"));
 }
@@ -168,11 +165,11 @@ const _template = (x) => {
 const local = () => {
   const atoms = getAtoms();
 
-  const atomPromises = atoms.map(atom => { 
+  const atomPromises = atoms.map(atom => {
     const js = _template((fs.readFileSync(`.build/${atom}/main.js`)).toString());
     const css = _template((fs.readFileSync(`.build/${atom}/main.css`)).toString());
     const html = _template((fs.readFileSync(`.build/${atom}/main.html`)).toString());
-    
+
     return src(["harness/*", "!harness/_index.html"])
       .pipe(template({js,css,html,atom,version}))
       .pipe(dest(".build/" + atom))
@@ -244,7 +241,7 @@ const upload = () => {
     src(`.build/assets/**/*`)
         .pipe(s3Upload('max-age=31536000', `${s3Path}/assets/${version}`))
   );
-  
+
   return mergeStream(uploadTasks)
 }
 
