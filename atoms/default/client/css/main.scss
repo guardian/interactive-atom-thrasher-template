@@ -50,6 +50,7 @@ section#newsletter-thrasher {
 }
 
 .nl-thrasher {
+  // @include guss-typography-defaults();
   border-left: 1px solid #dcdcdc;
   border-right: 1px solid #dcdcdc;
   border-top: 0.5px solid #dcdcdc;
@@ -153,7 +154,8 @@ section#newsletter-thrasher {
         align: left;
         // color: $textColor;
         color: #c60000;
-        font-family: "Guardian Text Egyptian Web", Georgia, serif;
+        font-family: "Guardian Headline Bold", "Guardian Headline Full",
+          "Guardian Egyptian Web", Georgia, serif;
         font-weight: 700;
         font-size: 15pt;
         line-height: 16pt;
@@ -162,9 +164,10 @@ section#newsletter-thrasher {
       &__subheadline {
         color: $textColor;
         // color: #c60000;
-        font-family: $f-serif-text;
+        font-family: "Guardian Headline Bold", "Guardian Headline Full",
+          "Guardian Egyptian Web", Georgia, serif;
         padding-top: 5px;
-        font-weight: lighter;
+        font-weight: 500;
         font-size: 11pt;
         line-height: 14pt;
         padding-right: 5px;
