@@ -45,7 +45,14 @@ Some things to remember:
 
 <br>
 
+## Apps compatibility
+To ensure maximum compatibility with apps, ensure the following:
+ - Test with the "Android front webview" after starting the `gulp` build. This allows you to preview how the thrasher looks like in the app (without the styles inherited from dotcom).
+ - All assets have a fully qualified URL. For instance `assets/myimage.png` might work on dotcom but it won't work on apps. However `https://interactive.guim.co.uk/atoms/thrashers/2020/10/first-thing-election-special/assets/v/1602172252139/demo.png` will do just fine. 
+
 ## Compiling and Deploying
+
+_Before deploying you'll need to pull credentials from Janus for the `interactives` account_
 
 To push your thrasher to preview (pushes to a bucket in CAPI preview) run:
 
