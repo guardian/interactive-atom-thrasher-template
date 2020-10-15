@@ -115,6 +115,7 @@ html {
   &__headline {
     font-size: 40px;
     padding-top: 208px;
+    line-height: 48px;
     &:before {
       top: calc(208px - 1.15em + 2px);
       font-size: 40px;
@@ -148,4 +149,3 @@ html {
   }
 
 }
-
