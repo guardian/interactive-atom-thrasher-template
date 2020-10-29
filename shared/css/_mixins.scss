@@ -3,8 +3,8 @@
 @mixin component-button($bgColor: #ffe500, $color: #f71515, $hoverBgColor: #ffbb50) {
     display: inline-flex;
     flex-direction: row;
-    background-color:$bgColor; 
-    border-radius: 25px;
+    background-color:$bgColor;
+    border-radius: 12px;
     text-decoration: none;
     cursor: pointer;
     span {
@@ -12,17 +12,17 @@
         font-family:"Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
         font-weight:bold;
         font-size:17px;
-        
+
         padding: 10px 2px 10px 20px;
         margin-top: -2px;
         text-decoration: none;
     }
     svg {
-        padding: 10px;
+        padding: 7px;
         fill: $color;
         padding-right:16px;
         transition: transform 0.3s ease;
-    }        
+    }
     &:hover {
         background-color:$hoverBgColor;
         text-decoration: none;
