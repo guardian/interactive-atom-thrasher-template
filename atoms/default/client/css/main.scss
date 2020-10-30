@@ -22,7 +22,7 @@ $mq-breakpoints: (mobile: 320px,
 );
 
 // update 'class-name' with yours
-$containerName: somalinimo;
+$containerName: daisy-chain;
 // colours pulled from shared/css/_palette.sass
 $backgroundColor: #121212;
 $textColor: white;
@@ -136,9 +136,12 @@ section#the-circle {
     bottom: 0;
     z-index: -1;
 
-    background-image: url("https://uploads.guim.co.uk/2020/08/24/Somalinimo_019_1.thrasher-mobile.jpg");
+    background-image: url("https://uploads.guim.co.uk/2020/10/29/DAISY_5-brighter2.min.jpg");
     background-size: cover;
     background-position: center;
+
+    background-size: auto 126%;
+    background-position: top center;
 
     &:before,
     &:after {
@@ -160,8 +163,12 @@ section#the-circle {
       opacity: 0.5;
     }
 
+    @include mq(mobileLandscape) {
+      background-size: cover;
+    }
+
+
     @include mq(tablet) {
-      background-image: url("https://uploads.guim.co.uk/2020/08/24/Somalinimo_021_1.thrasher-desktop.jpg");
       background-position-y: 20%;
       left: 260px;
       &:before {
@@ -203,12 +210,18 @@ section#the-circle {
     color: white;
     font-size: 20px;
     line-height: 26px;
-    position: relative;
+    // position: relative;
     z-index: 10;
     padding: 6px 0;
-    margin-top: 100px;
+    // margin-top: 100px;
 
-    &:before {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+
+    &:before,
+    &:after {
       content: "";
       display: block;
       position: absolute;
@@ -227,6 +240,10 @@ section#the-circle {
     }
 
     @include mq(phablet) {
+      position: relative;
+      bottom: auto;
+      left: auto;
+      right: auto;
       margin-top: 46px;
     }
 
@@ -262,7 +279,7 @@ section#the-circle {
 
     &__logline {
       font-weight: 600;
-      max-width: 280px;
+      // max-width: 280px;
     }
 
     &__button {
@@ -326,16 +343,16 @@ section#the-circle {
 
     &:hover {
 
-      &~.somalinimo__copy .somalinimo__copy__logline,
+      &~.daisy-chain__copy .daisy-chain__copy__logline,
       &~.title {
         opacity: 0.95;
       }
 
-      &~.somalinimo__image {
+      &~.daisy-chain__image {
         opacity: 0.97;
       }
 
-      &~.somalinimo__copy .somalinimo__copy__button__icon {
+      &~.daisy-chain__copy .daisy-chain__copy__button__icon {
         transform: scale(1.1);
       }
 
