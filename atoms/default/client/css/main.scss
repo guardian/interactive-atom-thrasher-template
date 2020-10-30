@@ -11,86 +11,372 @@
 
 // Default breakpoints from Frontend
 // Use mc() in place of mq() so your thrashers don't get broken
-$mq-breakpoints: (
-    mobile:          320px,
-    mobileMedium:    375px,
-    mobileLandscape: 480px,
-    phablet:         660px,
-    tablet:          740px,
-    desktop:         980px,
-    leftCol:         1140px,
-    wide:            1300px
+$mq-breakpoints: (mobile: 320px,
+  mobileMedium: 375px,
+  mobileLandscape: 480px,
+  phablet: 660px,
+  tablet: 740px,
+  desktop: 980px,
+  leftCol: 1140px,
+  wide: 1300px,
 );
 
-
 // update 'class-name' with yours
-$containerName:class-name;
+$containerName: somalinimo;
 // colours pulled from shared/css/_palette.sass
-$backgroundColor:$labs-main;
-$textColor: $neutral-7;
-$buttonColor:$neutral-7;
-$buttonHoverColor:$neutral-46;
-
-
+$backgroundColor: #121212;
+$textColor: white;
+$buttonColor: $neutral-7;
+$buttonHoverColor: $neutral-46;
 
 // this targets the container your thrasher is put inside on Fronts
-section##{$containerName} {
-    width:100%;
-    position: relative;
-    padding: 0 !important;
+section##{$containerName},
+section#documentaries,
+section#documentary,
+section#the-circle {
+  width: 100%;
+  position: relative;
+  padding: 0 !important;
+  overflow: hidden;
+  background-color: #121212;
+
+  .fc-container__inner,
+  .fc-slice,
+  .facia-snap {
     overflow: hidden;
-    background-color:#fff;
-    .fc-container__inner,
-    .fc-slice,
-    .facia-snap {
-        overflow: hidden;
-    }
-    .facia-snap {
-        padding: 0;
-    }
+  }
+
+  .facia-snap {
+    padding: 0;
+  }
 }
 
 .#{$containerName} {
-    width:100%;
-    height:200px;
-    background-color:$backgroundColor;
-    &__headline {
-        color:$textColor;
-        font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
-        font-size: 34px;
-        @include mc ($from: mobileLandscape) {
-            color:$textColor;
+  height: 320px;
+  padding: 4px 10px;
+
+  @include mq(mobileLandscape) {
+    padding: 4px 10px;
+  }
+
+  @include mq(phablet) {
+    height: 260px;
+  }
+
+  @include mq(tablet) {
+    height: 260px;
+    width: 100%;
+  }
+
+  &__headline {
+    color: $textColor;
+    font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia,
+      serif;
+    font-size: 42px;
+    margin-top: -10px;
+
+    @include mc(mobileLandscape) {
+      color: $textColor;
+    }
+
+    @include mq(leftCol) {
+      margin-left: 150px;
+    }
+
+    @include mc(wide) {
+      margin-left: 230px;
+    }
+  }
+
+  &__component-button {
+    // mixin takes 3 variables:
+    // background-color, text-color, hover-background-color
+    @include component-button($bgColor: $neutral-7,
+      $color: #fff,
+      $hoverBgColor: $neutral-46);
+  }
+
+  &__roundel {
+    // mixin makes roundel sit top right of thrasher and move with grid
+    @include roundel-top-right;
+  }
+
+  &__container-title {
+    display: block;
+    font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia,
+      serif;
+    color: $textColor;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 700;
+    z-index: 30;
+
+    a {
+      color: white;
+    }
+
+    @include mq(tablet) {
+      display: none;
+    }
+
+    @include mq(wide) {
+      font-size: 24px;
+      position: absolute;
+      display: block;
+      top: 6px;
+      left: 20px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+    background-image: url("https://uploads.guim.co.uk/2020/08/24/Somalinimo_019_1.thrasher-mobile.jpg");
+    background-size: cover;
+    background-position: center;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
+    &:before {
+      top: 50%;
+      bottom: 0;
+      background: linear-gradient(0deg, rgba(18,18,18,1) 0%, rgba(18,18,18,0) 100%);
+    }
+    &:after {
+      top: 0;
+      bottom: auto;
+      height: 70px;
+      background: linear-gradient(0deg, rgba(18,18,18,0) 0%, rgba(18,18,18,1) 100%);
+      opacity: 0.5;
+    }
+
+    @include mq(tablet) {
+      background-image: url("https://uploads.guim.co.uk/2020/08/24/Somalinimo_021_1.thrasher-desktop.jpg");
+      background-position-y: 20%;
+      left: 260px;
+      &:before {
+        top: 0;
+        left: -260px;
+        right: 100%;
+        bottom: 0;
+        background: #121212;
+      }
+      &:after {
+        background: linear-gradient(90deg, rgba(18,18,18,1) 0%, rgba(18,18,18,0) 100%);
+        bottom: 0;
+        left: 0;
+        right: auto;
+        width: 30px;
+        height: auto;
+        opacity: 1;
+      }
+    }
+    @include mq(leftCol) {
+      left: 400px;
+      &:before {
+        left: -400px;
+      }
+    }
+    @include mq(wide) {
+      left: 480px;
+      &:before {
+        left: -480px;
+      }
+    }
+
+
+  }
+
+  &__copy {
+    font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia,
+      serif;
+    color: white;
+    font-size: 20px;
+    line-height: 26px;
+    position: relative;
+    z-index: 10;
+    padding: 6px 0;
+    margin-top: 100px;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: -20px;
+      height: 1px;
+      background-color: white;
+      opacity: 0.2;
+    }
+
+    @include mq(mobileLandscape) {
+      &:before {
+        right: -20px;
+      }
+    }
+
+    @include mq(phablet) {
+      margin-top: 46px;
+    }
+
+    @include mq(tablet) {
+      font-size: 20px;
+      line-height: 22px;
+      width: 250px;
+      padding-right: 10px;
+      margin-top: 10px;
+
+      &:before {
+        right: 0;
+        left: -20px;
+      }
+    }
+
+    @include mq(leftCol) {
+      &:before {
+        display: none;
+      }
+
+      margin-left: 150px;
+      border-left: 1px solid rgba(white, 0.2);
+      border-top: 1px solid rgba(white, 0.2);
+      padding-left: 10px;
+      padding-bottom: 12px;
+      margin-top: -3px;
+    }
+
+    @include mq(wide) {
+      margin-left: 230px;
+    }
+
+    &__logline {
+      font-weight: 600;
+      max-width: 280px;
+    }
+
+    &__button {
+      display: flex;
+      margin-top: 9px;
+      margin-left: -1px;
+      font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial,
+        "Lucida Grande", sans-serif;
+      font-size: 14px;
+      color: white;
+
+      &__icon {
+        width: 42px;
+        height: 42px;
+        // background-color: #ffe500;
+        background-color: #ffe500;
+        border-radius: 100%;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        transition: all 240ms ease-in-out;
+
+        svg {
+          position: absolute;
+          top: 13px;
+          left: 13px;
+
+          path {
+            fill: #121212;
+          }
         }
+      }
+
+      &__wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-left: 4px;
+        padding-top: 9px;
+      }
+
+      &__time {
+        margin-top: -9px;
+
+        @include mq(tablet) {
+          margin-top: -6px;
+        }
+      }
     }
-    &__component-button {
-        // mixin takes 3 variables:
-        // background-color, text-color, hover-background-color
-        @include component-button($bgColor: $neutral-7, $color: #fff, $hoverBgColor: $neutral-46);
+  }
+
+  a.main-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    z-index: 20;
+
+    transition: background-color 0.3s linear;
+
+    &:hover {
+
+      &~.somalinimo__copy .somalinimo__copy__logline,
+      &~.title {
+        opacity: 0.95;
+      }
+
+      &~.somalinimo__image {
+        opacity: 0.97;
+      }
+
+      &~.somalinimo__copy .somalinimo__copy__button__icon {
+        transform: scale(1.1);
+      }
+
     }
-    &__roundel {
-        // mixin makes roundel sit top right of thrasher and move with grid
-        @include roundel-top-right;
-    }
+  }
 }
 
 
 // this removes margins from Android / iOS view
 .interactive-atom {
-    margin:0;
-    overflow: hidden;
+  margin: 0;
+  overflow: hidden;
 }
 
 // iOS and Android specific styles
 .#{$containerName} {
-    .android &,
-    .ios & {
-        overflow:hidden;
-        margin:0;
-        padding:0;
-        &__component-button {
-            span {
-                letter-spacing: unset;
-            }
-        }
+
+  .android &,
+  .ios & {
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+
+    &__component-button {
+      span {
+        letter-spacing: unset;
+      }
     }
+
+    &__container-title {
+      a {
+        text-decoration: none;
+      }
+    }
+
+    &__copy__button__icon {
+      transform: scale(1);
+    }
+
+    &__headline {
+      margin-top: -4px;
+    }
+  }
 }
