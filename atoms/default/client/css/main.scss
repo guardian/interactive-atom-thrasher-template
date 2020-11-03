@@ -56,7 +56,7 @@ section##{$containerName} {
     background-color: $backgroundColor;
     background-image: url("https://interactive.guim.co.uk/atoms/thrashers/2020/11/us-morning-briefing-post-election-2020/assets/v/1603724865849/Banner_Whitehouse.png");
     background-repeat: no-repeat;
-    background-size: auto 45%;
+    background-size: auto 42%;
     background-position: bottom -3px right -110px;
     @include guss-typography-defaults();
 
@@ -74,27 +74,23 @@ section##{$containerName} {
         background-position: bottom -3px right -70px;
         background-size: auto 50%;
         &__content {
-            //padding-right: 40%;
-            padding-left: 11px;
         }
     }
 
     @include mc(phablet) {
         background-position: bottom 0px right -70px;
         &__content {
-            padding-right: 16%;
-            padding-left: 11px;
         }
     }
 
     @include mc(tablet) {
         &__content {
-            padding-top: 7px;
         }
         height: 78px;
         border-right: solid 1px $neutral-86;
         border-left: solid 1px $neutral-86;
         background-size: auto 90%;
+        background-position: bottom 0px right -85px;
     }
 
     @include mc(desktop) {
@@ -116,11 +112,13 @@ section##{$containerName} {
 
     &__headline {
         margin: 0;
-        line-height: 1;
+        line-height: 1.1;
         color: $textColor;
         font-family: "Guardian Headline Bold","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
         font-size: 24px;
+        margin-right: 75px;
         @include mc(mobileLandscape) {
+            margin-right: 0px;
             font-size: 28px;
         }
         @include mc(phablet) {
@@ -131,6 +129,7 @@ section##{$containerName} {
         }
         @include mc(desktop) {
             font-size: 34px;
+            line-height: 1;
         }
     }
     &__blurb {
@@ -141,10 +140,18 @@ section##{$containerName} {
         color: $blurbTextColor;
         margin-top: 10px;
         margin-bottom: 10px;
-        //max-width: 350px;
+        margin-right: 70px;
+        @include mc(mobileLandscape) {
+            margin-right: 140px;
+            font-size: 18px;
+        }
+        @include mc(phablet) {
+            margin-right: 125px;
+            font-size: 18px;
+        }
         @include mc(tablet) {
+            margin-right: 125px;
             font-size: 14px;
-            //max-width: 400px;
         }
         @include mc(desktop) {
             font-size: 17px;
