@@ -39,7 +39,7 @@ section##{$containerName} {
     position: relative;
     padding: 0 !important;
     overflow: hidden;
-    background-color: $lighterBackgroundColor;
+    background-color: $backgroundColor;
     .fc-container__inner,
     .fc-slice,
     .facia-snap {
@@ -52,12 +52,12 @@ section##{$containerName} {
 
 .#{$containerName} {
     width: 100%;
-    height: 189px;
+    height: 218px;
     background-color: $backgroundColor;
     background-image: url("https://interactive.guim.co.uk/atoms/thrashers/2020/11/us-morning-briefing-post-election-2020/assets/v/1603724865849/Banner_Whitehouse.png");
     background-repeat: no-repeat;
-    background-size: auto 42%;
-    background-position: bottom -3px right -110px;
+    background-size: auto 37%;
+    background-position: bottom 0px left 125px;
     @include guss-typography-defaults();
 
     &__content {
@@ -67,44 +67,46 @@ section##{$containerName} {
     }
 
     @include mc(mobileMedium) {
-        background-position: bottom -3px right -90px;
+        background-size: auto 55%;
+        background-position: bottom -0px left 140px;
     }
 
     @include mc(mobileLandscape) {
-        background-position: bottom -3px right -70px;
-        background-size: auto 50%;
-        &__content {
-        }
+        background-position: bottom -0px left 157 px;
+        background-size: auto 70%;
     }
 
     @include mc(phablet) {
-        background-position: bottom 0px right -70px;
-        &__content {
+        height: 116px;
+        background-size: auto 78%;
+        background-position: bottom 0px left 383px;
+        &__flex {
+            display: flex;
+            flex-wrap: nowrap;
         }
     }
 
     @include mc(tablet) {
-        &__content {
-        }
-        height: 78px;
         border-right: solid 1px $neutral-86;
         border-left: solid 1px $neutral-86;
-        background-size: auto 90%;
-        background-position: bottom 0px right -85px;
+        background-size: auto 85%;
+        background-position: bottom 0px left 435px;
     }
 
     @include mc(desktop) {
-        background-position: bottom 0px right 0px;
+        background-size: auto 95%;
+        background-position: bottom 0px left 550px;
     }
 
     @include mc(leftCol) {
         &__content {
             margin-left: 168px;
         }
+        background-position: bottom 0px left 710px;
     }
 
     @include mc(wide) {
-        background-position: bottom 0px right 80px;
+        background-position: bottom 0px left 850px;
         &__content {
             margin-left: 248px;
         }
@@ -115,93 +117,91 @@ section##{$containerName} {
         line-height: 1.1;
         color: $textColor;
         font-family: "Guardian Headline Bold","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
-        font-size: 24px;
-        margin-right: 75px;
+        font-size: 30px;
+        max-width: 246px;
+        @include mc(mobileMedium) {
+            margin-right: 90px;
+        }
         @include mc(mobileLandscape) {
-            margin-right: 0px;
-            font-size: 28px;
+            margin-right: 210px;
         }
         @include mc(phablet) {
-            font-size: 34px;
+            margin-right: 0px;
+            max-width: 100%;
+            display: block;
         }
         @include mc(tablet) {
             font-size: 28px;
         }
         @include mc(desktop) {
-            font-size: 34px;
+            font-size: 37px;
             line-height: 1;
         }
     }
     &__blurb {
         line-height: 1.3;
-        font-weight: 700;
-        font-size: 17px;
+        font-weight: 500;
+        font-size: 16px;
         font-family: "Guardian Headline Bold","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
         color: $blurbTextColor;
         margin-top: 10px;
         margin-bottom: 10px;
-        margin-right: 70px;
+        max-width: 226px;
+        @include mc(mobileMedium) {
+            margin-right: 115px;
+        }
         @include mc(mobileLandscape) {
-            margin-right: 140px;
-            font-size: 18px;
+            margin-right: 210px;
         }
         @include mc(phablet) {
-            margin-right: 125px;
-            font-size: 18px;
+            margin-right: 0px;
+            max-width: 246px;
+            font-size: 17px;
+            display: block;
         }
         @include mc(tablet) {
-            margin-right: 125px;
-            font-size: 14px;
+            max-width: 306px;
         }
         @include mc(desktop) {
-            font-size: 17px;
-            //max-width: 400px;
+            font-size: 20px;
+            max-width: 380px;
         }
     }
     &__component-button {
-        display: inline-flex;
-        flex-direction: row;
-        background-color:black;
-        border-radius: 25px;
-        text-decoration: none;
-        cursor: pointer;
-        svg {
-            padding: 7px 6px;
-            fill: #fff;
+        @include component-button($bgColor: $neutral-7, $color: #fff, $hoverBgColor: $neutral-46);
+        height: 36px;
+        border-radius: 26px;
+        span {
+            padding-top: 6px;
+            font-size: 17px;
         }
         &:focus, &:hover {
             background-color:#ffd622;
             text-decoration: none;
             span {
+                color: black;
                 text-decoration:none;
             }
             svg {
                 fill: black;
             }
         }
-        @include mc(tablet) {
-            display: block;
-            position: absolute !important;
-            border: none;
-            background: transparent;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            svg {
-                display: none;
-            }
-            &:focus, &:hover {
-                background: transparent;
-            }
+        @include mc(phablet) {
+            margin-top: 16px;
         }
     }
     &__roundel {
-        display: none;
         @include roundel-top-right;
-        top: 7px;
-        @include mc(wide) {
-            display: block;
+        top: 3px;
+        right: 9px;
+
+        @include mc(mobileLandscape) {
+            right: 10px;
+            top: 3px;
+        }
+        @include mc(tablet) {
+            right: 11px;
+            top: 6px;
         }
     }
 
