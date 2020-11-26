@@ -32,7 +32,7 @@ $buttonHoverColor: $neutral-46;
 // this targets the container your thrasher is put inside on Fronts
 section#documentaries,
 section#documentary,
-section#colette {
+section#wolves-of-norway {
   width: 100%;
   position: relative;
   padding: 0 !important;
@@ -51,11 +51,11 @@ section#colette {
 }
 
 .#{$containerName} {
-  height: 320px;
+  height: 360px;
   padding: 4px 10px;
 
   @include mq(mobileLandscape) {
-    padding: 4px 10px;
+    padding: 4px 20px;
   }
 
   @include mq(phablet) {
@@ -71,8 +71,13 @@ section#colette {
     color: $textColor;
     font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia,
       serif;
-    font-size: 42px;
-    margin-top: -10px;
+    font-size: 36px;
+    line-height: 1;
+    margin-top: 4px;
+
+    @include mq(mobileMedium) {
+      font-size:42px;
+    }
 
     @include mc(mobileLandscape) {
       color: $textColor;
@@ -140,9 +145,21 @@ section#colette {
     bottom: 0;
     z-index: -1;
 
-    background-image: url("https://uploads.guim.co.uk/2020/11/10/_MG_0346_copy.jpg");
+    background-image: url("https://uploads.guim.co.uk/2020/11/26/Group-116-min.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: -240px center;
+    background-repeat: no-repeat;
+    @include mq(mobileMedium) {
+      background-size: 220%;
+      background-position: -253px center;
+    }
+    @include mq(mobileLandscape) {
+      background-position: center;
+      background-size: cover;
+    }
+    @include mq(tablet) {
+      background-position: center;
+    }
 
     &:before,
     &:after {
@@ -150,6 +167,7 @@ section#colette {
       position: absolute;
       left: 0;
       right: 0;
+      mix-blend-mode: luminosity;
     }
 
     &:before {
@@ -171,8 +189,8 @@ section#colette {
     }
 
     @include mq(tablet) {
-      background-image: url("https://uploads.guim.co.uk/2020/11/10/_MG_0346_copy.jpg");
-      background-position-y: 20%;
+      background-image: url("https://uploads.guim.co.uk/2020/11/26/Group-116-min.jpg");
+      background-position-y: 80%;
       left: 260px;
 
       &:before {
@@ -188,7 +206,7 @@ section#colette {
             rgba(18, 18, 18, 1) 0%,
             rgba(18, 18, 18, 0) 100%);
         bottom: 0;
-        left: 0;
+        left: -1px;
         right: auto;
         width: 30px;
         height: auto;
@@ -196,16 +214,16 @@ section#colette {
       }
     }
 
-    @include mq(mobileLandscape) {
-      background-position: center -10px;
-    }
+    // @include mq(mobileLandscape) {
+    //   background-position: center -10px;
+    // }
 
-    @include mq(phablet) {
-      background-position: center -80px;
-    }
+    // @include mq(phablet) {
+    //   background-position: center -80px;
+    // }
 
     @include mq(tablet) {
-      background-position: center;
+      // background-position: center;
 
       &:after {
         width: 70px;
@@ -221,20 +239,20 @@ section#colette {
       }
 
       &:after {
-        width: 100px;
+        width: 240px;
       }
     }
 
     @include mq(wide) {
-      left: 480px;
-      left: 367px;
+      left: 317px;
+      background-position-y:70%;
 
       &:before {
         left: -480px;
       }
 
       &:after {
-        width: 110px;
+        width: 260px;
       }
     }
   }
@@ -243,12 +261,12 @@ section#colette {
     font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia,
       serif;
     color: white;
-    font-size: 20px;
-    line-height: 26px;
+    font-size: 17px;
+    line-height: 115%;
     position: relative;
     z-index: 10;
-    padding: 6px 0;
-    margin-top: 100px;
+    padding: 2px 0;
+    margin-top: 132px;
 
     &:before {
       content: "";
@@ -269,12 +287,12 @@ section#colette {
     }
 
     @include mq(phablet) {
-      margin-top: 46px;
+      margin-top: 66px;
     }
 
     @include mq(tablet) {
-      font-size: 20px;
-      line-height: 22px;
+      font-size: 17px;
+      line-height: 115%;
       width: 250px;
       padding-right: 10px;
       margin-top: 10px;
@@ -286,8 +304,8 @@ section#colette {
     }
 
     @include mq(desktop) {
-      margin-top: 54px;
-      width: 308px;
+      margin-top: 66px;
+      width: 290px;
     }
 
     @include mq(leftCol) {
@@ -300,17 +318,17 @@ section#colette {
       border-top: 1px solid rgba(white, 0.2);
       padding-left: 10px;
       padding-bottom: 12px;
-      margin-top: 49px;
+      margin-top: 69px;
     }
 
     @include mq(wide) {
       margin-left: 230px;
       margin-left: 240px;
-      margin-top: 76px;
+      margin-top: 95px;
     }
 
     &__logline {
-      font-weight: 600;
+      font-weight: 500;
       max-width: 280px;
     }
 
@@ -353,10 +371,10 @@ section#colette {
       }
 
       &__time {
-        margin-top: -9px;
+        margin-top: -5px;
 
         @include mq(tablet) {
-          margin-top: -6px;
+          margin-top: -4px;
         }
       }
     }
