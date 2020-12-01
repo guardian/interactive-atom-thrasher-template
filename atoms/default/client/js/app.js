@@ -6,3 +6,22 @@ function trackLoad() {
     });
 }
 
+const wrapper = document.querySelector(".cv-charity")
+
+if (document.body.classList.contains("android") || document.body.classList.contains(".android")) {
+  wrapper.classList.add("animate")
+} else {
+  document.addEventListener("scroll", function () {
+    const offset = wrapper.getBoundingClientRect().top - (window.innerHeight * 0.8)
+    // console.log((offset < 0), !wrapper.classList.contains("animate"))
+    if (offset < 0) {
+      wrapper.classList.add("animate")
+    } if (offset < -window.innerHeight) {
+      wrapper.classList.remove("animate")
+    }
+    if (offset > 0) {
+      wrapper.classList.remove("animate")
+    }
+    console.log(offset)
+  })
+}
