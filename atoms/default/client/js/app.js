@@ -25,3 +25,7 @@ if (document.body.classList.contains("android") || document.body.classList.conta
     console.log(offset)
   })
 }
+
+if (document.body.classList.contains("ios") || document.body.classList.contains(".ios")) {
+  wrapper.classList.add("animate")
+}
