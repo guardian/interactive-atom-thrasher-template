@@ -36,7 +36,7 @@ document.addEventListener("scroll", function (event) {
 
 const wrapper = document.querySelector(".best-music")
 
-if (document.body.classList.contains(".ios") || document.body.classList.contains(".android")) {
+if (document.body.classList.contains("android") || document.body.classList.contains(".android")){
   loadMove()
 } else {
   document.addEventListener("scroll", function () {
@@ -49,4 +49,7 @@ if (document.body.classList.contains(".ios") || document.body.classList.contains
       console.log("animate")
     }
   })
+}
+if (document.body.classList.contains("ios") || document.body.classList.contains(".ios")){
+  loadMove()
 }
