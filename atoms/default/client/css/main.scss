@@ -219,7 +219,7 @@ section##{$containerName}, #charity-appeal {
     .right {
       padding: 0 0 0 10px;
       background-color:white;
-      
+      background-color: rgba(255, 255, 255, 0.6);
       margin-left: -10px;
       border-top: 1px solid #121212;
       @include mq(mobileLandscape) {
@@ -237,10 +237,10 @@ section##{$containerName}, #charity-appeal {
             Arial,
             "Lucida Grande",
             sans-serif;
-        margin-top: 10px;
+        margin-top: 8px;
         line-height: 135%;
-        padding-right: 40px;
-        margin-bottom: 12px;
+        padding-right: 20px;
+        margin-bottom: 24px;
         @include mq(mobileLandscape) {
         }
         @include mq(tablet) {
@@ -296,7 +296,7 @@ section##{$containerName}, #charity-appeal {
       }
     }
     &__subheadline {
-      font-size:20px;
+      font-size:24px;
       @include mq(tablet) {
         font-size: 28px;
         width: 80%;
