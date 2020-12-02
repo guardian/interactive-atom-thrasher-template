@@ -51,7 +51,7 @@ section#wolves-of-norway {
 }
 
 .#{$containerName} {
-  height: 360px;
+  height: 340px;
   padding: 4px 10px;
 
   @include mq(mobileLandscape) {
@@ -76,19 +76,29 @@ section#wolves-of-norway {
     margin-top: 4px;
 
     @include mq(mobileMedium) {
-      font-size:42px;
+      font-size: 38px;
+      width: 90%;
     }
 
     @include mc(mobileLandscape) {
       color: $textColor;
     }
 
+    @include mq(tablet) {
+      width:45%;
+    }
+    @include mq(desktop) {
+      width:34%;
+    }
+
     @include mq(leftCol) {
       margin-left: 160px;
+      width:28%;
     }
 
     @include mc(wide) {
       margin-left: 240px;
+      width:25%;
     }
   }
 
@@ -145,20 +155,23 @@ section#wolves-of-norway {
     bottom: 0;
     z-index: -1;
 
-    background-image: url("https://uploads.guim.co.uk/2020/11/26/Group-116-min.jpg");
-    background-size: cover;
-    background-position: -240px center;
+    background-image: url("https://uploads.guim.co.uk/2020/12/02/wolf-norway-min.jpg");
+    background-size: 210%;
+    background-position: -180px top;
     background-repeat: no-repeat;
     @include mq(mobileMedium) {
-      background-size: 220%;
-      background-position: -253px center;
+          background-size: 180%;
+          background-position: -123px top;
     }
     @include mq(mobileLandscape) {
       background-position: center;
       background-size: cover;
     }
+    @include mq(phablet) {
+      background-position: top;
+    }
     @include mq(tablet) {
-      background-position: center;
+      background-position: top;
     }
 
     &:before,
@@ -181,7 +194,7 @@ section#wolves-of-norway {
     &:after {
       top: 0;
       bottom: auto;
-      height: 70px;
+      height: 130px;
       background: linear-gradient(0deg,
           rgba(18, 18, 18, 0) 0%,
           rgba(18, 18, 18, 1) 100%);
@@ -189,9 +202,9 @@ section#wolves-of-norway {
     }
 
     @include mq(tablet) {
-      background-image: url("https://uploads.guim.co.uk/2020/11/26/Group-116-min.jpg");
-      background-position-y: 80%;
-      left: 260px;
+      background-image: url("https://uploads.guim.co.uk/2020/12/02/wolf-norway-min.jpg");
+      background-position-y: 50%;
+      left: 100px;
 
       &:before {
         top: 0;
@@ -214,45 +227,40 @@ section#wolves-of-norway {
       }
     }
 
-    // @include mq(mobileLandscape) {
-    //   background-position: center -10px;
-    // }
-
-    // @include mq(phablet) {
-    //   background-position: center -80px;
-    // }
-
     @include mq(tablet) {
-      // background-position: center;
-
       &:after {
-        width: 70px;
+        width: 320px;
       }
+    }
+
+    @include mq(desktop) {
+      left:240px;
     }
 
     @include mq(leftCol) {
       left: 400px;
       left: 350px;
+      background-position-y:30%;
 
       &:before {
         left: -400px;
       }
 
       &:after {
-        width: 240px;
+        width: 340px;
       }
     }
 
     @include mq(wide) {
       left: 317px;
-      background-position-y:70%;
+      background-position-y:30%;
 
       &:before {
         left: -480px;
       }
 
       &:after {
-        width: 260px;
+        width: 400px;
       }
     }
   }
@@ -261,7 +269,7 @@ section#wolves-of-norway {
     font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia,
       serif;
     color: white;
-    font-size: 17px;
+    font-size: 20px;
     line-height: 115%;
     position: relative;
     z-index: 10;
@@ -288,14 +296,15 @@ section#wolves-of-norway {
 
     @include mq(phablet) {
       margin-top: 66px;
+          margin-top: 106px;
     }
 
     @include mq(tablet) {
-      font-size: 17px;
+      font-size: 20px;
       line-height: 115%;
       width: 250px;
       padding-right: 10px;
-      margin-top: 10px;
+      margin-top: 70px;
 
       &:before {
         right: 0;
@@ -371,7 +380,7 @@ section#wolves-of-norway {
       }
 
       &__time {
-        margin-top: -5px;
+        margin-top: -7px;
 
         @include mq(tablet) {
           margin-top: -4px;
