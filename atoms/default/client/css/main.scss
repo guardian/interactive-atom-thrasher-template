@@ -152,24 +152,37 @@ $buttonHoverColor: rgba(#fff, 0.5);
 }
 
 // iOS and Android specific styles
-.#{$containerName} {
-  .android &,
-  .ios & {
+
+  .android ,
+  .ios {
+    .best-music {
     overflow: hidden;
     margin: 0;
     padding: 0;
+    height: 100%;
 
     &__component-button {
       margin-left: 10px;
+      position: absolute;
+      bottom: 20px;
 
       span {
         letter-spacing: unset;
       }
     }
 
-    .best-music__headline {
+    &__headline {
       margin: 0;
       margin-left: 10px;
+      width: 80%;
+    }
+
+    &__covers {
+      margin-top: -26px;
+      img {
+        width:130px;
+        height:130px;
+      }
     }
   }
 }
