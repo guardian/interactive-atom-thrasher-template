@@ -34,7 +34,7 @@ $buttonHoverColor:$neutral-46;
 
 
 // this targets the container your thrasher is put inside on Fronts
-section##{$containerName}, #charity-appeal {
+section##{$containerName}, #charity-appeal-2020 {
     width:100%;
     position: relative;
     padding: 0 !important;
@@ -170,8 +170,11 @@ section##{$containerName}, #charity-appeal {
         width: 50%;
         min-height: 200px;
         position: relative;
-        margin-left: 90px;
+        margin-left: 50px;
         @include mq(mobileMedium) {
+          margin-left: 80px;
+        }
+        @include mq(mobileLandscape){
           margin-left: 120px;
         }
         @include mq(phablet) {
@@ -188,7 +191,7 @@ section##{$containerName}, #charity-appeal {
         .spot-1,
         .spot-2,
         .spot-3,
-        .spot-4 {
+        .spot-4, .new-spot {
           opacity: 0;
         }
         .people, .spot {
@@ -307,13 +310,74 @@ section##{$containerName}, #charity-appeal {
       }
     }
     &__component-button {
-      margin-bottom: 28px;
+      margin-bottom: 12px;
       @include mq(leftCol) {
         margin-bottom: 48px;
       }
         // mixin takes 3 variables:
         // background-color, text-color, hover-background-color
-        @include component-button($bgColor: $neutral-7, $color: #fff, $hoverBgColor: $neutral-46);
+        // @include component-button($bgColor: $neutral-7, $color: #fff, $hoverBgColor: $neutral-46);
+        display: inline-flex;
+        flex-direction: row;
+        background-color:#121212;
+        border-radius: 25px;
+        text-decoration: none;
+        cursor: pointer;
+
+        span {
+          color: white;
+          font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+          font-weight: bold;
+          font-size: 17px;
+
+          padding: 10px 2px 10px 20px;
+          margin-top: -2px;
+          text-decoration: none;
+        }
+
+        svg {
+          padding: 10px;
+          fill: white;
+          padding-right: 16px;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover {
+          background-color: #767676;
+          text-decoration: none;
+
+          span {
+            text-decoration: none;
+          }
+
+          svg {
+            transform: translateX(3px);
+          }
+        }
+    }
+    .charity-buttons {
+      display:inline-flex;
+      flex-direction:column;
+      @include mq(phablet) {
+        flex-direction: row;
+      }
+      .button-two {
+        background-color:transparent;
+        color:#121212;
+        box-shadow: 0px 0px 0px 1px black inset;
+        @include mq(phablet) {
+          margin-left: 10px;
+        }
+        span {
+          color:#121212; 
+        }
+        svg {
+          fill: #121212;
+        }
+        &:hover {
+          background-color: #ededed;
+        }
+      }
     }
     &__roundel {
         // mixin makes roundel sit top right of thrasher and move with grid
@@ -321,43 +385,41 @@ section##{$containerName}, #charity-appeal {
     }
 }
 
-
-// .animate {
-//   .image {
-//     animation-name: animateBack;
-//     animation-duration: 6s;
-//     animation-fill-mode: forwards;
-//     animation-iteration-count: once;
-//     animation-direction: alternate;
-//   }
-// }
 .animate {
-  .spot-1 {
-    animation-delay: 0.5s;
-    animation-name: animateSpots;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-direction: fade-in;
-  }
+  // .spot-1 {
+  //   animation-delay: 0.5s;
+  //   animation-name: animateSpots;
+  //   animation-duration: 1s;
+  //   animation-fill-mode: forwards;
+  //   animation-direction: fade-in;
+  // }
 
-  .spot-2 {
-    animation-delay: 1s;
-    animation-name: animateSpots;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-direction: fade-in;
-  }
+  // .spot-2 {
+  //   animation-delay: 1s;
+  //   animation-name: animateSpots;
+  //   animation-duration: 1s;
+  //   animation-fill-mode: forwards;
+  //   animation-direction: fade-in;
+  // }
 
-  .spot-3 {
-    animation-delay: 1.5s;
-    animation-name: animateSpots;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-direction: fade-in;
-  }
+  // .spot-3 {
+  //   animation-delay: 1.5s;
+  //   animation-name: animateSpots;
+  //   animation-duration: 1s;
+  //   animation-fill-mode: forwards;
+  //   animation-direction: fade-in;
+  // }
 
-  .spot-4 {
-    animation-delay: 2s;
+  // .spot-4 {
+  //   animation-delay: 2s;
+  //   animation-name: animateSpots;
+  //   animation-duration: 1s;
+  //   animation-fill-mode: forwards;
+  //   animation-direction: fade-in;
+  // }
+
+  .new-spot {
+    animation-delay: 0.75s;
     animation-name: animateSpots;
     animation-duration: 1s;
     animation-fill-mode: forwards;
