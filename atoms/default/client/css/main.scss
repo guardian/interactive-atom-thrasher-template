@@ -418,10 +418,18 @@ section##{$containerName}, #charity-appeal-2020 {
   //   animation-direction: fade-in;
   // }
 
-  .new-spot {
-    animation-delay: 0.75s;
+  .new-spot-1 {
+    animation-delay: 0.5s;
     animation-name: animateSpots;
-    animation-duration: 1s;
+    animation-duration: 0.75s;
+    animation-fill-mode: forwards;
+    animation-direction: fade-in;
+  }
+
+  .new-spot-2 {
+    animation-delay: 0.8s;
+    animation-name: animateSpots;
+    animation-duration: 0.75s;
     animation-fill-mode: forwards;
     animation-direction: fade-in;
   }
