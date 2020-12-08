@@ -171,6 +171,8 @@ section##{$containerName}, #charity-appeal-2020 {
         min-height: 200px;
         position: relative;
         margin-left: 50px;
+        border-right:none;
+        border-bottom:none;
         @include mq(mobileMedium) {
           margin-left: 80px;
         }
@@ -427,7 +429,7 @@ section##{$containerName}, #charity-appeal-2020 {
   }
 
   .new-spot-2 {
-    animation-delay: 0.8s;
+    animation-delay: 0.65s;
     animation-name: animateSpots;
     animation-duration: 0.75s;
     animation-fill-mode: forwards;

@@ -22,7 +22,7 @@ if (document.body.classList.contains("android") || document.body.classList.conta
     if (offset > 0) {
       wrapper.classList.remove("animate")
     }
-    console.log(offset)
+    // console.log(offset)
   })
 }
 
