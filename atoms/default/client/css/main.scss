@@ -155,7 +155,7 @@ section#wolves-of-norway {
     bottom: 0;
     z-index: -1;
 
-    background-image: url("https://uploads.guim.co.uk/2020/12/02/wolf-norway-min.jpg");
+    background-image: url("https://uploads.guim.co.uk/2020/12/08/wolf-norway-grain-more.jpg");
     background-size: 210%;
     background-position: -180px top;
     background-repeat: no-repeat;
@@ -202,7 +202,7 @@ section#wolves-of-norway {
     }
 
     @include mq(tablet) {
-      background-image: url("https://uploads.guim.co.uk/2020/12/02/wolf-norway-min.jpg");
+      background-image: url("https://uploads.guim.co.uk/2020/12/08/wolf-norway-grain-more.jpg");
       background-position-y: 50%;
       left: 100px;
 
@@ -296,7 +296,7 @@ section#wolves-of-norway {
 
     @include mq(phablet) {
       margin-top: 66px;
-          margin-top: 106px;
+      margin-top: 86px;
     }
 
     @include mq(tablet) {
@@ -304,7 +304,7 @@ section#wolves-of-norway {
       line-height: 115%;
       width: 250px;
       padding-right: 10px;
-      margin-top: 70px;
+      margin-top: 47px;
 
       &:before {
         right: 0;
@@ -313,7 +313,7 @@ section#wolves-of-norway {
     }
 
     @include mq(desktop) {
-      margin-top: 66px;
+      // margin-top: 66px;
       width: 290px;
     }
 
@@ -323,22 +323,22 @@ section#wolves-of-norway {
       }
 
       margin-left: 160px;
+      margin-left: 150px;
       border-left: 1px solid rgba(white, 0.2);
       border-top: 1px solid rgba(white, 0.2);
       padding-left: 10px;
       padding-bottom: 12px;
-      margin-top: 69px;
     }
 
     @include mq(wide) {
+      margin-top: 73px;
       margin-left: 230px;
-      margin-left: 240px;
-      margin-top: 95px;
+      // margin-left: 240px;
     }
 
     &__logline {
       font-weight: 500;
-      max-width: 280px;
+      max-width: 210px;
     }
 
     &__button {
@@ -376,15 +376,11 @@ section#wolves-of-norway {
         display: flex;
         flex-direction: column;
         margin-left: 4px;
-        padding-top: 9px;
+        padding-top: 4px;
       }
 
       &__time {
-        margin-top: -7px;
-
-        @include mq(tablet) {
-          margin-top: -4px;
-        }
+        margin-top: -4px;
       }
     }
   }
@@ -397,21 +393,33 @@ section#wolves-of-norway {
     bottom: 0;
     display: block;
     z-index: 20;
+    background-color: black;
+    mix-blend-mode: soft-light;
+    opacity: 0;
 
     transition: background-color 0.3s linear;
+    
+    // &:hover {
 
-    &:hover {
+    //   &~.somalinimo__copy .somalinimo__copy__logline,
+    //   &~.title {
+    //     opacity: 0.95;
+    //   }
 
-      &~.somalinimo__copy .somalinimo__copy__logline,
-      &~.title {
-        opacity: 0.95;
-      }
+    //   &~.somalinimo__image {
+    //     opacity: 0.97;
+    //   }
 
-      &~.somalinimo__image {
-        opacity: 0.97;
-      }
+    //   &~.somalinimo__copy .somalinimo__copy__button__icon {
+    //     transform: scale(1.1);
+    //   }
+    // }
+  }
+  a.main-link:hover {
+    opacity: 0.1;
 
-      &~.somalinimo__copy .somalinimo__copy__button__icon {
+    .noballgames__copy__button__icon {
+      svg {
         transform: scale(1.1);
       }
     }
