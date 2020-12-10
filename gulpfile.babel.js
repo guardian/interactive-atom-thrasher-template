@@ -88,14 +88,18 @@ const buildJS = () => {
                     loader: 'style!css'
                 },
                 {
-                    test: /\.js$/,
-                    exclude: /node_modules/,
-                    use: 'babel-loader'
-                },
-                {
-                  test: /\.jsx$/,
-                  exclude: /node_modules/,
-                  use: 'babel-loader'
+                    test: /\.jsx?$/,
+                    // @guardian libs needs to be transpiled
+                    exclude: /node_modules\/(?!@guardian)/,
+                    use: {
+                      loader: 'babel-loader',
+                      options: {
+                        plugins: [
+                          "@babel/plugin-proposal-optional-chaining",
+                          "@babel/plugin-proposal-nullish-coalescing-operator"
+                        ]
+                      }
+                    }
                 },
                 {
                     test: /\.html$/,
