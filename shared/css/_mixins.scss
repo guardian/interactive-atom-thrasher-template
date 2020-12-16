@@ -39,9 +39,9 @@
 // make roundel sit top right
 @mixin roundel-top-right {
     top: 4px;
-    right: 4px;
+    right: 10px;
     position: absolute;
     @include mc(mobileLandscape){
-        right:18px;
+        right:20px;
     }
 }

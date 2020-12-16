@@ -32,9 +32,27 @@ $buttonColor:$neutral-7;
 $buttonHoverColor:$neutral-46;
 
 
+// @keyframes changebg {
+//     0% {
+//         background-color:#BC5656;
+//     }
+//     40% {
+//         background-color:#BC5656;
+//     }
+//     50% {
+//         background-color:#D26F2E;
+//     }
+//     90% {
+//         background-color:#D26F2E;
+//     }
+//     100% {
+//         background-color:#BC5656;
+//     }
+// }
+
 
 // this targets the container your thrasher is put inside on Fronts
-section##{$containerName} {
+#thrasher-atom, #we-begin-again, #musical {
     width:100%;
     position: relative;
     padding: 0 !important;
@@ -50,28 +68,191 @@ section##{$containerName} {
     }
 }
 
-.#{$containerName} {
-    width:100%;
-    height:200px;
-    background-color:$backgroundColor;
-    &__headline {
-        color:$textColor;
-        font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
-        font-size: 34px;
-        @include mc ($from: mobileLandscape) {
-            color:$textColor;
+.big-link {
+    position: absolute!important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.big-link:hover~.we-begin-wrapper {
+    background-color: #9F4242;
+}
+
+
+.we-begin-wrapper {
+    background-color:#E38585;
+    background-color:#BC5656;
+    animation-name:changebg;
+    animation-duration:7.5s;
+    animation-direction: forwards;
+    animation-iteration-count: infinite;
+
+    padding:0 10px;
+    position: relative;
+    height: 320px;
+    transition: background-color 0.3s ease;
+    @include mq(mobileMedium) {
+        height: 340px;
+    }
+    @include mq(mobileLandscape) {
+        padding:0 20px;
+        height:240px;
+    }
+    @include mq(tablet) {
+        width:100%;
+    }
+
+    .flex {
+        display:flex;
+        flex-direction:column;
+        justify-content: space-between;
+        height:100%;
+        @include mq(mobileLandscape) {
+            // justify-content: unset;
         }
     }
-    &__component-button {
-        // mixin takes 3 variables:
-        // background-color, text-color, hover-background-color
-        @include component-button($bgColor: $neutral-7, $color: #fff, $hoverBgColor: $neutral-46);
+    h1 {
+        color:white;
+        line-height:115%;
     }
-    &__roundel {
+    .headline {
+        font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
+        font-size: 10.5vw;
+        @include mq(mobileLandscape) {
+            font-size:40px;
+        }
+        @include mq(tablet) {
+            font-size: 50px;
+        }
+        @include mq(leftCol) {
+            font-size:60px;
+        }
+    }
+    .subheadline {
+        font-family:"Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
+        font-weight:400;
+        font-size: 20px;
+        width:85%;
+        margin-top: 4px;
+        @include mq(mobileMedium) {
+            width:95%;
+        }
+        @include mq(tablet) {
+            font-size: 24px;
+            width: 510px;
+            width: 42%;
+        }
+        @include mq(desktop) {
+            width:400px;
+        }
+    }
+    .buttons-wrapper {
+        margin-bottom:10px;
+        display:flex;
+        flex-direction: row;
+        .icon {
+            width: 42px;
+            height: 42px;
+            background-color: #ffe500;
+            border-radius: 50%;
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            margin-right:8px;
+            svg {
+                position: absolute;
+                top: 13px;
+                left: 13px;
+
+                path {
+                    fill: #121212;
+                }
+            }
+            @include mq(desktop) {
+                width: 52px;
+                height: 52px;
+
+                svg {
+                    transform:scale(1.2);
+                    top: 18px;
+                    left: 18px;
+                }
+            }
+        }
+        
+        .time {
+            font-family: "Guardian Text Sans Web",
+            "Helvetica Neue",
+            Helvetica,
+            Arial,
+            "Lucida Grande",
+            sans-serif;
+            font-size: 14px;
+            color: white;
+            line-height:1.1;
+            &:nth-child(1) {
+                margin-top: 4px;
+                font-weight:bold;
+                @include mq(desktop) {
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+    .people-pic {
+        position: absolute;
+        bottom: 60px;
+        width: calc(100% - 10px);
+        right: 0px;
+        border-bottom: 1px solid white;
+        @include mq(mobileLandscape) {
+            bottom: 0;
+            width: 65%;
+            border-bottom:0;
+        }
+        @include mq(phablet) {
+            width: 65%;
+        }
+        @include mq(tablet) {
+            width: 60%;
+        }
+        @include mq(desktop) {
+            bottom: -22px;
+        }
+        @include mq(leftCol) {
+            bottom:-32px;
+            width:55%;
+        }
+        @include mq(wide) {
+            width:50%;
+            bottom:-40px;
+        }
+    }
+    .gu-roundel {
         // mixin makes roundel sit top right of thrasher and move with grid
         @include roundel-top-right;
     }
+    .nat-theatre-logo {
+        position: absolute;
+        bottom:12px;
+        right:10px;
+        height:auto;
+        width:80px;
+        svg {
+            width:100%;
+            height:100%;
+        }
+        @include mq(mobileLandscape) {
+            bottom:10px;
+            right:20px;
+            height:auto;
+            width:100px;
+        }
+    }
 }
+
+
 
 
 // this removes margins from Android / iOS view
@@ -81,16 +262,21 @@ section##{$containerName} {
 }
 
 // iOS and Android specific styles
-.#{$containerName} {
-    .android &,
-    .ios & {
-        overflow:hidden;
-        margin:0;
-        padding:0;
-        &__component-button {
-            span {
-                letter-spacing: unset;
-            }
-        }
+
+    .android ,
+    .ios  {
+        .we-begin-wrapper {
+overflow:hidden;
+margin:0;
+
+&__component-button {
+    span {
+        letter-spacing: unset;
     }
 }
+.headline {
+    margin:0;
+}
+
+        }
+            }
