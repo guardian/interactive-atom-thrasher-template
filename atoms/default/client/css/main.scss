@@ -201,10 +201,13 @@ section##{$containerName}, #charity-appeal-2020 {
           @include mq(desktop) {
             height: 240px;
             margin-top: 0;
+            margin-top: 24px;
+            margin-left: -30px;
           }
           @include mq(leftCol) {
             height: 280px;
-            margin-top: -20px;
+            margin-top: 20px;
+            margin-left:0;
           }
         }
         img {
