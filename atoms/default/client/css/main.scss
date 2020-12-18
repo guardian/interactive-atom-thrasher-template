@@ -72,19 +72,23 @@ section#no-ball-games {
         color: $textColor;
         font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia,
             serif;
-        font-size: 42px;
-        margin-top: -10px;
+        font-size: 38px;
+        margin-top: -4px;
+        width: 300px;
+        line-height: 97%;
 
         @include mc(mobileLandscape) {
             color: $textColor;
+            font-size: 42px;
         }
 
         @include mq(leftCol) {
-            margin-left: 160px;
+            margin-left: 170px;
+            margin-top: 0;
         }
 
         @include mc(wide) {
-            margin-left: 240px;
+            margin-left: 250px;
         }
     }
 
@@ -120,7 +124,7 @@ section#no-ball-games {
         }
 
         @include mq(leftCol) {
-            margin-left: 160px;
+            margin-left: 170px;
         }
 
         @include mq(wide) {
@@ -375,16 +379,16 @@ section#no-ball-games {
 
         &:hover {
 
-            &~.somalinimo__copy .somalinimo__copy__logline,
+            &~.noballgames__copy .noballgames__copy__logline,
             &~.title {
                 opacity: 0.95;
             }
 
-            &~.somalinimo__image {
+            &~.noballgames__image {
                 opacity: 0.97;
             }
 
-            &~.somalinimo__copy .somalinimo__copy__button__icon {
+            &~.noballgames__copy .noballgames__copy__button__icon {
                 transform: scale(1.1);
             }
         }
