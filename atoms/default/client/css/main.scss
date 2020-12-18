@@ -142,7 +142,7 @@ section#colette {
         bottom: 0;
         z-index: -1;
 
-        background-image: url("https://uploads.guim.co.uk/2020/12/18/lupita-thrasher-low.jpg");
+        background-image: url("https://uploads.guim.co.uk/2020/12/18/lupita-thrasher-low-2.jpg");
         background-size: cover;
         background-position: 80% center;
         background-repeat: no-repeat;
@@ -174,7 +174,7 @@ section#colette {
         }
 
         @include mq(tablet) {
-            background-image: url("https://uploads.guim.co.uk/2020/12/18/lupita-thrasher-low.jpg");
+            background-image: url("https://uploads.guim.co.uk/2020/12/18/lupita-thrasher-low-2.jpg");
             background-position: center;
             background-position-y: 20%;
             left: 260px;
