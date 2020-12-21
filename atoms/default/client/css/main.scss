@@ -22,7 +22,7 @@ $mq-breakpoints: (mobile: 320px,
 );
 
 // update 'class-name' with yours
-$containerName: noballgames;
+$containerName: space-doc;
 // colours pulled from shared/css/_palette.sass
 $backgroundColor: #121212;
 $textColor: white;
@@ -72,10 +72,13 @@ section#no-ball-games {
         color: $textColor;
         font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia,
             serif;
-        font-size: 38px;
-        margin-top: -4px;
+        font-size: 34px;
+        margin-top: 0px;
         width: 300px;
         line-height: 97%;
+        @include mq(mobileMedium) {
+            font-size:38px;
+        }
 
         @include mc(mobileLandscape) {
             color: $textColor;
@@ -145,7 +148,7 @@ section#no-ball-games {
         bottom: 0;
         z-index: -1;
 
-        background-image: url("");
+        background-image: url("https://uploads.guim.co.uk/2020/12/21/space-thrasher_(1).jpg");
         background-size: cover;
         background-position: center;
 
@@ -168,15 +171,15 @@ section#no-ball-games {
         &:after {
             top: 0;
             bottom: auto;
-            height: 70px;
+            height: 120px;
             background: linear-gradient(0deg,
                     rgba(18, 18, 18, 0) 0%,
                     rgba(18, 18, 18, 1) 100%);
-            opacity: 0.5;
+            opacity: 0.9;
         }
 
         @include mq(tablet) {
-            background-image: url("");
+            background-image: url("https://uploads.guim.co.uk/2020/12/21/space-thrasher_(1).jpg");
             background-position-y: 20%;
             left: 260px;
 
@@ -195,7 +198,7 @@ section#no-ball-games {
                 bottom: 0;
                 left: 0;
                 right: auto;
-                width: 30px;
+                width: 100px;
                 height: auto;
                 opacity: 1;
             }
@@ -213,7 +216,7 @@ section#no-ball-games {
             background-position: center;
 
             &:after {
-                width: 70px;
+                width: 190px;
             }
         }
 
@@ -226,7 +229,8 @@ section#no-ball-games {
             }
 
             &:after {
-                width: 100px;
+                width: 250px;
+                left:-1px;
             }
         }
 
@@ -239,7 +243,7 @@ section#no-ball-games {
             }
 
             &:after {
-                width: 110px;
+                width: 300px;
             }
         }
     }
@@ -379,16 +383,16 @@ section#no-ball-games {
 
         &:hover {
 
-            &~.noballgames__copy .noballgames__copy__logline,
+            &~.space-doc__copy .space-doc__copy__logline,
             &~.title {
                 opacity: 0.95;
             }
 
-            &~.noballgames__image {
+            &~.space-doc__image {
                 opacity: 0.97;
             }
 
-            &~.noballgames__copy .noballgames__copy__button__icon {
+            &~.space-doc__copy .space-doc__copy__button__icon {
                 transform: scale(1.1);
             }
         }
