@@ -171,6 +171,10 @@ $buttonHoverColor: $neutral-46;
     font-family: "Guardian Titlepiece", "Guardian Headline Full";
     border-bottom: 1px solid #fdc7d4;
     padding-bottom: 12px;
+    font-size: 23px;
+    @include mq(mobileMedium) {
+        font-size:28px;
+    }
 
     @include mq(mobileLandscape) {
       font-size: 31px;
@@ -247,6 +251,9 @@ $buttonHoverColor: $neutral-46;
     background-color: #fdc7d4;
     border: none;
     font-size: 16px;
+    &:hover {
+        background-color: #FD9EB5;
+    }
   }
 
   .g-roundel {
