@@ -11,7 +11,6 @@
           }
         ],
         "@babel/preset-react"
-  
       ],
       "plugins": [
         "transform-import-bangtext-node",
@@ -24,7 +23,8 @@
         ],
 
         [
-          "module-resolver", {
+          "module-resolver",
+          {
             "root": ["."],
             "alias": {
               "react": "preact/compat",
@@ -32,7 +32,7 @@
             }
           }
         ],
-        
+
         "@babel/plugin-proposal-optional-chaining"
       ]
     },
@@ -51,7 +51,8 @@
       "plugins": [
         "@babel/plugin-proposal-class-properties",
         [
-          "module-resolver", {
+          "module-resolver",
+          {
             "root": ["."],
             "alias": {
               "react": "preact/compat",
@@ -60,17 +61,6 @@
           }
         ]
       ]
-    
     }
   }
 }
-
-
-
-
-  
-
-
-
-
- 

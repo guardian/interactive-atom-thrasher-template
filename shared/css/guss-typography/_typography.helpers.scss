@@ -17,7 +17,7 @@
  * @group typography
  */
 @function get-scale($name, $font-scale: $font-scale) {
-    @return map-get($font-scale, $name);
+  @return map-get($font-scale, $name);
 }
 
 /**
@@ -38,7 +38,7 @@
  * @group typography
  */
 @function get-scale-level($name, $level, $font-scale: $font-scale) {
-    @return map-get(get-scale($name, $font-scale), $level);
+  @return map-get(get-scale($name, $font-scale), $level);
 }
 
 /**
@@ -60,7 +60,9 @@
  * @group typography
  */
 @function get-font-size($name, $level, $font-scale: $font-scale) {
-    @return convert-to-px(map-get(get-scale-level($name, $level, $font-scale), font-size));
+  @return convert-to-px(
+    map-get(get-scale-level($name, $level, $font-scale), font-size)
+  );
 }
 
 /**
@@ -82,7 +84,9 @@
  * @group typography
  */
 @function get-line-height($name, $level, $font-scale: $font-scale) {
-    @return convert-to-px(map-get(get-scale-level($name, $level, $font-scale), line-height));
+  @return convert-to-px(
+    map-get(get-scale-level($name, $level, $font-scale), line-height)
+  );
 }
 
 /**
@@ -98,8 +102,8 @@
  * @group typography
  */
 @function convert-to-px($value) {
-    @if (type-of($value) == number and $value != 0) {
-        $value: if(unitless($value), $value * 1px, $value);
-    }
-    @return $value;
+  @if (type-of($value) == number and $value != 0) {
+    $value: if(unitless($value), $value * 1px, $value);
+  }
+  @return $value;
 }

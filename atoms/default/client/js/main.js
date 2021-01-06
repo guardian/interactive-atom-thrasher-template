@@ -1,18 +1,18 @@
-var el = document.createElement('script');
-el.src = '<%= atomPath %>/app.js';
+var el = document.createElement("script");
+el.src = "<%= atomPath %>/app.js";
 document.body.appendChild(el);
 
 if (window.resize) {
-  const html = document.querySelector('html')
-  const body = document.querySelector('body')
+  const html = document.querySelector("html");
+  const body = document.querySelector("body");
 
-  html.style.overflow = 'hidden'
-  html.style.margin = '0px'
-  html.style.padding = '0px'
+  html.style.overflow = "hidden";
+  html.style.margin = "0px";
+  html.style.padding = "0px";
 
-  body.style.overflow = 'hidden'
-  body.style.margin = '0px'
-  body.style.padding = '0px'
+  body.style.overflow = "hidden";
+  body.style.margin = "0px";
+  body.style.padding = "0px";
 }
 
 if (
@@ -33,6 +33,3 @@ if (
   }, 100);
 }
 
-import { log } from '@guardian/libs';
-log('design', { 1: true, 2: false });
-log('design', "repo: www.github.com/blahblah")

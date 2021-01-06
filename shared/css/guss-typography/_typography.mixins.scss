@@ -14,21 +14,20 @@
  */
 
 @mixin guss-typography-defaults($font-family: $f-serif-text) {
-    @at-root {
-        html {
-            font-family: $font-family;
-            -moz-osx-font-smoothing: grayscale;
-            /* 1 */
-            -webkit-font-smoothing: antialiased;
-            /* 1 */
-        }
-        body {
-            line-height: 1.5;
-            /* 2 */
-        }
+  @at-root {
+    html {
+      font-family: $font-family;
+      -moz-osx-font-smoothing: grayscale;
+      /* 1 */
+      -webkit-font-smoothing: antialiased;
+      /* 1 */
     }
+    body {
+      line-height: 1.5;
+      /* 2 */
+    }
+  }
 }
-
 
 // Shorthands for font declarations
 // =============================================================================
@@ -48,10 +47,9 @@
  */
 
 @mixin font-size($size, $line-height: $size) {
-    font-size: convert-to-px($size);
-    line-height: convert-to-px($line-height);
+  font-size: convert-to-px($size);
+  line-height: convert-to-px($line-height);
 }
-
 
 /**
  * Font styling shorthand  
@@ -71,11 +69,10 @@
  */
 
 @mixin font($family, $weight, $size, $line-height: $size) {
-    font-family: $family;
-    font-weight: $weight;
-    @include font-size($size, $line-height);
+  font-family: $family;
+  font-weight: $weight;
+  @include font-size($size, $line-height);
 }
-
 
 // Font scale
 // =============================================================================
@@ -92,10 +89,9 @@
  */
 
 @mixin f-header {
-    font-family: $f-serif-headline;
-    font-weight: 900;
+  font-family: $f-serif-headline;
+  font-weight: 900;
 }
-
 
 /**
  * Header typography settings.
@@ -119,13 +115,15 @@
  */
 
 @mixin fs-header($level, $size-only: false) {
-    @include font-size(get-font-size(header, $level), get-line-height(header, $level));
+  @include font-size(
+    get-font-size(header, $level),
+    get-line-height(header, $level)
+  );
 
-    @if $size-only==false {
-        @include f-header;
-    }
+  @if $size-only==false {
+    @include f-header;
+  }
 }
-
 
 /**
  * Healdine family and weight properties.
@@ -136,20 +134,19 @@
  */
 
 @mixin f-headline {
-    font-family: $f-serif-headline;
-    font-weight: normal;
+  font-family: $f-serif-headline;
+  font-weight: normal;
 }
 
 @mixin f-headerFull {
-    font-family: $f-headline-full;
-    font-weight: bold;
+  font-family: $f-headline-full;
+  font-weight: bold;
 }
 
 @mixin f-titlepiece {
-    font-family: $f-titlepiece;
-    font-weight: bold;
+  font-family: $f-titlepiece;
+  font-weight: bold;
 }
-
 
 /**
  * Headline typography settings.
@@ -173,35 +170,44 @@
  */
 
 @mixin fs-headline($level, $size-only: false) {
-    @include font-size(get-font-size(headline, $level), get-line-height(headline, $level));
+  @include font-size(
+    get-font-size(headline, $level),
+    get-line-height(headline, $level)
+  );
 
-    @if $size-only==false {
-        @include f-headline;
-    }
+  @if $size-only==false {
+    @include f-headline;
+  }
 }
 
 @mixin fs-GuardianHeadlineFull($level, $lining-nums: true) {
-    @include font-size(get-font-size(header, $level), get-line-height(header, $level));
-    @include f-headerFull;
+  @include font-size(
+    get-font-size(header, $level),
+    get-line-height(header, $level)
+  );
+  @include f-headerFull;
 
-    @if $lining-nums==true  {
-        font-variant-numeric: lining-nums;
-      -moz-font-feature-settings: "lnum";
-      -webkit-font-feature-settings: "lnum";
-      font-feature-settings: "lnum";
-    }
+  @if $lining-nums==true {
+    font-variant-numeric: lining-nums;
+    -moz-font-feature-settings: "lnum";
+    -webkit-font-feature-settings: "lnum";
+    font-feature-settings: "lnum";
+  }
 }
 
 @mixin fs-titlepiece($level, $size-only: false) {
-    @include font-size(get-font-size(titlepiece, $level), get-line-height(titlepiece, $level));
+  @include font-size(
+    get-font-size(titlepiece, $level),
+    get-line-height(titlepiece, $level)
+  );
 
-    @if $size-only==false {
-        @include f-titlepiece;
-        font-variant-numeric: lining-nums;
-      -moz-font-feature-settings: "lnum";
-      -webkit-font-feature-settings: "lnum";
-      font-feature-settings: "lnum";
-    }
+  @if $size-only==false {
+    @include f-titlepiece;
+    font-variant-numeric: lining-nums;
+    -moz-font-feature-settings: "lnum";
+    -webkit-font-feature-settings: "lnum";
+    font-feature-settings: "lnum";
+  }
 }
 
 /**
@@ -213,10 +219,9 @@
  */
 
 @mixin f-bodyHeading {
-    font-family: $f-serif-text;
-    font-weight: bold;
+  font-family: $f-serif-text;
+  font-weight: bold;
 }
-
 
 /**
  * Body Heading typography settings.
@@ -240,13 +245,15 @@
  */
 
 @mixin fs-bodyHeading($level, $size-only: false) {
-    @include font-size(get-font-size(bodyHeading, $level), get-line-height(bodyHeading, $level));
+  @include font-size(
+    get-font-size(bodyHeading, $level),
+    get-line-height(bodyHeading, $level)
+  );
 
-    @if $size-only==false {
-        @include f-bodyHeading;
-    }
+  @if $size-only==false {
+    @include f-bodyHeading;
+  }
 }
-
 
 /**
  * Body Copy family property.
@@ -257,9 +264,8 @@
  */
 
 @mixin f-bodyCopy {
-    font-family: $f-serif-text;
+  font-family: $f-serif-text;
 }
-
 
 /**
  * Body Copy typography settings.
@@ -283,13 +289,15 @@
  */
 
 @mixin fs-bodyCopy($level, $size-only: false) {
-    @include font-size(get-font-size(bodyCopy, $level), get-line-height(bodyCopy, $level));
+  @include font-size(
+    get-font-size(bodyCopy, $level),
+    get-line-height(bodyCopy, $level)
+  );
 
-    @if $size-only==false {
-        @include f-bodyCopy;
-    }
+  @if $size-only==false {
+    @include f-bodyCopy;
+  }
 }
-
 
 /**
  * Data family property.
@@ -300,9 +308,8 @@
  */
 
 @mixin f-data {
-    font-family: $f-data;
+  font-family: $f-data;
 }
-
 
 /**
  * Data typography settings.
@@ -326,13 +333,15 @@
  */
 
 @mixin fs-data($level, $size-only: false) {
-    @include font-size(get-font-size(data, $level), get-line-height(data, $level));
+  @include font-size(
+    get-font-size(data, $level),
+    get-line-height(data, $level)
+  );
 
-    @if $size-only==false {
-        @include f-data;
-    }
+  @if $size-only==false {
+    @include f-data;
+  }
 }
-
 
 /**
  * Text Sans family property.
@@ -343,9 +352,8 @@
  */
 
 @mixin f-textSans {
-    font-family: $f-sans-serif-text;
+  font-family: $f-sans-serif-text;
 }
-
 
 /**
  * Text Sans typography settings.
@@ -369,13 +377,15 @@
  */
 
 @mixin fs-textSans($level, $size-only: false) {
-    @include font-size(get-font-size(textSans, $level), get-line-height(textSans, $level));
+  @include font-size(
+    get-font-size(textSans, $level),
+    get-line-height(textSans, $level)
+  );
 
-    @if $size-only==false {
-        @include f-textSans;
-    }
+  @if $size-only==false {
+    @include f-textSans;
+  }
 }
-
 
 /**
  * Headline Sans family property.  
@@ -389,5 +399,5 @@
  */
 
 @mixin f-headlineSans {
-    font-family: $f-sans-serif-headline;
+  font-family: $f-sans-serif-headline;
 }
