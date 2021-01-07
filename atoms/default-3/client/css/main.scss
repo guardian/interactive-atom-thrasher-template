@@ -1,0 +1,482 @@
+@import "_mq";
+@import "_fonts";
+@import "_palette";
+@import "_app-fonts";
+@import "_mixins";
+
+// Uncomment for embeds
+//@import "embed";
+// Uncomment for full screen (including immersive article main media)
+//@import "fullscreen";
+
+// Default breakpoints from Frontend
+// Use mc() in place of mq() so your thrashers don't get broken
+$mq-breakpoints: (
+    mobile:          320px,
+    mobileMedium:    375px,
+    mobileLandscape: 480px,
+    phablet:         660px,
+    tablet:          740px,
+    desktop:         980px,
+    leftCol:         1140px,
+    wide:            1300px
+);
+
+
+// update 'class-name' with yours
+$containerName:cv-charity;
+// colours pulled from shared/css/_palette.sass
+$backgroundColor:#e9e7e2;
+$textColor: $neutral-7;
+$buttonColor:$neutral-7;
+$buttonHoverColor:$neutral-46;
+
+
+
+// this targets the container your thrasher is put inside on Fronts
+section##{$containerName}, #charity-appeal-2020 {
+    width:100%;
+    position: relative;
+    padding: 0 !important;
+    overflow: hidden;
+    background-color:#fff;
+    .fc-container__inner,
+    .fc-slice,
+    .facia-snap {
+        overflow: hidden;
+    }
+    .facia-snap {
+        padding: 0;
+    }
+}
+
+// @keyframes animateBack {
+//   0% {
+//     background-image: url("https://uploads.guim.co.uk/2020/11/30/pic-01.png");
+//   }
+
+//   15% {
+//     background-image: url("https://uploads.guim.co.uk/2020/11/30/pic-01.png");
+//   }
+
+//   15% {
+//     background-image: url("https://uploads.guim.co.uk/2020/11/30/pic-02.png");
+//   }
+
+//  30% {
+//     background-image: url("https://uploads.guim.co.uk/2020/11/30/pic-02.png");
+//   }
+
+//   30% {
+//     background-image: url("https://uploads.guim.co.uk/2020/11/30/pic-03.png");
+//   }
+
+//   45% {
+//     background-image: url("https://uploads.guim.co.uk/2020/11/30/pic-03.png");
+//   }
+
+//   45% {
+//     background-image: url("https://uploads.guim.co.uk/2020/11/30/pic-04.png");
+//   }
+
+//   60% {
+//     background-image: url("https://uploads.guim.co.uk/2020/11/30/pic-04.png");
+//   }
+
+//   60% {
+//     background-image: url("https://uploads.guim.co.uk/2020/11/30/pic-05.png");
+//   }
+
+//   75% {
+//     background-image: url("https://uploads.guim.co.uk/2020/11/30/pic-05.png");
+//   }
+
+//   75% {
+//     background-image: url("https://uploads.guim.co.uk/2020/11/30/pic-06.png");
+//   }
+//   100% {
+//     background-image: url("https://uploads.guim.co.uk/2020/11/30/pic-06.png");
+//   }
+// }
+
+
+@keyframes animateSpots {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+
+.#{$containerName} {
+    width:100%;
+    // height:200px;
+    background-color:$backgroundColor;
+    padding: 0 0 0 10px;
+    border-top: 1px solid #121212;
+    border-left: 1px solid #dcdcdc;
+    border-right: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    box-sizing: border-box;
+    @include mq(mobileLandscape) {
+      padding:0 0 0 20px;
+    }
+
+    @include mq(tablet) {
+      display:flex;
+    }
+
+    &__badge {
+      position: absolute;
+      bottom:0;
+      right: 10px;
+      width: 100px;
+      height: auto;
+      @include mq(tablet) {
+        right:unset;
+        left:0px;
+      }
+      svg {
+        width:100%;
+        height:100%;
+      }
+    }
+
+    .left {
+      display:flex;
+      flex-direction: column;
+      justify-content: space-between;
+      @include mq(phablet) {
+        flex-direction: row;
+      }
+      @include mq(tablet) {
+        flex-direction: column;
+        position: relative;
+      }
+      @include mq(desktop) {
+        flex-direction: row;
+        width: 490px;
+      }
+      @include mq(leftCol){
+        width: 760px;
+      }
+      @include mq(wide) {
+        width: 840px;
+      }
+
+      .image {
+        width: 50%;
+        min-height: 200px;
+        position: relative;
+        margin-left: 50px;
+        border-right:none;
+        border-bottom:none;
+        @include mq(mobileMedium) {
+          margin-left: 80px;
+        }
+        @include mq(mobileLandscape){
+          margin-left: 120px;
+        }
+        @include mq(phablet) {
+          margin-left:0;
+        }
+        @include mq(tablet) {
+          margin-left:90px;
+        }
+        @include mq(desktop) {
+          min-height:unset;
+          height:auto;
+          margin-left: -100px;
+        }
+        .spot-1,
+        .spot-2,
+        .spot-3,
+        .spot-4, .new-spot {
+          opacity: 0;
+        }
+        .people, .spot {
+          margin-top: -40px;
+          @include mq(desktop) {
+            height: 240px;
+            margin-top: 0;
+            margin-top: 24px;
+            margin-top: -16px;
+            margin-left: -30px;
+          }
+          @include mq(leftCol) {
+            height: 280px;
+            margin-top: 30px;
+            margin-top: 30px;
+            margin-left:0;
+          }
+          @include mq(wide) {
+            margin-top:-10px;
+          }
+        }
+        img {
+          width: auto;
+          height: 240px;
+          position: absolute;
+        }
+
+        background-size: contain;
+        // background-image: url("https://uploads.guim.co.uk/2020/11/30/pic-01.png");
+        background-repeat: no-repeat;
+        background-position: top;
+        
+      }
+    }
+
+    .right {
+      padding: 0 0 0 10px;
+      background-color:white;
+      background-color: rgba(255, 255, 255, 0.6);
+      margin-left: -10px;
+      border-top: 1px solid #121212;
+      @include mq(mobileLandscape) {
+        padding: 0 0 0 20px;
+        margin-left: -20px;
+      }
+      @include mq(tablet) {
+        background-color: white;
+        padding:0 0 0 10px;
+        width: 50%;
+      }
+      p {
+            font-family: "Guardian Text Sans Web",
+            "Helvetica Neue",
+            Helvetica,
+            Arial,
+            "Lucida Grande",
+            sans-serif;
+        margin-top: 8px;
+        line-height: 135%;
+        padding-right: 20px;
+        margin-bottom: 24px;
+        @include mq(mobileLandscape) {
+        }
+        @include mq(tablet) {
+          width: 320px;
+        }
+        @include mq(desktop) {
+          width: 415px;
+          margin-bottom: 20px;
+        }
+        @include mq(wide) {
+              width: 435px;
+        }
+      }
+      @include mq(mobileLandscape) {
+
+      }
+      @include mq(tablet) {
+        border-left: 1px solid #121212;
+        border-top: none;
+      }
+    }
+
+    &__headline, &__subheadline {
+        color:$textColor;
+        font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
+        font-size: 28px;
+        line-height: 105%;
+        margin-top: 4px;
+        
+        @include mc ($from: mobileLandscape) {
+            color:$textColor;
+        }
+        @include mq(tablet) {
+          font-size: 34px;
+        }
+    }
+    &__headline {
+      font-size: 32px;
+      width: 80%;
+      @include mq(mobileMedium) {
+        font-size: 36px;
+      }
+      @include mq(desktop) {
+        width: 60%;
+      }
+      @include mq(leftCol) {
+        width:50%;
+      }
+
+      @include mq(leftCol){
+        font-size:44px;
+        margin-top: 0;
+      }
+      @include mq(wide) {
+        font-size:48px;
+      }
+    }
+    &__subheadline {
+      font-size:24px;
+      @include mq(tablet) {
+        font-size: 28px;
+        width: 80%;
+      }
+      @include mq(desktop) {
+        width:unset;
+      }
+      @include mq(leftCol){
+        width:80%;
+      }
+      @include mq(wide) {
+        width:unset;
+      }
+    }
+    &__component-button {
+      margin-bottom: 12px;
+      @include mq(leftCol) {
+        margin-bottom: 48px;
+      }
+        // mixin takes 3 variables:
+        // background-color, text-color, hover-background-color
+        // @include component-button($bgColor: $neutral-7, $color: #fff, $hoverBgColor: $neutral-46);
+        display: inline-flex;
+        flex-direction: row;
+        background-color:#121212;
+        border-radius: 25px;
+        text-decoration: none;
+        cursor: pointer;
+
+        span {
+          color: white;
+          font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+          font-weight: bold;
+          font-size: 17px;
+
+          padding: 10px 2px 10px 20px;
+          margin-top: -2px;
+          text-decoration: none;
+        }
+
+        svg {
+          padding: 10px;
+          fill: white;
+          padding-right: 16px;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover {
+          background-color: #767676;
+          text-decoration: none;
+
+          span {
+            text-decoration: none;
+          }
+
+          svg {
+            transform: translateX(3px);
+          }
+        }
+    }
+    .charity-buttons {
+      display:inline-flex;
+      flex-direction:column;
+      @include mq(phablet) {
+        flex-direction: row;
+      }
+      .button-two {
+        background-color:transparent;
+        color:#121212;
+        box-shadow: 0px 0px 0px 1px black inset;
+        @include mq(phablet) {
+          margin-left: 10px;
+        }
+        span {
+          color:#121212; 
+        }
+        svg {
+          fill: #121212;
+        }
+        &:hover {
+          background-color: #ededed;
+        }
+      }
+    }
+    &__roundel {
+        // mixin makes roundel sit top right of thrasher and move with grid
+        @include roundel-top-right;
+    }
+}
+
+.animate {
+  // .spot-1 {
+  //   animation-delay: 0.5s;
+  //   animation-name: animateSpots;
+  //   animation-duration: 1s;
+  //   animation-fill-mode: forwards;
+  //   animation-direction: fade-in;
+  // }
+
+  // .spot-2 {
+  //   animation-delay: 1s;
+  //   animation-name: animateSpots;
+  //   animation-duration: 1s;
+  //   animation-fill-mode: forwards;
+  //   animation-direction: fade-in;
+  // }
+
+  // .spot-3 {
+  //   animation-delay: 1.5s;
+  //   animation-name: animateSpots;
+  //   animation-duration: 1s;
+  //   animation-fill-mode: forwards;
+  //   animation-direction: fade-in;
+  // }
+
+  // .spot-4 {
+  //   animation-delay: 2s;
+  //   animation-name: animateSpots;
+  //   animation-duration: 1s;
+  //   animation-fill-mode: forwards;
+  //   animation-direction: fade-in;
+  // }
+
+  .new-spot-1 {
+    animation-delay: 0.5s;
+    animation-name: animateSpots;
+    animation-duration: 0.75s;
+    animation-fill-mode: forwards;
+    animation-direction: fade-in;
+  }
+
+  .new-spot-2 {
+    animation-delay: 0.65s;
+    animation-name: animateSpots;
+    animation-duration: 0.75s;
+    animation-fill-mode: forwards;
+    animation-direction: fade-in;
+  }
+  
+}
+
+
+
+
+
+
+
+// this removes margins from Android / iOS view
+.interactive-atom {
+    margin:0;
+    overflow: hidden;
+}
+
+// iOS and Android specific styles
+.#{$containerName} {
+    .android &,
+    .ios & {
+        overflow:hidden;
+        margin:0;
+        &__component-button {
+            span {
+                letter-spacing: unset;
+            }
+        }
+    }
+}
