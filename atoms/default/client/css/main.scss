@@ -32,7 +32,8 @@ $buttonHoverColor: $neutral-46;
 
 // this targets the container your thrasher is put inside on Fronts
 #thrasher-atom,
-#age-of-extinction {
+#age-of-extinction,
+#the-age-of-extinction {
   width: 100%;
   position: relative;
   padding: 0 !important;
@@ -57,9 +58,9 @@ $buttonHoverColor: $neutral-46;
 
 .age-of-extinction-wrapper {
   // pic 1
-  background-image: url('https://uploads.guim.co.uk/2021/01/06/GettyImages-1053730734-(260be1efb273b6c5e9fbebb58aa679e8bb448abe)-flipped_(1).jpg');
-  // pic 2
-  background-image: url('https://media.guim.co.uk/60079d63a95d36b76c0eba87049b91d15f939e25/0_304_4100_2346/2000.jpg');
+  // background-image: url('https://uploads.guim.co.uk/2021/01/06/GettyImages-1053730734-(260be1efb273b6c5e9fbebb58aa679e8bb448abe)-flipped_(1).jpg');
+  // // pic 2
+  // background-image: url('https://media.guim.co.uk/60079d63a95d36b76c0eba87049b91d15f939e25/0_304_4100_2346/2000.jpg');
   // pic 3
   background-image: url('https://uploads.guim.co.uk/2021/01/06/07780509-(c096ae683940737f8d197b11106e1d2f6751404b)-flipped.jpg');
   background-size: cover;
