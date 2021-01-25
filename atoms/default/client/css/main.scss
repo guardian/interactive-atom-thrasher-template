@@ -76,8 +76,9 @@ section#no-ball-games {
         margin-top: 0px;
         width: 300px;
         line-height: 97%;
+
         @include mq(mobileMedium) {
-            font-size:38px;
+            font-size: 38px;
         }
 
         @include mc(mobileLandscape) {
@@ -148,9 +149,14 @@ section#no-ball-games {
         bottom: 0;
         z-index: -1;
 
-        background-image: url("https://uploads.guim.co.uk/2020/12/21/space-thrasher_(1).jpg");
+        background-image: url("https://uploads.guim.co.uk/2021/01/22/Bright-Lights-Boom-Low.gif");
         background-size: cover;
-        background-position: center;
+        background-position: center -20px;
+
+        @include mq(mobileLandscape) {
+            background-size: cover;
+            background-position: center;
+        }
 
         &:before,
         &:after {
@@ -179,7 +185,7 @@ section#no-ball-games {
         }
 
         @include mq(tablet) {
-            background-image: url("https://uploads.guim.co.uk/2020/12/21/space-thrasher_(1).jpg");
+            background-image: url("https://uploads.guim.co.uk/2021/01/22/Bright-Lights-Boom-Low.gif");
             background-position-y: 20%;
             left: 260px;
 
@@ -230,7 +236,7 @@ section#no-ball-games {
 
             &:after {
                 width: 250px;
-                left:-1px;
+                left: -1px;
             }
         }
 
@@ -257,7 +263,7 @@ section#no-ball-games {
         position: relative;
         z-index: 10;
         padding: 6px 0;
-        margin-top: 100px;
+        margin-top: 115px;
 
         &:before {
             content: "";
