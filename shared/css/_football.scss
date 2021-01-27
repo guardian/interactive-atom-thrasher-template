@@ -1,0 +1,193 @@
+$backgroundColor:#FFDD00;
+$textColor: #121212;
+
+#football-weekly,
+#thrasher-atom {
+    width: 100%;
+    position: relative;
+    padding: 0 !important;
+    overflow: hidden;
+    background-color: #FFDD0050;
+    margin-bottom:0;
+
+    .fc-container__inner,
+    .fc-slice,
+    .facia-snap {
+        overflow: hidden;
+    }
+
+    .facia-snap {
+        padding: 0;
+    }
+}
+
+
+
+.fw-thrasher {
+    &__showdesktop {
+        display: none;
+        @include mq(tablet) {
+            display: block;
+            display:flex;
+        }
+    }
+
+    &__showmobile {
+        display: block;
+
+        @include mq(tablet) {
+            display: none;
+        }
+    }
+
+
+    background-color: $backgroundColor;
+    padding:0 10px 8px 10px;
+    @include mq(mobileLandscape) {
+        padding:0 20px;
+    }
+    @include mq(tablet) {
+        width:100%;
+    }
+
+    &__headline {
+        color: $textColor;
+        font-family: "GuardianTitlepiece", "Guardian Headline Full", "Guardian Egyptian Web", Georgia, serif;
+        font-size: 42px;
+        line-height: 90%;
+        padding-top:4px;
+        padding-bottom:10px;
+        width:50%;
+        @include mq(desktop) {
+            font-size: 50px;
+        }
+    }
+    &__subheadline {
+        color:$textColor;
+        font-family: "Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
+        font-size:17px;
+        line-height:115%;
+        width:90%;
+    }
+    &__links {
+        p, a {
+            font-family: "GuardianTextSans", "Guardian Text Sans Web", Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+            font-weight:600;
+            font-size:13px;
+            line-height:1;
+        }
+        &-wrapper {
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            // justify-content: space-between;
+            @include mq(mobileLandscape) {
+                justify-content: unset;
+            }
+            @include mq(tablet) {
+                margin-bottom: 8px;
+            }
+            p {
+                padding-top: 9px;
+                margin-right:4px;
+            }
+        }
+        &-button {
+            padding:6px 10px;
+            margin-bottom:4px;
+            border:1px solid black;
+            border-radius:17px;
+            transition:color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            margin-right:4px;
+            &:hover {
+                background-color:#12121240;
+                text-decoration: none;
+            }
+            @include mq(mobileMedium) {
+                padding:6px 8px;
+            }
+            @include mq(tablet) {
+                padding: 8px 12px;
+            }
+        }
+    }
+    &__left,
+    &__right {
+        width:50%;
+    }
+    &__left {
+        @include mq(leftCol) {
+            width:630px;
+        }
+        @include mq(wide) {
+            width:710px;
+        }
+    }
+    &__right {
+        margin-top: 40px;
+        margin-top: 58px;
+        @include mq(leftCol) {
+            width: 470px;
+        }
+        .fw-thrasher {
+            &__subheadline,
+            &__links {
+                padding-left:10px;
+                position:relative;
+                &::before {
+                    content:'';
+                    background-color:$textColor;
+                    width:1px;
+                    height:50px;
+                    position:absolute;
+                    left:0px;
+                    top: 3px;
+                }
+            }
+            &__subheadline {
+                margin-bottom:10px;
+            }
+        }
+    }
+}
+
+
+// this removes margins from Android / iOS view
+.interactive-atom {
+    margin: 0;
+    overflow: hidden;
+}
+
+// iOS and Android specific styles
+#football-weekly,
+#thrasher-atom {
+
+    .android &,
+    .ios & {
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+
+        &__component-button {
+            span {
+                letter-spacing: unset;
+            }
+        }
+    }
+}
+
+
+
+.fc-container__inner {
+    border-top-color: #dcdcdc !important;
+}
+
+.button--show-more,
+#episodes .button--show-more {
+    background-color: #121212 !important;
+    border-color: #121212 !important;
+    color: #fff!important;
+    svg {
+        fill:white;
+    }
+}
