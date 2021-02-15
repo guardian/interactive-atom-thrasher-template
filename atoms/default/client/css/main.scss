@@ -85,6 +85,9 @@ section#no-ball-games {
             color: $textColor;
             font-size: 42px;
         }
+        @include mq(desktop) {
+            width:400px;
+        }
 
         @include mq(leftCol) {
             margin-left: 170px;
@@ -149,9 +152,14 @@ section#no-ball-games {
         bottom: 0;
         z-index: -1;
 
-        background-image: url("https://uploads.guim.co.uk/2021/01/25/Bright_Lights_Still_19_2_LOWER.jpg");
-        background-size: cover;
-        background-position: center -20px;
+        background-image: url("https://uploads.guim.co.uk/2021/02/15/mbk-thrasher-pic-low.jpg");
+        background-size: 200%;
+        background-position: center -30px;
+
+        @include mq(mobileMedium) {
+            background-size: cover;
+            background-position: center;
+        }
 
         @include mq(mobileLandscape) {
             background-size: cover;
@@ -170,7 +178,7 @@ section#no-ball-games {
             top: 50%;
             bottom: 0;
             background: linear-gradient(0deg,
-                    rgba(18, 18, 18, 1) 0%,
+                    rgba(18, 18, 18, 0.6) 0%,
                     rgba(18, 18, 18, 0) 100%);
         }
 
@@ -180,12 +188,12 @@ section#no-ball-games {
             height: 120px;
             background: linear-gradient(0deg,
                     rgba(18, 18, 18, 0) 0%,
-                    rgba(18, 18, 18, 1) 100%);
+                    rgba(18, 18, 18, 0.6) 100%);
             opacity: 0.9;
         }
 
         @include mq(tablet) {
-            background-image: url("https://uploads.guim.co.uk/2021/01/25/Bright_Lights_Still_19_2_LOWER.jpg");
+            background-image: url("https://uploads.guim.co.uk/2021/02/15/mbk-thrasher-pic-low.jpg");
             background-position-y: 20%;
             left: 260px;
 
@@ -210,10 +218,6 @@ section#no-ball-games {
             }
         }
 
-        @include mq(mobileLandscape) {
-            background-position: center -10px;
-        }
-
         @include mq(phablet) {
             background-position: center -80px;
         }
@@ -226,9 +230,13 @@ section#no-ball-games {
             }
         }
 
+        @include mq(desktop) {
+            background-position: center -130px;
+        }
+
         @include mq(leftCol) {
-            left: 400px;
             left: 350px;
+            background-position: center -140px;
 
             &:before {
                 left: -400px;
@@ -241,8 +249,8 @@ section#no-ball-games {
         }
 
         @include mq(wide) {
-            left: 480px;
             left: 367px;
+            background-position: center -180px;
 
             &:before {
                 left: -480px;
@@ -258,8 +266,8 @@ section#no-ball-games {
         font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia,
             serif;
         color: white;
-        font-size: 20px;
-        line-height: 26px;
+        font-size: 17px;
+        line-height: 115%;
         position: relative;
         z-index: 10;
         padding: 6px 0;
@@ -290,7 +298,7 @@ section#no-ball-games {
         @include mq(tablet) {
             font-size: 20px;
             line-height: 22px;
-            width: 250px;
+            width: 330px;
             padding-right: 10px;
             margin-top: 10px;
 
@@ -302,6 +310,7 @@ section#no-ball-games {
 
         @include mq(desktop) {
             margin-top: 54px;
+            width:400px;
         }
 
         @include mq(leftCol) {
@@ -314,18 +323,21 @@ section#no-ball-games {
             border-top: 1px solid rgba(white, 0.2);
             padding-left: 10px;
             padding-bottom: 12px;
-            margin-top: 49px;
+            margin-top: 62px;
         }
 
         @include mq(wide) {
             margin-left: 230px;
             margin-left: 240px;
-            margin-top: 76px;
+            margin-top: 88px;
         }
 
         &__logline {
             font-weight: 600;
             max-width: 280px;
+            @include mq(mobileMedium) {
+                max-width: 360px;
+            }
         }
 
         &__button {
@@ -363,11 +375,11 @@ section#no-ball-games {
                 display: flex;
                 flex-direction: column;
                 margin-left: 4px;
-                padding-top: 9px;
+                padding-top: 6px;
             }
 
             &__time {
-                margin-top: -9px;
+                margin-top: -3px;
 
                 @include mq(tablet) {
                     margin-top: -6px;
