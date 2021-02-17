@@ -1,0 +1,200 @@
+.freshwater-thrasher {
+  margin: 0 -10px;
+  @include mq(mobileLandscape) {
+    margin: 0;
+  }
+  .ios,
+  .android & {
+    margin: 0;
+  }
+}
+.fw {
+  &__background {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    background-color: #194585;
+    background-image: url(https://uploads.guim.co.uk/2021/02/17/bg-pattern.min.jpg);
+    background-size: 266px;
+    picture,
+    img {
+      display: none;
+      opacity: 0;
+      width: 1300px;
+      height: auto;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+
+  &__copy {
+    color: #fff;
+    font-family: "Guardian Text Egyptian Web",Georgia,serif;
+    line-height: 1;
+    font-size: 17px;
+    padding: 6px 90px 0 10px;
+    @include mq(mobileMedium) {
+      padding: 6px 72px 0 10px;
+    }
+    @include mq(tablet) {
+      padding: 0;
+      position: absolute;
+      left: 300px;
+      top: 10px;
+      right: 140px;
+    }
+    @include mq(desktop) {
+      font-size: 20px;
+      font-family: "Guardian Headline Full","Guardian Headline","Guardian Egyptian Web",Georgia,serif;
+    }
+    @include mq(leftCol) {
+      left: 424px;
+    }
+    @include mq(wide) {
+      left: 504px;
+    }
+    &__title {
+      font-family: "Guardian Titlepiece","Guardian Headline Full","Guardian Headline","Guardian Egyptian Web",Georgia,serif;
+      font-size: 36px;
+      @include mq(360px) {
+        font-size: 42px;
+      }
+      @include mq(desktop) {
+        font-size: 70px;
+        margin-top: -2px;
+      }
+    }
+    &__miniseries {
+      font-weight: bold;
+    }
+    &__tagline {
+      @include mq($until: desktop) {
+        display: none;
+      }
+      .line {
+        @include mq(desktop) {
+          display: block;
+        }
+      }
+      &__line-1 {
+
+      }
+      &__line-2 {
+
+      }
+    }
+  }
+
+  &__cover {
+    width: 80%;
+    max-width: 328px;
+    margin: 8px auto;
+    @include mq(mobileMedium) {
+      margin: 16px auto;
+    }
+    @include mq(tablet) {
+      width: 328px;
+      height: 265px;
+      margin: 0 0 12px;
+    }
+    @include mq(desktop) {
+      margin-top: 4px;
+    }
+    @include mq(leftCol) {
+      transform: translateX(124px)
+    }
+    @include mq(wide) {
+      transform: translateX(204px);
+    }
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__listen-now {
+    color: #fff;
+    font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    padding: 0 10px 12px;
+    @include mq(tablet) {
+      padding: 0;
+      position: absolute;
+      left: 300px;
+      bottom: 30px;
+      right: 18px;
+    }
+    @include mq(leftCol) {
+      left: 424px;
+    }
+    @include mq(wide) {
+      left: 504px;
+    }
+    &__links {
+      @include mq(tablet) {
+        margin-top: 4px;
+      }
+      &__link {
+        font-weight: bold;
+        display: inline-block;
+        border: 1px solid #fff;
+        line-height: 38px;
+        margin: 4px 8px 4px 0;
+        padding: 0 16px;
+        border-radius: 38px;
+        &:hover {
+          text-decoration: none;
+          background-color: rgba(#000, 0.2);
+          backdrop-filter: blur(4px);
+        }
+        &.guardian {
+
+        }
+        &.spotify {
+
+        }
+        &.apple {
+
+        }
+        &.google {
+          @include mq($until: tablet) {
+            display: none;
+          }
+        }
+        &.acast {
+
+        }
+      }
+    }
+  }
+
+  &__podcasts-icon {
+    width: 82px;
+    height: auto;
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    @include mq(mobileLandscape) {
+      right: 20px;
+    }
+    @include mq(tablet) {
+      width: 105px;
+      height: 61px;
+    }
+    @include mq(leftCol) {
+      left: 20px;
+      right: auto;
+    }
+    svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+}

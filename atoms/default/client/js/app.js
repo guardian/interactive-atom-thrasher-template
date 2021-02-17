@@ -1,7 +1,7 @@
 // data capture for ophan
 function trackLoad() {
     window.guardian.ophan.record({
-        component: 'thrasher : add-your-thrasher-name : load',
+        component: 'thrasher : freshwater : load',
         value: 1
     });
 }

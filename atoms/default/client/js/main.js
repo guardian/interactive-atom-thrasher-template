@@ -34,5 +34,5 @@ if (
 }
 
 import { log } from '@guardian/libs';
-log('design', { 1: true, 2: false });
-log('design', "repo: www.github.com/blahblah")
+log('design', "repo: guardian/interactive-atom-thrasher-template")
+log('design', "repo: branch: duarte/freshwater")
