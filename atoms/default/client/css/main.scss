@@ -22,7 +22,7 @@ $mq-breakpoints: (mobile: 320px,
 );
 
 // update 'class-name' with yours
-$containerName: noballgames;
+$containerName: totalchaos;
 // colours pulled from shared/css/_palette.sass
 $backgroundColor: #121212;
 $textColor: white;
@@ -32,7 +32,7 @@ $buttonHoverColor: $neutral-46;
 // this targets the container your thrasher is put inside on Fronts
 section#documentaries,
 section#documentary,
-section#wolves-of-norway {
+section#total-chaos {
   width: 100%;
   position: relative;
   padding: 0 !important;
@@ -50,6 +50,17 @@ section#wolves-of-norway {
   }
 }
 
+#doc-untold-chaos {
+  // Ken burns effect
+  &.dw-zoomin{
+    .#{$containerName} {
+      &__image {
+        transform: scale(1.05);
+        transition-timing-function: ease-in-out;
+      }
+    }
+  }
+}
 .#{$containerName} {
   height: 340px;
   padding: 4px 10px;
@@ -148,6 +159,7 @@ section#wolves-of-norway {
   }
 
   &__image {
+    transition: transform 1.5s;
     position: absolute;
     top: 0;
     left: 0;
@@ -155,23 +167,23 @@ section#wolves-of-norway {
     bottom: 0;
     z-index: -1;
 
-    background-image: url("https://uploads.guim.co.uk/2020/12/08/wolf-norway-grain-more.jpg");
+    background-image: url("https://uploads.guim.co.uk/2021/02/09/women-crowd-thrasher-mobile-f1.jpg");
     background-size: 210%;
     background-position: -180px top;
     background-repeat: no-repeat;
     @include mq(mobileMedium) {
           background-size: 180%;
-          background-position: -123px top;
+          background-position: center top;
     }
     @include mq(mobileLandscape) {
       background-position: center;
       background-size: cover;
     }
     @include mq(phablet) {
-      background-position: top;
+      background-position: center;
     }
     @include mq(tablet) {
-      background-position: top;
+      background-position: center;
     }
 
     &:before,
@@ -202,7 +214,7 @@ section#wolves-of-norway {
     }
 
     @include mq(tablet) {
-      background-image: url("https://uploads.guim.co.uk/2020/12/08/wolf-norway-grain-more.jpg");
+      background-image: url("https://uploads.guim.co.uk/2021/02/09/women-crowd-thrasher-desktop-f1.jpg");
       background-position-y: 50%;
       left: 100px;
 
@@ -274,7 +286,7 @@ section#wolves-of-norway {
     position: relative;
     z-index: 10;
     padding: 2px 0;
-    margin-top: 132px;
+    margin-top: 162px;
 
     &:before {
       content: "";
@@ -304,7 +316,7 @@ section#wolves-of-norway {
       line-height: 115%;
       width: 250px;
       padding-right: 10px;
-      margin-top: 47px;
+      margin-top: 72px;
 
       &:before {
         right: 0;
@@ -331,7 +343,7 @@ section#wolves-of-norway {
     }
 
     @include mq(wide) {
-      margin-top: 73px;
+      margin-top: 98px;
       margin-left: 230px;
       // margin-left: 240px;
     }
@@ -393,12 +405,12 @@ section#wolves-of-norway {
     bottom: 0;
     display: block;
     z-index: 20;
-    background-color: black;
-    mix-blend-mode: soft-light;
+    // background-color: black; // turned off for Ken burns dw
+    // mix-blend-mode: soft-light; // turned off for Ken burns dw
     opacity: 0;
 
-    transition: background-color 0.3s linear;
-    
+    // transition: background-color 0.3s linear; // turned off for Ken burns dw
+
     // &:hover {
 
     //   &~.somalinimo__copy .somalinimo__copy__logline,
