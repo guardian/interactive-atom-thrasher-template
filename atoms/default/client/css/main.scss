@@ -24,7 +24,7 @@ $mq-breakpoints: (mobile: 320px,
 // update 'class-name' with yours
 $containerName: space-doc;
 // colours pulled from shared/css/_palette.sass
-$backgroundColor: #121212;
+$backgroundColor: white;
 $textColor: white;
 $buttonColor: $neutral-7;
 $buttonHoverColor: $neutral-46;
@@ -38,7 +38,7 @@ section#no-ball-games {
     position: relative;
     padding: 0 !important;
     overflow: hidden;
-    background-color: #121212;
+    background-color: white;
 
     .fc-container__inner,
     .fc-slice,
@@ -86,7 +86,7 @@ section#no-ball-games {
             font-size: 42px;
         }
         @include mq(desktop) {
-            width:400px;
+            width:450px;
         }
 
         @include mq(leftCol) {
@@ -154,7 +154,7 @@ section#no-ball-games {
 
         background-image: url("https://uploads.guim.co.uk/2021/02/15/mbk-thrasher-pic-low.jpg");
         background-size: 200%;
-        background-position: center -30px;
+        background-position: center;
 
         @include mq(mobileMedium) {
             background-size: cover;
@@ -174,92 +174,97 @@ section#no-ball-games {
             right: 0;
         }
 
-        &:before {
-            top: 50%;
-            bottom: 0;
-            background: linear-gradient(0deg,
-                    rgba(18, 18, 18, 0.6) 0%,
-                    rgba(18, 18, 18, 0) 100%);
-        }
+        // &:before {
+        //     top: 50%;
+        //     bottom: 0;
+        //     background: linear-gradient(0deg,
+        //             rgba(18, 18, 18, 0.6) 0%,
+        //             rgba(18, 18, 18, 0) 100%);
+        // }
 
-        &:after {
-            top: 0;
-            bottom: auto;
-            height: 120px;
-            background: linear-gradient(0deg,
-                    rgba(18, 18, 18, 0) 0%,
-                    rgba(18, 18, 18, 0.6) 100%);
-            opacity: 0.9;
-        }
+        // &:after {
+        //     top: 0;
+        //     bottom: auto;
+        //     height: 120px;
+        //     background: linear-gradient(0deg,
+        //             rgba(18, 18, 18, 0) 0%,
+        //             rgba(18, 18, 18, 0.6) 100%);
+        //     opacity: 0.9;
+        // }
 
         @include mq(tablet) {
             background-image: url("https://uploads.guim.co.uk/2021/02/15/mbk-thrasher-pic-low.jpg");
-            background-position-y: 20%;
-            left: 260px;
+            background-image: url("https://uploads.guim.co.uk/2021/02/16/mbk-thrasher-thin-pic-2.jpg");
+            background-position: -250px center;
+            // background-position-y: 20%;
+            // left: 260px;
 
-            &:before {
-                top: 0;
-                left: -260px;
-                right: 100%;
-                bottom: 0;
-                background: #121212;
-            }
+            // &:before {
+            //     top: 0;
+            //     left: -260px;
+            //     right: 100%;
+            //     bottom: 0;
+            //     background: #121212;
+            // }
 
-            &:after {
-                background: linear-gradient(90deg,
-                        rgba(18, 18, 18, 1) 0%,
-                        rgba(18, 18, 18, 0) 100%);
-                bottom: 0;
-                left: 0;
-                right: auto;
-                width: 100px;
-                height: auto;
-                opacity: 1;
-            }
+            // &:after {
+            //     background: linear-gradient(90deg,
+            //             rgba(18, 18, 18, 1) 0%,
+            //             rgba(18, 18, 18, 0) 100%);
+            //     bottom: 0;
+            //     left: 0;
+            //     right: auto;
+            //     width: 100px;
+            //     height: auto;
+            //     opacity: 1;
+            // }
         }
-
-        @include mq(phablet) {
-            background-position: center -80px;
-        }
-
-        @include mq(tablet) {
-            background-position: center;
-
-            &:after {
-                width: 190px;
-            }
-        }
-
         @include mq(desktop) {
-            background-position: center -130px;
+            background-position: center;
         }
 
-        @include mq(leftCol) {
-            left: 350px;
-            background-position: center -140px;
+        // @include mq(phablet) {
+        //     background-position: center -80px;
+        // }
 
-            &:before {
-                left: -400px;
-            }
+        // @include mq(tablet) {
+        //     background-position: center;
 
-            &:after {
-                width: 250px;
-                left: -1px;
-            }
-        }
+        //     &:after {
+        //         width: 190px;
+        //     }
+        // }
 
-        @include mq(wide) {
-            left: 367px;
-            background-position: center -180px;
+        // @include mq(desktop) {
+        //     background-position: center -130px;
+        // }
 
-            &:before {
-                left: -480px;
-            }
+        // @include mq(leftCol) {
+        //     // left: 350px;
+        //     // background-position: center -140px;
 
-            &:after {
-                width: 300px;
-            }
-        }
+        //     &:before {
+        //         left: -400px;
+        //     }
+
+        //     &:after {
+        //         width: 250px;
+        //         left: -1px;
+        //     }
+        // }
+
+        // @include mq(wide) {
+        //     // left: 367px;
+        //     // background-position: center -180px;
+
+        //     &:before {
+        //         left: -480px;
+        //     }
+
+        //     &:after {
+        //         width: 300px;
+        //     }
+        // }
     }
 
     &__copy {
@@ -298,7 +303,7 @@ section#no-ball-games {
         @include mq(tablet) {
             font-size: 20px;
             line-height: 22px;
-            width: 330px;
+            width: 340px;
             padding-right: 10px;
             margin-top: 10px;
 
