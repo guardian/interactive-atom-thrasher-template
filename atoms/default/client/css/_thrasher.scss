@@ -40,18 +40,27 @@ section#subs-ideas.fc-container--thrasher {
     .web-dest {
       display: inline-block;
     }
-    .apps-dest {
+    .ios-dest,
+    .android-dest {
       display: none;
     }
-    body.ios &,
-    body.android & {
+    body.ios & {
+      .ios-dest {
+        display: inline-block;
+      }
+      .android-dest,
       .web-dest {
         display: none;
       }
-      .apps-dest {
+    }
+    body.android & {
+      .android-dest {
         display: inline-block;
       }
-
+      .ios-dest,
+      .web-dest {
+        display: none;
+      }
     }
 
   }
