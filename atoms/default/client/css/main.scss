@@ -9,11 +9,12 @@
 // Uncomment for full screen (including immersive article main media)
 //@import "fullscreen";
 
+
 // Default breakpoints from Frontend
 // Use mc() in place of mq() so your thrashers don't get broken
 $mq-breakpoints: (
     mobile:          320px,
-    mobileMedium:    375px,
+    mobileMedium:    360px,
     mobileLandscape: 480px,
     phablet:         660px,
     tablet:          740px,
@@ -21,6 +22,9 @@ $mq-breakpoints: (
     leftCol:         1140px,
     wide:            1300px
 );
+
+@import "thrasher";
+
 
 
 // update 'class-name' with yours
@@ -52,8 +56,6 @@ section##{$containerName} {
 
 .#{$containerName} {
     width:100%;
-    height:200px;
-    background-color:$backgroundColor;
     &__headline {
         color:$textColor;
         font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;

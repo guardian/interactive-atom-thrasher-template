@@ -1,0 +1,229 @@
+section#subs-ideas.fc-container--thrasher {
+  background-color: #fff;
+}
+
+.subs-ideas-thrasher {
+  margin: 0 -10px;
+  @include mq(tablet) {
+    margin: 0;
+    width: 100%;
+  }
+  .ios &,
+  .android & {
+    margin: 0;
+  }
+}
+
+.subs-ideas {
+  position: relative;
+
+  &__links {
+    &,
+    a {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 20;
+    }
+
+    &:hover {
+      ~ .subs-ideas__copy {
+        .subs-ideas__copy__buttons span {
+          background-color: #F3C100;
+        }
+      }
+    }
+
+    .web-dest {
+      display: inline-block;
+    }
+    .apps-dest {
+      display: none;
+    }
+    body.ios &,
+    body.android & {
+      .web-dest {
+        display: none;
+      }
+      .apps-dest {
+        display: inline-block;
+      }
+
+    }
+
+  }
+
+  &__background {
+    display: block;
+    background-image: url(https://uploads.guim.co.uk/2021/02/23/i.jpg);
+    background-color: #FFDB00;
+    background-size: auto 260px;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    height: 200px;
+    position: relative;
+
+    @include mq(mobileLandscape) {
+      background-size: cover;
+      height: 240px;
+    }
+
+    @include mq(tablet) {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 370px;
+      bottom: 0;
+      overflow: hidden;
+      height: auto;
+    }
+    @include mq(desktop) {
+      width: 490px;
+    }
+    @include mq(leftCol) {
+      width: 650px;
+    }
+    @include mq(wide) {
+      width: 730px;
+    }
+
+
+    .ideas {
+      font-family: "Guardian Titlepiece","Guardian Headline Full","Guardian Headline","Guardian Egyptian Web",Georgia,serif;
+      font-size: 32px;
+      line-height: 28px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      left: 10px;
+      max-width: 9.375em;
+      @include mq(mobileLandscape) {
+        left: 20px;
+      }
+      @include mq(tablet) {
+        max-width: 100%;
+        font-size: 24px;
+      }
+      @include mq(desktop) {
+        font-size: 32px;
+        bottom: 28px;
+      }
+      @include mq(leftCol) {
+        font-size: 42px;
+      }
+      @include mq(wide) {
+        font-size: 46px;
+        bottom: 30px;
+      }
+    }
+  }
+
+
+  &__copy {
+    background-color: #121212;
+
+    color: #fff;
+    font-family: "Guardian Headline Full","Guardian Headline","Guardian Egyptian Web",Georgia,serif;
+    line-height: 1;
+    font-size: 22px;
+
+
+    padding: 6px 10px 18px;
+    @include mq(mobileLandscape) {
+      padding-left: 20px;
+    }
+    @include mq(tablet) {
+      margin-left: 370px;
+      padding: 8px 10px 18px 15px;
+    }
+    @include mq(desktop) {
+      margin-left: 490px;
+    }
+    @include mq(leftCol) {
+      margin-left: 650px;
+    }
+    @include mq(wide) {
+      margin-left: 730px;
+    }
+
+
+    &__lines {
+      .line-1 {
+        span {
+          display: block;
+        }
+      }
+      .line-2 {
+        color: #ffe500;
+      }
+      @include mq($until:tablet) {
+        .line-2 {
+          display: none;
+        }
+      }
+      @include mq(desktop) {
+        width: auto;
+        display: block;
+        .line-2 {
+          width: 11em;
+        }
+      }
+    }
+
+    &__buttons {
+      padding-bottom: 64px;
+      padding-top: 12px;
+      @include mq(mobileLandscape) {
+        padding-bottom: 40px;
+      }
+      @include mq(desktop) {
+        padding-top: 60px;
+        padding-bottom: 0;
+      }
+
+      span {
+        display: inline-block;
+        background-color: #ffe500;
+        font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+        font-weight: bold;
+        font-size: 17px;
+        line-height: 20px;
+        padding: 12px 16px;
+        padding-right: 48px;
+        border-radius: 44px;
+        margin-top: 0;
+
+        background-image: url(https://uploads.guim.co.uk/2021/02/23/arrow.svg);
+        background-repeat: no-repeat;
+        background-position: right 10px top 11px;
+        text-decoration: none;
+        color: #121212;
+      }
+    }
+    &__brand {
+      width: 122px;
+      height: 42px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      @include mq(mobileLandscape) {
+        right: 20px;
+      }
+      @include mq(desktop) {
+        bottom: 18px;
+      }
+
+      svg {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+
+  }
+
+}
