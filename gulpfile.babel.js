@@ -345,22 +345,25 @@ const newThrasher = (name, cb) => {
 
   gutil.log('Creating a new thrasher called ' + gutil.colors.green(thrasherName));
 
-  gutil.log('Branch name: ' + branchName);
+  gutil.log('Branch name: ' + gutil.colors.green(branchName));
   git.checkout(branchName, { args: '-b' }, function (err) {
     if (err) throw err;
   });
 
-  console.log("Updating the config.json file")
-  const thrasherYear = new Date().getFullYear();
-  let thrasherMonth = new Date().getMonth();
-
-  if (thrasherMonth < 10) {
-    thrasherMonth = `0${thrasherMonth}`;
-  }
+  gutil.log("Updating config.json")
+  const d = new Date();
+  const thrasherYear = d.getFullYear();
+  const thrasherMonth = (((d.getMonth() + 1) < 10) ? `0` : '') + (d.getMonth() + 1);
 
   src(['config.json'])
-    .pipe(replace('2020/01/...', `${thrasherYear} / ${thrasherMonth} / ${thrasherName}`))
+    .pipe(replace('2020/01/...', `${thrasherYear}/${thrasherMonth}/${thrasherName}`))
     .pipe(dest('./'));
+
+  gutil.log("Updating the default atom")
+
+  src(['atoms/default/client/js/app.js'])
+    .pipe(replace(': add-your-thrasher-name :', `: ${thrasherName} :`))
+    .pipe(dest('atoms/default/client/js/'));
 
   cb();
 }
