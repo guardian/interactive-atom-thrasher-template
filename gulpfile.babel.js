@@ -335,13 +335,13 @@ const runOnMainInstructions = (cb) => {
 }
 
 
-const updateDefaultAtom = (thrasherName, files) => {
+const updateDefaultAtom = (thrasherName, branchName, files) => {
   files.forEach((fileName) => {
     const folder = fileName.split('/').slice(0, -1).join('/') + '/'
     src([fileName])
       .pipe(replace('thrasher-name', thrasherName))
+      .pipe(replace('thrasher-branch', branchName))
       .pipe(dest(folder));
-
   })
 }
 
@@ -372,11 +372,12 @@ const newThrasher = (name, cb) => {
     .pipe(replace('2020/01/...', `${thrasherYear}/${thrasherMonth}/${thrasherName}`))
     .pipe(dest('./'));
 
-  gutil.log("Updating the default atom")
-  updateDefaultAtom([
+  gutil.log("Updating the default atom", thrasherName, branchName)
+  updateDefaultAtom(thrasherName, branchName, [
     'atoms/default/client/js/app.js',
     'atoms/default/client/css/_thrasher.scss',
-    'atoms/default/server/templates/main.html'
+    'atoms/default/client/css/_basics.scss',
+    'atoms/default/server/templates/main.html',
   ]);
 
   cb();
