@@ -363,7 +363,7 @@ const newThrasher = (name, cb) => {
     if (err) throw err;
   });
 
-  gutil.log("Updating config.json")
+  gutil.log(`Updating defaults for ${thrasherName}`)
   const d = new Date();
   const thrasherYear = d.getFullYear();
   const thrasherMonth = (((d.getMonth() + 1) < 10) ? `0` : '') + (d.getMonth() + 1);
@@ -372,13 +372,13 @@ const newThrasher = (name, cb) => {
     .pipe(replace('2020/01/...', `${thrasherYear}/${thrasherMonth}/${thrasherName}`))
     .pipe(dest('./'));
 
-  gutil.log("Updating the default atom", thrasherName, branchName)
   updateDefaultAtom(thrasherName, branchName, [
     'atoms/default/client/js/app.js',
     'atoms/default/client/css/_thrasher.scss',
     'atoms/default/client/css/_basics.scss',
     'atoms/default/server/templates/main.html',
   ]);
+
 
   cb();
 }
