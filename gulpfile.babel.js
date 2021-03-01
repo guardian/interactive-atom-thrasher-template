@@ -334,6 +334,19 @@ const runOnMainInstructions = (cb) => {
   gutil.log('')
 }
 
+
+const updateDefaultAtom = (thrasherName, files) => {
+  files.forEach((fileName) => {
+    const folder = fileName.split('/').slice(0, -1).join('/') + '/'
+    src([fileName])
+      .pipe(replace('thrasher-name', thrasherName))
+      .pipe(dest(folder));
+
+  })
+}
+
+
+
 const newThrasher = (name, cb) => {
   let branchName = name;
   let thrasherName = name;
@@ -360,10 +373,11 @@ const newThrasher = (name, cb) => {
     .pipe(dest('./'));
 
   gutil.log("Updating the default atom")
-
-  src(['atoms/default/client/js/app.js'])
-    .pipe(replace(': add-your-thrasher-name :', `: ${thrasherName} :`))
-    .pipe(dest('atoms/default/client/js/'));
+  updateDefaultAtom([
+    'atoms/default/client/js/app.js',
+    'atoms/default/client/css/_thrasher.scss',
+    'atoms/default/server/templates/main.html'
+  ]);
 
   cb();
 }
