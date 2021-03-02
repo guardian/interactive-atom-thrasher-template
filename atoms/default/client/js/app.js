@@ -15,9 +15,9 @@ function shouldHideSupportMessaging() {
     return getCookieValue('gu_hide_support_messaging') === 'true';
 }
 
-
+const thrasherSection = document.getElementById("digital-subscription");
 if (shouldHideSupportMessaging()) {
-    document.getElementById("digital-subscription").style.display = "none";
+    thrasherSection.style.display = "none";
 } else {
-    document.getElementById("digital-subscription").style.display = "block";
+    thrasherSection.style.display = "block";
 }
