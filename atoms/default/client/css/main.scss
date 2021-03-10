@@ -6,3 +6,111 @@
 
 @import "basics";
 @import "thrasher";
+
+#thrasher__hf-culture-best-of-month.thrasher-inner {
+    color: white;
+    background-color:#333;
+    .show-left-col {
+        display:none;
+        @include mq(leftCol) {
+            display:block;
+        }
+    }
+    .hide-left-col {
+        display:block;
+        @include mq(leftCol) {
+            display:none;
+        }
+    }
+
+
+    .hf-culture-best-of-month {
+        &__container-title {
+            &__link {
+                font-size:32px;
+                line-height:105%;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+        &__copy {
+            @include mq(desktop) {
+                
+            }
+            @include mq(leftCol) {
+                padding-left: 170px;
+                padding-right:20px;
+            }
+            @include mq(wide) {
+                padding-left: 250px;
+                padding-right: 100px;
+            }
+        }
+
+        &__cards-wrapper {
+            display: flex;
+            flex-direction: column;
+
+            @include mq(tablet) {
+                flex-direction: row;
+            }
+        }
+
+        &__card {
+            display:flex;
+            position:relative;
+            @include mq(tablet) {
+                width: 33.3333%;
+                border-left: 1px solid grey;
+                padding: 0 10px;
+                &:nth-child(1) {
+                    border-left:none;
+                    padding:0 10px 0 0;
+                }
+            }
+            @include mq(leftCol) {
+                padding:4px 10px 0 10px;
+                &:nth-child(1) {
+                    border-left: 1px solid grey;
+                    padding:4px 10px 0 10px;
+                }
+            }
+
+            a {
+                position:absolute;
+                top:0;
+                left:0;
+                bottom:0;
+                right:0;
+                &:hover {
+                    ~.thrasher-button,
+                    ~* .thrasher-button {
+                        opacity: 0.8;
+                    }
+                }
+            }
+
+            &__tag {
+                font-size: 15px;
+                font-weight: 700;
+                line-height:115%;
+                margin-bottom:4px;
+                color: #FFE500;
+            }
+
+            &__headline {
+                font-size: 24px;
+                line-height: 115%;
+                font-weight: 500;
+            }
+
+            &__left {
+                display:flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width:70%;
+            }
+        }
+    }
+}

@@ -1,9 +1,9 @@
-#thrasher__thrasher-name.thrasher-inner {
+#thrasher__hf-culture-best-of-month.thrasher-inner {
   position: relative;
   border: 1px solid #dcdcdc;
   border-bottom: 0;
 
-  .thrasher-name {
+  .hf-culture-best-of-month {
     &__link,
     &__background,
     &__background img {
@@ -19,7 +19,7 @@
       z-index: 20;
       &:hover {
         // Background hover-effect:
-        ~ .thrasher-name__background {
+        ~ .hf-culture-best-of-month__background {
           opacity: 0.95;
         }
 
@@ -75,7 +75,7 @@
         padding-right: 20px;
       }
       @include mq(leftCol) {
-        padding-top: 4px;
+        // padding-top: 4px;
         padding-left: 180px;
       }
       @include mq(wide) {
@@ -95,6 +95,7 @@
         border-radius: 36px;
         margin-top: 12px;
         height: 36px;
+        width: fit-content;
         .label {
           display: flex;
           vertical-align: middle;
@@ -121,7 +122,7 @@
 
     &__roundel {
       position: absolute;
-      top: 10px;
+      top: 4px;
       right: 10px;
     }
 
