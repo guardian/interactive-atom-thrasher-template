@@ -6,3 +6,241 @@
 
 @import "basics";
 @import "thrasher";
+
+// #thrasher-atom {
+//     margin:0;
+//     padding:0;
+// }
+
+
+.g-subs-thrasher {
+    background-color: #005689;
+    padding: 0 10px;
+
+    @include mq(mobileLandscape) {
+        padding: 0 20px;
+    }
+
+    .flex {
+        flex-direction: column;
+        display: flex;
+
+        @include mq($from: desktop) {
+            flex-direction: row;
+        }
+
+        .l-panel {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+
+            @include mq(desktop) {
+                margin-bottom: unset;
+                padding-bottom: 16px;
+                width: 466px;
+            }
+
+            @include mq(leftCol) {
+                width: 644px;
+            }
+
+            @include mq(wide) {
+                width: 657px;
+            }
+        }
+
+        .r-panel {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+
+            @include mq($from: desktop) {
+                padding-top: 30px;
+                width: 50%;
+            }
+        }
+
+        .l-panel,
+        .r-panel {
+            img {
+                width: 100%;
+                height: auto;
+                margin-bottom: -5px;
+
+                @include mq(phablet) {
+                    width: 53%;
+                    margin-left: auto;
+                    margin-top: -100px;
+                }
+
+                @include mq(tablet) {
+                    width: 57%;
+                    margin-top: -110px;
+                }
+
+                @include mq(desktop) {
+                    margin-bottom: -1px;
+                    width: 93%;
+                    margin-left: auto;
+                }
+                @include mq(leftCol) {
+                    width:88%;
+                }
+                @include mq(wide) {
+                    width: 75%;
+                    margin-right: 80px;
+                }
+            }
+        }
+
+        .button {
+            width: max-content;
+            border-radius: 24px;
+            padding-top: 6px;
+            padding-left: 15px;
+            padding-bottom: 9px;
+            padding-right: 15px;
+            height: unset;
+            color: #121212;
+        }
+    }
+
+    .headline-wrapper {
+        position: relative;
+    }
+
+    h1 {
+        color: #ffe500;
+        line-height: 1.1;
+        margin-top: 4px;
+        max-width: 70%;
+        margin-bottom: 2px;
+        font-family: "Guardian Titlepiece", "Guardian Headline Full";
+        padding-bottom: 12px;
+        font-size: 36px;
+        font-variant-numeric: lining-nums;
+        @include mq(mobileMedium) {
+            font-size:44px;
+        }
+
+        @include mq(mobileLandscape) {
+            max-width:100%;
+        }
+
+        // @include mq(phablet) {
+        //     font-size: 40px;
+        //     margin-bottom: 3px;
+        // }
+
+        @include mq(tablet) {
+            font-size: 48px;
+        }
+
+        @include mq($from: desktop) {
+            font-size: 40px;
+            max-width: 500px;
+            margin-top: 2px;
+        }
+
+        @include mq(leftCol) {
+            font-size: 58px;
+        }
+    }
+
+    p {
+        color: #fff;
+        margin-bottom: 20px;
+        // width: 80%;
+        line-height: 135%;
+        font-size: 17px;
+        border-top: 1px solid #ffe500;
+        padding-top: 2px;
+
+        span {
+            font-weight: 700;
+        }
+
+        @include mq(desktop) {
+            width: 95%;
+        }
+
+        @include mq(leftCol) {
+            width: 500px;
+        }
+    }
+
+    .button {
+        background-color: #ffe500;
+        border: none;
+        font-size: 16px;
+        cursor:pointer;
+        &:hover {
+            cursor:pointer;
+        }
+    }
+
+    .g-roundel {
+        position: absolute;
+        top: 6px;
+        right: 10px;
+
+        @include mq(mobileLandscape) {
+            top: 6px;
+            right: 20px;
+        }
+
+        svg {
+            width: 45px;
+            height: 45px;
+        }
+    }
+
+    .price-roundel {
+        width: 180px;
+        height: 160px;
+        background-color: #ffe500;
+        color: #005689;
+        text-align: center;
+        border-radius: 50%;
+        position: absolute;
+        padding-top: 20px;
+        right: 0;
+        top: -70px;
+        transform: scale(0.7);
+
+        @include mq($from: desktop) {
+            top: unset;
+            bottom: 20px;
+            left: -50px;
+            transform: scale(1);
+        }
+
+        h2 {
+            font-family: "Guardian Titlepiece";
+            font-size: 70px;
+        }
+    }
+}
+
+// this removes margins from Android / iOS view
+.interactive-atom {
+    margin: 0;
+    overflow: hidden;
+}
+
+// iOS and Android specific styles
+.digital-subscription {
+
+    .android &,
+    .ios & {
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+
+        &__component-button {
+            span {
+                letter-spacing: unset;
+            }
+        }
+    }
+}
