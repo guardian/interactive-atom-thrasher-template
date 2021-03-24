@@ -4,3 +4,15 @@
 @import "_app-fonts";
 @import "_mixins";
 @import "_football";
+
+
+.ios, .android {
+    .fw-thrasher {
+        @include mq(tablet) {
+            width: unset;
+            .fw-thrasher__podlogo {
+                right:20px;
+            }
+        }
+    }
+}
