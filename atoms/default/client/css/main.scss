@@ -32,6 +32,12 @@
                 &:hover {
                     text-decoration: none;
                 }
+                @include mq(leftCol) {
+                    font-size:24px;
+                }
+                @include mq(wide) {
+                    font-size:32px;
+                }
             }
         }
         &__copy {
@@ -44,7 +50,7 @@
             }
             @include mq(wide) {
                 padding-left: 250px;
-                padding-right: 100px;
+                padding-right: 90px;
             }
         }
 
@@ -60,20 +66,25 @@
         &__card {
             display:flex;
             position:relative;
+            justify-content: space-between;
             @include mq(tablet) {
                 width: 33.3333%;
                 border-left: 1px solid grey;
                 padding: 0 10px;
+                padding-bottom:16px;
                 &:nth-child(1) {
                     border-left:none;
                     padding:0 10px 0 0;
+                    padding-bottom:16px;
                 }
             }
             @include mq(leftCol) {
                 padding:4px 10px 0 10px;
+                padding-bottom:16px;
                 &:nth-child(1) {
                     border-left: 1px solid grey;
                     padding:4px 10px 0 10px;
+                    padding-bottom:16px;
                 }
             }
 
@@ -109,7 +120,41 @@
                 display:flex;
                 flex-direction: column;
                 justify-content: space-between;
-                width:70%;
+                width:60%;
+            }
+            &__right {
+                width:35%;
+                position: relative;
+                &.netflix-image {
+                    width:70%;
+                    img {
+                        position: absolute;
+                        bottom:-16px;
+                    }
+                }
+                img {
+                    width:100%;
+                }
+                .stack {
+                    padding:4px;
+                    position: relative;
+                    width:75%;
+                    margin-top: 8px;
+                    height:100%;
+                    img {
+                        position: absolute;
+                        top:50%;
+                    }
+                    .rotate-one {
+                        transform: rotate(-5deg) translateY(-50%);
+                    }
+                    .rotate-two {
+                        transform: rotate(4deg) translateY(-50%);
+                    }
+                    .rotate-three {
+                        transform: rotate(9deg) translateY(-50%);
+                    }
+                }
             }
         }
     }

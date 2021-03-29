@@ -58,6 +58,7 @@
     "babel-plugin-transform-import-bangtext-node": "^0.1.4",
     "gulp-git": "^2.10.1",
     "mkdirp": "^0.5.1",
+    "mustache": "^4.2.0",
     "request-promise": "^4.2.6",
     "uglifyjs-webpack-plugin": "^2.2.0"
   }
