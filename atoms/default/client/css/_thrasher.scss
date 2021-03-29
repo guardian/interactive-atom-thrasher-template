@@ -1,9 +1,10 @@
-#thrasher__thrasher-name.thrasher-inner {
+#thrasher__dw-weekly-mag-sub-mar-21.thrasher-inner {
   position: relative;
   border: 1px solid #dcdcdc;
   border-bottom: 0;
+  background-color: #5ec2e7;
 
-  .thrasher-name {
+  .dw-weekly-mag-sub-mar-21 {
     &__link,
     &__background,
     &__background img {
@@ -19,14 +20,17 @@
       z-index: 20;
       &:hover {
         // Background hover-effect:
-        ~ .thrasher-name__background {
-          opacity: 0.95;
+        ~ .dw-weekly-mag-sub-mar-21__background {
+          // opacity: 0.95;
         }
 
         // Button hover-effect
         ~ .thrasher-button,
         ~ * .thrasher-button {
-          opacity: 0.8;
+          // opacity: 0.8;
+          .button-arrow {
+            right: 6px;
+          }
         }
       }
     }
@@ -41,14 +45,87 @@
       }
     }
 
-    &__container-title {
-      padding: 4px 10px;
-      @include mq(mobileLandscape) {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
+    &__container-copy {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
       @include mq(leftCol) {
         position: absolute;
+      }
+      @include mq(wide) {
+        width: 50%;
+      }
+      // padding & margins
+      &__headline, &__subheadline {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      &__button {
+        margin-left: 10px;
+      }
+      @include mq(mobileLandscape) {
+        &__headline, &__subheadline {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        &__button {
+          margin-left: 20px;
+        }
+      }
+      &__headline {
+        font-family: $font-headline;
+        font-size: 24px;
+        line-height: 115%;
+        font-weight: 700;
+        margin-top: 4px;
+        @include mq(leftCol) {
+          margin-top: 12px;
+        }
+      }
+      &__subheadline {
+        font-size: 17px;
+        line-height: 150%;
+        margin-top: 8px;
+        margin-bottom: 12px;
+      }
+      .thrasher-button {
+        display: inline-flex;
+        align-items: center;
+        padding: 0 9px;
+        background-color: #ffe500;
+        border-radius: 36px;
+        margin-top: auto;
+        margin-bottom: 12px;
+        height: 36px;
+        align-self: baseline;
+        position: relative;
+        .label {
+          display: flex;
+          vertical-align: middle;
+          font-family: $font-sans;
+          font-weight: 700;
+          font-size: 17px;
+          line-height: 28px;
+          padding: 0 4px;
+        }
+        .icon {
+          display: flex;
+          width: 20px;
+        }
+        .label+.icon {
+          padding: 0 2px 0 4px;
+        }
+        &.button-md {
+          height: 44px;
+          padding: 0 12px;
+        }
+        .button-arrow {
+          position: absolute;
+          height: 100%;
+          top: 0;
+          right: 10px;
+          transition: right 0.3s ease;
+        }
       }
       &__link {
         font-family: $font-headline;
@@ -64,66 +141,25 @@
         }
       }
     }
-
-    &__copy {
-      font-family: $font-headline;
-      font-size: 24px;
-      line-height: 26px;
-      padding: 0 10px 24px;
-      @include mq(mobileLandscape) {
-        padding-left: 20px;
-        padding-right: 20px;
+    &__image {
+      display: flex;
+      padding: 12px 20px 0;
+      img {
+        max-width: 100%;
       }
-      @include mq(leftCol) {
-        padding-top: 4px;
-        padding-left: 180px;
+      @include mq(mobileLandscape) {
+        justify-content: center;
       }
       @include mq(wide) {
-        padding-left: 260px;
-      }
-      &__headline {
-        font-weight: 700;
-      }
-      &__subheadline {
-
-      }
-      .thrasher-button {
-        display: inline-flex;
-        align-items: center;
-        padding: 0 9px;
-        background-color: #ffe500;
-        border-radius: 36px;
-        margin-top: 12px;
-        height: 36px;
-        .label {
-          display: flex;
-          vertical-align: middle;
-          font-family: $font-sans;
-          font-size: 17px;
-          line-height: 28px;
-          padding: 0 4px;
-        }
-        .icon {
-          display: flex;
-        }
-        .label+.icon {
-          padding: 0 2px 0 4px;
-        }
-
-        &.button-md {
-          height: 44px;
-          padding: 0 12px;
-        }
+        justify-content: flex-end;
       }
     }
 
-
-
-    &__roundel {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    }
+    // &__roundel {
+    //   position: absolute;
+    //   top: 10px;
+    //   right: 10px;
+    // }
 
   }
 
