@@ -6,3 +6,33 @@ function trackLoad() {
     });
 }
 
+const thrasherImgContainer = document.querySelector(".dw-weekly-mag-sub-mar-21__image");
+const thrasherImgs = document.querySelectorAll('img[class^="thrasher-cover"]');
+const dwImgContainerClass = "dw-zoom-container";
+
+var observer = new IntersectionObserver(function(entries) {
+	if(entries[0].isIntersecting === true) {
+    thrasherImgContainer.classList.add(dwImgContainerClass);
+  } else if(entries[0].isIntersecting === false){
+    thrasherImgContainer.classList.remove(dwImgContainerClass);
+  }
+}, { threshold: [1] });
+
+observer.observe(thrasherImgContainer);
+
+
+function getCookieValue(name) {
+    var val = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+    return val ? val.pop() : undefined;
+}
+
+function shouldHideSupportMessaging() {
+    return getCookieValue('gu_hide_support_messaging') === 'true';
+}
+
+const thrasherSection = document.getElementById("digital-subscription");
+if (shouldHideSupportMessaging()) {
+    thrasherSection.style.display = "none";
+} else {
+    thrasherSection.style.display = "block";
+}
