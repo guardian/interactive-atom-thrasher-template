@@ -5,14 +5,15 @@ function trackLoad() {
         value: 1
     });
 }
-
+// console.log('app.js is loading');
 const thrasherImgContainer = document.querySelector(".dw-weekly-mag-sub-mar-21__image");
-const thrasherImgs = document.querySelectorAll('img[class^="thrasher-cover"]');
+// const thrasherImgs = document.querySelectorAll('img[class^="thrasher-cover"]');
 const dwImgContainerClass = "dw-zoom-container";
 
 var observer = new IntersectionObserver(function(entries) {
 	if(entries[0].isIntersecting === true) {
     thrasherImgContainer.classList.add(dwImgContainerClass);
+    // console.log('observer function in view');
   } else if(entries[0].isIntersecting === false){
     thrasherImgContainer.classList.remove(dwImgContainerClass);
   }
