@@ -32,7 +32,3 @@ if (
     window.resize();
   }, 100);
 }
-
-import { log } from '@guardian/libs';
-log('design', { 1: true, 2: false });
-log('design', "repo: www.github.com/blahblah")

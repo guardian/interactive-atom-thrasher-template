@@ -7,6 +7,9 @@
 @import "basics";
 @import "thrasher";
 
+#thrasher__hf-culture-best-of-month {
+    background-color: white;
+}
 #thrasher__hf-culture-best-of-month.thrasher-inner {
     color: white;
     background-color:#333;
@@ -27,8 +30,13 @@
     .hf-culture-best-of-month {
         &__container-title {
             &__link {
-                font-size:32px;
-                line-height:105%;
+                font-size: 26px;
+                line-height: 145%;
+                
+                @include mq(mobileMedium) {
+                    font-size:32px;
+                    line-height:105%;
+                }
                 &:hover {
                     text-decoration: none;
                 }
@@ -46,7 +54,7 @@
             }
             @include mq(leftCol) {
                 padding-left: 170px;
-                padding-right:20px;
+                padding-right:10px;
             }
             @include mq(wide) {
                 padding-left: 250px;
@@ -67,7 +75,12 @@
             display:flex;
             position:relative;
             justify-content: space-between;
+            border-top: 1px solid grey;
+            min-height:140px;
+            padding-bottom:8px;
+            overflow: hidden;
             @include mq(tablet) {
+                border-top: none;
                 width: 33.3333%;
                 border-left: 1px solid grey;
                 padding: 0 10px;
@@ -77,6 +90,12 @@
                     padding:0 10px 0 0;
                     padding-bottom:16px;
                 }
+                flex-direction:column;
+                min-height: 230px;
+            }
+            @include mq(desktop) {
+                flex-direction:row;
+                min-height: unset;
             }
             @include mq(leftCol) {
                 padding:4px 10px 0 10px;
@@ -103,10 +122,16 @@
             }
 
             &__tag {
-                font-size: 15px;
+                font-family:"Guardian Titlepiece",
+                "Guardian Headline Full",
+                "Guardian Headline",
+                "Guardian Egyptian Web",
+                Georgia,
+                serif;
+                font-size: 22px;
                 font-weight: 700;
                 line-height:115%;
-                margin-bottom:4px;
+                margin-bottom:2px;
                 color: #FFE500;
             }
 
@@ -120,13 +145,49 @@
                 display:flex;
                 flex-direction: column;
                 justify-content: space-between;
-                width:60%;
+                width:64%;
+                @include mq(tablet) {
+                    width:unset;
+                }
+                @include mq(desktop) {
+                    width: 68%;
+                }
+                @include mq(wide) {
+                    width: 67%;
+                }
             }
             &__right {
                 width:35%;
                 position: relative;
+                @include mq(phablet) {
+                    text-align: center;
+                }
+                @include mq(tablet) {
+                    width: 40%;
+                    height: 100%;
+                    text-align: right;
+                }
+                @include mq(desktop) {
+                    text-align: unset;
+                    
+                }
+
                 &.netflix-image {
-                    width:70%;
+                    width: 40%;
+                    @include mq(mobileLandscape) {
+                        width:34%;
+                    }
+                    @include mq(phablet) {
+                        width:20%;
+                    }
+                    @include mq(tablet) {
+                        width:70%;
+                        text-align: center;
+                    }
+                    @include mq(desktop) {
+                        width:60%;
+                        text-align: unset;
+                    }
                     img {
                         position: absolute;
                         bottom:-16px;
@@ -141,6 +202,34 @@
                     width:75%;
                     margin-top: 8px;
                     height:100%;
+                    &.paperbacks {
+                        width:65%;
+                    }
+                    @include mq(mobileLandscape) {
+                        width:60%;
+                        &.paperbacks {
+                            width:60%;
+                        }
+                    }
+                    @include mq(phablet) {
+                        width: 40%;
+                        &.paperbacks {
+                            width: 40%;
+                        }
+                    }
+                    @include mq(tablet) {
+                        width:100%;
+                        &.paperbacks {
+                            width: 100%;
+                        }
+                    }
+                    @include mq(desktop) {
+                        width: 80%;
+
+                        &.paperbacks {
+                            width: 70%;
+                        }
+                    }
                     img {
                         position: absolute;
                         top:50%;
@@ -157,5 +246,51 @@
                 }
             }
         }
+
+        
     }
 }
+
+.interactive-atom {
+    margin: 0;
+    overflow: hidden;
+}
+
+
+.hf-culture-best-of-month {
+    .ios &,
+    .android & {
+        overflow: hidden;
+        margin: 0;
+        position: relative;
+
+        &__container-title__link {
+            margin: 0 0 8px 0;
+        }
+
+        &__card__tag {
+            margin: 4px 0 0 0;
+        }
+
+        &__card__headline {
+            margin: 0 0 8px 0;
+        }
+        &__card__right {
+            min-height:10px;
+            img {
+                position: absolute;
+                top:8px;
+                bottom: unset;
+            }
+        }
+        &__card__right.books,
+        &__card__right.music {
+            height:0;
+            img {
+                bottom:unset;
+                top: 70px;
+            }
+        } 
+    }
+}
+
