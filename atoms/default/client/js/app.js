@@ -31,7 +31,7 @@ function shouldHideSupportMessaging() {
     return getCookieValue('gu_hide_support_messaging') === 'true';
 }
 
-const thrasherSection = document.getElementById("digital-subscription");
+const thrasherSection = document.getElementById("weekly-subscription");
 if (shouldHideSupportMessaging()) {
     thrasherSection.style.display = "none";
 } else {
