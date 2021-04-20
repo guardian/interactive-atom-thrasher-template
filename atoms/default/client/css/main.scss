@@ -7,7 +7,206 @@
 @import "basics";
 @import "thrasher";
 
+@font-face {
+    font-family: 'GaramondGu';
+    font-style: italic;
+    src: url('https://interactive.guim.co.uk/atoms/thrashers/2021/04/g200-article-banner/assets/v/1618581784088/AGaramondPro-Italic-subset.woff2') format("woff2"),
+    url('https://interactive.guim.co.uk/atoms/thrashers/2021/04/g200-article-banner/assets/v/1618581784088/AGaramondPro-Italic-subset.woff') format("woff"),
+    url('https://interactive.guim.co.uk/atoms/thrashers/2021/04/g200-article-banner/assets/v/1618581784088/AGaramondPro-Italic-subset.oft') format("truetype");
+    unicode-range: U+A, U+20, U+2C, U+2E, U+30-32, U+38, U+42, U+49, U+4F, U+53, U+61, U+63-69, U+6C-70, U+72-77, U+79;
+}
+
+@font-face {
+    font-family: 'HelveticaGu';
+    src: url('https://interactive.guim.co.uk/atoms/thrashers/2021/04/g200-article-banner/assets/v/1618581784088/DisHelBol4595-subset.woff2') format("woff2"),
+    url('https://interactive.guim.co.uk/atoms/thrashers/2021/04/g200-article-banner/assets/v/1618581784088/DisHelBol4595-subset.woff') format("woff"),
+    url('https://interactive.guim.co.uk/atoms/thrashers/2021/04/g200-article-banner/assets/v/1618581784088/DisHelBol4595-subset.otf') format("truetype");
+    unicode-range: U+A, U+20, U+27, U+2E, U+30, U+32, U+49, U+4F, U+50, U+61-70, U+72-77, U+79, U+2019;
+}
+
+#g200-article-banner, #thrasher-atom {
+    background-color:#ffe500;
+    margin-bottom:0;
+}
 
 .g200-article-banner {
     background-color:#ffe500;
+    height:175px;
+    padding:4px 10px 0 10px;
+    @include mq(mobileLandscape) {
+        padding:4px 20px 0 20px;
+    }
+    @include mq(leftCol) {
+        padding:4px 0 0 0;
+    }
+    @include mq(phablet) {
+        height:138px;
+    }
+
+    .relative-wrapper {
+        position:relative;
+    }
+
+    .black-lines {
+        position:absolute;
+        top: 20px;
+        right: 0;
+        bottom: 43px;
+        left:0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @include mq(phablet) {
+            top: 25px;
+            bottom: 58px;
+        }
+        hr {
+            border: none;
+            border-color:transparent;
+            height: 1px;
+            background-color:black;
+            border-style: inset;
+            border-width: 0;
+            width: 100%;
+        }
+        .hide-above-m-lands {
+            @include mq(phablet) {
+                display:none;
+            }
+        }
+    }
+
+    .hide-mob {
+        display:none;
+        @include mq(tablet) {
+            display:block;
+        }
+    }
+    .flex-space-between {
+        display:flex;
+        justify-content: space-between;
+        flex-direction: column;
+        height:175px;
+        @include mq(phablet) {
+            height: 138px;
+        }
+        .old-gu-logo-wrapper {
+            text-align: right;
+        }
+    }
+
+    &.thrasher-inner {
+        .g200-article-banner__copy {
+            padding: 0!important;
+            width: 100%;
+            @include mq(leftCol) {
+                margin-left: 180px;
+            }
+            @include mq(wide) {
+                margin-left: 260px;
+            }
+        }
+    }
+
+    .animated-text {
+        position:absolute;
+        width:calc(100vw - 20px);
+        @include mq(mobileLandscape) {
+            width:calc(100vw - 40px);
+        }
+        @include mq(leftCol){
+            width:940px;
+        }
+        @include mq(wide) {
+            width: 1020px;
+        }
+        p {
+            line-height:135%;
+            opacity:0;
+            transition:opacity 0.5s ease;
+            width: 100%;
+            color:#121212;
+            margin-bottom:0;
+        }
+        .garamond {
+            font-family:'GaramondGu', Georgia, 'Times New Roman', Times, serif;
+            font-style:italic;
+            // margin-bottom:8px;
+            position: relative;
+            font-size:30px;
+            line-height:125%;
+            margin-bottom:3px;
+            line-height: 110%;
+            margin-top: 1px;
+            margin-bottom: 2px;
+            @include mq(phablet)  {
+                font-size:37px;
+            }
+        }
+        .helvetica {
+            font-family: 'HelveticaGu', Arial, Helvetica, sans-serif;
+            position: relative;
+            font-size:24px;
+            @include mq(phablet) {
+                font-size: 30px;
+            }
+        }
+        
+        .old-gu-logo {
+            opacity:0;
+            transition:opacity 0.5s ease;
+            height:auto;
+            width:65%;
+            @include mq(mobileLandscape) {
+                width:45%;
+            }
+            @include mq(tablet) {
+                width:35%;
+            }
+            @include mq(desktop) {
+                width: 290px;
+            }
+        }
+        .old-gu-logo-wrapper {
+            &:nth-child(3) {
+                padding-bottom: 20px;
+            }
+            &.full-width {
+                
+                .old-gu-logo {
+                    width:100%;
+                    
+                    @include mq(mobileLandscape) {
+                        width: 70%;
+                    }
+                    @include mq(tablet) {
+                        width: 55%;
+                    }
+                    @include mq(desktop) {
+                        width: 400px;
+                    }
+                }
+            }
+            &.pad-bottom {
+                padding-bottom:4px;
+            }
+        }
+
+
+        &.active {
+            p {
+                opacity: 1;
+                transition:opacity 0.5s ease;
+                transition-delay: 0.35s;
+            }
+            .old-gu-logo {
+                opacity: 1;
+                transition:opacity 0.5s ease;
+                transition-delay: 0.35s;
+            }
+        }
+    }
 }
+
+
+
