@@ -10,19 +10,21 @@
 @font-face {
     font-family: 'GaramondGu';
     font-style: italic;
-    src: url('https://interactive.guim.co.uk/atoms/thrashers/2021/04/g200-article-banner/assets/v/1618581784088/AGaramondPro-Italic-subset.woff2') format("woff2"),
-    url('https://interactive.guim.co.uk/atoms/thrashers/2021/04/g200-article-banner/assets/v/1618581784088/AGaramondPro-Italic-subset.woff') format("woff"),
-    url('https://interactive.guim.co.uk/atoms/thrashers/2021/04/g200-article-banner/assets/v/1618581784088/AGaramondPro-Italic-subset.oft') format("truetype");
+    src: url('<%=path %>/AGaramondPro-Italic-subset.woff2') format("woff2"),
+    url('<%=path %>/AGaramondPro-Italic-subset.woff') format("woff"),
+    url('<%=path %>/AGaramondPro-Italic-subset.oft') format("truetype");
     unicode-range: U+A, U+20, U+2C, U+2E, U+30-32, U+38, U+42, U+49, U+4F, U+53, U+61, U+63-69, U+6C-70, U+72-77, U+79;
 }
 
 @font-face {
     font-family: 'HelveticaGu';
-    src: url('https://interactive.guim.co.uk/atoms/thrashers/2021/04/g200-article-banner/assets/v/1618581784088/DisHelBol4595-subset.woff2') format("woff2"),
-    url('https://interactive.guim.co.uk/atoms/thrashers/2021/04/g200-article-banner/assets/v/1618581784088/DisHelBol4595-subset.woff') format("woff"),
-    url('https://interactive.guim.co.uk/atoms/thrashers/2021/04/g200-article-banner/assets/v/1618581784088/DisHelBol4595-subset.otf') format("truetype");
+    src: url('<%=path %>/DisHelBol4595-subset.woff2') format("woff2"),
+    url('<%=path %>/DisHelBol4595-subset.woff') format("woff"),
+    url('<%=path %>/DisHelBol4595-subset.otf') format("truetype");
     unicode-range: U+A, U+20, U+27, U+2E, U+30, U+32, U+49, U+4F, U+50, U+61-70, U+72-77, U+79, U+2019;
 }
+
+
 
 #g200-article-banner, #thrasher-atom {
     background-color:#ffe500;
@@ -118,7 +120,7 @@
             width:940px;
         }
         @include mq(wide) {
-            width: 1020px;
+            width: 940px;
         }
         p {
             line-height:135%;
