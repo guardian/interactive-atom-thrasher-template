@@ -25,64 +25,30 @@
 }
 
 
-
 #g200-article-banner,
 #thrasher-atom {
     background-color: #ffe500;
     margin-bottom: 0;
+    margin:0;
 }
 
 .g200-article-banner {
     background-color: #ffe500;
-    height: 175px;
+    height: 200px;
+    height: 230px;
     padding: 4px 10px 0 10px;
+    margin:0;
 
     @include mq(mobileLandscape) {
         padding: 4px 20px 0 20px;
     }
 
-    @include mq(leftCol) {
-        padding: 4px 0 0 0;
-    }
-
     @include mq(phablet) {
-        height: 138px;
+        height: 155px;
     }
 
-    .relative-wrapper {
-        position: relative;
-    }
-
-    .black-lines {
-        position: absolute;
-        top: 20px;
-        right: 0;
-        bottom: 43px;
-        left: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        @include mq(phablet) {
-            top: 25px;
-            bottom: 58px;
-        }
-
-        hr {
-            border: none;
-            border-color: transparent;
-            height: 1px;
-            background-color: black;
-            border-style: inset;
-            border-width: 0;
-            width: 100%;
-        }
-
-        .hide-above-m-lands {
-            @include mq(phablet) {
-                display: none;
-            }
-        }
+    @include mq(tablet) {
+        height: 160px;
     }
 
     .hide-mob {
@@ -93,14 +59,76 @@
         }
     }
 
+    .black-lines {
+        position: absolute;
+        top: 30px;
+        right: 0;
+        bottom: 75px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include mq(phablet) {
+            top: 35px;
+            bottom: 43px;
+        }
+
+        @include mq(tablet) {
+            top: 35px;
+            bottom: 50px;
+    }
+
+        @include mq(desktop) {
+                bottom: 55px;
+        }
+
+        hr {
+            border: none;
+            border-color: transparent;
+            height: 1px;
+            background-color: black;
+            border-style: inset;
+            border-width: 0;
+            width: 100%;
+            margin: 0;
+        }
+
+        .hide-above-phablet {
+            @include mq(phablet) {
+                display: none;
+            }
+        }
+    }
+
+    
+
     .flex-space-between {
         display: flex;
         justify-content: space-between;
         flex-direction: column;
-        height: 175px;
-
+        width: 100%;
+        height: 200px;
+        height: 155px;
+        @include mq(mobileMedium) {
+            height:157px;
+        }
         @include mq(phablet) {
-            height: 138px;
+            height: 150px;
+        }
+        @include mq(tablet) {
+            width: 700px;
+        }
+        @include mq(desktop) {
+            width: 768px;
+            height: 149px;
+        }
+        @include mq(leftCol) {
+            width: 860px;
+            height:151px;
+        }
+        @include mq(wide) {
+            width: 945px;
         }
 
         .old-gu-logo-wrapper {
@@ -108,122 +136,246 @@
         }
     }
 
-    &.thrasher-inner {
-        .g200-article-banner__copy {
-            padding: 0 !important;
-            width: 100%;
+    .final-frame {
+        @include mq(desktop) {
+            margin-left: -236px;
+            width: 730px;
+        }
+        @include mq(leftCol) {
+            margin-left: -210px;
+            width: 930px;
+        }
+        @include mq(wide) {
+            margin-left:-225px;
+            width: 940px;
+        }
+    }
 
-            @include mq(leftCol) {
-                margin-left: 180px;
+    .g200-links-wrapper {
+        position: absolute;
+        bottom: 12px;
+        @include mq(phablet) {
+            bottom:10px;
+        }
+        @include mq(tablet) {
+            bottom:15px;
+        }
+        @include mq(desktop) {
+            bottom:18px;
+        }
+        a {
+            font-family: GuardianTextSans,
+            Guardian Text Sans Web,
+            Helvetica Neue,
+            Helvetica,
+            Arial,
+            Lucida Grande,
+            sans-serif;
+            font-size: 15px;
+            line-height: 1.5;
+            font-weight: 600;
+            color:#c70000;
+            border: 1px solid #c70000;
+            border-radius: 20px;
+            padding:3px 14px 4px 14px;
+            @include mq(mobileMedium) {
+                font-size:16px;
+                padding:5px 16px 6px 16px;
             }
-
-            @include mq(wide) {
-                margin-left: 260px;
+            transition:all 0.3s ease;
+            &:hover {
+                color:#121212;
+                border:1px solid #121212;
+                text-decoration: none;
+            }
+        }
+        .primary {
+            background-color:#c70000;
+            color:white;
+            &:hover {
+                color: white;
+                border: 1px solid #121212;
+                background-color: #121212;
+                text-decoration: none;
             }
         }
     }
 
     .animated-text {
         position: absolute;
-        width: calc(100vw - 20px);
-
+        width:calc(100vw - 20px);
         @include mq(mobileLandscape) {
             width: calc(100vw - 40px);
         }
 
-        @include mq(leftCol) {
-            width: 940px;
-        }
-
-        @include mq(wide) {
-            width: 940px;
-        }
-
-        p {
-            line-height: 135%;
-            opacity: 0;
-            transition: opacity 0.5s ease;
+        .content-wrapper {
+            display: flex;
             width: 100%;
-            color: #121212;
-            margin-bottom: 0;
-        }
-
-        .garamond {
-            font-family: 'GaramondGu', Georgia, 'Times New Roman', Times, serif;
-            font-style: italic;
-            // margin-bottom:8px;
-            position: relative;
-            font-size: 30px;
-            line-height: 125%;
-            margin-bottom: 3px;
-            line-height: 110%;
-            margin-top: 1px;
-            margin-bottom: 2px;
-            font-weight:400;
-
-            @include mq(phablet) {
-                font-size: 37px;
+            p {
+                line-height: 135%;
+                opacity: 0;
+                transition: opacity 0.5s ease;
+                width: 100%;
+                color: #121212;
+                margin-bottom: 0;
             }
-        }
 
-        .helvetica {
-            font-family: 'HelveticaGu', Arial, Helvetica, sans-serif;
-            position: relative;
-            font-size: 24px;
-
-            @include mq(phablet) {
+            .garamond {
+                font-family: 'GaramondGu', Georgia, 'Times New Roman', Times, serif;
+                font-style: italic;
+                font-weight: 400;
                 font-size: 30px;
-            }
-        }
+                line-height: 125%;
+                margin-bottom: 3px;
+                line-height: 109%;
+                margin-top: 3px;
+                margin-bottom: 1px;
 
-        .old-gu-logo {
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            height: auto;
-            width: 65%;
+                @include mq(phablet) {
+                    font-size: 37px;
+                }
 
-            @include mq(mobileLandscape) {
-                width: 45%;
-            }
-
-            @include mq(tablet) {
-                width: 35%;
-            }
-
-            @include mq(desktop) {
-                width: 290px;
-            }
-        }
-
-        .old-gu-logo-wrapper {
-            &:nth-child(3) {
-                padding-bottom: 20px;
-            }
-
-            &.full-width {
-
-                .old-gu-logo {
-                    width: 100%;
-
-                    @include mq(mobileLandscape) {
-                        width: 70%;
-                    }
-
-                    @include mq(tablet) {
-                        width: 55%;
-                    }
-
-                    @include mq(desktop) {
-                        width: 400px;
-                    }
+                @include mq(desktop) {
+                    margin-bottom:-2px;
                 }
             }
 
-            &.pad-bottom {
-                padding-bottom: 4px;
+            .helvetica {
+                font-family: 'HelveticaGu', Arial, Helvetica, sans-serif;
+                font-size: 24px;
+
+                @include mq(phablet) {
+                    font-size: 29px;
+                }
+                @include mq(desktop) {
+                    margin-left: 28px;
+                }
+            }
+            .no-margin {
+                @include mq(desktop) {
+                    margin-left:0;
+                }
+            }
+
+            .newspaper-image {
+                opacity: 0;
+                transition: opacity 0.5s ease;
+                display: none;
+                margin-right:10px;
+                z-index: 3;
+                object-fit: cover;
+                object-position: top;
+                transition: opacity 0.5s ease;
+                
+
+                @include mq(desktop) {
+                    display: block;
+                    margin-left: -10px;
+                    width: 170px;
+                    height: 154px;
+                    height: 104px;
+                }
+                @include mq(leftCol) {
+                    width:241px;
+                }
+
+            }
+
+            .final-image {
+                width: auto;
+                @include mq(desktop) {
+                    height: 96px;
+                    margin-top: 8px;
+                }
+                @include mq(leftCol) {
+                    height: 81px;
+                    margin-top: 23px;
+                }
+                @include mq(wide) {
+                    height: 100px;
+                    margin-top: 4px;
+                }
+            }
+
+            
+
+            .old-gu-logo {
+                opacity: 0;
+                transition: opacity 0.5s ease;
+                height: 18px;
+                width: auto;
+                // margin-top: 4px;
+
+                @include mq(mobileMedium) {
+                    height: 22px;
+                    width: auto;
+                    margin-top: 5px;
+                }
+
+                @include mq(phablet) {
+                    height: 19px;
+                }
+
+                @include mq(tablet) {
+                    height:25px;
+                    margin-top: 4px;
+                }
+
+                @include mq(desktop) {
+                    height: 28px;
+                }
+
+                @include mq(leftCol) {
+                    height: 31px;
+                }
+
+                img {
+                    display: block;
+                    width: 200px;
+                    margin-bottom: auto;
+                    margin-left: auto;
+                }
+            }
+            .bigger-logo {
+                height: 26px;
+                margin-bottom: -3px;
+                @include mq(tablet) {
+                    height: 38px;
+                    margin-bottom: -12px;
+                }
+                @include mq(desktop) {
+                    height: 47px;
+                    margin-bottom: -12px;
+                }
+            }
+            .smaller-logo {
+                height: 15px;
+                margin-bottom: 4px;
+                @include mq(mobileMedium) {
+                    height:17px;
+                }
+                @include mq(phablet) {
+                    height:15px;
+                }
+                @include mq(tablet) {
+                    height:18px;
+                    margin-bottom:3px;
+                }
+                @include mq(desktop) {
+                    height: 26px;
+                    margin-bottom: 2px;
+                } 
+            }
+
+            .slightly-bigger-logo {
+                @include mq(desktop) {
+                    height: 35px;
+                    margin-bottom: -3px;
+                }
             }
         }
 
+        
 
         &.active {
             p {
@@ -237,6 +389,13 @@
                 transition: opacity 0.5s ease;
                 transition-delay: 0.35s;
             }
+
+            .newspaper-image {
+                opacity: 1;
+                transition: opacity 0.5s ease;
+                transition-delay: 0.35s;
+            }
         }
     }
+    
 }
