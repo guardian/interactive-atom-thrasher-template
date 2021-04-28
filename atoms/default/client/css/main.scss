@@ -24,9 +24,41 @@
     unicode-range: U+A, U+20, U+27, U+2E, U+30, U+32, U+49, U+4F, U+50, U+61-70, U+72-77, U+79, U+2019;
 }
 
+@keyframes fadeoutlogo {
+    0% {
+        opacity: 1;
+    }
+
+    1% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeinlogo {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
 
 #g200-article-banner,
-#thrasher-atom {
+#thrasher-atom,
+#g200-banner {
     background-color: #ffe500;
     margin-bottom: 0;
     margin:0;
@@ -34,8 +66,7 @@
 
 .g200-article-banner {
     background-color: #ffe500;
-    height: 200px;
-    height: 230px;
+    height: 202px;
     padding: 4px 10px 0 10px;
     margin:0;
 
@@ -50,6 +81,9 @@
     @include mq(tablet) {
         height: 160px;
     }
+    @include mq(desktop) {
+        height:180px;
+    }
 
     .hide-mob {
         display: none;
@@ -59,11 +93,25 @@
         }
     }
 
+    .show-mobile {
+        @include mq(desktop) {
+            display:none;
+        }
+    }
+
+    .show-tablet {
+        display:none;
+        @include mq(desktop) {
+            display:inline;
+        }
+    }
+
     .black-lines {
         position: absolute;
         top: 30px;
         right: 0;
-        bottom: 75px;
+        // bottom: 60px;
+        bottom: 47px;
         left: 0;
         display: flex;
         flex-direction: column;
@@ -80,14 +128,15 @@
     }
 
         @include mq(desktop) {
-                bottom: 55px;
+            bottom: 55px;
+            top:39px;
         }
 
         hr {
             border: none;
             border-color: transparent;
             height: 1px;
-            background-color: black;
+            background-color: #121212;
             border-style: inset;
             border-width: 0;
             width: 100%;
@@ -104,6 +153,7 @@
     
 
     .flex-space-between {
+        position: relative;
         display: flex;
         justify-content: space-between;
         flex-direction: column;
@@ -121,14 +171,13 @@
         }
         @include mq(desktop) {
             width: 768px;
-            height: 149px;
+            height: 174px;
         }
         @include mq(leftCol) {
             width: 860px;
-            height:151px;
         }
         @include mq(wide) {
-            width: 945px;
+            width: 940px;
         }
 
         .old-gu-logo-wrapper {
@@ -138,16 +187,17 @@
 
     .final-frame {
         @include mq(desktop) {
-            margin-left: -236px;
-            width: 730px;
+            width: 760px;
+            margin-left: -387px;
         }
         @include mq(leftCol) {
-            margin-left: -210px;
-            width: 930px;
+            width: 938px;
+            margin-left: -410px;
         }
         @include mq(wide) {
-            margin-left:-225px;
             width: 940px;
+            margin-left: -330px;
+
         }
     }
 
@@ -164,13 +214,7 @@
             bottom:18px;
         }
         a {
-            font-family: GuardianTextSans,
-            Guardian Text Sans Web,
-            Helvetica Neue,
-            Helvetica,
-            Arial,
-            Lucida Grande,
-            sans-serif;
+            font-family: GuardianTextSans,Guardian Text Sans Web,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
             font-size: 15px;
             line-height: 1.5;
             font-weight: 600;
@@ -178,6 +222,7 @@
             border: 1px solid #c70000;
             border-radius: 20px;
             padding:3px 14px 4px 14px;
+            text-decoration: none;
             @include mq(mobileMedium) {
                 font-size:16px;
                 padding:5px 16px 6px 16px;
@@ -211,6 +256,7 @@
         .content-wrapper {
             display: flex;
             width: 100%;
+            position: relative;
             p {
                 line-height: 135%;
                 opacity: 0;
@@ -220,14 +266,22 @@
                 margin-bottom: 0;
             }
 
+            .wrap-text {
+                @include mq(mobileMedium) {
+                    width:95%;
+                }
+                @include mq(mobileLandscape) {
+                    width:100%;
+                }
+            }
+
             .garamond {
                 font-family: 'GaramondGu', Georgia, 'Times New Roman', Times, serif;
                 font-style: italic;
                 font-weight: 400;
                 font-size: 30px;
-                line-height: 125%;
-                margin-bottom: 3px;
                 line-height: 109%;
+
                 margin-top: 3px;
                 margin-bottom: 1px;
 
@@ -236,19 +290,23 @@
                 }
 
                 @include mq(desktop) {
-                    margin-bottom:-2px;
+                    // margin-bottom:-2px;
+                    margin-top: 0;
+                    font-size:45px;
                 }
             }
 
             .helvetica {
                 font-family: 'HelveticaGu', Arial, Helvetica, sans-serif;
                 font-size: 24px;
+                font-style:normal;
 
                 @include mq(phablet) {
                     font-size: 29px;
                 }
                 @include mq(desktop) {
                     margin-left: 28px;
+                    font-size:34px;
                 }
             }
             .no-margin {
@@ -272,28 +330,21 @@
                     display: block;
                     margin-left: -10px;
                     width: 170px;
-                    height: 154px;
-                    height: 104px;
+                    height: 124px;
                 }
                 @include mq(leftCol) {
                     width:241px;
                 }
+
+                
 
             }
 
             .final-image {
                 width: auto;
                 @include mq(desktop) {
-                    height: 96px;
-                    margin-top: 8px;
-                }
-                @include mq(leftCol) {
-                    height: 81px;
-                    margin-top: 23px;
-                }
-                @include mq(wide) {
-                    height: 100px;
-                    margin-top: 4px;
+                    height: 80px;
+                    margin-top: 44px;
                 }
             }
 
@@ -336,20 +387,26 @@
                     margin-left: auto;
                 }
             }
-            .bigger-logo {
-                height: 26px;
-                margin-bottom: -3px;
+
+            .first-logo {
+                height:19px;
+                margin-top:-1px;
+                @include mq(mobileMedium) {
+                    height:20px;
+                }
                 @include mq(tablet) {
-                    height: 38px;
-                    margin-bottom: -12px;
+                    height:24px;
+                    margin-top: unset;
+                    margin-bottom:-2px;
                 }
                 @include mq(desktop) {
-                    height: 47px;
-                    margin-bottom: -12px;
+                    height: 32px;
+                    margin-bottom: -1px;
                 }
             }
-            .smaller-logo {
-                height: 15px;
+            
+            .second-logo {
+                height: 16px;
                 margin-bottom: 4px;
                 @include mq(mobileMedium) {
                     height:17px;
@@ -362,15 +419,87 @@
                     margin-bottom:3px;
                 }
                 @include mq(desktop) {
-                    height: 26px;
-                    margin-bottom: 2px;
+                    height: 29px;
+                    margin-bottom: 3px;
                 } 
             }
 
-            .slightly-bigger-logo {
+            .third-logo {
+                height:19px;
+                margin-top: -1px;
+                // height: 21px;
+                // margin-bottom: 6px;
+                @include mq(phablet) {
+                    height: 26px;
+                    margin-top: unset;
+                    margin-bottom: -1px;
+                }
+                @include mq(desktop) {
+                    height: 34px;
+                    margin-bottom:1px;
+                }
+            }
+
+            .fourth-logo {
+                height: 21px;
+                margin-top: -7px;
+                @include mq(phablet) {
+                    height: 26px;
+                    margin-top: 37px;
+                }
                 @include mq(desktop) {
                     height: 35px;
-                    margin-bottom: -3px;
+                    // margin-bottom: -3px;
+                }
+            }
+            .fifth-logo {
+                height: 30px;
+                margin-bottom: -5px;
+
+                @include mq(mobileMedium) {
+                    margin-bottom: -4px;
+                }
+
+                @include mq(phablet) {
+                    height: 39px;
+                    margin-bottom: -10px;
+                }
+
+                @include mq(tablet) {
+                    height: 38px;
+                    margin-bottom: -12px;
+                }
+
+                @include mq(desktop) {
+                    height: 50px;
+                    margin-bottom: -12px;
+                }
+            }
+            .gu-roundel-wrapper {
+                opacity:0;
+                position: absolute;
+                width: 45px;
+                height: 45px;
+                bottom: 4px;
+                right: 2px;
+                @include mq(mobileMedium) {
+                    bottom: -13px;
+                    bottom: 6px;
+                }
+                @include mq(phablet) {
+                    width: 40px;
+                    height: 40px;
+                    bottom: -3px;
+                    right: 2px;
+                }
+                @include mq(desktop) {
+                    width: 48px;
+                    height: 48px;
+                    bottom: -2px;
+                    right: 2px;
+                }
+                @include mq(wide) {
+                    right:-2px;
                 }
             }
         }
@@ -394,8 +523,92 @@
                 opacity: 1;
                 transition: opacity 0.5s ease;
                 transition-delay: 0.35s;
+                &.show-mobile {
+                    display: block;
+                    position: absolute;
+                    top: 76px;
+                    width: 300px;
+                    opacity: 0;
+
+                    top: 97px;
+                    width: 220px;
+
+                    animation-name: fadeinlogo;
+                    animation-duration: 1s;
+                    animation-delay:3.8s;
+                    animation-fill-mode: forwards;
+                    @include mq(mobileMedium) {
+                        display: none;
+                    }
+
+                    @include mq(mobileLandscape) {
+                        top: 74px;
+                        width: 310px;
+                    }
+
+                    
+
+                    @include mq(desktop) {
+                        display: none;
+                    }
+                }
+                &.show-mobile-medium {
+                    display: none;
+                    position: absolute;
+                    opacity: 0;
+                    top: 97px;
+                    width: 262px;
+
+                    animation-name: fadeinlogo;
+                    animation-duration: 1s;
+                    animation-delay:3.8s;
+                    animation-fill-mode: forwards;
+                    @include mq(mobileMedium) {
+                        display: block;
+                    }
+                    @include mq(phablet) {
+                        display:none;
+                    }
+                }
+            }
+        }
+
+
+        &.last-frame.active {
+            .old-gu-logo-wrapper {
+                animation-name:fadeoutlogo;
+                animation-duration: 1s;
+                animation-delay:2.8s;
+                animation-fill-mode: forwards;
+            }
+            .gu-roundel-wrapper {
+                animation-name:fadeinlogo;
+                animation-duration: 1s;
+                animation-delay:3.8s;
+                animation-fill-mode: forwards;
             }
         }
     }
-    
+    .ios &,
+    .android & {
+        .helvetica {
+            margin-top:0;
+        }
+        // .animated-text .content-wrapper .old-gu-logo {
+        //     margin: 0px;
+        //     &.first-logo,
+        //     &.second-logo,
+        //     &.third-logo,
+        //     &.fourth-logo,
+        //     &.fifth-logo {
+        //         margin:0;
+        //         margin-bottom:3px;
+        //     }
+        // }
+    }
+}
+
+.interactive,
+.interactive-atom {
+    margin: 0;
 }
