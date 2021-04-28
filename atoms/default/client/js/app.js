@@ -12,7 +12,6 @@ var e = document.getElementById('container')
 var myVar = setInterval(changeText, 3800)
 
 function changeText () {
-    console.log('run 1')
     // get current active element
     var current = container.getElementsByClassName('active')[0]
     current.classList.remove('active')
@@ -20,8 +19,6 @@ function changeText () {
     var next = current.nextElementSibling || container.firstElementChild
     next.classList.add('active')
     index++
-
-    console.log('run 2')
 
     if(index >= 4) {
         clearInterval(myVar)

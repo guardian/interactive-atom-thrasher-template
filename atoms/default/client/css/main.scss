@@ -7,22 +7,24 @@
 @import "basics";
 @import "thrasher";
 
-@font-face {
-    font-family: 'GaramondGu';
-    font-style: italic;
-    src: url('<%=path %>/AGaramondPro-Italic-subset.woff2') format("woff2"),
-        url('<%=path %>/AGaramondPro-Italic-subset.woff') format("woff"),
-        url('<%=path %>/AGaramondPro-Italic-subset.oft') format("truetype");
-    unicode-range: U+A, U+20, U+2C, U+2E, U+30-32, U+38, U+42, U+49, U+4F, U+53, U+61, U+63-69, U+6C-70, U+72-77, U+79;
-}
+// @font-face {
+//     font-family: 'GaramondGu';
+//     font-style: italic;
+//     src: url('<%=path %>/AGaramondPro-Italic-subset.woff2') format("woff2"),
+//         url('<%=path %>/AGaramondPro-Italic-subset.woff') format("woff"),
+//         url('<%=path %>/AGaramondPro-Italic-subset.oft') format("truetype");
+//     unicode-range: U+A, U+20, U+2C, U+2E, U+30-32, U+38, U+42, U+49, U+4F, U+53, U+61, U+63-69, U+6C-70, U+72-77, U+79;
+// }
 
-@font-face {
-    font-family: 'HelveticaGu';
-    src: url('<%=path %>/DisHelBol4595-subset.woff2') format("woff2"),
-        url('<%=path %>/DisHelBol4595-subset.woff') format("woff"),
-        url('<%=path %>/DisHelBol4595-subset.otf') format("truetype");
-    unicode-range: U+A, U+20, U+27, U+2E, U+30, U+32, U+49, U+4F, U+50, U+61-70, U+72-77, U+79, U+2019;
-}
+// @font-face {
+//     font-family: 'HelveticaGu';
+//     src: url('<%=path %>/DisHelBol4595-subset.woff2') format("woff2"),
+//         url('<%=path %>/DisHelBol4595-subset.woff') format("woff"),
+//         url('<%=path %>/DisHelBol4595-subset.otf') format("truetype");
+//     unicode-range: U+A, U+20, U+27, U+2E, U+30, U+32, U+49, U+4F, U+50, U+61-70, U+72-77, U+79, U+2019;
+// }
+
+@import url("//hello.myfonts.net/count/3e1732");
 
 @keyframes fadeoutlogo {
     0% {
@@ -110,7 +112,6 @@
         position: absolute;
         top: 30px;
         right: 0;
-        // bottom: 60px;
         bottom: 47px;
         left: 0;
         display: flex;
@@ -214,7 +215,8 @@
             bottom:18px;
         }
         a {
-            font-family: GuardianTextSans,Guardian Text Sans Web,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+            @include fs-textSans(3);
+            // font-family: GuardianTextSans, Guardian Text Sans Web,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
             font-size: 15px;
             line-height: 1.5;
             font-weight: 600;
@@ -276,7 +278,12 @@
             }
 
             .garamond {
-                font-family: 'GaramondGu', Georgia, 'Times New Roman', Times, serif;
+                // font-family: 'GaramondGu', Georgia, 'Times New Roman', Times, serif;
+                font-family: 'Got 2 be Garamond',
+                Georgia,
+                'Times New Roman',
+                Times,
+                serif;
                 font-style: italic;
                 font-weight: 400;
                 font-size: 30px;
@@ -290,14 +297,30 @@
                 }
 
                 @include mq(desktop) {
-                    // margin-bottom:-2px;
                     margin-top: 0;
                     font-size:45px;
+                }
+
+                margin-top: 0px;
+                margin-bottom: 2px;
+
+                @include mq(phablet) {
+                    margin-top: -2px;
+                    margin-bottom: 3px;
+                }
+
+                @include mq(desktop) {
+                    margin-top: -5px;
+                    margin-bottom: 2px;
                 }
             }
 
             .helvetica {
-                font-family: 'HelveticaGu', Arial, Helvetica, sans-serif;
+                // font-family: 'HelveticaGu', Arial, Helvetica, sans-serif;
+                font-family: 'Bring em Hel',
+                Arial,
+                Helvetica,
+                sans-serif;
                 font-size: 24px;
                 font-style:normal;
 
@@ -355,7 +378,6 @@
                 transition: opacity 0.5s ease;
                 height: 18px;
                 width: auto;
-                // margin-top: 4px;
 
                 @include mq(mobileMedium) {
                     height: 22px;
@@ -427,8 +449,6 @@
             .third-logo {
                 height:19px;
                 margin-top: -1px;
-                // height: 21px;
-                // margin-bottom: 6px;
                 @include mq(phablet) {
                     height: 26px;
                     margin-top: unset;
@@ -449,7 +469,6 @@
                 }
                 @include mq(desktop) {
                     height: 35px;
-                    // margin-bottom: -3px;
                 }
             }
             .fifth-logo {
@@ -591,20 +610,45 @@
     }
     .ios &,
     .android & {
+        .black-lines {
+            hr {
+                background-color: #121212;
+            }
+        }
         .helvetica {
             margin-top:0;
         }
-        // .animated-text .content-wrapper .old-gu-logo {
-        //     margin: 0px;
-        //     &.first-logo,
-        //     &.second-logo,
-        //     &.third-logo,
-        //     &.fourth-logo,
-        //     &.fifth-logo {
-        //         margin:0;
-        //         margin-bottom:3px;
-        //     }
-        // }
+        .animated-text .content-wrapper .garamond {
+            // margin-top: 4px;
+            margin-top: 0px;
+            margin-bottom: 2px;
+            @include mq(phablet) {
+                margin-top: -2px;
+                margin-bottom: 3px;
+            }
+            @include mq(desktop) {
+                margin-top: -5px;
+                margin-bottom: 2px;
+            }
+        }
+        .flex-space-between {
+            height: 150px;
+            @include mq(tablet) {
+                height: 144px;
+            }
+            @include mq(desktop) {
+                height: 166px;
+            }
+        }
+        .animated-text .content-wrapper .gu-roundel-wrapper {
+            bottom:0;
+            @include mq(phablet) {
+                bottom:-3px
+            }
+            @include mq(tablet) {
+                bottom:-10px;
+            }
+        }
     }
 }
 

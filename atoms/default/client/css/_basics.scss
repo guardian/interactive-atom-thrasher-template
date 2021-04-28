@@ -46,10 +46,6 @@ section.thrasher-section__g200-article-banner,
     .ios &,
     .android & {
         margin: 0;
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
     }
 
     @include mc(tablet) {
