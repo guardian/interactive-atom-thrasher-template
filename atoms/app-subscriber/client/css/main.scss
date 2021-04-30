@@ -107,7 +107,7 @@
             display:inline;
         }
     }
-  
+
     .black-lines {
         position: absolute;
         top: 30px;
@@ -351,14 +351,16 @@
 
                 @include mq(desktop) {
                     display: block;
-                    margin-left: 0;
+                    margin-left: -10px;
                     width: 170px;
                     height: 124px;
                 }
                 @include mq(leftCol) {
-                    // margin-left: -10px;
-                    width:231px;
+                    width:241px;
                 }
+
+                
+
             }
 
             .final-image {
@@ -606,10 +608,6 @@
             }
         }
     }
-
-    
-
-
     .ios &,
     .android & {
         .black-lines {
@@ -652,72 +650,37 @@
             }
         }
     }
+    .ios & {
+        .show-android {
+            display: none;
+        }
+        .show-ios {
+            display: none;
+        }
+        @include mq(desktop) {
+            .show-ios {
+                display: inline;
+            }
+        }
+    }
+
+    .android & {
+        .show-ios {
+            display: none;
+        }
+        .show-android {
+            display: none;
+        }
+        @include mq(desktop)  {
+            .show-android {
+                display: inline;
+            }
+        }
+
+    }
 }
 
 .interactive,
 .interactive-atom {
     margin: 0;
 }
-
-[data-visuals-hook="article-anniversary-atom"] .g200-article-banner {
-    &__wrapper {
-        .content-wrapper {
-            .newspaper-image.show-mobile-medium,
-            .newspaper-image.show-mobile {
-                top: 93px;
-            }
-            .newspaper-image {
-                @include mq(desktop) {
-                    height: 120px;
-                }
-            }
-            .final-image {
-                @include mq(desktop) {
-                    height: 80px;
-                    margin-top: 40px;
-                }
-            }
-            p {
-                line-height:130%;
-            }
-            .flex-space-between {
-                height: 150px;
-                @include mq(phablet) {
-                    height: 146px;
-                }
-                @include mq(desktop) {
-                    height: 168px;
-                }
-
-                .garamond {
-                    margin-bottom: 1px;
-                    @include mq(phablet) {
-                        margin-bottom: 2px;
-                    }
-                    @include mq(tablet) {
-                        margin-bottom:1px;
-                    }
-                    @include mq(tablet) {
-                        margin-bottom: 0;
-                    }
-                }
-
-                .helvetica {
-                    line-height: 130%;
-                }
-            }
-            .gu-roundel-wrapper {
-                @include mq(desktop) {
-                    bottom: -4px;
-                }
-            }
-        }
-    }
-}
-
-  .show-mob-landscape {
-      display: none;
-      @include mq(desktop) {
-          display:inline;
-      }
-  }

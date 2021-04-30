@@ -25,22 +25,3 @@ function changeText () {
     }
 }
 
-
-
-function getCookieValue(name) {
-    var val = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
-    return val ? val.pop() : undefined;
-}
-
-function shouldHideSupportMessaging() {
-    return getCookieValue('gu_hide_support_messaging') === 'true';
-}
-
-
-if (shouldHideSupportMessaging()) {
-    document.getElementById("hide-for-subscriber").style.display = "none";
-}
-
-
-
-console.log('v1.8')

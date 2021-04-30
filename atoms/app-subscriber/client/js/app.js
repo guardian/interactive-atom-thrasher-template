@@ -39,8 +39,6 @@ function shouldHideSupportMessaging() {
 
 if (shouldHideSupportMessaging()) {
     document.getElementById("hide-for-subscriber").style.display = "none";
+} else {
+    document.getElementById("hide-for-subscriber").style.display = "inline";
 }
-
-
-
-console.log('v1.8')
