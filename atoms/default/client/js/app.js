@@ -43,4 +43,4 @@ if (shouldHideSupportMessaging()) {
 
 
 
-console.log('v1.8')
+console.log('v1.10')
