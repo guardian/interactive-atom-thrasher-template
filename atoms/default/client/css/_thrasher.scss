@@ -1,9 +1,200 @@
-#thrasher__thrasher-name.thrasher-inner {
+/////////////////////////////////////////////////////////////////////////////////
+// css 3 animation mixins--- put mixins & keyframes into separate stylesheet!! //
+/////////////////////////////////////////////////////////////////////////////////
+//  not working?
+// @mixin dw-keyframe ($animation_name) {
+//     @-webkit-keyframes $animation_name {
+//         @content;
+//     }
+//
+//     @-moz-keyframes $animation_name {
+//         @content;
+//     }
+//
+//     @keyframes $animation_name {
+//         @content;
+//     }
+// }
+// @include dw-keyframe(dw-text-transition) {
+//     0% {
+//       opacity: 1;
+//       transform: translateX(20px);
+//     }
+//
+//     100% {
+//       opacity: 0;
+//       transform: translateX(0);
+//     }
+// }
+
+@mixin dw-animation ($delay, $duration, $animation, $anim-type, $loops) {
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -webkit-animation-timing-function: $anim-type;
+    -webkit-animation-iteration-count: $loops;
+    // -webkit-animation-direction: $direction;
+    -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    -moz-animation-timing-function: $anim-type;
+    -moz-animation-iteration-count: $loops;
+    // -moz-animation-direction: $direction;
+    -moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-timing-function: $anim-type;
+    animation-iteration-count: $loops;
+    // animation-direction: $direction;
+    animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+}
+// Text enter
+@keyframes dw-anim-intro-in{
+  0% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+// Frame 1
+// @keyframes dw-anim-frame-1{
+//   0% {
+//     opacity: 0;
+//     transform: translateX(10px);
+//   }
+//   10% {
+//     opacity: 1;
+//     transform: translateX(0);
+//   }
+//   90% {
+//     opacity: 1;
+//     transform: translateX(0);
+//   }
+//   100% {
+//     opacity: 0;
+//     transform: translateX(-20px);
+//   }
+// }
+@keyframes dw-anim-frame-10{
+  0% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  5% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  45% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  55% {
+    opacity: 0;
+    transform: translateX(-650px);
+  }
+  95% {
+    opacity: 0;
+    transform: translateX(650px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+}
+@keyframes dw-anim-frame-2{
+  0% {
+    opacity: 0;
+    transform: translateX(650px);
+  }
+  40% {
+    opacity: 0;
+    transform: translateX(650px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  55% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  95% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+// @keyframes dw-anim-frame-1-hold{
+//   0% {
+//     opacity: 0;
+//     transform: translateX(-20px);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translateX(10px);
+//   }
+// }
+// test
+// @keyframes dw-anim-frame-in{
+//   0% {
+//     opacity: 0;
+//     transform: translateX(10px);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translateX(0);
+//   }
+// }
+// @keyframes dw-anim-frame-out{
+//   0% {
+//     opacity: 1;
+//     transform: translateX(0px);
+//   }
+//   100% {
+//     opacity: 0;
+//     transform: translateX(-20px);
+//   }
+// }
+// $dw-anim-delay-num: 1;
+$dw-anim-trans: 1s;
+$dw-anim-delay: 1s;
+// $dw-anim-delay: #{$dw-anim-delay-num}s;
+$dw-anim-trans-type: ease;
+$dw-anim-loops: 3;
+$dw-anim-frame-time: 12s;
+
+.fc-container--thrasher{
+  background-color: #FFE500;
+}
+#thrasher__dw-200-birthday.thrasher-inner {
   position: relative;
+  background-color: #FFE500;
   border: 1px solid #dcdcdc;
   border-bottom: 0;
+  // background lines
+  background-image: url("https://uploads.guim.co.uk/2021/05/07/back_lines_mobile-1.png");
+  background-repeat: repeat-x;
+  background-position: 0 32px;
+  @include mq(leftCol) {
+    background-image: url("https://uploads.guim.co.uk/2021/05/07/Back_lines_desktop-3.png");
+    background-position: 0 49px;
+  }
 
-  .thrasher-name {
+  .dw-200-birthday {
     &__link,
     &__background,
     &__background img {
@@ -17,29 +208,55 @@
 
     &__link {
       z-index: 20;
+      ~ .dw-200-birthday__image {
+        margin-left: 0px;
+        img.dw-layer-0 {
+          transition: margin-left ($dw-anim-trans  /2) $dw-anim-trans-type;
+        }
+        img.dw-layer-1 {
+          transition: margin-left (($dw-anim-trans  /2) + 100ms) $dw-anim-trans-type;
+        }
+        img.dw-layer-2 {
+          transition: margin-left (($dw-anim-trans  /2) + 200ms) $dw-anim-trans-type;
+        }
+      }
       &:hover {
         // Background hover-effect:
-        ~ .thrasher-name__background {
-          opacity: 0.95;
-        }
-
+        // ~ .dw-200-birthday__background {
+        //   opacity: 0.95;
+        // }
         // Button hover-effect
         ~ .thrasher-button,
         ~ * .thrasher-button {
-          opacity: 0.8;
+          // border: 3px solid green;
+          // opacity: 0.8; // has no effect with animation
+        }
+        ~ .dw-200-birthday__image {
+          img.dw-layer-0 {
+            // background layer animation
+            margin-left: -5px;
+          }
+          img.dw-layer-1 {
+            // layer 1 animation
+            margin-left: -10px;
+          }
+          img.dw-layer-2 {
+            // layer 2 animation
+            margin-left: -15px;
+          }
         }
       }
     }
-
-    &__background {
-      z-index: -1;
-      img,
-      video {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-      }
-    }
+    // for background image
+    // &__background {
+    //   z-index: -1;
+    //   img,
+    //   video {
+    //     object-fit: cover;
+    //     width: 100%;
+    //     height: 100%;
+    //   }
+    // }
 
     &__container-title {
       padding: 4px 10px;
@@ -67,47 +284,103 @@
 
     &__copy {
       font-family: $font-headline;
-      font-size: 24px;
-      line-height: 26px;
-      padding: 0 10px 24px;
+      font-size: 17px;
+      line-height: 115%;
+      padding: 4px 10px 24px;
       @include mq(mobileLandscape) {
         padding-left: 20px;
         padding-right: 20px;
       }
       @include mq(leftCol) {
-        padding-top: 4px;
-        padding-left: 180px;
+        padding-top: 8px;
+        font-size: 20px;
       }
       @include mq(wide) {
-        padding-left: 260px;
+        padding-top: 8px;
+        font-size: 24px;
+        padding-left: 100px;
       }
       &__headline {
-        font-weight: 700;
+        svg {
+          width: 270px;
+          height: 70px;
+          @include mq(leftCol) {
+            width: 380px;
+            height: 100px;
+          }
+        }
+        transform: translateX(0);
+        opacity: 0;
+        // heading animation
+        @include dw-animation($dw-anim-delay, $dw-anim-trans, dw-anim-intro-in, $dw-anim-trans-type, 1);
       }
       &__subheadline {
-
+        position: relative;
+        width: 65%;
+        height: 142px;
+        @include mq(phablet) {
+          height: 112px;
+        }
+        @include mq(tablet) {
+          width: 50%;
+        }
+        @include mq(leftCol) {
+          width: 45%;
+        }
+        @include mq(wide) {
+          width: 619px;
+          height: 124px;
+        }
+        .frame-1, .frame-2 {
+          position: absolute;
+        }
+        .frame-1 {
+        // frame 1 animation
+          transform: translateX(0);
+          opacity: 0;
+          @include dw-animation(($dw-anim-delay + ($dw-anim-delay /2)), $dw-anim-frame-time, dw-anim-frame-10, $dw-anim-trans-type, $dw-anim-loops);
+        }
+        .frame-2 {
+          // frame 2 animation
+          transform: translateX(0);
+          opacity: 0;
+          @if $dw-anim-loops == 1 {
+            @include dw-animation((($dw-anim-frame-time /2) + $dw-anim-delay), $dw-anim-trans, dw-anim-intro-in, $dw-anim-trans-type,  1);
+          } @else {
+            @include dw-animation((($dw-anim-delay + ($dw-anim-delay /2)), ($dw-anim-frame-time * ($dw-anim-loops - (0.4)))), ($dw-anim-frame-time, $dw-anim-trans), (dw-anim-frame-2, dw-anim-intro-in), $dw-anim-trans-type, (($dw-anim-loops - 1), 1));
+            // @include dw-animation((($dw-anim-delay + ($dw-anim-delay /2)), ($dw-anim-frame-time * ($dw-anim-loops - ($dw-anim-frame-time /2) + $dw-anim-delay))), ($dw-anim-frame-time, $dw-anim-trans), (dw-anim-frame-2, dw-anim-intro-in), $dw-anim-trans-type, (($dw-anim-loops - 1), 1));
+          }
+        }
       }
       .thrasher-button {
         display: inline-flex;
         align-items: center;
         padding: 0 9px;
-        background-color: #ffe500;
+        background-color: #C70000;
+        color: #fff;
         border-radius: 36px;
         margin-top: 12px;
         height: 36px;
+        // button animation
+        transform: translateX(0);
+        opacity: 0;
+        @include dw-animation((($dw-anim-frame-time /2) + 0.15), $dw-anim-trans, dw-anim-intro-in, $dw-anim-trans-type, 1);
+        @if $dw-anim-loops == 1 {
+          @include dw-animation((($dw-anim-frame-time /2) + 1), $dw-anim-trans, dw-anim-intro-in, $dw-anim-trans-type, 1);
+        } @else {
+          @include dw-animation((($dw-anim-delay + ($dw-anim-delay /2)), ($dw-anim-frame-time * ($dw-anim-loops - 0.4))), ($dw-anim-frame-time, $dw-anim-trans), (dw-anim-frame-2, dw-anim-intro-in), $dw-anim-trans-type, (($dw-anim-loops - 1), 1));
+        }
         .label {
           display: flex;
           vertical-align: middle;
           font-family: $font-sans;
           font-size: 17px;
+          font-weight: 700;
           line-height: 28px;
           padding: 0 4px;
         }
-        .icon {
-          display: flex;
-        }
         .label+.icon {
-          padding: 0 2px 0 4px;
+          padding: 0 4px 0 4px;
         }
 
         &.button-md {
@@ -117,14 +390,91 @@
       }
     }
 
-
-
+    &__image {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      right: 0;
+      width: 30%;
+      height: 100%;
+      background-image: url("https://uploads.guim.co.uk/2021/05/07/theguardian-200@2x.png");
+      background-repeat: no-repeat;
+      background-position: 0px -17px;
+      background-size: cover;
+      @include mq(phablet) {
+        background-position: 0px -30px;
+        right: 24px;
+      }
+      @include mq(tablet) {
+        background-image: none;
+        width: 38%;
+        height: 90%;
+        right: 24px;
+        top: 24px;
+      }
+      @include mq(desktop) {
+        height: 100%;
+        width: 355px;
+        top: 12px;
+      }
+      @include mq(leftCol) {
+        right: 72px;
+      }
+      @include mq(wide) {
+        right: 124px;
+      }
+      .layered-comp {
+        display: none;
+        @include mq(tablet) {
+          display: block;
+        }
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: auto;
+          height: 100%;
+          transition: margin-left $dw-anim-trans $dw-anim-trans-type;
+          &.dw-layer-0 {
+            width: 322px;
+            height: 245px;
+            // background layer animation
+            transform: translateX(0);
+            opacity: 0;
+            @include dw-animation($dw-anim-trans, $dw-anim-trans, dw-anim-intro-in, $dw-anim-trans-type, 1);
+          }
+          &.dw-layer-1 {
+            width: 355px;
+            height: 255px;
+            // background layer animation
+            transform: translateX(0);
+            opacity: 0;
+            @include dw-animation($dw-anim-trans, ($dw-anim-trans + 100ms), dw-anim-intro-in, $dw-anim-trans-type, 1);
+          }
+          &.dw-layer-2 {
+            width: 355px;
+            height: 255px;
+            // background layer animation
+            transform: translateX(0);
+            opacity: 0;
+            @include dw-animation($dw-anim-trans, ($dw-anim-trans + 200ms), dw-anim-intro-in, $dw-anim-trans-type, 1);
+          }
+          &.dw-ly-focus-0 {
+            margin-left: -3px;
+          }
+          &.dw-ly-focus-1 {
+            margin-left: -5px;
+          }
+          &.dw-ly-focus-2 {
+            margin-left: -7px;
+          }
+        }
+      }
+    }
     &__roundel {
       position: absolute;
       top: 10px;
       right: 10px;
     }
-
   }
-
 }
