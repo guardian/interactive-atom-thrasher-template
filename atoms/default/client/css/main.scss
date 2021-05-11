@@ -22,7 +22,7 @@ $mq-breakpoints: (mobile: 320px,
 );
 
 // update 'class-name' with yours
-$containerName: noballgames;
+$containerName: aspacetobe;
 // colours pulled from shared/css/_palette.sass
 $backgroundColor: #121212;
 $textColor: white;
@@ -154,24 +154,30 @@ section#wolves-of-norway {
     right: 0;
     bottom: 0;
     z-index: -1;
-
-    background-image: url("https://uploads.guim.co.uk/2020/12/08/wolf-norway-grain-more.jpg");
-    background-size: 210%;
-    background-position: -180px top;
+    transition: all .3s ease-in-out;
+    background-image: url("https://uploads.guim.co.uk/2021/04/15/space-to-be-film-strip-mobile-thrasher.jpg");
+    background-size: 222%;
+    background-position: center;
     background-repeat: no-repeat;
+
+    &.dw-zoom-container {
+      background-size: 233%;
+    }
     @include mq(mobileMedium) {
-          background-size: 180%;
-          background-position: -123px top;
+      background-size: 180%;
+
+      &.dw-zoom-container {
+        background-size: 188%;
+      }
     }
     @include mq(mobileLandscape) {
-      background-position: center;
-      background-size: cover;
+      background-size: 100%;
     }
-    @include mq(phablet) {
-      background-position: top;
+    @include mq(phablet) { // overrides mob lanscape
+      // background-position: top;
     }
     @include mq(tablet) {
-      background-position: top;
+      // background-position: top;
     }
 
     &:before,
@@ -202,9 +208,15 @@ section#wolves-of-norway {
     }
 
     @include mq(tablet) {
-      background-image: url("https://uploads.guim.co.uk/2020/12/08/wolf-norway-grain-more.jpg");
-      background-position-y: 50%;
+      background-image: url("https://uploads.guim.co.uk/2021/04/15/Space_to_be@0.75x-1.jpg");
+      // background-position-y: 50%;
       left: 100px;
+      background-position: center;
+      background-size: 100%;
+
+      &.dw-zoom-container {
+        background-size: 103%;
+      }
 
       &:before {
         top: 0;
@@ -240,7 +252,7 @@ section#wolves-of-norway {
     @include mq(leftCol) {
       left: 400px;
       left: 350px;
-      background-position-y:30%;
+      // background-position-y:30%;
 
       &:before {
         left: -400px;
@@ -253,7 +265,7 @@ section#wolves-of-norway {
 
     @include mq(wide) {
       left: 317px;
-      background-position-y:30%;
+      // background-position-y:30%;
 
       &:before {
         left: -480px;
@@ -289,6 +301,7 @@ section#wolves-of-norway {
     }
 
     @include mq(mobileLandscape) {
+      // margin-top: 76px;
       &:before {
         right: -20px;
       }
@@ -296,15 +309,15 @@ section#wolves-of-norway {
 
     @include mq(phablet) {
       margin-top: 66px;
-      margin-top: 86px;
+      margin-top: 76px;
     }
 
     @include mq(tablet) {
       font-size: 20px;
       line-height: 115%;
-      width: 250px;
+      width: 320px;
       padding-right: 10px;
-      margin-top: 47px;
+      margin-top: 87px;
 
       &:before {
         right: 0;
@@ -314,7 +327,7 @@ section#wolves-of-norway {
 
     @include mq(desktop) {
       // margin-top: 66px;
-      width: 290px;
+      // width: 290px;
     }
 
     @include mq(leftCol) {
@@ -331,14 +344,21 @@ section#wolves-of-norway {
     }
 
     @include mq(wide) {
-      margin-top: 73px;
+      margin-top: 110px;
+      // margin-top: 73px;
       margin-left: 230px;
       // margin-left: 240px;
     }
 
     &__logline {
       font-weight: 500;
-      max-width: 210px;
+      max-width: 250px;
+      @include mq(mobileLandscape) {
+        max-width: 320px;
+      }
+      @include mq(tablet){
+        max-width: 320px;
+      }
     }
 
     &__button {
@@ -398,7 +418,7 @@ section#wolves-of-norway {
     opacity: 0;
 
     transition: background-color 0.3s linear;
-    
+
     // &:hover {
 
     //   &~.somalinimo__copy .somalinimo__copy__logline,
@@ -418,7 +438,7 @@ section#wolves-of-norway {
   a.main-link:hover {
     opacity: 0.1;
 
-    .noballgames__copy__button__icon {
+    .aspacetobe__copy__button__icon {
       svg {
         transform: scale(1.1);
       }
