@@ -5,9 +5,9 @@ function trackLoad() {
         value: 1
     });
 }
-// Put this into an alternative js file and link
+
 // observer function target
-const thrasherImgContainer = document.querySelector('div[class$="__background"]');
+const thrasherImgContainer = document.querySelector('.thrasher-inner');
 // target comp img elements
 const thrasherImgs = document.querySelectorAll('img[class^="dw-layer-"]');
 const dwImgAnimClass = "dw-ly-focus-";
@@ -27,10 +27,8 @@ function removeClass() {
 // when in viewport
 var observer = new IntersectionObserver(function(entries) {
 	if(entries[0].isIntersecting === true) {
-    // console.log('in view');
     addClass();
   } else if(entries[0].isIntersecting === false){
-    // console.log('out of view');
     removeClass();
   }
 }, { threshold: [1] });

@@ -3,7 +3,7 @@
 @mixin component-button($bgColor: #ffe500, $color: #f71515, $hoverBgColor: #ffbb50) {
     display: inline-flex;
     flex-direction: row;
-    background-color:$bgColor; 
+    background-color:$bgColor;
     border-radius: 25px;
     text-decoration: none;
     cursor: pointer;
@@ -12,7 +12,7 @@
         font-family:"Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
         font-weight:bold;
         font-size:17px;
-        
+
         padding: 10px 2px 10px 20px;
         margin-top: -2px;
         text-decoration: none;
@@ -22,7 +22,7 @@
         fill: $color;
         padding-right:16px;
         transition: transform 0.3s ease;
-    }        
+    }
     &:hover {
         background-color:$hoverBgColor;
         text-decoration: none;
@@ -44,4 +44,31 @@
     @include mc(mobileLandscape){
         right:18px;
     }
+}
+
+// css animations
+@mixin dw-animation ($delay, $duration, $animation, $anim-type, $loops) {
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -webkit-animation-timing-function: $anim-type;
+    -webkit-animation-iteration-count: $loops;
+    // -webkit-animation-direction: $direction;
+    -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    -moz-animation-timing-function: $anim-type;
+    -moz-animation-iteration-count: $loops;
+    // -moz-animation-direction: $direction;
+    -moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-timing-function: $anim-type;
+    animation-iteration-count: $loops;
+    // animation-direction: $direction;
+    animation-fill-mode: forwards; /* this prevents the animation from restarting! */
 }

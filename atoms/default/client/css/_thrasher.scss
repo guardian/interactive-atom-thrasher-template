@@ -1,58 +1,6 @@
-/////////////////////////////////////////////////////////////////////////////////
-// css 3 animation mixins--- put mixins & keyframes into separate stylesheet!! //
-/////////////////////////////////////////////////////////////////////////////////
-//  not working?
-// @mixin dw-keyframe ($animation_name) {
-//     @-webkit-keyframes $animation_name {
-//         @content;
-//     }
-//
-//     @-moz-keyframes $animation_name {
-//         @content;
-//     }
-//
-//     @keyframes $animation_name {
-//         @content;
-//     }
-// }
-// @include dw-keyframe(dw-text-transition) {
-//     0% {
-//       opacity: 1;
-//       transform: translateX(20px);
-//     }
-//
-//     100% {
-//       opacity: 0;
-//       transform: translateX(0);
-//     }
-// }
-
-@mixin dw-animation ($delay, $duration, $animation, $anim-type, $loops) {
-    -webkit-animation-delay: $delay;
-    -webkit-animation-duration: $duration;
-    -webkit-animation-name: $animation;
-    -webkit-animation-timing-function: $anim-type;
-    -webkit-animation-iteration-count: $loops;
-    // -webkit-animation-direction: $direction;
-    -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
-
-    -moz-animation-delay: $delay;
-    -moz-animation-duration: $duration;
-    -moz-animation-name: $animation;
-    -moz-animation-timing-function: $anim-type;
-    -moz-animation-iteration-count: $loops;
-    // -moz-animation-direction: $direction;
-    -moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
-
-    animation-delay: $delay;
-    animation-duration: $duration;
-    animation-name: $animation;
-    animation-timing-function: $anim-type;
-    animation-iteration-count: $loops;
-    // animation-direction: $direction;
-    animation-fill-mode: forwards; /* this prevents the animation from restarting! */
-}
-// Text enter
+// See animation mixin in _mixins.scss
+// Keyframe animations
+// Text transition
 @keyframes dw-anim-intro-in{
   0% {
     opacity: 0;
@@ -64,24 +12,6 @@
   }
 }
 // Frame 1
-// @keyframes dw-anim-frame-1{
-//   0% {
-//     opacity: 0;
-//     transform: translateX(10px);
-//   }
-//   10% {
-//     opacity: 1;
-//     transform: translateX(0);
-//   }
-//   90% {
-//     opacity: 1;
-//     transform: translateX(0);
-//   }
-//   100% {
-//     opacity: 0;
-//     transform: translateX(-20px);
-//   }
-// }
 @keyframes dw-anim-frame-10{
   0% {
     opacity: 0;
@@ -112,6 +42,7 @@
     transform: translateX(10px);
   }
 }
+// Frame 2 - reverse of frame 1
 @keyframes dw-anim-frame-2{
   0% {
     opacity: 0;
@@ -138,41 +69,9 @@
     transform: translateX(-20px);
   }
 }
-// @keyframes dw-anim-frame-1-hold{
-//   0% {
-//     opacity: 0;
-//     transform: translateX(-20px);
-//   }
-//   100% {
-//     opacity: 1;
-//     transform: translateX(10px);
-//   }
-// }
-// test
-// @keyframes dw-anim-frame-in{
-//   0% {
-//     opacity: 0;
-//     transform: translateX(10px);
-//   }
-//   100% {
-//     opacity: 1;
-//     transform: translateX(0);
-//   }
-// }
-// @keyframes dw-anim-frame-out{
-//   0% {
-//     opacity: 1;
-//     transform: translateX(0px);
-//   }
-//   100% {
-//     opacity: 0;
-//     transform: translateX(-20px);
-//   }
-// }
-// $dw-anim-delay-num: 1;
+// Animation settings
 $dw-anim-trans: 1s;
-$dw-anim-delay: 1s;
-// $dw-anim-delay: #{$dw-anim-delay-num}s;
+$dw-anim-delay: 1s; // needs fixing
 $dw-anim-trans-type: ease;
 $dw-anim-loops: 3;
 $dw-anim-frame-time: 12s;
@@ -189,10 +88,17 @@ $dw-anim-frame-time: 12s;
   background-image: url("https://uploads.guim.co.uk/2021/05/07/back_lines_mobile-1.png");
   background-repeat: repeat-x;
   background-position: 0 32px;
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+     //-- Put your IE specific css class here
+     width:calc(100% - 2px);
+     // -ms-overflow-style: none;
+  }
   @include mq(leftCol) {
+    // background lines
     background-image: url("https://uploads.guim.co.uk/2021/05/07/Back_lines_desktop-3.png");
     background-position: 0 49px;
   }
+
 
   .dw-200-birthday {
     &__link,
@@ -221,15 +127,9 @@ $dw-anim-frame-time: 12s;
         }
       }
       &:hover {
-        // Background hover-effect:
-        // ~ .dw-200-birthday__background {
-        //   opacity: 0.95;
-        // }
         // Button hover-effect
         ~ .thrasher-button,
         ~ * .thrasher-button {
-          // border: 3px solid green;
-          // opacity: 0.8; // has no effect with animation
         }
         ~ .dw-200-birthday__image {
           img.dw-layer-0 {
@@ -247,16 +147,6 @@ $dw-anim-frame-time: 12s;
         }
       }
     }
-    // for background image
-    // &__background {
-    //   z-index: -1;
-    //   img,
-    //   video {
-    //     object-fit: cover;
-    //     width: 100%;
-    //     height: 100%;
-    //   }
-    // }
 
     &__container-title {
       padding: 4px 10px;
@@ -302,7 +192,7 @@ $dw-anim-frame-time: 12s;
       }
       &__headline {
         svg {
-          width: 270px;
+          width: 256px;
           height: 70px;
           @include mq(leftCol) {
             width: 380px;
@@ -316,10 +206,11 @@ $dw-anim-frame-time: 12s;
       }
       &__subheadline {
         position: relative;
-        width: 65%;
-        height: 142px;
+        width: 72%;
+        height: 160px;
         @include mq(phablet) {
           height: 112px;
+          width: 65%
         }
         @include mq(tablet) {
           width: 50%;
@@ -348,6 +239,7 @@ $dw-anim-frame-time: 12s;
             @include dw-animation((($dw-anim-frame-time /2) + $dw-anim-delay), $dw-anim-trans, dw-anim-intro-in, $dw-anim-trans-type,  1);
           } @else {
             @include dw-animation((($dw-anim-delay + ($dw-anim-delay /2)), ($dw-anim-frame-time * ($dw-anim-loops - (0.4)))), ($dw-anim-frame-time, $dw-anim-trans), (dw-anim-frame-2, dw-anim-intro-in), $dw-anim-trans-type, (($dw-anim-loops - 1), 1));
+            // Needs fixing
             // @include dw-animation((($dw-anim-delay + ($dw-anim-delay /2)), ($dw-anim-frame-time * ($dw-anim-loops - ($dw-anim-frame-time /2) + $dw-anim-delay))), ($dw-anim-frame-time, $dw-anim-trans), (dw-anim-frame-2, dw-anim-intro-in), $dw-anim-trans-type, (($dw-anim-loops - 1), 1));
           }
         }
@@ -355,12 +247,17 @@ $dw-anim-frame-time: 12s;
       .thrasher-button {
         display: inline-flex;
         align-items: center;
-        padding: 0 9px;
+        padding: 0 0 0 9px;
         background-color: #C70000;
         color: #fff;
         border-radius: 36px;
         margin-top: 12px;
         height: 36px;
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+           //-- Put your IE specific css class here
+           max-width: 205px;
+           padding: 4px 9px 0;
+        }
         // button animation
         transform: translateX(0);
         opacity: 0;
@@ -378,11 +275,18 @@ $dw-anim-frame-time: 12s;
           font-weight: 700;
           line-height: 28px;
           padding: 0 4px;
+          @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+             //-- Put your IE specific css class here
+             display: inline-block;
+             vertical-align: top;
+          }
         }
         .label+.icon {
           padding: 0 4px 0 4px;
         }
-
+        svg {
+          fill: #fff;
+        }
         &.button-md {
           height: 44px;
           padding: 0 12px;
@@ -397,10 +301,14 @@ $dw-anim-frame-time: 12s;
       right: 0;
       width: 30%;
       height: 100%;
-      background-image: url("https://uploads.guim.co.uk/2021/05/07/theguardian-200@2x.png");
+      background-image: url("https://uploads.guim.co.uk/2021/05/10/theguardian-200.png");
+      // background-image: url("https://uploads.guim.co.uk/2021/05/10/theguardian-200@2x-2.png"); // X2 version seems unnecessary large
       background-repeat: no-repeat;
-      background-position: 0px -17px;
+      background-position: 17px -17px;
       background-size: cover;
+      @include mq(mobileMedium) {
+        background-position: 0px -17px;
+      }
       @include mq(phablet) {
         background-position: 0px -30px;
         right: 24px;
@@ -410,12 +318,10 @@ $dw-anim-frame-time: 12s;
         width: 38%;
         height: 90%;
         right: 24px;
-        top: 24px;
       }
       @include mq(desktop) {
         height: 100%;
         width: 355px;
-        top: 12px;
       }
       @include mq(leftCol) {
         right: 72px;
@@ -435,25 +341,27 @@ $dw-anim-frame-time: 12s;
           width: auto;
           height: 100%;
           transition: margin-left $dw-anim-trans $dw-anim-trans-type;
+          @include mq(tablet) {
+            top: 12px;
+          }
+          @include mq(desktop) {
+            top: 0px;
+          }
           &.dw-layer-0 {
-            width: 322px;
-            height: 245px;
+            height: 92%;
+            margin-top: 12px;
             // background layer animation
             transform: translateX(0);
             opacity: 0;
             @include dw-animation($dw-anim-trans, $dw-anim-trans, dw-anim-intro-in, $dw-anim-trans-type, 1);
           }
           &.dw-layer-1 {
-            width: 355px;
-            height: 255px;
             // background layer animation
             transform: translateX(0);
             opacity: 0;
             @include dw-animation($dw-anim-trans, ($dw-anim-trans + 100ms), dw-anim-intro-in, $dw-anim-trans-type, 1);
           }
           &.dw-layer-2 {
-            width: 355px;
-            height: 255px;
             // background layer animation
             transform: translateX(0);
             opacity: 0;
