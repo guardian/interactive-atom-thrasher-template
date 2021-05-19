@@ -1,0 +1,72 @@
+<div></div>
+this is a block element that takes up the full width of the page
+
+<span></span>
+this is an inline element
+
+ie -
+name <span> last name </span> will all go in one inline
+name <div> last name </div> will go one line after the other
+
+To identify it you gotta name it using a class
+<div class="something"></div>
+
+Then to style it you reference it like this in css
+<style>
+.something{}
+blah blah styles go in here
+</style>
+
+or....
+
+To identify it you gotta name it using a id. This is used for just ONE THING ONLY
+<div id=unique="something"></div>
+
+Then to style it you reference it like this in css
+<style>
+.something{
+}
+#unique{
+}
+</style>
+
+
+Now bens talking about childen in divs
+
+<div id=unique="something"></div>
+
+<div class="child">
+<h1>CODECLUB</h1>
+<p>this is a description of code club</p>
+</div>
+
+<div class="child">
+  <h1>CODECLUB TOO</h1>
+    <p>this is a description of CODECLUB TOO</p>
+</div>
+
+Now bens talking about flex in divs
+
+<div id=unique="something"></div>
+
+<div class="child">
+<h1>CODECLUB</h1>
+<p>this is a description of code club</p>
+</div>
+
+<div class="child">
+  <h1>CODECLUB TOO</h1>
+    <p>this is a description of CODECLUB TOO</p>
+</div>
+
+<style>
+.something{
+  display: flex;
+  flex-wrap: wrap;
+}
+#unique{
+  .child{
+    width: 50%;
+  }
+}
+</style>
