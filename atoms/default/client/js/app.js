@@ -5,6 +5,22 @@ function trackLoad() {
         value: 1
     });
 }
+// Change ID to match main.html 
+function getCookieValue(name) {
+    var val = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+    return val ? val.pop() : undefined;
+}
+
+function shouldHideSupportMessaging() {
+    return getCookieValue('gu_hide_support_messaging') === 'true';
+}
+
+
+if (shouldHideSupportMessaging()) {
+    document.getElementById("thrasher__dw-200-birthday").style.display = "none";
+} else {
+    document.getElementById("thrasher__dw-200-birthday").style.display = "block";
+}
 
 // observer function target
 const thrasherImgContainer = document.querySelector('.thrasher-inner');
