@@ -1,4 +1,4 @@
-{
+={
   "name": "interactive-atom-template-2019",
   "version": "1.0.0",
   "description": "",
@@ -34,7 +34,6 @@
     "gulp-uglify": "^3.0.2",
     "gulp-util": "^3.0.8",
     "merge-stream": "^2.0.0",
-    "node-sass": "^4.14.1",
     "preact": "^10.5.12",
     "require-uncached": "^2.0.0",
     "rollup": "^1.32.1",
@@ -58,6 +57,7 @@
     "babel-plugin-transform-import-bangtext-node": "^0.1.4",
     "gulp-git": "^2.10.1",
     "mkdirp": "^0.5.1",
+ 	"node-sass": "^4.14.1",
     "request-promise": "^4.2.6",
     "uglifyjs-webpack-plugin": "^2.2.0"
   }
