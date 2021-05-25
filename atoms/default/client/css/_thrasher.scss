@@ -42,13 +42,14 @@
     }
 
     &__container-title {
-      padding: 4px 10px;
+      padding: 0px 10px;
       @include mq(mobileLandscape) {
         padding-left: 20px;
         padding-right: 20px;
       }
       @include mq(leftCol) {
         position: absolute;
+        padding: 0px;
       }
       &__link {
         font-family: $font-headline;
@@ -65,7 +66,7 @@
       }
     }
 
-    &__copy {
+    &__wrapper__copy {
       font-family: $font-headline;
       font-size: 24px;
       line-height: 26px;
