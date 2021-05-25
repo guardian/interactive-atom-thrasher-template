@@ -7,88 +7,175 @@
 @import "basics";
 @import "thrasher";
 
-.rights-and-freedom-header {
-
-  &__container-title {
-   padding: 0px;
- }
-  background-color: #121212;
-  &__wrapper {
-    display: flex;
-    flex-direction: column-reverse;
-    width: 100%;
-    color: #fff;
-    @include mq(tablet) {
-      flex-direction: row;
-    }
-
-    &__copy {
-      width: calc(100% - 20px);
-      @include mq(tablet) {
-        width: 48%;
-        padding-right: 40px;
-      }
-      @include mq(leftCol) {
-        width: 49%;
-        padding-right: 0px;
-      }
-      @include mq(wide) {
-        width: 42%;
-        padding-right: 0px;
-      }
-
-      &__headline {
-         font-size: 32px;
-         line-height: 1;
-         font-family: "Guardian Titlepiece";
-         padding-top: 10px;
-        @include mq(tablet) {
-         font-size: 35px;
-        }
-        @include mq(leftCol) {
-          font-size: 47px;
-        }
-      }
-      &__subheadline {
-        margin-top: 24px;
-        margin-right: 20px;
-        border-top: solid 1px #ffffff;
-        padding-top: 2px;
-        font-size: 17px;
-
-        @include mq(tablet) {
-          p {
-            max-width: 380px;
-          }
-          margin-right: 0px;
-          max-width: 400px;
-        }
-        @include mq(leftCol) {
-          p {
-            max-width: 400px;
-          }
-          font-size: 18px;
-          margin-top: 36px;
-          max-width: 500px;
-
-        }
-      }
-    }
-
-    &__image {
-      width: 100%;
-      height: 200px;
-      @include mq(tablet) {
-        width: 50%;
-      }
-      @include mq(leftCol) {
-        width: 48%;
-        padding-left: 34px;
-      }
-
-    }
-  }
-
-
-
+.fc-container--thrasher {
+    background: #fff;
+    margin-bottom:0;
 }
+
+@keyframes arrows-in {
+    from {
+        transform:translateX(-310px);
+    }
+    to {
+        transform:translateX(0);
+    }
+}
+
+.rights-and-freedom-header {
+    &__container-title {
+        padding: 0px;
+    }
+    background-color: #121212;
+    &__wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        color: #fff;
+        @include mq(phablet) {
+            flex-direction: row;
+        }
+        &__copy {
+            width: calc(100% - 20px);
+            padding-bottom:0;
+            @include mq(mobileLandscape) {
+                width: calc(100% - 40px);
+            }
+            @include mq(phablet) {
+                width: 760px;
+            }
+            @include mq(tablet) {
+                width: 48%;
+                padding-right: 40px;
+            }
+            @include mq(leftCol) {
+                width: 530px;
+                padding-right: 0px;
+            }
+            @include mq(wide) {
+                padding-right: 0px;
+                width: 460px;
+            }
+            &__headline {
+                font-size: 30px;
+                line-height: 1;
+                font-family: "Guardian Titlepiece";
+                padding-top: 4px;
+                @include mq(mobileMedium) {
+                    font-size: 32px;
+                }
+                @include mq(phablet) {
+                    font-size: 30px;
+                }
+                @include mq(tablet) {
+                    font-size: 35px;
+                }
+                @include mq(desktop) {
+                    padding-top: 4px;
+                    font-size: 40px;
+                }
+                @include mq(leftCol) {
+                    padding-top: 0;
+                    font-size: 47px;
+                }
+            }
+            &__subheadline {
+                margin-top: 16px;
+                border-top: solid 1px #ffffff;
+                font-size: 17px;
+                line-height:150%;
+        
+                @include mq(tablet) {
+                    margin-right: 0px;
+                    max-width: 400px;
+                    p {
+                        max-width: 380px;
+                    }
+                }
+                @include mq(leftCol) {
+                    font-size: 18px;
+                    margin-top: 24px;
+                    max-width: 500px;
+                    p {
+                        max-width: 400px;
+                    }
+                }
+            }
+        }
+
+        &__image {
+            width: 100%;
+            // height: 200px;
+            @include mq(tablet) {
+                width: 50%;
+            }
+            @include mq(leftCol) {
+                width: 560px;
+                // padding-left: 34px;
+            }
+            &:before {
+                @include mq(desktop) {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 45%;
+                    width: 100px;
+                    background: linear-gradient(90deg,#121212 0,rgba(18,18,18,0) 100%);
+                }
+                @include mq(leftCol) {
+                    left: 640px;
+                }
+                @include mq(wide) {
+                    left: 730px;
+                }
+            }
+
+            svg {
+                height: 114px;
+                width: 133%;
+                transform: translate(-44px, 0px);
+                @include mq(mobileMedium) {
+                    height: 133px;
+                }
+                @include mq(mobileLandscape) {
+                    // transform: translate(-93px, 0px);
+                    transform:none;
+                }
+                @include mq(phablet) {
+                    height: calc(100% + 14px);
+                    width:200%;
+                    margin-top: -8px;
+                }
+                @include mq(desktop) {
+                    width: 130%;
+                }
+                @include mq(leftCol) {
+                    width: 150%;
+                }
+
+                
+                
+                .arrow-one,
+                .arrow-two,
+                .arrow-three,
+                .arrow-four {
+                    transform:translateX(-310px);
+                    animation-name: arrows-in;
+                    animation-duration: 0.75s;
+                    animation-timing-function: ease-in-out;
+                    animation-fill-mode: forwards;
+                }
+                .arrow-one {
+                    animation-delay:0.1s;
+                }
+                .arrow-two {
+                    animation-delay:0.2s;
+                }
+                .arrow-three {
+                    animation-delay:0.3s;
+                }
+            }
+        }
+    }
+}
+
