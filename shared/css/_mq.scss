@@ -9,6 +9,9 @@ $mq-responsive: true;
 // stakeholders, designers, developers, and testers.
 $mq-breakpoints: (
     mobile:  320px,
+    mobileMedium: 375px,
+    mobileLandscape: 480px,
+    phablet: 660px,
     tablet:  740px,
     desktop: 980px,
     leftCol: 1140px,
@@ -16,7 +19,6 @@ $mq-breakpoints: (
 
     // Tweakpoints
     desktopAd: 810px,
-    mobileLandscape: 480px
 );
 
 // Define the breakpoint from the $mq-breakpoints list that should

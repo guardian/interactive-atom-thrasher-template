@@ -31,9 +31,8 @@ $buttonHoverColor: $neutral-46;
 
 // this targets the container your thrasher is put inside on Fronts
 section#documentaries,
-section#documentary,
-section#colette, 
-#trasher-atom {
+section#documentary, 
+section#thrasher-atom {
   width:100%;
   position: relative;
   padding: 0 !important;
@@ -43,19 +42,26 @@ section#colette,
   .fc-container__inner,
   .fc-slice,
   .facia-snap {
-    overflow: hidden;
+    overflow: visible;
+    padding:0;
+    .fc-item {
+        padding:0;
+    }
   }
+
+//   .fc-container__inner {
+//       width:100%;
+//   }
 
   .facia-snap {
     padding: 0;
+    overflow: hidden;
   }
-  // .fc-item {
-    // padding:0!important;
-  // }
 }
 
 .#{$containerName} {
   height: 350px;
+  height: 300px;
   padding: 4px 10px;
 
   @include mq(mobileLandscape) {
@@ -144,7 +150,7 @@ section#colette,
     bottom: 0;
     z-index: -1;
 
-    background-image: url("https://uploads.guim.co.uk/2021/04/06/colette-cutout-low.jpg");
+    background-image: url("https://uploads.guim.co.uk/2021/05/25/eve-thrasher-image-low.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -176,7 +182,7 @@ section#colette,
     }
 
     @include mq(tablet) {
-      background-image: url("https://uploads.guim.co.uk/2021/04/06/colette-cutout-low.jpg");
+      background-image: url("https://uploads.guim.co.uk/2021/05/25/eve-thrasher-image-low.jpg");
       // background-position-y: 20%;
       left: 60px;
 
@@ -201,14 +207,6 @@ section#colette,
       }
     }
 
-    // @include mq(mobileLandscape) {
-    //   background-position: center -10px;
-    // }
-
-    // @include mq(phablet) {
-    //   background-position: center -80px;
-    // }
-
     @include mq(tablet) {
       background-position: center;
 
@@ -219,13 +217,14 @@ section#colette,
 
 
     @include mq(desktop) {
-      background-position:top center;
-      &:after {
-        width: 260px;
-      }
+        background-position: center -220px;
+        &:after {
+            width: 260px;
+        }
     }
 
     @include mq(leftCol) {
+        background-position: center -180px;
       left: 350px;
 
       &:before {
@@ -239,7 +238,8 @@ section#colette,
 
     @include mq(wide) {
       left: 480px;
-      left: 367px;
+      left: 417px;
+      background-position: center -200px;
 
       &:before {
         left: -480px;
@@ -247,6 +247,7 @@ section#colette,
 
       &:after {
         width: 180px;
+        left:-1px;
       }
     }
   }
@@ -281,15 +282,15 @@ section#colette,
     }
 
     @include mq(phablet) {
-      margin-top: 16px;
+        margin-top: 66px;
     }
 
     @include mq(tablet) {
       font-size: 20px;
       line-height: 22px;
-      width: 250px;
+      width: 260px;
       padding-right: 10px;
-      margin-top: 10px;
+      margin-top: 72px;
 
       &:before {
         right: 0;
@@ -298,8 +299,8 @@ section#colette,
     }
 
     @include mq(desktop) {
-      margin-top: 24px;
-      width: 308px;
+        margin-top: 72px;
+        width: 308px;
     }
 
     @include mq(leftCol) {
@@ -307,19 +308,16 @@ section#colette,
         display: none;
       }
 
-      margin-left: 160px;
+      margin-left: 150px;
       border-left: 1px solid rgba(white, 0.2);
       border-top: 1px solid rgba(white, 0.2);
       padding-left: 10px;
       padding-bottom: 12px;
-      // margin-top: 49px;
     }
 
     @include mq(wide) {
       margin-left: 230px;
-      margin-left: 240px;
-      margin-top: 53px;
-      // margin-top: 76px;
+      margin-top: 97px;
     }
 
     &__logline {
