@@ -79,10 +79,22 @@
                 }
             }
             &__subheadline {
-                margin-top: 16px;
-                border-top: solid 1px #ffffff;
-                font-size: 17px;
+                font-family: GuardianTextEgyptian, Guardian Text Egyptian Web, Georgia, serif;
+                margin-top: 12px;
+                font-size: 14px;
                 line-height:150%;
+
+                @include mq(mobileMedium) {
+                    font-size:15px;
+                }
+
+                @include mq(mobileLandscape) {
+                    max-width: 90%;
+                }
+
+                @include mq(phablet) {
+                    max-width:unset;
+                }
         
                 @include mq(tablet) {
                     margin-right: 0px;
@@ -92,8 +104,8 @@
                     }
                 }
                 @include mq(leftCol) {
-                    font-size: 18px;
-                    margin-top: 24px;
+                    font-size: 17px;
+                    margin-top: 16px;
                     max-width: 500px;
                     p {
                         max-width: 400px;
@@ -123,9 +135,11 @@
                     background: linear-gradient(90deg,#121212 0,rgba(18,18,18,0) 100%);
                 }
                 @include mq(leftCol) {
+                    width:30px;
                     left: 640px;
                 }
                 @include mq(wide) {
+                    width:20px;
                     left: 730px;
                 }
             }
@@ -161,18 +175,18 @@
                 .arrow-four {
                     transform:translateX(-310px);
                     animation-name: arrows-in;
-                    animation-duration: 0.75s;
+                    animation-duration: 1s;
                     animation-timing-function: ease-in-out;
                     animation-fill-mode: forwards;
                 }
                 .arrow-one {
-                    animation-delay:0.1s;
+                    animation-delay:0.45s;
                 }
                 .arrow-two {
-                    animation-delay:0.2s;
+                    animation-delay:0.1s;
                 }
                 .arrow-three {
-                    animation-delay:0.3s;
+                    animation-delay:0.2s;
                 }
             }
         }
