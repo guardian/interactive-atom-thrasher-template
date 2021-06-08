@@ -1,9 +1,16 @@
-#thrasher__thrasher-name.thrasher-inner {
+$red: #C70000;
+$dblue: #123274;
+$lblue: #009FE3;
+$yellow: #FFE500;
+
+#thrasher__golden-boot-2021.thrasher-inner {
   position: relative;
   border: 1px solid #dcdcdc;
   border-bottom: 0;
+  background-color: $dblue;
 
-  .thrasher-name {
+  .golden-boot-2021 {
+    
     &__link,
     &__background,
     &__background img {
@@ -19,7 +26,7 @@
       z-index: 20;
       &:hover {
         // Background hover-effect:
-        ~ .thrasher-name__background {
+        ~ .golden-boot-2021__background {
           opacity: 0.95;
         }
 
@@ -75,7 +82,7 @@
         padding-right: 20px;
       }
       @include mq(leftCol) {
-        padding-top: 4px;
+        
         padding-left: 180px;
       }
       @include mq(wide) {
@@ -83,28 +90,50 @@
       }
       &__headline {
         font-weight: 700;
-      }
-      &__subheadline {
-
+        font-family: $font-titlepiece;
+        font-size:32px;
+        line-height:105%;
+        color:white;
+        @include mq(mobileMedium) {
+          font-size:40px;
+        }
+        @include mq(phablet) {
+          width: 460px;
+        }
+        @include mq(tablet) {
+          font-size:40px;
+        }
+        @include mq(desktop){
+          font-size: 44px;
+        }
+        span {
+            color: $yellow;
+        }
       }
       .thrasher-button {
         display: inline-flex;
         align-items: center;
         padding: 0 9px;
-        background-color: #ffe500;
+        background-color: $yellow;
         border-radius: 36px;
         margin-top: 12px;
         height: 36px;
+        
         .label {
           display: flex;
           vertical-align: middle;
           font-family: $font-sans;
           font-size: 17px;
+          color: $dblue;
+          font-weight: 700;
           line-height: 28px;
           padding: 0 4px;
         }
         .icon {
           display: flex;
+          svg {
+            fill: $dblue;
+          }
         }
         .label+.icon {
           padding: 0 2px 0 4px;
@@ -121,10 +150,67 @@
 
     &__roundel {
       position: absolute;
-      top: 10px;
-      right: 10px;
+      left: 10px;
+      bottom: 4px;
+      width: 80px;
+      height: 70px;
+      @include mq(mobileMedium) {
+        width:90px;
+      }
+      @include mq(mobileLandscape) {
+        left:20px;
+      }
+      @include mq(leftCol) {
+        bottom:unset;
+        top:6px;
+        width:70px;
+        height: 50px;
+      }
     }
 
+  }
+
+
+  .image-wrapper {
+    margin-bottom: -120px;
+    margin-top: -20px;
+    margin-right: -19vw;
+    margin-left: auto;
+    text-align: end;
+    @include mq(mobileLandscape) {
+      margin-right:10px;
+      margin-top: -30px;
+    }
+    @include mq(phablet) {
+      margin-top: -20vw;
+    }
+    @include mq(desktop) {
+      margin-top: -190px;
+      margin-bottom:-200px;
+    }
+    @include mq(leftCol) {
+      margin-top: -250px;
+      margin-bottom: -260px;
+      margin-right: -13px;
+    }
+    @include mq(wide) {
+      margin-right:70px;
+    }
+    img {
+      width: calc(100vw - 40px);
+      @include mq(mobileLandscape) {
+        width: 60vw;
+      }
+      @include mq(phablet) {
+        width:50vw;
+      }
+      @include mq(desktop) {
+        width: 490px;
+      }
+      @include mq(leftCol) {
+        width:560px;
+      }
+    }
   }
 
 }
