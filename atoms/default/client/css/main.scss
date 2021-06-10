@@ -7,55 +7,90 @@
 @import "basics";
 @import "thrasher";
 
-.thrasher-wrapper {
+.grace-thrasher {
     position: relative;
     height: 300px;
     width: 100%;
-}
 
-.background-image {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 0;
-
-    img {
-        object-fit: cover;
-        object-position: right;
-        height: 100%;
-        width: 100%;
-    }
-}
-
-.thrasher-text-flex {
-    z-index: 1;
-    position: relative;
-    margin-left: 26px;
-    margin-top: 10px;
-
-    .body {
-        border-left: 1px white solid;
-        width: 200px;
-        margin-left: 240px;
-        margin-top:20px;
-        padding-left: 10px;
-    }
     & > * {
         color: #fff;
         font-weight: 900;
     }
-}
 
-.pod-logo {
-    position: absolute;
-    right: 10px;
-    z-index: 1;
-}
+    &__image {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 0;
+    
+        img {
+            object-fit: cover;
+            object-position: right;
+            height: 100%;
+            width: 100%;
+        }
+    }
 
-.headline {
-    position: absolute;
+    &__logo {
+        position: absolute;
+        right: 10px;
+        top:10px;
+        z-index: 1;
+    }
 
+    &__text {
+        z-index: 1;
+        position: relative;
+        margin-left: 26px;
+        margin-top: 10px;
+    }
+
+    &__headline {
+
+    }
+
+    &__description {
+        border-left: 1px white solid;
+        width: 500px;
+        position: absolute;
+        font-size: 20px;
+        line-height: 115%;
+        left: 240px;
+        top: 164px;
+
+    }
+
+    &__blurb {
+        padding-left: 12px;
+    }
+
+    &__links {
+        background-color: #D9305A;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 0;
+        border-top: 1px solid white;
+        font-size: 13px;
+        line-height: 115%;
+        padding: 12px 16px 16px 12px;
+
+        ul {
+            text-decoration-style: none;
+            display: flex;
+            flex-direction: row;
+        }
+
+        li {
+            display: inline-block;
+        }
+    }
+
+    &__buttons {
+        background-color: #D9305A;
+        border: 1px solid white;
+        border-radius: 999px;
+        padding: 2px 8px;
+    }
 }
 
