@@ -6,3 +6,56 @@
 
 @import "basics";
 @import "thrasher";
+
+.thrasher-wrapper {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+
+    img {
+        object-fit: cover;
+        object-position: right;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.thrasher-text-flex {
+    z-index: 1;
+    position: relative;
+    margin-left: 26px;
+    margin-top: 10px;
+
+    .body {
+        border-left: 1px white solid;
+        width: 200px;
+        margin-left: 240px;
+        margin-top:20px;
+        padding-left: 10px;
+    }
+    & > * {
+        color: #fff;
+        font-weight: 900;
+    }
+}
+
+.pod-logo {
+    position: absolute;
+    right: 10px;
+    z-index: 1;
+}
+
+.headline {
+    position: absolute;
+
+}
+
