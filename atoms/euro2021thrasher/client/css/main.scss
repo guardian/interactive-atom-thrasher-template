@@ -1,0 +1,32 @@
+@import "_mq";
+@import "_fonts";
+@import "_palette";
+@import "_app-fonts";
+@import "_mixins";
+@import "_football-euros";
+
+
+.fw-thrasher img {
+    @include mq(tablet) {
+        margin-top: 27px;
+    }
+    @include mq(desktop) {
+        margin-top: -63px;
+        margin-bottom:0;
+    }
+    @include mq(wide) {
+        margin-top: -73px;
+    }
+}
+
+
+.ios, .android {
+    .fw-thrasher {
+        @include mq(tablet) {
+            width: unset;
+            .fw-thrasher__podlogo {
+                right:20px;
+            }
+        }
+    }
+}
