@@ -7,10 +7,40 @@
 @import "basics";
 @import "thrasher";
 
+.desktop-only {
+    display: none;
+
+    @include mq($from: desktop) {
+        display: block;
+    }
+}
+
+.mobile-only {
+    display: block;
+
+    @include mq($from: desktop) {
+        display: none;
+    }
+}
+
 .grace-thrasher {
+    // Mobile ->
     position: relative;
-    height: 300px;
+    height: 550px;
     width: 100%;
+    background-color: #3E8A56;
+
+    // Desktop and upwards (980px)
+    @include mq($from: desktop) {
+        height: 300px;
+        width: 100%;
+    }
+    @include mq($from: leftCol) {
+
+    }
+    @include mq($from: wide) {
+       
+    }
 
     & > * {
         color: #fff;
@@ -19,17 +49,19 @@
 
     &__image {
         position: absolute;
-        top: 0;
         bottom: 0;
-        left: 0;
         right: 0;
         z-index: 0;
     
         img {
             object-fit: cover;
             object-position: right;
-            height: 100%;
-            width: 100%;
+
+            @include mq($from: desktop){
+                height: 100%;
+                width: 100%;
+
+            }
         }
     }
 
@@ -48,7 +80,8 @@
     }
 
     &__headline {
-
+        position: relative;
+        top: 36px;
     }
 
     &__description {
