@@ -14,8 +14,13 @@
         margin-top: -63px;
         margin-bottom:0;
     }
+    @include mq(leftCol) {
+        margin-bottom: -25px;
+        margin-top: -83px;
+    }
     @include mq(wide) {
-        margin-top: -73px;
+        margin-top: -101px;
+        // margin-top: -73px;
     }
 }
 
