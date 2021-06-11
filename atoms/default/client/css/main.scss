@@ -37,8 +37,8 @@ section#newsletter-thrasher {
   position: relative;
   // padding: 0 !important;
   overflow: hidden;
-  background-color: #edeade;
-  background-color: rgba(237, 234, 222, 0.7);
+  background-color: #e5f2f8;
+  // background-color: rgba(237, 234, 222, 0.7);
   .fc-container__inner,
   .fc-slice,
   .facia-snap {
@@ -56,7 +56,7 @@ section#newsletter-thrasher {
   border-top: 0.5px solid #dcdcdc;
   width: 100%;
   height: 280px;
-  background-color: #edeade;
+  background-color: #e5f2f8;
   display: flex;
   flex-direction: row;
   padding: 0 10px;
@@ -149,7 +149,7 @@ section#newsletter-thrasher {
       }
       a:hover {
         text-decoration: underline;
-        color: #c60000;
+        color: #007abc;
       }
 
       &__headline {
@@ -158,12 +158,12 @@ section#newsletter-thrasher {
         align: left;
         margin: 0;
         // color: $textColor;
-        color: #c60000;
+        color: #007abc;
         font-family: "Guardian Headline Bold", "Guardian Headline Full",
           "Guardian Egyptian Web", Georgia, serif;
         font-weight: 700;
         // text-decoration: none;
-        font-size: 15pt;
+        font-size: 14pt;
         line-height: 16pt;
       }
 
@@ -213,7 +213,7 @@ section#newsletter-thrasher {
       }
     }
     .story2 {
-      border-top: 1px solid #c60000;
+      border-top: 1px solid #007abc;
       padding-top: 10px;
       // padding-top: 20px;
       // padding-top: 10px;
@@ -276,14 +276,14 @@ section#newsletter-thrasher {
 
     .story1__image {
       // padding-top: 10px;
-      width: 80px;
-      height: 80px;
+      width: 82px;
+      height: 82px;
       // position: absolute;
     }
     .story2__image {
       // padding-top: 10px;
-      width: 80px;
-      height: 80px;
+      width: 82px;
+      height: 82px;
       // position: absolute;
     }
   }

@@ -1,0 +1,42 @@
+
+.container {
+	position: top;
+	width: 2000px;
+	height: 950px;
+}
+.background {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 2000px;
+	height: 950px;
+	background-image: url("https://media.guim.co.uk/4f5a69c9a5c54ab6362ddd4f10cbab6f880555cc/0_0_2000_950/2000.png");
+	background-size: auto 100%;
+	-webkit-animation: scroll 200s linear infinite;
+	animation: scroll 200s linear infinite;
+
+}
+.middleground {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 2000px;
+	height: 950px;
+	background-image: url("https://media.guim.co.uk/01fc7b699e24b277ba4de107f9c02e19b9ab6e1d/0_0_2000_950/2000.jpg");
+	background-size: auto 100%;
+	-webkit-animation: scroll 50s linear infinite;
+	animation: scroll 50s linear infinite;
+
+}
+.foreground {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 2000px;
+	height: 950px;
+	background-image: url("https://media.guim.co.uk/4705d17c0a6e0a367c16cdee4d08a0ead39b5abc/0_0_2000_950/2000.png");
+	background-size: auto 100%;
+	-webkit-animation: scroll 0s linear infinite;
+	animation: scroll 0s linear infinite;
+
+}
