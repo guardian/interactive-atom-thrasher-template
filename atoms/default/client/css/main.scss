@@ -77,6 +77,11 @@
         position: relative;
         margin-left: 26px;
         margin-top: 10px;
+        height: 550px;
+
+        @include mq($from: desktop) {
+            height: auto;
+        }
     }
 
     &__headline {
@@ -86,12 +91,20 @@
 
     &__description {
         border-left: 1px white solid;
-        width: 500px;
         position: absolute;
         font-size: 20px;
         line-height: 115%;
-        left: 240px;
-        top: 164px;
+        bottom: 0px;
+        left: 0;
+
+
+        @include mq($from: desktop) {
+            left: 240px;
+            top: 164px;
+            width: 500px;
+            bottom: unset;
+
+        }
 
     }
 
