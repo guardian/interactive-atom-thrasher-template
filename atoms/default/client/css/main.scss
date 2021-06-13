@@ -6,3 +6,135 @@
 
 @import "basics";
 @import "thrasher";
+
+$backgroundColor: #4AA169;
+$textColor: #ffffff;
+
+#thrasher-atom {
+    width: 100%;
+    position: relative;
+    padding: 0 !important;
+    overflow: hidden;
+    background-color: #44c8f550;
+    margin-bottom:0;
+
+    .fc-container__inner,
+    .fc-slice,
+    .facia-snap {
+        overflow: hidden;
+    }
+
+    .facia-snap {
+        padding: 0;
+    }
+}
+
+.grace-thrasher {
+    background-color: $backgroundColor;
+    color: $textColor;
+    height: 500px;
+    width: 100%;
+    padding: 0 !important;
+    overflow: hidden;
+    margin-bottom: 0;
+    // background-image: url('https://uploads.guim.co.uk/2021/06/09/grace-dent-extention-(1)_copy.jpg');
+
+    &__showmobile {
+        display: block;
+
+        @include mq(desktop) {
+            display: none;
+        }
+    }
+
+    &__showdesktop {
+        display: none;
+
+        @include mq(desktop) {
+            display: block;
+        }
+
+    }
+
+    &__podlogo {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+
+    &__headline,
+    &__standfirst {
+        padding: 20px 10px 0px 10px;
+        z-index: 12;
+}
+
+    &__headline {
+        svg {
+            width: 100%;
+        } 
+    }
+
+    &__standfirst {
+        font-family: "Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
+        font-size:17px;
+        line-height:115%;
+        width:90%;
+        font-weight: 600;
+        z-index: 1;
+    }
+
+    &__image {
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            height: 240px;
+            bottom: 50px;
+            z-index: 0;
+            right: -1;
+        }
+    }
+
+    &__links {
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        width: 100vw;
+
+
+        p, a {
+            font-family: "GuardianTextSans", "Guardian Text Sans Web", Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+            font-weight:600;
+            font-size:13px;
+            line-height:1;
+            z-index: 12;
+        }
+
+        ul {
+            margin-left: 0;
+            padding: 10px;
+        }
+
+        &-wrapper {
+            background-color: #D9305A;
+            border-top: 1px solid $textColor;
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            list-style-type: none;
+        }
+
+        &-button {
+            background-color: #D9305A;
+            margin-bottom: 4px;
+            margin-right: 4px;
+            border: 1px solid $textColor;
+            border-radius: 999px;
+
+        }
+
+    }
+        &__ocadologo {
+            height: 68px;
+    }
+}
