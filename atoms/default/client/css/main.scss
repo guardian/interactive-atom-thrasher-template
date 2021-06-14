@@ -12,7 +12,8 @@ $textColor: #ffffff;
 
 
 .grace-thrasher, 
-#thrasher-atom {
+#thrasher-atom,
+#comfort-eating {
     width: 100%;
     position: relative;
     padding: 0 !important;
@@ -51,6 +52,9 @@ $textColor: #ffffff;
     background-color: #4AA069;
     height: 450px;
     color: $textColor;
+    border-left: 1px solid #dcdcdc;
+    border-right: 1px solid #dcdcdc;
+    box-sizing: border-box;
 
     @include mq(mobileLandscape) {
         height: 320px;
@@ -89,15 +93,20 @@ $textColor: #ffffff;
             height: 120%;
             @include mq(mobileMedium) {
                 bottom:20px;
+                height:unset;
+                width:120%;
             }
             @include mq(mobileLandscape) {
                 height:unset;
                 bottom:0;
                 right: -130px;
+                height:100%;
+                width: unset;
             }
             @include mq(phablet) {
                 right:0;
                 bottom:unset;
+                height:110%;
             }
         }
 
