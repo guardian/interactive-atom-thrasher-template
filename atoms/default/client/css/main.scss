@@ -325,3 +325,48 @@ $textColor: #ffffff;
     }
 }
 
+
+
+.interactive, .interactive-atom {
+    margin:0;
+}
+
+.ios, .android {
+    .grace-thrasher {
+        &__headline {
+            svg {
+                height: auto;
+            }
+        }
+        &__blurb {
+            margin-top: 0;
+            margin-bottom: 170px;
+            font-weight:400;
+            @include mq(phablet) {
+                margin-bottom: 30px;
+            }
+            @include mq(desktop) {
+                margin-bottom:16px;
+            }
+        }
+        &__links {
+            padding: 2px 0;
+            li {
+                a {
+                    color:white;
+                    text-decoration: none;
+                    margin-right:2px;
+                    &:nth-child(3) {
+                        margin-right:0;
+                    }
+                }
+            }
+        }
+        &__ocadologo {
+            bottom: 59px;
+            @include mq(phablet) {
+                bottom:0;
+            }
+        }
+    }
+}
