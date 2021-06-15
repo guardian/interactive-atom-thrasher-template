@@ -35,7 +35,7 @@ $textColor: #ffffff;
 .tablet-only {
     display: none;
 
-    @include mq($from: tablet) {
+    @include mq($from: phablet) {
         display: block;
     }
 }
@@ -43,31 +43,35 @@ $textColor: #ffffff;
 .mobile-only {
     display: block;
 
-    @include mq($from: tablet) {
+    @include mq($from: phablet) {
         display: none;
     }
 }
 
 .grace-thrasher {
     background-color: #4AA069;
-    height: 450px;
+    height: 390px;
     color: $textColor;
     border-left: 1px solid #dcdcdc;
     border-right: 1px solid #dcdcdc;
     box-sizing: border-box;
+
+    @include mq(mobileMedium) {
+        height: 410px;
+    }
 
     @include mq(mobileLandscape) {
         height: 320px;
     }
 
     @include mq($from:phablet) {
-        height: 300px;
+        height: 220px;
     }
 
     &__podlogo {
         position: absolute;
         top: 10px;
-        right: 20px;
+        right: 10px;
     }
 
     &__podlogo, &__text {
@@ -90,14 +94,12 @@ $textColor: #ffffff;
             position: absolute;
             right: -40px;
             bottom: 40px;
-            height: 120%;
+            width: 112%;
             @include mq(mobileMedium) {
                 bottom:20px;
-                height:unset;
                 width:120%;
             }
             @include mq(mobileLandscape) {
-                height:unset;
                 bottom:0;
                 right: -130px;
                 height:100%;
@@ -107,6 +109,13 @@ $textColor: #ffffff;
                 right:0;
                 bottom:unset;
                 height:110%;
+            }
+            @include mq(desktop) {
+                height:unset;
+                width: 125%;
+            }
+            @include mq(leftCol) {
+                width:105%;
             }
         }
 
@@ -129,46 +138,51 @@ $textColor: #ffffff;
         z-index: 7;
         margin-left: 10px;
         margin-top: 8px;
-        margin-top: 33px;
-        width: 290px;
+        margin-top: 20px;
+        width: 240px;
         @include mq(mobileMedium) {
             margin-top: 17px;
-            width: 340px;
+            width: 290px;
         }
         @include mq(mobileLandscape) {
             margin-left:20px;
             width: 270px;
             margin-top: 8px;
+            
         }
         @include mq(phablet) {
             margin-top: 10px;
-            width: 320px;
+            width: 430px;
         }
         @include mq(tablet) {
-            width: 560px;
+            width: 440px;
         }
         @include mq(desktop) {
-            width:700px;
+            width: 500px;
         }
         @include mq(leftCol) {
-            width:800px;
+            width:510px;
         }
         @include mq(wide) {
-            width: 840px;
+            width: 510px;
+            margin-left: 105px;
         }
         svg {
             .grace-name {
+                @include mq(phablet) {
+                    transform: translateX(-100px);
+                }
                 @include mq(tablet) {
-                    transform: translateX(-254px);
+                    transform: translateX(0);
                 }
                 @include mq(desktop) {
-                    transform: translateX(-160px);
+                    transform: translateX(-155px);
                 }
                 @include mq(leftCol) {
-                    transform:translateX(-80px);
+                    transform:translateX(0);
                 }
                 @include mq(wide) {
-                    transform:translateX(0px);
+                    transform:translateX(0);
                 }
             }
         }
@@ -250,23 +264,28 @@ $textColor: #ffffff;
         font-weight:500;
         line-height:115%;
         padding-left: 10px;
-        margin-bottom: 180px;
-        width: 240px;
+
+        margin-bottom: 154px;
+        width: 260px;
+
+        @include mq(mobileMedium) {
+            margin-bottom: 164px;
+        }
         @include mq(mobileLandscape) {
             padding-left: 20px;
             margin-bottom: 86px;
             width: 260px;
         }
         @include mq(phablet) {
-            width: 230px;
-            margin-bottom: 45px;
+            width: 300px;
+            margin-bottom: 6px;
         }
         @include mq(tablet) {
             width: 310px;
+            margin-bottom: 9px;
         }
         @include mq(desktop) {
-            width:unset;
-            font-size: 20px;
+            width: 420px;
             margin-bottom: 15px;
             padding-left: 0;
             margin-left: 10px;
@@ -303,7 +322,7 @@ $textColor: #ffffff;
                 width: 100vw;
             }
             @include mq(desktop) {
-                width: 510px;
+                width: 450px;
             }
         }
 
