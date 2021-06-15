@@ -368,16 +368,24 @@ $textColor: #ffffff;
         }
         &__blurb {
             margin-top: 0;
-            margin-bottom: 170px;
+            margin-bottom: 145px;
             font-weight:400;
+            @include mq(mobileLandscape) {
+                margin-bottom: 75px;
+            }
             @include mq(phablet) {
-                margin-bottom: 30px;
+                margin-bottom: 10px;
             }
             @include mq(desktop) {
                 margin-bottom:16px;
             }
         }
         &__links {
+            &-wrapper {
+                @include mq(tablet) {
+                    width: 460px;
+                }
+            }
             padding: 2px 0;
             li {
                 a {
