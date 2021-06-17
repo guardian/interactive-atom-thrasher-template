@@ -19,7 +19,7 @@ $textColor: #ffffff;
     padding: 0 !important;
     overflow: hidden;
     background-color: #fff;
-    margin-bottom:0;
+    // margin-bottom: 1.5rem;
 
     .fc-container__inner,
     .fc-slice,
@@ -208,7 +208,7 @@ $textColor: #ffffff;
             flex-direction: column;
             margin-left: 20px;
             width: 510px;
-            width: 540px;
+            width: 550px;
             border-left: 1px solid $textColor;
             overflow: hidden;
         }
@@ -224,10 +224,14 @@ $textColor: #ffffff;
         height: 68px;
         position:absolute;
         bottom:0;
-        left:0;
+        left:-10px;
         margin-bottom: -6px;
         z-index: 10;
-        bottom: 44px;
+        bottom: 76px;
+        @include mq(mobileLandscape) {
+            left:0;
+            bottom: 43px;
+        }
         @include mq(phablet) {
             left:unset;
             right:0;
@@ -265,11 +269,11 @@ $textColor: #ffffff;
         line-height:115%;
         padding-left: 10px;
 
-        margin-bottom: 154px;
+        margin-bottom: 116px;
         width: 260px;
 
         @include mq(mobileMedium) {
-            margin-bottom: 164px;
+            margin-bottom: 124px;
         }
         @include mq(mobileLandscape) {
             padding-left: 20px;
@@ -285,7 +289,7 @@ $textColor: #ffffff;
             margin-bottom: 9px;
         }
         @include mq(desktop) {
-            width: 420px;
+            width: 550px;
             margin-bottom: 15px;
             padding-left: 0;
             margin-left: 10px;
@@ -318,25 +322,42 @@ $textColor: #ffffff;
             @include mq(mobileMedium) {
                 // font-size:15px;
             }
+            @include mq(mobileLandscape) {
+                font-size:12px;
+            }
             @include mq(phablet) {
+                font-size:13px;
                 width: 100vw;
             }
             @include mq(desktop) {
-                width: 450px;
+                width: 550px;
             }
         }
 
         li {
             list-style-type: none;
+            margin-bottom: 14px;
+            @include mq(mobileLandscape) {
+                margin-bottom: 0;
+            }
+            &:nth-child(5) {
+                margin-bottom:0;
+            }
+            &:nth-child(6) {
+                margin-bottom:0;
+            }
             &:nth-child(1) {
                 margin-right:10px;
             }
-            &:nth-child(5) {
-                display:none;
-                @include mq(mobileMedium) {
+            &:nth-child(6) {
+                @include mq(phablet) {
+                    display:none;
+                }
+                @include mq(tablet) {
                     display:block;
                 }
             }
+            
             a {
                 padding: 5px 8px 6px 8px;
                 border: 1px solid white;
@@ -361,6 +382,7 @@ $textColor: #ffffff;
 
 .ios, .android {
     .grace-thrasher {
+        border: none;
         &__headline {
             svg {
                 height: auto;
@@ -368,8 +390,12 @@ $textColor: #ffffff;
         }
         &__blurb {
             margin-top: 0;
-            margin-bottom: 145px;
+            margin-bottom: 115px;
             font-weight:400;
+            width: 250px;
+            @include mq(mobileMedium) {
+                margin-bottom:125px;
+            }
             @include mq(mobileLandscape) {
                 margin-bottom: 75px;
             }
@@ -378,28 +404,59 @@ $textColor: #ffffff;
             }
             @include mq(desktop) {
                 margin-bottom:16px;
+                width: 550px;
+            }
+        }
+        &__desktopwrapper {
+            @include mq(desktop) {
+                width: 570px;
             }
         }
         &__links {
+            margin-left: 6px;
+            margin-top: 6px;
+            margin-bottom: 6px;
+            @include mq(mobileLandscape) {
+                margin-left:10px;
+            }
             &-wrapper {
+                @include mq(mobileMedium) {
+                    font-size:12px;
+                }
+                @include mq(phablet) {
+                    font-size:13px;
+                }
                 @include mq(tablet) {
-                    width: 460px;
+                    width: 660px;
                 }
             }
             padding: 2px 0;
             li {
+                margin-bottom: 17px;
+                @include mq(mobileLandscape) {
+                    margin-bottom:0;
+                }
+                &:nth-child(5) {
+                    margin-bottom:0;
+                }
+                &:nth-child(6) {
+                    margin-bottom:0;
+                }
                 a {
                     color:white;
                     text-decoration: none;
                     margin-right:2px;
-                    &:nth-child(3) {
-                        margin-right:0;
-                    }
                 }
             }
         }
         &__ocadologo {
-            bottom: 59px;
+            bottom: 77px;
+            @include mq(mobileMedium) {
+                // bottom: 75px;
+            }
+            @include mq(mobileLandscape) {
+                bottom: 43px;
+            }
             @include mq(phablet) {
                 bottom:0;
             }
