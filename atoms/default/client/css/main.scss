@@ -22,12 +22,14 @@ $mq-breakpoints: (mobile: 320px,
 );
 
 // update 'class-name' with yours
-$containerName: totalchaos;
+$containerName: the-return;
 // colours pulled from shared/css/_palette.sass
 $backgroundColor: #121212;
 $textColor: white;
 $buttonColor: $neutral-7;
 $buttonHoverColor: $neutral-46;
+$transSpeed: 500ms;
+$transType: ease-in-out;
 
 // this targets the container your thrasher is put inside on Fronts
 section#documentaries,
@@ -50,7 +52,8 @@ section#total-chaos {
   }
 }
 
-#doc-untold-chaos {
+// #doc-the-return,
+#{"#docthrasher-" + $containerName} {
   // Ken burns effect
   &.dw-zoomin{
     .#{$containerName} {
@@ -65,15 +68,15 @@ section#total-chaos {
   height: 340px;
   padding: 4px 10px;
 
-  @include mq(mobileLandscape) {
+  @include mc(mobileLandscape) {
     padding: 4px 20px;
   }
 
-  @include mq(phablet) {
+  @include mc(phablet) {
     height: 260px;
   }
 
-  @include mq(tablet) {
+  @include mc(tablet) {
     height: 260px;
     width: 100%;
   }
@@ -86,7 +89,7 @@ section#total-chaos {
     line-height: 1;
     margin-top: 4px;
 
-    @include mq(mobileMedium) {
+    @include mc(mobileMedium) {
       font-size: 38px;
       width: 90%;
     }
@@ -95,14 +98,14 @@ section#total-chaos {
       color: $textColor;
     }
 
-    @include mq(tablet) {
+    @include mc(tablet) {
       width:45%;
     }
-    @include mq(desktop) {
+    @include mc(desktop) {
       width:34%;
     }
 
-    @include mq(leftCol) {
+    @include mc(leftCol) {
       margin-left: 160px;
       width:28%;
     }
@@ -140,15 +143,15 @@ section#total-chaos {
       color: white;
     }
 
-    @include mq(tablet) {
+    @include mc(tablet) {
       // display: none;
     }
 
-    @include mq(leftCol) {
+    @include mc(leftCol) {
       margin-left: 160px;
     }
 
-    @include mq(wide) {
+    @include mc(wide) {
       margin-left: 0;
       font-size: 24px;
       position: absolute;
@@ -166,24 +169,29 @@ section#total-chaos {
     right: 0;
     bottom: 0;
     z-index: -1;
-
-    background-image: url("https://uploads.guim.co.uk/2021/02/09/women-crowd-thrasher-mobile-f1.jpg");
-    background-size: 210%;
-    background-position: -180px top;
+    background-color: $backgroundColor;
+    background-image: url("https://uploads.guim.co.uk/2021/06/17/thrasher-mobile@2x.jpg");
+    background-size: cover;
+    background-position: -200px bottom;
     background-repeat: no-repeat;
-    @include mq(mobileMedium) {
-          background-size: 180%;
-          background-position: center top;
-    }
-    @include mq(mobileLandscape) {
+
+    @include mc(mobileLandscape) {
       background-position: center;
       background-size: cover;
     }
-    @include mq(phablet) {
-      background-position: center;
+    @include mc(phablet) {
+      background-size: 160%;
+      // background-position: center;
     }
-    @include mq(tablet) {
-      background-position: center;
+    @include mc(tablet) {
+      background-size: 140%;
+      // background-position: center;
+    }
+    @include mc(desktop) {
+      background-size: 120%;
+    }
+    @include mc(wide) {
+      background-size: 110%;
     }
 
     &:before,
@@ -213,8 +221,8 @@ section#total-chaos {
       opacity: 0.5;
     }
 
-    @include mq(tablet) {
-      background-image: url("https://uploads.guim.co.uk/2021/02/09/women-crowd-thrasher-desktop-f1.jpg");
+    @include mc(tablet) {
+      background-image: url("https://uploads.guim.co.uk/2021/06/17/thrasher-desktop@2x.jpg");
       background-position-y: 50%;
       left: 100px;
 
@@ -239,17 +247,17 @@ section#total-chaos {
       }
     }
 
-    @include mq(tablet) {
+    @include mc(tablet) {
       &:after {
         width: 320px;
       }
     }
 
-    @include mq(desktop) {
+    @include mc(desktop) {
       left:240px;
     }
 
-    @include mq(leftCol) {
+    @include mc(leftCol) {
       left: 400px;
       left: 350px;
       background-position-y:30%;
@@ -263,7 +271,7 @@ section#total-chaos {
       }
     }
 
-    @include mq(wide) {
+    @include mc(wide) {
       left: 317px;
       background-position-y:30%;
 
@@ -300,18 +308,18 @@ section#total-chaos {
       opacity: 0.2;
     }
 
-    @include mq(mobileLandscape) {
+    @include mc(mobileLandscape) {
       &:before {
         right: -20px;
       }
     }
 
-    @include mq(phablet) {
+    @include mc(phablet) {
       margin-top: 66px;
       margin-top: 86px;
     }
 
-    @include mq(tablet) {
+    @include mc(tablet) {
       font-size: 20px;
       line-height: 115%;
       width: 250px;
@@ -324,12 +332,12 @@ section#total-chaos {
       }
     }
 
-    @include mq(desktop) {
+    @include mc(desktop) {
       // margin-top: 66px;
       width: 290px;
     }
 
-    @include mq(leftCol) {
+    @include mc(leftCol) {
       &:before {
         display: none;
       }
@@ -342,7 +350,7 @@ section#total-chaos {
       padding-bottom: 12px;
     }
 
-    @include mq(wide) {
+    @include mc(wide) {
       margin-top: 98px;
       margin-left: 230px;
       // margin-left: 240px;
@@ -350,7 +358,7 @@ section#total-chaos {
 
     &__logline {
       font-weight: 500;
-      max-width: 210px;
+      max-width: 240px;
     }
 
     &__button {
@@ -408,33 +416,28 @@ section#total-chaos {
     // background-color: black; // turned off for Ken burns dw
     // mix-blend-mode: soft-light; // turned off for Ken burns dw
     opacity: 0;
-
     // transition: background-color 0.3s linear; // turned off for Ken burns dw
 
-    // &:hover {
-
-    //   &~.somalinimo__copy .somalinimo__copy__logline,
-    //   &~.title {
-    //     opacity: 0.95;
-    //   }
-
-    //   &~.somalinimo__image {
-    //     opacity: 0.97;
-    //   }
-
-    //   &~.somalinimo__copy .somalinimo__copy__button__icon {
-    //     transform: scale(1.1);
-    //   }
-    // }
+    &:hover {
+      ~ .#{$containerName} {
+        &__copy__logline,
+        &__headline {
+          opacity: 0.95;
+        }
+        &__image {
+          @include filter(brightness, 80%);
+          @include transition($transSpeed $transType);
+        }
+        &__copy__button__icon {
+          transform: scale(2);
+          transition-timing-function: $transType;
+          transition-duration: $transSpeed;
+        }
+      }
+    }
   }
   a.main-link:hover {
     opacity: 0.1;
-
-    .noballgames__copy__button__icon {
-      svg {
-        transform: scale(1.1);
-      }
-    }
   }
 }
 

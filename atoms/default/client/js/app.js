@@ -1,12 +1,12 @@
 // data capture for ophan
 function trackLoad() {
     window.guardian.ophan.record({
-        component: 'thrasher : add-your-thrasher-name : load',
+        component: 'thrasher : the-return : load',
         value: 1
     });
 }
 
-const docthrasher = document.querySelector("#doc-untold-chaos");
+const docthrasher = document.querySelector('[id^="docthrasher-"]');
 const animClass = "dw-zoomin";
 
 var observer = new IntersectionObserver(function(entries) {
