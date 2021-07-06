@@ -294,7 +294,8 @@ section#total-chaos {
     position: relative;
     z-index: 10;
     padding: 2px 0;
-    margin-top: 162px;
+    margin-top: 120px;
+    max-width: 280px;
 
     &:before {
       content: "";
@@ -307,7 +308,9 @@ section#total-chaos {
       background-color: white;
       opacity: 0.2;
     }
-
+    @include mc(mobile){
+      margin-top: 142px;
+    }
     @include mc(mobileLandscape) {
       &:before {
         right: -20px;
@@ -322,9 +325,9 @@ section#total-chaos {
     @include mc(tablet) {
       font-size: 20px;
       line-height: 115%;
-      width: 250px;
+      width: 290px;
       padding-right: 10px;
-      margin-top: 72px;
+      margin-top: 62px;
 
       &:before {
         right: 0;
@@ -351,14 +354,14 @@ section#total-chaos {
     }
 
     @include mc(wide) {
-      margin-top: 98px;
+      margin-top: 88px;
       margin-left: 230px;
       // margin-left: 240px;
     }
 
     &__logline {
       font-weight: 500;
-      max-width: 240px;
+      // max-width: 240px;
     }
 
     &__button {
