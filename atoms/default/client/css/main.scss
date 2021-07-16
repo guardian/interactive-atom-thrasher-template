@@ -121,17 +121,17 @@ $yellowColor: #ffe500;
                 left: -83px;
                 @include mq(mobileMedium) {
                     bottom: 0;
-                    left: -81px;
-                    width: 159px;
+                    left: -72px;
+                    width: 149px;
                 }
                 @include mq(mobileLandscape) {
-                    left: -102px;
-                    width: 179px;
+                    left: -86px;
+                    width: 163px;
                 }
                 @include mq(phablet) {
                     left: 91px;
                     width: 209px;
-                    bottom: -50px;
+                    bottom: -72px;
                 }
             }
             .standfirst, .article-link {
@@ -328,6 +328,10 @@ $yellowColor: #ffe500;
             p {
                 font-size: 15px;
                 padding-left: 10px;
+                width: 80%;
+                @include mq(leftCol) {
+                    width: 75%;
+                }
             }
         }
 
@@ -388,6 +392,9 @@ $yellowColor: #ffe500;
                     font-size: 17px;
                     width: 100%;
                     line-height: 115%;
+                    @include mq(desktop) {
+                        width: 90%;
+                    }
                 }
                 p.title {
                     background-color: $yellowColor;
@@ -396,6 +403,9 @@ $yellowColor: #ffe500;
                     margin-left: -10px;
                     font-weight: 800;
                     margin-bottom: 1px;
+                    @include mq(desktop) {
+                        width: 100%;
+                    }
                 }
                 .arrow {
                     width: 32px;
