@@ -81,6 +81,7 @@ $yellowColor: #ffe500;
                 }
             }
             .first-image {
+                position: relative;
                 width: auto;
                 height: 130px;
                 margin-left: -10px;
@@ -96,20 +97,29 @@ $yellowColor: #ffe500;
                 width: 136px;
                 position: absolute;
                 top: -11px;
-                right: -11px;
+                left: 195px;
                 @include mq(mobileMedium) {
                     width: 146px;
                     top: -5px;
-                    right: 6px;
+                    width: 185px;
+                    top: -70px;
+                    left: 220px;
                 }
                 @include mq(mobileLandscape) {
+                    // right: 6px;
+                    // left: unset;
                     width: 239px;
                     top: -160px;
                 }
                 @include mq(phablet) {
-                    right: 111px;
+                    left: 310px;
+                    right: unset;
                     top: -160px;
                     width: 239px;
+                }
+                @include mq(tablet) {
+                    left: unset;
+                    right: 111px;
                 }
             }
         }
@@ -119,14 +129,15 @@ $yellowColor: #ffe500;
                 position: absolute;
                 bottom: 0;
                 left: -83px;
+                bottom: -20px;
                 @include mq(mobileMedium) {
                     bottom: 0;
                     left: -72px;
                     width: 149px;
                 }
                 @include mq(mobileLandscape) {
-                    left: -86px;
-                    width: 163px;
+                    left: -87px;
+                    width: 165px;
                 }
                 @include mq(phablet) {
                     left: 91px;
@@ -146,6 +157,7 @@ $yellowColor: #ffe500;
             }
             .standfirst {
                 font-size: 15px;
+                width: 226px;
                 @include mq(mobileMedium) {
                     width: 270px;
                 }
@@ -158,17 +170,17 @@ $yellowColor: #ffe500;
                 text-decoration: none;
                 margin-top: 20px;
                 margin-bottom: 8px;
+                width: unset;
                 @include mq(mobileMedium) {
                     margin-top: 36px;
                     margin-bottom: 12px;
                 }
                 p {
                     font-size: 17px;
-                    @include mq(mobileMedium) {
-                        width: 250px;
-                    }
+                    width: 200px;
                     @include mq(mobileLandscape) {
                         font-size:20px;
+                        width: 240px;
                     }
                 }
                 p.title {
@@ -178,7 +190,7 @@ $yellowColor: #ffe500;
                     margin-left: -6px;
                     font-weight: 800;
                     margin-bottom: 1px;
-                    width: 280px;
+                    width: 100%;
                 }
                 .arrow {
                     width: 32px;
@@ -250,10 +262,12 @@ $yellowColor: #ffe500;
                         width: 200px;
                     }
                     @include mq(desktop) {
-                        width: 220px;
+                        width: 200px;
+                        margin-left: 8px;
                     }
                     @include mq(leftCol) {
                         width: 250px;
+                        margin-left: 0;
                     }
                 }
                 &::after {
@@ -327,7 +341,7 @@ $yellowColor: #ffe500;
             }
             p {
                 font-size: 15px;
-                padding-left: 10px;
+                padding-left: 4px;
                 width: 80%;
                 @include mq(leftCol) {
                     width: 75%;
