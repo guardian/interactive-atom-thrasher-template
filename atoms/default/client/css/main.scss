@@ -65,7 +65,8 @@ section#total-chaos {
   }
 }
 .#{$containerName} {
-  height: 340px;
+  // height: 340px;
+  height: 280px;
   padding: 4px 10px;
 
   @include mc(mobileLandscape) {
@@ -170,29 +171,30 @@ section#total-chaos {
     bottom: 0;
     z-index: -1;
     background-color: $backgroundColor;
-    background-image: url("https://uploads.guim.co.uk/2021/06/17/thrasher-mobile@2x.jpg");
+    // background-image: url("https://uploads.guim.co.uk/2021/07/27/thrasher-mobile.jpg"); //72 ppi
+    background-image: url("https://uploads.guim.co.uk/2021/07/27/thrasher-mobile@2x.jpg"); // 144 ppi
     background-size: cover;
-    background-position: -200px bottom;
+    // background-position: -250px;
+    background-position: right;
     background-repeat: no-repeat;
-
+    @include mc(mobileMedium) {
+      background-position: right;
+    }
     @include mc(mobileLandscape) {
-      background-position: center;
-      background-size: cover;
+      // background-size: cover;
     }
     @include mc(phablet) {
-      background-size: 160%;
-      // background-position: center;
+      // background-size: 160%;
     }
-    @include mc(tablet) {
-      background-size: 140%;
-      // background-position: center;
-    }
-    @include mc(desktop) {
-      background-size: 120%;
-    }
-    @include mc(wide) {
-      background-size: 110%;
-    }
+    // @include mc(tablet) {
+    //   background-size: 140%;
+    // }
+    // @include mc(desktop) {
+    //   background-size: 120%;
+    // }
+    // @include mc(wide) {
+    //   background-size: 110%;
+    // }
 
     &:before,
     &:after {
@@ -222,7 +224,8 @@ section#total-chaos {
     }
 
     @include mc(tablet) {
-      background-image: url("https://uploads.guim.co.uk/2021/06/17/thrasher-desktop@2x.jpg");
+      // background-image: url("https://uploads.guim.co.uk/2021/07/27/This_Body_thrasher_desktop_1.jpg"); // 72ppi
+      background-image: url("https://uploads.guim.co.uk/2021/07/27/This_Body_thrasher_desktop_1@2x.jpg"); // 144ppi
       background-position-y: 50%;
       left: 100px;
 
@@ -294,7 +297,8 @@ section#total-chaos {
     position: relative;
     z-index: 10;
     padding: 2px 0;
-    margin-top: 120px;
+    // margin-top: 166px;
+    margin-top: 104px;
     max-width: 280px;
 
     &:before {
@@ -309,7 +313,7 @@ section#total-chaos {
       opacity: 0.2;
     }
     @include mc(mobile){
-      margin-top: 142px;
+      // margin-top: 142px;
     }
     @include mc(mobileLandscape) {
       &:before {
@@ -318,8 +322,7 @@ section#total-chaos {
     }
 
     @include mc(phablet) {
-      margin-top: 66px;
-      margin-top: 86px;
+      margin-top: 82px;
     }
 
     @include mc(tablet) {
@@ -327,7 +330,7 @@ section#total-chaos {
       line-height: 115%;
       width: 290px;
       padding-right: 10px;
-      margin-top: 62px;
+      // margin-top: 62px;
 
       &:before {
         right: 0;
@@ -354,7 +357,7 @@ section#total-chaos {
     }
 
     @include mc(wide) {
-      margin-top: 88px;
+      margin-top: 110px;
       margin-left: 230px;
       // margin-left: 240px;
     }
