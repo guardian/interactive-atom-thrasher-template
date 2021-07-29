@@ -53,17 +53,17 @@ section#total-chaos {
 }
 
 // #doc-the-return,
-#{"#docthrasher-" + $containerName} {
-  // Ken burns effect
-  &.dw-zoomin{
-    .#{$containerName} {
-      &__image {
-        transform: scale(1.05);
-        transition-timing-function: ease-in-out;
-      }
-    }
-  }
-}
+// #{"#docthrasher-" + $containerName} {
+//   // Ken burns effect
+//   &.dw-zoomin{
+//     .#{$containerName} {
+//       &__image {
+//         transform: scale(1.05);
+//         transition-timing-function: ease-in-out;
+//       }
+//     }
+//   }
+// }
 .#{$containerName} {
   // height: 340px;
   height: 280px;
@@ -170,31 +170,13 @@ section#total-chaos {
     right: 0;
     bottom: 0;
     z-index: -1;
-    background-color: $backgroundColor;
-    // background-image: url("https://uploads.guim.co.uk/2021/07/27/thrasher-mobile.jpg"); //72 ppi
-    background-image: url("https://uploads.guim.co.uk/2021/07/27/thrasher-mobile@2x.jpg"); // 144 ppi
-    background-size: cover;
-    // background-position: -250px;
-    background-position: right;
-    background-repeat: no-repeat;
-    @include mc(mobileMedium) {
-      background-position: right;
+
+    video {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
     }
-    @include mc(mobileLandscape) {
-      // background-size: cover;
-    }
-    @include mc(phablet) {
-      // background-size: 160%;
-    }
-    // @include mc(tablet) {
-    //   background-size: 140%;
-    // }
-    // @include mc(desktop) {
-    //   background-size: 120%;
-    // }
-    // @include mc(wide) {
-    //   background-size: 110%;
-    // }
 
     &:before,
     &:after {
@@ -225,7 +207,7 @@ section#total-chaos {
 
     @include mc(tablet) {
       // background-image: url("https://uploads.guim.co.uk/2021/07/27/This_Body_thrasher_desktop_1.jpg"); // 72ppi
-      background-image: url("https://uploads.guim.co.uk/2021/07/27/This_Body_thrasher_desktop_1@2x.jpg"); // 144ppi
+      // background-image: url("https://uploads.guim.co.uk/2021/07/27/This_Body_thrasher_desktop_1@2x.jpg"); // 144ppi
       background-position-y: 50%;
       left: 100px;
 
@@ -242,7 +224,7 @@ section#total-chaos {
             rgba(18, 18, 18, 1) 0%,
             rgba(18, 18, 18, 0) 100%);
         bottom: 0;
-        left: -1px;
+        left: -31px;
         right: auto;
         width: 30px;
         height: auto;

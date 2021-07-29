@@ -7,15 +7,26 @@ function trackLoad() {
 }
 
 const docthrasher = document.querySelector('[id^="docthrasher-"]');
-const animClass = "dw-zoomin";
+var vid = document.getElementById("docVideo");
+const animClass = "dw-video";
+
+function playVid() {
+    vid.play();
+}
+
+function pauseVid() {
+    vid.pause();
+}
 
 var observer = new IntersectionObserver(function(entries) {
 	if(entries[0].isIntersecting === true) {
     docthrasher.classList.add(animClass);
-		// console.log('Element is fully visible in screen');
+    playVid();
+		console.log('Element is fully visible in screen - ' + document.getElementById("docVideo"));
   } else if(entries[0].isIntersecting === false){
     docthrasher.classList.remove(animClass);
-    // console.log('Gone');
+    pauseVid();
+    console.log('Gone - ' + document.getElementById("docVideo"));
   }
 }, { threshold: [1] });
 
