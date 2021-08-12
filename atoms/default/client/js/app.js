@@ -1,7 +1,7 @@
 // data capture for ophan
 function trackLoad() {
     window.guardian.ophan.record({
-        component: 'thrasher : the-return : load',
+        component: 'thrasher : rip-seni : load',
         value: 1
     });
 }
@@ -9,6 +9,9 @@ function trackLoad() {
 const docthrasher = document.querySelector('[id^="docthrasher-"]');
 var vid = document.getElementById("docVideo");
 const animClass = "dw-video";
+
+// Grab the prefers reduced media query.
+const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 function playVid() {
     vid.play();
@@ -30,6 +33,12 @@ var observer = new IntersectionObserver(function(entries) {
   }
 }, { threshold: [1] });
 
-// document.addEventListener("DOMContentLoaded", function(event) {
+if (!mediaQuery || mediaQuery.matches) {
+  // Turn video off
+  vid.pause();
+
+} else {
+  // turn video on
   observer.observe(docthrasher);
-// });
+
+}
