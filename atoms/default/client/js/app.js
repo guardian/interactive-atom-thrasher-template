@@ -20,25 +20,30 @@ function playVid() {
 function pauseVid() {
     vid.pause();
 }
+var observer = {
+  root: document.body,
+  rootMargin: "0px"
+};
 
 var observer = new IntersectionObserver(function(entries) {
 	if(entries[0].isIntersecting === true) {
     docthrasher.classList.add(animClass);
     playVid();
-		console.log('Element is fully visible in screen - ' + document.getElementById("docVideo"));
+		// console.log('Element is fully visible in screen - ' + document.getElementById("docVideo"));
   } else if(entries[0].isIntersecting === false){
     docthrasher.classList.remove(animClass);
     pauseVid();
-    console.log('Gone - ' + document.getElementById("docVideo"));
+    // console.log('Gone - ' + document.getElementById("docVideo"));
   }
-}, { threshold: [1] });
+}, { threshold: [0.95] });
 
-if (!mediaQuery || mediaQuery.matches) {
+
+if (mediaQuery.matches) {
   // Turn video off
   vid.pause();
 
 } else {
   // turn video on
   observer.observe(docthrasher);
-
+  
 }
