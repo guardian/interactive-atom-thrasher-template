@@ -5,4 +5,3 @@ function trackLoad() {
         value: 1
     });
 }
-
