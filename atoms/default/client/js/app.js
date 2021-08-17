@@ -29,11 +29,9 @@ var observer = new IntersectionObserver(function(entries) {
 	if(entries[0].isIntersecting === true) {
     docthrasher.classList.add(animClass);
     playVid();
-		// console.log('Element is fully visible in screen - ' + document.getElementById("docVideo"));
   } else if(entries[0].isIntersecting === false){
     docthrasher.classList.remove(animClass);
     pauseVid();
-    // console.log('Gone - ' + document.getElementById("docVideo"));
   }
 }, { threshold: [0.95] });
 
@@ -44,6 +42,10 @@ if (mediaQuery.matches) {
 
 } else {
   // turn video on
-  observer.observe(docthrasher);
-  
+  if ( document.body.classList.contains("ios") || document.body.classList.contains("android" )) {
+    playVid();
+    vid.setAttribute("autoplay", "");
+  } else {
+    observer.observe(docthrasher);
+  }
 }
