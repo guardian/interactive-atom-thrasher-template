@@ -1,12 +1,13 @@
-#thrasher__thrasher-name.thrasher-inner {
+#thrasher__dw-uni-guide-2021-v2.thrasher-inner {
   position: relative;
   border: 1px solid #dcdcdc;
   border-bottom: 0;
 
-  .thrasher-name {
+  .dw-uni-guide-2021-v2 {
     &__link,
     &__background,
-    &__background img {
+    // &__background img
+    {
       display: block;
       position: absolute;
       top: 0;
@@ -19,7 +20,7 @@
       z-index: 20;
       &:hover {
         // Background hover-effect:
-        ~ .thrasher-name__background {
+        ~ .dw-uni-guide-2021-v2__background {
           opacity: 0.95;
         }
 
@@ -32,69 +33,76 @@
     }
 
     &__background {
-      z-index: -1;
+      // z-index: -1; // sits behind background color
       img,
       video {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    &__container-title {
-      padding: 4px 10px;
-      @include mq(mobileLandscape) {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-      @include mq(leftCol) {
-        position: absolute;
-      }
-      &__link {
-        font-family: $font-headline;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 26px;
-        color: inherit;
-        text-decoration: none;
-        position: relative;
-        z-index: 21;
-        &:hover {
-          text-decoration: underline;
-        }
+        // object-fit: cover;
+        // width: 100%;
+        // height: 100%;
       }
     }
 
     &__copy {
+      position: relative; // restores DOM layering
       font-family: $font-headline;
+      color: $primaryColor;
       font-size: 24px;
-      line-height: 26px;
-      padding: 0 10px 24px;
+      line-height: 1.15;
       @include mq(mobileLandscape) {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 0px;
+        padding-right: 56px;
       }
       @include mq(leftCol) {
-        padding-top: 4px;
-        padding-left: 180px;
+        // padding-top: 4px;
+        padding-left: 170px;
+
+        &:before {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 1px;
+          @include background-opacity($primaryColor, 0.2);
+        }
       }
       @include mq(wide) {
-        padding-left: 260px;
+        font-size: 34px;
+        padding-left: 250px;
+      }
+      &__headline,
+      &__subheadline {
+        padding: 4px 56px 24px 8px; // add 56px for roundel
+        max-width: 379px;
+        @include mq(mobileLandscape) {
+          padding-left: 20px;
+        }
+        @include mq(tablet) {
+          max-width: 260px;
+        }
+        @include mq(leftCol) {
+          padding-left: 8px;
+          max-width: 379px;
+        }
       }
       &__headline {
         font-weight: 700;
       }
-      &__subheadline {
-
-      }
       .thrasher-button {
         display: inline-flex;
         align-items: center;
-        padding: 0 9px;
-        background-color: #ffe500;
-        border-radius: 36px;
-        margin-top: 12px;
-        height: 36px;
+        background-color: $ctaBackColor;
+        color: $ctaTxtColor;
+        margin-top: 0px; // DW
+        border-radius: 24px;
+        padding: 0 6px;
+        height: 24px;
+        // @include mq(tablet) {
+        //
+        // }
+        @include mq(leftCol) {
+          border-radius: 36px;
+          padding: 0 8px;
+          height: 36px;
+        }
         .label {
           display: flex;
           vertical-align: middle;
@@ -105,6 +113,20 @@
         }
         .icon {
           display: flex;
+          svg {
+            width: 12px;
+            height: auto;
+            @include mq(leftCol) {
+              width: 20px;
+              height: auto;
+            }
+            path {
+              fill: $ctaTxtColor;
+            }
+          }
+          // svg path{
+          //   fill: $ctaTxtColor;
+          // }
         }
         .label+.icon {
           padding: 0 2px 0 4px;
@@ -116,8 +138,6 @@
         }
       }
     }
-
-
 
     &__roundel {
       position: absolute;

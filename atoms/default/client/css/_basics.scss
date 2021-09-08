@@ -16,9 +16,15 @@ $font-headline: 'Guardian Headline Full', 'Guardian Headline', 'Guardian Egyptia
 $font-text: 'Guardian Text Egyptian Web',Georgia,serif;
 $font-sans: 'Guardian Text Sans Web', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 
+// basic color palette
+$primaryColor: $neutral-7;
+$secondaryColor: $highlight-yellow;
+// CTA 
+$ctaBackColor: $secondaryColor;
+$ctaTxtColor: $primaryColor;
 
 // this targets the container your thrasher is put inside on Fronts
-section.thrasher-section__thrasher-name {
+section.thrasher-section__dw-uni-guide-2021-v2 {
     width:100%;
     position: relative;
     padding: 0 !important;
@@ -35,7 +41,7 @@ section.thrasher-section__thrasher-name {
 }
 
 
-#thrasher__thrasher-name {
+#thrasher__dw-uni-guide-2021-v2 {
     margin: 0 -10px;
     overflow: hidden;
 

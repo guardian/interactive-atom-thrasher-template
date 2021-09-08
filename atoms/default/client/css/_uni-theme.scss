@@ -1,0 +1,437 @@
+// Suggest adding brand colours to _pallette.sass and removing all that aren't used
+$brand-500: #052962;
+
+$primaryColor: $brand-500;
+$secondaryColor: #DFE1DB;
+$tertiaryColor: #fff;
+
+$ctaBackColor: $primaryColor;
+$ctaTxtColor: $tertiaryColor;
+
+:root {
+  // girl
+  --girl-size-lg: 100px;
+  --girl-size-sm: 70px;
+  --girl-rgt-lg: 10px;
+  --girl-lft-lg: 10px;
+  --girl-rgt-sm: 75px;
+  --girl-lft-sm: 65px;
+  --girl-top-lg: 110px;
+  --girl-top-sm: 120px;
+  // Dust
+  --dust-size-lg: 55px;
+  --dust-size-sm: 40px;
+  --dust-rgt-lg: 80px;
+  --dust-lft-lg: 70px;
+  --dust-rgt-sm: 125px;
+  --dust-lft-sm: 120px;
+  --dust-top-lg: 80px;
+  --dust-top-sm: 100px;
+}
+@include mq(tablet) {
+  :root {
+    // girl
+    --girl-size-lg: 150px;
+    --girl-size-sm: 105px;
+    --girl-rgt-lg: 10px;
+    --girl-lft-lg: 10px;
+    --girl-rgt-sm: 75px;
+    --girl-lft-sm: 65px;
+    --girl-top-lg: 40px;
+    --girl-top-sm: 55px;
+    // Dust
+    --dust-size-lg: 75px;
+    --dust-size-sm: 55px;
+    --dust-rgt-lg: 120px;
+    --dust-lft-lg: 105px;
+    --dust-rgt-sm: 187px;
+    --dust-lft-sm: 160px;
+    --dust-top-lg: 20px;
+    --dust-top-sm: 20px;
+  }
+}
+@include mq(wide) {
+  :root {
+      // girl
+      --girl-size-lg: 200px;
+      --girl-size-sm: 140px;
+      --girl-rgt-lg: 10px;
+      --girl-lft-lg: 10px;
+      --girl-rgt-sm: 125px;
+      --girl-lft-sm: 115px;
+      --girl-top-lg: 55px;
+      --girl-top-sm: 100px;
+      // Dust
+      --dust-size-lg: 110px;
+      --dust-size-sm: 60px;
+      --dust-rgt-lg: 160px;
+      --dust-lft-lg: 140px;
+      --dust-rgt-sm: 250px;
+      --dust-lft-sm: 240px;
+      --dust-top-lg: 0px;
+      --dust-top-sm: 30px;
+  }
+}
+
+@include keyframe (chips) {
+  0% { margin-left: 0%}
+  33.9% {margin-left: 0%}
+  34% {margin-left: -100%}
+  66.9% {margin-left: -100%}
+  67% {margin-left: -200%}
+  100% {margin-left: -200%}
+}
+@include keyframe (cloud) {
+  0% {
+    margin-left: 0%}
+  33.9% {
+    margin-left: 0%}
+  34% {
+    margin-left: -100%}
+  66.9% {
+    margin-left: -100%}
+  67% {
+    margin-left: -200%}
+  100% {
+    margin-left: -200%}
+}
+// Dust & Chips
+@include keyframe (dust) {
+  0% {
+      left: auto;
+      right: var(--dust-rgt-lg);
+      width: var(--dust-size-lg);
+      top: var(--dust-top-lg);
+      transform: scaleX(1);}
+  12.59% {
+      left: auto;
+      right: var(--dust-rgt-lg);
+      transform: scaleX(1);}
+  12.6% {
+      left: var(--dust-lft-lg);
+      right: auto;
+      transform: scaleX(-1);}
+  25% {
+      left: var(--dust-lft-lg);
+      right: auto;
+      transform: scaleX(-1);}
+  25.01% {
+      left: auto;
+      right: var(--dust-rgt-lg);
+      transform: scaleX(1);}
+  37.59% {
+      left: auto;
+      right: var(--dust-rgt-lg);
+      width: var(--dust-size-lg);
+      top: var(--dust-top-lg);
+      transform: scaleX(1);}
+  37.6% {
+      left: var(--dust-lft-sm);
+      right: auto;
+      width: var(--dust-size-sm);
+      top: var(--dust-top-sm);
+      transform: scaleX(-1);}
+  60% {
+      left: var(--dust-lft-sm);
+      right: auto;
+      transform: scaleX(-1);}
+  60.01% {
+      left: auto;
+      right: var(--dust-rgt-sm);
+      opacity: 1;
+      transform: scaleX(1);}
+  75% {
+      left: auto;
+      right: var(--dust-rgt-sm);
+      opacity: 1;
+      transform: scaleX(1);}
+  75.01% {
+      left: auto;
+      right: var(--dust-rgt-sm);
+      opacity: 0;
+      transform: scaleX(1);}
+  100% {
+      left: auto;
+      right: var(--dust-rgt-sm);
+      opacity: 0;
+      width: var(--dust-size-sm);
+      top: var(--dust-top-sm);
+      transform: scaleX(1);}
+}
+// Sculptors hammer
+@include keyframe (hammer) {
+  0%  { margin-left: 0%; }
+  49.9% { margin-left: 0%; }
+  50% { margin-left: -112.5%; }
+  100% { margin-left: -112.5%; }
+}
+// Sculptor movement
+@include keyframe (sculptor) {
+  0% {
+      left: auto;
+      right: var(--girl-rgt-lg);
+      width: var(--girl-size-lg);
+      top: var(--girl-top-lg);
+      transform: scaleX(1);}
+  12.59% {
+      left: auto;
+      right: var(--girl-rgt-lg);
+      transform: scaleX(1);}
+  12.6% {
+      left: var(--girl-lft-lg);
+      right: auto;
+      transform: scaleX(-1);}
+  25% {
+      left: var(--girl-lft-lg);
+      right: auto;
+      transform: scaleX(-1);}
+  25.01% {
+      left: auto;
+      right: var(--girl-rgt-lg);
+      transform: scaleX(1);}
+  37.59% {
+      left: auto;
+      right: var(--girl-rgt-lg);
+      width: var(--girl-size-lg);
+      transform: scaleX(1);}
+  37.6% {
+      left: var(--girl-lft-sm);
+      right: auto;
+      width: var(--girl-size-sm);
+      transform: scaleX(-1);}
+  60% {
+      left: var(--girl-lft-sm);
+      right: auto;
+      top: var(--girl-top-lg);
+      transform: scaleX(-1);}
+  60.01% {
+      left: auto;
+      right: var(--girl-rgt-sm);
+      opacity: 1;
+      top: var(--girl-top-sm);
+      transform: scaleX(1);}
+  75% {
+      left: auto;
+      right: var(--girl-rgt-sm);
+      opacity: 1;
+      transform: scaleX(1);}
+  75.01% {
+      left: auto;
+      right: var(--girl-rgt-sm);
+      opacity: 0;
+      transform: scaleX(1);}
+  100% {
+      left: auto;
+      right: var(--girl-rgt-sm);
+      opacity: 0;
+      width: var(--girl-size-sm);
+      top: var(--girl-top-sm);
+      transform: scaleX(1);}
+}
+// Sculptor standing
+@include keyframe (sculptor-stand) {
+  0% {
+      opacity: 0;
+    }
+  75% {
+      opacity: 0;
+    }
+  75.01% {
+      opacity: 1;
+    }
+  100% {
+      opacity: 1;
+    }
+}
+// sculpture
+@include keyframe (sculpture) {
+  0%  {
+    margin-left: 0%;
+    margin-top: 0px;}
+  12.59% {
+    margin-left: 0%;}
+  12.6% {
+    margin-left: -100%;}
+  25% {
+    margin-left: -100%;}
+  25.01% {
+    margin-left: -200%; }
+  37.59% {
+    margin-top: 0px;
+    margin-left: -200%;}
+  37.6% {
+    margin-top: -15px;
+    margin-left: -300%;}
+  50% {
+    margin-left: -300%;}
+  50.01% {
+    margin-left: -400%;}
+  62.59% {
+    margin-left: -400%;}
+  62.6% {
+    margin-left: -500%;}
+  75% {
+    margin-left: -500%;}
+  100% {
+    margin-left: -500%;
+    margin-top: -15px;}
+}
+
+#thrasher__dw-uni-guide-2021-v2.thrasher-inner {
+  background-color: $secondaryColor;
+  height: 300px;
+  @include mq(tablet) {
+    height: 180px;
+  }
+  @include mq(leftCol) {
+    height: 270px;
+  }
+  .dw-uni-guide-2021-v2 {
+    &__copy {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+      &__headline {
+        background: linear-gradient(180deg, $secondaryColor 62.67%, rgba(223, 225, 219, 0) 100%);
+        @include mq(tablet) {
+          background: transparent;
+        }
+      }
+      .cta-wrapper {
+        background-color: $secondaryColor;
+        max-width: 390px;
+        @include mq(tablet) {
+          background-color: transparent;
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          height: 1px;
+          width: 379px;
+          @include mq(tablet) {
+            max-width: 260px;
+          }
+          @include mq(leftCol) {
+            max-width: 390px;
+          }
+          @include background-opacity($primaryColor, 0.2);
+        }
+      }
+    }
+  }
+  // container
+  .uni-anim {
+    position: absolute;
+    width: 320px; // mobile
+    right: 0;
+    @include mq(tablet) {
+      width: 440px; // double
+    }
+    @include mq(wide) {
+      width: 640px; // double
+    }
+  }
+  .dust {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    width: 55px; // mobile
+    @include mq(tablet) {
+      width: 82px; // double
+    }
+    @include mq(wide) {
+      width: 110px;
+    }
+    @include animation(dust, 8s, linear, 0, infinite);
+    img.chips {
+      width: 300%;
+      margin-left: 0;
+      @include animation(chips, 0.6s, linear, 0, infinite);
+    }
+    .clouds {
+      overflow: hidden;
+      position: absolute;
+      top: 15px; // mobile
+      left: 15px;
+      width: 15px;
+      @include mq(tablet) {
+        width: 22px; // double
+      }
+      @include mq(wide) {
+        top: 30px; // double
+        width: 30px;
+      }
+    }
+    img.cloud {
+      width: 300%;
+      margin-left: 0;
+      @include animation(cloud, 0.6s, linear, 0, infinite);
+    }
+  }
+  .uni-girl {
+    overflow: hidden;
+    position: absolute;
+    width: 100px; // mobile
+    right: 10px;
+    top: 110px;
+    @include mq(tablet) {
+      top: 50px;
+      width: 150px; // double
+    }
+    @include mq(wide) {
+      width: 200px; // double
+    }
+    transform: scaleX(1);
+    @include animation(sculptor, 8s, linear, 0, infinite);
+    img.girl {
+      width: 220%;
+      margin-left: 0;
+      @include animation(hammer, 0.4s, linear, 0, infinite); // sculptor
+    }
+  }
+  .uni-girl-up {
+    overflow: hidden;
+    position: absolute;
+    width: 70px; // mobile
+    right: 20px;
+    top: 90px;
+    @include mq(tablet) {
+      top: 10px;
+      width: 105px;
+    }
+    @include mq(wide) {
+      top: 40px;
+      width: 140px; // double
+    }
+    img.girl-up {
+      width: 100%;
+      opacity: 0;
+      @include animation(sculptor-stand, 8s, linear, 0, infinite);
+    }
+  }
+  .sculpture {
+    overflow: hidden;
+    position: absolute;
+    width: 190px; // mobile
+    // left: 55px; // mobile
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 60px;
+    @include mq(tablet) {
+      top: -40px;
+      width: 285px;
+    }
+    @include mq(wide) {
+      width: 410px; // double
+      top: -50px;
+    }
+    img.rock {
+      width: 600%;
+      @include animation(sculpture, 8s, linear, 0, infinite);
+    }
+  }
+}

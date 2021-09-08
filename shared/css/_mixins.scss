@@ -3,7 +3,7 @@
 @mixin component-button($bgColor: #ffe500, $color: #f71515, $hoverBgColor: #ffbb50) {
     display: inline-flex;
     flex-direction: row;
-    background-color:$bgColor; 
+    background-color:$bgColor;
     border-radius: 25px;
     text-decoration: none;
     cursor: pointer;
@@ -12,7 +12,7 @@
         font-family:"Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
         font-weight:bold;
         font-size:17px;
-        
+
         padding: 10px 2px 10px 20px;
         margin-top: -2px;
         text-decoration: none;
@@ -22,7 +22,7 @@
         fill: $color;
         padding-right:16px;
         transition: transform 0.3s ease;
-    }        
+    }
     &:hover {
         background-color:$hoverBgColor;
         text-decoration: none;
@@ -34,8 +34,6 @@
         }
     }
 }
-
-
 // make roundel sit top right
 @mixin roundel-top-right {
     top: 4px;
@@ -44,4 +42,54 @@
     @include mc(mobileLandscape){
         right:18px;
     }
+}
+@mixin background-opacity($color, $opacity) {
+    background: $color;  /*Fallback */
+    background: rgba($color, $opacity);
+}
+@mixin keyframe ($animation_name) {
+    @-webkit-keyframes #{$animation_name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$animation_name} {
+        @content;
+    }
+
+    @-o-keyframes #{$animation_name} {
+        @content;
+    }
+
+    @keyframes #{$animation_name} {
+        @content;
+    }
+}
+// @mixin animation ($animation, $duration, $timing, $delay, $animCount, $direction: forward, $fillmode: fowards, $state: running)
+@mixin animation ($animation, $duration, $timing, $delay, $animCount, $direction: forward, $fillmode: fowards, $state: running) {
+    -webkit-animation-name: $animation;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-timing-function: $timing;
+    -webkit-animation-delay: $delay;
+    -webkit-animation-iteration-count: $animCount;
+    -webkit-animation-direction: $direction;
+    -webkit-animation-fill-mode: $fillmode;
+    -webkit-animation-play-state: $state;
+
+    -moz-animation-name: $animation;
+    -moz-animation-duration: $duration;
+    -moz-animation-timing-function: $timing;
+    -moz-animation-delay: $delay;
+    -moz-animation-iteration-count: $animCount;
+    -moz-animation-direction: $direction;
+    -moz-animation-fill-mode: $fillmode;
+    -moz-animation-play-state: $state;
+
+    animation-name: $animation;
+    animation-duration: $duration;
+    animation-timing-function: $timing;
+    animation-delay: $delay;
+    animation-iteration-count: $animCount;
+    animation-direction: $direction;
+    animation-fill-mode: $fillmode;
+    animation-play-state: $state;
 }

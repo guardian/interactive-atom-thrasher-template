@@ -5,4 +5,15 @@
 @import "_mixins";
 
 @import "basics";
+// Suggest adding brand colours to _pallette.sass and removing all that aren't used
+$brand-500: #052962;
+
+$primaryColor: $brand-500;
+$secondaryColor: #DFE1DB;
+$tertiaryColor: #fff;
+
+$ctaBackColor: $primaryColor;
+$ctaTxtColor: $tertiaryColor;
+
 @import "thrasher";
+@import "uni-theme";
