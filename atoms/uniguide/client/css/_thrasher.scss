@@ -1,0 +1,247 @@
+// Suggest adding brand colours to _pallette.sass and removing all that aren't used
+$brand-500: #052962;
+
+$primaryColor: $brand-500;
+$secondaryColor: #DFE1DB;
+$tertiaryColor: #fff;
+
+$ctaBackColor: $primaryColor;
+$ctaTxtColor: $tertiaryColor;
+
+$landscapeWidth: 480px;
+$tabletWidth: 740px;
+$tabletTxt: 280px;
+$leftColTxt: 330px;
+$leftColMargin: 170px;
+$wideMargin: 250px;
+$desktopWidth: 980px;
+$wideWidth: 1048px;
+
+#thrasher__dw-uni-guide-2021-v2.thrasher-inner {
+  position: relative;
+  border: 1px solid #dcdcdc;
+  border-bottom: 0;
+  background-color: $secondaryColor;
+  height: 300px;
+  @include mq(mobileLandscape) {
+    height: 180px;
+  }
+  @include mq(leftCol) {
+    height: 230px;
+  }
+  .dw-uni-guide-2021-v2 {
+    &__link,
+    &__background,
+    // &__background img
+    {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    &__link {
+      z-index: 20;
+      &:hover {
+        // Background hover-effect:
+        ~ .dw-uni-guide-2021-v2__background {
+          opacity: 0.95;
+        }
+
+        // Button hover-effect
+        ~ .thrasher-button,
+        ~ * .thrasher-button {
+          opacity: 0.8;
+        }
+      }
+    }
+
+    &__background {
+      // z-index: -1; // sits behind background color
+      width: 100%; // mobile
+      left: 0;
+      background-image: url('https://uploads.guim.co.uk/2021/09/09/League-banner-Layered-crop-sm1.gif');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      @include mq(mobileLandscape) {
+        left: 250px;
+        width: 360px;
+        background-position: bottom;
+      }
+      @include mq(tablet) {
+        background-image: url('https://uploads.guim.co.uk/2021/09/09/League-banner-Layered-crop-1.gif');
+        width: $tabletWidth - $tabletTxt;
+      }
+      @include mq(desktop) {
+        left: $tabletTxt;
+        width: $desktopWidth - $tabletTxt;
+      }
+      @include mq(leftCol) {
+        left: $leftColMargin + $leftColTxt;
+      }
+      @include mq(wide) {
+        left: $wideMargin + $leftColTxt;
+        width: $wideWidth - $leftColTxt;
+      }
+      img,
+      video {
+        // height: 60%;
+        // width: auto;
+        // @include mq(mobileLandscape) {
+        //   height: 100%;
+        // }
+      }
+    }
+
+    &__copy {
+      position: relative; // restores DOM layering
+      font-family: $font-headline;
+      color: $primaryColor;
+      font-size: 24px;
+      line-height: 1.15;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+      @include mq(mobileLandscape) {
+        padding-left: 0px;
+        padding-right: 0px;
+        width: 280px;
+      }
+      @include mq(leftCol) {
+        margin-left: $leftColMargin;
+        width: 330px;
+        &:before {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 1px;
+          @include background-opacity($primaryColor, 0.2);
+        }
+      }
+      @include mq(wide) {
+        margin-left: $wideMargin;
+        font-size: 28px;
+      }
+      &__headline,
+      &__subheadline {
+        padding-top: 4px;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-bottom: 24px;
+        @include mq(mobileLandscape) {
+          padding-left: 20px;
+          padding-right: 8px;
+        }
+        @include mq(leftCol) {
+          padding-left: 8px;
+          padding-right: 8px;
+        }
+      }
+      &__headline {
+        padding-right: 56px;
+        font-weight: 700;
+        font-size: 24px;
+        background: linear-gradient(180deg, $secondaryColor 62.67%, rgba(223, 225, 219, 0) 100%);
+        @include mq(mobileLandscape) {
+          background: transparent;
+          padding-right: 8px;
+        }
+        @include mq(leftCol) {
+          font-size: 28px;
+        }
+      }
+      &__subheadline {
+        min-height: 34px;
+        font-size: 20px;
+        @include mq(leftCol) {
+          font-size: 24px;
+        }
+      }
+      .cta-wrapper {
+        background-color: $secondaryColor;
+        width: 100%;
+        @include mq(mobileLandscape) {
+          background-color: transparent;
+          width: 260px;
+        }
+        @include mq(tablet) {
+          width: 100%;
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          height: 1px;
+          width: 100%;
+          @include background-opacity($primaryColor, 0.2);
+          @include mq(tablet) {
+            width: 90%;
+          }
+          @include mq(leftCol) {
+            width: 100%
+          }
+        }
+      }
+      .thrasher-button {
+        display: inline-flex;
+        align-items: center;
+        background-color: $ctaBackColor;
+        color: $ctaTxtColor;
+        margin-top: 0px; // DW
+        border-radius: 24px;
+        padding: 0 6px;
+        height: 24px;
+        @include mq(leftCol) {
+          border-radius: 14px;
+          padding: 0 6px;
+          height: 28px;
+        }
+        .label {
+          display: flex;
+          vertical-align: middle;
+          font-family: $font-sans;
+          font-size: 17px;
+          line-height: 28px;
+          padding: 0 4px;
+        }
+        .icon {
+          display: flex;
+          svg {
+            width: 12px;
+            height: auto;
+            @include mq(leftCol) {
+              width: 16px;
+              height: auto;
+            }
+            path {
+              fill: $ctaTxtColor;
+            }
+          }
+          // svg path{
+          //   fill: $ctaTxtColor;
+          // }
+        }
+        .label+.icon {
+          padding: 0 2px 0 4px;
+        }
+
+        &.button-md {
+          height: 44px;
+          padding: 0 12px;
+        }
+      }
+    }
+
+    &__roundel {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+  }
+
+}

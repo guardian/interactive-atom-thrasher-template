@@ -1,0 +1,231 @@
+.header__elements--numbers {
+  position: absolute;
+  top: 60px;
+  width: 110px;
+  // left: 100px;
+  height: 100px;
+  left: 0;
+  right: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  @include mq(mobile) {
+    // left: 110px;
+  }
+  @include mq(mobileLandscape) {
+    top: 10px;
+  }
+  @include mq(tablet) {
+    top: 20px;
+    width: 150px;
+    left: 200px;
+    right: auto;
+    // left: 26%;
+    // right: 0%;
+  }
+  @include mq(desktop) {
+    left: 330px;
+  }
+  background-repeat: no-repeat;
+  background-size: auto 82px;
+  background-position: 0 0;
+  -webkit-animation: float 1s ease-in-out 2s infinite normal;
+          animation: float 1s ease-in-out 2s infinite normal;
+  will-change: contents;
+}
+.header__elements--numbers--number-x {
+  top: 52px;
+  left: 96px;
+  width: 20px;
+  height: 26px;
+  position: absolute;
+  background-image: url("https://uploads.guim.co.uk/2021/09/09/numbers.png");
+  background-repeat: no-repeat;
+  background-size: auto 130px;
+  background-position: -26px -21px;
+  -webkit-animation: float 0.8s ease-in-out 2s infinite normal;
+          animation: float 0.8s ease-in-out 2s infinite normal;
+}
+.header__elements--numbers--number-2 {
+  top: 8px;
+  left: 3px;
+  width: 20px;
+  height: 26px;
+  position: absolute;
+  background-image: url("https://uploads.guim.co.uk/2021/09/09/numbers.png");
+  background-repeat: no-repeat;
+  background-size: auto 130px;
+  background-position: -59px -21px;
+  -webkit-animation: float 0.6s ease-in-out 2s infinite normal;
+          animation: float 0.6s ease-in-out 2s infinite normal;
+}
+.header__elements--numbers--number-1 {
+  top: 37px;
+  left: -5px;
+  width: 20px;
+  height: 26px;
+  position: absolute;
+  background-image: url("https://uploads.guim.co.uk/2021/09/09/numbers.png");
+  background-repeat: no-repeat;
+  background-size: auto 130px;
+  background-position: -91px -21px;
+  -webkit-animation: float 0.8s ease-in-out 2s infinite normal;
+          animation: float 0.8s ease-in-out 2s infinite normal;
+}
+.header__elements--numbers--number-7 {
+  top: 64px;
+  left: 8px;
+  width: 20px;
+  height: 26px;
+  position: absolute;
+  background-image: url("https://uploads.guim.co.uk/2021/09/09/numbers.png");
+  background-repeat: no-repeat;
+  background-size: auto 130px;
+  background-position: -26px -59px;
+  -webkit-animation: float 0.6s ease-in-out 2s infinite normal;
+          animation: float 0.6s ease-in-out 2s infinite normal;
+}
+.header__elements--numbers--number-tri {
+  top: 23px;
+  left: 17px;
+  width: 20px;
+  height: 26px;
+  position: absolute;
+  background-image: url("https://uploads.guim.co.uk/2021/09/09/numbers.png");
+  background-repeat: no-repeat;
+  background-size: auto 130px;
+  background-position: -126px -59px;
+  -webkit-animation: float 0.8s ease-in-out 2s infinite normal;
+          animation: float 0.8s ease-in-out 2s infinite normal;
+}
+.header__elements--numbers--number-8 {
+  top: 18px;
+  left: 34px;
+  width: 20px;
+  height: 26px;
+  position: absolute;
+  background-image: url("https://uploads.guim.co.uk/2021/09/09/numbers.png");
+  background-repeat: no-repeat;
+  background-size: auto 130px;
+  background-position: -59px -60px;
+  -webkit-animation: float 0.6s ease-in-out 2s infinite normal;
+          animation: float 0.6s ease-in-out 2s infinite normal;
+}
+.header__elements--numbers--number-e {
+  top: -9px;
+  left: 17px;
+  width: 100px;
+  height: 26px;
+  position: absolute;
+  background-image: url("https://uploads.guim.co.uk/2021/09/09/numbers.png");
+  background-repeat: no-repeat;
+  background-size: auto 130px;
+  background-position: -122px -19px;
+  -webkit-animation: float 0.8s ease-in-out 2s infinite normal;
+          animation: float 0.8s ease-in-out 2s infinite normal;
+}
+.header__elements--numbers--number-6 {
+  top: 40px;
+  left: 115px;
+  width: 20px;
+  height: 26px;
+  position: absolute;
+  background-image: url("https://uploads.guim.co.uk/2021/09/09/numbers.png");
+  background-repeat: no-repeat;
+  background-size: auto 130px;
+  background-position: -59px -98px;
+  -webkit-animation: float 0.6s ease-in-out 2s infinite normal;
+          animation: float 0.6s ease-in-out 2s infinite normal;
+}
+.header__elements--numbers--number-3 {
+  top: -15px;
+  left: 125px;
+  width: 20px;
+  height: 26px;
+  position: absolute;
+  background-image: url("https://uploads.guim.co.uk/2021/09/09/numbers.png");
+  background-repeat: no-repeat;
+  background-size: auto 130px;
+  background-position: -91px -60px;
+  -webkit-animation: float 0.8s ease-in-out 2s infinite normal;
+          animation: float 0.8s ease-in-out 2s infinite normal;
+}
+.header__elements--numbers--number-4 {
+  top: 10px;
+  left: 75px;
+  width: 20px;
+  height: 26px;
+  position: absolute;
+  background-image: url("https://uploads.guim.co.uk/2021/09/09/numbers.png");
+  background-repeat: no-repeat;
+  background-size: auto 130px;
+  background-position: -26px -96px;
+  -webkit-animation: float 0.6s ease-in-out 2s infinite normal;
+          animation: float 0.6s ease-in-out 2s infinite normal;
+}
+.header__elements--numbers--number-multi {
+  top: 31px;
+  left: 85px;
+  width: 20px;
+  height: 26px;
+  position: absolute;
+  background-image: url("https://uploads.guim.co.uk/2021/09/09/numbers.png");
+  background-repeat: no-repeat;
+  background-size: auto 130px;
+  background-position: -94px -100px;
+  -webkit-animation: float 0.6s ease-in-out 2s infinite normal;
+          animation: float 0.6s ease-in-out 2s infinite normal;
+}
+.header__elements--numbers--number-e2 {
+  top: 11px;
+  left: 99px;
+  width: 42px;
+  height: 26px;
+  position: absolute;
+  background-image: url("https://uploads.guim.co.uk/2021/09/09/numbers.png");
+  background-repeat: no-repeat;
+  background-size: auto 130px;
+  background-position: -133px -96px;
+  -webkit-animation: float 0.8s ease-in-out 2s infinite normal;
+          animation: float 0.8s ease-in-out 2s infinite normal;
+}
+.header__elements--numbers--number-5 {
+  top: 32px;
+  left: 43px;
+  width: 20px;
+  height: 26px;
+  position: absolute;
+  background-image: url("https://uploads.guim.co.uk/2021/09/09/numbers.png");
+  background-repeat: no-repeat;
+  background-size: auto 130px;
+  background-position: -162px -59px;
+  -webkit-animation: float 0.6s ease-in-out 2s infinite normal;
+          animation: float 0.6s ease-in-out 2s infinite normal;
+}
+@-webkit-keyframes float {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  50% {
+    -webkit-transform: translate(1px, 1px);
+            transform: translate(1px, 1px);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+@keyframes float {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  50% {
+    -webkit-transform: translate(1px, 1px);
+            transform: translate(1px, 1px);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}

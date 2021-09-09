@@ -86,6 +86,13 @@
       &__headline {
         font-weight: 700;
       }
+      // _:-ms-fullscreen, :root .ie11up {
+      //   .thrasher-button {
+      //   }
+      // }
+      _:-ms-fullscreen, :root .thrasher-button {
+        border: 3px solid green;
+     }
       .thrasher-button {
         display: inline-flex;
         align-items: center;
