@@ -43,7 +43,7 @@
     }
 
     &__container-title {
-      padding: 4px 10px;
+      padding-top: 8px;
       font-family: $font-headline;
       font-weight: 700;
       font-size: 24px;
@@ -92,8 +92,7 @@
       .thrasher-button {
         display: inline-flex;
         align-items: center;
-        padding: 0 9px;
-        // background-color: #ffe500;
+        // padding: 0 9px;
         border-radius: 36px;
         // margin-top: 12px;
         height: 36px;
@@ -102,14 +101,21 @@
         font-weight: 700;
         font-size: 24px;
         line-height: 26px;
+        background: transparent;
+        border: 0;
+        &.selected {
+          color: #22874D;
+        }
         .label {
           display: flex;
           vertical-align: middle;
-          font-family: $font-sans;
-          font-size: 17px;
-          line-height: 28px;
-          padding: 0 4px;
+          font-family: $font-headline;
+          font-size: 24px;
+          line-height: 26px;
+          padding-right: 16px;
+          color: inherit;
         }
+
         .icon {
           display: flex;
         }

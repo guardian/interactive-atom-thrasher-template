@@ -1,5 +1,14 @@
 <!-- thrasher content sits in this div -->
 <div id='thrasher__hack2021' class='thrasher-inner hack2021' data-branch='thrashers/hack2021'>
+    <script type="text/javascript">
+        function addSelected(buttonId) {
+            var currentlySelected = document.getElementsByClassName('selected')[0];
+            currentlySelected.classList.remove('selected');
+            var newlySelected = document.getElementById(buttonId)
+            newlySelected.classList.add('selected');
+        }
+    </script>
+    
 
     <a href='' data-link-name='thrasher : hack2021 : main'></a>
 
@@ -18,16 +27,16 @@
 
         <!-- use .button-sm class for a 36px tall button -->
         <!-- and .button-md class for a 44px tall button -->
-        <div class='button-sm thrasher-button' id='climate-crisis__button'>
-            <span class='label'>Climate Crisis</span>
-        </div>
+        <button class='button-sm thrasher-button selected' id='climate-crisis__button' onclick='addSelected("climate-crisis__button")'>
+            <span class='label'>Climate crisis</span>
+        </button>
 
-        <div class='button-sm thrasher-button' id='climate-fight__button'>
-            <span class='label'>Climate Fight</span>
-        </div>
+        <button class='button-sm thrasher-button' id='climate-fight__button' onclick='addSelected("climate-fight__button")'>
+            <span class='label'>Climate fight</span>
+        </button>
 
-        <div class='button-sm thrasher-button' id='climate-hope__button'>
-            <span class='label'>Climate Hope</span>
-        </div>
+        <button class='button-sm thrasher-button' id='climate-hope__button' onclick='addSelected("climate-hope__button")'>
+            <span class='label'>Climate hope</span>
+        </button>
     </div>
 </div>
