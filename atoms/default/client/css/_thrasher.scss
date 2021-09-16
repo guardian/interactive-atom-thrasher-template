@@ -13,6 +13,7 @@
       left: 0;
       right: 0;
       bottom: 0;
+      background-color: #fff;
     }
 
     &__link {
@@ -43,21 +44,22 @@
 
     &__container-title {
       padding: 4px 10px;
+      font-family: $font-headline;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 26px;
+      color: inherit;
+      text-decoration: none;
+      position: relative;
       @include mq(mobileLandscape) {
         padding-left: 20px;
         padding-right: 20px;
       }
       @include mq(leftCol) {
+        padding-left: 130px;
         position: absolute;
       }
       &__link {
-        font-family: $font-headline;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 26px;
-        color: inherit;
-        text-decoration: none;
-        position: relative;
         z-index: 21;
         &:hover {
           text-decoration: underline;
@@ -91,10 +93,15 @@
         display: inline-flex;
         align-items: center;
         padding: 0 9px;
-        background-color: #ffe500;
+        // background-color: #ffe500;
         border-radius: 36px;
-        margin-top: 12px;
+        // margin-top: 12px;
         height: 36px;
+        cursor: pointer;
+        font-family: $font-headline;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 26px;
         .label {
           display: flex;
           vertical-align: middle;
