@@ -195,6 +195,9 @@ $wideWidth: 1048px;
         border-radius: 24px;
         padding: 0 6px;
         height: 24px;
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { // ie11
+          display: inline-block;
+        }
         @include mq(leftCol) {
           border-radius: 14px;
           padding: 0 6px;
@@ -210,6 +213,9 @@ $wideWidth: 1048px;
         }
         .icon {
           display: flex;
+          @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { // ie11
+            display: inline;
+          }
           svg {
             width: 12px;
             height: auto;
