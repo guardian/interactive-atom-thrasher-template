@@ -56,7 +56,6 @@
         padding-right: 20px;
       }
       @include mq(leftCol) {
-        padding-left: 130px;
         position: absolute;
       }
       &__link {
@@ -114,6 +113,19 @@
           line-height: 26px;
           padding-right: 16px;
           color: inherit;
+        }
+        .image-container {
+          display: none;
+          width: 160px;
+          position: absolute;
+          bottom: 10px;
+          img {
+            width: 100%;
+          }
+          &.show {
+            display: block;
+          }
+
         }
 
         .icon {
