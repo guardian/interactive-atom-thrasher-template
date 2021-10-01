@@ -1,25 +1,35 @@
-#thrasher__thrasher-name.thrasher-inner {
+#thrasher__pandora-header.thrasher-inner, #thrasher-atom {
   position: relative;
-  border: 1px solid #dcdcdc;
   border-bottom: 0;
-
-  .thrasher-name {
-    &__link,
-    &__background,
-    &__background img {
+  background-color: #ffffff;
+  min-height: 300px;
+  @include mq(tablet) {
+    border: 1px solid #dcdcdc;
+    border-top: none;
+    border-bottom: none;
+    min-height: 200px;
+    
+  }
+  .pandora-header {
+    &__background {
       display: block;
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      background-color: #ECCDD5;
+      width: 100%;
+      height: 100%;
+      background-image: url("https://uploads.guim.co.uk/2021/09/29/palmtree_low.jpg");
+      background-size: cover;
+      background-position: 39%;
+      @include mq(tablet) {
+        background-position: center;
+      }
     }
 
     &__link {
       z-index: 20;
       &:hover {
         // Background hover-effect:
-        ~ .thrasher-name__background {
+        ~ .pandora-header__background {
           opacity: 0.95;
         }
 
@@ -32,7 +42,7 @@
     }
 
     &__background {
-      z-index: -1;
+      z-index: 0;
       img,
       video {
         object-fit: cover;
@@ -43,12 +53,21 @@
 
     &__container-title {
       padding: 4px 10px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      font-family: $f-titlepiece;
+      font-size: 32px;
+      line-height: 100%;
       @include mq(mobileLandscape) {
         padding-left: 20px;
         padding-right: 20px;
       }
       @include mq(leftCol) {
         position: absolute;
+      }
+      svg {
+        margin-right: 8px;
       }
       &__link {
         font-family: $font-headline;
@@ -63,13 +82,18 @@
           text-decoration: underline;
         }
       }
+      svg {
+        width: 95px;
+      }
     }
 
     &__copy {
-      font-family: $font-headline;
-      font-size: 24px;
-      line-height: 26px;
+      font-family: $f-titlepiece;
+      font-size: 32px;
+      line-height: 115%;
       padding: 0 10px 24px;
+      position: relative;
+      z-index: 1;
       @include mq(mobileLandscape) {
         padding-left: 20px;
         padding-right: 20px;
@@ -84,47 +108,7 @@
       &__headline {
         font-weight: 700;
       }
-      &__subheadline {
-
-      }
-      .thrasher-button {
-        display: inline-flex;
-        align-items: center;
-        padding: 0 9px;
-        background-color: #ffe500;
-        border-radius: 36px;
-        margin-top: 12px;
-        height: 36px;
-        .label {
-          display: flex;
-          vertical-align: middle;
-          font-family: $font-sans;
-          font-size: 17px;
-          line-height: 28px;
-          padding: 0 4px;
-        }
-        .icon {
-          display: flex;
-        }
-        .label+.icon {
-          padding: 0 2px 0 4px;
-        }
-
-        &.button-md {
-          height: 44px;
-          padding: 0 12px;
-        }
-      }
     }
-
-
-
-    &__roundel {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    }
-
   }
 
 }
