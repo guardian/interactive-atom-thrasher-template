@@ -66,7 +66,7 @@ section#total-chaos {
 // }
 .#{$containerName} {
   // height: 340px;
-  height: 280px;
+  height: 260px;
   padding: 4px 10px;
 
   @include mc(mobileLandscape) {
@@ -74,11 +74,11 @@ section#total-chaos {
   }
 
   @include mc(phablet) {
-    height: 260px;
+    height: 220px;
   }
 
   @include mc(tablet) {
-    height: 260px;
+    height: 220px;
     width: 100%;
   }
 
@@ -282,7 +282,7 @@ section#total-chaos {
     z-index: 10;
     padding: 2px 0;
     // margin-top: 166px;
-    margin-top: 104px;
+    margin-top: 84px;
     max-width: 280px;
 
     &:before {
@@ -306,7 +306,7 @@ section#total-chaos {
     }
 
     @include mc(phablet) {
-      margin-top: 82px;
+      margin-top: 42px;
     }
 
     @include mc(tablet) {
@@ -341,7 +341,7 @@ section#total-chaos {
     }
 
     @include mc(wide) {
-      margin-top: 110px;
+      margin-top: 70px;
       margin-left: 230px;
       // margin-left: 240px;
     }
