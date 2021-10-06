@@ -18,7 +18,7 @@ $font-sans: 'Guardian Text Sans Web', 'Helvetica Neue', Helvetica, Arial, 'Lucid
 
 
 // this targets the container your thrasher is put inside on Fronts
-section.thrasher-section__pandora-header {
+section.thrasher-section__pandora-header, #header {
     width:100%;
     position: relative;
     padding: 0 !important;
@@ -29,14 +29,15 @@ section.thrasher-section__pandora-header {
     .facia-snap {
         overflow: hidden;
     }
+    .fc-item,
     .facia-snap {
-        padding: 0;
+        padding: 0!important;
     }
 }
 
 
 #thrasher__pandora-header {
-    margin: 0 -10px;
+    margin: 0;
     overflow: hidden;
 
     .ios &,
@@ -51,5 +52,9 @@ section.thrasher-section__pandora-header {
     @include mc(tablet) {
         margin: 0;
         width:100%;
+    }
+
+    .story-link__headline {
+        margin-top: 0!important;
     }
 }

@@ -9,8 +9,8 @@
 
 
 .story-link {
-    background-color: #121212;
-    border-top: 4px solid yellow;
+    background-color: #3f464a;
+    border-top: 4px solid #ffe500;
     width: 260px;
     padding: 4px;
     position: absolute;
@@ -37,6 +37,11 @@
         right: 0;
         bottom: 0;
         left: 0;
+        &:hover {
+            ~ svg {
+                background-color: #ffffff50;
+            }
+        }
     }
     &__headline {
         font-family: $f-headline-full;
