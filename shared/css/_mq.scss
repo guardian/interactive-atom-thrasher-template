@@ -8,15 +8,14 @@ $mq-responsive: true;
 // across team members. It will improve communication between
 // stakeholders, designers, developers, and testers.
 $mq-breakpoints: (
-    mobile:  320px,
-    tablet:  740px,
-    desktop: 980px,
-    leftCol: 1140px,
-    wide:    1300px,
-
-    // Tweakpoints
-    desktopAd: 810px,
-    mobileLandscape: 480px
+  mobile: 320px,
+  mobileMedium: 375px,
+  mobileLandscape: 480px,
+  phablet: 660px,
+  tablet: 740px,
+  desktop: 980px,
+  leftCol: 1140px,
+  wide: 1300px
 );
 
 // Define the breakpoint from the $mq-breakpoints list that should
@@ -29,26 +28,21 @@ $mq-static-breakpoint: desktop;
 // to this list, ordered by width, e.g. (mobile, tablet, desktop).
 // $mq-show-breakpoints: (mobile, mobileLandscape, tablet, desktop, wide);
 
-
-
 // Page skin fix
 // Use mc() in place of mq() so your thrashers don't get broken
 // when a page skin ad is present
 @mixin mc($from) {
-    @if (map-get($mq-breakpoints, $from) < map-get($mq-breakpoints, leftCol)) {
-        @include mq($from) {
-            @content;
-        }
-    } @else {
-        body:not(.has-active-pageskin) & {
-            @include mq($from) {
-                @content;
-            }
-        }
+  @if (map-get($mq-breakpoints, $from) < map-get($mq-breakpoints, leftCol)) {
+    @include mq($from) {
+      @content;
     }
+  } @else {
+    body:not(.has-active-pageskin) & {
+      @include mq($from) {
+        @content;
+      }
+    }
+  }
 }
 
-
-
-
-@import 'node_modules/sass-mq/mq';
+@import "node_modules/sass-mq/mq";
