@@ -1,20 +1,18 @@
 $background-color: #001340;
 $border-color: #506991;
 
-.fc-container--first {
+#cop-header {
   padding-top: 0;
-}
-.fc-container--thrasher {
-  background-color: $background-color;
+  background: $background-color;
 }
 #thrasher__dw-cop26-header.thrasher-inner {
   position: relative;
   border: 1px solid $border-color;
   border-bottom: 0;
-  height: 300px;
+  height: 220px;
   background-color: $background-color;
   @include mq(mobileLandscape) {
-    height: 200px;
+    height: 140px;
   }
 
   .dw-cop26-header {
@@ -70,8 +68,18 @@ $border-color: #506991;
           bottom: -30px;
         }
       }
-      #blubox {
+      #burst, #yellbox, #greenbox, #blubox, #swirl, #yellbox {
         position: absolute;
+      }
+      #greenbox {
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        @include mq(tablet) {
+          width: 70px;
+        }
+      }
+      #blubox {
         right: 0px;
         bottom: 0px;
         width: 121px;
@@ -84,7 +92,6 @@ $border-color: #506991;
         }
       }
       #burst, #yellbox {
-        position: absolute;
         right: 40px;
         top: -1px;
         @include mq(mobileLandscape) {
@@ -101,7 +108,6 @@ $border-color: #506991;
         }
       }
       #swirl {
-        position: absolute;
         bottom: 0;
         left: 0;
         width: 60px;
