@@ -1,9 +1,23 @@
-#thrasher__thrasher-name.thrasher-inner {
-  position: relative;
-  border: 1px solid #dcdcdc;
-  border-bottom: 0;
+$background-color: #001340;
+$border-color: #506991;
 
-  .thrasher-name {
+.fc-container--first {
+  padding-top: 0;
+}
+.fc-container--thrasher {
+  background-color: $background-color;
+}
+#thrasher__dw-cop26-header.thrasher-inner {
+  position: relative;
+  border: 1px solid $border-color;
+  border-bottom: 0;
+  height: 300px;
+  background-color: $background-color;
+  @include mq(mobileLandscape) {
+    height: 200px;
+  }
+
+  .dw-cop26-header {
     &__link,
     &__background,
     &__background img {
@@ -14,12 +28,11 @@
       right: 0;
       bottom: 0;
     }
-
     &__link {
       z-index: 20;
       &:hover {
         // Background hover-effect:
-        ~ .thrasher-name__background {
+        ~ .dw-cop26-header__background {
           opacity: 0.95;
         }
 
@@ -31,24 +44,87 @@
       }
     }
 
+    &__canvas {
+      position: absolute;
+      z-index: 1;
+      right: 0;
+      top: 0;
+      width: 200px;
+      height: 200px;
+      @include mq(desktop) {
+        width: 600px;
+        height: 200px;
+      }
+    }
     &__background {
-      z-index: -1;
+      z-index: 2;
       img,
-      video {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
+      video { }
+      #cop26trees {
+        position: absolute;
+        width: 246px;
+        right: -130px;
+        bottom: -60px;
+        @include mq(tablet) {
+          right: 0px;
+          bottom: -30px;
+        }
+      }
+      #blubox {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        width: 121px;
+        @include mq(tablet) {
+          width: 178px;
+          bottom: 30px;
+        }
+        @include mq(desktop) {
+          width: 250px;
+        }
+      }
+      #burst, #yellbox {
+        position: absolute;
+        right: 40px;
+        top: -1px;
+        @include mq(mobileLandscape) {
+          right: 30%;
+        }
+        @include mq(tablet) {
+          right: 40%;
+        }
+      }
+      #yellbox {
+        height: 80px;
+        @include mq(desktop) {
+            height: 100px;
+        }
+      }
+      #swirl {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        @include mq(desktop) {
+            height: 86px;
+        }
       }
     }
 
     &__container-title {
       padding: 4px 10px;
+      padding-top: 8px;
       @include mq(mobileLandscape) {
+        text-align: right;
+        position: absolute;
         padding-left: 20px;
         padding-right: 20px;
       }
       @include mq(leftCol) {
-        position: absolute;
+        width: 140px;
+      }
+      @include mq(wide){
+        width: 220px;
       }
       &__link {
         font-family: $font-headline;
@@ -63,16 +139,23 @@
           text-decoration: underline;
         }
       }
+      #cop26-logo {
+        // position: absolute;
+        // right: 0;
+      }
     }
-
     &__copy {
+      position: relative;
+      z-index: 10;
       font-family: $font-headline;
-      font-size: 24px;
-      line-height: 26px;
+      font-size: 15px;
+      line-height: 1.15;
       padding: 0 10px 24px;
+      width: 176px;
       @include mq(mobileLandscape) {
         padding-left: 20px;
         padding-right: 20px;
+        padding-left: 80px;
       }
       @include mq(leftCol) {
         padding-top: 4px;
@@ -81,8 +164,15 @@
       @include mq(wide) {
         padding-left: 260px;
       }
+      &__headline, &__subheadline {
+        color: #fff;
+      }
       &__headline {
-        font-weight: 700;
+        font-family: $font-titlepiece;
+        font-size: 50px;
+        line-height: 1.15;
+        padding-bottom: 12px;
+        // font-weight: 700;
       }
       &__subheadline {
 
@@ -116,9 +206,6 @@
         }
       }
     }
-
-
-
     &__roundel {
       position: absolute;
       top: 10px;
