@@ -1,0 +1,239 @@
+$background-color: #001340;
+$border-color: #506991;
+$yellow: #FFED00;
+.yellow {
+  background: $yellow;
+  opacity: 0.6;
+}
+#cop-header {
+  padding-top: 0;
+  background: $background-color;
+}
+#thrasher__dw-cop26-header.thrasher-inner {
+  position: relative;
+  border: 1px solid $border-color;
+  border-bottom: 0;
+  height: 300px;
+  background-color: $background-color;
+  @include mq(mobileLandscape) {
+    height: 200px;
+  }
+
+  .dw-cop26-header {
+    &__link,
+    &__background,
+    &__background img {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    &__link {
+      z-index: 20;
+      &:hover {
+        // Background hover-effect:
+        ~ .dw-cop26-header__background {
+          opacity: 0.95;
+        }
+
+        // Button hover-effect
+        ~ .thrasher-button,
+        ~ * .thrasher-button {
+          opacity: 0.8;
+        }
+      }
+    }
+
+    &__canvas {
+      position: absolute;
+      z-index: 1;
+      right: 0;
+      top: 0;
+      width: 200px;
+      height: 200px;
+      @include mq(desktop) {
+        width: 600px;
+        height: 200px;
+      }
+    }
+    &__background {
+      z-index: 2;
+      img,
+      video { }
+      #sun, #bush, #yellbox, #greenbox, #blubox, #branches, #blue-disc, .gelbox {
+        position: absolute;
+      }
+      #sun {
+        width: 156px;
+        right: -50px;
+        bottom: -50px;
+        @include mq(tablet) {
+          right: 0px;
+          width: 246px;
+          right: -130px;
+          bottom: -120px;
+        }
+      }
+      #blue-disc {
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        @include mq(tablet) {
+          width: 70px;
+        }
+      }
+      #blubox {
+        right: 0px;
+        bottom: 0px;
+        width: 121px;
+        @include mq(tablet) {
+          width: 178px;
+          bottom: 30px;
+        }
+        @include mq(desktop) {
+          width: 250px;
+        }
+      }
+      .gelbox {
+        right: 0px;
+        bottom: 0px;
+        width: 121px;
+        height: 50px;
+        @include mq(tablet) {
+          width: 178px;
+          bottom: 30px;
+        }
+        @include mq(desktop) {
+          width: 250px;
+        }
+      }
+      #bush, #yellbox {
+        right: 40px;
+        top: -1px;
+        @include mq(mobileLandscape) {
+          right: 30%;
+        }
+        @include mq(tablet) {
+          right: 40%;
+        }
+      }
+      #yellbox {
+        height: 80px;
+        @include mq(desktop) {
+            height: 100px;
+        }
+      }
+      #branches {
+        bottom: -80px;
+        left: 0;
+        width: 120px;
+        @include mq(desktop) {
+            height: 120px;
+        }
+      }
+    }
+
+    &__container-title {
+      padding: 4px 10px;
+      padding-top: 8px;
+      @include mq(mobileLandscape) {
+        text-align: right;
+        position: absolute;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      @include mq(leftCol) {
+        width: 140px;
+      }
+      @include mq(wide){
+        width: 220px;
+      }
+      &__link {
+        font-family: $font-headline;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 26px;
+        color: inherit;
+        text-decoration: none;
+        position: relative;
+        z-index: 21;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    &__copy {
+      position: relative;
+      z-index: 10;
+      font-family: $font-headline;
+      font-size: 15px;
+      line-height: 1.15;
+      padding: 0 10px 24px;
+      width: 227px;
+      @include mq(mobileLandscape) {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-left: 80px;
+        width: 300px;
+      }
+      @include mq(leftCol) {
+        padding-top: 4px;
+        padding-left: 180px;
+      }
+      @include mq(wide) {
+        padding-left: 260px;
+      }
+      &__headline, &__subheadline {
+        color: #fff;
+      }
+      &__headline {
+        font-family: $font-titlepiece;
+        font-size: 50px;
+        line-height: 1.15;
+        padding-bottom: 12px;
+        // font-weight: 700;
+      }
+      &__subheadline {
+
+      }
+      .thrasher-button {
+        display: inline-flex;
+        align-items: center;
+        padding: 0 9px;
+        background-color: #ffe500;
+        border-radius: 36px;
+        margin-top: 12px;
+        height: 36px;
+        .label {
+          display: flex;
+          vertical-align: middle;
+          font-family: $font-sans;
+          font-size: 17px;
+          line-height: 28px;
+          font-weight: bold;
+          padding: 0 4px;
+        }
+        .icon {
+          display: flex;
+        }
+        .label+.icon {
+          padding: 0 2px 0 4px;
+        }
+
+        &.button-md {
+          height: 44px;
+          padding: 0 12px;
+        }
+      }
+    }
+    &__roundel {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+  }
+
+}
