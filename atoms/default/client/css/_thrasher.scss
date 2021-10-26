@@ -1,5 +1,6 @@
 $background-color: #001340;
 $border-color: #506991;
+$blue: #2DAAE1;
 
 #cop-header {
   padding-top: 0;
@@ -9,11 +10,11 @@ $border-color: #506991;
   position: relative;
   border: 1px solid $border-color;
   border-bottom: 0;
-  height: 220px;
+  height: 140px;
   background-color: $background-color;
-  @include mq(mobileLandscape) {
-    height: 140px;
-  }
+  // @include mq(mobileLandscape) {
+  //   height: 140px;
+  // }
 
   .dw-cop26-header {
     &__link,
@@ -49,9 +50,10 @@ $border-color: #506991;
       top: 0;
       width: 200px;
       height: 200px;
-      @include mq(desktop) {
-        width: 600px;
-        height: 200px;
+      @include mq(tablet) {
+        top: -80px;
+        width: 480px;
+        height: 220px;
       }
     }
     &__background {
@@ -60,15 +62,18 @@ $border-color: #506991;
       video { }
       #cop26trees {
         position: absolute;
-        width: 246px;
-        right: -130px;
+        width: 196px;
+        right: -70px;
         bottom: -60px;
         @include mq(tablet) {
           right: 0px;
           bottom: -30px;
         }
+        @include mq(desktop) {
+          width: 246px;
+        }
       }
-      #burst, #yellbox, #greenbox, #blubox, #swirl, #yellbox {
+      #burst, #yellbox, #greenbox, #blubox, #swirl, #yellbox , .gellbox{
         position: absolute;
       }
       #greenbox {
@@ -79,7 +84,7 @@ $border-color: #506991;
           width: 70px;
         }
       }
-      #blubox {
+      #blubox, .gellbox  {
         right: 0px;
         bottom: 0px;
         width: 121px;
@@ -91,17 +96,38 @@ $border-color: #506991;
           width: 250px;
         }
       }
-      #burst, #yellbox {
-        right: 40px;
-        top: -1px;
-        @include mq(mobileLandscape) {
-          right: 30%;
+      .gellbox {
+        right: 0px;
+        bottom: 0px;
+        height: 50px;
+        width: 121px;
+        opacity: 0.7;
+        background: $blue;
+        @include mq(tablet) {
+          height: 70px;
+          width: 178px;
+          bottom: 30px;
         }
+        @include mq(desktop) {
+          width: 250px;
+        }
+      }
+      #burst, #yellbox {
+        display: none;
+        @include mq(mobileLandscape){
+          display: block;
+        }
+        // right: 40px;
+        // top: -1px;
+        // @include mq(mobileLandscape) {
+        //   right: 30%;
+        // }
         @include mq(tablet) {
           right: 40%;
         }
       }
-      #yellbox {
+      #yellbox{
+        top: -1px;
         height: 80px;
         @include mq(desktop) {
             height: 100px;
@@ -118,11 +144,15 @@ $border-color: #506991;
     }
 
     &__container-title {
+      position: absolute;
       padding: 4px 10px;
       padding-top: 8px;
-      @include mq(mobileLandscape) {
+      @include mq(mobileMedium) {
         text-align: right;
-        position: absolute;
+      }
+      @include mq(mobileLandscape) {
+      //   text-align: right;
+      //   position: absolute;
         padding-left: 20px;
         padding-right: 20px;
       }
@@ -146,8 +176,12 @@ $border-color: #506991;
         }
       }
       #cop26-logo {
-        // position: absolute;
-        // right: 0;
+        width: 40px;
+        height: 40px;
+        @include mq(tablet){
+          width: 48px;
+          height: 48px;
+        }
       }
     }
     &__copy {
@@ -157,10 +191,12 @@ $border-color: #506991;
       font-size: 15px;
       line-height: 1.15;
       padding: 0 10px 24px;
+      padding-left: 60px;
       width: 176px;
       @include mq(mobileLandscape) {
-        padding-left: 20px;
         padding-right: 20px;
+      }
+      @include mq(tablet){
         padding-left: 80px;
       }
       @include mq(leftCol) {
@@ -175,10 +211,15 @@ $border-color: #506991;
       }
       &__headline {
         font-family: $font-titlepiece;
-        font-size: 50px;
+        font-size: 42px;
         line-height: 1.15;
         padding-bottom: 12px;
-        // font-weight: 700;
+        // @include mq(mobileMedium) {
+        //   font-size: 42px;
+        // }
+        @include mq(tablet) {
+          font-size: 50px;
+        }
       }
       &__subheadline {
 

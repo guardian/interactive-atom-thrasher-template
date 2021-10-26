@@ -1,23 +1,23 @@
 // data capture for ophan
 function trackLoad() {
     window.guardian.ophan.record({
-        component: 'thrasher : dw-cop26-header : load',
+        component: 'thrasher : dw-cop26-header-tr : load',
         value: 1
     });
 }
 
-const mobileWidth = window.matchMedia('(max-width: 980px)')
+const mobileWidth = window.matchMedia('(max-width: 740px)');
 const setImageNamePath = () => mobileWidth.matches ? 'mob-' : '';
-const setImageWIdth = () => mobileWidth.matches ? '200' : '600';
+const setImageWIdth = () => mobileWidth.matches ? '220' : '480';
 
 // ----------------------- framescroll
 const html = document.documentElement;
-const canvas = document.getElementById("dw-cop26-magic");
+const canvas = document.getElementById("dw-cop26-magic-thrasher");
 const context = canvas.getContext("2d");
-const thrasher = document.getElementById("thrasher__dw-cop26-header");
+const thrasher = document.getElementById("thrasher__dw-cop26-header-tr");
 
 // num of images
-const frameCount = 59;
+const frameCount = 36;
 // Scroll
 const currentFrame = index => (
   `<%= path %>/globe-${setImageNamePath()}${index.toString().padStart(2, '0')}.jpg`
@@ -51,7 +51,7 @@ const img = new Image();
 img.src = currentFrame(elemPos());
 
 canvas.width = setImageWIdth(); // is this the best way?
-canvas.height = 200;
+canvas.height = 220;
 // make dynamic
 img.onload=function(){
   InitCanvas();
