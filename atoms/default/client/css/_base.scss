@@ -1,6 +1,6 @@
 // this targets the container your thrasher is put inside on Fronts
 section#environment-moment,
-section#environment-moment-2020,
+section#environment-moment-2021,
 section#environment-pledge,
 section#environment-pledge-2020,
 section#climate-pledge,
@@ -21,14 +21,14 @@ section#thrasher-atom {
         padding: 0;
     }
 
-    .environment-moment-2020 {
+    .environment-moment-2021 {
       margin: 0;
     }
 
   }
 }
 
-.environment-moment-2020 {
+.environment-moment-2021 {
   width:auto;
   margin: 0 -10px;
   padding: 0 10px;
@@ -61,7 +61,7 @@ section#thrasher-atom {
 }
 
 // iOS and Android specific styles
-.environment-moment-2020 {
+.environment-moment-2021 {
   .android &,
   .ios & {
       overflow:hidden;
