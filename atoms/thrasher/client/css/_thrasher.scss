@@ -14,354 +14,354 @@ html {
   padding-top: 0;
   background: $background-color;
 }
-#thrasher__dw-cop26-header-tr.thrasher-inner {
-  margin: 0;
-  overflow: hidden;
-  &__earth {
-    display: block;
-    position: absolute;
-    z-index: 1;
-    top: -420px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 620px;
+#thrasher__dw-cop26-header-tr {
 
-    &__globe {
-      position: absolute;
-      width: 100%;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
-
-      &.layer-a {
-        animation-name: rotateGlobeA;
-        animation-duration: 180s;
-      }
-      &.layer-b {
-        animation-name: rotateGlobeB;
-        animation-duration: 120s;
-        opacity: 0.6;
-        @supports (mix-blend-mode: screen) {
-          mix-blend-mode: screen;
-          opacity: 1;
-        }
-      }
-
-      @keyframes rotateGlobeA {
-        0% {
-          transform: rotate(0);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-      @keyframes rotateGlobeB {
-        0% {
-          transform: rotate(0);
-          opacity: 1;
-        }
-        5% {
-          opacity: 0.8;
-        }
-        10% {
-          opacity: 0.2;
-        }
-        15% {
-          opacity: 0.8;
-        }
-        20% {
-          opacity: 1;
-        }
-        25% {
-          opacity: 0.8;
-        }
-        30% {
-          opacity: 0.2;
-        }
-        35% {
-          opacity: 0.8;
-        }
-        40% {
-          opacity: 1;
-        }
-        45% {
-          opacity: 0.8;
-        }
-        50% {
-          opacity: 0.2;
-        }
-        55% {
-          opacity: 0.8;
-        }
-        60% {
-          opacity: 1;
-        }
-        65% {
-          opacity: 0.8;
-        }
-        70% {
-          opacity: 0.2;
-        }
-        75% {
-          opacity: 0.8;
-        }
-        80% {
-          opacity: 1;
-        }
-        85% {
-          opacity: 0.8;
-        }
-        90% {
-          opacity: 0.2;
-        }
-        95% {
-          opacity: 0.8;
-        }
-
-        100% {
-          opacity: 1;
-          transform: rotate(360deg);
-        }
-      }
-    }
-  }
-  position: relative;
-  border: 1px solid $border-color;
-  border-bottom: 0;
-  height: 300px;
-  background-color: $background-color;
-  @include mq(mobileLandscape) {
-    height: 220px;
-  }
-
-  .dw-cop26-header-tr {
-    &__link,
-    &__background,
-    &__background img {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-    }
-    &__link {
-      z-index: 20;
-      &:hover {
-        // Background hover-effect:
-        ~ .dw-cop26-header-tr__background {
-          opacity: 0.95;
-        }
-
-        // Button hover-effect
-        ~ .thrasher-button,
-        ~ * .thrasher-button {
-          opacity: 0.8;
-        }
-      }
+  &.thrasher-inner {
+    position: relative;
+    border: 1px solid $border-color;
+    border-bottom: 0;
+    height: 300px;
+    background-color: $background-color;
+    @include mq(mobileLandscape) {
+      height: 220px;
     }
 
-    &__canvas {
-      position: absolute;
-      z-index: 1;
-      right: 0;
-      top: 0;
-      width: 200px;
-      height: 200px;
-      @include mq(tablet) {
-        width: 480px;
-        height: 220px;
-      }
-    }
-    &__background {
-      z-index: 2;
-      img,
-      video { }
-      #sun, #bush, #yellbox, #greenbox, #blubox, #branches, #blue-disc, .gellbox {
+    .dw-cop26-header-tr {
+      margin: 0;
+      overflow: hidden;
+      &__earth {
+        display: block;
         position: absolute;
+        z-index: 1;
+        top: -370px;
+        transform: translateX(139%);
+        width: 620px;
+
+        &__globe {
+          position: absolute;
+          width: 100%;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+
+          &.layer-a {
+            animation-name: rotateGlobeA;
+            animation-duration: 180s;
+          }
+          &.layer-b {
+            animation-name: rotateGlobeB;
+            animation-duration: 120s;
+            opacity: 0.6;
+            @supports (mix-blend-mode: screen) {
+              mix-blend-mode: screen;
+              opacity: 1;
+            }
+          }
+
+          @keyframes rotateGlobeA {
+            0% {
+              transform: rotate(0);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+          @keyframes rotateGlobeB {
+            0% {
+              transform: rotate(0);
+              opacity: 1;
+            }
+            5% {
+              opacity: 0.8;
+            }
+            10% {
+              opacity: 0.2;
+            }
+            15% {
+              opacity: 0.8;
+            }
+            20% {
+              opacity: 1;
+            }
+            25% {
+              opacity: 0.8;
+            }
+            30% {
+              opacity: 0.2;
+            }
+            35% {
+              opacity: 0.8;
+            }
+            40% {
+              opacity: 1;
+            }
+            45% {
+              opacity: 0.8;
+            }
+            50% {
+              opacity: 0.2;
+            }
+            55% {
+              opacity: 0.8;
+            }
+            60% {
+              opacity: 1;
+            }
+            65% {
+              opacity: 0.8;
+            }
+            70% {
+              opacity: 0.2;
+            }
+            75% {
+              opacity: 0.8;
+            }
+            80% {
+              opacity: 1;
+            }
+            85% {
+              opacity: 0.8;
+            }
+            90% {
+              opacity: 0.2;
+            }
+            95% {
+              opacity: 0.8;
+            }
+
+            100% {
+              opacity: 1;
+              transform: rotate(360deg);
+            }
+          }
+        }
       }
-      #blue-disc {
+      &__link,
+      &__background,
+      &__background img {
+        display: block;
+        position: absolute;
+        top: 0;
         left: 0;
+        right: 0;
         bottom: 0;
-        width: 70px;
-      }
-      #blubox, #sun, .gellbox {
-        display: none;
-        @include mq(mobileLandscape){
-          display: block;
-        }
-      }
-      #sun {
-        width: 156px;
-        right: -50px;
-        bottom: -50px;
-        @include mq(tablet) {
-          right: 0px;
-          width: 246px;
-          right: -130px;
-          bottom: -120px;
-        }
-      }
-      .gellbox {
-        right: 0px;
-        bottom: 0px;
-        width: 121px;
-        height: 50px;
-        @include mq(tablet) {
-          width: 178px;
-          bottom: 30px;
-        }
-        @include mq(desktop) {
-          width: 250px;
-        }
-      }
-      #bush, #yellbox {
-        right: 10px;
-        top: -1px;
-        @include mq(phablet) {
-          right: 25%;
-        }
-        @include mq(desktop) {
-          right: 33%;
-        }
-        // @include mq(wide) {
-        //   right: 40%;
-        // }
-      }
-      #yellbox {
-        height: 80px;
-        @include mq(desktop) {
-            height: 100px;
-        }
-      }
-      #branches {
-        bottom: -90px;
-        left: 0;
-        width: 120px;
-        @include mq(desktop) {
-            bottom: -60px;
-            height: 120px;
-        }
-        @include mq(leftCol) {
-            bottom: 0px;
-        }
-      }
-    }
-
-    &__container-title {
-      padding: 4px 10px;
-      padding-top: 8px;
-      @include mq(mobileLandscape) {
-        text-align: right;
-        position: absolute;
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-      @include mq(leftCol) {
-        width: 140px;
-      }
-      @include mq(wide){
-        width: 220px;
       }
       &__link {
-        font-family: $font-headline;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 26px;
-        color: inherit;
-        text-decoration: none;
-        position: relative;
-        z-index: 21;
+        z-index: 20;
         &:hover {
-          text-decoration: underline;
+          // Background hover-effect:
+          ~ .dw-cop26-header-tr__background {
+            opacity: 0.95;
+          }
+
+          // Button hover-effect
+          ~ .thrasher-button,
+          ~ * .thrasher-button {
+            opacity: 0.8;
+          }
         }
       }
-    }
-    &__wrapper {
-      padding-bottom: 12px;
-      @include mq(leftCol){
-        border-left: 1px solid $brand600;
-        padding-left: 12px;
+
+      &__canvas {
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        top: 0;
+        width: 200px;
+        height: 200px;
+        @include mq(tablet) {
+          width: 480px;
+          height: 220px;
+        }
       }
-    }
-    &__copy {
-      position: relative;
-      z-index: 10;
-      font-family: $font-headline;
-      font-size: 15px;
-      line-height: 1.15;
-      padding: 0 10px 24px;
-      width: 260px;
-      @include mq(mobileLandscape) {
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-left: 92px;
+      &__background {
+        z-index: 2;
+        img,
+        video { }
+        #sun, #bush, #yellbox, #greenbox, #blubox, #branches, #blue-disc, .gellbox {
+          position: absolute;
+        }
+        #blue-disc {
+          left: 0;
+          bottom: 0;
+          width: 70px;
+        }
+        #blubox, #sun, .gellbox {
+          display: none;
+          @include mq(mobileLandscape){
+            display: block;
+          }
+        }
+        #sun {
+          width: 156px;
+          right: -50px;
+          bottom: -50px;
+          @include mq(tablet) {
+            right: 0px;
+            width: 246px;
+            right: -130px;
+            bottom: -120px;
+          }
+        }
+        .gellbox {
+          right: 0px;
+          bottom: 0px;
+          width: 121px;
+          height: 50px;
+          @include mq(tablet) {
+            width: 178px;
+            bottom: 30px;
+          }
+          @include mq(desktop) {
+            width: 250px;
+          }
+        }
+        #bush, #yellbox {
+          right: 10px;
+          top: -1px;
+          @include mq(phablet) {
+            right: 25%;
+          }
+          @include mq(desktop) {
+            right: 33%;
+          }
+          // @include mq(wide) {
+          //   right: 40%;
+          // }
+        }
+        #yellbox {
+          height: 80px;
+          @include mq(desktop) {
+              height: 100px;
+          }
+        }
+        #branches {
+          bottom: -90px;
+          left: 0;
+          width: 120px;
+          @include mq(desktop) {
+              bottom: -60px;
+              height: 120px;
+          }
+          @include mq(leftCol) {
+              bottom: 0px;
+          }
+        }
       }
-      @include mq(desktop) {
-        width: 360px;
-      }
-      @include mq(leftCol) {
-        padding-top: 4px;
-        padding-left: 180px;
-        width: 390px;
-      }
-      @include mq(wide) {
-        padding-left: 249px;
-      }
-      &__headline, &__subheadline {
-        color: #fff;
-      }
-      &__headline {
-        font-family: $font-titlepiece;
-        font-size: 28px;
-        line-height: 1.15;
-        padding-bottom: 10px;
-        @include mq(desktop) {
-          font-size: 34px;
+
+      &__container-title {
+        padding: 4px 10px;
+        padding-top: 8px;
+        @include mq(mobileLandscape) {
+          text-align: right;
+          position: absolute;
+          padding-left: 20px;
+          padding-right: 20px;
         }
         @include mq(leftCol) {
-          font-size: 42px;
-            padding-left: 12px;
+          width: 140px;
+        }
+        @include mq(wide){
+          width: 220px;
+        }
+        &__link {
+          font-family: $font-headline;
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 26px;
+          color: inherit;
+          text-decoration: none;
+          position: relative;
+          z-index: 21;
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
-      &__subheadline {
-
+      &__wrapper {
+        padding-bottom: 12px;
+        @include mq(leftCol){
+          border-left: 1px solid $brand600;
+          padding-left: 12px;
+        }
       }
-      .thrasher-button {
-        display: inline-flex;
-        align-items: center;
-        padding: 0 9px;
-        background-color: #ffe500;
-        border-radius: 36px;
-        margin-top: 12px;
-        height: 36px;
-        .label {
-          display: flex;
-          vertical-align: middle;
-          font-family: $font-sans;
-          font-size: 17px;
-          line-height: 28px;
-          font-weight: bold;
-          padding: 0 4px;
+      &__copy {
+        position: relative;
+        z-index: 10;
+        font-family: $font-headline;
+        font-size: 15px;
+        line-height: 1.15;
+        padding: 0 10px 24px;
+        width: 260px;
+        @include mq(mobileLandscape) {
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-left: 92px;
         }
-        .icon {
-          display: flex;
+        @include mq(desktop) {
+          width: 360px;
         }
-        .label+.icon {
-          padding: 0 2px 0 4px;
+        @include mq(leftCol) {
+          padding-top: 4px;
+          padding-left: 180px;
+          width: 390px;
         }
+        @include mq(wide) {
+          padding-left: 249px;
+        }
+        &__headline, &__subheadline {
+          color: #fff;
+        }
+        &__headline {
+          font-family: $font-titlepiece;
+          font-size: 28px;
+          line-height: 1.15;
+          padding-bottom: 10px;
+          @include mq(desktop) {
+            font-size: 34px;
+          }
+          @include mq(leftCol) {
+            font-size: 42px;
+              padding-left: 12px;
+          }
+        }
+        &__subheadline {
 
-        &.button-md {
-          height: 44px;
-          padding: 0 12px;
         }
+        .thrasher-button {
+          display: inline-flex;
+          align-items: center;
+          padding: 0 9px;
+          background-color: #ffe500;
+          border-radius: 36px;
+          margin-top: 12px;
+          height: 36px;
+          .label {
+            display: flex;
+            vertical-align: middle;
+            font-family: $font-sans;
+            font-size: 17px;
+            line-height: 28px;
+            font-weight: bold;
+            padding: 0 4px;
+          }
+          .icon {
+            display: flex;
+          }
+          .label+.icon {
+            padding: 0 2px 0 4px;
+          }
+
+          &.button-md {
+            height: 44px;
+            padding: 0 12px;
+          }
+        }
+      }
+      &__roundel {
+        position: absolute;
+        top: 10px;
+        right: 10px;
       }
     }
-    &__roundel {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    }
-
   }
-
 }
