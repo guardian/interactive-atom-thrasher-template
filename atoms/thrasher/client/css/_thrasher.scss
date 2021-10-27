@@ -3,6 +3,9 @@ $border-color: #506991;
 $yellow: #FFED00;
 $brand600: #506991;
 
+html {
+  -webkit-font-smoothing: antialiased;
+}
 .yellow {
   background: $yellow;
   opacity: 0.6;
@@ -12,6 +15,115 @@ $brand600: #506991;
   background: $background-color;
 }
 #thrasher__dw-cop26-header-tr.thrasher-inner {
+  margin: 0;
+  overflow: hidden;
+  &__earth {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: -420px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 620px;
+
+    &__globe {
+      position: absolute;
+      width: 100%;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+
+      &.layer-a {
+        animation-name: rotateGlobeA;
+        animation-duration: 180s;
+      }
+      &.layer-b {
+        animation-name: rotateGlobeB;
+        animation-duration: 120s;
+        opacity: 0.6;
+        @supports (mix-blend-mode: screen) {
+          mix-blend-mode: screen;
+          opacity: 1;
+        }
+      }
+
+      @keyframes rotateGlobeA {
+        0% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes rotateGlobeB {
+        0% {
+          transform: rotate(0);
+          opacity: 1;
+        }
+        5% {
+          opacity: 0.8;
+        }
+        10% {
+          opacity: 0.2;
+        }
+        15% {
+          opacity: 0.8;
+        }
+        20% {
+          opacity: 1;
+        }
+        25% {
+          opacity: 0.8;
+        }
+        30% {
+          opacity: 0.2;
+        }
+        35% {
+          opacity: 0.8;
+        }
+        40% {
+          opacity: 1;
+        }
+        45% {
+          opacity: 0.8;
+        }
+        50% {
+          opacity: 0.2;
+        }
+        55% {
+          opacity: 0.8;
+        }
+        60% {
+          opacity: 1;
+        }
+        65% {
+          opacity: 0.8;
+        }
+        70% {
+          opacity: 0.2;
+        }
+        75% {
+          opacity: 0.8;
+        }
+        80% {
+          opacity: 1;
+        }
+        85% {
+          opacity: 0.8;
+        }
+        90% {
+          opacity: 0.2;
+        }
+        95% {
+          opacity: 0.8;
+        }
+
+        100% {
+          opacity: 1;
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
   position: relative;
   border: 1px solid $border-color;
   border-bottom: 0;
