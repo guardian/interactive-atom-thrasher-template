@@ -203,18 +203,23 @@ body {
     font-size: 24px;
     @include mq(tablet) {
       padding-top: 2px;
+      font-size: 28px;
     }
     &__text {
       position: relative;
       z-index: 1;
       display: inline-flex;
-      // align-items: center;
+      padding-right: 50px;
       font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
       padding-bottom: 12px;
-      svg {
+      span {
         width: 34px;
         height: 34px;
         padding-right: 8px;
+        svg {
+            width: 34px;
+            height: 34px;
+        }
       }
       @include mq(tablet) {
         padding-left: 76px;
@@ -244,6 +249,7 @@ body {
       align-items: center;
       border-radius: 32px;
       line-height: 24px;
+      margin-left: 42px;
       padding: 1px 12px 2px 12px;
       border: 1px solid transparent;
       font-weight: bold;
