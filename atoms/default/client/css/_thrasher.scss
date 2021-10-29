@@ -25,7 +25,7 @@ body {
     display: block;
     position: absolute;
     z-index: 1;
-    top: -500px;
+    top: -550px;
     left: 50%;
     transform: translateX(-50%);
     width: 620px;
@@ -171,11 +171,11 @@ body {
       width: 118px;
       height: 118px;
       border-radius: 50%;
-      right: -60px;
+      right: -20px;
       bottom: -60px;
       svg {
         left: -50px;
-        top: -20px;
+        top: 10px;
       }
     }
   }
@@ -185,13 +185,7 @@ body {
     left: 0;
     width: 480px;
     height: 220px;
-    // background-image: url("<%= path %>/globe-00.jpg");
-    // border: 5px solid green;
-    // background: $neutral100;
   }
-  // &__earth {
-  //   display: none;
-  // }
   &__background {
     position: absolute;
     top: 0;
@@ -204,21 +198,24 @@ body {
     display: block;
     position: relative;
     z-index: 20;
-    padding-top: 70px;
-    // font-size: 34px;
+    padding-top: 8px;
     line-height: 1.15;
-    font-size: 34px;
-    // &:before {
-    //   top: calc(208px - 1.15em + 2px);
-    // }
+    font-size: 24px;
     @include mq(tablet) {
       padding-top: 2px;
     }
     &__text {
       position: relative;
       z-index: 1;
+      display: inline-flex;
+      // align-items: center;
       font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
       padding-bottom: 12px;
+      svg {
+        width: 34px;
+        height: 34px;
+        padding-right: 8px;
+      }
       @include mq(tablet) {
         padding-left: 76px;
         padding-right: 180px;
@@ -246,17 +243,17 @@ body {
       display: inline-flex;
       align-items: center;
       border-radius: 32px;
-      line-height: 34px;
-      padding: 0 18px 2px 18px;
+      line-height: 24px;
+      padding: 1px 12px 2px 12px;
       border: 1px solid transparent;
-      margin: 6px 8px 6px 0;
       font-weight: bold;
       border-radius: 36px;
       font-family: "Guardian Text Sans Web","Guardian Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-      font-size: 17px;
-      // display: inline-block;
-      // display: none;
+      font-size: 15px;
       text-decoration: none;
+      svg {
+        width: 16px;
+      }
       &:hover {
         text-decoration: none;
       }
@@ -272,14 +269,6 @@ body {
           border-color: $button-rollover-background;
         }
       }
-      // &.secondary {
-      //   color: #121212;
-      //   border-color: #121212;
-      //   background-color: transparent;
-      //   &:hover {
-      //     background-color: rgba($neutral-92,0.67);
-      //   }
-      // }
     }
   }
 
