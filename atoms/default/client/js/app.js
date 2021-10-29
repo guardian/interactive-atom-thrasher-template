@@ -5,6 +5,3 @@ function trackLoad() {
         value: 1
     });
 }
-// if (window.parent != window.top) {
-  // console.log('window.parent.frameElement.offsetTop: ' + window.parent.frameElement.offsetTop);// 
-// }
