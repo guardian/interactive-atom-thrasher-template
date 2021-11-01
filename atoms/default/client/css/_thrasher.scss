@@ -201,7 +201,7 @@ body {
     padding-top: 8px;
     line-height: 1.15;
     font-size: 24px;
-    @include mq(tablet) {
+    @include mq(phablet) {
       padding-top: 2px;
       font-size: 28px;
     }
