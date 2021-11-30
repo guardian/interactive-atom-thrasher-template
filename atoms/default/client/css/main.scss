@@ -11,18 +11,20 @@
 
 // Default breakpoints from Frontend
 // Use mc() in place of mq() so your thrashers don't get broken
-$mq-breakpoints: (mobile: 320px,
+$mq-breakpoints: (
+  mobile: 320px,
   mobileMedium: 375px,
   mobileLandscape: 480px,
   phablet: 660px,
   tablet: 740px,
   desktop: 980px,
+  // videoSpan: 1098px,
   leftCol: 1140px,
   wide: 1300px,
 );
 
 // update 'class-name' with yours
-$containerName: saintmaking;
+$containerName: unsafe-passage;
 // colours pulled from shared/css/_palette.sass
 $backgroundColor: #121212;
 $textColor: white;
@@ -39,7 +41,7 @@ section#total-chaos {
   position: relative;
   padding: 0 !important;
   overflow: hidden;
-  background-color: #121212;
+  background-color: $backgroundColor;
 
   .fc-container__inner,
   .fc-slice,
@@ -52,7 +54,7 @@ section#total-chaos {
   }
 }
 
-// #doc-saintmaking,
+// #doc-unsafe-passage,
 // #{"#docthrasher-" + $containerName} {
 //   // Ken burns effect
 //   &.dw-zoomin{
@@ -161,7 +163,15 @@ section#total-chaos {
       left: 20px;
     }
   }
-
+  &__imgback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    background: $backgroundColor;
+  }
   &__image {
     transition: transform 1.5s;
     position: absolute;
@@ -170,7 +180,10 @@ section#total-chaos {
     right: 0;
     bottom: 0;
     z-index: -1;
-
+    overflow: hidden;
+    // @include mc(tablet) {
+    //   overflow: visible;
+    // }
     video {
       position: absolute;
       left: 50%;
