@@ -5,29 +5,6 @@
   border-bottom: 0;
 
   .charity-appeal-2021 {
-    &__link {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: -1;
-
-      &:hover {
-        // Background hover-effect:
-        ~ .charity-appeal-2021__background {
-          opacity: 0.95;
-        }
-
-        // Button hover-effect
-        ~ .thrasher-button,
-        ~ * .thrasher-button {
-          opacity: 0.8;
-        }
-      }
-    }
-
     &__body {
       display: flex;
       height: 250px;
@@ -54,20 +31,6 @@
       @include mq(leftCol) {
         position: absolute;
       }
-
-      &__link {
-        font-family: $font-headline;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 26px;
-        color: inherit;
-        text-decoration: none;
-        position: relative;
-        z-index: 21;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
     }
 
     &__copy {
@@ -76,20 +39,6 @@
       line-height: 26px;
       padding: 0 10px 24px;
       width: 50%;
-
-      // @include mq(mobileLandscape) {
-      //   padding-left: 20px;
-      //   padding-right: 20px;
-      // }
-
-      // @include mq(leftCol) {
-      //   padding-top: 4px;
-      //   padding-left: 180px;
-      // }
-
-      // @include mq(wide) {
-      //   padding-left: 260px;
-      // }
 
       &__headline {
         h1 {
@@ -156,32 +105,38 @@
       }
 
       .thrasher-button {
-        display: inline-flex;
+        display: flex;
         align-items: center;
-        padding: 0 9px;
+        padding: 0 1rem;
         border-radius: 36px;
         margin: 12px 0 0 12px;
         height: 36px;
         font-weight: bold;
+        font-family: $font-sans;
+        font-size: 17px;
+        line-height: 19.92px;
+        text-decoration: none;
         
         &.button--donate {
           background-color: #ffe500;
+
+          &:hover {
+            background-color: #F3C100;
+          }
         }
 
         &.button--read-more {
           background-color: #000;
           color: #ffe500;
           border: #ffe500 solid 0.05rem;
+
+          &:hover {
+            background-color: #FFFFFF80
+          }
         }
 
-        .label {
-          display: flex;
-          vertical-align: middle;
-          font-family: $font-sans;
-          font-size: 17px;
-          line-height: 19.92px;
-          padding: 0 4px;
-        }
+        // .label {
+        // }
 
         .icon {
           display: flex;
