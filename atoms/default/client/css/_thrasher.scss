@@ -119,17 +119,27 @@
         display: inline-flex;
         align-items: center;
         padding: 0 9px;
-        background-color: #ffe500;
         border-radius: 36px;
         margin-top: 12px;
         height: 36px;
+        font-weight: bold;
+        
+        &.button--donate {
+          background-color: #ffe500;
+        }
+
+        &.button--read-more {
+          background-color: #000;
+          color: #ffe500;
+          border: #ffe500 solid 0.05rem;
+        }
 
         .label {
           display: flex;
           vertical-align: middle;
           font-family: $font-sans;
           font-size: 17px;
-          line-height: 28px;
+          line-height: 19.92px;
           padding: 0 4px;
         }
 
