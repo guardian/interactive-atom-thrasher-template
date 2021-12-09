@@ -1,9 +1,10 @@
-#thrasher__thrasher-name.thrasher-inner {
+#thrasher__charity-appeal-2021.thrasher-inner {
+  background-color: #000;
   position: relative;
   border: 1px solid #dcdcdc;
   border-bottom: 0;
 
-  .thrasher-name {
+  .charity-appeal-2021 {
     &__link,
     &__background,
     &__background img {
@@ -19,7 +20,7 @@
       z-index: 20;
       &:hover {
         // Background hover-effect:
-        ~ .thrasher-name__background {
+        ~ .charity-appeal-2021__background {
           opacity: 0.95;
         }
 
@@ -67,26 +68,37 @@
 
     &__copy {
       font-family: $font-headline;
-      font-size: 24px;
+      font-size: 2rem;
       line-height: 26px;
       padding: 0 10px 24px;
+
       @include mq(mobileLandscape) {
         padding-left: 20px;
         padding-right: 20px;
       }
+
       @include mq(leftCol) {
         padding-top: 4px;
         padding-left: 180px;
       }
+
       @include mq(wide) {
         padding-left: 260px;
       }
+
       &__headline {
         font-weight: 700;
       }
-      &__subheadline {
 
+      &__headline,
+      &__subheadline {
+        color: #fff
       }
+
+      &__subheadline {
+        font-size: 1rem;
+      }
+
       .thrasher-button {
         display: inline-flex;
         align-items: center;
@@ -95,6 +107,7 @@
         border-radius: 36px;
         margin-top: 12px;
         height: 36px;
+
         .label {
           display: flex;
           vertical-align: middle;
@@ -117,12 +130,21 @@
       }
     }
 
-
-
     &__roundel {
-      position: absolute;
-      top: 10px;
-      right: 10px;
+      background-color: #ffe500;
+      border-radius: 50%;
+      height: 6rem;
+      width: 6rem;
+      margin-top: -0.438rem;
+      text-align: center;
+      display: inline-block;
+
+      p {
+        font-size: 1.25rem;
+        font-weight: bold;
+        padding-top: 1.1rem;
+        line-height: 1.2rem;
+      }
     }
 
   }
