@@ -5,19 +5,15 @@
   border-bottom: 0;
 
   .charity-appeal-2021 {
-    &__link,
-    &__background,
-    &__background img {
+    &__link {
       display: block;
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-    }
+      z-index: -1;
 
-    &__link {
-      z-index: 20;
       &:hover {
         // Background hover-effect:
         ~ .charity-appeal-2021__background {
@@ -32,6 +28,11 @@
       }
     }
 
+    &__body {
+      display: flex;
+      height: 250px;
+    }
+
     &__background {
       z-index: -1;
       img,
@@ -44,13 +45,16 @@
 
     &__container-title {
       padding: 4px 10px;
+
       @include mq(mobileLandscape) {
         padding-left: 20px;
         padding-right: 20px;
       }
+
       @include mq(leftCol) {
         position: absolute;
       }
+
       &__link {
         font-family: $font-headline;
         font-weight: 700;
@@ -71,23 +75,29 @@
       font-size: 2rem;
       line-height: 26px;
       padding: 0 10px 24px;
+      width: 50%;
 
-      @include mq(mobileLandscape) {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
+      // @include mq(mobileLandscape) {
+      //   padding-left: 20px;
+      //   padding-right: 20px;
+      // }
 
-      @include mq(leftCol) {
-        padding-top: 4px;
-        padding-left: 180px;
-      }
+      // @include mq(leftCol) {
+      //   padding-top: 4px;
+      //   padding-left: 180px;
+      // }
 
-      @include mq(wide) {
-        padding-left: 260px;
-      }
+      // @include mq(wide) {
+      //   padding-left: 260px;
+      // }
 
       &__headline {
+        h1 {
+          font-size: 1.7rem;
+          line-height: 33.35px;
+        }
         font-weight: 700;
+        padding: 0.563rem 1.5rem 0 1rem;
       }
 
       &__headline,
@@ -96,7 +106,13 @@
       }
 
       &__subheadline {
-        font-size: 1rem;
+        padding: 0.75rem;
+        h2 {
+          font-size: 17px;
+          line-height: 19.92px;
+          font-weight: normal;
+          font-family: $font-sans;
+        }
       }
 
       .thrasher-button {
@@ -116,9 +132,11 @@
           line-height: 28px;
           padding: 0 4px;
         }
+
         .icon {
           display: flex;
         }
+
         .label+.icon {
           padding: 0 2px 0 4px;
         }
@@ -138,6 +156,7 @@
       margin-top: -0.438rem;
       text-align: center;
       display: inline-block;
+      flex-shrink: 0;
 
       p {
         font-size: 1.25rem;
@@ -147,6 +166,18 @@
       }
     }
 
+    &__header {
+      display: flex;
+    }
+
+    &__img {
+      width: 50%;
+      overflow: hidden;
+
+      img {
+        float: right;
+      }
+    }
   }
 
 }
