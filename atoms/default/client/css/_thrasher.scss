@@ -9,20 +9,15 @@
       display: flex;
       flex-direction: column;
       
-      @include mq(phablet) {
+      @include mq(tablet) {
         height: 250px;
         flex-direction: row;
       }
-    }
 
-    &__background {
-      z-index: -1;
-      img,
-      video {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-      }
+    // tablet:  740px,
+    // desktop: 980px,
+    // leftCol: 1140px,
+    // wide:    1300px,
     }
 
     &__container-title {
@@ -44,9 +39,9 @@
       line-height: 26px;
       padding: 0 10px 24px;
 
-      @include mq(phablet) {
-        width: 50%;
-      }
+      // @include mq(phablet) {
+      //   width: 50%;
+      // }
 
       &__headline {
         h1 {
@@ -54,7 +49,11 @@
           line-height: 33.35px;
         }
         font-weight: 700;
-        padding: 0.563rem 1.5rem 0 1rem;
+        padding: 0.563rem 0.5rem 0 1rem;
+
+        @include mq(desktop) {
+          padding: 0.563rem 1.5rem 0 1rem;
+        }
       }
 
       &__headline,
@@ -103,9 +102,40 @@
 
     &__img {
       overflow: hidden;
+      flex-shrink: 0;
+
+      @include mq(tablet) {
+        width: 190px
+      }
+
+      @include mq(desktop) {
+        width: 250px
+      }
+
+      @include mq(leftCol) {
+        width: 490px
+      }
+
+      @include mq(wide) {
+        width: 570px
+      }
 
       img {
+        width: 100%;
         float: left;
+
+        @include mq(tablet) {
+          max-height: 250px;
+          width: auto;
+        }
+
+        @include mq(desktop) {
+          margin-left: -45px;
+        }
+
+        @include mq(wide) {
+          margin-left: auto;
+        }
       }
     }
 
