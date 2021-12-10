@@ -19,6 +19,10 @@
   }
 }
 
+#charity-appeal {
+  background: #fff;
+}
+
 #thrasher__charity-appeal-2021.thrasher-inner {
   background-color: #000;
   position: relative;
@@ -29,7 +33,7 @@
     &__body {
       display: flex;
       flex-direction: column;
-      
+
       @include mq(tablet) {
         height: 250px;
         flex-direction: row;
@@ -57,11 +61,22 @@
 
       &__headline {
         h1 {
-          font-size: 1.7rem;
-          line-height: 33.35px;
+          font-size: 22px;
+          line-height: 115%;
+          margin-top: 4px;
+          @include mq(mobileMedium) {
+            font-size: 24px;
+            line-height: 115%;
+          }
+          @include mq(phablet) {
+            font-size: 1.7rem;
+          }
         }
         font-weight: 700;
-        padding: 0.563rem 0.5rem 0 1rem;
+        // padding: 0.563rem 0.5rem 0 1rem;
+        @include mq(mobileLandscape) {
+          margin-left: 10px;
+        }
 
         @include mq(desktop) {
           padding: 0.563rem 1.5rem 0 1rem;
@@ -70,19 +85,24 @@
 
       &__headline,
       &__subheadline {
-        color: #fff
+        color: #fff;
       }
 
       &__subheadline {
-        padding: 0.75rem;
+        padding: 0.75rem 0;
+        @include mq(mobileLandscape) {
+          margin-left: 10px;
+        }
         h2 {
           font-size: 17px;
           line-height: 19.92px;
           font-weight: normal;
           font-family: $font-sans;
+          @include mq(desktop) {
+            max-width: 620px;
+          }
         }
       }
-
     }
 
     &__roundel {
@@ -117,26 +137,32 @@
       flex-shrink: 0;
 
       @include mq(tablet) {
-        width: 190px
+        width: 190px;
       }
 
       @include mq(desktop) {
-        width: 250px
+        width: 250px;
       }
 
       @include mq(leftCol) {
-        width: 490px
+        width: 490px;
       }
 
       @include mq(wide) {
-        width: 570px
+        width: 570px;
       }
 
       img {
         width: 100%;
         float: left;
 
+        @include mq(phablet) {
+          height: 190px;
+          object-fit: cover;
+        }
+
         @include mq(tablet) {
+          height: unset;
           max-height: 250px;
           width: auto;
         }
@@ -157,8 +183,15 @@
       svg {
         position: absolute;
         margin: 1rem;
+        margin-bottom: 4px;
+        margin-left: 0;
         bottom: 0;
 
+        filter: drop-shadow(0px 0px 8px black);
+
+        @include mq(mobileLandscape) {
+          margin-left: 10px;
+        }
         @include mq(phablet) {
           position: relative;
         }
@@ -169,7 +202,7 @@
         align-items: center;
         padding: 0 1rem;
         border-radius: 36px;
-        margin: 12px 0 0 12px;
+        margin: 0 0 0 8px;
         height: 36px;
         font-weight: bold;
         font-family: $font-sans;
@@ -177,11 +210,22 @@
         line-height: 19.92px;
         text-decoration: none;
 
+        @include mq(phablet) {
+          margin-top: 12px;
+        }
+
+        &:nth-child(1) {
+          margin-left: 0;
+          @include mq(mobileLandscape) {
+            margin-left: 10px;
+          }
+        }
+
         &.button--donate {
           background-color: #ffe500;
 
           &:hover {
-            background-color: #F3C100;
+            background-color: #f3c100;
           }
         }
 
@@ -191,7 +235,7 @@
           border: #ffe500 solid 0.05rem;
 
           &:hover {
-            background-color: #FFFFFF80
+            background-color: #ffffff80;
           }
         }
 
@@ -199,7 +243,7 @@
           display: flex;
         }
 
-        .label+.icon {
+        .label + .icon {
           padding: 0 2px 0 4px;
         }
 
@@ -210,5 +254,4 @@
       }
     }
   }
-
 }
