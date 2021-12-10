@@ -7,7 +7,12 @@
   .charity-appeal-2021 {
     &__body {
       display: flex;
-      height: 250px;
+      flex-direction: column;
+      
+      @include mq(phablet) {
+        height: 250px;
+        flex-direction: row;
+      }
     }
 
     &__background {
@@ -38,7 +43,10 @@
       font-size: 2rem;
       line-height: 26px;
       padding: 0 10px 24px;
-      width: 50%;
+
+      @include mq(phablet) {
+        width: 50%;
+      }
 
       &__headline {
         h1 {
@@ -86,10 +94,14 @@
 
     &__header {
       display: flex;
+      flex-direction: row-reverse;
+
+      @include mq(phablet) {
+        flex-direction: row;
+      }
     }
 
     &__img {
-      width: 50%;
       overflow: hidden;
 
       img {
@@ -101,7 +113,13 @@
       display: flex;
 
       svg {
+        position: absolute;
         margin: 1rem;
+        bottom: 0;
+
+        @include mq(phablet) {
+          position: relative;
+        }
       }
 
       .thrasher-button {
@@ -116,7 +134,7 @@
         font-size: 17px;
         line-height: 19.92px;
         text-decoration: none;
-        
+
         &.button--donate {
           background-color: #ffe500;
 
