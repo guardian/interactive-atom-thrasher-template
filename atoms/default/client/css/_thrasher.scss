@@ -1,3 +1,24 @@
+.interactive-atom {
+  margin: 0;
+}
+
+.interactive-atom.ios,
+.interactive-atom.android {
+  #thrasher__charity-appeal-2021.thrasher-inner {
+    .charity-appeal-2021__roundel p {
+      padding-top: 0;
+    }
+
+    .charity-appeal-2021__copy__headline h1 {
+      margin: 0;
+    }
+
+    .charity-appeal-2021__copy__subheadline h2 {
+      margin: 0;
+    }
+  }
+}
+
 #thrasher__charity-appeal-2021.thrasher-inner {
   background-color: #000;
   position: relative;
@@ -13,11 +34,6 @@
         height: 250px;
         flex-direction: row;
       }
-
-    // tablet:  740px,
-    // desktop: 980px,
-    // leftCol: 1140px,
-    // wide:    1300px,
     }
 
     &__container-title {
@@ -38,10 +54,6 @@
       font-size: 2rem;
       line-height: 26px;
       padding: 0 10px 24px;
-
-      // @include mq(phablet) {
-      //   width: 50%;
-      // }
 
       &__headline {
         h1 {
