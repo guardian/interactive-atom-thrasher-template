@@ -194,6 +194,7 @@
         }
         @include mq(phablet) {
           position: relative;
+          margin-left: 32px;
         }
       }
 
@@ -202,7 +203,7 @@
         align-items: center;
         padding: 0 1rem;
         border-radius: 36px;
-        margin: 0 0 0 8px;
+        margin: 0 0 0 12px;
         height: 36px;
         font-weight: bold;
         font-family: $font-sans;
