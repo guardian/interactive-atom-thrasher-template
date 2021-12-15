@@ -49,6 +49,7 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
+    "-": "0.0.1",
     "@babel/plugin-transform-runtime": "^7.13.7",
     "@babel/preset-react": "^7.12.13",
     "@babel/runtime": "^7.13.7",
@@ -56,6 +57,8 @@
     "babel-loader": "^8.2.2",
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-transform-import-bangtext-node": "^0.1.4",
+    "cli": "^1.0.1",
+    "g": "^2.0.1",
     "gulp-git": "^2.10.1",
     "mkdirp": "^0.5.1",
     "request-promise": "^4.2.6",
