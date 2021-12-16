@@ -11,7 +11,8 @@
 
 // Default breakpoints from Frontend
 // Use mc() in place of mq() so your thrashers don't get broken
-$mq-breakpoints: (mobile: 320px,
+$mq-breakpoints: (
+  mobile: 320px,
   mobileMedium: 375px,
   mobileLandscape: 480px,
   phablet: 660px,
@@ -66,7 +67,7 @@ section#total-chaos {
 // }
 .#{$containerName} {
   // height: 340px;
-  height: 260px;
+  height: 280px;
   padding: 4px 10px;
 
   @include mc(mobileLandscape) {
@@ -87,8 +88,8 @@ section#total-chaos {
     font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia,
       serif;
     font-size: 36px;
-    line-height: 1;
-    margin-top: 4px;
+    line-height: 115%;
+    margin-top: -2px;
 
     @include mc(mobileMedium) {
       font-size: 38px;
@@ -100,29 +101,31 @@ section#total-chaos {
     }
 
     @include mc(tablet) {
-      width:45%;
+      width: 45%;
     }
     @include mc(desktop) {
-      width:34%;
+      width: 34%;
     }
 
     @include mc(leftCol) {
       margin-left: 160px;
-      width:28%;
+      width: 28%;
     }
 
     @include mc(wide) {
       margin-left: 240px;
-      width:25%;
+      width: 25%;
     }
   }
 
   &__component-button {
     // mixin takes 3 variables:
     // background-color, text-color, hover-background-color
-    @include component-button($bgColor: $neutral-7,
+    @include component-button(
+      $bgColor: $neutral-7,
       $color: #fff,
-      $hoverBgColor: $neutral-46);
+      $hoverBgColor: $neutral-46
+    );
   }
 
   &__roundel {
@@ -190,9 +193,11 @@ section#total-chaos {
     &:before {
       top: 50%;
       bottom: 0;
-      background: linear-gradient(0deg,
-          rgba(18, 18, 18, 1) 0%,
-          rgba(18, 18, 18, 0) 100%);
+      background: linear-gradient(
+        0deg,
+        rgba(18, 18, 18, 1) 0%,
+        rgba(18, 18, 18, 0) 100%
+      );
       z-index: 10;
     }
 
@@ -200,9 +205,11 @@ section#total-chaos {
       top: 0;
       bottom: auto;
       opacity: 0.65;
-      background: linear-gradient(0deg,
-          rgba(18, 18, 18, 0) 0%,
-          rgba(18, 18, 18, 1) 100%);
+      background: linear-gradient(
+        0deg,
+        rgba(18, 18, 18, 0) 0%,
+        rgba(18, 18, 18, 1) 100%
+      );
       height: 130px;
     }
 
@@ -222,9 +229,11 @@ section#total-chaos {
       }
 
       &:after {
-        background: linear-gradient(90deg,
-            rgba(18, 18, 18, 1) 0%,
-            rgba(18, 18, 18, 0) 100%);
+        background: linear-gradient(
+          90deg,
+          rgba(18, 18, 18, 1) 0%,
+          rgba(18, 18, 18, 0) 100%
+        );
         bottom: 0;
         left: 0px;
         right: auto;
@@ -241,13 +250,13 @@ section#total-chaos {
     }
 
     @include mc(desktop) {
-      left:240px;
+      left: 240px;
     }
 
     @include mc(leftCol) {
       left: 400px;
       left: 350px;
-      background-position-y:30%;
+      background-position-y: 30%;
 
       &:before {
         left: -400px;
@@ -260,7 +269,7 @@ section#total-chaos {
 
     @include mc(wide) {
       left: 317px;
-      background-position-y:30%;
+      background-position-y: 30%;
 
       &:before {
         left: -480px;
@@ -281,9 +290,7 @@ section#total-chaos {
     position: relative;
     z-index: 10;
     padding: 2px 0;
-    // margin-top: 166px;
-    margin-top: 84px;
-    max-width: 280px;
+    margin-top: 50px;
 
     &:before {
       content: "";
@@ -296,10 +303,11 @@ section#total-chaos {
       background-color: white;
       opacity: 0.2;
     }
-    @include mc(mobile){
-      // margin-top: 142px;
+    @include mq(mobileMedium) {
+      margin-top: 70px;
     }
     @include mc(mobileLandscape) {
+      width: 310px;
       &:before {
         right: -20px;
       }
@@ -307,24 +315,17 @@ section#total-chaos {
 
     @include mc(phablet) {
       margin-top: 42px;
+      margin-top: 10px;
     }
 
     @include mc(tablet) {
       font-size: 20px;
       line-height: 115%;
-      width: 290px;
       padding-right: 10px;
-      // margin-top: 62px;
-
       &:before {
         right: 0;
         left: -20px;
       }
-    }
-
-    @include mc(desktop) {
-      // margin-top: 66px;
-      width: 290px;
     }
 
     @include mc(leftCol) {
@@ -341,7 +342,7 @@ section#total-chaos {
     }
 
     @include mc(wide) {
-      margin-top: 70px;
+      margin-top: 30px;
       margin-left: 230px;
       // margin-left: 240px;
     }
@@ -390,7 +391,7 @@ section#total-chaos {
       }
 
       &__time {
-        margin-top: -4px;
+        margin-top: 5px;
       }
     }
   }
@@ -439,7 +440,6 @@ section#total-chaos {
 
 // iOS and Android specific styles
 .#{$containerName} {
-
   .android &,
   .ios & {
     overflow: hidden;
