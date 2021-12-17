@@ -70,6 +70,7 @@
       font-size: 24px;
       line-height: 26px;
       padding: 0 10px 24px;
+      max-width: 550px;
       @include mq(mobileLandscape) {
         padding-left: 20px;
         padding-right: 20px;
@@ -83,48 +84,57 @@
       }
       &__headline {
         font-weight: 700;
+        font-size: 17px;
+        display: inline-block;
       }
       &__subheadline {
-
+        margin-top: 5px;
+        font-family: $font-sans;
+        font-size: 15px;
+        line-height: 135%;
+        &--bold {
+          font-weight: bold;
+        }
+      }
+      &__icon-container {
+        display: inline-block;
+        width: 30px;
+        height: 20px;
+        svg {
+          width: 100%;
+        }
+        border: 0;
+        padding: 0;
+        background-color: transparent;
       }
       .thrasher-button {
         display: inline-flex;
         align-items: center;
-        padding: 0 9px;
-        background-color: #ffe500;
-        border-radius: 36px;
+        justify-content: center;
+        background-color: #fff;
+        border-radius: 5px;
         margin-top: 12px;
-        height: 36px;
+        height: 38px;
+        width: 165px;
+        border: 2px solid #707070;
         .label {
           display: flex;
-          vertical-align: middle;
+          align-self: center;
           font-family: $font-sans;
           font-size: 17px;
-          line-height: 28px;
-          padding: 0 4px;
+          margin-bottom: 0;
         }
-        .icon {
-          display: flex;
-        }
-        .label+.icon {
-          padding: 0 2px 0 4px;
-        }
-
-        &.button-md {
-          height: 44px;
-          padding: 0 12px;
-        }
+      }
+      .selected {
+        background-color: #DCDCDC;
+        border: 2px solid #121212;
       }
     }
 
+  }
 
-
-    &__roundel {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    }
-
+  .hide {
+    display: none;
   }
 
 }

@@ -1,41 +1,83 @@
 <!-- thrasher content sits in this div -->
-<div id='thrasher__thrasher-name' class='thrasher-inner thrasher-name' data-branch='thrasher-branch'>
+<div id='thrasher__aus-territory' class='thrasher-inner aus-territory' data-branch='aus-territory-picker'>
+    <script type="text/javascript">
+        function addSelected(buttonId) {
+            var headerState = document.getElementById('territory');
+            if (buttonId === 'nsw__button') {
+                headerState.textContent = 'New South Wales';
+            } else if (buttonId === 'qld__button') {
+                headerState.textContent = 'Queensland';
+            } else if (buttonId === 'vic__button') {
+                headerState.textContent = 'Victoria';
+            }
+            var currentlySelected = document.getElementsByClassName('selected')[0];
+            currentlySelected.classList.remove('selected');
+            var newlySelected = document.getElementById(buttonId)
+            newlySelected.classList.add('selected');
+        }
+        function openClose(action) {
+            var accordionBody = document.getElementById('accordion-body');
+            var openButton = document.getElementById('open-button');
+            var closeButton = document.getElementById('close-button');
 
-    <a href='' data-link-name='thrasher : thrasher-name : main' class='thrasher-name__link'></a>
-
-    <div class='thrasher-name__background'>
-        <!-- <img> -->
-    </div>
-
-    <div class='thrasher-name__aus-territory'>
-        <a href='' data-link-name='thrasher : aus-territory : thrasher-inner' class='aus-territory__container-title__link'>
-            Section
-        </a>
-    </div>
-
+            if (action === 'open') {
+                accordionBody.classList.remove('hide');
+                openButton.classList.add('hide');
+                closeButton.classList.remove('hide');
+            } else if (action === 'close') {
+                accordionBody.classList.add('hide');
+                closeButton.classList.add('hide');
+                openButton.classList.remove('hide');
+            }
+        }
+    </script>
     <div class='aus-territory__copy'>
-        <div class='aus-territory__copy__headline'>Thrasher: thrasher-name</div>
-        <div class='aus-territory__copy__subheadline'>If you can see this something has gone wrong</div>
+        <div class='aus-territory__copy__headline'>Not in <span id='territory'>New South Wales</span>? Change region</div>
+        <button id='open-button' onclick="openClose('open')" class='aus-territory__copy__icon-container'>
+            <svg
+                viewBox="0 0 30 20"
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="20"
+            >
+                <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M4 9.95L14.45 20.4H15.45L25.8999 9.95L24.9249 9L14.95 17.4L4.975 9L4 9.95Z"
+                />
+            </svg>
+        </button>
+        <button id='close-button' onclick="openClose('close')" class='aus-territory__copy__icon-container hide'>
+            <svg
+                viewBox="0 0 30 20"
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="20"
+            >
+            <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M25.8999 19.45L15.45 9H14.45L4 19.45L4.975 20.4L14.95 12L24.9249 20.4L25.8999 19.45Z"
+            />
+            </svg>
+        </button>
+        <div id='accordion-body' class='hide'>
+            <div class='aus-territory__copy__subheadline'>
+                <span class='aus-territory__copy__subheadline--bold'>The articles above have been specially curated for you, based on your region.</span><br /> 
+                If we’ve somehow got your location wrong, please use one of the following
+                links to get you to the right one.
+            </div>
 
-        <!-- use .button-sm class for a 36px tall button -->
-        <!-- and .button-md class for a 44px tall button -->
-        <div class='button-sm thrasher-button aus-territory__copy__button'>
-            <span class='label'>Read more</span>
-            <span class='icon'>
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M.033 10.823h16.575l-6.5 7.779.845.845 9.035-9.057v-.867L10.953.467l-.845.845 6.5 7.778H.033v1.733z" fill="#121212" />
-                </svg>
-            </span>
+            <button id='nsw__button' onclick='addSelected("nsw__button")' class='button-sm thrasher-button aus-territory__copy__button selected'>
+                <span class='label'>New South Wales</span>
+            </button>
+            <button id='qld__button' onclick='addSelected("qld__button")' class='button-sm thrasher-button aus-territory__copy__button'>
+                <span class='label'>Queensland</span>
+            </button>
+            <button id='vic__button' onclick='addSelected("vic__button")' class='button-sm thrasher-button aus-territory__copy__button'>
+                <span class='label'>Victoria</span>
+            </button>
         </div>
     </div>
 
-    <div class='aus-territory__roundel'>
-        <svg class="class-name__roundel" width="42" height="42" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-            <g fill="none" fill-rule="evenodd">
-                <path d="M21 0C9.402 0 0 9.402 0 21c0 11.597 9.402 21 21 21s21-9.403 21-21C42 9.402 32.598 0 21 0" fill="#121212" />
-                <path d="M24.15 5.269c3.287.423 6.887 2.245 8.296 3.537v5.942h-.743l-7.553-8.82v-.659zM22.57 5.968h-.084c-4.933 0-7.775 6.442-7.63 15.131v.032c-.145 8.69 2.697 15.132 7.63 15.132h.083v.669c-7.422.48-17.463-4.857-17.317-15.8v-.033C5.106 10.157 15.147 4.82 22.569 5.3v.669z" fill="#ffffff" />
-                <path d="M34.72 22.795l-2.384.954v9.837c-1.342 1.143-4.621 2.925-7.901 3.538v-13.59l-2.385-.801v-.603h12.67v.665z" fill="#ffffff" />
-            </g>
-        </svg>
-    </div>
 </div>
