@@ -4,5 +4,379 @@
 @import "_app-fonts";
 @import "_mixins";
 
-@import "basics";
-@import "thrasher";
+$mq-breakpoints: (
+  mobile: 320px,
+  mobileMedium: 375px,
+  mobileLandscape: 480px,
+  phablet: 660px,
+  tablet: 740px,
+  desktop: 980px,
+  leftCol: 1140px,
+  wide: 1300px,
+);
+
+$backgroundColor: #121212;
+$primaryColor: #00b2ff;
+$secondaryColor: #005689;
+
+section#the-100 {
+  position: relative;
+  padding: 0 !important;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background-color: #fff;
+
+  .fc-container__inner,
+  .fc-slice,
+  .facia-snap {
+    overflow: hidden;
+  }
+
+  .facia-snap {
+    padding: 0;
+  }
+}
+
+.football100-2019__wrapper {
+  background-color: $backgroundColor;
+  width: 100%;
+}
+
+.football100-2019 {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 285px;
+  @include mc(mobileLandscape) {
+    height: 150px;
+  }
+  @include mc(phablet) {
+    height: 180px;
+  }
+  background-color: $backgroundColor;
+  color: #fff;
+  font-variant-numeric: lining-nums;
+
+  &__heading {
+    font-family: "GuardianTitlepiece", "Guardian Egyptian Web", Georgia, serif;
+    font-size: 42px;
+    line-height: 115%;
+    margin-left: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    @include mc(mobileMedium) {
+      font-size: 50px;
+    }
+    @include mc(mobileLandscape) {
+      font-size: 40px;
+      margin-left: 20px;
+    }
+    @include mc(phablet) {
+      font-size: 50px;
+      margin-left: 20px;
+    }
+  }
+
+  &__subheading {
+    font-family: "Guardian Headline Full", Georgia, serif;
+    font-size: 17px;
+    line-height: 115%;
+    font-weight: 500;
+    margin-left: 10px;
+    margin-top: 4px;
+    width: 240px;
+    @include mc(mobileMedium) {
+      width: 300px;
+    }
+    @include mc(mobileLandscape) {
+      width: 230px;
+      margin-left: 20px;
+    }
+    @include mc(phablet) {
+      width: 300px;
+    }
+    @include mc(desktop) {
+      margin-top: 4px;
+      font-size: 22px;
+    }
+  }
+
+  &__image {
+    z-index: 3;
+    width: auto;
+    height: 115px;
+    position: absolute;
+    right: -19px;
+    bottom: 0;
+    @include mc(mobileMedium) {
+      height: 125px;
+      bottom: -10px;
+    }
+    @include mc(mobileLandscape) {
+      height: 80px;
+      bottom: 0;
+      right: -10px;
+    }
+    @include mc(phablet) {
+      height: 120px;
+      bottom: 0px;
+      right: -19px;
+    }
+    @include mc(tablet) {
+      height: 145px;
+      bottom: 0px;
+      right: -6px;
+    }
+    @include mc(desktop) {
+      height: 160px;
+      right: 90px;
+    }
+    @include mc(leftCol) {
+      right: 330px;
+      bottom: -8px;
+    }
+    @include mc(wide) {
+      right: 400px;
+    }
+  }
+
+  &__100text {
+    bottom: 60px;
+    right: 0;
+    z-index: 2;
+    position: absolute;
+    font-family: "GuardianTitlepiece", "Guardian Egyptian Web", Georgia, serif;
+    color: $primaryColor;
+    font-size: 160px;
+    text-align: right;
+    @include mc(mobileMedium) {
+      font-size: 170px;
+      bottom: 51px;
+      right: 10px;
+    }
+    @include mc(mobileLandscape) {
+      font-size: 120px;
+      bottom: 52px;
+      right: 3px;
+    }
+    @include mc(phablet) {
+      font-size: 178px;
+      bottom: 90px;
+      right: 0;
+    }
+    @include mc(desktop) {
+      font-size: 200px;
+      bottom: 88px;
+      right: 110px;
+    }
+    @include mc(leftCol) {
+      font-size: 200px;
+      right: 340px;
+    }
+    @include mc(wide) {
+      font-size: 200px;
+      right: 410px;
+    }
+  }
+
+  &__roundel {
+    z-index: 10;
+    top: 4px;
+    right: 10px;
+    position: absolute;
+
+    @include mc(mobileMedium) {
+      top: 8px;
+    }
+    @include mc(desktop) {
+      right: 20px;
+    }
+  }
+
+  &__component-button {
+    margin-left: 8px;
+    z-index: 3;
+    position: absolute;
+    margin-top: 10px;
+    display: inline-flex;
+    border-radius: 25px;
+    background-color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    span {
+      color: $backgroundColor;
+      font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial,
+        "Lucida Grande", sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      margin-top: -2px;
+      padding-left: 10px;
+    }
+    svg {
+      fill: $backgroundColor;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    @include mc(mobileMedium) {
+      margin-top: 8px;
+      z-index: 3;
+    }
+    @include mc(mobileLandscape) {
+      margin-left: 18px;
+      padding: 4px;
+      margin-top: 16px;
+      z-index: 3;
+      span {
+        padding-left: 8px;
+        padding-top: 1px;
+      }
+      svg {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+    }
+    @include mc(phablet) {
+      margin-left: 18px;
+      z-index: 3;
+    }
+    @include mc(leftCol) {
+      margin-left: 886px;
+      z-index: 3;
+    }
+    @include mc(wide) {
+      margin-left: 1046px;
+      z-index: 3;
+    }
+  }
+
+  &__component-button:hover {
+    background-color: #ededed;
+    text-decoration: none;
+
+    svg {
+      transform: translateX(3px);
+      transition: transform 0.1s linear;
+    }
+  }
+
+  &__dots {
+    position: absolute;
+    z-index: 0;
+    bottom: -80px;
+    right: -200px;
+    @include mc(mobileMedium) {
+      right: -100px;
+      bottom: -30px;
+    }
+    @include mc(phablet) {
+      right: -50px;
+      bottom: -10px;
+    }
+    @include mc(tablet) {
+      margin-left: 0;
+    }
+    @include mc(desktop) {
+      right: 80px;
+    }
+    @include mc(leftCol) {
+      right: 310px;
+    }
+    @include mc(wide) {
+      right: 380px;
+    }
+  }
+  &__dot1 {
+    background-color: $secondaryColor;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin-left: 380px;
+    margin-top: 0px;
+    @include mc(tablet) {
+      margin-left: 150px;
+    }
+  }
+  &__dot2 {
+    background-color: $secondaryColor;
+    width: 140px;
+    height: 140px;
+    border-radius: 70px;
+    margin-top: -130px;
+    margin-left: 10px;
+    @include mc(mobileMedium) {
+      margin-top: -150px;
+      margin-left: 10px;
+    }
+    @include mc(mobileLandscape) {
+      margin-left: 200px;
+    }
+    @include mc(phablet) {
+      margin-left: 110px;
+    }
+    @include mc(tablet) {
+      margin-top: -70px;
+      margin-left: 20px;
+    }
+  }
+  &__dot3 {
+    background-color: $secondaryColor;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    margin-top: -170px;
+    margin-left: 140px;
+    @include mc(mobileMedium) {
+      margin-top: -200px;
+      margin-left: 230px;
+    }
+    @include mc(mobileLandscape) {
+      margin-left: 310px;
+    }
+  }
+}
+
+.interactive-atom {
+  margin: 0;
+  overflow: hidden;
+}
+
+.football100-2019 {
+  .android &,
+  .ios & {
+    overflow: hidden;
+    &__heading {
+      margin-bottom: 0;
+    }
+    &__subheading {
+      margin-bottom: 0;
+    }
+    &__100text {
+      margin-bottom: 0;
+      bottom: -20px;
+      @include mc(mobileMedium) {
+        bottom: -35px;
+      }
+      @include mc(mobileLandscape) {
+        bottom: -5px;
+      }
+      @include mc(desktop) {
+        bottom: -20px;
+      }
+    }
+    &__component-button {
+      span {
+        letter-spacing: normal;
+        font-weight: 700;
+        margin-top: -1px;
+      }
+    }
+  }
+  .ios & {
+    &__component-button {
+      span {
+        letter-spacing: -0.5;
+      }
+    }
+  }
+}
