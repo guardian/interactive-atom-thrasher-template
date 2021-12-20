@@ -1,20 +1,50 @@
 <!-- thrasher content sits in this div -->
 <div id='thrasher__aus-territory' class='thrasher-inner aus-territory' data-branch='aus-territory-picker'>
     <script type="text/javascript">
-        function addSelected(buttonId) {
-            var headerState = document.getElementById('territory');
-            if (buttonId === 'nsw__button') {
-                headerState.textContent = 'New South Wales';
-            } else if (buttonId === 'qld__button') {
-                headerState.textContent = 'Queensland';
-            } else if (buttonId === 'vic__button') {
-                headerState.textContent = 'Victoria';
+        window.onload = (event) => {
+            var userSelectedTerritory = checkCookieForSelectedTerrritory()
+            if (userSelectedTerritory) {
+                var headerStateElement = document.getElementById('territory');
+                headerStateElement.textContent = getStateText(userSelectedTerritory);
+                setSelectedStyling(userSelectedTerritory);
             }
+        };
+        function checkCookieForSelectedTerrritory() {
+            var cookieVal = document.cookie;
+            var cookieArray = cookieVal.split(';');
+            var userSelectedTerritory = ''
+            cookieArray.forEach(function(cookie) {
+                var key = cookie.split('=')[0].trim();
+                if (key === 'gu-territory') {
+                    userSelectedTerritory = cookie.split('=')[1]
+                }
+            })
+            return userSelectedTerritory;
+        }
+        function getStateText(input) {
+            if (input === 'au-nsw') {
+                return 'New South Wales';
+            } else if (input === 'au-qld') {
+                return 'Queensland';
+            } else if (input === 'au-vic') {
+                return 'Victoria';
+            }
+        }
+
+        function setSelectedStyling(territoryId) {
             var currentlySelected = document.getElementsByClassName('selected')[0];
             currentlySelected.classList.remove('selected');
-            var newlySelected = document.getElementById(buttonId)
+            var newlySelected = document.getElementById(territoryId)
             newlySelected.classList.add('selected');
         }
+
+        function selectTerritory(buttonId) {
+            var headerStateElement = document.getElementById('territory');
+            headerStateElement.textContent = getStateText(buttonId);
+            setSelectedStyling(buttonId);
+            document.cookie = 'gu-territory=' + buttonId;
+        }
+
         function openClose(action) {
             var accordionBody = document.getElementById('accordion-body');
             var openButton = document.getElementById('open-button');
@@ -68,13 +98,13 @@
                 links to get you to the right one.
             </div>
 
-            <button id='nsw__button' onclick='addSelected("nsw__button")' class='button-sm thrasher-button aus-territory__copy__button selected'>
+            <button id='au-nsw' onclick='selectTerritory("au-nsw")' class='button-sm thrasher-button aus-territory__copy__button selected'>
                 <span class='label'>New South Wales</span>
             </button>
-            <button id='qld__button' onclick='addSelected("qld__button")' class='button-sm thrasher-button aus-territory__copy__button'>
+            <button id='au-qld' onclick='selectTerritory("au-qld")' class='button-sm thrasher-button aus-territory__copy__button'>
                 <span class='label'>Queensland</span>
             </button>
-            <button id='vic__button' onclick='addSelected("vic__button")' class='button-sm thrasher-button aus-territory__copy__button'>
+            <button id='au-vic' onclick='selectTerritory("au-vic")' class='button-sm thrasher-button aus-territory__copy__button'>
                 <span class='label'>Victoria</span>
             </button>
         </div>
