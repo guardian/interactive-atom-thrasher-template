@@ -62,49 +62,50 @@
         }
     </script>
     <div class='aus-territory__copy'>
-        <div class='aus-territory__copy__headline'>Not in <span id='territory'>New South Wales</span>? Change region</div>
-        <button id='open-button' onclick="openClose('open')" class='aus-territory__copy__icon-container'>
-            <svg
-                viewBox="0 0 30 20"
-                xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                height="20"
-            >
+        <div class='aus-territory__copy__headline'>
+            <span>Not in&nbsp;<span id='territory'>New South Wales</span>? Change region</span>
+            <button id='open-button' onclick="openClose('open')" class='aus-territory__copy__icon-container'>
+                <svg
+                    viewBox="0 0 30 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="20"
+                >
+                    <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M4 9.95L14.45 20.4H15.45L25.8999 9.95L24.9249 9L14.95 17.4L4.975 9L4 9.95Z"
+                    />
+                </svg>
+            </button>
+            <button id='close-button' onclick="openClose('close')" class='aus-territory__copy__icon-container hide'>
+                <svg
+                    viewBox="0 0 30 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="20"
+                >
                 <path
                     fillRule="evenodd"
                     clipRule="evenodd"
-                    d="M4 9.95L14.45 20.4H15.45L25.8999 9.95L24.9249 9L14.95 17.4L4.975 9L4 9.95Z"
+                    d="M25.8999 19.45L15.45 9H14.45L4 19.45L4.975 20.4L14.95 12L24.9249 20.4L25.8999 19.45Z"
                 />
-            </svg>
-        </button>
-        <button id='close-button' onclick="openClose('close')" class='aus-territory__copy__icon-container hide'>
-            <svg
-                viewBox="0 0 30 20"
-                xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                height="20"
-            >
-            <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M25.8999 19.45L15.45 9H14.45L4 19.45L4.975 20.4L14.95 12L24.9249 20.4L25.8999 19.45Z"
-            />
-            </svg>
-        </button>
+                </svg>
+            </button>
+        </div>
         <div id='accordion-body' class='hide'>
             <div class='aus-territory__copy__subheadline'>
                 <span class='aus-territory__copy__subheadline--bold'>The articles above have been specially curated for you, based on your region.</span><br /> 
                 If we’ve somehow got your location wrong, please use one of the following
                 links to get you to the right one.
             </div>
-
-            <button id='au-nsw' onclick='selectTerritory("au-nsw")' class='button-sm thrasher-button aus-territory__copy__button selected'>
+            <button id='au-nsw' onclick='selectTerritory("au-nsw")' class='button-sm thrasher-button selected'>
                 <span class='label'>New South Wales</span>
             </button>
-            <button id='au-qld' onclick='selectTerritory("au-qld")' class='button-sm thrasher-button aus-territory__copy__button'>
+            <button id='au-qld' onclick='selectTerritory("au-qld")' class='button-sm thrasher-button'>
                 <span class='label'>Queensland</span>
             </button>
-            <button id='au-vic' onclick='selectTerritory("au-vic")' class='button-sm thrasher-button aus-territory__copy__button'>
+            <button id='au-vic' onclick='selectTerritory("au-vic")' class='button-sm thrasher-button'>
                 <span class='label'>Victoria</span>
             </button>
         </div>

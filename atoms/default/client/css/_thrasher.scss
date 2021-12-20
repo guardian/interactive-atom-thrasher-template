@@ -83,9 +83,14 @@
         padding-left: 260px;
       }
       &__headline {
+        display: inline-flex;
+        justify-content: space-between;
+        width: 100%;
         font-weight: 700;
         font-size: 17px;
-        display: inline-block;
+        @include mq(desktop) {
+          justify-content: flex-start;
+        }
       }
       &__subheadline {
         margin-top: 5px;
@@ -97,33 +102,41 @@
         }
       }
       &__icon-container {
-        display: inline-block;
-        width: 30px;
-        height: 20px;
+        display: inline-flex;
+        width: 25px;
+        height: 15px;
         svg {
           width: 100%;
         }
         border: 0;
         padding: 0;
         background-color: transparent;
+        margin-left: 5px;
       }
       .thrasher-button {
-        display: inline-flex;
+        display: flex;
+        width: 100%;
         align-items: center;
         justify-content: center;
         background-color: #fff;
         border-radius: 5px;
-        margin-top: 12px;
+        margin-top: 6px;
         height: 38px;
-        width: 165px;
         border: 2px solid #707070;
-        .label {
-          display: flex;
-          align-self: center;
-          font-family: $font-sans;
-          font-size: 17px;
-          margin-bottom: 0;
+        margin-right: 0;
+        @include mq(desktop) {
+          width: 165px;
+          display: inline-flex;
+          margin-top: 12px;
+          margin-right: 3px;
         }
+      }
+      .label {
+        display: flex;
+        align-self: center;
+        font-family: $font-sans;
+        font-size: 17px;
+        margin-bottom: 0;
       }
       .selected {
         background-color: #DCDCDC;
