@@ -45,26 +45,32 @@
             document.cookie = 'gu-territory=' + buttonId;
         }
 
-        function openClose(action) {
+        function toggleAccordion() {
+            var openIcon = document.getElementById('open-icon');
+            var closeIcon = document.getElementById('close-icon');
             var accordionBody = document.getElementById('accordion-body');
-            var openButton = document.getElementById('open-button');
-            var closeButton = document.getElementById('close-button');
 
-            if (action === 'open') {
+            if (closeIcon.classList.contains('hide')) {
+                openIcon.classList.add('hide');
+                closeIcon.classList.remove('hide');
                 accordionBody.classList.remove('hide');
-                openButton.classList.add('hide');
-                closeButton.classList.remove('hide');
-            } else if (action === 'close') {
+            } else {
+                closeIcon.classList.add('hide');
+                openIcon.classList.remove('hide');
                 accordionBody.classList.add('hide');
-                closeButton.classList.add('hide');
-                openButton.classList.remove('hide');
             }
         }
     </script>
     <div class='aus-territory__copy'>
-        <div class='aus-territory__copy__headline'>
-            <span>Not in&nbsp;<span id='territory'>New South Wales</span>? Change region</span>
-            <button id='open-button' onclick="openClose('open')" class='aus-territory__copy__icon-container'>
+        <button
+            id='open-close-button'
+            onclick="toggleAccordion()"
+            class='aus-territory__copy__accordion-header'
+        >
+            <div class='aus-territory__copy__accordion-header__headline'>
+                Not in&nbsp;<span id='territory'>New South Wales</span>?&nbsp;<span class='hide-on-mobile'>Change region</span>
+            </div>
+            <div id='open-icon' class='aus-territory__copy__icon-container'>
                 <svg
                     viewBox="0 0 30 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -77,8 +83,8 @@
                         d="M4 9.95L14.45 20.4H15.45L25.8999 9.95L24.9249 9L14.95 17.4L4.975 9L4 9.95Z"
                     />
                 </svg>
-            </button>
-            <button id='close-button' onclick="openClose('close')" class='aus-territory__copy__icon-container hide'>
+            </div>
+            <div id='close-icon' class='aus-territory__copy__icon-container hide'>
                 <svg
                     viewBox="0 0 30 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -91,8 +97,8 @@
                     d="M25.8999 19.45L15.45 9H14.45L4 19.45L4.975 20.4L14.95 12L24.9249 20.4L25.8999 19.45Z"
                 />
                 </svg>
-            </button>
-        </div>
+            </div>
+        </button>
         <div id='accordion-body' class='hide'>
             <div class='aus-territory__copy__subheadline'>
                 <span class='aus-territory__copy__subheadline--bold'>The articles above have been specially curated for you, based on your region.</span><br /> 
