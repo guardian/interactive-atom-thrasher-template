@@ -43,6 +43,7 @@
             headerStateElement.textContent = getStateText(buttonId);
             setSelectedStyling(buttonId);
             document.cookie = 'gu-territory=' + buttonId;
+            location.reload();
         }
 
         function toggleAccordion() {
