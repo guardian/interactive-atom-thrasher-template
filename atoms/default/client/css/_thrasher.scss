@@ -1,30 +1,19 @@
 #thrasher__aus-territory.thrasher-inner {
   position: relative;
-  border: 1px solid #dcdcdc;
   border-bottom: 0;
 
   .aus-territory {
-    background-color: #fff;
-    &__link,
-    &__background,
-    &__background img {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-    }
-
     &__copy {
       font-family: $font-headline;
       font-size: 24px;
       line-height: 26px;
       padding: 0 10px 24px;
-      max-width: 550px;
       @include mq(mobileLandscape) {
         padding-left: 20px;
         padding-right: 20px;
+      }
+      @include mq(phablet) {
+        max-width: 550px;
       }
       @include mq(leftCol) {
         padding-top: 4px;
@@ -33,13 +22,26 @@
       @include mq(wide) {
         padding-left: 260px;
       }
-      &__headline {
-        font-weight: 700;
-        font-size: 17px;
-        display: inline-block;
+      &__accordion-header {
+        display: inline-flex;
+        justify-content: space-between;
+        width: 100%;
+        border: 0;
+        background-color: transparent;
+        padding: 0;
+        @include mq(phablet) {
+          justify-content: flex-start;
+        }
+
+        &__headline {
+          font-weight: 700;
+          font-size: 17px;
+          display: inline-flex;
+        }
       }
-      &__subheadline {
-        margin-top: 5px;
+      &__accordion-body {
+        margin-top: 6px;
+        margin-bottom: 3px;
         font-family: $font-sans;
         font-size: 15px;
         line-height: 135%;
@@ -48,42 +50,54 @@
         }
       }
       &__icon-container {
-        display: inline-block;
-        width: 30px;
-        height: 20px;
+        display: inline-flex;
+        width: 25px;
+        height: 15px;
         svg {
           width: 100%;
         }
-        border: 0;
-        padding: 0;
-        background-color: transparent;
+        margin-left: 5px;
       }
       .thrasher-button {
-        display: inline-flex;
+        display: flex;
+        width: 100%;
         align-items: center;
         justify-content: center;
         background-color: #fff;
         border-radius: 5px;
-        margin-top: 12px;
+        margin-top: 6px;
         height: 38px;
-        width: 165px;
         border: 2px solid #707070;
-        .label {
-          display: flex;
-          align-self: center;
-          font-family: $font-sans;
-          font-size: 17px;
-          margin-bottom: 0;
+        margin-right: 0;
+        @include mq(phablet) {
+          width: 165px;
+          display: inline-flex;
+          margin-top: 12px;
+          margin-right: 3px;
         }
+      }
+      .label {
+        display: flex;
+        align-self: center;
+        font-family: $font-sans;
+        font-size: 17px;
+        margin-bottom: 0;
       }
       .selected {
         background-color: #dcdcdc;
-        border: 2px solid #121212;
+        border: 4px solid #121212;
       }
     }
   }
 
   .hide {
     display: none;
+  }
+
+  .hide-on-mobile {
+    display: none;
+    @include mq(phablet) {
+      display: block;
+    }
   }
 }
