@@ -4,6 +4,7 @@
   border-bottom: 0;
 
   .aus-territory {
+    background-color: #fff;
     &__link,
     &__background,
     &__background img {
@@ -13,56 +14,6 @@
       left: 0;
       right: 0;
       bottom: 0;
-    }
-
-    &__link {
-      z-index: 20;
-      &:hover {
-        // Background hover-effect:
-        ~ .thrasher-name__background {
-          opacity: 0.95;
-        }
-
-        // Button hover-effect
-        ~ .thrasher-button,
-        ~ * .thrasher-button {
-          opacity: 0.8;
-        }
-      }
-    }
-
-    &__background {
-      z-index: -1;
-      img,
-      video {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    &__container-title {
-      padding: 4px 10px;
-      @include mq(mobileLandscape) {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-      @include mq(leftCol) {
-        position: absolute;
-      }
-      &__link {
-        font-family: $font-headline;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 26px;
-        color: inherit;
-        text-decoration: none;
-        position: relative;
-        z-index: 21;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
     }
 
     &__copy {
@@ -126,15 +77,13 @@
         }
       }
       .selected {
-        background-color: #DCDCDC;
+        background-color: #dcdcdc;
         border: 2px solid #121212;
       }
     }
-
   }
 
   .hide {
     display: none;
   }
-
 }
