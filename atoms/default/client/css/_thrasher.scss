@@ -1,6 +1,12 @@
 #thrasher__aus-territory.thrasher-inner {
   position: relative;
   border-bottom: 0;
+  background-color: #fff;
+
+  @include mq(tablet) {
+    border-left: 0.0625rem solid #dcdcdc;
+    border-right: 0.0625rem solid #dcdcdc;
+  }
 
   .aus-territory {
     &__copy {
