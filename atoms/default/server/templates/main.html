@@ -15,7 +15,7 @@
             var userSelectedTerritory = '';
             cookieArray.forEach(function(cookie) {
                 var key = cookie.split('=')[0].trim();
-                if (key === 'gu-territory') {
+                if (key === 'GU_territory') {
                     userSelectedTerritory = cookie.split('=')[1].trim();
                 }
             })
@@ -42,7 +42,7 @@
             var headerStateElement = document.getElementById('territory');
             headerStateElement.textContent = getStateText(buttonId);
             setSelectedStyling(buttonId);
-            document.cookie = 'gu-territory=' + buttonId;
+            document.cookie = 'GU_territory=' + buttonId;
             location.reload();
         }
 
