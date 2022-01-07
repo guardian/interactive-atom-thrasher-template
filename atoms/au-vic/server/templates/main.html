@@ -1,0 +1,120 @@
+<!-- thrasher content sits in this div -->
+<div id='thrasher__aus-territory' class='thrasher-inner aus-territory' data-branch='aus-territory-picker'>
+    <script type="text/javascript">
+        window.onload = (event) => {
+            var userSelectedTerritory = checkCookieForSelectedTerrritory();
+            if (userSelectedTerritory) {
+                var headerStateElement = document.getElementById('territory');
+                headerStateElement.textContent = getStateText(userSelectedTerritory);
+                setSelectedStyling(userSelectedTerritory);
+            }
+        };
+        function checkCookieForSelectedTerrritory() {
+            var cookieVal = document.cookie;
+            var cookieArray = cookieVal.split(';');
+            var userSelectedTerritory = '';
+            cookieArray.forEach(function(cookie) {
+                var key = cookie.split('=')[0].trim();
+                if (key === 'GU_territory') {
+                    userSelectedTerritory = cookie.split('=')[1].trim();
+                }
+            })
+            return userSelectedTerritory;
+        }
+        function getStateText(input) {
+            if (input === 'au-nsw') {
+                return 'New South Wales';
+            } else if (input === 'au-qld') {
+                return 'Queensland';
+            } else if (input === 'au-vic') {
+                return 'Victoria';
+            }
+        }
+
+        function setSelectedStyling(territoryId) {
+            var currentlySelected = document.getElementsByClassName('selected')[0];
+            currentlySelected.classList.remove('selected');
+            var newlySelected = document.getElementById(territoryId);
+            newlySelected.classList.add('selected');
+        }
+
+        function selectTerritory(buttonId) {
+            var headerStateElement = document.getElementById('territory');
+            headerStateElement.textContent = getStateText(buttonId);
+            setSelectedStyling(buttonId);
+            document.cookie = 'GU_territory=' + buttonId;
+            location.reload();
+        }
+
+        function toggleAccordion() {
+            var openIcon = document.getElementById('open-icon');
+            var closeIcon = document.getElementById('close-icon');
+            var accordionBody = document.getElementById('accordion-body');
+
+            if (closeIcon.classList.contains('hide')) {
+                openIcon.classList.add('hide');
+                closeIcon.classList.remove('hide');
+                accordionBody.classList.remove('hide');
+            } else {
+                closeIcon.classList.add('hide');
+                openIcon.classList.remove('hide');
+                accordionBody.classList.add('hide');
+            }
+        }
+    </script>
+    <div class='aus-territory__copy'>
+        <button
+            id='open-close-button'
+            onclick="toggleAccordion()"
+            class='aus-territory__copy__accordion-header'
+        >
+            <div class='aus-territory__copy__accordion-header__headline'>
+                Not in&nbsp;<span id='territory'>Victoria</span>?&nbsp;<span class='hide-on-mobile'>Change region</span>
+            </div>
+            <div id='open-icon' class='aus-territory__copy__icon-container'>
+                <svg
+                    viewBox="0 0 30 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="20"
+                >
+                    <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M4 9.95L14.45 20.4H15.45L25.8999 9.95L24.9249 9L14.95 17.4L4.975 9L4 9.95Z"
+                    />
+                </svg>
+            </div>
+            <div id='close-icon' class='aus-territory__copy__icon-container hide'>
+                <svg
+                    viewBox="0 0 30 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="20"
+                >
+                <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M25.8999 19.45L15.45 9H14.45L4 19.45L4.975 20.4L14.95 12L24.9249 20.4L25.8999 19.45Z"
+                />
+                </svg>
+            </div>
+        </button>
+        <div id='accordion-body' class='hide'>
+            <div class='aus-territory__copy__accordion-body'>
+                <span class='aus-territory__copy__accordion-body--bold'>The articles above have been specially curated for you, based on your region.</span><br /> 
+                If we’ve somehow got your location wrong, please use one of the following links to get you to the right one.
+            </div>
+            <button id='au-nsw' onclick='selectTerritory("au-nsw")' class='button-sm thrasher-button selected'>
+                <span class='label'>New South Wales</span>
+            </button>
+            <button id='au-qld' onclick='selectTerritory("au-qld")' class='button-sm thrasher-button'>
+                <span class='label'>Queensland</span>
+            </button>
+            <button id='au-vic' onclick='selectTerritory("au-vic")' class='button-sm thrasher-button'>
+                <span class='label'>Victoria</span>
+            </button>
+        </div>
+    </div>
+
+</div>
