@@ -22,11 +22,11 @@
             return userSelectedTerritory;
         }
         function getStateText(input) {
-            if (input === 'au-nsw') {
+            if (input === 'AU-NSW') {
                 return 'New South Wales';
-            } else if (input === 'au-qld') {
+            } else if (input === 'AU-QLD') {
                 return 'Queensland';
-            } else if (input === 'au-vic') {
+            } else if (input === 'AU-VIC') {
                 return 'Victoria';
             }
         }
@@ -105,13 +105,13 @@
                 <span class='aus-territory__copy__accordion-body--bold'>The articles above have been specially curated for you, based on your region.</span><br /> 
                 If we’ve somehow got your location wrong, please use one of the following links to get you to the right one.
             </div>
-            <button id='au-nsw' onclick='selectTerritory("au-nsw")' class='button-sm thrasher-button selected'>
+            <button id='AU-NSW' onclick='selectTerritory("AU-NSW")' class='button-sm thrasher-button selected'>
                 <span class='label'>New South Wales</span>
             </button>
-            <button id='au-qld' onclick='selectTerritory("au-qld")' class='button-sm thrasher-button'>
+            <button id='AU-QLD' onclick='selectTerritory("AU-QLD")' class='button-sm thrasher-button'>
                 <span class='label'>Queensland</span>
             </button>
-            <button id='au-vic' onclick='selectTerritory("au-vic")' class='button-sm thrasher-button'>
+            <button id='AU-VIC' onclick='selectTerritory("AU-VIC")' class='button-sm thrasher-button'>
                 <span class='label'>Victoria</span>
             </button>
         </div>
