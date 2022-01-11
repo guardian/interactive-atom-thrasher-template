@@ -1,9 +1,10 @@
-#thrasher__pushing-buttons-signup.thrasher-inner {
+#thrasher__pushing-buttons-thrasher.thrasher-inner {
   position: relative;
   border: 1px solid #dcdcdc;
   border-bottom: 0;
+  width: 100%;
 
-  .pushing-buttons-signup {
+  .pushing-buttons-thrasher {
     &__link,
     &__background,
     &__background img {
@@ -15,11 +16,61 @@
       bottom: 0;
     }
 
+    &__layout {
+      display: flex;
+      flex-direction: column;
+      min-height: 225px;
+      position: relative;
+      max-width: 100%;
+
+      @include mc(tablet) {
+        flex-direction: row-reverse;
+        height: 120px;
+        min-height: unset;
+      }
+
+      @include mc(wide) {
+        height: 60px;
+      }
+
+    }
+
+    &__section {
+      position: relative;
+      flex: 1;
+
+      &--image {
+        min-height: 112.5px;
+
+        @include mc(tablet) {
+          min-height: unset;
+          flex: .63;
+        }
+        @include mc(wide) {
+          flex: .275;
+        }
+      }
+
+      &--text {
+        background-color: $feature-blue;
+        border-style: solid;
+        border-color: $neutral-100;
+        border-width: 2px 0 0 0;
+
+        @include mc(tablet) {
+          border-width: 0 2px 0 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+    }
+
     &__link {
       z-index: 20;
       &:hover {
         // Background hover-effect:
-        ~ .pushing-buttons-signup__background {
+        ~ .pushing-buttons-thrasher__background {
           opacity: 0.95;
         }
 
@@ -41,90 +92,90 @@
       }
     }
 
-    &__container-title {
-      padding: 4px 10px;
-      @include mq(mobileLandscape) {
-        padding-left: 20px;
-        padding-right: 20px;
+    &__copy {
+      padding: 10px;
+
+      @include mc(tablet) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
       }
-      @include mq(leftCol) {
-        position: absolute;
-      }
-      &__link {
-        font-family: $font-headline;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 26px;
-        color: inherit;
-        text-decoration: none;
-        position: relative;
-        z-index: 21;
-        &:hover {
-          text-decoration: underline;
-        }
+      @include mc(wide) {
+        padding: 0 10px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
       }
     }
 
-    &__copy {
+    &__headline {
       font-family: $font-headline;
       font-size: 24px;
-      line-height: 26px;
-      padding: 0 10px 24px;
-      @include mq(mobileLandscape) {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-      @include mq(leftCol) {
-        padding-top: 4px;
-        padding-left: 180px;
-      }
-      @include mq(wide) {
-        padding-left: 260px;
-      }
-      &__headline {
-        font-weight: 700;
-      }
-      &__subheadline {
+      line-height: 30px;
 
-      }
-      .thrasher-button {
-        display: inline-flex;
-        align-items: center;
-        padding: 0 9px;
-        background-color: #ffe500;
-        border-radius: 36px;
-        margin-top: 12px;
-        height: 36px;
-        .label {
-          display: flex;
-          vertical-align: middle;
-          font-family: $font-sans;
-          font-size: 17px;
-          line-height: 28px;
-          padding: 0 4px;
-        }
-        .icon {
-          display: flex;
-        }
-        .label+.icon {
-          padding: 0 2px 0 4px;
-        }
+      font-weight: 700;
+      color: $neutral-100;
 
-        &.button-md {
-          height: 44px;
-          padding: 0 12px;
-        }
+      font-family: $font-titlepiece;
+
+      @include mc(tablet) {
+        font-size: 28px;
+        line-height: 34px;
+        max-width: 510px; // keep the copy on two lines
+      }
+      @include mc(wide) {
+        font-size: 33.5px;
+        line-height: 33.5px;
+        max-width: unset;
       }
     }
 
+    &__button {
+      display: inline-flex;
+      align-items: center;
+      padding: 0 9px;
+      background-color: #ffe500;
+      border-radius: 36px;
+      margin-top: 12px;
+      height: 30px;
 
+      .label {
+        font-weight: 700;
+        text-shadow: .5px 0;
+        display: flex;
+        vertical-align: middle;
+        font-family: $font-sans;
+        font-size: 14px;
+        line-height: 28px;
+        padding: 0 4px 0 0;
+      }
+      .icon {
+        display: flex;
+      }
+      .label + .icon {
+        padding: 0 2px 0 4px;
+      }
+
+      @include mc(tablet) {
+        align-self: flex-end;
+        margin-top: 0;
+        margin-right: 32px;
+      }
+
+      @include mc(wide) {
+        align-self: unset;
+      }
+    }
 
     &__roundel {
       position: absolute;
       top: 10px;
       right: 10px;
+      
+      @include mc(wide) {
+        top: 6px;
+      }
     }
-
   }
 
 }
