@@ -24,6 +24,9 @@ $font-sans: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial,
 #australia-vic,
 #australia-nsw {
   background-color: white;
+  .fc-item {
+    padding: 0;
+  }
 }
 
 section.thrasher-section__aus-territory {
