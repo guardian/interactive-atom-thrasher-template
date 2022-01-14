@@ -39,7 +39,7 @@
                 currentlySelected.classList.remove('selected');
             }
             var newlySelected = document.getElementById(territoryId);
-            if (territoryId !== 'OTHER') {
+            if (territoryId !== 'Other') {
                 newlySelected.classList.add('selected');
             }
         }
@@ -136,10 +136,10 @@
                 <span class='label'>Victoria</span>
             </button>
             <button
-                id='OTHER'
-                onclick='selectTerritory("OTHER")'
+                id='Other'
+                onclick='selectTerritory("Other")'
                 class='thrasher-button thrasher-button--secondary'
-                data-link-name="AU-OTHER"
+                data-link-name="AU-Other"
             >
                 <span class='label'>Hide local news</span>
             </button>
