@@ -28,6 +28,8 @@
                 return 'Queensland';
             } else if (input === 'au-vic') {
                 return 'Victoria';
+            } else {
+                return 'eastern Australia'
             }
         }
 
@@ -105,14 +107,37 @@
                 <span class='aus-territory__copy__accordion-body--bold'>The articles above have been specially curated for you, based on your region.</span><br /> 
                 If we’ve somehow got your location wrong, please use one of the following links to get you to the right one.
             </div>
-            <button id='au-nsw' onclick='selectTerritory("au-nsw")' class='button-sm thrasher-button selected'>
+            <button
+                id='au-nsw'
+                onclick='selectTerritory("au-nsw")'
+                class='button-sm thrasher-button selected'
+                data-link-name="au-nsw"
+            >
                 <span class='label'>New South Wales</span>
             </button>
-            <button id='au-qld' onclick='selectTerritory("au-qld")' class='button-sm thrasher-button'>
+            <button
+                id='au-qld'
+                onclick='selectTerritory("au-qld")'
+                class='button-sm thrasher-button'
+                data-link-name="au-qld"
+            >
                 <span class='label'>Queensland</span>
             </button>
-            <button id='au-vic' onclick='selectTerritory("au-vic")' class='button-sm thrasher-button'>
+            <button
+                id='au-vic'
+                onclick='selectTerritory("au-vic")'
+                class='button-sm thrasher-button'
+                data-link-name="au-vic"
+            >
                 <span class='label'>Victoria</span>
+            </button>
+            <button
+                id='other'
+                onclick='selectTerritory("other")'
+                class='button-sm thrasher-button thrasher-button--secondary'
+                data-link-name="au-other"
+            >
+                <span class='label'>Hide local news</span>
             </button>
         </div>
     </div>
