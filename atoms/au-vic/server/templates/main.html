@@ -35,9 +35,13 @@
 
         function setSelectedStyling(territoryId) {
             var currentlySelected = document.getElementsByClassName('selected')[0];
-            currentlySelected.classList.remove('selected');
+            if (currentlySelected) {
+                currentlySelected.classList.remove('selected');
+            }
             var newlySelected = document.getElementById(territoryId);
-            newlySelected.classList.add('selected');
+            if (territoryId !== 'OTHER') {
+                newlySelected.classList.add('selected');
+            }
         }
 
         function selectTerritory(buttonId) {
@@ -110,7 +114,7 @@
             <button
                 id='AU-NSW'
                 onclick='selectTerritory("AU-NSW")'
-                class='button-sm thrasher-button'
+                class='thrasher-button'
                 data-link-name="AU-NSW"
             >
                 <span class='label'>New South Wales</span>
@@ -118,7 +122,7 @@
             <button
                 id='AU-QLD'
                 onclick='selectTerritory("AU-QLD")'
-                class='button-sm thrasher-button'
+                class='thrasher-button'
                 data-link-name="AU-QLD"
             >
                 <span class='label'>Queensland</span>
@@ -126,7 +130,7 @@
             <button
                 id='AU-VIC'
                 onclick='selectTerritory("AU-VIC")'
-                class='button-sm thrasher-button selected'
+                class='thrasher-button selected'
                 data-link-name="AU-VIC"
             >
                 <span class='label'>Victoria</span>
@@ -134,7 +138,7 @@
             <button
                 id='OTHER'
                 onclick='selectTerritory("OTHER")'
-                class='button-sm thrasher-button thrasher-button--secondary'
+                class='thrasher-button thrasher-button--secondary'
                 data-link-name="AU-OTHER"
             >
                 <span class='label'>Hide local news</span>

@@ -18,9 +18,6 @@
         padding-left: 20px;
         padding-right: 20px;
       }
-      @include mq(phablet) {
-        max-width: 550px;
-      }
       @include mq(leftCol) {
         padding-top: 4px;
         padding-left: 180px;
@@ -54,6 +51,9 @@
         &--bold {
           font-weight: bold;
         }
+        @include mq(phablet) {
+          max-width: 550px;
+        }
       }
       &__icon-container {
         display: inline-flex;
@@ -83,6 +83,15 @@
         }
         &--secondary {
           border: 0;
+          padding: 0;
+          @include mq(phablet) {
+            width: auto;
+            margin-top: 6px;
+          }
+          @include mq(tablet) { 
+            width: 165px;
+            margin-top: 12px;
+          } 
         }
       }
       .label {
