@@ -20,6 +20,15 @@ $font-sans: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial,
   "Lucida Grande", sans-serif;
 
 // this targets the container your thrasher is put inside on Fronts
+#australia-qld,
+#australia-vic,
+#australia-nsw {
+  background-color: white;
+  .fc-item {
+    padding: 0;
+  }
+}
+
 section.thrasher-section__aus-territory {
   width: 100%;
   position: relative;

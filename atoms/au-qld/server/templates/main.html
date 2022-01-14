@@ -22,11 +22,11 @@
             return userSelectedTerritory;
         }
         function getStateText(input) {
-            if (input === 'au-nsw') {
+            if (input === 'AU-NSW') {
                 return 'New South Wales';
-            } else if (input === 'au-qld') {
+            } else if (input === 'AU-QLD') {
                 return 'Queensland';
-            } else if (input === 'au-vic') {
+            } else if (input === 'AU-VIC') {
                 return 'Victoria';
             } else {
                 return 'eastern Australia'
@@ -108,34 +108,34 @@
                 If we’ve somehow got your location wrong, please use one of the following links to get you to the right one.
             </div>
             <button
-                id='au-nsw'
-                onclick='selectTerritory("au-nsw")'
+                id='AU-NSW'
+                onclick='selectTerritory("AU-NSW")'
                 class='button-sm thrasher-button'
-                data-link-name="au-nsw"
+                data-link-name="AU-NSW"
             >
                 <span class='label'>New South Wales</span>
             </button>
             <button
-                id='au-qld'
-                onclick='selectTerritory("au-qld")'
+                id='AU-QLD'
+                onclick='selectTerritory("AU-QLD")'
                 class='button-sm thrasher-button selected'
-                data-link-name="au-qld"
+                data-link-name="AU-QLD"
             >
                 <span class='label'>Queensland</span>
             </button>
             <button
-                id='au-vic'
-                onclick='selectTerritory("au-vic")'
+                id='AU-VIC'
+                onclick='selectTerritory("AU-VIC")'
                 class='button-sm thrasher-button'
-                data-link-name="au-vic"
+                data-link-name="AU-VIC"
             >
                 <span class='label'>Victoria</span>
             </button>
             <button
-                id='other'
-                onclick='selectTerritory("other")'
+                id='OTHER'
+                onclick='selectTerritory("OTHER")'
                 class='button-sm thrasher-button thrasher-button--secondary'
-                data-link-name="au-other"
+                data-link-name="AU-OTHER"
             >
                 <span class='label'>Hide local news</span>
             </button>
