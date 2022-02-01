@@ -1,9 +1,9 @@
-#thrasher__thrasher-name.thrasher-inner {
+#thrasher__morning-briefing-thrasher.thrasher-inner {
   position: relative;
   border: 1px solid #dcdcdc;
   border-bottom: 0;
 
-  .thrasher-name {
+  .morning-briefing-thrasher {
     &__link,
     &__background,
     &__background img {
@@ -15,11 +15,146 @@
       bottom: 0;
     }
 
+    &__layout {
+      display: flex;
+      min-height: 120px;
+      position: relative;
+      max-width: 100%;
+      background-color: $live-pink;
+
+      @include mc(wide) {        
+          padding: 0 5%;
+      }
+    }
+
+    &__section {
+      position: relative;
+      flex: 1;
+      
+      &--image {
+        flex: 0;
+      
+        svg {
+           height: 100%;
+           width: 100%;
+        }
+
+        @include mc(wide) {
+          min-width: 8rem;
+        }
+      }
+
+      &--content {
+        background-color: #c70300;
+        color: $neutral-100;
+        padding: 10px 15px;
+      }
+
+    }
+
+    &__inner-layout {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      height: 100%;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    &__copy-and-embed {
+      
+      @include mc(wide) {        
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    &__copy {
+      line-height: 1.4;
+      font-size: 100%;
+
+      @include mc(wide) {    
+        padding-right: .5rem;
+      }
+    }
+
+    &__heading {
+      display: flex;
+      align-items: center;
+      padding-bottom: 10px;
+
+      @include mc(wide) {    
+        padding-bottom: 0;
+      }
+    }
+
+    &__title {
+      font-size: 170%;
+      line-height: 1.1;
+
+      @include mc(wide) {    
+        font-size: 140%;
+      }
+    }
+
+    &__heading-image { 
+      flex-basis: 4.5rem;
+      flex-shrink: 0;
+      height: 4.5rem;
+      box-sizing: border-box;
+      border: 2px solid #e94e3b ;
+      margin-right: 10px;
+
+      @include mc(wide) {    
+        display: none;
+      }
+    }
+
+    &__embed-container {
+      position: relative;
+      flex-basis: 20.5rem;
+      flex-shrink: 0;
+      display: flex;
+
+      margin-top: .5rem;
+
+      iframe {
+        flex-basis: 20.5rem;
+        margin-left: unset; // override .email-sub__iframe rule
+
+        height: 80px;
+        @include mc(tablet) {        
+          height: 50px;
+        }
+      }
+
+      @include mc(wide) {     
+        justify-content: flex-end;   
+        margin-top: 0;
+      }
+    }
+
+    &__privacy {
+      font-family: $font-sans;
+      font-weight: 300;
+      font-size: 70%;
+      border-top: 1px solid;
+      line-height: 1.4;
+
+      a {
+        color: inherit;
+        font-weight: 700;
+        text-decoration: none;
+      }
+    }
+
     &__link {
       z-index: 20;
       &:hover {
         // Background hover-effect:
-        ~ .thrasher-name__background {
+        ~ .morning-briefing-thrasher__background {
           opacity: 0.95;
         }
 
@@ -41,89 +176,6 @@
       }
     }
 
-    &__container-title {
-      padding: 4px 10px;
-      @include mq(mobileLandscape) {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-      @include mq(leftCol) {
-        position: absolute;
-      }
-      &__link {
-        font-family: $font-headline;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 26px;
-        color: inherit;
-        text-decoration: none;
-        position: relative;
-        z-index: 21;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-
-    &__copy {
-      font-family: $font-headline;
-      font-size: 24px;
-      line-height: 26px;
-      padding: 0 10px 24px;
-      @include mq(mobileLandscape) {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-      @include mq(leftCol) {
-        padding-top: 4px;
-        padding-left: 180px;
-      }
-      @include mq(wide) {
-        padding-left: 260px;
-      }
-      &__headline {
-        font-weight: 700;
-      }
-      &__subheadline {
-
-      }
-      .thrasher-button {
-        display: inline-flex;
-        align-items: center;
-        padding: 0 9px;
-        background-color: #ffe500;
-        border-radius: 36px;
-        margin-top: 12px;
-        height: 36px;
-        .label {
-          display: flex;
-          vertical-align: middle;
-          font-family: $font-sans;
-          font-size: 17px;
-          line-height: 28px;
-          padding: 0 4px;
-        }
-        .icon {
-          display: flex;
-        }
-        .label+.icon {
-          padding: 0 2px 0 4px;
-        }
-
-        &.button-md {
-          height: 44px;
-          padding: 0 12px;
-        }
-      }
-    }
-
-
-
-    &__roundel {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    }
 
   }
 
