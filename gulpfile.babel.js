@@ -374,7 +374,6 @@ const newThrasher = (name, cb) => {
 
   updateDefaultAtom(thrasherName, branchName, [
     'atoms/default/client/js/app.js',
-    'atoms/default/client/css/_thrasher.scss',
     'atoms/default/client/css/_basics.scss',
     'atoms/default/server/templates/main.html',
   ]);

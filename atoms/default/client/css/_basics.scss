@@ -39,7 +39,6 @@ section.thrasher-section__2022-documentary-template {
 #thrasher__2022-documentary-template {
   margin: 0 -10px;
   overflow: hidden;
-
   .ios &,
   .android & {
     margin: 0;
@@ -48,7 +47,6 @@ section.thrasher-section__2022-documentary-template {
       text-decoration: none;
     }
   }
-
   @include mc(tablet) {
     margin: 0;
     width: 100%;
