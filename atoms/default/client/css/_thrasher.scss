@@ -1,9 +1,9 @@
-#thrasher__thrasher-name.thrasher-inner {
+#thrasher__weekend-podcast-2022.thrasher-inner {
   position: relative;
   border: 1px solid #dcdcdc;
   border-bottom: 0;
 
-  .thrasher-name {
+  .weekend-podcast-2022 {
     &__link,
     &__background,
     &__background img {
@@ -19,7 +19,7 @@
       z-index: 20;
       &:hover {
         // Background hover-effect:
-        ~ .thrasher-name__background {
+        ~ .weekend-podcast-2022__background {
           opacity: 0.95;
         }
 
@@ -31,100 +31,28 @@
       }
     }
 
-    &__background {
-      z-index: -1;
-      img,
-      video {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    &__container-title {
-      padding: 4px 10px;
-      @include mq(mobileLandscape) {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-      @include mq(leftCol) {
-        position: absolute;
-      }
-      &__link {
-        font-family: $font-headline;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 26px;
-        color: inherit;
-        text-decoration: none;
-        position: relative;
-        z-index: 21;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-
     &__copy {
       font-family: $font-headline;
       font-size: 24px;
       line-height: 26px;
-      padding: 0 10px 24px;
+      padding: 0 10px 12px;
       @include mq(mobileLandscape) {
         padding-left: 20px;
         padding-right: 20px;
       }
       @include mq(leftCol) {
-        padding-top: 4px;
+        // padding-top: 4px;
         padding-left: 180px;
       }
       @include mq(wide) {
         padding-left: 260px;
       }
-      &__headline {
-        font-weight: 700;
-      }
-      &__subheadline {
-
-      }
-      .thrasher-button {
-        display: inline-flex;
-        align-items: center;
-        padding: 0 9px;
-        background-color: #ffe500;
-        border-radius: 36px;
-        margin-top: 12px;
-        height: 36px;
-        .label {
-          display: flex;
-          vertical-align: middle;
-          font-family: $font-sans;
-          font-size: 17px;
-          line-height: 28px;
-          padding: 0 4px;
-        }
-        .icon {
-          display: flex;
-        }
-        .label+.icon {
-          padding: 0 2px 0 4px;
-        }
-
-        &.button-md {
-          height: 44px;
-          padding: 0 12px;
-        }
-      }
     }
-
-
 
     &__roundel {
       position: absolute;
-      top: 10px;
+      top: 8px;
       right: 10px;
     }
-
   }
-
 }
