@@ -9,7 +9,8 @@ $background: #121212;
 $yellow: #ffe500;
 
 #thrasher-atom,
-#documentary-thrasher {
+#documentary-thrasher,
+#documentaries {
   background-color: white;
   .fc-item {
     padding: 0;
@@ -109,6 +110,7 @@ $yellow: #ffe500;
           line-height: 115%;
           font-weight: 400;
           min-height: 100px;
+          min-height: 55px;
           margin-top: -2px;
           padding-right: 10px;
           @include mq(tablet) {
@@ -117,6 +119,25 @@ $yellow: #ffe500;
           @include mq(desktop) {
             font-size: 40px;
             margin-top: 0;
+          }
+        }
+        .bafta {
+          position: absolute;
+          top: 0;
+          left: 0px;
+          font-family: $f-sans-serif-text;
+          font-weight: 700;
+          padding: 4px 10px;
+          color: #121212;
+          background-color: #ffe500;
+          width: max-content;
+          @include mq(mobileLandscape) {
+            padding: 4px 20px;
+          }
+          @include mq(tablet) {
+            position: relative;
+            padding: 2px 6px;
+            margin-bottom: 0;
           }
         }
         &__subheadline {
@@ -150,6 +171,26 @@ $yellow: #ffe500;
         video {
           width: 100%;
           height: auto;
+          @include mq(tablet) {
+            width: 370px;
+            height: auto;
+            margin-bottom: -6px;
+          }
+          @include mq(desktop) {
+            width: 490px;
+            margin-top: -41px;
+            margin-bottom: -47px;
+          }
+          @include mq(wide) {
+            width: 570px;
+            margin-top: -47px;
+            margin-bottom: -53px;
+          }
+        }
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
           @include mq(tablet) {
             width: 370px;
             height: auto;
