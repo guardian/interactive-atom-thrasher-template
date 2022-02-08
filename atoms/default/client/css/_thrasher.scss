@@ -114,25 +114,25 @@
 
     &__embed-container {
       position: relative;
-      flex-basis: 20.5rem;
-      flex-shrink: 0;
+      flex: 1;
       display: flex;
 
       margin-top: .5rem;
 
       iframe {
-        flex-basis: 20.5rem;
+        flex: 1;
         margin-left: unset; // override .email-sub__iframe rule
 
         height: 80px;
-        @include mc(tablet) {        
-          height: 50px;
+        @include mc(wide) {        
+          height: 60px;
         }
       }
 
       @include mc(wide) {     
         justify-content: flex-end;   
         margin-top: 0;
+        padding-left: .5rem;
       }
     }
 
