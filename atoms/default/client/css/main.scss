@@ -90,6 +90,7 @@ $yellow: #ffe500;
       @include mq(wide) {
         margin-left: 260px;
       }
+
       &__copy {
         display: flex;
         justify-content: space-between;
@@ -103,6 +104,12 @@ $yellow: #ffe500;
         }
         @include mq(leftCol) {
           padding-left: 0px;
+        }
+        .bottom {
+          position: relative;
+          @include mq(tablet) {
+            position: unset;
+          }
         }
         &__headline {
           font-family: $f-serif-headline;
@@ -123,8 +130,8 @@ $yellow: #ffe500;
         }
         .bafta {
           position: absolute;
-          top: 0;
-          left: 0px;
+          top: -91px;
+          left: -10px;
           font-family: $f-sans-serif-text;
           font-weight: 700;
           padding: 4px 10px;
@@ -133,10 +140,13 @@ $yellow: #ffe500;
           width: max-content;
           @include mq(mobileLandscape) {
             padding: 4px 20px;
+            left: -20px;
           }
           @include mq(tablet) {
             position: relative;
             padding: 2px 6px;
+            top: unset;
+            left: unset;
             margin-bottom: 0;
           }
         }
@@ -223,6 +233,10 @@ body.android {
   }
   .documentary-template-2022__container-title__link svg {
     width: 100%;
-    height: auto;
+    height: auto !important;
+  }
+  .documentary-template-2022__content-wrapper__copy .bafta {
+    top: -82px !important;
+    margin: 0;
   }
 }
