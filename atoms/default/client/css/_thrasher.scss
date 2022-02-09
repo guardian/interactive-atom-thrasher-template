@@ -1,9 +1,9 @@
-#thrasher__thrasher-name.thrasher-inner {
+#thrasher__the-guide-thrasher.thrasher-inner {
   position: relative;
   border: 1px solid #dcdcdc;
   border-bottom: 0;
 
-  .thrasher-name {
+  .the-guide-thrasher {
     &__link,
     &__background,
     &__background img {
@@ -15,11 +15,77 @@
       bottom: 0;
     }
 
+    &__layout {
+      display: flex;
+      flex-direction: column;
+      min-height: 225px;
+      position: relative;
+      max-width: 100%;
+      background-color: #e7d5b9;
+      padding: 16px;
+      box-sizing: border-box;
+
+      @include mc(tablet) {
+        flex-direction: row;
+        min-height: unset;
+        padding: 16px 32px 16px 16px;
+      }
+
+      @include mc(wide) {
+        height: 75px;
+        padding: 0 16px;
+      }
+
+    }
+
+    &__section {
+      position: relative;
+      flex: 1;
+
+      &--title {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          padding-bottom: 12px;
+
+          @include mc(wide) {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 18px;
+            padding-bottom: 0px;
+            flex: .6;
+            max-width: 350px;
+            box-sizing: border-box;
+          }
+      }
+
+      &--text {
+
+        @include mc(tablet) {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          max-width: 600px;
+        }
+      }
+
+      &--image {
+          display: none;
+
+          @include mc(wide) {
+              display: flex;
+              padding-left: 24px;
+              flex: .25;
+          }
+      }
+    }
+
     &__link {
       z-index: 20;
       &:hover {
         // Background hover-effect:
-        ~ .thrasher-name__background {
+        ~ .the-guide-thrasher__background {
           opacity: 0.95;
         }
 
@@ -41,90 +107,100 @@
       }
     }
 
-    &__container-title {
-      padding: 4px 10px;
-      @include mq(mobileLandscape) {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-      @include mq(leftCol) {
-        position: absolute;
-      }
-      &__link {
-        font-family: $font-headline;
+    &__tv {
+        width: 57px;
+        height: auto;
+    }
+
+    &__header {
+        width: 226px;
+    }
+
+    &__title {
+        font-size: 42px;
+        margin: 0;
         font-weight: 700;
-        font-size: 24px;
-        line-height: 26px;
-        color: inherit;
-        text-decoration: none;
+        font-family: $font-titlepiece;
+    }
+
+    &__line {
+        width: 226px;
+        height: auto;
+        display: block;
+    }
+  
+    &__cta {
         position: relative;
-        z-index: 21;
-        &:hover {
-          text-decoration: underline;
+        display: flex;
+        max-width: 310px;
+        padding-bottom: 6px;
+
+        @include mc(wide) {
+          max-width: unset;
+          align-items: center;
+          justify-content: space-between;
+          padding-bottom: 3px;
         }
-      }
     }
 
-    &__copy {
-      font-family: $font-headline;
+    &__cta-text {
+      display: inline-block;
       font-size: 24px;
-      line-height: 26px;
-      padding: 0 10px 24px;
-      @include mq(mobileLandscape) {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-      @include mq(leftCol) {
-        padding-top: 4px;
-        padding-left: 180px;
-      }
-      @include mq(wide) {
-        padding-left: 260px;
-      }
-      &__headline {
-        font-weight: 700;
-      }
-      &__subheadline {
+      line-height: 27.6px;
+      font-weight: 700;
+      margin: 0;
+      word-spacing: 1px;
+      font-family: $font-headline;
+      max-width: 340px;
 
+      @include mc(wide) {
+        max-width: unset;
       }
-      .thrasher-button {
-        display: inline-flex;
-        align-items: center;
-        padding: 0 9px;
-        background-color: #ffe500;
-        border-radius: 36px;
-        margin-top: 12px;
-        height: 36px;
-        .label {
-          display: flex;
-          vertical-align: middle;
-          font-family: $font-sans;
-          font-size: 17px;
-          line-height: 28px;
-          padding: 0 4px;
-        }
-        .icon {
-          display: flex;
-        }
-        .label+.icon {
-          padding: 0 2px 0 4px;
-        }
 
-        &.button-md {
-          height: 44px;
-          padding: 0 12px;
-        }
-      }
     }
 
+    &__description {
+        font-size: 20px;
+        line-height: 23px;
+        max-width: 350px;
+        margin: 0;
+        font-family: $font-headline;
 
+        @include mc(tablet) {
+          max-width: unset;
+        }
+    }
+
+    &__arrow {
+        position: absolute;
+        display: inline-block;
+        bottom: 0;
+        right: 0;
+
+        @include mc(wide) {
+          position: relative;
+        }
+    }
+
+    &__popcorn {
+      margin-bottom: -40px;
+    }
 
     &__roundel {
       position: absolute;
       top: 10px;
       right: 10px;
-    }
 
+      svg {
+          height: 42px;
+          width: 42px;
+      }
+
+
+      @include mc(wide) {
+        top: 6px;
+      }
+    }
   }
 
 }
