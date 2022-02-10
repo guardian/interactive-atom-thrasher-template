@@ -94,6 +94,20 @@ To update the content on the UK front, follow these steps
 These steps apply for updating any of the other fronts, or even adding a new one, in which case a link to the new front needs to be added in [harness/index.html](harness/index.html).
 
 
+## Notes integrate:
+### building notes
+- Use ``gulp --new {thrasher name}`` to set up new branch  (NOT DOCUMENTED IN README - explain what this command does and why)
+- Set the path and title in config.json (may be this is done by gulp —new {thrasher name} ?)
+- Assets can be bundles in the thrasher build into s3 (don’t use uploader tool), SUBFOLDERS IN ASSETS FOLDER ARE NOT SUPPORTED 
+- **Should use <%= path %> in the src html file for img src**. The wildcard is replaced with relative url to the asset in dev (``gulp``)and absolute in build (``gulp deploy``) Must be need absolute url in prod for so apps can find the file. [the absolute urls would only work in dev after the assets are pushed to s3 using ``gulp deploy``]  
+- “The title you give the thrasher in the config becomes the id of [the .fc-container div yout thrasher will be in]” (this DOES NOT HAPPEN in the preview dev server created by ``gulp``, the id is fixed as “thrasher-atom”). “If you wanted to target [the pale gray strips in the page margins next to the thrasher] you would have to target this id”  
+- “If you are doing something specific with these strips , when you pass the details over to central production, you need to make sure they use the same container name as you”
+
+### deploy and post deploy notes
+- Need access to fronts tool to see the built thrasher is in place
+- To Do - clarify what to do after deploy live - how are new thrashers accessed 
+- After deploy, can use (``gulp url``) to get the capi url or your thrasher (note - would need to append and api-key to the url to access the representation)
+-fronts are “pressed” - so if you push a change to an atom(to s3), you need to either remove and re-insert the atom in fronts to update to the newly pushed version (or move the atom to a new spot, which make the front re - press the page) - ie pushing a change to the atom does not automatically change the fronts that use the atom!
 
 
 
