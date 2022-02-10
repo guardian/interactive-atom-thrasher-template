@@ -55,36 +55,24 @@ $buttonHoverColor: $neutral-46;
   }
 }
 
-
 .age-of-extinction-wrapper {
   // pic 1
   // background-image: url('https://uploads.guim.co.uk/2021/01/06/GettyImages-1053730734-(260be1efb273b6c5e9fbebb58aa679e8bb448abe)-flipped_(1).jpg');
   // // pic 2
   // background-image: url('https://media.guim.co.uk/60079d63a95d36b76c0eba87049b91d15f939e25/0_304_4100_2346/2000.jpg');
   // pic 3
-  background-image: url('https://uploads.guim.co.uk/2021/01/06/07780509-(c096ae683940737f8d197b11106e1d2f6751404b)-flipped.jpg');
+  // background-image: url('https://uploads.guim.co.uk/2021/01/06/07780509-(c096ae683940737f8d197b11106e1d2f6751404b)-flipped.jpg');
+  background-image: url("https://media.guim.co.uk/0280167ac6cf26eb9002992857b8f946c3b7bf45/0_511_5421_1985/1000.jpg");
+  // background-image: url("https://media.guim.co.uk/60a74acf1733eca7d075e350671cb6bdf1ff65d1/0_0_3382_1421/1000.jpg");
+  // background-image: url("https://media.guim.co.uk/c35aa05093bcd9998559929b397206e09d756a29/0_65_5059_2059/1000.jpg");
   background-size: cover;
-  background-position: center -220px;
-  background-position: center;
-  // background-position: -300px;
+  background-position: -260px bottom;
   min-height: 300px;
-  background-repeat:no-repeat;
-  width:100%;
-  // @include mq(mobileMedium) {
-  //   background-position: -270px;
-  // }
-  @include mq(mobileLandscape){
-    background-position:center;
+  background-repeat: no-repeat;
+  width: 100%;
+  @include mq(mobileLandscape) {
+    background-position: center bottom;
   }
-  // @include mq(desktop){
-  //   background-position: center -104px;
-  // }
-  // @include mq(leftCol) {
-  //   background-position: center -164px;
-  // }
-  // @include mq(wide){
-  //   background-position: center -224px;
-  // }
   .aoe-info-wrapper {
     background-color: #f8f5ea;
     padding-bottom: 12px;
@@ -102,16 +90,15 @@ $buttonHoverColor: $neutral-46;
     }
 
     h2 {
-      font-family: "Guardian Egyptian Web",
-      Georgia,
-      serif;
+      font-family: "Guardian Egyptian Web", Georgia, serif;
       font-size: 18px;
       line-height: 22px;
       font-weight: 400;
       border-top: 1px solid #121212;
     }
 
-    .badge, .bagde {
+    .badge,
+    .bagde {
       margin-bottom: 12px;
       width: 100%;
 
@@ -123,9 +110,6 @@ $buttonHoverColor: $neutral-46;
     }
   }
 }
-
-
-
 
 // this removes margins from Android / iOS view
 .interactive-atom {
