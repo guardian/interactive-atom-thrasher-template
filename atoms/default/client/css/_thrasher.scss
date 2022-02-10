@@ -35,7 +35,7 @@
         padding: 16px 32px 16px 16px;
       }
 
-      @include mc(wide) {
+      @include mc(desktop) {
         height: 75px;
         padding: 0 16px;
       }
@@ -52,7 +52,13 @@
           align-items: flex-start;
           padding-bottom: 12px;
 
-          @include mc(wide) {
+          @include mc(tablet) {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            align-items: center;
+          }
+
+          @include mc(desktop) {
             flex-direction: row-reverse;
             justify-content: space-between;
             align-items: center;
@@ -67,6 +73,7 @@
       &--text {
 
         @include mc(tablet) {
+          flex: 1.2;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -77,7 +84,7 @@
       &--image {
           display: none;
 
-          @include mc(wide) {
+          @include mc(leftCol) {
               display: flex;
               padding-left: 24px;
               flex: .25;
@@ -140,7 +147,7 @@
         max-width: 310px;
         padding-bottom: 6px;
 
-        @include mc(wide) {
+        @include mc(desktop) {
           max-width: unset;
           align-items: center;
           justify-content: space-between;
@@ -157,8 +164,12 @@
       word-spacing: 1px;
       font-family: $font-headline;
       max-width: 340px;
+      
+      @include mc(tablet) {
+        flex-shrink: 0;
+      }
 
-      @include mc(wide) {
+      @include mc(desktop) {
         max-width: unset;
       }
 
@@ -166,12 +177,13 @@
 
     &__description {
         font-size: 20px;
-        line-height: 23px;
+        line-height: 1.2;
         max-width: 350px;
         margin: 0;
         font-family: $font-headline;
-
+        
         @include mc(tablet) {
+          line-height: 1;
           max-width: unset;
         }
     }
@@ -182,8 +194,13 @@
         bottom: 0;
         right: 0;
 
-        @include mc(wide) {
+        @include mc(desktop) {
+          margin-right: 40px;
           position: relative;
+        }
+
+        @include mc(leftCol) {
+          margin-right: 0;
         }
     }
 
@@ -202,7 +219,7 @@
       }
 
 
-      @include mc(wide) {
+      @include mc(desktop) {
         top: 6px;
       }
     }
