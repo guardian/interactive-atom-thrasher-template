@@ -11,9 +11,10 @@ This project provides:
 
 ## Installation
 requirements:
- * [Node.js](http://nodejs.org/)<br>
+ * [Node.js](http://nodejs.org/)
  * [Homebrew](https://brew.sh/)
  * [Node Version Manager](https://github.com/nvm-sh/nvm) (recommended)
+ * [gulp](https://gulpjs.com/) (optional - if you do not want to globally install gulp, prefix the gulp commands with npx  - e.g. ``npx gulp`` instead of just ``gulp``)
 
 steps:
  - Clone this repo
@@ -21,27 +22,37 @@ steps:
  - Install project dependencies with ``npm install``
 
 
-## Usage
-
-### Creating your Thrasher
+## Creating a New Thrasher
 **Note:** New thrashers should live within their own branch
+- Use ``gulp --new {thrasher name}`` to set up new branch  (NOT DOCUMENTED IN README - explain what this command does and why)
+- Set the path and title in config.json (TO DO - maybe this is done by gulp —new {thrasher name} ? check gulpfile) 
 
+
+- “The title you give the thrasher in the config becomes the id of [the .fc-container div yout thrasher will be in]” (this DOES NOT HAPPEN in the preview dev server created by ``gulp``, the id is fixed as “thrasher-atom”). “If you wanted to target [the pale gray strips in the page margins next to the thrasher] you would have to target this id”  
+- “If you are doing something specific with these strips , when you pass the details over to central production, you need to make sure they use the same container name as you”
+
+## Development
+**To update the code of your thrasher use:**
+ * The **congif.json** file to set the title, data sources and folder location (just add your thrasher's name)
+ * Add html to: **atoms/server/templates/main.html**
+ * Add css to: **atoms/client/css/main.scss**
+ * Add js to: **atoms/client/js/app.js**
+
+**To preview your thrasher, run the default gulp command:**
 ```
 gulp
 ```
-Run gulp, you should now be running the thrasher locally at: //localhost:8000
-<br>To preview your thrasher use **Immersive Interactive** for DotCom or **Android Front Webview** for Apps.
+You should now be running the thrasher locally at: [http://localhost:8000/](http://localhost:8000/)
 
-**To update the code of your thrasher use:**
+To preview your thrasher use **Immersive Interactive** for DotCom or **Android Front Webview** for Apps.
 
- * The **congif.json** file to set the title, data sources and folder location (just add your thrashers name)<br>
- * Add html to: **atoms/server/templates/main.html**<br>
- * Add css to: **atoms/client/css/main.scss**<br>
- * Add js to: **atoms/client/js/app.js**
 
-<br>
 
-## Image compression
+### Using Static Assets
+- Assets can be bundles in the thrasher build into s3 (don’t use uploader tool), SUBFOLDERS IN ASSETS FOLDER ARE NOT SUPPORTED 
+- **Should use <%= path %> in the src html file for img src**. The wildcard is replaced with relative url to the asset in dev (``gulp``)and absolute in build (``gulp deploylive``) Must be need absolute url in prod for so apps can find the file. [the absolute urls would only work in dev after the assets are pushed to s3 using ``gulp deploylive``]  
+
+### Image compression
 
 Some things to remember:
 1. Avoid GIF. Ideally, provide video, maybe with a GIF fallback. All GIFs for a front shouldn’t go over 120KB. FOr article, maybe 250KB. https://ezgif.com/ is your friend (resize, delete frames, colour reduction, lossy)
@@ -49,9 +60,8 @@ Some things to remember:
 3. Handbrake for videos: ideally multiple formats with a mp4 fallback for Safari. Resized to size, remove uneeded tracks incl. audio!, 2-pass, set bitrate as low as possible
 4. Use squoosh.app/ for images. If no transparency: JPEG. If PNG: always PNG8!
 
-<br>
 
-## Apps compatibility
+### Apps compatibility
 To ensure maximum compatibility with apps, ensure the following:
  - Test with the "Android front webview" after starting the `gulp` build. This allows you to preview how the thrasher looks like in the app (without the styles inherited from dotcom).
  - All assets have a fully qualified URL. For instance `assets/myimage.png` might work on dotcom but it won't work on apps. However `https://interactive.guim.co.uk/atoms/thrashers/2020/10/first-thing-election-special/assets/v/1602172252139/demo.png` will do just fine. 
@@ -73,11 +83,26 @@ To push your thrasher to live (pushes to a bucket in CAPI live) run:
 gulp deploylive
 ```
 
-To get the URL of your thrasher run:
+To get the capi URL of your thrasher run:
 
 ```
 gulp url
 ```
+
+### Post Deploying / Using your Thrasher
+Note that for the a Thrasher (or any atom) to be previewed or used on the live site, it needs to be deployed to in the fronts tool **(TO DO - check if there are any other tools used to deploy atoms?)**. Uploading to s3 does not automatically deploy the new thrasher to fronts - this needs to be done separately.
+
+- You will need access to fronts tool to deploy the thrasher to fronts and see it work
+- **To Do - outline how to deploy to fronts using the capi url, link to documentation for fronts if available**
+- **To Do - outline the typical test/approval/deploy process - preferably pointing to an external document as that isn't really a technical matter belongin in the README**
+
+
+### Updating a Deployed Thrasher
+An existing thrasher needs to be updated, running ``gulp deploylive`` again after making your updates will upload the new version to s3 and replace the old version. **(TO DO - is it recommended to change the year and month in the config.path so save a new version and keep the old one?)**
+
+Note that as fronts are “pressed”, uploading a change to the atom does not automatically cause the fronts that using that atom to update themselves.
+
+Going to the fronts tool and either removing and re-inserting the atom or moving the atom to a new location will prompt the front to re-load the atom from (so it will then have the new version). 
 
 
 ## Maintenance
@@ -99,21 +124,6 @@ To update the content on the UK front, follow these steps
 
 These steps apply for updating any of the other fronts, or even adding a new one, in which case a link to the new front needs to be added in [harness/index.html](harness/index.html).
 
-
-## Notes integrate:
-### building notes
-- Use ``gulp --new {thrasher name}`` to set up new branch  (NOT DOCUMENTED IN README - explain what this command does and why)
-- Set the path and title in config.json (may be this is done by gulp —new {thrasher name} ?)
-- Assets can be bundles in the thrasher build into s3 (don’t use uploader tool), SUBFOLDERS IN ASSETS FOLDER ARE NOT SUPPORTED 
-- **Should use <%= path %> in the src html file for img src**. The wildcard is replaced with relative url to the asset in dev (``gulp``)and absolute in build (``gulp deploylive``) Must be need absolute url in prod for so apps can find the file. [the absolute urls would only work in dev after the assets are pushed to s3 using ``gulp deploylive``]  
-- “The title you give the thrasher in the config becomes the id of [the .fc-container div yout thrasher will be in]” (this DOES NOT HAPPEN in the preview dev server created by ``gulp``, the id is fixed as “thrasher-atom”). “If you wanted to target [the pale gray strips in the page margins next to the thrasher] you would have to target this id”  
-- “If you are doing something specific with these strips , when you pass the details over to central production, you need to make sure they use the same container name as you”
-
-### deploy and post deploy notes
-- Need access to fronts tool to see the built thrasher is in place
-- To Do - clarify what to do after deploy live - how are new thrashers accessed 
-- After deploy, can use (``gulp url``) to get the capi url or your thrasher (note - would need to append and api-key to the url to access the representation)
--fronts are “pressed” - so if you push a change to an atom(to s3), you need to either remove and re-insert the atom in fronts to update to the newly pushed version (or move the atom to a new spot, which make the front re - press the page) - ie pushing a change to the atom does not automatically change the fronts that use the atom!
 
 
 
