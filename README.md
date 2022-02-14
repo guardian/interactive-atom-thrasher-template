@@ -1,24 +1,30 @@
 # interactive-atom-thrasher-template
+A "thrasher" is style of "interactive content atom". They are intended for use on fronts pages and typically use a responsive design to render as a short 'banners' using the full width of the content area on desktop view, with a taller full width 'block' design on mobile / tablet.
 
-**You will need<br>**
- * [Node.js](http://nodejs.org/)<br>
- * [Homebrew](https://brew.sh/)
+Atoms are used to create custom frontend content which can be deployed on the frontend without it needing to be a part of the [frontend project](https://github.com/guardian/frontend). For more context on see the  [documentation about interactives in frontend](https://github.com/guardian/frontend/blob/main/docs/03-dev-howtos/05-interactives.md). Further details on how atoms function can be found in the [interactive-atom-maker project](https://github.com/guardian/interactive-atom-maker/blob/master/doc/creating-an-atom.md), which a more generalised atom builder.
+
+This project provides: 
+ - a template for building new thrashers.
+ - a dev server configuration for previewing your thrasher in sample pages  
+ - scripts for compiling the thrasher code and uploading to the s3 storage bucket
+
 
 ## Installation
-Clone this repo
+requirements:
+ * [Node.js](http://nodejs.org/)<br>
+ * [Homebrew](https://brew.sh/)
+ * [Node Version Manager](https://github.com/nvm-sh/nvm) (recommended)
 
-**Note:** New thrashers should live within their own branch
-
- Install project dependencies with
-
-```
-npm install
-```
+steps:
+ - Clone this repo
+ - (recommended) Switch the version of Node use for this project: ``nvm use`` (you may need to use ``nvm install`` first to install that version) 
+ - Install project dependencies with ``npm install``
 
 
 ## Usage
 
 ### Creating your Thrasher
+**Note:** New thrashers should live within their own branch
 
 ```
 gulp
@@ -99,7 +105,7 @@ These steps apply for updating any of the other fronts, or even adding a new one
 - Use ``gulp --new {thrasher name}`` to set up new branch  (NOT DOCUMENTED IN README - explain what this command does and why)
 - Set the path and title in config.json (may be this is done by gulp —new {thrasher name} ?)
 - Assets can be bundles in the thrasher build into s3 (don’t use uploader tool), SUBFOLDERS IN ASSETS FOLDER ARE NOT SUPPORTED 
-- **Should use <%= path %> in the src html file for img src**. The wildcard is replaced with relative url to the asset in dev (``gulp``)and absolute in build (``gulp deploy``) Must be need absolute url in prod for so apps can find the file. [the absolute urls would only work in dev after the assets are pushed to s3 using ``gulp deploy``]  
+- **Should use <%= path %> in the src html file for img src**. The wildcard is replaced with relative url to the asset in dev (``gulp``)and absolute in build (``gulp deploylive``) Must be need absolute url in prod for so apps can find the file. [the absolute urls would only work in dev after the assets are pushed to s3 using ``gulp deploylive``]  
 - “The title you give the thrasher in the config becomes the id of [the .fc-container div yout thrasher will be in]” (this DOES NOT HAPPEN in the preview dev server created by ``gulp``, the id is fixed as “thrasher-atom”). “If you wanted to target [the pale gray strips in the page margins next to the thrasher] you would have to target this id”  
 - “If you are doing something specific with these strips , when you pass the details over to central production, you need to make sure they use the same container name as you”
 
