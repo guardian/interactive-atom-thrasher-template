@@ -4,9 +4,9 @@ A "thrasher" is style of "interactive content atom". They are intended for use o
 Atoms are used to create custom frontend content which can be deployed on the frontend without it needing to be a part of the [frontend project](https://github.com/guardian/frontend). For more context on see the  [documentation about interactives in frontend](https://github.com/guardian/frontend/blob/main/docs/03-dev-howtos/05-interactives.md). Further details on how atoms function can be found in the [interactive-atom-maker project](https://github.com/guardian/interactive-atom-maker/blob/master/doc/creating-an-atom.md), which a more generalised atom builder.
 
 This project provides: 
- - a template for building new thrashers.
- - a dev server configuration for previewing your thrasher in sample pages  
- - scripts for compiling the thrasher code and uploading to the s3 storage bucket
+ - a template for building new thrashers(`./atoms/default`) and utility code (`./shared/`),
+ - a dev server configuration for previewing your thrasher in a collections of sample pages 
+ - scripts for compiling the thrasher code and uploading to the s3 storage bucket (in the folder defined in the ``./config.json`` file)
 
 
 ## Installation
@@ -33,10 +33,10 @@ steps:
 
 ## Development
 **To update the code of your thrasher use:**
- * The **congif.json** file to set the title, data sources and folder location (just add your thrasher's name)
- * Add html to: **atoms/server/templates/main.html**
- * Add css to: **atoms/client/css/main.scss**
- * Add js to: **atoms/client/js/app.js**
+ * The ``./config.json`` file to set the title, data sources and folder location (just add your thrasher's name)
+ * Add html to: ``./atoms/default/server/templates/main.html``
+ * Add css to: ``./atoms/default/client/css/main.scss``
+ * Add js to: ``./atoms/default/client/js/app.js``
 
 **To preview your thrasher, run the default gulp command:**
 ```
