@@ -23,13 +23,20 @@ steps:
 
 
 ## Creating a New Thrasher
-**Note:** New thrashers should live within their own branch
-- Use ``gulp --new {thrasher name}`` to set up new branch  (NOT DOCUMENTED IN README - explain what this command does and why)
-- Set the path and title in config.json (TO DO - maybe this is done by gulp —new {thrasher name} ? check gulpfile) 
+**Note:** Each thrasher should live within their own branch. These branches are *not* to be merged into main.
+- `git checkout main` (**TO DO - change gulpfile to do this as part of the script?** )
+- **TO DO - find out the purpose behind the naming logic in gulpfiles newThrasher function and document it - would you ever want to namespace your branch name with a slash?**
+- Use ``gulp --new {yourThrasherName}`` to set up new branch, where `yourThrasherName` is the name for your thrasher. Note that this name will be used within HTML attributes and file paths (as well as the branch name), so should be in **kebab-case** and using only lower-case letters, numbers and dashes. This script will do the following:
+  * Create a new branch called `thrashers/{yourThrasherName}`
+  * Sets the s3 path in `./config.json` (but **not** the title)
+  * `./atoms/default/server/templates/main.html` : changes the id of the thrasher's outer div, and the class names of the outer div and its children to use your branch name
+  * `./atoms/default/client/css/_thrasher.scss` : updates the css to match the changes to main.html
+  * `./atoms/default/client/css/_basics.scss` : updates the css to match the changes to main.html, also updates the class selector on the rule for the section that will contain the thrasher
+  * `./atoms/default/client/js/app.js` : inserts the branch name into the component string passed to the trackLoad function
+- After ``gulp --new {yourThrasherName}`` is finished, edit `./config.json` to set the title. In production, this title will be used as the id for the section element your thasher will be nested in. (Note that this id does not get updated in the sample pages used on the dev server - the section will have the fixed id of "thrasher-atom")
 
+**TO DO - clarify how central production can change the container name, and the impact on using it in code - ie you need to make sure they use the same container name as you**
 
-- “The title you give the thrasher in the config becomes the id of [the .fc-container div yout thrasher will be in]” (this DOES NOT HAPPEN in the preview dev server created by ``gulp``, the id is fixed as “thrasher-atom”). “If you wanted to target [the pale gray strips in the page margins next to the thrasher] you would have to target this id”  
-- “If you are doing something specific with these strips , when you pass the details over to central production, you need to make sure they use the same container name as you”
 
 ## Development
 **To update the code of your thrasher use:**
