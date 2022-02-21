@@ -85,9 +85,8 @@
           border: 0;
           padding: 0;
           @include mq(phablet) {
-            // Commented out below until we have Qld button reinstated
-            // width: auto;
-            // margin-top: 6px;
+            width: auto;
+            margin-top: 6px;
           }
           @include mq(tablet) { 
             width: 165px;
