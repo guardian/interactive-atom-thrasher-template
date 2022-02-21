@@ -1,12 +1,12 @@
 # interactive-atom-thrasher-template
-A "thrasher" is style of "interactive content atom". They are intended for use on fronts pages and typically use a responsive design to render as a short 'banners' using the full width of the content area on desktop view, with a taller full width 'block' design on mobile / tablet.
+"Interactive content atoms" are used to create custom frontend content which can be deployed on the frontend without it needing to be a part of the [frontend project](https://github.com/guardian/frontend). For more context on see the  [documentation about interactives in frontend](https://github.com/guardian/frontend/blob/main/docs/03-dev-howtos/05-interactives.md). Further details on how atoms function can be found in the [interactive-atom-maker project](https://github.com/guardian/interactive-atom-maker/blob/master/doc/creating-an-atom.md), which a more generalised atom builder.
 
-Atoms are used to create custom frontend content which can be deployed on the frontend without it needing to be a part of the [frontend project](https://github.com/guardian/frontend). For more context on see the  [documentation about interactives in frontend](https://github.com/guardian/frontend/blob/main/docs/03-dev-howtos/05-interactives.md). Further details on how atoms function can be found in the [interactive-atom-maker project](https://github.com/guardian/interactive-atom-maker/blob/master/doc/creating-an-atom.md), which a more generalised atom builder.
+A "thrasher" is style of atom. They are intended for use on fronts pages and typically use a responsive design to render as  short 'banners' using the full width of the content area on desktop view, with a taller full width 'block' design for mobile / tablet. Typically, functionality is limited to acting as a link to another page and reporting a load event to Ophan, but there is no technical limitation on including other interactions (However, the limited size alloted to these atom could make the UI problematic).
 
 This project provides: 
  - a template for building new thrashers(`./atoms/default`) and utility code (`./shared/`),
- - a dev server configuration for previewing your thrasher in a collections of sample pages 
- - scripts for compiling the thrasher code and uploading to the s3 storage bucket (in the folder defined in the ``./config.json`` file)
+ - a dev server configuration for previewing your thrasher in a collections of sample pages (`./harness/`)
+ - scripts for compiling the thrasher code and uploading to the s3 storage bucket (with the folder defined in the ``./config.json`` file)
 
 
 ## Installation
@@ -14,7 +14,7 @@ requirements:
  * [Node.js](http://nodejs.org/)
  * [Homebrew](https://brew.sh/)
  * [Node Version Manager](https://github.com/nvm-sh/nvm) (recommended)
- * [gulp](https://gulpjs.com/) (optional - if you do not want to globally install gulp, prefix the gulp commands with npx  - e.g. ``npx gulp`` instead of just ``gulp``)
+ * [gulp](https://gulpjs.com/) (optional - if gulp is not installed globally, prefix the gulp commands with npx  - e.g. ``npx gulp`` instead of just ``gulp``)
 
 steps:
  - Clone this repo
@@ -24,18 +24,19 @@ steps:
 
 ## Creating a New Thrasher
 **Note:** Each thrasher should live within their own branch. These branches are *not* to be merged into main.
-- `git checkout main` (**TO DO - change gulpfile to do this as part of the script?** )
-- **TO DO - find out the purpose behind the naming logic in gulpfiles newThrasher function and document it - would you ever want to namespace your branch name with a slash?**
-- Use ``gulp --new {yourThrasherName}`` to set up new branch, where `yourThrasherName` is the name for your thrasher. Note that this name will be used within HTML attributes and file paths (as well as the branch name), so should be in **kebab-case** and using only lower-case letters, numbers and dashes. This script will do the following:
-  * Create a new branch called `thrashers/{yourThrasherName}`
-  * Sets the s3 path in `./config.json` (but **not** the title)
-  * `./atoms/default/server/templates/main.html` : changes the id of the thrasher's outer div, and the class names of the outer div and its children to use your branch name
-  * `./atoms/default/client/css/_thrasher.scss` : updates the css to match the changes to main.html
-  * `./atoms/default/client/css/_basics.scss` : updates the css to match the changes to main.html, also updates the class selector on the rule for the section that will contain the thrasher
-  * `./atoms/default/client/js/app.js` : inserts the branch name into the component string passed to the trackLoad function
-- After ``gulp --new {yourThrasherName}`` is finished, edit `./config.json` to set the title. In production, this title will be used as the id for the section element your thasher will be nested in. (Note that this id does not get updated in the sample pages used on the dev server - the section will have the fixed id of "thrasher-atom")
+1. `git checkout main`
 
-**TO DO - clarify how central production can change the container name, and the impact on using it in code - ie you need to make sure they use the same container name as you**
+2. Use ``gulp --new {yourThrasherName}`` to set up new branch, where `yourThrasherName` is the name for your thrasher. Note that this name will be used within HTML attributes and file paths (as well as the branch name), so should be in **kebab-case** and using only lower-case letters, numbers and dashes. This script will do the following:
+   * checks out to a new branch called `thrashers/{yourThrasherName}`
+   *  `./config.json`: sets the s3 path value (note the title value is  **not** set automatically)
+   * `./atoms/default/server/templates/main.html` : changes the id of the thrasher's outer div, and the class names of the outer div and its children to use your branch name
+   * `./atoms/default/client/css/_thrasher.scss` : updates the css to match the changes to main.html
+   * `./atoms/default/client/css/_basics.scss` : updates the css to match the changes to main.html and updates the class selector on the rule for the section that will contain the thrasher
+   * `./atoms/default/client/js/app.js` : inserts the branch name into the component string passed to the trackLoad function
+
+3. Edit `./config.json` to set the title. In production, this title will be used as the id for the section element that will contain your thasher, **if central production change the title of your thrasher after you have uploaded it- this will have the effect of changing the section id**. 
+
+Note that in the sample `./harness/front-uk` page used on the dev server, the section id is not automatically updated. The default id of `thrasher-atom` can safely be changed to within your branch to match your title.
 
 
 ## Development
@@ -43,7 +44,7 @@ steps:
  * The ``./config.json`` file to set the title, data sources and folder location (just add your thrasher's name)
  * Add html to: ``./atoms/default/server/templates/main.html``
  * Add css to: ``./atoms/default/client/css/main.scss``
- * Add js to: ``./atoms/default/client/js/app.js``
+ * Add js to: ``./atoms/default/client/js/app.js`` (modules can be imported - the file gets compiled by babel)
 
 **To preview your thrasher, run the default gulp command:**
 ```
@@ -54,15 +55,15 @@ You should now be running the thrasher locally at: [http://localhost:8000/](http
 To preview your thrasher use **Immersive Interactive** for DotCom or **Android Front Webview** for Apps.
 
 
-
 ### Using Static Assets
-- Assets can be bundles in the thrasher build into s3 (don’t use uploader tool), SUBFOLDERS IN ASSETS FOLDER ARE NOT SUPPORTED 
-- **Should use <%= path %> in the src html file for img src**. The wildcard is replaced with relative url to the asset in dev (``gulp``)and absolute in build (``gulp deploylive``) Must be need absolute url in prod for so apps can find the file. [the absolute urls would only work in dev after the assets are pushed to s3 using ``gulp deploylive``]  
+- Static assets (e.g. image files) needed for your thrasher should be saved in `./assets/`. **Using subfolders is not supported by the script**. The files will be uploaded to s3 with your code by the deploy scripts.
+- When referencing the assets in HTML or CSS, use ``<%= path %>`` as a placeholder for path to the assets folder. The placeholder is replaced with relative path to the asset folder in dev (``gulp``) and the absolute path to the production asset folder in build (``gulp deploylive``).
+- Thrashers can also reference assets which are already uploaded (e.g. to "https://i.guim.co.uk/img/uploads/..."). Thrashers are used in apps as well as on the web, so always use the full absolute URL of the file even if it happens to be hosted on https://www.theguardian.com/. 
+
 
 ### Image compression
-
 Some things to remember:
-1. Avoid GIF. Ideally, provide video, maybe with a GIF fallback. All GIFs for a front shouldn’t go over 120KB. FOr article, maybe 250KB. https://ezgif.com/ is your friend (resize, delete frames, colour reduction, lossy)
+1. Avoid GIF. Ideally, provide video, maybe with a GIF fallback. All GIFs for a front shouldn’t go over 120KB. For article, maybe 250KB. https://ezgif.com/ is your friend (resize, delete frames, colour reduction, lossy)
 2. Always resize assets to how big they appear, makes no sense to provide them bigger (yeah, retina, but only if weight can be controlled) and no sense to not crop stuff that’s never shown!
 3. Handbrake for videos: ideally multiple formats with a mp4 fallback for Safari. Resized to size, remove uneeded tracks incl. audio!, 2-pass, set bitrate as low as possible
 4. Use squoosh.app/ for images. If no transparency: JPEG. If PNG: always PNG8!
@@ -75,7 +76,7 @@ To ensure maximum compatibility with apps, ensure the following:
 
 ## Compiling and Deploying
 
-_Before deploying you'll need to pull credentials from Janus for the `interactives` account_
+**Before deploying you'll need to pull credentials from Janus for the `interactives` account**
 
 To push your thrasher to preview (pushes to a bucket in CAPI preview) run:
 
@@ -97,15 +98,13 @@ gulp url
 ```
 
 ### Post Deploying / Using your Thrasher
-Note that for the a Thrasher (or any atom) to be previewed or used on the live site, it needs to be deployed to in the fronts tool **(TO DO - check if there are any other tools used to deploy atoms?)**. Uploading to s3 does not automatically deploy the new thrasher to fronts - this needs to be done separately.
+You will need access to the fronts tool to deploy the thrasher to fronts and see it work.
 
-- You will need access to fronts tool to deploy the thrasher to fronts and see it work
-- **To Do - outline how to deploy to fronts using the capi url, link to documentation for fronts if available**
-- **To Do - outline the typical test/approval/deploy process - preferably pointing to an external document as that isn't really a technical matter belongin in the README**
+Note that for a Thrasher (or any atom) to be previewed or used on the live site, it needs to be deployed to in the fronts tool. Uploading to s3 does not automatically deploy the new thrasher to fronts - this needs to be done separately.
 
 
 ### Updating a Deployed Thrasher
-An existing thrasher needs to be updated, running ``gulp deploylive`` again after making your updates will upload the new version to s3 and replace the old version. **(TO DO - is it recommended to change the year and month in the config.path so save a new version and keep the old one?)**
+An existing thrasher needs to be updated, running ``gulp deploylive`` again after making your updates will upload the new version to s3 and replace the old version.
 
 Note that as fronts are “pressed”, uploading a change to the atom does not automatically cause the fronts that using that atom to update themselves.
 
@@ -113,7 +112,6 @@ Going to the fronts tool and either removing and re-inserting the atom or moving
 
 
 ## Maintenance
-
 To update the content on the UK front, follow these steps
 
 1. Visit the front you want, for example the [UK front](https://www.theguardian.com/uk)
