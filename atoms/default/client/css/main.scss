@@ -123,13 +123,13 @@ $yellow: #ffe500;
         }
         &__subheadline {
           font-family: $f-sans-serif-text;
-          font-size: 15px;
+          font-size: 17px;
           line-height: 135%;
           border-top: 1px solid #ffffff50;
           padding-right: 10px;
           margin-bottom: 12px;
           @include mq(desktop) {
-            padding-right: 140px;
+            padding-right: 100px;
           }
         }
 
