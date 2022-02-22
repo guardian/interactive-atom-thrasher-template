@@ -52,7 +52,10 @@
           font-weight: bold;
         }
         @include mq(phablet) {
-          max-width: 550px;
+          max-width: 495px;
+        }
+        @include mq(tablet) {
+          max-width: 660px
         }
       }
       &__icon-container {
