@@ -187,6 +187,10 @@
         font-weight: 400;
         color:yellow
       }
+
+      @include mc(desktop) {  
+        padding: 0;
+      }
     }
 
 
