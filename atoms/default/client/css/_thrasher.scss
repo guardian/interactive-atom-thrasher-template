@@ -1,9 +1,9 @@
-#thrasher__weekend-podcast-2022.thrasher-inner {
+#thrasher__pw-us.thrasher-inner {
   position: relative;
   border: 1px solid #dcdcdc;
   border-bottom: 0;
 
-  .weekend-podcast-2022 {
+  .pw-us {
     &__link,
     &__background,
     &__background img {
@@ -19,7 +19,7 @@
       z-index: 20;
       &:hover {
         // Background hover-effect:
-        ~ .weekend-podcast-2022__background {
+        ~ .pw-us__background {
           opacity: 0.95;
         }
 
