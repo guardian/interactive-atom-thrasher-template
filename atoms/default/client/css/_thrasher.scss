@@ -76,21 +76,21 @@
       background-color: #90DCFF;
       color: #000;
 
-      @include mc(desktop) {    
+      @include mc(phablet) {    
         display: flex;
       }
     }
 
     &__main-image-container {
       
-      &--mobile {        
+      &--tall {        
         svg {
           width: 100%;
           height: auto;
         }
       }
 
-      &--tablet {
+      &--wide {
         display: none;
         svg {
           width: 100%;
@@ -98,35 +98,45 @@
         }
       }
       
-      &--desktop {
+      &--square {
         display: none;
 
         svg {
           height: 130px;
           width: 130px;
+
+          @include mc(desktop) {  
+            height: 175px;
+            width: 175px;
+          }
+
+          @include mc(leftCol) {  
+            height: 130px;
+            width: 130px;
+          }
         }
       }
 
       @include mc(mobileLandscape) {   
-        &--mobile {
+        &--tall {
           display: none;
         }
-        &--tablet {
+        &--wide {
           display: block;
         }
-        &--desktop {
+        &--square {
           display: none;
         }
       }
 
-      @include mc(desktop) {    
-        &--mobile {
+      @include mc(phablet) {    
+        &--tall {
           display: none;
         }
-        &--tablet {
+        &--wide {
           display: none;
         }
-        &--desktop {
+        &--square {
           display: inline-block;
         }
       }
@@ -136,7 +146,7 @@
 
     &__main-section-content {
      
-      @include mc(desktop) {  
+      @include mc(phablet) {  
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -201,6 +211,7 @@
 
       span {
         font-family: $font-sans;
+        font-weight: 700;
         font-size: 14px;
         margin-left: 3px;
       }
