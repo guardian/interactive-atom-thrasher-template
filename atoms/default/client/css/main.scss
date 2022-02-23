@@ -7,10 +7,11 @@
 @import "basics";
 @import "thrasher";
 
-$primary: #e3d0bd;
-$secondary: #121212;
+$primary: #272a7d;
+$secondary: #fff;
 
-#weekend-podcast,
+#politics-weekly,
+#politics-weekly-us,
 #thrasher-atom {
   background-color: white;
 }
@@ -21,8 +22,7 @@ $secondary: #121212;
     width: 100%;
   }
   .mobile-image {
-    margin-top: -18px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #fff;
     @include mq(phablet) {
       margin-top: -38px;
     }
@@ -30,32 +30,54 @@ $secondary: #121212;
       display: none;
     }
   }
-  .desktop-image {
+  .tablet-image {
     display: none;
     @include mq(tablet) {
+      border-left: 1px solid white;
       display: block;
       position: absolute;
       z-index: 0;
-      right: -60px;
-      height: 90%;
+      right: 0px;
+      height: 100%;
       width: auto;
-      bottom: -10px;
+      bottom: 0px;
     }
     @include mq(desktop) {
-      right: -20px;
-      height: 130%;
-      top: -20px;
-      height: 110%;
-      top: -10px;
+      display: none;
+    }
+  }
+  .desktop-image {
+    border-left: 1px solid white;
+    display: none;
+
+    @include mq(tablet) {
+      border-left: 1px solid white;
+      position: absolute;
+      z-index: 0;
+      right: 0px;
+      height: 100%;
+      width: auto;
+      bottom: 0px;
+    }
+
+    @include mq(desktop) {
+      display: block;
+      right: 100px;
+      height: 100%;
+      top: 0px;
     }
     @include mq(leftCol) {
+      top: 0;
       right: 0;
+      right: 97px;
     }
     @include mq(wide) {
-      right: 72px;
+      right: 104px;
+      right: 98px;
     }
   }
   &__copy {
+    color: white;
     padding-bottom: 12px;
     position: relative;
     z-index: 3;
@@ -69,7 +91,7 @@ $secondary: #121212;
     }
     @include mq(leftCol) {
       width: 570px;
-      width: calc(50% - 30px);
+      width: calc(50% - 20px);
     }
     @include mq(wide) {
       width: 570px;
@@ -91,10 +113,10 @@ $secondary: #121212;
       }
     }
     &__headline {
-      color: #082b61;
+      color: white;
       font-family: $f-titlepiece;
       font-size: 36px;
-      line-height: 115%;
+      line-height: 105%;
       margin-bottom: 8px;
       margin-top: -4px;
       @include mq(tablet) {
@@ -106,9 +128,12 @@ $secondary: #121212;
       font-size: 17px;
       line-height: 135%;
       margin-bottom: 12px;
-      @include mq(leftCol) {
-        width: 80%;
+      @include mq(desktop) {
+        width: 90%;
       }
+      // @include mq(leftCol) {
+      //   width: 80%;
+      // }
     }
     &__button {
       font-family: $f-sans-serif-text;
