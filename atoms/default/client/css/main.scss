@@ -10,12 +10,13 @@
 $primary: #e3d0bd;
 $secondary: #121212;
 
-#weekend-podcast,
+#politics-weekly,
+#politics-weekly-uk,
 #thrasher-atom {
   background-color: white;
 }
 
-.weekend-podcast-2022 {
+.pw-uk {
   background-color: $primary;
   .weekend-image {
     width: 100%;
@@ -170,7 +171,7 @@ $secondary: #121212;
   &.android {
     padding: 0;
     margin: 0;
-    .weekend-podcast-2022__copy__button__caption {
+    .pw-uk__copy__button__caption {
       margin-bottom: 4px;
     }
   }
