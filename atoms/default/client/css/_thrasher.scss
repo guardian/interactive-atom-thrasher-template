@@ -188,9 +188,14 @@
       font-weight: 300;
       font-size: 12px;
       line-height: 16.2px;
+            
+      p {
+        margin: 0 0 .5em;
+      }
       
-      a, :any-link {
+      a, a:any-link {
         color: inherit;
+        text-decoration: underline;
       }
       
       b {
