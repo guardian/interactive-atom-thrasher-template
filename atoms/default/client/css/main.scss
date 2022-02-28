@@ -22,7 +22,6 @@ $secondary: #121212;
     width: 100%;
   }
   .mobile-image {
-    margin-top: -18px;
     border-bottom: 1px solid black;
     @include mq(phablet) {
       margin-top: -38px;
@@ -114,7 +113,7 @@ $secondary: #121212;
     &__button {
       font-family: $f-sans-serif-text;
       line-height: 115%;
-      font-weight: 800;
+      font-weight: bold;
       font-size: 15px;
       &__caption {
         // background-color: $secondary;
@@ -173,6 +172,9 @@ $secondary: #121212;
     margin: 0;
     .pw-uk__copy__button__caption {
       margin-bottom: 4px;
+    }
+    .pw-uk__copy__headline {
+      margin-top: 1px;
     }
   }
 }
