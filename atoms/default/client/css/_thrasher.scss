@@ -203,10 +203,15 @@
 
       iframe {
         max-width: 100%;
-        min-height: 55px;
+        min-height: 65px;
         flex: 1;
         margin-left: unset; // override .email-sub__iframe rule
+
+        @include mc(mobileLandscape) {
+          min-height: 55px;
+        }
       }
+
     }
 
     &__privacy {
