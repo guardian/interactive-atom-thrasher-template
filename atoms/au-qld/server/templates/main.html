@@ -53,8 +53,8 @@
         }
 
         function toggleAccordion() {
-            var openButton = document.getElementById('open-button');
-            var closeButton = document.getElementById('close-button');
+            var openButton = document.getElementById('aus-thrasher-open-button');
+            var closeButton = document.getElementById('aus-thrasher-close-button');
             var accordionBody = document.getElementById('accordion-body');
 
             if (closeButton.classList.contains('hide')) {
@@ -70,7 +70,7 @@
     </script>
     <div class='aus-territory__copy'>
         <button
-            id='open-button'
+            id='aus-thrasher-open-button'
             onclick="toggleAccordion()"
             class='aus-territory__copy__accordion-header'
             data-link-name="AU-QLD-expand"
@@ -94,7 +94,7 @@
             </div>
         </button>
         <button
-            id='close-button'
+            id='aus-thrasher-close-button'
             onclick="toggleAccordion()"
             class='aus-territory__copy__accordion-header hide'
             data-link-name="AU-QLD-close"
