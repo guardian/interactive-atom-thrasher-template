@@ -53,26 +53,27 @@
         }
 
         function toggleAccordion() {
-            var openIcon = document.getElementById('open-icon');
-            var closeIcon = document.getElementById('close-icon');
+            var openButton = document.getElementById('open-button');
+            var closeButton = document.getElementById('close-button');
             var accordionBody = document.getElementById('accordion-body');
 
-            if (closeIcon.classList.contains('hide')) {
-                openIcon.classList.add('hide');
-                closeIcon.classList.remove('hide');
+            if (closeButton.classList.contains('hide')) {
+                openButton.classList.add('hide');
+                closeButton.classList.remove('hide');
                 accordionBody.classList.remove('hide');
             } else {
-                closeIcon.classList.add('hide');
-                openIcon.classList.remove('hide');
+                openButton.classList.remove('hide');
+                closeButton.classList.add('hide');
                 accordionBody.classList.add('hide');
             }
         }
     </script>
     <div class='aus-territory__copy'>
         <button
-            id='open-close-button'
+            id='open-button'
             onclick="toggleAccordion()"
             class='aus-territory__copy__accordion-header'
+            data-link-name="AU-QLD-expand"
         >
             <div class='aus-territory__copy__accordion-header__headline'>
                 Not in&nbsp;<span id='territory'>Queensland</span>?&nbsp;<span class='hide-on-mobile'>Change region</span>
@@ -91,7 +92,17 @@
                     />
                 </svg>
             </div>
-            <div id='close-icon' class='aus-territory__copy__icon-container hide'>
+        </button>
+        <button
+            id='close-button'
+            onclick="toggleAccordion()"
+            class='aus-territory__copy__accordion-header hide'
+            data-link-name="AU-QLD-close"
+        >
+            <div class='aus-territory__copy__accordion-header__headline'>
+                Not in&nbsp;<span id='territory'>Queensland</span>?&nbsp;<span class='hide-on-mobile'>Change region</span>
+            </div>
+            <div id='close-icon' class='aus-territory__copy__icon-container'>
                 <svg
                     viewBox="0 0 30 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -139,7 +150,7 @@
                 id='Other'
                 onclick='selectTerritory("Other")'
                 class='thrasher-button thrasher-button--secondary'
-                data-link-name="AU-Other"
+                data-link-name="AU-hide-thrasher"
             >
                 <span class='label'>Hide local news</span>
             </button>
