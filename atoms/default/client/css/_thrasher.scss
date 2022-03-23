@@ -107,15 +107,10 @@
     }
 
     &__main-image-container {
-      &--tall {
-        svg {
-          width: 100%;
-          height: auto;
-        }
-      }
+
 
       &--wide {
-        display: none;
+        display: block;
         svg {
           width: 100%;
           height: auto;
@@ -131,22 +126,7 @@
         }
       }
 
-      @include mc(mobileLandscape) {
-        &--tall {
-          display: none;
-        }
-        &--wide {
-          display: block;
-        }
-        &--square {
-          display: none;
-        }
-      }
-
       @include mc(phablet) {
-        &--tall {
-          display: none;
-        }
         &--wide {
           display: none;
         }
