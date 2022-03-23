@@ -98,7 +98,7 @@
       border: 2px dashed #fff;
       border-radius: 1em;
       padding: 8px;
-      background-color: #90dcff;
+      background-color: #510043;
       color: #000;
 
       @include mc(phablet) {
@@ -171,6 +171,7 @@
       line-height: 115%;
       font-family: $font-headline;
       font-weight: 700;
+      color: #fff;
 
       @include mc(desktop) {
         line-height: 105%;
@@ -186,7 +187,7 @@
       font-size: 15px;
       line-height: 150%;
       padding: 8px 0;
-      color: #333;
+      color: #fff;
 
       @include mc(desktop) {
         padding: 2px 0;
