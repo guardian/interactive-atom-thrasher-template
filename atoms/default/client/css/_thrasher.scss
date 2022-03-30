@@ -144,19 +144,29 @@
       @include mc(phablet) {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         padding-left: 8px;
       }
     }
 
     &__headline {
-      margin: 0;
+      margin: 0 0 24px;
       font-size: 28px;
       line-height: 115%;
       font-family: $font-headline;
       font-weight: 700;
       color: #fff;
-
+      position: relative;
+      
+      @include mc(phablet) {
+        // design guideline is for the top line of the text to align 
+        // with the top of the graphic it is next to. 
+        // We need to shift the text up and reduce the margin bottom
+        // to match.
+        top: -4px; 
+        margin: 0 0 20px;
+      }
+      
       @include mc(desktop) {
         line-height: 105%;
       }
@@ -169,17 +179,10 @@
       margin: 0;
       font-family: $font-text;
       font-size: 15px;
-      line-height: 150%;
-      padding: 8px 0;
+      font-weight: 700;
+      line-height: 22.5px;
+      padding:  0 0 4px;
       color: #fff;
-
-      @include mc(desktop) {
-        padding: 2px 0;
-        line-height: 120%;
-      }
-      @include mc(leftCol) {
-        padding: 8px 0;
-      }
     }
 
     &__embed-container {
