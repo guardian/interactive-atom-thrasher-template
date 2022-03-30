@@ -15,6 +15,10 @@
       bottom: 0;
     }
 
+    &__link--app-only {
+      display: none;
+    }
+
     &__layout {
       display: flex;
       min-height: 120px;
@@ -214,6 +218,16 @@
 
     }
 
+    &__cta-button {
+      @include component-button(#052962, #fff);
+      display: none;
+      align-self: flex-end;
+
+      span {
+        line-height: 2;
+      }
+    }
+
     &__privacy {
       padding: 8px 0 0;
       font-family: $font-sans;
@@ -289,5 +303,23 @@
         height: 100%;
       }
     }
+  }
+}
+
+.ios, .android {
+  .first-edition-thrasher__embed-container {
+    display: none !important;
+  }
+
+  .first-edition-thrasher__cta-button {
+    display: inline-flex !important;
+  }
+
+  .first-edition-thrasher__link--app-only {
+    display: block !important;
+  }
+
+  .first-edition-thrasher__privacy--web-only {
+    display: none !important;
   }
 }
