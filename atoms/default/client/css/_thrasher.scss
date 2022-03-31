@@ -164,13 +164,15 @@
       @include mc(phablet) {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         padding-left: 8px;
+        position: relative;
+        top: -4px;
       }
     }
 
     &__headline {
-      margin: 0;
+      margin: 0 0 24px;
       font-size: 28px;
       line-height: 115%;
       font-family: $font-headline;
@@ -185,20 +187,12 @@
     }
 
     &__description {
-      margin: 0;
+      margin: 0 0 4px;
       font-family: $font-text;
+      font-weight: 700;
       font-size: 15px;
       line-height: 150%;
-      padding: 8px 0;
       color: #333;
-
-      @include mc(desktop) {
-        padding: 2px 0;
-        line-height: 120%;
-      }
-      @include mc(leftCol) {
-        padding: 8px 0;
-      }
     }
 
     &__embed-container {
