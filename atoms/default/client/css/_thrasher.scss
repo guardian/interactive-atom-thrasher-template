@@ -141,10 +141,11 @@
     }
 
     &__main-section-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
       @include mc(phablet) {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
         padding-left: 8px;
       }
     }
@@ -210,6 +211,7 @@
       border-radius: 20px;
       color: #000;
       padding: 7px 15px;
+      margin-top: auto;
 
       span {
         line-height: 1rem;
