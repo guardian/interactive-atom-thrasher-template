@@ -347,9 +347,25 @@
     display: block !important;
   }
 
+  .first-edition-thrasher__main-section-content {
+    flex: 1;
+  }
+
+  .first-edition-thrasher__section--privacy {
+    display: none !important;
+  }
+
   .first-edition-thrasher__privacy--web-only {
     display: none !important;
   }
+
+  .first-edition-thrasher__section--main {
+    margin-bottom: 12px;
+    @include mc(desktop) {
+      margin-bottom: 0;
+    }    
+  }
+
 
   .first-edition-thrasher__description {
     margin-bottom: 12px !important;
