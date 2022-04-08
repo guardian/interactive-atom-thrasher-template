@@ -327,4 +327,23 @@
   .moving-the-goalposts-thrasher__privacy--web-only {
     display: none !important;
   }
+
+  .moving-the-goalposts-thrasher__section--privacy {
+    display: none !important;
+  }
+
+  .moving-the-goalposts-thrasher__privacy--web-only {
+    display: none !important;
+  }
+
+  .moving-the-goalposts-thrasher__section--main {
+    margin-bottom: 12px;
+    @include mc(desktop) {
+      margin-bottom: 0;
+    }    
+  }
+
+  .moving-the-goalposts-thrasher__main-section-content {
+    flex: 1;
+  }
 }
