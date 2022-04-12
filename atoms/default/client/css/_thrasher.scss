@@ -341,32 +341,33 @@
 
 .ios,
 .android {
-  .first-edition-thrasher__embed-container {
-    display: none !important;
-  }
+  .first-edition-thrasher {
+    &__embed-container {
+      display: none !important;
+    }
 
-  .first-edition-thrasher__cta-button {
-    display: inline-flex !important;
-  }
+    &__cta-button {
+      display: inline-flex !important;
+    }
 
-  .first-edition-thrasher__link--app-only {
-    display: block !important;
-  }
+    &__link--app-only {
+      display: block !important;
+    }
 
-  .first-edition-thrasher__main-section-content {
-    flex: 1;
-  }
+    &__main-section-content {
+      flex: 1;
+    }
 
-  .first-edition-thrasher__section--privacy {
-    display: none !important;
-  }
+    &__section--privacy {
+      display: none !important;
+    }
 
-  .first-edition-thrasher__privacy--web-only {
-    display: none !important;
-  }
+    &__privacy--web-only {
+      display: none !important;
+    }
 
-  .first-edition-thrasher__description {
-    margin-bottom: 16px !important;
+    &__description {
+      margin-bottom: 16px !important;
+    }
   }
-
 }
