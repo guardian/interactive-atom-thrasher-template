@@ -348,6 +348,37 @@
 
     &__cta-button {
       display: inline-flex !important;
+
+      &--wide {
+        display: none !important;
+      }
+    
+      @include mc(phablet) {
+        display: none !important;
+
+        &--wide {
+          display: inline-flex !important;
+        }
+      }
+    }
+
+    &__description-and-button-wrapper {
+      @include mc(phablet) {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    &__cta-button-frame {
+      @include mc(phablet) {
+        background-color: red;
+        padding-right: 24px;
+        padding-left: 24px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
     }
 
     &__link--app-only {
@@ -368,6 +399,23 @@
 
     &__description {
       margin-bottom: 16px !important;
+
+      @include mc(phablet) {
+        max-width: 363px;
+        margin-bottom: 0 !important;
+      }
     }
+
+    &__main-image-container {
+
+      &--square {
+
+        svg {
+          height: 130px !important;
+          width: 130px  !important;
+        }
+      }
+    }
+
   }
 }
