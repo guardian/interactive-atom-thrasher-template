@@ -371,7 +371,6 @@
 
     &__cta-button-frame {
       @include mc(phablet) {
-        background-color: red;
         padding-right: 24px;
         padding-left: 24px;
         flex-shrink: 0;
