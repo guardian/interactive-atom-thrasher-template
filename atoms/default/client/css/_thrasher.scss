@@ -102,7 +102,7 @@
       border: 2px dashed #fff;
       border-radius: 1em;
       padding: 8px;
-      background-color: #7D0068;
+      background-color: #7d0068;
       color: #000;
 
       @include mc(phablet) {
@@ -111,8 +111,6 @@
     }
 
     &__main-image-container {
-
-
       &--wide {
         display: block;
         svg {
@@ -158,16 +156,16 @@
       font-weight: 700;
       color: #fff;
       position: relative;
-      
+
       @include mc(phablet) {
-        // design guideline is for the top line of the text to align 
-        // with the top of the graphic it is next to. 
+        // design guideline is for the top line of the text to align
+        // with the top of the graphic it is next to.
         // We need to shift the text up and reduce the margin bottom
         // to match.
-        top: -4px; 
+        top: -4px;
         margin: 0 0 20px;
       }
-      
+
       @include mc(desktop) {
         line-height: 105%;
       }
@@ -182,7 +180,7 @@
       font-size: 15px;
       font-weight: 700;
       line-height: 22.5px;
-      padding:  0 0 4px;
+      padding: 0 0 4px;
       color: #fff;
     }
 
@@ -200,7 +198,6 @@
           min-height: 55px;
         }
       }
-
     }
 
     &__cta-button {
@@ -311,39 +308,42 @@
   }
 }
 
-.ios, .android {
-  .moving-the-goalposts-thrasher__embed-container {
-    display: none !important;
-  }
+.ios,
+.android {
+  .moving-the-goalposts-thrasher {
+    &__embed-container {
+      display: none !important;
+    }
 
-  .moving-the-goalposts-thrasher__cta-button {
-    display: inline-flex !important;
-  }
+    &__cta-button {
+      display: inline-flex !important;
+    }
 
-  .moving-the-goalposts-thrasher__link--app-only {
-    display: block !important;
-  }
+    &__link--app-only {
+      display: block !important;
+    }
 
-  .moving-the-goalposts-thrasher__privacy--web-only {
-    display: none !important;
-  }
+    &__privacy--web-only {
+      display: none !important;
+    }
 
-  .moving-the-goalposts-thrasher__section--privacy {
-    display: none !important;
-  }
+    &__section--privacy {
+      display: none !important;
+    }
 
-  .moving-the-goalposts-thrasher__privacy--web-only {
-    display: none !important;
-  }
+    &__privacy--web-only {
+      display: none !important;
+    }
 
-  .moving-the-goalposts-thrasher__section--main {
-    margin-bottom: 12px;
-    @include mc(desktop) {
-      margin-bottom: 0;
-    }    
-  }
+    &__section--main {
+      margin-bottom: 12px;
+      @include mc(desktop) {
+        margin-bottom: 0;
+      }
+    }
 
-  .moving-the-goalposts-thrasher__main-section-content {
-    flex: 1;
+    &__main-section-content {
+      flex: 1;
+    }
   }
 }
