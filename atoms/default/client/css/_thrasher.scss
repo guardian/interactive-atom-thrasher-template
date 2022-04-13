@@ -212,8 +212,8 @@
       padding: 7px 15px;
       position: relative;
       align-items: center;
-      background-color: #052961;
-      color: #fff;
+      background-color: #fff;
+      color: #000;
 
       span {
         line-height: 1rem;
@@ -234,7 +234,7 @@
         align-items: center;
         vertical-align: middle;
         box-sizing: border-box;
-        fill: #fff;
+        fill: #000;
       }
     }
 
@@ -325,6 +325,36 @@
 
     &__cta-button {
       display: inline-flex !important;
+
+      &--wide {
+        display: none !important;
+      }
+    
+      @include mc(phablet) {
+        display: none !important;
+
+        &--wide {
+          display: inline-flex !important;
+        }
+      }
+    }
+
+    &__description-and-button-wrapper {
+      @include mc(phablet) {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    &__cta-button-frame {
+      @include mc(phablet) {
+        padding-right: 24px;
+        padding-left: 24px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
     }
 
     &__link--app-only {
@@ -352,6 +382,17 @@
 
     &__main-section-content {
       flex: 1;
+    }
+
+    &__main-image-container {
+
+      &--square {
+
+        svg {
+          height: 130px !important;
+          width: 130px  !important;
+        }
+      }
     }
   }
 }
