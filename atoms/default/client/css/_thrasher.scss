@@ -145,6 +145,8 @@
 
       @include mc(phablet) {
         padding-left: 8px;
+        position: relative;
+        margin-top: -3px;
       }
     }
 
@@ -155,16 +157,6 @@
       font-family: $font-headline;
       font-weight: 700;
       color: #fff;
-      position: relative;
-
-      @include mc(phablet) {
-        // design guideline is for the top line of the text to align
-        // with the top of the graphic it is next to.
-        // We need to shift the text up and reduce the margin bottom
-        // to match.
-        top: -4px;
-        margin: 0 0 20px;
-      }
 
       @include mc(desktop) {
         line-height: 105%;
