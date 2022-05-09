@@ -126,8 +126,8 @@
     }
 
   }
-
 }
+
 #thrasher__app-first-edition.thrasher-inner {
   position: relative;
   border: 1px solid #dcdcdc;
@@ -143,10 +143,6 @@
       left: 0;
       right: 0;
       bottom: 0;
-    }
-
-    &__link--app-only {
-      display: none;
     }
 
     &__layout {
@@ -260,8 +256,8 @@
         display: none;
 
         svg {
-          height: 164px;
-          width: 164px;
+          height: 130px;
+          width: 130px;
         }
       }
 
@@ -291,6 +287,7 @@
     }
 
     &__main-section-content {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -299,6 +296,13 @@
         padding-left: 8px;
         position: relative;
         margin-top: -5px;
+      }
+    }
+
+    &__description-and-button-wrapper {
+      @include mc(phablet) {
+        display: flex;
+        justify-content: space-between;
       }
     }
 
@@ -318,7 +322,7 @@
     }
 
     &__description {
-      margin: 0 0 4px;
+      margin: 0 0 16px;
       font-family: $font-text;
       font-weight: 700;
       font-size: 15px;
@@ -334,10 +338,40 @@
           color: inherit;
         }
       }
+
+      @include mc(phablet) {
+        max-width: 363px;
+        margin: 0;
+      }
     }
 
     &__cta-button {
-      display: none;
+      
+      display: inline-flex;
+
+      &--wide {
+        display: none;
+      }
+    
+      @include mc(phablet) {
+        display: none;
+
+        &--wide {
+          display: inline-flex;
+        }
+      }
+      
+      &__cta-button-frame {
+        @include mc(phablet) {
+          padding-right: 24px;
+          padding-left: 24px;
+          flex-shrink: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+        }
+      }
+
       align-self: flex-start;
 
       margin-top: auto;
@@ -452,72 +486,3 @@
   }
 }
 
-.ios,
-.android {
-  .first-edition-thrasher {
-
-
-    &__cta-button {
-      display: inline-flex !important;
-
-      &--wide {
-        display: none !important;
-      }
-    
-      @include mc(phablet) {
-        display: none !important;
-
-        &--wide {
-          display: inline-flex !important;
-        }
-      }
-    }
-
-    &__description-and-button-wrapper {
-      @include mc(phablet) {
-        display: flex;
-        justify-content: space-between;
-      }
-    }
-
-    &__cta-button-frame {
-      @include mc(phablet) {
-        padding-right: 24px;
-        padding-left: 24px;
-        flex-shrink: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-      }
-    }
-
-    &__link--app-only {
-      display: block !important;
-    }
-
-    &__main-section-content {
-      flex: 1;
-    }
-
-    &__description {
-      margin-bottom: 16px !important;
-
-      @include mc(phablet) {
-        max-width: 363px;
-        margin-bottom: 0 !important;
-      }
-    }
-
-    &__main-image-container {
-
-      &--square {
-
-        svg {
-          height: 130px !important;
-          width: 130px  !important;
-        }
-      }
-    }
-
-  }
-}
