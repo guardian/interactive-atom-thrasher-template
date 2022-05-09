@@ -336,23 +336,6 @@
       }
     }
 
-    &__embed-container {
-      position: relative;
-      display: flex;
-      margin-top: auto;
-
-      iframe {
-        max-width: 100%;
-        min-height: 65px;
-        flex: 1;
-        margin-left: unset; // override .email-sub__iframe rule
-
-        @include mc(mobileLandscape) {
-          min-height: 55px;
-        }
-      }
-    }
-
     &__cta-button {
       display: none;
       align-self: flex-start;
@@ -472,9 +455,7 @@
 .ios,
 .android {
   .first-edition-thrasher {
-    &__embed-container {
-      display: none !important;
-    }
+
 
     &__cta-button {
       display: inline-flex !important;
@@ -516,14 +497,6 @@
 
     &__main-section-content {
       flex: 1;
-    }
-
-    &__section--privacy {
-      display: none !important;
-    }
-
-    &__privacy--web-only {
-      display: none !important;
     }
 
     &__description {
