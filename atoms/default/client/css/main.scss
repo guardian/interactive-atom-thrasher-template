@@ -5,8 +5,8 @@
 @import "_mixins";
 @import "basics";
 
-$background: #121212;
-$yellow: #ffe500;
+$background: #ffe500;
+$text: #121212;
 
 #thrasher-atom,
 #documentary-thrasher {
@@ -16,11 +16,11 @@ $yellow: #ffe500;
   }
 }
 
-#thrasher__documentary-template-2022 {
+#thrasher__podcast-template {
   background-color: $background;
   width: 100%;
-  color: white;
-  .documentary-template-2022 {
+  color: $text;
+  .podcast-template {
     &__link {
       position: absolute;
       top: 0;
@@ -30,20 +30,25 @@ $yellow: #ffe500;
       &:focus {
         border: 4px solid #0093e0;
       }
-      &:hover,
-      &:focus {
-        ~ .documentary-template-2022__content-wrapper {
-          .documentary-template-2022__content-wrapper__copy .icon {
-            transform: scale(1.2);
+      &:hover {
+        ~ .podcast-template__content-wrapper {
+          .podcast-template__content-wrapper__copy__button a {
+            
+                box-shadow: inset 0 0 0 2px black;
+            
+                svg {
+                  transform: translateX(2px);
+                }
+              
           }
         }
       }
     }
     &__container-title {
-      width: 89px;
+      width: 110px;
       display: block;
       position: absolute;
-      bottom: 6px;
+      top: 8px;
       right: 10px;
       z-index: 20;
       @include mq(mobileLandscape) {
@@ -51,6 +56,9 @@ $yellow: #ffe500;
       }
       @include mq(tablet) {
         left: 272px;
+        top: unset;
+        bottom: -4px;
+        width: 90px;
       }
       @include mq(desktop) {
         left: 393px;
@@ -59,6 +67,7 @@ $yellow: #ffe500;
         width: 103px;
         bottom: unset;
         left: 20px;
+        bottom: unset;
         top: 8px;
       }
       &__link {
@@ -67,50 +76,64 @@ $yellow: #ffe500;
           height: 100%;
         }
       }
-      &:hover,
-      &:focus {
-        svg {
-          .docs {
-            fill: $yellow;
-          }
-        }
-      }
     }
     &__content-wrapper {
       display: flex;
-      flex-direction: column-reverse;
+      flex-direction: column;
+      position: relative;
       // margin-left: 20px;
       @include mq(tablet) {
         flex-direction: row;
       }
       @include mq(leftCol) {
         margin-left: 180px;
+        &::before {
+            content: '';
+            width: 1px;
+            background-color: #12121220;
+            left: -10px;
+            position: absolute;
+            height: calc(100% - 12px);
+          }
       }
       @include mq(wide) {
         margin-left: 260px;
       }
+      
       &__copy {
         display: flex;
         justify-content: space-between;
         flex-direction: column;
         padding-left: 10px;
+        padding-top: 8px;
         @include mq(mobileLandscape) {
           padding-left: 20px;
         }
         @include mq(tablet) {
           width: 470px;
+          padding-top: 0;
         }
         @include mq(leftCol) {
           padding-left: 0px;
         }
         &__headline {
-          font-family: $f-serif-headline;
+          font-family: $f-titlepiece;
           font-size: 32px;
           line-height: 115%;
           font-weight: 400;
           min-height: 100px;
           margin-top: -2px;
+          margin-bottom: 12px;
           padding-right: 10px;
+          z-index: 2;
+          position: relative;
+          max-width: 180px;
+          @include mq(mobileMedium) {
+                max-width: 64%;
+          }
+          @include mq(mobileLandscape) {
+                max-width: unset;
+          }
           @include mq(tablet) {
             margin-top: 4px;
           }
@@ -118,52 +141,84 @@ $yellow: #ffe500;
             font-size: 40px;
             margin-top: 0;
           }
+          span {
+            background-color: #c70000;
+            color:white;
+            padding: 0 10px;
+            margin-left: -10px;
+            z-index: -1;
+            position: relative;
+            @include mq(leftCol) {
+              
+            }
+          }
         }
         &__subheadline {
           padding-right: 10px;
-          font-family: $f-sans-serif-text;
-          font-size: 15px;
+          font-family: $f-serif-headline;
           font-size: 17px;
-          border-top: 1px solid #ffffff50;
+          line-height: 115%;
+          font-weight: 500;
           margin-bottom: 12px;
         }
 
         &__button {
-          display: flex;
-          align-items: center;
-          margin-bottom: 6px;
-          .icon {
-            margin-right: 10px;
-            transition: all 0.3s ease;
+          margin-bottom: 4px;
+          @include mq(tablet) {
+                margin-bottom: 18px;
           }
-          .label {
+
+          @include mq(leftCol) {
+            margin-bottom: 12px;
+
+          }
+          a {
             font-family: $f-sans-serif-text;
-            font-size: 15px;
+            font-weight: 700;
             display: flex;
-            flex-direction: column;
-            line-height: 120%;
-            margin-top: -5px;
+            gap: 10px;
+            align-items: center;
+            border: 1px solid $text;
+            width: max-content;
+            padding: 4px 16px 5px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            box-shadow: none;
+            transition: box-shadow 0.3s ease;
+            svg {
+              transition: transform 0.3s ease;
+            }
+            &:hover {
+              box-shadow: inset 0 0 0 2px black;
+              svg {
+                transform: translateX(2px);
+              }
+            }
           }
         }
+
       }
       &__video {
-        video {
+        img {
           width: 100%;
           height: auto;
+          margin-bottom: -6px;
           @include mq(tablet) {
-            width: 370px;
-            height: auto;
-            margin-bottom: -6px;
+            width: 401px;
+              height: auto;
+              margin-bottom: -6px;
+              margin-right: -32px;
           }
           @include mq(desktop) {
             width: 490px;
-            margin-top: -41px;
+            margin-top: -21px;
             margin-bottom: -47px;
+            margin-right: 0;
           }
           @include mq(wide) {
             width: 570px;
-            margin-top: -47px;
-            margin-bottom: -53px;
+            margin-top: -45px;
+            margin-bottom: -75px;
           }
         }
       }
@@ -174,13 +229,13 @@ $yellow: #ffe500;
 body.ios,
 body.android {
   margin: 0;
-  .documentary-template-2022 {
+  .podcast-template {
     position: relative;
   }
-  .documentary-template-2022__content-wrapper__copy__headline {
+  .podcast-template__content-wrapper__copy__headline {
     margin-top: 4px;
   }
-  .documentary-template-2022__container-title__link svg {
+  .podcast-template__container-title__link svg {
     width: 100%;
     height: auto;
   }
