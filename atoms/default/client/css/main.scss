@@ -9,18 +9,18 @@ $background: #ffe500;
 $text: #121212;
 
 #thrasher-atom,
-#documentary-thrasher {
+#football-weekly {
   background-color: white;
   .fc-item {
     padding: 0;
   }
 }
 
-#thrasher__podcast-template {
+#thrasher__football-weekly {
   background-color: $background;
   width: 100%;
   color: $text;
-  .podcast-template {
+  .football-weekly {
     &__link {
       position: absolute;
       top: 0;
@@ -31,8 +31,8 @@ $text: #121212;
         border: 4px solid #0093e0;
       }
       &:hover {
-        ~ .podcast-template__content-wrapper {
-          .podcast-template__content-wrapper__copy__button a {
+        ~ .football-weekly__content-wrapper {
+          .football-weekly__content-wrapper__copy__button a {
             
                 box-shadow: inset 0 0 0 2px black;
             
@@ -144,8 +144,8 @@ $text: #121212;
           span {
             background-color: #c70000;
             color:white;
-            padding: 0 10px;
-            margin-left: -10px;
+            padding: 0 4px;
+            margin-left: -4px;
             z-index: -1;
             position: relative;
             @include mq(leftCol) {
@@ -229,13 +229,13 @@ $text: #121212;
 body.ios,
 body.android {
   margin: 0;
-  .podcast-template {
+  .football-weekly {
     position: relative;
   }
-  .podcast-template__content-wrapper__copy__headline {
+  .football-weekly__content-wrapper__copy__headline {
     margin-top: 4px;
   }
-  .podcast-template__container-title__link svg {
+  .football-weekly__container-title__link svg {
     width: 100%;
     height: auto;
   }
