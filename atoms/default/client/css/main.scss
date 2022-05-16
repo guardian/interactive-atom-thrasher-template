@@ -7,7 +7,7 @@
 @import "basics";
 @import "thrasher";
 
-$backgroundColor: #d95889;
+$backgroundColor: #D9305A;
 $textColor: #ffffff;
 
 
@@ -302,7 +302,7 @@ $textColor: #ffffff;
         flex-wrap: wrap;
         padding: 6px 0;
         margin-left: 10px;
-        color: #000;
+        color: #fff;
 
         @include mq(mobileLandscape) {
             margin-left: 20px;
@@ -362,7 +362,7 @@ $textColor: #ffffff;
             
             a {
                 padding: 5px 8px 6px 8px;
-                border: 1px solid #000;
+                border: 1px solid #fff;
                 border-radius: 50px;
                 margin-right: 4px;
                 transition: all 0.3s ease;
