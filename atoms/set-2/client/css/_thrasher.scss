@@ -1,0 +1,156 @@
+@import './newsletter-card';
+
+#thrasher__multi-newsletter-2.thrasher-inner {
+
+  $asideWidthLeftCol: 160px;
+  $asideWidthWide: 250px;
+
+  position: relative;
+  border: 1px solid #dcdcdc;
+  border-bottom: 0;
+
+  .multi-thrasher {
+    &__link,
+    &__background,
+    &__background img {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    &__layout {
+      min-height: 120px;
+      max-width: 1174px;
+      position: relative;
+      background-color: #052962;
+      color: #fff;
+      flex-direction: row;
+      padding: 8px 12px;
+    }
+
+    &__aside {
+      display: none;
+      
+      @include mc(leftCol) {
+        display: inline-flex;
+        flex-direction: column;
+        float: left;
+        min-width: $asideWidthLeftCol;
+      }
+      @include mc(wide) {
+        min-width: $asideWidthWide;
+      }
+    }
+
+    &__inner {
+
+      @include mc(leftCol) {
+        margin-left: $asideWidthLeftCol;
+      }
+      @include mc(wide) {
+        margin-left: $asideWidthWide;
+      }
+    }
+
+    &__section {
+      position: relative;
+      flex: 1;
+
+      &--cards {
+        display: flex;
+        max-width: 100%;
+        overflow-x: auto;
+        padding-bottom: 8px;
+      }
+
+      &--mobile-footer {
+        display: flex;
+        justify-content: flex-end;
+
+        @include mc(leftCol) {
+          display: none;
+        }
+      }
+    }
+
+    &__aside-image {
+      height: auto;
+      width: 120px;
+      font-family: $font-sans;
+      font-weight: 300;
+      font-size: 12px;
+    }
+
+    &__aside-link {
+      position: absolute;
+      font-family: $font-sans;
+      font-weight: 400;
+      font-size: 15px;
+      color: inherit;
+      bottom: 32px;
+    }
+
+    &__privacy {
+      padding: 8px 0 0;
+      font-family: $font-sans;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 16.2px;
+
+      p {
+        margin: 0 0 0.5em;
+      }
+
+      a,
+      :any-link {
+        color: inherit;
+      }
+
+      b {
+        font-weight: 400;
+        color: #ffe500;
+      }
+
+      @include mc(leftCol) {
+        br {
+          display: none;
+        }
+      }
+    }
+
+    &__footer-image {
+      height: auto;
+      width: 70px;
+    }
+
+    &__link {
+      z-index: 20;
+      &:hover {
+        // Background hover-effect:
+        ~ .first-edition-thrasher__background {
+          opacity: 0.95;
+        }
+
+        // Button hover-effect
+        ~ .thrasher-button,
+        ~ * .thrasher-button {
+          opacity: 0.8;
+        }
+      }
+    }
+
+    &__background {
+      z-index: -1;
+      img,
+      video {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
