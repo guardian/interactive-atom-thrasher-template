@@ -9,10 +9,11 @@ $background: #121212;
 $yellow: #ffe500;
 
 #thrasher-atom,
-#documentary-thrasher {
+#documentary-thrasher, #documentaries {
   background-color: white;
   .fc-item {
     padding: 0;
+
   }
 }
 
@@ -149,7 +150,7 @@ $yellow: #ffe500;
         }
       }
       &__video {
-        video {
+        video, img {
           width: 100%;
           height: auto;
           @include mq(tablet) {
