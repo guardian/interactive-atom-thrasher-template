@@ -12,7 +12,7 @@
     flex-basis: 240px;
     flex-shrink: 0;
 
-    @include mc(desktop) {
+    @include mc(tablet) {
       flex-basis: 380px;
     }
 
@@ -20,7 +20,7 @@
     flex-direction: column;
 
     &__inner {
-      @include mc(desktop) {
+      @include mc(tablet) {
         display: flex;
       }
     }
@@ -30,7 +30,7 @@
       height: 70px;
       margin-bottom: 8px;
       
-      @include mc(desktop) {
+      @include mc(tablet) {
         margin-bottom: 0;
         margin-right: 8px;
         width: 100px;

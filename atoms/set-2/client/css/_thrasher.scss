@@ -1,7 +1,7 @@
 @import './newsletter-card';
 
 #thrasher__multi-newsletter-2.thrasher-inner {
-
+  $asideWidthDesktop: 40px;
   $asideWidthLeftCol: 160px;
   $asideWidthWide: 250px;
 
@@ -33,11 +33,14 @@
 
     &__aside {
       display: none;
-      
-      @include mc(leftCol) {
+
+      @include mc(desktop) {
         display: inline-flex;
         flex-direction: column;
         float: left;
+        min-width: $asideWidthDesktop;
+      }
+      @include mc(leftCol) {
         min-width: $asideWidthLeftCol;
       }
       @include mc(wide) {
@@ -46,7 +49,9 @@
     }
 
     &__inner {
-
+      @include mc(desktop) {
+        margin-left: $asideWidthDesktop;
+      }
       @include mc(leftCol) {
         margin-left: $asideWidthLeftCol;
       }
@@ -60,10 +65,22 @@
       flex: 1;
 
       &--cards {
-        display: flex;
         max-width: 100%;
-        overflow-x: auto;
-        padding-bottom: 8px;
+        padding: 0;
+
+        @include mc(desktop) {
+          padding-right: 40px;
+        }
+      }
+
+      &--mobile-buttons {
+        display: flex;
+        justify-content: flex-end;
+        padding: 8px 0 16px;
+
+        @include mc(desktop) {
+          display: none;
+        }
       }
 
       &--mobile-footer {
@@ -76,14 +93,109 @@
       }
     }
 
+    &__card-holder {
+      display: flex;
+      max-width: 100%;
+      position: relative;
+      scroll-behavior: smooth;
+      overflow: auto hidden;
+      
+      @include mc(desktop) {
+        overflow: hidden;
+      }
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    &__scroll-button {
+      cursor: pointer;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      padding: 0;
+
+      border: 1px solid #fff;
+      background-color: unset;
+      background-color: transparent;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      &--mobile {
+        margin-left: 10px;
+      }
+
+      &--left-desktop,
+      &--right-desktop {
+        position: absolute;
+        top: 50%;
+        display: none;
+
+        @include mc(desktop) {
+          display: inline-flex;
+        }
+      }
+
+      &--left-desktop {
+        left: 0;
+
+        @include mc(desktop) {
+          left: -46px;
+        }
+      }
+      &--right-desktop {
+        right: -6px;
+      }
+
+      &:not(:disabled):hover {
+        background-color: #ffe500;
+        border-color: #ffe500;
+
+        svg path {
+          fill: #052962;
+        }
+      }
+
+      &:disabled {
+        border-color: rgb(153, 153, 153);
+        cursor: auto;
+
+        svg path {
+          fill: rgb(153, 153, 153);
+        }
+      }
+    }
+
     &__aside-image {
+      display: none;
       height: auto;
       width: 150px;
+      
+      @include mc(leftCol) {
+        display: inline-block;
+      }
+      @include mc(wide) {
+        width: 160px;
+      }
     }
 
     &__aside-link {
+      display: none;
+      
+      @include mc(leftCol) {
+        display: inline;
+      }
       position: absolute;
       font-family: $font-sans;
+      text-decoration: underline;
       font-weight: 400;
       font-size: 15px;
       color: inherit;
@@ -92,6 +204,10 @@
 
     &__privacy {
       padding: 8px 0 0;
+      
+      @include mc(desktop) {
+        padding: 8px 40px 0 0;
+      }
       font-family: $font-sans;
       font-weight: 300;
       font-size: 12px;
@@ -104,6 +220,7 @@
       a,
       :any-link {
         color: inherit;
+        text-decoration: underline;
       }
 
       b {
@@ -111,7 +228,7 @@
         color: #ffe500;
       }
 
-      @include mc(leftCol) {
+      @include mc(desktop) {
         br {
           display: none;
         }
@@ -150,4 +267,3 @@
     }
   }
 }
-
