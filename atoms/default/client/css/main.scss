@@ -4,5 +4,9 @@
 @import "_app-fonts";
 @import "_mixins";
 
-@import "basics";
-@import "thrasher";
+
+$thrasherId: thrasher__multi-newsletter-1;
+@import "../../../../multi-thrasher-shared/css/basics";
+@import "../../../../multi-thrasher-shared/css/newsletter-card";
+@import "../../../../multi-thrasher-shared/css/thrasher";
+

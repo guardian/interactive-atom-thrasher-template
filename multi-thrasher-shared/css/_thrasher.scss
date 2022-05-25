@@ -1,6 +1,4 @@
-@import './newsletter-card';
-
-#thrasher__multi-newsletter-1.thrasher-inner {
+##{$thrasherId}.thrasher-inner {
   $asideWidthDesktop: 40px;
   $asideWidthLeftCol: 160px;
   $asideWidthWide: 250px;
