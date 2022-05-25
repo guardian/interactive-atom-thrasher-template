@@ -305,6 +305,161 @@ $buttonHoverColor: #052962;
     }
 }
 
+$secondary: #fff;
+
+#thrasher-button {
+    color: $secondary;
+}
+
+a.forgotten-stories__copy__button__links-button {
+    color: $textColor;
+    font-family: $f-sans-serif-text;
+    font-weight: bold;
+}
+
+.forgotten-stories {
+  .weekend-image {
+    width: 100%;
+  }
+  .mobile-image {
+    margin-top: -18px;
+    border-bottom: 1px solid #fff;
+    @include mq(phablet) {
+      margin-top: -38px;
+    }
+    @include mq(tablet) {
+      display: none;
+    }
+  }
+  .desktop-image {
+    display: none;
+    @include mq(tablet) {
+      display: block;
+      position: absolute;
+      z-index: 0;
+      right: -130px;
+      height: 100%;
+      width: auto;
+    }
+    @include mq(desktop) {
+      right: -70px;
+      height: 130%;
+      top: -20px;
+    }
+    @include mq(leftCol) {
+      right: 0;
+    }
+    @include mq(wide) {
+      right: 72px;
+    }
+  }
+
+  &__copy {
+    padding-bottom: 12px;
+    position: relative;
+    z-index: 3;
+    float: left;
+    @include mq(tablet) {
+      width: calc(50% - 30px);
+    }
+    @include mq(leftCol) {
+      width: 570px;
+    }
+    @include mq(wide) {
+      width: 570px;
+    }
+    &::before {
+      width: 1px;
+      background-color: $secondary;
+      position: absolute;
+      left: 250px;
+      top: 0;
+      bottom: 12px;
+      @include mq(leftCol) {
+        left: 170px;
+        content: "";
+      }
+      @include mq(wide) {
+        left: 250px;
+      }
+    }
+    &__headline {
+      font-family: $f-titlepiece;
+      font-size: 40px;
+      line-height: 115%;
+    }
+    &__body {
+      font-family: $f-serif-text;
+      font-size: 17px;
+      line-height: 135%;
+      margin-bottom: 12px;
+      @include mq(leftCol) {
+        width: 80%;
+      }
+    }
+    &__button {
+      line-height: 115%;
+      font-weight: 800;
+      font-size: 15px;
+      &__caption {
+        font-family: $f-sans-serif-text;
+        font-size: 17px;
+        line-height: 100%;
+        color: $textColor;
+        font-weight: bold;
+      }
+      &__links-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      &__links-button {
+        display: block;
+        border: 1px solid $secondary;
+        border-radius: 20px;
+        padding: 4px 8px 5px 8px;
+        transition: all 0.3s ease;
+        height: min-content;
+        margin-right: 4px;
+        margin-bottom: 8px;
+        color: $textColor;
+        background-color: $backgroundColor;
+        @include mq(mobileMedium) {
+          margin-right: 8px;
+        }
+        @include mq(leftCol) {
+          margin-bottom: 0;
+          padding: 4px 10px 5px 10px;
+        }
+        &:hover,
+        &:focus {
+          cursor: pointer;
+          text-decoration: none;
+          color: $backgroundColor;
+          background-color: $secondary;
+        }
+      }
+    }
+  }
+  &__roundel {
+    width: max-content;
+    height: 64px;
+    svg {
+      width: auto;
+      height: 100%;
+    }
+  }
+}
+
+.interactive-atom {
+  &.ios,
+  &.android {
+    padding: 0;
+    margin: 0;
+    .forgotten-stories__copy__button__caption {
+      margin-bottom: 4px;
+    }
+  }
+}
 
 
 
