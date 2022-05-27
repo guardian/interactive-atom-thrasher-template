@@ -315,6 +315,7 @@ a.forgotten-stories__copy__button__links-button {
     color: $textColor;
     font-family: $f-sans-serif-text;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .forgotten-stories {
@@ -441,8 +442,10 @@ a.forgotten-stories__copy__button__links-button {
     }
   }
   &__roundel {
-    width: max-content;
     height: 64px;
+    @include mq(phablet) {
+      width: max-content;
+    }
     svg {
       width: auto;
       height: 100%;
