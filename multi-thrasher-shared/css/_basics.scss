@@ -64,3 +64,12 @@ section.thrasher-section__multi-newsletter-2 {
         width:100%;
     }
 }
+
+// remove side padding from container on mobile
+// first-edition-newsletter is the id assigned to this thrasher by CP
+// it is used on the section that contains the thrasher
+section#first-edition-newsletter {
+    .fc-item {
+        padding: 0;
+    }
+}
