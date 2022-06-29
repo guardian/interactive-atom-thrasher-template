@@ -9,6 +9,7 @@ $background: #121212;
 $yellow: #ffe500;
 
 #thrasher-atom,
+#documentaries,
 #documentary-thrasher {
   background-color: white;
   .fc-item {
@@ -185,5 +186,8 @@ body.android {
   .documentary-template-2022__container-title__link svg {
     width: 100%;
     height: auto;
+  }
+  .documentary-template-2022__content-wrapper__copy__headline {
+    max-width: 220px;
   }
 }
