@@ -66,9 +66,7 @@ section.thrasher-section__multi-newsletter-2 {
 }
 
 // remove side padding from container on mobile
-// first-edition-newsletter is the id assigned to this thrasher by CP
-// it is used on the section that contains the thrasher
-section#first-edition-newsletter {
+section#multi-newsletter-culture {
     .fc-item {
         padding: 0;
     }
