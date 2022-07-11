@@ -4,5 +4,240 @@
 @import "_app-fonts";
 @import "_mixins";
 
-@import "basics";
-@import "thrasher";
+#thrasher-atom,
+#lakeside,
+#lakeside-header {
+  width: 100%;
+  position: relative;
+  padding: 0 !important;
+  overflow: hidden;
+
+  .fc-container__inner,
+  .fc-slice,
+  .facia-snap {
+    overflow: hidden;
+  }
+
+  .facia-snap, 
+  .fc-item {
+    padding: 0;
+  }
+}
+
+#thrasher-atom,
+#lakeside,
+#lakeside-header {
+  overflow: hidden;
+
+  .ios &,
+  .android & {
+    margin: 0;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  @include mc(tablet) {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+
+$brandBlue: #052962;
+$brandBluePale: #506991;
+$yellow: #FFE500;
+$white: #ffffff;
+
+#thrasher-atom, 
+#lakeside, 
+#lakeside-header {
+  background-color: $brandBlue;
+  .fc-item--pillar-news {
+    background-color: $brandBlue;
+  }
+}
+
+.fc-container--thrasher {
+  .fc-item--pillar-news {
+    background-color: $brandBlue;
+  }
+}
+
+.ls-wrapper {
+  display: flex;
+  justify-content: space-between;
+  background-color: $brandBlue; 
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid $brandBluePale;
+  border-bottom: none;
+  flex-direction: column;
+  @include mq(phablet) {
+    flex-direction: row;
+  }
+  .text-wrapper {
+    padding-left: 10px;
+    position: relative;
+    z-index: 10;
+    @include mq(mobileLandscape) {
+      padding-left:20px;
+    }
+    @include mq(leftCol) {
+      padding-left: 10px;
+      margin-left: 162px;
+      border-left: 8px solid $yellow;
+    }
+    @include mq(wide) {
+      margin-left: 242px;
+    }
+    svg {
+      width: 119px;
+      margin-left: -10px;
+      margin-top: 8px;
+      margin-bottom: -18px;
+      @include mq(mobileLandscape) {
+        width: 140px;
+        margin-left: -20px;
+      }
+      @include mq(leftCol) {
+        margin-left: -10px;
+      }
+    }
+    h2 {
+      font-family: $f-titlepiece;
+      font-size: 52px;
+      line-height: 115%;
+      color: white;
+    }
+    p {
+      font-family: $f-sans-serif-text;
+      font-size: 12px;
+      line-height: 135%;
+      color: white;
+      width: 220px;
+      @include mq(mobileMedium) {
+        width: 260px;
+        font-size: 14px;
+      }
+      @include mq(tablet) {
+        width: 310px;
+      }
+    }
+  }
+  .image-wrapper {
+    img {
+      &.show-mobile {
+        @include mq(phablet) {
+          display: none;
+        }
+      }
+      &.show-tab {
+        display: none;
+        @include mq(phablet) {
+          display: block;
+        }
+        
+      }
+      height: 70%;
+      position: absolute;
+      bottom: 0;
+      right: -8vw;
+      @include mq(mobileMedium) {
+        height: 99%;
+      }
+      @include mq(mobileLandscape) {
+      }
+      @include mq(phablet) {
+        position: absolute;
+        bottom: -1px;
+        z-index: 0;
+        left: 150px;
+          height: 100%;
+      }
+      @include mq(tablet) {
+        height: 100%;
+        left: 235px;
+      }
+      @include mq(desktop) {
+        left: 300px;
+      }
+      @include mq(leftCol) {
+        left: 470px;
+      }
+      @include mq(wide) {
+        left: 550px;
+      }
+    }
+
+  }
+  .story-wrapper {
+    width: 220px;
+    margin-right: 20px;
+    margin-left: 10px;
+    margin-top: 12px;
+    display: flex;
+    align-items: end;
+    @include mq(mobileLandscape) {
+      margin-left: 20px;
+    }
+    @include mq(phablet) {
+      margin-left: 0;
+    }
+    @include mq(tablet) {
+      width: 160px;
+    }
+    @include mq(desktop) {
+      width: 220px;
+    }
+    @include mq(wide) {
+      margin-right:100px;
+    }
+    
+    a { 
+      font-family: $f-serif-headline;
+      font-weight: 700;
+      font-size: 17px;
+      color: white;
+      margin-bottom: 20px;
+      border-top: 8px solid $yellow;
+      padding-top: 4px;
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: none;
+        h3 {
+          text-decoration: underline;
+          text-underline-offset: 2px;
+        }
+      }
+      
+      h3 {
+        font-family: $f-serif-headline;
+        font-weight: 700;
+        font-size: 20px;
+        color: white;
+        // padding-bottom: 8px;
+        @include mq(tablet) {
+          font-size: 24px;
+        }
+      }
+      
+      @include mq(tablet) {
+          font-size: 20px;
+        }
+      svg {
+        background-color: $yellow;
+        border-radius: 50%;
+        padding: 8px;
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+        transform: translateY(2px);
+      }
+    }
+  }
+}
+
