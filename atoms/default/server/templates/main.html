@@ -4,7 +4,7 @@
   data-branch="thrashers/documentary-template-2022"
 >
   <a
-    href="https://www.theguardian.com/uk-news/ng-interactive/2022/jul/07/dear-bradford-a-love-letter-to-a-misunderstood-city-documentary"
+    href="https://www.theguardian.com/uk-news/ng-interactive/2022/jul/13/dear-bradford-a-love-letter-to-a-misunderstood-city-documentary"
     data-link-name="thrasher : beirut-dreams-in-color-2022 : main"
     class="documentary-template-2022__link"
   ></a>
@@ -48,7 +48,9 @@
         <div
           class="documentary-template-2022__content-wrapper__copy__subheadline"
         >
-          Farhaan was born in a divided city, and it divided him. When he discovers his Pakistani grandfather’s lost poetry, he finds out where he really belongs
+          Farhaan was born in a divided city, and it divided him. When he
+          discovers his Pakistani grandfather’s lost poetry, he finds out where
+          he really belongs
         </div>
 
         <div
@@ -79,7 +81,21 @@
       </div>
     </div>
     <div class="documentary-template-2022__content-wrapper__video">
-      <img src="<%= path %>/db-thrasher-img-low.jpg" alt="">
+      <!-- <img src="<%= path %>/db-thrasher-img-low.jpg" alt="" /> -->
+      <video
+        id="docVideo"
+        width="570"
+        height="  "
+        poster="<%= path %>/db-thrasher-img-low.jpg"
+        muted
+        loop
+        playsinline
+      >
+        <source
+          src="https://uploads.guim.co.uk/2022/07/12/DearBradford_Thrasher_v99.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
       </video>
     </div>
   </div>
