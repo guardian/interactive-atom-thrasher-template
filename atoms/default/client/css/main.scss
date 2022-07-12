@@ -20,6 +20,10 @@ $text: #121212;
   background-color: $background;
   width: 100%;
   color: $text;
+  @include mq(desktop) {
+    border-left: 1px solid #dcdcdc;
+      border-right: 1px solid #dcdcdc;
+  }
   .football-weekly {
     &__link {
       position: absolute;
@@ -151,7 +155,10 @@ $text: #121212;
           line-height: 115%;
           font-weight: bold;
           font-size: 14px;
-          margin-bottom: 12px;
+          margin-bottom: 108px;
+          @include mq(phablet) {
+            margin-bottom: 12px;
+          }
 
           &__caption {
             font-family: $f-sans-serif-text;
@@ -220,6 +227,45 @@ $text: #121212;
         }
       }
     }
+  }
+}
+.football-weekly__logo {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 12px;
+  left:10px;
+  @include mq(mobileLandscape) {
+    left:20px;
+  }
+  @include mq(phablet) {
+    left: unset;
+    right: 20px;
+  }
+  @include mq(tablet) {
+    background-color: $background;
+    right: 0;
+    bottom: 0;
+    padding: 12px 10px;
+
+  }
+  @include mq(leftCol) {
+    right: unset;
+    left: 20px;
+    bottom: 12px;
+    background-color: unset;
+    padding: unset;
+  }
+
+  small {
+    font-family: $f-sans-serif-text;
+    font-size: 12px;
+    color: #1337cb;
+    padding-bottom: 8px;
+    font-weight: bold;
+  }
+  img {
+    width: 120px;
   }
 }
 
