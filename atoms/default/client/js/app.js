@@ -15,7 +15,8 @@ function initCardSections() {
     if (thrasher.getAttribute("data-card-section-initialised") === "true") {
       return;
     }
-
+    var lastScrollCheckTime = 0;
+    var lastButtonClickTime = 0
     var cardHolder = thrasher.querySelector(
       '[data-role="multi-thrasher-card-holder"]'
     );
@@ -62,6 +63,7 @@ function initCardSections() {
     }
     function scrollLeft() {
       var intendedPosition = cardHolder.scrollLeft - getScrollDistance();
+      lastButtonClickTime = Date.now()
       cardHolder.scrollTo({
         left: intendedPosition,
         top: 0,
@@ -71,12 +73,26 @@ function initCardSections() {
     }
     function scrollRight() {
       var intendedPosition = cardHolder.scrollLeft + getScrollDistance();
+      lastButtonClickTime = Date.now()
       cardHolder.scrollTo({
         left: intendedPosition,
         top: 0,
         behavior: "smooth",
       });
       setDisabled(intendedPosition);
+    }
+
+    function throttledSetDisabled(event) {
+      var now = Date.now();
+      var sinceLastCheck = now - lastScrollCheckTime
+      var sinceLastButtonClick = now - lastButtonClickTime
+
+      if (sinceLastCheck > 100 && sinceLastButtonClick > 2000) {
+        lastScrollCheckTime = now;
+        window.setTimeout(function() {
+          setDisabled(cardHolder.scrollLeft)
+        }, 100)
+      }
     }
 
     window.addEventListener("resize", function () {
@@ -88,6 +104,7 @@ function initCardSections() {
     rightButtons.forEach(function (button) {
       button.addEventListener("click", scrollRight);
     });
+    cardHolder.addEventListener("scroll", throttledSetDisabled);
     setDisabled(0);
     thrasher.setAttribute("data-card-section-initialised", "true");
   });
