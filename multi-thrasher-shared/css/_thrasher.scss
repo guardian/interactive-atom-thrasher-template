@@ -96,10 +96,7 @@
       position: relative;
       scroll-behavior: smooth;
       overflow: auto hidden;
-      
-      @include mc(desktop) {
-        overflow: hidden;
-      }
+      scrollbar-width: none;      
 
       &::-webkit-scrollbar {
         display: none;
