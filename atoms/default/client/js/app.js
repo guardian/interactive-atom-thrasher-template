@@ -1,1 +1,96 @@
-(()=>{"use strict";window.trackLoad=function(){window.guardian.ophan.record({component:"thrasher : pushing-buttons-thrasher : load",value:1})},[...document.querySelectorAll('[data-role="multi-thrasher-with-cards"]')].forEach((t=>{if("true"===t.getAttribute("data-card-section-initialised"))return;const e=t.querySelector('[data-role="multi-thrasher-card-holder"]');if(!e)return;const r=[...t.querySelectorAll('[data-role="multi-thrasher-scroll-left-button"]')],o=[...t.querySelectorAll('[data-role="multi-thrasher-scroll-right-button"]')];function i(){return e.children[0].offsetWidth+20}function l(t){t<=0?r.forEach((t=>t.setAttribute("disabled","true"))):r.forEach((t=>t.removeAttribute("disabled"))),t+e.offsetWidth>=e.scrollWidth?o.forEach((t=>t.setAttribute("disabled","true"))):o.forEach((t=>t.removeAttribute("disabled")))}function a(){const t=e.scrollLeft-i();e.scrollTo(t,0),l(t)}function c(){const t=e.scrollLeft+i();e.scrollTo(t,0),l(t)}window.addEventListener("resize",(function(){l(e.scrollLeft)})),r.forEach((t=>t.addEventListener("click",a))),o.forEach((t=>t.addEventListener("click",c))),l(0),t.setAttribute("data-card-section-initialised","true")}))})();
+function trackLoad() {
+  window.guardian.ophan.record({
+    component: "thrasher : multi-newsletter-1 : load",
+    value: 1,
+  });
+}
+window.trackLoad = trackLoad;
+
+function initCardSections() {
+  var thrashersWithCardSections = [
+    ...document.querySelectorAll('[data-role="multi-thrasher-with-cards"]'),
+  ];
+
+  thrashersWithCardSections.forEach(function (thrasher) {
+    if (thrasher.getAttribute("data-card-section-initialised") === "true") {
+      return;
+    }
+
+    var cardHolder = thrasher.querySelector(
+      '[data-role="multi-thrasher-card-holder"]'
+    );
+
+    if (!cardHolder) {
+      return;
+    }
+
+    var leftButtons = [
+      ...thrasher.querySelectorAll(
+        '[data-role="multi-thrasher-scroll-left-button"]'
+      ),
+    ];
+    var rightButtons = [
+      ...thrasher.querySelectorAll(
+        '[data-role="multi-thrasher-scroll-right-button"]'
+      ),
+    ];
+
+    function getScrollDistance() {
+      return cardHolder.children[0].offsetWidth + 20;
+    }
+
+    function setDisabled(intendedPosition) {
+      if (intendedPosition <= 0) {
+        leftButtons.forEach(function (button) {
+          button.setAttribute("disabled", "true");
+        });
+      } else {
+        leftButtons.forEach(function (button) {
+          button.removeAttribute("disabled");
+        });
+      }
+
+      if (intendedPosition + cardHolder.offsetWidth >= cardHolder.scrollWidth) {
+        rightButtons.forEach(function (button) {
+          button.setAttribute("disabled", "true");
+        });
+      } else {
+        rightButtons.forEach(function (button) {
+          button.removeAttribute("disabled");
+        });
+      }
+    }
+    function scrollLeft() {
+      var intendedPosition = cardHolder.scrollLeft - getScrollDistance();
+      cardHolder.scrollTo({
+        left: intendedPosition,
+        top: 0,
+        behavior: "smooth",
+      });
+      setDisabled(intendedPosition);
+    }
+    function scrollRight() {
+      var intendedPosition = cardHolder.scrollLeft + getScrollDistance();
+      cardHolder.scrollTo({
+        left: intendedPosition,
+        top: 0,
+        behavior: "smooth",
+      });
+      setDisabled(intendedPosition);
+    }
+
+    window.addEventListener("resize", function () {
+      setDisabled(cardHolder.scrollLeft);
+    });
+    leftButtons.forEach(function (button) {
+      button.addEventListener("click", scrollLeft);
+    });
+    rightButtons.forEach(function (button) {
+      button.addEventListener("click", scrollRight);
+    });
+    setDisabled(0);
+    thrasher.setAttribute("data-card-section-initialised", "true");
+  });
+}
+
+initCardSections();
