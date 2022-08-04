@@ -181,7 +181,7 @@ body.android {
     position: relative;
   }
   .documentary-template-2022__content-wrapper__copy__headline {
-    margin-top: 4px;
+    padding-top: 4 px;
   }
   .documentary-template-2022__container-title__link svg {
     width: 100%;
@@ -192,10 +192,11 @@ body.android {
   }
   .documentary-template-2022__link {
       &:hover,
-      &:focus {
+      &:focus,
+      &:visited {
         ~.documentary-template-2022__content-wrapper {
           .documentary-template-2022__content-wrapper__copy .icon {
-            transform: scale(1);
+            transform: scale(1) !important;
           }
         }
       }
