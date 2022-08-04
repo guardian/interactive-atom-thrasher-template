@@ -6,3 +6,279 @@
 
 @import "basics";
 @import "thrasher";
+
+// Default breakpoints from Frontend
+$mq-breakpoints: (
+    mobile: 320px,
+    mobileMedium: 375px,
+    mobileLandscape: 480px,
+    phablet: 660px,
+    tablet: 740px,
+    desktop: 980px,
+    leftCol: 1140px,
+    wide: 1300px
+);
+
+$background-yellow: #fff280;
+$main-yellow: #ffe500;
+
+#contact-the-guardian.fc-container--thrasher,
+#contact-the-guardian.fc-container--thrasher {
+    background-color: $background-yellow;
+
+    .fc-item {
+        background-color: $main-yellow;
+        background-color: rgba($main-yellow, 0.5);
+        background-color: $main-yellow;
+    }
+}
+
+#contact-the-guardian {
+    background-color: rgba($main-yellow, 0.5);
+    padding-top: 0px;
+}
+
+.contact-the-guardian__wrapper {
+    border-top: 1px solid #e6cf00;
+    position: relative;
+
+    @include mc(desktop) {
+        width: 100%;
+    }
+}
+
+.securedrop {
+    background-color: $main-yellow;
+    display: flex;
+    flex-direction: column;
+
+    @include mc(leftCol) {
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    &__main,
+    &__title,
+    &__roundel {
+        padding-top: 2px;
+
+        @include mc(leftCol) {
+            padding-bottom: 18px;
+        }
+    }
+
+    &__main,
+    &__title {
+        font-family: $f-headline-full;
+        color: #121212;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 1.6875rem;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__roundel {
+        position: absolute;
+        top: 0;
+        right: 20px;
+
+        @include mc(tablet) {
+            svg {
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        @include mc(leftCol) {
+            position: relative;
+        }
+    }
+
+    &__main {
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 200;
+        margin-top: 1px;
+        padding-bottom: 18px;
+        
+        @include mc(tablet) {
+            font-size: 28px;
+            line-height: 30px;
+        }
+        
+        @include mc(leftCol) {
+            margin-top: 3px;
+            padding-bottom: 0;
+        }
+        
+        @include mc(wide) {
+            font-size: 32px;
+            line-height: 34px;
+        }
+
+        &,
+        &:hover {
+            text-decoration: none;
+        }
+
+        .eyes, 
+        .cta {
+            display: inline;
+        }
+
+        .btn {
+            display: inline-block;
+        }
+
+        .btn {
+            vertical-align: middle;
+            top: -1px;
+            width: 26px;
+            height: 26px;
+            border-radius: 100%;
+            background-color: #fff;
+
+            @include mc(tablet) {
+                width: 32px;
+                height: 32px;
+            }
+
+            svg {
+                height: 100%;
+                width: 100%;
+                display: block;
+
+                path {
+                    fill: currentColor;
+                }
+            }
+        }
+
+        &:hover {            
+            .btn {
+                background-color: #fff;
+                border-color: transparent;
+            }
+        }
+
+        @include mc(desktop) {
+            &:hover {
+                span {
+                    border-bottom: 1px solid rgba(#121212, 0.5);
+                }
+            }
+        }
+    }
+}
+
+.securedrop__main .eyes {
+    display: inline-block;
+    font-size: 0;
+    vertical-align: middle;
+    position: absolute;
+    top: -29px;
+    // top:0;
+    left: 136px;
+
+    @include mc(tablet) {
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+
+    .target {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0x;
+        height: 18px;
+        z-index: 1;
+        transform: translate3d(-50%, -50%, 0);
+
+        &:hover+.eye .inside {
+            top: 50% !important;
+            left: 75% !important;
+        }
+
+        &:hover+.eye+.eye .inside {
+            top: 50% !important;
+            left: 25% !important;
+        }
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+    .eye {
+        display: inline-block;
+        position: relative;
+        top: 7px;
+
+        &+.eye {
+            margin-left: 4px;
+        }
+
+        .outside {
+            display: block;
+
+            svg path {
+                stroke: rgba(#e6cf00, 0.5);
+                stroke-width: 1px;
+            }
+        }
+
+        .inside {
+            transition: all 400ms ease-in;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-48%, -50%, 0);
+        }
+
+        svg {
+            display: block;
+        }
+    }
+}
+
+.interactive-atom {
+    margin: 0;
+    overflow: hidden;
+}
+
+.ios,
+.android {
+    .securedrop {
+        padding: 0 10px;
+
+        @include mq(phablet) {
+            // width: 100%;
+            margin: 0;
+            max-width: none;
+        }
+
+        @include mq(tablet) {
+            padding: 0 20px;
+        }
+
+        &__roundel {
+            margin-right: 0 !important;
+        }
+
+        &__main .eyes {
+            top: 0;
+        }
+    }
+
+    .interactive-atom {
+        margin: 0;
+    }
+}

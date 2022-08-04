@@ -16,7 +16,9 @@ $mq-breakpoints: (
 
     // Tweakpoints
     desktopAd: 810px,
-    mobileLandscape: 480px
+    mobileMedium: 375px,
+    mobileLandscape: 480px,
+    phablet: 660px
 );
 
 // Define the breakpoint from the $mq-breakpoints list that should
