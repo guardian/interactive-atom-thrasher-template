@@ -22,23 +22,11 @@ $mq-breakpoints: (
 $main-yellow: #ffe500;
 
 #thrasher-atom,
-#secure-drop {
+#secure-drop,
+#contact-the-guardian {
+    background-color: #fff;
     .fc-item {
         padding: 0;
-    }
-}
-
-#contact-the-guardian {
-    background-color: rgba($main-yellow, 0.5);
-    padding-top: 0px;
-}
-
-.contact-the-guardian__wrapper {
-    border-top: 1px solid #e6cf00;
-    position: relative;
-
-    @include mc(desktop) {
-        width: 100%;
     }
 }
 
