@@ -19,17 +19,12 @@ $mq-breakpoints: (
     wide: 1300px
 );
 
-$background-yellow: #fff280;
 $main-yellow: #ffe500;
 
-#contact-the-guardian.fc-container--thrasher,
-#contact-the-guardian.fc-container--thrasher {
-    background-color: $background-yellow;
-
+#thrasher-atom,
+#secure-drop {
     .fc-item {
-        background-color: $main-yellow;
-        background-color: rgba($main-yellow, 0.5);
-        background-color: $main-yellow;
+        padding: 0;
     }
 }
 
@@ -51,9 +46,17 @@ $main-yellow: #ffe500;
     background-color: $main-yellow;
     display: flex;
     flex-direction: column;
+    padding: 0 10px 12px 10px;
+    
+    @include mq(mobileLandscape) {
+        padding: 0 20px 12px 20px;
+    }
+    
+    @include mq(tablet) {
+        width: 100%;
+    }
 
     @include mc(leftCol) {
-        justify-content: space-between;
         flex-direction: row;
     }
 
@@ -78,9 +81,22 @@ $main-yellow: #ffe500;
         font-size: 1.5rem;
         line-height: 1.6875rem;
         text-decoration: none;
+        position: relative;
+
+        @include mc(leftCol) {
+            width: 150px;
+        }
+
+        @include mc(wide) {
+            width: 220px;
+        }
 
         &:hover {
             text-decoration: underline;
+        }
+
+        &:after {
+            display: none;
         }
     }
 
@@ -95,32 +111,27 @@ $main-yellow: #ffe500;
                 height: 32px;
             }
         }
-
-        @include mc(leftCol) {
-            position: relative;
-        }
     }
 
     &__main {
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 24px;
+        line-height: 115%;
         font-weight: 200;
         margin-top: 1px;
         padding-bottom: 18px;
-        
+
         @include mc(tablet) {
-            font-size: 28px;
-            line-height: 30px;
+            width: 80%;
         }
         
         @include mc(leftCol) {
             margin-top: 3px;
             padding-bottom: 0;
+            margin-left: 10px;
         }
         
         @include mc(wide) {
             font-size: 32px;
-            line-height: 34px;
         }
 
         &,
