@@ -158,7 +158,7 @@ $textColor: #121212;
         p, a {
             font-family: "GuardianTextSans", "Guardian Text Sans Web", Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
             font-weight:600;
-            font-size:13px;
+            font-size:12px;
             line-height:1;
         }
         &-wrapper {
@@ -179,6 +179,7 @@ $textColor: #121212;
         }
         &-button {
             padding:6px 8px;
+            padding:5px 6px;
             margin-bottom:4px;
             border:1px solid black;
             border-radius:17px;
