@@ -37,7 +37,6 @@ $yellow: #ffe500;
         }
       }
     }
-
     &__container-title {
       width: 89px;
       display: block;
@@ -147,6 +146,7 @@ $yellow: #ffe500;
           }
         }
       }
+
       &__video {
         video, img {
           width: 100%;
@@ -166,6 +166,27 @@ $yellow: #ffe500;
             margin-top: -47px;
             margin-bottom: -53px;
           }
+        }
+
+        &:hover {
+          .documentary-template-2022__content-wrapper__pause-button {
+            svg.active {
+              display: block;
+            }
+          }
+        }
+      }
+
+      &__pause-button {
+        right: 0;
+        bottom: 4px;
+        background: transparent;
+        border: none;
+        position: absolute;
+
+        svg {
+          display: none;
+          fill: #fff;
         }
       }
     }
