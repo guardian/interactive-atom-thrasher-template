@@ -168,25 +168,37 @@ $yellow: #ffe500;
           }
         }
 
-        &:hover {
-          .documentary-template-2022__content-wrapper__pause-button {
-            svg.active {
-              display: block;
+        @include mq(desktop) {
+          &:hover {
+            .documentary-template-2022__content-wrapper__pause-button {
+              svg.active {
+                display: block;
+              }
             }
           }
         }
       }
 
       &__pause-button {
-        right: 0;
-        bottom: 4px;
         background: transparent;
         border: none;
         position: absolute;
+        left: 0;
+        top: 4px;
+
+        @include mq(desktop) {
+          bottom: 4px;
+          right: 0;
+          display: none;
+        }
 
         svg {
-          display: none;
           fill: #fff;
+          display: none;
+
+          &.active {
+            display: block;
+          }
         }
       }
     }
