@@ -21,29 +21,29 @@ function trackLoad() {
 //     document.getElementById("#").style.display = "block";
 // }
 
-const pauseButton = document.querySelector('.documentary-template-2022__content-wrapper__pause-button');
-const pauseSvg = document.querySelector('.documentary-template-2022__content-wrapper__pause-button svg.pause');
-const playSvg = document.querySelector('.documentary-template-2022__content-wrapper__pause-button svg.play');
+// const pauseButton = document.querySelector('.documentary-template-2022__content-wrapper__pause-button');
+// const pauseSvg = document.querySelector('.documentary-template-2022__content-wrapper__pause-button svg.pause');
+// const playSvg = document.querySelector('.documentary-template-2022__content-wrapper__pause-button svg.play');
 const docthrasher = document.querySelector('[id^="thrasher__documentary-template-2022"]');
 var vid = document.getElementById("docVideo");
 const animClass = "dw-video";
-let playing = false;
+// let playing = false;
 
 // Grab the prefers reduced media query.
 const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 function playVid() {
   vid.play();
-  playSvg.classList.remove('active');
-  pauseSvg.classList.add('active');
-  playing = true;
+  // playSvg.classList.remove('active');
+  // pauseSvg.classList.add('active');
+  // playing = true;
 }
 
 function pauseVid() {
   vid.pause();
-  playSvg.classList.add('active');
-  pauseSvg.classList.remove('active');
-  playing = false;
+  // playSvg.classList.add('active');
+  // pauseSvg.classList.remove('active');
+  // playing = false;
 }
 
 var observer = {
@@ -61,8 +61,8 @@ var observer = new IntersectionObserver(function(entries) {
   }
 }, { threshold: [0.95] });
 
-playSvg.classList.add('active');
-pauseSvg.classList.remove('active');
+// playSvg.classList.add('active');
+// pauseSvg.classList.remove('active');
 
 
 if (mediaQuery.matches) {
@@ -77,11 +77,11 @@ if (mediaQuery.matches) {
     observer.observe(docthrasher);
   }
 }
-pauseButton.addEventListener('click', () => {
-  if (playing) { 
-    pauseVid();
-  } else { 
-    playVid();
-  }
-});
+// pauseButton.addEventListener('click', () => {
+//   if (playing) { 
+//     pauseVid();
+//   } else { 
+//     playVid();
+//   }
+// });
 
