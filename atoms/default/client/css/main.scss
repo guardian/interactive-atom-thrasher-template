@@ -171,6 +171,7 @@ $yellow: #ffe500;
         @include mq(desktop) {
           &:hover {
             .documentary-template-2022__content-wrapper__pause-button {
+              display: block;
               svg.active {
                 display: block;
               }
@@ -189,6 +190,8 @@ $yellow: #ffe500;
         @include mq(desktop) {
           bottom: 4px;
           right: 0;
+          left: unset;
+          top: unset;
           display: none;
         }
 
