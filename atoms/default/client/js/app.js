@@ -22,7 +22,7 @@ function trackLoad() {
 // }
 
 
-const docthrasher = document.querySelector('[id^="thrasher__documentary-template-2022"]');
+const docthrasher = document.querySelector('[id^="thrasher__university-guide"]');
 var vid = document.getElementById("docVideo");
 const animClass = "dw-video";
 
