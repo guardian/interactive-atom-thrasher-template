@@ -8,9 +8,7 @@
 $background: #1a5c38;
 
 #thrasher-atom,
-#documentaries,
-#thrasher-atom,
-#documentary-thrasher {
+#university-guide {
   background-color: white;
   .fc-item {
     padding: 0;
@@ -28,11 +26,7 @@ $background: #1a5c38;
       }
       &:hover,
       &:focus {
-        ~ .university-guide__content-wrapper {
-          .university-guide__content-wrapper__copy .icon {
-            transform: scale(1.2);
-          }
-        }
+        text-decoration: none;
       }
     }
     &__container-title {
@@ -61,7 +55,6 @@ $background: #1a5c38;
     &__content-wrapper {
       display: flex;
       flex-direction: column-reverse;
-      // margin-left: 20px;
       @include mq(tablet) {
         flex-direction: row;
       }
@@ -76,7 +69,6 @@ $background: #1a5c38;
         justify-content: space-between;
         flex-direction: column;
         padding-left: 10px;
-        border-left: 1px solid white;
         @include mq(mobileLandscape) {
           padding-left: 20px;
         }
@@ -111,13 +103,24 @@ $background: #1a5c38;
           padding-right: 10px;
           margin-bottom: 12px;
           padding-top: 4px;
-          display: flex;
+          display: grid;
           align-items: center;
+          @include mq(desktop) {
+            display: flex;
+          }
+          &:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+          }
           svg {
-            margin-left: 8px;
+            margin-top: 8px;
             background-color: white;
             border-radius: 50%;
-            padding: 8px;
+            padding: 6px;
+            @include mq(desktop) {
+              margin-left: 8px;
+              margin-top: 0;
+            }
           }
         }
       }
@@ -132,13 +135,13 @@ $background: #1a5c38;
           }
           @include mq(desktop) {
             width: 490px;
-            margin-top: -41px;
-            margin-bottom: -47px;
+            margin-top: -13px;
+            margin-bottom: -87px;
           }
           @include mq(wide) {
             width: 570px;
-            margin-top: -47px;
-            margin-bottom: -53px;
+            margin-top: -23px;
+            margin-bottom: -98px;
           }
         }
       }
@@ -164,12 +167,5 @@ body.android {
   }
   .university-guide__content-wrapper__copy__headline {
     margin-top: 4px;
-  }
-  .university-guide__container-title__link svg {
-    width: 100%;
-    height: auto;
-  }
-  .university-guide__content-wrapper__copy__headline {
-    max-width: 220px;
   }
 }
