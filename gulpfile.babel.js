@@ -26,7 +26,6 @@ const rp = require("request-promise")
 const AWS = require('aws-sdk');
 const git = require('gulp-git');
 
-
 const isDeploy = gutil.env._.indexOf('deploylive') > -1 || gutil.env._.indexOf('deploypreview') > -1
 const live = gutil.env._.indexOf('deploylive') > -1
 
@@ -87,7 +86,7 @@ const buildJS = () => {
         rules: [
           {
             test: /\.css$/,
-            loader: 'style!css'
+            use: ["style-loader", "css-loader"],
           },
           {
             test: /\.jsx?$/,
