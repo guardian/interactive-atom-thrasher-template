@@ -7,7 +7,7 @@ const s3 = require("gulp-s3-upload");
 const fs = require("fs");
 const template = require('gulp-template');
 const replace = require('gulp-replace');
-const sass = require("gulp-sass");
+const sass = require('gulp-sass')(require('sass'));
 const file = require("gulp-file");
 sass.compiler = require("node-sass");
 const browserSync = require("browser-sync");
@@ -25,7 +25,6 @@ const mkdirp = require("mkdirp")
 const rp = require("request-promise")
 const AWS = require('aws-sdk');
 const git = require('gulp-git');
-
 
 const isDeploy = gutil.env._.indexOf('deploylive') > -1 || gutil.env._.indexOf('deploypreview') > -1
 const live = gutil.env._.indexOf('deploylive') > -1
@@ -87,7 +86,7 @@ const buildJS = () => {
         rules: [
           {
             test: /\.css$/,
-            loader: 'style!css'
+            use: ["style-loader", "css-loader"],
           },
           {
             test: /\.jsx?$/,
