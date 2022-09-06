@@ -7,7 +7,7 @@ function trackLoad() {
 }
 
 const docthrasher = document.querySelector('[id^="thrasher__university-guide"]');
-var vid = document.getElementById("docVideo");
+var vid = document.getElementById("uniVideo");
 const animClass = "dw-video";
 
 // Grab the prefers reduced media query.

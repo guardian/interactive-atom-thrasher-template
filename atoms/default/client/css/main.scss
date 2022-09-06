@@ -19,6 +19,16 @@ $background: #1a5c38;
   background-color: $background;
   width: 100%;
   color: white;
+  .uni-roundel {
+      position: absolute;
+      width: 38px;
+      top: 4px;
+      left: 20px;
+  
+      svg {
+        width: 100%;
+      }
+    }
   .university-guide {
     &__link {
       &:focus {
@@ -29,6 +39,7 @@ $background: #1a5c38;
         text-decoration: none;
       }
     }
+    
     &__container-title {
       width: 89px;
       display: block;
@@ -87,12 +98,23 @@ $background: #1a5c38;
           margin-top: -2px;
           padding-right: 10px;
           font-variant-numeric: lining-nums;
+          position: relative;
           @include mq(tablet) {
             margin-top: 4px;
           }
           @include mq(desktop) {
             font-size: 36px;
             margin-top: 0;
+          }
+          @include mq(leftCol) {
+            &::before {
+              content: '';
+              width: 1px;
+              height: 185px;
+              background-color: #ffffff70;
+              position: absolute;
+              left: -10px;
+            }
           }
         }
         &__subheadline {
