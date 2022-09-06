@@ -29,7 +29,7 @@
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
     "gulp-s3-upload": "^1.7.3",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^5.1.0",
     "gulp-tap": "^2.0.0",
     "gulp-template": "^5.0.0",
     "gulp-uglify": "^3.0.2",
@@ -61,6 +61,7 @@
     "gulp-git": "^2.10.1",
     "mkdirp": "^0.5.1",
     "request-promise": "^4.2.6",
+    "sass": "^1.54.8",
     "uglifyjs-webpack-plugin": "^2.2.0"
   }
 }
