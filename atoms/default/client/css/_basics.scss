@@ -34,6 +34,17 @@ section.thrasher-section__thrasher-name {
     }
 }
 
+// Use the below select the full width container, the thrasher will be placed in
+// this can be used to change the background in the 'margins' of the page.
+// Note that the general design rule is that those margins should remain transparent. 
+// (as of 15/02/2022).
+
+// replace {configTitle} with the title set in the config file. For prodcution.
+// on the dev server, the id will be "thrasher-atom"
+
+// #{configTitle}.fc-container--thrasher .fc-container__inner{
+//        background: transparent;
+// }
 
 #thrasher__thrasher-name {
     margin: 0 -10px;
