@@ -17,18 +17,22 @@
         margin-top: -2px;
         text-decoration: none;
     }
+
     svg {
         padding: 10px;
         fill: $color;
         padding-right:16px;
         transition: transform 0.3s ease;
-    }        
+    }
+
     &:hover {
         background-color:$hoverBgColor;
         text-decoration: none;
+
         span {
             text-decoration:none;
         }
+
         svg {
             transform:translateX(3px);
         }

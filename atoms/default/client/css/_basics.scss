@@ -17,22 +17,22 @@ $font-text: 'Guardian Text Egyptian Web',Georgia,serif;
 $font-sans: 'Guardian Text Sans Web', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 
 
-// this targets the container your thrasher is put inside on Fronts
-section.thrasher-section__weekend-podcast-2022 {
-    width:100%;
-    position: relative;
-    padding: 0 !important;
-    overflow: hidden;
-    background-color:#fff;
-    .fc-container__inner,
-    .fc-slice,
-    .facia-snap {
-        overflow: hidden;
-    }
-    .facia-snap {
-        padding: 0;
-    }
-}
+// // this targets the container your thrasher is put inside on Fronts
+// section.thrasher-section__secret-podcast-2022 {
+//     width:100%;
+//     position: relative;
+//     padding: 0 !important;
+//     overflow: hidden;
+//     background-color:#fff;
+//     .fc-container__inner,
+//     .fc-slice,
+//     .facia-snap {
+//         overflow: hidden;
+//     }
+//     .facia-snap {
+//         padding: 0;
+//     }
+// }
 
 // Use the below select the full width container, the thrasher will be placed in
 // this can be used to change the background in the 'margins' of the page.
@@ -46,7 +46,7 @@ section.thrasher-section__weekend-podcast-2022 {
 //        background: transparent;
 // }
 
-#thrasher__weekend-podcast-2022 {
+#thrasher__secret-podcast-2022 {
     margin: 0 -10px;
     overflow: hidden;
 

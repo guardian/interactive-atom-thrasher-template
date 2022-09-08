@@ -1,25 +1,25 @@
-#thrasher__weekend-podcast-2022.thrasher-inner {
-  position: relative;
-  border: 1px solid #dcdcdc;
-  border-bottom: 0;
+// #thrasher__secret-podcast-2022.thrasher-inner {
+//   position: relative;
+//   border: 1px solid #dcdcdc;
+//   border-bottom: 0;
 
-  .weekend-podcast-2022 {
-    &__link,
-    &__background,
-    &__background img {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-    }
+  .secret-podcast-2022 {
+    // &__link,
+    // &__background,
+    // &__background img {
+    //   display: block;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   right: 0;
+    //   bottom: 0;
+    // }
 
     &__link {
       z-index: 20;
       &:hover {
         // Background hover-effect:
-        ~ .weekend-podcast-2022__background {
+        ~ .secret-podcast-2022__background {
           opacity: 0.95;
         }
 
@@ -36,23 +36,30 @@
       font-size: 24px;
       line-height: 26px;
       padding: 0 10px 12px;
+
       @include mq(mobileLandscape) {
         padding-left: 20px;
         padding-right: 20px;
       }
+
       @include mq(leftCol) {
-        // padding-top: 4px;
         padding-left: 180px;
       }
+
       @include mq(wide) {
         padding-left: 260px;
       }
     }
 
     &__roundel {
-      position: absolute;
-      top: 8px;
-      right: 10px;
+        position: absolute;
+        top: 8px;
+        left: auto;
+        right: 10px;
+
+        @include mq(leftCol) {
+            left: 10px;
+            right: auto;
+        }
     }
-  }
 }
