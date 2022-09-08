@@ -20,15 +20,19 @@ $background: #1a5c38;
   width: 100%;
   color: white;
   .uni-roundel {
-      position: absolute;
+    display: none;
+    @include mq(leftCol) {
+      display: block;
+    position: absolute;
       width: 38px;
       top: 4px;
       left: 20px;
-  
+    
       svg {
         width: 100%;
       }
     }
+  }
   .university-guide {
     &__link {
       &:focus {
@@ -110,7 +114,7 @@ $background: #1a5c38;
             &::before {
               content: '';
               width: 1px;
-              height: 185px;
+              height: 164px;
               background-color: #ffffff70;
               position: absolute;
               left: -10px;
@@ -157,13 +161,13 @@ $background: #1a5c38;
           }
           @include mq(desktop) {
             width: 490px;
-            margin-top: -13px;
-            margin-bottom: -87px;
+            margin-top: -40px;
+            margin-bottom: -124px;
           }
           @include mq(wide) {
             width: 570px;
-            margin-top: -23px;
-            margin-bottom: -98px;
+            margin-top: -40px;
+            margin-bottom: -124px;
           }
         }
       }
