@@ -33,12 +33,10 @@ $secondary: #fff;
         }
     
         @include mq(desktop) {
-            right: -70px;
-            height: 130%;
-        }
-    
-        @include mq(leftCol) {
             right: 0;
+            width: 550px;
+            height: auto;
+            margin-top: -70px;
         }
     }
 
