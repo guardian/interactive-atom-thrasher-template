@@ -21,15 +21,20 @@ $secondary: #fff;
     &__image,
     img {
         margin-top: -18px;
-        width: 100%;
-        margin-bottom: -20px;
+        width: 130%;
+        margin-bottom: -60px;
+        margin-left: -60px;
+
+        @include mq(mobileLandscape) {
+            margin-bottom: -120px;
+        }
 
         @include mq(tablet) {
             position: absolute;
             z-index: 0;
-            height: 100%;
+            height: 130%;
             width: auto;
-            margin-top: 0px;
+            margin-left: -50px;
         }
     
         @include mq(desktop) {
