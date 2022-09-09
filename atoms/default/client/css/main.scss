@@ -106,6 +106,14 @@ $secondary: #fff;
             font-weight: 800;
             font-size: 15px;
 
+            span.accessibility {
+                height: 1px;
+                overflow: hidden;
+                position: absolute;
+                white-space: nowrap;
+                width: 1px;
+            }
+
             &__caption {
                 font-family: $f-serif-text;
                 font-size: 17px;
