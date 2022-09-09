@@ -93,10 +93,14 @@ $secondary: #fff;
         }
 
         &__headline h3 {
-            width: 80%;
+            width: 75%;
             font-family: $f-titlepiece;
             font-size: 40px;
             line-height: 115%;
+
+            @include mq(mobileLandscape) {
+                width: 80%;
+            }
 
             @include mq(tablet) {
                 width: auto;
