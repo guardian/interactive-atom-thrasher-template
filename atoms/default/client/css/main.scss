@@ -52,6 +52,10 @@ $secondary: #fff;
             height: auto;
             margin-top: -70px;
         }
+
+        @include mq(wide) {
+            width: 650px;
+        }
     }
 
 
@@ -102,7 +106,7 @@ $secondary: #fff;
                 width: 80%;
             }
 
-            @include mq(tablet) {
+            @include mq(desktop) {
                 width: auto;
             }
         }
@@ -111,7 +115,7 @@ $secondary: #fff;
             font-family: $f-serif-text;
             font-size: 17px;
             line-height: 135%;
-            margin-bottom: 12px;
+            margin-bottom: 32px;
 
             @include mq(leftCol) {
                 width: 80%;
