@@ -29,9 +29,8 @@ $secondary: #fff;
 
     &__image,
     img {
-        margin-top: -18px;
         width: 130%;
-        margin-bottom: -60px;
+        margin-bottom: -48px;
         margin-left: -60px;
 
         @include mq(mobileLandscape) {
@@ -66,10 +65,6 @@ $secondary: #fff;
         float: left;
         color: #fff;
 
-        @include mq(tablet) {
-            width: calc(50% - 30px);
-        }
-
         @include mq(leftCol) {
             width: 570px;
         }
@@ -100,10 +95,15 @@ $secondary: #fff;
             width: 75%;
             font-family: $f-titlepiece;
             font-size: 40px;
-            line-height: 115%;
+            line-height: 105%;
 
             @include mq(mobileLandscape) {
                 width: 80%;
+                line-height: 115%;
+            }
+ 
+            @include mq(tablet) {
+                width: calc(50% - 30px);
             }
 
             @include mq(desktop) {
@@ -116,6 +116,10 @@ $secondary: #fff;
             font-size: 17px;
             line-height: 135%;
             margin-bottom: 32px;
+
+            @include mq(tablet) {
+                width: calc(50% - 30px);
+            }
 
             @include mq(leftCol) {
                 width: 80%;
@@ -173,6 +177,13 @@ $secondary: #fff;
                     text-decoration: none;
                     color: $primary;
                     background-color: $secondary;
+                }
+
+                &--amazon-music {
+                    display: none;
+                    @include mq(tablet) {
+                        display: block
+                    }
                 }
             }
         }
