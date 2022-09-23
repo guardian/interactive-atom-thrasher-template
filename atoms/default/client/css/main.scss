@@ -115,6 +115,7 @@ $yellow: #ffe500;
           @include mq(desktop) {
             font-size: 40px;
             margin-top: 0;
+            min-height: 100px;
           }
         }
         &__subheadline {
