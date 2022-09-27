@@ -111,53 +111,11 @@
     }
 
     &__main-image-container {
-      &--tall {
-        svg {
-          width: 100%;
-          height: auto;
-        }
-      }
-
-      &--wide {
-        display: none;
-        svg {
-          width: 100%;
-          height: auto;
-        }
-      }
-
-      &--square {
-        display: none;
-
-        svg {
-          height: 164px;
-          width: 164px;
-        }
-      }
-
-      @include mc(mobileLandscape) {
-        &--tall {
-          display: none;
-        }
-        &--wide {
-          display: block;
-        }
-        &--square {
-          display: none;
-        }
-      }
-
-      @include mc(phablet) {
-        &--tall {
-          display: none;
-        }
-        &--wide {
-          display: none;
-        }
-        &--square {
-          display: inline-flex;
-        }
-      }
+        display: flex;
+        max-height: 164px;
+        max-width: 164px;
+        height: 100%;
+        width: 100%;
     }
 
     &__main-section-content {
