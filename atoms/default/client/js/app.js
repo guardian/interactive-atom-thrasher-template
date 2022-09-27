@@ -1,7 +1,7 @@
 // data capture for ophan
 function trackLoad() {
     window.guardian.ophan.record({
-        component: 'thrasher : thrasher-name : load',
+        component: 'thrasher : house-to-home : load',
         value: 1
     });
 }
