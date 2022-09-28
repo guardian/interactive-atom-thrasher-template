@@ -276,7 +276,7 @@
       }
     }
 
-    @include mc(mobileLandscape) {
+    @include mc(phablet) {
       &__thrasher-image {
         display: flex;
         max-height: 164px;
