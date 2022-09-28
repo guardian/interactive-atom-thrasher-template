@@ -268,7 +268,7 @@
     &__thrasher-image {
       display: none;
 
-      &-mobile {
+      &--mobile {
         display: flex;
         max-width: 480px;
         width: 100%;
@@ -284,7 +284,7 @@
         height: 100%;
         width: auto;
 
-        &-mobile {
+        &--mobile {
           display: none;
         }
       }
