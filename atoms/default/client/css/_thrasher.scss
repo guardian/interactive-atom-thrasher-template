@@ -203,7 +203,7 @@
 
     &__main-section-inner {
       border: 2px dashed #fff;
-      border-radius: 1em;
+      border-radius: 0.5em;
       padding: 8px;
       background-color: #F9B376;
 
@@ -215,6 +215,8 @@
     }
 
     &__main-image-container {
+      overflow: hidden;
+
       &--tall {
         svg {
           width: 100%;
