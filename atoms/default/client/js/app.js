@@ -1,6 +1,6 @@
 function trackLoad() {
   window.guardian.ophan.record({
-    component: "thrasher : multi-newsletter-1 : load",
+    component: "thrasher : multi-newsletter-football : load",
     value: 1,
   });
 }
