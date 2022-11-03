@@ -262,22 +262,21 @@ $textColor: #ffffff;
     }
 
     &__blurb {
-        color:$textColor;
+        color: $textColor;
         font-family: "Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
-        font-size:17px;
-        font-weight:500;
-        line-height:115%;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 115%;
         padding-left: 10px;
-
-        margin-bottom: 116px;
+        margin-bottom: 100px;
         width: 260px;
 
         @include mq(mobileMedium) {
-            margin-bottom: 124px;
+            margin-bottom: 111px;
         }
         @include mq(mobileLandscape) {
             padding-left: 20px;
-            margin-bottom: 86px;
+            margin-bottom: 70px;
             width: 260px;
         }
         @include mq(phablet) {
