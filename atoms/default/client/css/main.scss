@@ -22,18 +22,11 @@ $mq-breakpoints: (
   wide: 1300px,
 );
 
-// update 'class-name' with yours
-$containerName: class-name;
-// colours pulled from shared/css/_palette.sass
-$backgroundColor: $labs-main;
-$textColor: $neutral-7;
-$buttonColor: $neutral-7;
-$buttonHoverColor: $neutral-46;
 
 // this targets the container your thrasher is put inside on Fronts
 #thrasher-atom,
-#age-of-extinction,
-#the-age-of-extinction {
+#qatar-header,
+#qatar-beyond-football {
   width: 100%;
   position: relative;
   padding: 0 !important;
@@ -44,90 +37,147 @@ $buttonHoverColor: $neutral-46;
   .facia-snap {
     overflow: hidden;
   }
-  .facia-snap {
+  .fc-item, .facia-snap {
     padding: 0;
+    overflow: hidden;
   }
 }
 
-.age-of-extinction-wrapper {
-  @include mq(wide) {
-    width: 1300px;
-  }
-}
-
-.age-of-extinction-wrapper {
-  // pic 1
-  // background-image: url('https://uploads.guim.co.uk/2021/01/06/GettyImages-1053730734-(260be1efb273b6c5e9fbebb58aa679e8bb448abe)-flipped_(1).jpg');
-  // // pic 2
-  // background-image: url('https://media.guim.co.uk/60079d63a95d36b76c0eba87049b91d15f939e25/0_304_4100_2346/2000.jpg');
-  // pic 3
-  // background-image: url('https://uploads.guim.co.uk/2021/01/06/07780509-(c096ae683940737f8d197b11106e1d2f6751404b)-flipped.jpg');
-  background-image: url("https://media.guim.co.uk/0280167ac6cf26eb9002992857b8f946c3b7bf45/0_511_5421_1985/1000.jpg");
-  // background-image: url("https://media.guim.co.uk/60a74acf1733eca7d075e350671cb6bdf1ff65d1/0_0_3382_1421/1000.jpg");
-  // background-image: url("https://media.guim.co.uk/c35aa05093bcd9998559929b397206e09d756a29/0_65_5059_2059/1000.jpg");
-  background-size: cover;
-  background-position: -260px bottom;
-  min-height: 300px;
+.qatar-header {
+  min-height: 175px;
+  background-image: url('https://uploads.guim.co.uk/2022/11/08/BALL-2-squashed.jpg');
+  background-position: 130px -30px;
+  background-size: 100%;
   background-repeat: no-repeat;
   width: 100%;
-  @include mq(mobileLandscape) {
-    background-position: center bottom;
+  @include mq(mobileMedium) {
+    background-position: 160px -60px;
   }
-  .aoe-info-wrapper {
-    background-color: #f8f5ea;
-    padding-bottom: 12px;
-    width: 60%;
-    padding-top: 6px;
-    padding-left: 6px;
+  @include mq(mobileLandscape) {
+    background-position: 180px -120px;
+  }
+  @include mq(phablet) {
+    background-position: 250px -210px;
+  }
+  @include mq(desktop) {
+    background-position: 480px -180px;
+    background-size: 60%;
+  }
+  @include mq(leftCol) {
+    background-position: 640px -165px;
+    background-size: 50%;
+  }
+  @include mq(wide) {
+    background-size: 40%;
+    background-position: 720px -150px;
+  }
+  .text-wrapper {
+    position: relative;
+    z-index: 2;
+    margin-left: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: calc(100% - 150px);
+    @include mq(mobileLandscape) {
+      width: 240px;
+      margin-left: 20px;
+    }
     @include mq(tablet) {
-      width: 300px;
+      width: 310px;
     }
     @include mq(leftCol) {
-      margin-left: 170px;
+      margin-left: 180px;
     }
     @include mq(wide) {
-      margin-left: 250px;
+      margin-left: 260px;
     }
 
     h2 {
-      font-family: "Guardian Egyptian Web", Georgia, serif;
-      font-size: 18px;
-      line-height: 22px;
-      font-weight: 400;
-      border-top: 1px solid #121212;
-    }
-
-    .badge,
-    .bagde {
-      margin-bottom: 12px;
-      width: 100%;
-
-      svg {
-        width: 90%;
-        height: auto;
-        display: block;
+      font-family: $f-serif-headline;
+      color: white;
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 105%;
+      margin-bottom: 16px;
+      margin-top: 4px;
+      @include mq(mobileMedium) {
+        font-size: 32px;
       }
+      @include mq(tablet) {
+        font-size: 44px;
+        margin-top: 2px;
+      }
+      @include mq(leftCol) {
+        margin-top:0;
+      }
+    }
+    p {
+      font-family: $f-serif-text;
+      color: white;
+      font-size: 12px;
+      line-height:135%;
+      margin-bottom: 4px;
+      @include mq(mobileMedium) {
+        font-size: 15px;
+      }
+    }
+  }
+  .left {
+    position: absolute;
+    top:0;
+    right: 75px;
+    @include mq(mobileLandscape) {
+      right: 120px;
+    }
+    @include mq(phablet) {
+      right: 45%;
+    }
+    @include mq(tablet) {
+      right: 310px;
+    }
+    @include mq(desktop) {
+      right: unset;
+      left: -240px;
+    }
+    @include mq(leftCol) {
+      left: -80px;
+    }
+    @include mq(wide) {
+      left:0;
+    }
+  }
+  .right {
+    position: absolute;
+    right:0;
+    top:0;
+    display: none;
+    @include mq(tablet) {
+      display: block;
+      right: -77px;
+    }
+    @include mq(desktop) {
+    }
+    @include mq(wide) {
+      right: 0;
     }
   }
 }
 
-// this removes margins from Android / iOS view
-.interactive-atom {
-  margin: 0;
-  overflow: hidden;
-}
 
 // iOS and Android specific styles
-.#{$containerName} {
-  .android &,
-  .ios & {
-    overflow: hidden;
+
+  .android,
+  .ios  {
     margin: 0;
-    padding: 0;
-    &__component-button {
-      span {
-        letter-spacing: unset;
-      }
-    }
+    overflow: hidden;
+    // margin: 0;
+    // padding: 0;
+    // &__component-button {
+    //   span {
+    //     letter-spacing: unset;
+    //   }
+    // }
   }
-}
+
