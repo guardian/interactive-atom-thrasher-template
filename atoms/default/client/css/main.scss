@@ -103,18 +103,19 @@ $yellow: #ffe500;
         }
         &__headline {
           font-family: $f-serif-headline;
-          font-size: 32px;
           line-height: 115%;
           font-weight: 400;
           min-height: 60px;
           margin-top: -2px;
           padding-right: 10px;
+          font-size: 28px;
+          margin-bottom: 12px;
           @include mq(tablet) {
             margin-top: 4px;
           }
           @include mq(desktop) {
-            font-size: 40px;
-            margin-top: 0;
+            font-size: 38px;
+            margin-top: 2px;
             min-height: 100px;
           }
         }
