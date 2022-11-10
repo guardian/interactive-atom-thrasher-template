@@ -26,7 +26,8 @@ $mq-breakpoints: (
 // this targets the container your thrasher is put inside on Fronts
 #thrasher-atom,
 #qatar-header,
-#qatar-beyond-football {
+#qatar-beyond-football, 
+#Qatar-beyond-football {
   width: 100%;
   position: relative;
   padding: 0 !important;
@@ -172,6 +173,12 @@ $mq-breakpoints: (
   .ios  {
     margin: 0;
     overflow: hidden;
+    p {
+        font-family: $f-serif-text;
+        color: white;
+        font-size: 12px;
+        line-height: 125%;
+    }
     // margin: 0;
     // padding: 0;
     // &__component-button {
