@@ -210,6 +210,13 @@ $yellow: #ffe500;
   }
 }
 
+.dotcom-only {
+  display: block;
+}
+.app-only {
+  display: none;
+}
+
 body.ios,
 body.android {
   margin: 0;
@@ -226,4 +233,13 @@ body.android {
   .documentary-template-2022__content-wrapper__copy__headline {
     max-width: 220px;
   }
+    .dotcom-only {
+      display: none;
+    }
+  
+    .app-only {
+      display: block;
+    }
 }
+
+
