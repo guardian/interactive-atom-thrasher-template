@@ -6,17 +6,37 @@ function trackLoad() {
     });
 }
 
-// THIS FUNCTION CHECKS IF A USER IS A SUBSCRIBER AND HIDES THE THRASHER. 
-// UPDATE THE CONTAINER NAME ON LINES 21 & 23
-// function getCookieValue(name) {
-//     var val = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
-//     return val ? val.pop() : undefined;
-// }
-// function shouldHideSupportMessaging() {
-//     return getCookieValue('gu_hide_support_messaging') === 'true';
-// }
-// if (shouldHideSupportMessaging()) {
-//     document.getElementById("#").style.display = "none";
-// } else {
-//     document.getElementById("#").style.display = "block";
-// }
+
+function invertColorOnIframeResultPages(event) {
+    if (!event.data.subject || event.data.subject !== "emailEmbedPageLoaded") {
+      return;
+    }
+    
+    if (!event.data.path || typeof event.data.path !== "string") {
+      return;
+    }
+    if (
+      !event.data.path.startsWith("/email/error") && 
+      !event.data.path.startsWith("/email/success")
+    ) {
+      return;
+    }
+    if (event.origin !== window.origin) {
+      console.warn('emailEmbedPageLoaded received from wrong origin:', event.origin)
+      return;
+    }
+    var iframesOnDarkBackgrounds = [
+      ...document.querySelectorAll(
+        ".football-daily-thrasher__embed-container iframe.invert-colors"
+      ),
+    ];
+  
+    iframesOnDarkBackgrounds.forEach(function (iframe) {
+      if (iframe.contentWindow === event.source) {
+        iframe.style.filter = "invert(1)";
+      }
+    });
+  }
+  
+window.addEventListener("message", invertColorOnIframeResultPages, false);
+
