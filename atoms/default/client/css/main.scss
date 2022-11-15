@@ -4,5 +4,137 @@
 @import "_app-fonts";
 @import "_mixins";
 
-@import "basics";
-@import "thrasher";
+$pale-blue: #F2F8FC;
+$brand-blue: #041F4A;
+$red: #B62619;
+
+#time-to-act, 
+#its-time-to-act, 
+#guardian-view, 
+#the-guardian-view, 
+#thrasher-atom {
+    background-color: $pale-blue;
+    .fc-item {
+        padding: 0;
+    }
+}
+
+.time-to-act-wrapper {
+    background-color: $pale-blue;
+    width: 100%;
+    box-sizing: border-box;
+    
+    padding: 8px 10px;
+    @include mq(mobileLandscape) {
+        padding: 8px 20px;
+    }
+    @include mq(tablet) {
+        border-left: 1px solid #dcdcdc;
+        border-right: 1px solid #dcdcdc;
+    }
+    @include mq(leftCol) {
+        padding: 8px 0 8px 180px;
+    }
+    @include mq(wide) {
+        padding: 8px 0 8px 260px;
+    }
+    h2 {
+        // font-family: $f-titlepiece;
+        font-family: "Guardian Titlepiece";
+        font-size: 24vw;
+        line-height: 80%;
+        color: $brand-blue;
+        font-size: 70px;
+        margin-bottom: 24px;
+        @include mq(mobileMedium) {
+            font-size: 80px;
+        }
+        @include mq(mobileLandscape) {
+            font-size: 23vw;
+        }
+        @include mq(tablet) {
+            font-size: 95px;
+        }
+        @include mq(desktop) {
+            font-size: 128px;
+        }
+        @include mq(leftCol) {
+            // font-size: 135px;
+        }
+        &::before {
+            content: '';
+            background-color: $red;
+            height: 4px;
+            width: 100%;
+            position: relative;
+            top: -8px;
+            display: block;
+            @include mq(leftCol) {
+                width: calc(100% - 20px);
+            }
+            @include mq(wide) {
+                width: 940px;
+            }
+        }
+    }
+    .bottom-wrapper{
+        display: flex;
+        flex-direction: column;
+        @include mq(desktop) {
+            flex-direction: row;
+        }
+        @include mq(wide) {
+            padding-right: 80px;
+        }
+        p {
+            font-family: $f-serif-text;
+            font-size: 15px;
+            line-height: 135%;
+            margin-right: 20px;
+            @include mq(tablet) {
+                font-size: 17px;
+            }
+            @include mq(desktop) {
+                max-width: 696px;
+            }
+            // @include mq(wide) {
+            //     max-width: 700px;
+            // }
+        }
+        a {
+            font-family: $f-sans-serif-text;
+            font-weight: bold;
+            font-size: 17px;
+            background-color: $brand-blue;
+            border-radius: 30px;
+            height: max-content;
+            width: max-content;
+            padding: 10px 19px;
+            color: white;
+            margin-bottom: 8px;
+            @include mq(tablet) {
+
+            }
+        }
+    }
+    
+}
+
+
+.ios, .android {
+    margin: 0;
+    padding: 0;
+    .time-to-act-wrapper {
+        h2 {
+            margin-top: 0;
+        }
+        p {
+            margin: 0; 
+            margin-right: 20px;
+        }
+        a {
+            margin-top: 8px;
+            text-decoration: none;
+        }
+    }
+}
