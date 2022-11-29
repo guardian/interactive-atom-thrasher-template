@@ -15,11 +15,43 @@
         <div class="multi-thrasher__inner">
             <section class="multi-thrasher__section multi-thrasher__section--cards">
                 <div class="multi-thrasher__card-holder" data-role="multi-thrasher-card-holder">
-                    <article class="newsletter-card" style="background-color:#005589; color:#fff">
-                        <h2 class="newsletter-card__title">Football Daily</h2>
+                    <article class="newsletter-card" style="background-color:#FFABDB; color:#000">
+                        <h2 class="newsletter-card__title">Five Great Reads</h2>
                     
                         <div class="newsletter-card__inner">
-                            <img class="newsletter-card__image" src="<%= path %>/football-daily-square.png" alt="Football Daily newsletter image" height="100" width="100">
+                            <img class="newsletter-card__image" src="<%= path %>/five-great-reads-square.png" alt="Five Great Reads newsletter image" height="100" width="100">
+                            <div class="newsletter-card__content">
+                                <div class="newsletter-card__frequency-block">
+                                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="25" height="25" rx="12.5" fill="#FFE500"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.8077 6H8.19231V9.69231H6.69781L5.73077 10.7376L11.8553 15.6154H13.1447L19.2692 10.7376L18.3022 9.69231H16.8077V6ZM15.5769 9.69231V9.07692H9.42308V9.69231H15.5769ZM15.5769 7.23077H9.42308V7.84615H15.5769V7.23077ZM5.73077 18.0769V12.2308L11.8553 16.5385H13.1447L19.2692 12.2308V18.0769L18.3022 19H6.69781L5.73077 18.0769ZM9.42308 10.9231H15.5769V11.5385H9.42308V10.9231Z" fill="#121212"/>
+                                    </svg>
+                                    <span>
+                                        Weekly
+                                    </span>
+                                </div>
+                                <p class="newsletter-card__description">
+                                    Enjoy the weekend with five essential, immersive reads from across the world
+                                </p>
+                            </div>
+                        </div>
+                    
+                        <div class="newsletter-card__iframe-wrapper element-embed">
+                            <iframe src="https://www.theguardian.com/email/form/thrasher/6019" 
+                            height="60" 
+                            data-form-title="Sign up for Five Great Reads" 
+                            data-form-description="Enjoy the weekend with five essential, immersive reads from across the world" 
+                            data-form-campaign-code="fivegreatrules_email "
+                            scrolling="no" seamless="" frameborder="0" 
+                            class="iframed--overflow-hidden email-sub__iframe js-email-sub__iframe js-email-sub__iframe--article" 
+                            data-form-success-desc="We&#x27;ll send you Five Great Reads every week" 
+                            title="Sign up for Five Great Reads"></iframe>    </div>
+                    </article>
+                    <article class="newsletter-card" style="background-color:#c1d8fc; color:#000">
+                        <h2 class="newsletter-card__title">Morning Mail</h2>
+                    
+                        <div class="newsletter-card__inner">
+                            <img class="newsletter-card__image" src="<%= path %>/morning-mail-square.png" alt="Morning Mail newsletter image" height="100" width="100">
                             <div class="newsletter-card__content">
                                 <div class="newsletter-card__frequency-block">
                                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,27 +63,27 @@
                                     </span>
                                 </div>
                                 <p class="newsletter-card__description">
-                                    Kick off your afternoons with the Guardian's take on the world of football
+                                    Start your day with a breakdown of the key stories and why they matter
                                 </p>
                             </div>
                         </div>
                     
                         <div class="newsletter-card__iframe-wrapper element-embed">
-                            <iframe src="https://www.theguardian.com/email/form/thrasher/4163" 
+                            <iframe src="https://www.theguardian.com/email/form/thrasher/4148" 
                             height="60" 
-                            data-form-title="Sign up for Football Daily" 
-                            data-form-description="Kick off your afternoons with the Guardian&#x27;s take on the world of football" 
-                            data-form-campaign-code="fiver_email "
+                            data-form-title="Sign up for Morning Mail" 
+                            data-form-description="Start your day with a breakdown of the key stories and why they matter" 
+                                data-form-campaign-code="morningmailau_email"
                             scrolling="no" seamless="" frameborder="0" 
-                            class="iframed--overflow-hidden email-sub__iframe js-email-sub__iframe js-email-sub__iframe--article invert-colors" 
-                            data-form-success-desc="We&#x27;ll send you Football Daily every weekday" 
-                            title="Sign up for Football Daily"></iframe>    </div>
+                            class="iframed--overflow-hidden email-sub__iframe js-email-sub__iframe js-email-sub__iframe--article" 
+                            data-form-success-desc="We&#x27;ll send you Guardian Australia's Morning Mail every weekday" 
+                            title="Sign up for Moring Mail"></iframe>    </div>
                     </article>
-                    <article class="newsletter-card" style="background-color:#0077B6; color:#fff">
-                        <h2 class="newsletter-card__title">What's On</h2>
+                    <article class="newsletter-card" style="background-color:#F9B376; color:#000">
+                        <h2 class="newsletter-card__title">Afternoon Update</h2>
                     
                         <div class="newsletter-card__inner">
-                            <img class="newsletter-card__image" src="<%= path %>/whats-on-square.png" alt="What's On newsletter image" height="100" width="100">
+                            <img class="newsletter-card__image" src="<%= path %>/afternoon-update-square.png" alt="Afternoon Update newsletter image" height="100" width="100">
                             <div class="newsletter-card__content">
                                 <div class="newsletter-card__frequency-block">
                                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -59,57 +91,25 @@
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M16.8077 6H8.19231V9.69231H6.69781L5.73077 10.7376L11.8553 15.6154H13.1447L19.2692 10.7376L18.3022 9.69231H16.8077V6ZM15.5769 9.69231V9.07692H9.42308V9.69231H15.5769ZM15.5769 7.23077H9.42308V7.84615H15.5769V7.23077ZM5.73077 18.0769V12.2308L11.8553 16.5385H13.1447L19.2692 12.2308V18.0769L18.3022 19H6.69781L5.73077 18.0769ZM9.42308 10.9231H15.5769V11.5385H9.42308V10.9231Z" fill="#121212"/>
                                     </svg>
                                     <span>
-                                        Weekly
+                                        Every weekday
                                     </span>
                                 </div>
                                 <p class="newsletter-card__description">
-                                    Get the best TV reviews, news and exclusive features in your inbox every Monday
+                                    Finish your day with a three-minute roundup of the stories that matter
                                 </p>
                             </div>
                         </div>
                     
                         <div class="newsletter-card__iframe-wrapper element-embed">
-                            <iframe src="https://www.theguardian.com/email/form/thrasher/6027" 
+                            <iframe src="https://www.theguardian.com/email/form/thrasher/6023" 
                             height="60" 
-                            data-form-title="Sign up for What's On" 
-                            data-form-description="Get the best TV reviews, news and exclusive features in your inbox every Monday" 
-                                data-form-campaign-code="whatson_email"
+                            data-form-title="Sign up for Afternoon Update" 
+                            data-form-description="Finish your day with a three-minute roundup of the stories that matter" 
+                            data-form-campaign-code="afternoonupdateau_email "
                             scrolling="no" seamless="" frameborder="0" 
-                            class="iframed--overflow-hidden email-sub__iframe js-email-sub__iframe js-email-sub__iframe--article invert-colors" 
-                            data-form-success-desc="We&#x27;ll send you What's On every week" 
-                            title="Sign up for What's On"></iframe>    </div>
-                    </article>
-                    <article class="newsletter-card" style="background-color:#0077B6; color:#fff">
-                        <h2 class="newsletter-card__title">This is Europe</h2>
-                    
-                        <div class="newsletter-card__inner">
-                            <img class="newsletter-card__image" src="<%= path %>/this-is-europe-square.png" alt="This is Europe newsletter image" height="100" width="100">
-                            <div class="newsletter-card__content">
-                                <div class="newsletter-card__frequency-block">
-                                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="25" height="25" rx="12.5" fill="#FFE500"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.8077 6H8.19231V9.69231H6.69781L5.73077 10.7376L11.8553 15.6154H13.1447L19.2692 10.7376L18.3022 9.69231H16.8077V6ZM15.5769 9.69231V9.07692H9.42308V9.69231H15.5769ZM15.5769 7.23077H9.42308V7.84615H15.5769V7.23077ZM5.73077 18.0769V12.2308L11.8553 16.5385H13.1447L19.2692 12.2308V18.0769L18.3022 19H6.69781L5.73077 18.0769ZM9.42308 10.9231H15.5769V11.5385H9.42308V10.9231Z" fill="#121212"/>
-                                    </svg>
-                                    <span>
-                                        Weekly
-                                    </span>
-                                </div>
-                                <p class="newsletter-card__description">
-                                    Get the most pivotal stories and debates from all around Europe free to your inbox every Wednesday
-                                </p>
-                            </div>
-                        </div>
-                    
-                        <div class="newsletter-card__iframe-wrapper element-embed">
-                            <iframe src="https://www.theguardian.com/email/form/thrasher/4234" 
-                            height="60" 
-                            data-form-title="Sign up for This is Europe" 
-                            data-form-description="The most pressing stories and debates for Europeans – from identity to economics to the environment" 
-                            data-form-campaign-code="thisiseurope_email "
-                            scrolling="no" seamless="" frameborder="0" 
-                            class="iframed--overflow-hidden email-sub__iframe js-email-sub__iframe js-email-sub__iframe--article invert-colors" 
-                            data-form-success-desc="We&#x27;ll send you This is Europe every week" 
-                            title="Sign up for This is Europe"></iframe>    </div>
+                            class="iframed--overflow-hidden email-sub__iframe js-email-sub__iframe js-email-sub__iframe--article" 
+                            data-form-success-desc="We&#x27;ll send you Afternoon Update every weekday" 
+                            title="Sign up for Afternoon Update"></iframe>    </div>
                     </article>
                 </div>
                 <button data-role="multi-thrasher-scroll-left-button" aria-label="scroll newsletters left"
