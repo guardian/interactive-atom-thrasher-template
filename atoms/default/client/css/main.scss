@@ -49,9 +49,11 @@ $tertiary: #f1c8e0;
 			position: absolute;
 			@include mq(tablet) {
 				top: -23px;
+				right: -15px;
 			}
 			@include mq(desktop) {
 				top: -55px;
+				right: unset;
 			}
 		}
 	}
@@ -134,6 +136,7 @@ $tertiary: #f1c8e0;
 			}
 
 			@include mq(tablet) {
+				width: 49%;
 				margin: 10px 0 20px;
 			}
 
@@ -203,6 +206,10 @@ $tertiary: #f1c8e0;
 					right: 20px;
 
 					@include mq(tablet) {
+						top: 8px;
+					}
+
+					@include mq(desktop) {
 						top: 12px;
 					}
 				}
