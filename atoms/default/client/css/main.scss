@@ -29,8 +29,18 @@ $tertiary: #f1c8e0;
 		display: flex;
 		justify-content: center;
 
+		@include mq(mobileLandscape) {
+			width: 30%;
+		}
+
 		@include mq(tablet) {
 			right: 0;
+			left: unset;
+			width: 50%;
+		}
+
+		@include mq(desktop) {
+			width: 40%;
 		}
 
 		img {
@@ -38,7 +48,10 @@ $tertiary: #f1c8e0;
 			height: auto;
 			position: absolute;
 			@include mq(tablet) {
-				top: -41px;
+				top: -23px;
+			}
+			@include mq(desktop) {
+				top: -55px;
 			}
 		}
 	}
@@ -116,19 +129,20 @@ $tertiary: #f1c8e0;
 			padding-right: 10%;
 
 			@include mq(mobileLandscape) {
-				width: 80%;
+				width: 50%;
 				line-height: 115%;
 			}
 
 			@include mq(tablet) {
-				width: calc(50% - 30px);
+				margin: 10px 0 20px;
 			}
 
 			@include mq(desktop) {
-				width: auto;
+				width: unset;
+				padding-right: 5%;
 				font-weight: 500;
 				font-size: 24px;
-				line-height: 115%;
+				line-height: 28px;
 				margin: 10px 0 70px;
 			}
 		}
@@ -172,10 +186,14 @@ $tertiary: #f1c8e0;
 				display: inline-flex;
 				align-items: center;
 				border: 1px solid $tertiary;
-				border-radius: 20px;
+				border-radius: 50px;
 				justify-content: center;
 				padding: 10px 45px 10px 20px;
 				position: relative;
+
+				@include mq(desktop) {
+					padding: 10px 35px 10px 20px;
+				}
 
 				.icon {
 					position: absolute;
@@ -183,6 +201,10 @@ $tertiary: #f1c8e0;
 					width: 22px;
 					height: 21px;
 					right: 20px;
+
+					@include mq(tablet) {
+						top: 12px;
+					}
 				}
 			}
 

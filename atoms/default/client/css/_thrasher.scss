@@ -71,7 +71,7 @@
     .logo-desktop {
       display: none;
       @include mq(desktop) {
-        display: none;
+        display: block;
       }
     }
 
