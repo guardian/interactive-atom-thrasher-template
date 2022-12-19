@@ -3,63 +3,63 @@
 //   border: 1px solid #dcdcdc;
 //   border-bottom: 0;
 
-  .secret-podcast-2022 {
-    // &__link,
-    // &__background,
-    // &__background img {
-    //   display: block;
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   right: 0;
-    //   bottom: 0;
-    // }
+.secret-podcast-2022 {
+  // &__link,
+  // &__background,
+  // &__background img {
+  //   display: block;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  // }
 
-    &__link {
-      z-index: 20;
-      &:hover {
-        // Background hover-effect:
-        ~ .secret-podcast-2022__background {
-          opacity: 0.95;
-        }
+  &__link {
+    z-index: 20;
+    &:hover {
+      // Background hover-effect:
+      ~ .secret-podcast-2022__background {
+        opacity: 0.95;
+      }
 
-        // Button hover-effect
-        ~ .thrasher-button,
-        ~ * .thrasher-button {
-          opacity: 0.8;
-        }
+      // Button hover-effect
+      ~ .thrasher-button,
+      ~ * .thrasher-button {
+        opacity: 0.8;
       }
     }
+  }
 
-    &__copy {
-      font-family: $font-headline;
-      font-size: 24px;
-      line-height: 26px;
-      padding: 0 10px 12px;
+  &__copy {
+    font-family: $font-headline;
+    font-size: 24px;
+    line-height: 26px;
+    padding: 0 10px 12px;
 
-      @include mq(mobileLandscape) {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-
-      @include mq(leftCol) {
-        padding-left: 180px;
-      }
-
-      @include mq(wide) {
-        padding-left: 260px;
-      }
+    @include mq(mobileLandscape) {
+      padding-left: 20px;
+      padding-right: 20px;
     }
 
-    &__roundel {
-        position: absolute;
-        top: 8px;
-        left: auto;
-        right: 10px;
-
-        @include mq(leftCol) {
-            left: 10px;
-            right: auto;
-        }
+    @include mq(leftCol) {
+      padding-left: 180px;
     }
+
+    @include mq(wide) {
+      padding-left: 260px;
+    }
+  }
+
+  &__roundel {
+    position: absolute;
+    top: 8px;
+    left: auto;
+    right: 10px;
+
+    @include mq(leftCol) {
+      left: 10px;
+      right: auto;
+    }
+  }
 }

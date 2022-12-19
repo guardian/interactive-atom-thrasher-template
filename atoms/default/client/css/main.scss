@@ -7,212 +7,237 @@
 @import "basics";
 @import "thrasher";
 
-$primary: #4A38A4;
+$primary: #4a38a4;
 $secondary: #fff;
+$tertiary: #f1c8e0;
 
 #secret-podcast,
 #thrasher-atom {
-    background-color: #fff;
+	background-color: #fff;
 }
 
 .secret-podcast-2022 {
-    background-color: $primary;
+	background-color: $primary;
 
-    &__img-clip {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        @include mq(tablet) {
-            position: absolute;
-        }
-    }
+	&__img-clip {
+		position: absolute;
+		overflow: hidden;
+		right: 0;
+		width: 480px;
+		height: 100%;
+		position: absolute;
+		display: flex;
+		justify-content: center;
 
-    &__image,
-    img {
-        width: 130%;
-        margin-bottom: -48px;
-        margin-left: -60px;
+		img {
+			width: 100%;
+			height: auto;
+			position: absolute;
+			@include mq(tablet) {
+				top: -41px;
+			}
+		}
+	}
 
-        @include mq(mobileLandscape) {
-            margin-bottom: -120px;
-        }
+	// &__image,
+	// img {
+	// 	width: 130%;
+	// 	margin-bottom: -48px;
+	// 	margin-left: -60px;
 
-        @include mq(tablet) {
-            position: absolute;
-            z-index: 0;
-            height: 130%;
-            width: auto;
-            right: -30%;
-        }
-    
-        @include mq(desktop) {
-            right: 0;
-            width: 550px;
-            height: auto;
-            margin-top: -70px;
-        }
+	// 	@include mq(mobileLandscape) {
+	// 		margin-bottom: -120px;
+	// 	}
 
-        @include mq(wide) {
-            width: 650px;
-        }
-    }
+	// 	@include mq(tablet) {
+	// 		position: absolute;
+	// 		z-index: 0;
+	// 		height: 130%;
+	// 		width: auto;
+	// 		right: -30%;
+	// 	}
 
+	// 	@include mq(desktop) {
+	// 		right: 0;
+	// 		width: 550px;
+	// 		height: auto;
+	// 		margin-top: -70px;
+	// 	}
 
-    &__copy {
-        padding-bottom: 12px;
-        position: relative;
-        z-index: 3;
-        float: left;
-        color: #fff;
+	// 	@include mq(wide) {
+	// 		width: 650px;
+	// 	}
+	// }
 
-        @include mq(leftCol) {
-            width: 570px;
-        }
+	&__copy {
+		padding-bottom: 12px;
+		position: relative;
+		z-index: 3;
+		float: left;
+		color: $tertiary;
 
-        @include mq(wide) {
-            width: 570px;
-        }
+		@include mq(leftCol) {
+			width: 570px;
+		}
 
-        &::before {
-            width: 1px;
-            background-color: $secondary;
-            position: absolute;
-            left: 250px;
-            top: 0;
-            bottom: 12px;
+		@include mq(wide) {
+			width: 570px;
+		}
 
-            @include mq(leftCol) {
-                left: 170px;
-                content: "";
-            }
+		&::before {
+			width: 1px;
+			background-color: $tertiary;
+			position: absolute;
+			left: 250px;
+			top: 0;
+			bottom: 12px;
 
-            @include mq(wide) {
-                left: 250px;
-            }
-        }
+			@include mq(leftCol) {
+				left: 170px;
+				content: "";
+			}
 
-        &__headline h3 {
-            width: 75%;
-            font-family: $f-titlepiece;
-            font-size: 40px;
-            line-height: 105%;
+			@include mq(wide) {
+				left: 250px;
+			}
+		}
 
-            @include mq(mobileLandscape) {
-                width: 80%;
-                line-height: 115%;
-            }
- 
-            @include mq(tablet) {
-                width: calc(50% - 30px);
-            }
+		&__headline h3 {
+			color: $tertiary;
+			width: 75%;
+			font-family: $f-serif-headline;
+			font-size: 24px;
+			line-height: 105%;
+			margin: 5px 0;
 
-            @include mq(desktop) {
-                width: auto;
-            }
-        }
+			@include mq(mobileLandscape) {
+				width: 80%;
+				line-height: 115%;
+			}
 
-        &__body {
-            font-family: $f-serif-text;
-            font-size: 17px;
-            line-height: 135%;
-            margin-bottom: 32px;
+			@include mq(tablet) {
+				width: calc(50% - 30px);
+			}
 
-            @include mq(tablet) {
-                width: calc(50% - 30px);
-            }
+			@include mq(desktop) {
+				width: auto;
+				font-weight: 500;
+				font-size: 24px;
+				line-height: 115%;
+				margin: 10px 0 70px;
+			}
+		}
 
-            @include mq(leftCol) {
-                width: 80%;
-            }
-        }
+		&__body {
+			font-family: $f-serif-text;
+			font-size: 17px;
+			line-height: 135%;
+			margin-bottom: 32px;
 
-        &__button {
-            font-family: $f-sans-serif-text;
-            line-height: 115%;
-            font-weight: 800;
-            font-size: 15px;
+			@include mq(tablet) {
+				width: calc(50% - 30px);
+			}
 
-            span.accessibility {
-                height: 1px;
-                overflow: hidden;
-                position: absolute;
-                white-space: nowrap;
-                width: 1px;
-            }
+			@include mq(leftCol) {
+				width: 80%;
+			}
+		}
 
-            &__caption {
-                font-family: $f-serif-text;
-                font-size: 17px;
-                line-height: 100%;
-            }
+		&__button {
+			font-family: $f-sans-serif-text;
+			line-height: 115%;
+			font-weight: 800;
+			font-size: 15px;
 
-            &__links-wrapper {
-                display: flex;
-                flex-wrap: wrap;
-            }
+			span.accessibility {
+				height: 1px;
+				overflow: hidden;
+				position: absolute;
+				white-space: nowrap;
+				width: 1px;
+			}
 
-            &__links-button {
-                display: block;
-                border: 1px solid $secondary;
-                border-radius: 20px;
-                padding: 4px 8px 5px 8px;
-                transition: all 0.3s ease;
-                height: min-content;
-                margin-right: 4px;
-                margin-bottom: 8px;
-                background-color: $primary;
+			&__caption {
+				font-family: $f-serif-text;
+				font-size: 17px;
+				line-height: 100%;
+			}
 
-                @include mq(mobileMedium) {
-                    margin-right: 8px;
-                }
+			&__links-wrapper {
+				display: inline-flex;
+				border: 1px solid $tertiary;
+				border-radius: 20px;
+				justify-content: center;
+				padding: 4px 30px 5px 8px;
+				position: relative;
+				.icon {
+					position: absolute;
+					width: 20px;
+					height: 100%;
+					right: 17px;
+					top: 6px;
+				}
+			}
 
-                @include mq(leftCol) {
-                    margin-bottom: 0;
-                    padding: 4px 10px 5px 10px;
-                }
+			&__links-button {
+				display: block;
+				transition: all 0.3s ease;
+				height: min-content;
+				margin-right: 4px;
+				margin-bottom: 8px;
+				background-color: $primary;
 
-                &:hover,
-                &:focus {
-                    cursor: pointer;
-                    text-decoration: none;
-                    color: $primary;
-                    background-color: $secondary;
-                }
+				@include mq(mobileMedium) {
+					margin-right: 8px;
+				}
 
-                &--amazon-music {
-                    display: none;
-                    @include mq(tablet) {
-                        display: block
-                    }
-                }
-            }
-        }
-    }
+				@include mq(leftCol) {
+					margin-bottom: 0;
+					padding: 4px 10px 5px 10px;
+				}
 
-    &__roundel {
-        width: max-content;
-        height: 64px;
+				&:hover,
+				&:focus {
+					cursor: pointer;
+					text-decoration: none;
+					color: $primary;
+					background-color: $secondary;
+				}
 
-        svg {
-            width: 83px;
-            height: 48px;
+				&--amazon-music {
+					display: none;
+					@include mq(tablet) {
+						display: block;
+					}
+				}
+			}
+		}
+	}
 
-            @include mq(tablet) {
-                width: auto;
-                height: 100%;
-            }
-        }
-    }
+	&__roundel {
+		width: max-content;
+		height: 64px;
+
+		svg {
+			width: 83px;
+			height: 48px;
+
+			@include mq(tablet) {
+				width: auto;
+				height: 100%;
+			}
+		}
+	}
 }
 
 .interactive-atom {
-    &.ios,
-    &.android {
-        padding: 0;
-        margin: 0;
+	&.ios,
+	&.android {
+		padding: 0;
+		margin: 0;
 
-        .secret-podcast-2022__copy__button__caption {
-            margin-bottom: 4px;
-        }
-    }
+		.secret-podcast-2022__copy__button__caption {
+			margin-bottom: 4px;
+		}
+	}
 }
