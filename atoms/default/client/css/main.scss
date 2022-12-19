@@ -22,12 +22,16 @@ $tertiary: #f1c8e0;
 	&__img-clip {
 		position: absolute;
 		overflow: hidden;
-		right: 0;
-		width: 480px;
-		height: 100%;
+		left: 0;
+		width: 100%;
+		height: 252px;
 		position: absolute;
 		display: flex;
 		justify-content: center;
+
+		@include mq(tablet) {
+			right: 0;
+		}
 
 		img {
 			width: 100%;
@@ -104,11 +108,12 @@ $tertiary: #f1c8e0;
 
 		&__headline h3 {
 			color: $tertiary;
-			width: 75%;
 			font-family: $f-serif-headline;
 			font-size: 24px;
-			line-height: 105%;
-			margin: 5px 0;
+			font-weight: 500;
+			line-height: 115%;
+			margin: 260px 0 0;
+			padding-right: 10%;
 
 			@include mq(mobileLandscape) {
 				width: 80%;
@@ -219,9 +224,6 @@ $tertiary: #f1c8e0;
 		height: 64px;
 
 		svg {
-			width: 83px;
-			height: 48px;
-
 			@include mq(tablet) {
 				width: auto;
 				height: 100%;
