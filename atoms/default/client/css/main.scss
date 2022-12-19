@@ -74,7 +74,7 @@ $tertiary: #f1c8e0;
 	// }
 
 	&__copy {
-		padding-bottom: 12px;
+		padding-bottom: 16px;
 		position: relative;
 		z-index: 3;
 		float: left;
@@ -112,7 +112,7 @@ $tertiary: #f1c8e0;
 			font-size: 24px;
 			font-weight: 500;
 			line-height: 115%;
-			margin: 260px 0 0;
+			margin: 250px 0 0;
 			padding-right: 10%;
 
 			@include mq(mobileLandscape) {
@@ -137,7 +137,7 @@ $tertiary: #f1c8e0;
 			font-family: $f-serif-text;
 			font-size: 17px;
 			line-height: 135%;
-			margin-bottom: 32px;
+			margin-bottom: 24px;
 
 			@include mq(tablet) {
 				width: calc(50% - 30px);
@@ -170,27 +170,27 @@ $tertiary: #f1c8e0;
 
 			&__links-wrapper {
 				display: inline-flex;
+				align-items: center;
 				border: 1px solid $tertiary;
 				border-radius: 20px;
 				justify-content: center;
-				padding: 4px 30px 5px 8px;
+				padding: 10px 45px 10px 20px;
 				position: relative;
+
 				.icon {
 					position: absolute;
-					width: 20px;
-					height: 100%;
-					right: 17px;
-					top: 6px;
+					top: 7px;
+					width: 22px;
+					height: 21px;
+					right: 20px;
 				}
 			}
 
 			&__links-button {
-				display: block;
 				transition: all 0.3s ease;
 				height: min-content;
-				margin-right: 4px;
-				margin-bottom: 8px;
 				background-color: $primary;
+				font-size: 17px;
 
 				@include mq(mobileMedium) {
 					margin-right: 8px;
