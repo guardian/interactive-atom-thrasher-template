@@ -182,10 +182,16 @@ $tertiary: #f1c8e0;
 
 				.icon {
 					position: absolute;
-					top: 7px;
+
 					width: 22px;
 					height: 21px;
-					right: 20px;
+					right: 14px;
+					top: 8px;
+
+					@include mq(mobileMedium) {
+						right: 20px;
+						top: 7px;
+					}
 
 					@include mq(tablet) {
 						top: 8px;
