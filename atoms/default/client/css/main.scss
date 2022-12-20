@@ -43,7 +43,7 @@ $tertiary: #f1c8e0;
 			width: 50%;
 		}
 
-		@include mq(desktop) {
+		@include mq(wide) {
 			width: 562px;
 		}
 
@@ -59,7 +59,7 @@ $tertiary: #f1c8e0;
 				top: -28px;
 				right: -15px;
 			}
-			@include mq(desktop) {
+			@include mq(wide) {
 				top: -85px;
 				right: unset;
 			}
@@ -123,6 +123,11 @@ $tertiary: #f1c8e0;
 			}
 
 			@include mq(desktop) {
+				width: 53%;
+				margin: 65px 0 20px;
+			}
+
+			@include mq(wide) {
 				width: unset;
 				padding-right: 22%;
 				font-weight: 500;
@@ -198,6 +203,11 @@ $tertiary: #f1c8e0;
 					}
 
 					@include mq(desktop) {
+						top: 6px;
+						right: 13px;
+					}
+
+					@include mq(wide) {
 						top: 10px;
 					}
 				}
