@@ -30,7 +30,7 @@ $tertiary: #f1c8e0;
 		justify-content: center;
 
 		@include mq(mobileLandscape) {
-			width: 30%;
+			height: 290px;
 		}
 
 		@include mq(tablet) {
@@ -40,54 +40,27 @@ $tertiary: #f1c8e0;
 		}
 
 		@include mq(desktop) {
-			width: 40%;
+			width: 562px;
 		}
 
 		img {
 			width: 100%;
 			height: auto;
 			position: absolute;
+			@include mq(mobileLandscape) {
+				left: 20px;
+				right: auto;
+			}
 			@include mq(tablet) {
-				top: -23px;
+				top: -28px;
 				right: -15px;
 			}
 			@include mq(desktop) {
-				top: -55px;
+				top: -85px;
 				right: unset;
 			}
 		}
 	}
-
-	// &__image,
-	// img {
-	// 	width: 130%;
-	// 	margin-bottom: -48px;
-	// 	margin-left: -60px;
-
-	// 	@include mq(mobileLandscape) {
-	// 		margin-bottom: -120px;
-	// 	}
-
-	// 	@include mq(tablet) {
-	// 		position: absolute;
-	// 		z-index: 0;
-	// 		height: 130%;
-	// 		width: auto;
-	// 		right: -30%;
-	// 	}
-
-	// 	@include mq(desktop) {
-	// 		right: 0;
-	// 		width: 550px;
-	// 		height: auto;
-	// 		margin-top: -70px;
-	// 	}
-
-	// 	@include mq(wide) {
-	// 		width: 650px;
-	// 	}
-	// }
-
 	&__copy {
 		padding-bottom: 16px;
 		position: relative;
@@ -131,7 +104,8 @@ $tertiary: #f1c8e0;
 			padding-right: 10%;
 
 			@include mq(mobileLandscape) {
-				width: 50%;
+				width: 80%;
+				margin-top: 274px;
 				line-height: 115%;
 			}
 
@@ -146,7 +120,7 @@ $tertiary: #f1c8e0;
 				font-weight: 500;
 				font-size: 24px;
 				line-height: 28px;
-				margin: 10px 0 48px;
+				margin: 10px 0 32px;
 			}
 		}
 
@@ -154,7 +128,7 @@ $tertiary: #f1c8e0;
 			font-family: $f-serif-text;
 			font-size: 17px;
 			line-height: 135%;
-			margin-bottom: 24px;
+			margin-bottom: 17px;
 
 			@include mq(tablet) {
 				width: calc(50% - 30px);
@@ -195,7 +169,7 @@ $tertiary: #f1c8e0;
 				position: relative;
 
 				@include mq(desktop) {
-					padding: 10px 35px 10px 20px;
+					padding: 8px 35px 8px 20px;
 				}
 
 				.icon {
@@ -210,7 +184,7 @@ $tertiary: #f1c8e0;
 					}
 
 					@include mq(desktop) {
-						top: 12px;
+						top: 10px;
 					}
 				}
 			}
@@ -244,18 +218,6 @@ $tertiary: #f1c8e0;
 						display: block;
 					}
 				}
-			}
-		}
-	}
-
-	&__roundel {
-		width: max-content;
-		height: 64px;
-
-		svg {
-			@include mq(tablet) {
-				width: auto;
-				height: 100%;
 			}
 		}
 	}

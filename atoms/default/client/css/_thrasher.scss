@@ -1,20 +1,4 @@
-// #thrasher__secret-podcast-2022.thrasher-inner {
-//   position: relative;
-//   border: 1px solid #dcdcdc;
-//   border-bottom: 0;
-
-.secret-podcast-2022 {
-  // &__link,
-  // &__background,
-  // &__background img {
-  //   display: block;
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   right: 0;
-  //   bottom: 0;
-  // }
-
+#thrasher__secret-podcast-2022 .secret-podcast-2022 {
   &__link {
     z-index: 20;
     &:hover {
@@ -54,11 +38,29 @@
   &__roundel {
     position: absolute;
     top: 8px;
-    right: 8px;
+    right: 10px;
+    width: max-content;
+    height: 64px;
+
+    @include mq(mobileLandscape) {
+      right: 20px;
+    }
+
+    @include mq(leftCol) {
+      left: 10px;
+      right: auto;
+    }
 
     @include mq(desktop) {
-      left: auto;
-      right: 10px;
+      left: 20px;
+      right: auto;
+    }
+
+    svg {
+      @include mq(tablet) {
+        width: auto;
+        height: 100%;
+      }
     }
 
     .logo-mobile {
@@ -73,11 +75,6 @@
       @include mq(desktop) {
         display: block;
       }
-    }
-
-    @include mq(leftCol) {
-      left: 10px;
-      right: auto;
     }
   }
 }
