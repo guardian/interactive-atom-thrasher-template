@@ -268,5 +268,10 @@ $tertiary: #f1c8e0;
 		.secret-podcast-2022__copy__button__caption {
 			margin-bottom: 4px;
 		}
+		h3 {
+			@include mq(desktop) {
+				margin-top: 4px;
+			}
+		}
 	}
 }
