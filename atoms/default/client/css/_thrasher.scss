@@ -1,18 +1,18 @@
 #thrasher__secret-podcast-2022 .secret-podcast-2022 {
   &__link {
     z-index: 20;
-    &:hover {
-      // Background hover-effect:
-      ~ .secret-podcast-2022__background {
-        opacity: 0.95;
-      }
+    // &:hover {
+    //   // Background hover-effect:
+    //   ~ .secret-podcast-2022__background {
+    //     opacity: 0.95;
+    //   }
 
-      // Button hover-effect
-      ~ .thrasher-button,
-      ~ * .thrasher-button {
-        opacity: 0.8;
-      }
-    }
+    //   // Button hover-effect
+    //   ~ .thrasher-button,
+    //   ~ * .thrasher-button {
+    //     opacity: 0.8;
+    //   }
+    // }
   }
 
   &__copy {

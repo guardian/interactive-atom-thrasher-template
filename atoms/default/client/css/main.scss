@@ -185,9 +185,29 @@ $tertiary: #f1c8e0;
 					padding: 8px 35px 8px 20px;
 				}
 
+				&:hover,
+				&:focus {
+					cursor: pointer;
+					transition: all 0.3s ease;
+					background-color: $tertiary;
+					border: 1px solid $tertiary;
+
+					.icon {
+						svg {
+							path {
+								fill: $primary;
+							}
+						}
+					}
+
+					> a {
+						color: $primary;
+						text-decoration: none;
+					}
+				}
+
 				.icon {
 					position: absolute;
-
 					width: 22px;
 					height: 21px;
 					right: 14px;
@@ -216,7 +236,6 @@ $tertiary: #f1c8e0;
 			&__links-button {
 				transition: all 0.3s ease;
 				height: min-content;
-				background-color: $primary;
 				font-size: 17px;
 
 				@include mq(mobileMedium) {
@@ -226,14 +245,6 @@ $tertiary: #f1c8e0;
 				@include mq(leftCol) {
 					margin-bottom: 0;
 					padding: 4px 10px 5px 10px;
-				}
-
-				&:hover,
-				&:focus {
-					cursor: pointer;
-					text-decoration: none;
-					color: $primary;
-					background-color: $secondary;
 				}
 
 				&--amazon-music {
