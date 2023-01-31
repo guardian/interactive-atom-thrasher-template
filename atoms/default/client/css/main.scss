@@ -105,7 +105,7 @@ $yellow: #ffe500;
           font-family: $f-serif-headline;
           line-height: 115%;
           font-weight: 400;
-          min-height: 60px;
+          // min-height: 60px;
           margin-top: -2px;
           padding-right: 10px;
           font-size: 28px;
@@ -116,7 +116,7 @@ $yellow: #ffe500;
           @include mq(desktop) {
             font-size: 38px;
             margin-top: 2px;
-            min-height: 100px;
+            min-height: 118px;
           }
         }
         &__subheadline {
