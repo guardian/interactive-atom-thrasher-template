@@ -114,22 +114,21 @@ $yellow: #ffe500;
             margin-top: 4px;
           }
           @include mq(desktop) {
-            font-size: 38px;
+            font-size: 36px;
             margin-top: 2px;
-            min-height: 100px;
+            min-height: 80px;
           }
         }
         &__subheadline {
           padding-right: 10px;
           font-family: $f-sans-serif-text;
           font-size: 15px;
-          font-size: 17px;
           border-top: 1px solid #ffffff50;
           margin-bottom: 12px;
           padding-top: 4px;
           line-height: 115%;
           @include mq(desktop) {
-            padding-right: 30px;
+            padding-right: 20px;
           }
         }
 
