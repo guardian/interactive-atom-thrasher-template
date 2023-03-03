@@ -1,7 +1,7 @@
 // data capture for ophan
 function trackLoad() {
     window.guardian.ophan.record({
-        component: 'thrasher : 2022-documentary-template : load',
+        component: 'thrasher : 2023-documentary-template : load',
         value: 1
     });
 }
@@ -21,10 +21,10 @@ function trackLoad() {
 //     document.getElementById("#").style.display = "block";
 // }
 
-const pauseButton = document.querySelector('.documentary-template-2022__content-wrapper__pause-button');
-const pauseSvg = document.querySelector('.documentary-template-2022__content-wrapper__pause-button svg.pause');
-const playSvg = document.querySelector('.documentary-template-2022__content-wrapper__pause-button svg.play');
-const docthrasher = document.querySelector('[id^="thrasher__documentary-template-2022"]');
+const pauseButton = document.querySelector('.documentary-template-2023__content-wrapper__pause-button');
+const pauseSvg = document.querySelector('.documentary-template-2023__content-wrapper__pause-button svg.pause');
+const playSvg = document.querySelector('.documentary-template-2023__content-wrapper__pause-button svg.play');
+const docthrasher = document.querySelector('[id^="thrasher__documentary-template-2023"]');
 var vid = document.getElementById("docVideo");
 const animClass = "dw-video";
 let playing = false;

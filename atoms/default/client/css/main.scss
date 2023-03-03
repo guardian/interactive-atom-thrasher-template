@@ -17,11 +17,11 @@ $yellow: #ffe500;
   }
 }
 
-#thrasher__documentary-template-2022 {
+#thrasher__documentary-template-2023 {
   background-color: $background;
   width: 100%;
   color: white;
-  .documentary-template-2022 {
+  .documentary-template-2023 {
     &__film-link {
       color: #fff;
       text-decoration: none;
@@ -32,7 +32,7 @@ $yellow: #ffe500;
 
       &:hover,
       &:focus {
-        .documentary-template-2022__content-wrapper__copy__button .icon {
+        .documentary-template-2023__content-wrapper__copy__button .icon {
           transform: scale(1.2);
         }
       }
@@ -174,7 +174,7 @@ $yellow: #ffe500;
 
         @include mq(desktop) {
           &:hover {
-            .documentary-template-2022__content-wrapper__pause-button {
+            .documentary-template-2023__content-wrapper__pause-button {
               display: block;
               svg.active {
                 display: block;
@@ -222,17 +222,17 @@ $yellow: #ffe500;
 body.ios,
 body.android {
   margin: 0;
-  .documentary-template-2022 {
+  .documentary-template-2023 {
     position: relative;
   }
-  .documentary-template-2022__content-wrapper__copy__headline {
+  .documentary-template-2023__content-wrapper__copy__headline {
     margin-top: 4px;
   }
-  .documentary-template-2022__container-title__link svg {
+  .documentary-template-2023__container-title__link svg {
     width: 100%;
     height: auto;
   }
-  .documentary-template-2022__content-wrapper__copy__headline {
+  .documentary-template-2023__content-wrapper__copy__headline {
     max-width: 220px;
   }
     .dotcom-only {
