@@ -162,13 +162,12 @@ $yellow: #ffe500;
           }
           @include mq(desktop) {
             width: 490px;
-            margin-top: -41px;
+            margin-top: 0;
             margin-bottom: -47px;
           }
           @include mq(wide) {
             width: 570px;
-            margin-top: -47px;
-            margin-bottom: -53px;
+            margin-bottom: -83px;
           }
         }
 
@@ -210,13 +209,6 @@ $yellow: #ffe500;
       }
     }
   }
-}
-
-.dotcom-only {
-  display: block;
-}
-.app-only {
-  display: none;
 }
 
 body.ios,
