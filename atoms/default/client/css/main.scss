@@ -1,74 +1,78 @@
-@import "_mq";
-@import "_fonts";
-@import "_palette";
-@import "_app-fonts";
-@import "_mixins";
+@import '_mq';
+@import '_fonts';
+@import '_palette';
+@import '_app-fonts';
+@import '_mixins';
 
-@import "basics";
-@import "thrasher";
-
+@import 'basics';
+@import 'thrasher';
 
 .story-link {
-    background-color: #3f464a;
-    border-top: 4px solid #ffe500;
-    width: 260px;
-    padding: 4px;
+  background-color: #3f464a;
+  border-top: 4px solid #ffe500;
+  width: 260px;
+  padding: 4px;
+  position: absolute;
+  z-index: 1;
+  bottom: 24px;
+  left: 10px;
+  @include mq(tablet) {
+    bottom: unset;
+    left: unset;
+    top: 8px;
+    right: 20px;
+    width: 150px;
+  }
+  @include mq(desktop) {
+    right: 20px;
+    width: 210px;
+  }
+  @include mq(wide) {
+    right: 100px;
+  }
+  a {
     position: absolute;
-    z-index: 1;
-    bottom: 24px;
-    left: 10px;
-    @include mq(tablet) {
-        bottom: unset;
-        left: unset;
-        top: 8px;
-        right: 20px;
-        width: 150px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    &:hover {
+      ~ svg {
+        background-color: #ffffff50;
+      }
     }
-    @include mq(desktop) {
-        right: 20px;
-        width: 210px;
-    }
-    @include mq(wide) {
-        right: 100px;
-    }
-    a {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        &:hover {
-            ~ svg {
-                background-color: #ffffff50;
-            }
-        }
-    }
-    &__headline {
-        font-family: $f-headline-full;
-        font-size: 20px;
-        font-weight: 500;
-        color: white;
-        line-height: 115%;
-    }
-    svg {
-        width: 28px;
-        height: 28px;
-        padding: 8px;
-        border: 1px solid white;
-        border-radius: 50%;
-        margin-top: 4px;
-    }
+  }
+  &__headline {
+    font-family: $f-headline-full;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    line-height: 115%;
+  }
+  svg {
+    width: 28px;
+    height: 28px;
+    padding: 8px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-top: 4px;
+  }
 }
 
-
 .cash {
-    width: 100%;
-    height: 130px;
-    position: absolute;
-    bottom: 5px;
-    left: -90%;
-    @include mq(tablet) {
-        bottom: -20px;
-        left: 0;
-    }
+  width: 100%;
+  height: 130px;
+  position: absolute;
+  bottom: 5px;
+  left: -90%;
+  @include mq(tablet) {
+    bottom: -20px;
+    left: 0;
+  }
+}
+
+// DCR fixes
+.thrasher-atom,
+.pandora-header {
+  width: 100%;
 }
