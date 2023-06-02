@@ -27,8 +27,8 @@ $tertiary: #f1c8e0;
 		width: 100%;
 		height: 222px;
 		position: absolute;
-		display: flex;
-		justify-content: center;
+		// display: flex;
+		// justify-content: center;
 
 		@include mq(mobileMedium) {
 			height: 252px;
@@ -36,6 +36,10 @@ $tertiary: #f1c8e0;
 
 		@include mq(mobileLandscape) {
 			height: 290px;
+		}
+
+		@include mq(phablet) {
+			height: 400px;
 		}
 
 		@include mq(tablet) {
@@ -118,6 +122,10 @@ $tertiary: #f1c8e0;
 				line-height: 115%;
 			}
 
+			@include mq(phablet) {
+				margin-top: 358px;
+			}
+
 			@include mq(tablet) {
 				width: 49%;
 				margin: 10px 0 20px;
@@ -181,18 +189,13 @@ $tertiary: #f1c8e0;
 				justify-content: center;
 				position: relative;
 
-				
-
 				&:hover,
 				&:focus {
 					cursor: pointer;
 					transition: all 0.3s ease;
 					background-color: $tertiary;
 					border: 1px solid $tertiary;
-					
-					
-					
-					
+
 					> a {
 						color: $primary;
 						text-decoration: none;
@@ -236,16 +239,13 @@ $tertiary: #f1c8e0;
 				transition: all 0.3s ease;
 				height: min-content;
 				font-size: 17px;
-display: flex;
-	align-items: center;
-	padding: 10px 24px;
+				display: flex;
+				align-items: center;
+				padding: 10px 24px;
 
-	svg {
-		padding-left: 10px;
-	}
-				
-
-				
+				svg {
+					padding-left: 10px;
+				}
 
 				@include mq(leftCol) {
 					margin-bottom: 0;
