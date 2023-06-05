@@ -46,13 +46,17 @@
       right: 20px;
     }
 
-    @include mq(leftCol) {
-      left: 10px;
-      right: auto;
+    @include mq(desktop) {
+      top: unset;
+      bottom: -10px;
+      left: unset;
+      right: 20px;
     }
 
-    @include mq(desktop) {
-      left: 20px;
+    @include mq(leftCol) {
+      top: 8px;
+      bottom: unset;
+      left: 10px;
       right: auto;
     }
 

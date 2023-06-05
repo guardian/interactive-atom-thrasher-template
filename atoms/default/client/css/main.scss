@@ -1,11 +1,11 @@
-@import "_mq";
-@import "_fonts";
-@import "_palette";
-@import "_app-fonts";
-@import "_mixins";
+@import '_mq';
+@import '_fonts';
+@import '_palette';
+@import '_app-fonts';
+@import '_mixins';
 
-@import "basics";
-@import "thrasher";
+@import 'basics';
+@import 'thrasher';
 
 $primary: #4a38a4;
 $secondary: #fff;
@@ -14,267 +14,538 @@ $tertiary: #f1c8e0;
 #secret-podcast,
 #thrasher-atom,
 #wordiply {
-	background-color: #fff;
+  background-color: #fff;
 }
 
-.secret-podcast-2022 {
-	background-color: $primary;
+// css is split here as part of DCR migration
+// This is DCR css
 
-	&__img-clip {
-		position: absolute;
-		overflow: hidden;
-		left: 0;
-		width: 100%;
-		height: 222px;
-		position: absolute;
-		// display: flex;
-		// justify-content: center;
+.secret-podcast-2022,
+.thrasher-atom {
+  background-color: $primary;
+  width: 100%;
 
-		@include mq(mobileMedium) {
-			height: 252px;
-		}
+  &__img-clip {
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    width: 100%;
+    height: 222px;
+    position: absolute;
+    // display: flex;
+    // justify-content: center;
 
-		@include mq(mobileLandscape) {
-			height: 290px;
-		}
+    @include mq(mobileMedium) {
+      height: 252px;
+    }
 
-		@include mq(phablet) {
-			height: 400px;
-		}
+    @include mq(mobileLandscape) {
+      height: 290px;
+    }
 
-		@include mq(tablet) {
-			right: 0;
-			left: unset;
-			width: 50%;
-		}
+    @include mq(phablet) {
+      height: 400px;
+    }
 
-		@include mq(wide) {
-			width: 562px;
-		}
+    @include mq(tablet) {
+      right: 0;
+      left: unset;
+      width: 50%;
+    }
+    @include mq(desktop) {
+      width: 47%;
+    }
+    @include mq(leftCol) {
+      width: 43%;
+    }
 
-		img {
-			width: 100%;
-			height: auto;
-			position: absolute;
-			@include mq(mobileLandscape) {
-				left: 20px;
-				right: auto;
-			}
-			@include mq(tablet) {
-				top: -28px;
-				right: -15px;
-			}
-			@include mq(wide) {
-				top: -85px;
-				right: unset;
-			}
-		}
-	}
-	&__copy {
-		padding-bottom: 16px;
-		position: relative;
-		z-index: 3;
-		float: left;
-		color: $tertiary;
+    @include mq(wide) {
+      width: 562px;
+    }
 
-		@include mq(leftCol) {
-			width: 570px;
-		}
+    img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      @include mq(mobileLandscape) {
+        left: 20px;
+        right: auto;
+      }
+      @include mq(tablet) {
+        top: -28px;
+        right: -15px;
+      }
+      @include mq(desktop) {
+        top: -67px;
+      }
+      @include mq(leftCol) {
+        top: -72px;
+        right: 0;
+        left: unset;
+      }
+      @include mq(wide) {
+        top: -91px;
+      }
+    }
+  }
+  &__copy {
+    padding-bottom: 16px;
+    position: relative;
+    z-index: 3;
+    float: left;
+    color: $tertiary;
 
-		@include mq(wide) {
-			width: 570px;
-		}
+    @include mq(desktop) {
+      width: 570px;
+    }
+    @include mq(leftCol) {
+      width: 720px;
+    }
 
-		&::before {
-			width: 1px;
-			background-color: $tertiary;
-			position: absolute;
-			left: 250px;
-			top: 0;
-			bottom: 12px;
+    @include mq(wide) {
+      width: 900px;
+    }
 
-			@include mq(leftCol) {
-				left: 170px;
-				content: "";
-			}
+    &::before {
+      width: 1px;
+      background-color: $tertiary;
+      position: absolute;
+      left: 250px;
+      top: 0;
+      bottom: 12px;
 
-			@include mq(wide) {
-				left: 250px;
-			}
-		}
+      @include mq(leftCol) {
+        left: 170px;
+        content: '';
+      }
 
-		&__headline h3 {
-			color: $tertiary;
-			font-family: $f-serif-headline;
-			font-size: 24px;
-			font-weight: 500;
-			line-height: 115%;
-			margin: 190px 0 0;
-			padding-right: 10%;
+      @include mq(wide) {
+        left: 250px;
+      }
+    }
 
-			@include mq(mobileMedium) {
-				margin: 250px 0 0;
-			}
+    &__headline h3 {
+      color: $tertiary;
+      font-family: $f-serif-headline;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 115%;
+      margin: 190px 0 0;
+      padding-right: 10%;
 
-			@include mq(mobileLandscape) {
-				width: 80%;
-				margin-top: 274px;
-				line-height: 115%;
-			}
+      @include mq(mobileMedium) {
+        margin: 250px 0 0;
+      }
 
-			@include mq(phablet) {
-				margin-top: 358px;
-			}
+      @include mq(mobileLandscape) {
+        width: 80%;
+        margin-top: 274px;
+        line-height: 115%;
+      }
 
-			@include mq(tablet) {
-				width: 49%;
-				margin: 10px 0 20px;
-			}
+      @include mq(phablet) {
+        margin-top: 358px;
+      }
 
-			@include mq(desktop) {
-				width: 53%;
-				margin: 65px 0 20px;
-			}
+      @include mq(tablet) {
+        width: 49%;
+        margin: 10px 0 20px;
+      }
 
-			@include mq(wide) {
-				width: unset;
-				padding-right: 22%;
-				font-weight: 500;
-				font-size: 24px;
-				line-height: 28px;
-				margin: 10px 0 32px;
-			}
-		}
+      @include mq(desktop) {
+        width: unset;
+      }
 
-		&__body {
-			font-family: $f-serif-text;
-			font-size: 17px;
-			line-height: 135%;
-			margin-bottom: 17px;
+      @include mq(wide) {
+        width: unset;
+        padding-right: 22%;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        margin: 10px 0 32px;
+      }
+    }
 
-			@include mq(tablet) {
-				width: calc(50% - 30px);
-			}
+    &__body {
+      font-family: $f-serif-text;
+      font-size: 17px;
+      line-height: 135%;
+      margin-bottom: 17px;
 
-			@include mq(leftCol) {
-				width: 80%;
-			}
-		}
+      @include mq(tablet) {
+        width: calc(50% - 30px);
+      }
 
-		&__button {
-			font-family: $f-sans-serif-text;
-			line-height: 115%;
-			font-weight: 800;
-			font-size: 15px;
+      @include mq(leftCol) {
+        width: 80%;
+      }
+    }
 
-			span.accessibility {
-				height: 1px;
-				overflow: hidden;
-				position: absolute;
-				white-space: nowrap;
-				width: 1px;
-			}
+    &__button {
+      font-family: $f-sans-serif-text;
+      line-height: 115%;
+      font-weight: 800;
+      font-size: 15px;
 
-			&__caption {
-				font-family: $f-serif-text;
-				font-size: 17px;
-				line-height: 100%;
-			}
+      span.accessibility {
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+      }
 
-			&__links-wrapper {
-				display: inline-flex;
-				align-items: center;
-				border: 1px solid $tertiary;
-				border-radius: 50px;
-				justify-content: center;
-				position: relative;
+      &__caption {
+        font-family: $f-serif-text;
+        font-size: 17px;
+        line-height: 100%;
+      }
 
-				&:hover,
-				&:focus {
-					cursor: pointer;
-					transition: all 0.3s ease;
-					background-color: $tertiary;
-					border: 1px solid $tertiary;
+      &__links-wrapper {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid $tertiary;
+        border-radius: 50px;
+        justify-content: center;
+        position: relative;
 
-					> a {
-						color: $primary;
-						text-decoration: none;
-						svg {
-							path {
-								transition: all 0.3s ease;
-								fill: $primary;
-							}
-						}
-					}
-				}
+        &:hover,
+        &:focus {
+          cursor: pointer;
+          transition: all 0.3s ease;
+          background-color: $tertiary;
+          border: 1px solid $tertiary;
 
-				.icon {
-					position: absolute;
-					width: 22px;
-					height: 21px;
-					right: 14px;
-					top: 8px;
+          > a {
+            color: $primary;
+            text-decoration: none;
+            svg {
+              path {
+                transition: all 0.3s ease;
+                fill: $primary;
+              }
+            }
+          }
+        }
 
-					@include mq(mobileMedium) {
-						right: 20px;
-						top: 7px;
-					}
+        .icon {
+          position: absolute;
+          width: 22px;
+          height: 21px;
+          right: 14px;
+          top: 8px;
 
-					@include mq(tablet) {
-						top: 8px;
-					}
+          @include mq(mobileMedium) {
+            right: 20px;
+            top: 7px;
+          }
 
-					@include mq(desktop) {
-						top: 6px;
-						right: 13px;
-					}
+          @include mq(tablet) {
+            top: 8px;
+          }
 
-					@include mq(wide) {
-						top: 10px;
-					}
-				}
-			}
+          @include mq(desktop) {
+            top: 6px;
+            right: 13px;
+          }
 
-			&__links-button {
-				transition: all 0.3s ease;
-				height: min-content;
-				font-size: 17px;
-				display: flex;
-				align-items: center;
-				padding: 10px 24px;
+          @include mq(wide) {
+            top: 10px;
+          }
+        }
+      }
 
-				svg {
-					padding-left: 10px;
-				}
+      &__links-button {
+        transition: all 0.3s ease;
+        height: min-content;
+        font-size: 17px;
+        display: flex;
+        align-items: center;
+        padding: 10px 24px;
+        text-decoration: none;
+        color: $tertiary;
 
-				@include mq(leftCol) {
-					margin-bottom: 0;
-				}
+        svg {
+          padding-left: 10px;
+          width: 33px;
+        }
 
-				&--amazon-music {
-					display: none;
-					@include mq(tablet) {
-						display: block;
-					}
-				}
-			}
-		}
-	}
+        @include mq(leftCol) {
+          margin-bottom: 0;
+        }
+
+        &--amazon-music {
+          display: none;
+          @include mq(tablet) {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+// This is frontend css
+#js-context {
+  .secret-podcast-2022 {
+    background-color: $primary;
+
+    &__img-clip {
+      position: absolute;
+      overflow: hidden;
+      left: 0;
+      width: 100%;
+      height: 222px;
+      position: absolute;
+      // display: flex;
+      // justify-content: center;
+
+      @include mq(mobileMedium) {
+        height: 252px;
+      }
+
+      @include mq(mobileLandscape) {
+        height: 290px;
+      }
+
+      @include mq(phablet) {
+        height: 400px;
+      }
+
+      @include mq(tablet) {
+        right: 0;
+        left: unset;
+        width: 50%;
+      }
+
+      @include mq(wide) {
+        width: 562px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        @include mq(mobileLandscape) {
+          left: 20px;
+          right: auto;
+        }
+        @include mq(tablet) {
+          top: -28px;
+          right: -15px;
+        }
+        @include mq(wide) {
+          top: -85px;
+          right: unset;
+        }
+      }
+    }
+    &__copy {
+      padding-bottom: 16px;
+      position: relative;
+      z-index: 3;
+      float: left;
+      color: $tertiary;
+
+      @include mq(leftCol) {
+        width: 570px;
+      }
+
+      @include mq(wide) {
+        width: 570px;
+      }
+
+      &::before {
+        width: 1px;
+        background-color: $tertiary;
+        position: absolute;
+        left: 250px;
+        top: 0;
+        bottom: 12px;
+
+        @include mq(leftCol) {
+          left: 170px;
+          content: '';
+        }
+
+        @include mq(wide) {
+          left: 250px;
+        }
+      }
+
+      &__headline h3 {
+        color: $tertiary;
+        font-family: $f-serif-headline;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 115%;
+        margin: 190px 0 0;
+        padding-right: 10%;
+
+        @include mq(mobileMedium) {
+          margin: 250px 0 0;
+        }
+
+        @include mq(mobileLandscape) {
+          width: 80%;
+          margin-top: 274px;
+          line-height: 115%;
+        }
+
+        @include mq(phablet) {
+          margin-top: 358px;
+        }
+
+        @include mq(tablet) {
+          width: 49%;
+          margin: 10px 0 20px;
+        }
+
+        @include mq(desktop) {
+          width: 53%;
+          margin: 65px 0 20px;
+        }
+
+        @include mq(wide) {
+          width: unset;
+          padding-right: 22%;
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 28px;
+          margin: 10px 0 32px;
+        }
+      }
+
+      &__body {
+        font-family: $f-serif-text;
+        font-size: 17px;
+        line-height: 135%;
+        margin-bottom: 17px;
+
+        @include mq(tablet) {
+          width: calc(50% - 30px);
+        }
+
+        @include mq(leftCol) {
+          width: 80%;
+        }
+      }
+
+      &__button {
+        font-family: $f-sans-serif-text;
+        line-height: 115%;
+        font-weight: 800;
+        font-size: 15px;
+
+        span.accessibility {
+          height: 1px;
+          overflow: hidden;
+          position: absolute;
+          white-space: nowrap;
+          width: 1px;
+        }
+
+        &__caption {
+          font-family: $f-serif-text;
+          font-size: 17px;
+          line-height: 100%;
+        }
+
+        &__links-wrapper {
+          display: inline-flex;
+          align-items: center;
+          border: 1px solid $tertiary;
+          border-radius: 50px;
+          justify-content: center;
+          position: relative;
+
+          &:hover,
+          &:focus {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: $tertiary;
+            border: 1px solid $tertiary;
+
+            > a {
+              color: $primary;
+              text-decoration: none;
+              svg {
+                path {
+                  transition: all 0.3s ease;
+                  fill: $primary;
+                }
+              }
+            }
+          }
+
+          .icon {
+            position: absolute;
+            width: 22px;
+            height: 21px;
+            right: 14px;
+            top: 8px;
+
+            @include mq(mobileMedium) {
+              right: 20px;
+              top: 7px;
+            }
+
+            @include mq(tablet) {
+              top: 8px;
+            }
+
+            @include mq(desktop) {
+              top: 6px;
+              right: 13px;
+            }
+
+            @include mq(wide) {
+              top: 10px;
+            }
+          }
+        }
+
+        &__links-button {
+          transition: all 0.3s ease;
+          height: min-content;
+          font-size: 17px;
+          display: flex;
+          align-items: center;
+          padding: 10px 24px;
+
+          svg {
+            padding-left: 10px;
+          }
+
+          @include mq(leftCol) {
+            margin-bottom: 0;
+          }
+
+          &--amazon-music {
+            display: none;
+            @include mq(tablet) {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .interactive-atom {
-	&.ios,
-	&.android {
-		padding: 0;
-		margin: 0;
+  &.ios,
+  &.android {
+    padding: 0;
+    margin: 0;
 
-		.secret-podcast-2022__copy__button__caption {
-			margin-bottom: 4px;
-		}
-		h3 {
-			@include mq(desktop) {
-				margin-top: 4px;
-			}
-		}
-	}
+    .secret-podcast-2022__copy__button__caption {
+      margin-bottom: 4px;
+    }
+    h3 {
+      @include mq(desktop) {
+        margin-top: 4px;
+      }
+    }
+  }
 }
