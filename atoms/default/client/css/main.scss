@@ -15,6 +15,10 @@ $tertiary: #f1c8e0;
 #thrasher-atom,
 #wordiply {
   background-color: #fff;
+  .fc-item {
+    background-color: #4a38a4;
+    padding: 0;
+  }
 }
 
 // css is split here as part of DCR migration
