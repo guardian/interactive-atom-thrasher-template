@@ -11,16 +11,17 @@ $mq-breakpoints: (
   wide: 1300px,
 );
 
-$font-titlepiece: "Guardian Titlepiece", "Guardian Headline Full",
-  "Guardian Headline", "Guardian Egyptian Web", Georgia, serif;
-$font-headline: "Guardian Headline Full", "Guardian Headline",
-  "Guardian Egyptian Web", Georgia, serif;
-$font-text: "Guardian Text Egyptian Web", Georgia, serif;
-$font-sans: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial,
-  "Lucida Grande", sans-serif;
+$font-titlepiece: 'Guardian Titlepiece', 'Guardian Headline Full',
+  'Guardian Headline', 'Guardian Egyptian Web', Georgia, serif;
+$font-headline: 'Guardian Headline Full', 'Guardian Headline',
+  'Guardian Egyptian Web', Georgia, serif;
+$font-text: 'Guardian Text Egyptian Web', Georgia, serif;
+$font-sans: 'Guardian Text Sans Web', 'Helvetica Neue', Helvetica, Arial,
+  'Lucida Grande', sans-serif;
 
 // this targets the container your thrasher is put inside on Fronts
-section.thrasher-section__pw-uk {
+section.thrasher-section__pw-uk,
+#thrasher-atom {
   width: 100%;
   position: relative;
   padding: 0 !important;
@@ -37,7 +38,7 @@ section.thrasher-section__pw-uk {
 }
 
 #thrasher__pw-uk {
-  margin: 0 -10px;
+  // margin: 0 -10px;
   overflow: hidden;
 
   .ios &,

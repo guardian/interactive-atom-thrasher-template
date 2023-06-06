@@ -1,11 +1,11 @@
-@import "_mq";
-@import "_fonts";
-@import "_palette";
-@import "_app-fonts";
-@import "_mixins";
+@import '_mq';
+@import '_fonts';
+@import '_palette';
+@import '_app-fonts';
+@import '_mixins';
 
-@import "basics";
-@import "thrasher";
+@import 'basics';
+@import 'thrasher';
 
 $primary: #e3d0bd;
 $secondary: #121212;
@@ -14,9 +14,18 @@ $secondary: #121212;
 #politics-weekly-uk,
 #thrasher-atom {
   background-color: white;
+  .thrasher-inner.thrasher-atom {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.thrasher-inner.thrasher-atom {
+  width: 100%;
 }
 
 .pw-uk {
+  width: 100%;
   background-color: $primary;
   .weekend-image {
     width: 100%;
@@ -65,14 +74,10 @@ $secondary: #121212;
       width: calc(50% + 60px);
     }
     @include mq(desktop) {
-      width: calc(60% - 30px);
+      width: 60%;
     }
     @include mq(leftCol) {
-      width: 570px;
-      width: calc(50% - 30px);
-    }
-    @include mq(wide) {
-      width: 570px;
+      width: 70%;
     }
     &::before {
       width: 1px;
@@ -84,7 +89,7 @@ $secondary: #121212;
       bottom: 12px;
       @include mq(leftCol) {
         left: 170px;
-        content: "";
+        content: '';
       }
       @include mq(wide) {
         left: 250px;
@@ -123,6 +128,7 @@ $secondary: #121212;
         font-family: $f-serif-text;
         font-size: 17px;
         line-height: 100%;
+        margin-bottom: 8px;
       }
       &__links-wrapper {
         display: flex;
@@ -138,6 +144,8 @@ $secondary: #121212;
         margin-right: 4px;
         margin-bottom: 8px;
         background-color: $primary;
+        text-decoration: none;
+        color: $secondary;
         @include mq(mobileMedium) {
           margin-right: 8px;
         }
@@ -175,6 +183,21 @@ $secondary: #121212;
     }
     .pw-uk__copy__headline {
       margin-top: 1px;
+    }
+  }
+}
+
+// frontend fix
+#js-context {
+  .pw-uk__copy {
+    @include mq(desktop) {
+      width: calc(40% - 20px);
+    }
+    @include mq(leftCol) {
+      width: calc(50% - 20px);
+    }
+    @include mq(wide) {
+      width: 570px;
     }
   }
 }
