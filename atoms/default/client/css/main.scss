@@ -1,11 +1,11 @@
-@import "_mq";
-@import "_fonts";
-@import "_palette";
-@import "_app-fonts";
-@import "_mixins";
+@import '_mq';
+@import '_fonts';
+@import '_palette';
+@import '_app-fonts';
+@import '_mixins';
 
-@import "basics";
-@import "thrasher";
+@import 'basics';
+@import 'thrasher';
 
 $primary: #ff9987;
 $secondary: #121212;
@@ -13,8 +13,14 @@ $secondary: #121212;
 #weekend-podcast,
 #thrasher-atom {
   background-color: white;
+  .fc-item {
+    padding: 0;
+  }
 }
 
+.thrasher-inner.thrasher-atom {
+  width: 100%;
+}
 .weekend-podcast-2022 {
   background-color: $primary;
   .weekend-image {
@@ -61,10 +67,10 @@ $secondary: #121212;
       width: calc(50% - 30px);
     }
     @include mq(leftCol) {
-      width: 570px;
+      width: 770px;
     }
     @include mq(wide) {
-      width: 570px;
+      width: 880px;
     }
     &::before {
       width: 1px;
@@ -75,7 +81,7 @@ $secondary: #121212;
       bottom: 12px;
       @include mq(leftCol) {
         left: 170px;
-        content: "";
+        content: '';
       }
       @include mq(wide) {
         left: 250px;
@@ -108,6 +114,7 @@ $secondary: #121212;
         font-family: $f-serif-text;
         font-size: 17px;
         line-height: 100%;
+        margin-bottom: 4px;
       }
       &__links-wrapper {
         display: flex;
@@ -123,6 +130,8 @@ $secondary: #121212;
         margin-right: 4px;
         margin-bottom: 8px;
         background-color: $primary;
+        text-decoration: none;
+        color: black;
         @include mq(mobileMedium) {
           margin-right: 8px;
         }
@@ -157,6 +166,18 @@ $secondary: #121212;
     margin: 0;
     .weekend-podcast-2022__copy__button__caption {
       margin-bottom: 4px;
+    }
+  }
+}
+
+// some frontend fixes
+#js-context {
+  .weekend-podcast-2022__copy {
+    @include mq(leftCol) {
+      width: 570px;
+    }
+    @include mq(wide) {
+      width: 570px;
     }
   }
 }

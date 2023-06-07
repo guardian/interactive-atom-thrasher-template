@@ -1,55 +1,63 @@
 // Default breakpoints from Frontend
 // Use mc() in place of mq() so your thrashers don't get broken
 $mq-breakpoints: (
-    mobile:          320px,
-    mobileMedium:    375px,
-    mobileLandscape: 480px,
-    phablet:         660px,
-    tablet:          740px,
-    desktop:         980px,
-    leftCol:         1140px,
-    wide:            1300px
+  mobile: 320px,
+  mobileMedium: 375px,
+  mobileLandscape: 480px,
+  phablet: 660px,
+  tablet: 740px,
+  desktop: 980px,
+  leftCol: 1140px,
+  wide: 1300px,
 );
 
-$font-titlepiece: 'Guardian Titlepiece','Guardian Headline Full','Guardian Headline','Guardian Egyptian Web',Georgia,serif;
-$font-headline: 'Guardian Headline Full', 'Guardian Headline', 'Guardian Egyptian Web', Georgia, serif;
-$font-text: 'Guardian Text Egyptian Web',Georgia,serif;
-$font-sans: 'Guardian Text Sans Web', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
-
+$font-titlepiece: 'Guardian Titlepiece', 'Guardian Headline Full',
+  'Guardian Headline', 'Guardian Egyptian Web', Georgia, serif;
+$font-headline: 'Guardian Headline Full', 'Guardian Headline',
+  'Guardian Egyptian Web', Georgia, serif;
+$font-text: 'Guardian Text Egyptian Web', Georgia, serif;
+$font-sans: 'Guardian Text Sans Web', 'Helvetica Neue', Helvetica, Arial,
+  'Lucida Grande', sans-serif;
 
 // this targets the container your thrasher is put inside on Fronts
 section.thrasher-section__weekend-podcast-2022 {
-    width:100%;
-    position: relative;
-    padding: 0 !important;
-    overflow: hidden;
-    background-color:#fff;
-    .fc-container__inner,
-    .fc-slice,
-    .facia-snap {
-        overflow: hidden;
-    }
-    .facia-snap {
-        padding: 0;
-    }
+  width: 100%;
+  position: relative;
+  padding: 0 !important;
+  overflow: hidden;
+
+  .facia-snap {
+    padding: 0;
+  }
 }
 
+// Use the below select the full width container, the thrasher will be placed in
+// this can be used to change the background in the 'margins' of the page.
+// Note that the general design rule is that those margins should remain transparent.
+// (as of 15/02/2022).
+
+// replace {configTitle} with the title set in the config file. For prodcution.
+// on the dev server, the id will be "thrasher-atom"
+
+// #{configTitle}.fc-container--thrasher .fc-container__inner{
+//        background: transparent;
+// }
 
 #thrasher__weekend-podcast-2022 {
-    margin: 0 -10px;
-    overflow: hidden;
+  margin: 0;
+  overflow: hidden;
 
-    .ios &,
-    .android & {
-        margin: 0;
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+  .ios &,
+  .android & {
+    margin: 0;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
+  }
 
-    @include mc(tablet) {
-        margin: 0;
-        width:100%;
-    }
+  @include mc(tablet) {
+    margin: 0;
+    width: 100%;
+  }
 }
