@@ -1,466 +1,476 @@
-@import "_mq";
-@import "_fonts";
-@import "_palette";
-@import "_app-fonts";
-@import "_mixins";
+@import '_mq';
+@import '_fonts';
+@import '_palette';
+@import '_app-fonts';
+@import '_mixins';
 
-@import "basics";
-@import "thrasher";
+@import 'basics';
+@import 'thrasher';
 
-$backgroundColor: #D9305A;
+$backgroundColor: #d9305a;
 $textColor: #ffffff;
 
-
-.grace-thrasher, 
+.grace-thrasher,
 #thrasher-atom,
 #comfort-eating {
-    width: 100%;
-    position: relative;
-    padding: 0 !important;
+  width: 100%;
+  position: relative;
+  padding: 0 !important;
+  overflow: hidden;
+  background-color: #fff;
+  // margin-bottom: 1.5rem;
+
+  .fc-container__inner,
+  .fc-slice,
+  .facia-snap {
     overflow: hidden;
-    background-color: #fff;
-    // margin-bottom: 1.5rem;
+  }
 
-    .fc-container__inner,
-    .fc-slice,
-    .facia-snap {
-        overflow: hidden;
-    }
+  .facia-snap {
+    padding: 0;
+  }
+}
 
-    .facia-snap {
-        padding: 0;
-    }
+.thrasher-inner.thrasher-atom {
+  width: 100%;
 }
 
 .tablet-only {
-    display: none;
+  display: none;
 
-    @include mq($from: phablet) {
-        display: block;
-    }
+  @include mq($from: phablet) {
+    display: block;
+  }
 }
 
 .mobile-only {
-    display: block;
+  display: block;
 
-    @include mq($from: phablet) {
-        display: none;
-    }
+  @include mq($from: phablet) {
+    display: none;
+  }
 }
 
 .grace-thrasher {
-    background-color: #4AA069;
-    height: 390px;
+  background-color: #4aa069;
+  height: 390px;
+  color: $textColor;
+  border-left: 1px solid #dcdcdc;
+  border-right: 1px solid #dcdcdc;
+  box-sizing: border-box;
+
+  @include mq(mobileMedium) {
+    height: 410px;
+  }
+
+  @include mq(mobileLandscape) {
+    height: 320px;
+  }
+
+  @include mq($from: phablet) {
+    height: 220px;
+  }
+
+  &__podlogo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  &__podlogo,
+  &__text {
+    z-index: 5;
+  }
+
+  &__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+
+    @include mq($from: mobileMedium) {
+      bottom: 24px;
+    }
+
+    img {
+      position: absolute;
+      right: -40px;
+      bottom: 40px;
+      width: 112%;
+      @include mq(mobileMedium) {
+        bottom: 20px;
+        width: 120%;
+      }
+      @include mq(mobileLandscape) {
+        bottom: 0;
+        right: -130px;
+        height: 100%;
+        width: unset;
+      }
+      @include mq(phablet) {
+        right: 0;
+        bottom: unset;
+        height: 110%;
+      }
+      @include mq(desktop) {
+        height: unset;
+        width: 125%;
+      }
+      @include mq(leftCol) {
+        width: 105%;
+      }
+    }
+
+    &.desktop-image {
+      display: none;
+      @include mq(mobileLandscape) {
+        display: block;
+      }
+    }
+    &.mobile-image {
+      @include mq(mobileLandscape) {
+        display: none;
+      }
+    }
+  }
+
+  &__headline {
+    position: relative;
+    z-index: 7;
+    margin-left: 10px;
+    margin-top: 8px;
+    margin-top: 20px;
+    width: 240px;
+    @include mq(mobileMedium) {
+      margin-top: 17px;
+      width: 290px;
+    }
+    @include mq(mobileLandscape) {
+      margin-left: 20px;
+      width: 270px;
+      margin-top: 8px;
+    }
+    @include mq(phablet) {
+      margin-top: 10px;
+      width: 430px;
+    }
+    @include mq(tablet) {
+      width: 440px;
+    }
+    @include mq(desktop) {
+      width: 500px;
+    }
+    @include mq(leftCol) {
+      width: 510px;
+    }
+    @include mq(wide) {
+      width: 510px;
+      margin-left: 105px;
+    }
+    svg {
+      .grace-name {
+        @include mq(phablet) {
+          transform: translateX(-100px);
+        }
+        @include mq(tablet) {
+          transform: translateX(0);
+        }
+        @include mq(desktop) {
+          transform: translateX(-155px);
+        }
+        @include mq(leftCol) {
+          transform: translateX(0);
+        }
+        @include mq(wide) {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    // width: 93%;
+    // margin: 0 auto;
+
+    @include mq($from: desktop) {
+      flex-direction: row;
+    }
+  }
+
+  &__desktopwrapper {
+    @include mq($from: desktop) {
+      display: flex;
+      flex-direction: column;
+      margin-left: 20px;
+      width: 510px;
+      width: 550px;
+      border-left: 1px solid $textColor;
+      overflow: hidden;
+    }
+    @include mq(leftCol) {
+      margin-left: 170px;
+    }
+    @include mq(wide) {
+      margin-left: 250px;
+    }
+  }
+
+  &__ocadologo {
+    height: 68px;
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    margin-bottom: -6px;
+    z-index: 10;
+    bottom: 76px;
+    @include mq(mobileLandscape) {
+      left: 0;
+      bottom: 43px;
+    }
+    @include mq(phablet) {
+      left: unset;
+      right: 0;
+      bottom: 0;
+    }
+    @include mq(leftCol) {
+      right: unset;
+      left: 0;
+    }
+    &-left {
+      display: block;
+      @include mq(phablet) {
+        display: none;
+      }
+      @include mq(leftCol) {
+        display: block;
+      }
+    }
+    &-right {
+      display: none;
+      @include mq(phablet) {
+        display: block;
+      }
+      @include mq(leftCol) {
+        display: none;
+      }
+    }
+  }
+
+  &__blurb {
     color: $textColor;
-    border-left: 1px solid #dcdcdc;
-    border-right: 1px solid #dcdcdc;
-    box-sizing: border-box;
+    font-family: 'Guardian Headline Full', 'Guardian Egyptian Web', Georgia,
+      serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 115%;
+    padding-left: 10px;
+    margin-bottom: 100px;
+    width: 260px;
 
     @include mq(mobileMedium) {
-        height: 410px;
+      margin-bottom: 111px;
     }
+    @include mq(mobileLandscape) {
+      padding-left: 20px;
+      margin-bottom: 70px;
+      width: 260px;
+    }
+    @include mq(phablet) {
+      width: 300px;
+      margin-bottom: 6px;
+    }
+    @include mq(tablet) {
+      width: 310px;
+      margin-bottom: 9px;
+    }
+    @include mq(desktop) {
+      width: 550px;
+      margin-bottom: 15px;
+      padding-left: 0;
+      margin-left: 10px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 6px 0;
+    margin-left: 10px;
+    color: #fff;
+    margin-top: 0;
 
     @include mq(mobileLandscape) {
-        height: 320px;
+      margin-left: 20px;
+    }
+    @include mq(phablet) {
+      padding: 2px 0;
+    }
+    @include mq(desktop) {
+      margin-left: 10px;
     }
 
-    @include mq($from:phablet) {
-        height: 220px;
+    &-wrapper {
+      background-color: $backgroundColor;
+      border-top: 1px solid $textColor;
+      font-family: 'GuardianTextSans', 'Guardian Text Sans Web', Helvetica Neue,
+        Helvetica, Arial, Lucida Grande, sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      padding-top: 4px;
+      padding-bottom: 8px;
+      width: 100vw;
+      @include mq(mobileMedium) {
+        // font-size:15px;
+      }
+      @include mq(mobileLandscape) {
+        font-size: 12px;
+      }
+      @include mq(phablet) {
+        font-size: 13px;
+        width: 100vw;
+      }
+      @include mq(desktop) {
+        width: 550px;
+      }
     }
 
-    &__podlogo {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-    }
-
-    &__podlogo, &__text {
-        z-index: 5;
-    }
-
-    &__image {
-        position: absolute;
-        left:0;
-        top:0;
-        bottom: 0;
-        right: 0;
-        z-index: 0;
-
-        @include mq($from:mobileMedium) {
-            bottom: 24px;
+    li {
+      list-style-type: none;
+      margin-bottom: 4px;
+      @include mq(mobileLandscape) {
+        margin-bottom: 0;
+      }
+      &:nth-child(5) {
+        margin-bottom: 0;
+      }
+      &:nth-child(6) {
+        margin-bottom: 0;
+      }
+      &:nth-child(1) {
+        margin-right: 10px;
+      }
+      &:nth-child(6) {
+        @include mq(phablet) {
+          display: none;
         }
-
-        img {
-            position: absolute;
-            right: -40px;
-            bottom: 40px;
-            width: 112%;
-            @include mq(mobileMedium) {
-                bottom:20px;
-                width:120%;
-            }
-            @include mq(mobileLandscape) {
-                bottom:0;
-                right: -130px;
-                height:100%;
-                width: unset;
-            }
-            @include mq(phablet) {
-                right:0;
-                bottom:unset;
-                height:110%;
-            }
-            @include mq(desktop) {
-                height:unset;
-                width: 125%;
-            }
-            @include mq(leftCol) {
-                width:105%;
-            }
+        @include mq(tablet) {
+          display: block;
         }
+      }
 
-        &.desktop-image {
-            display:none;
-            @include mq(mobileLandscape) {
-                display:block;
-            }
+      a {
+        padding: 5px 8px 6px 8px;
+        border: 1px solid #fff;
+        border-radius: 50px;
+        margin-right: 4px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: white;
+        display: block;
+        margin-bottom: 0px;
+        &:hover {
+          text-decoration: none;
+          background-color: $textColor;
+          color: $backgroundColor;
         }
-        &.mobile-image {
-            @include mq(mobileLandscape) {
-                display:none;
-            }
-        }
-
+      }
     }
+  }
+}
 
+.interactive,
+.interactive-atom {
+  margin: 0;
+}
+
+.ios,
+.android {
+  .grace-thrasher {
+    border: none;
     &__headline {
-        position: relative;
-        z-index: 7;
-        margin-left: 10px;
-        margin-top: 8px;
-        margin-top: 20px;
-        width: 240px;
-        @include mq(mobileMedium) {
-            margin-top: 17px;
-            width: 290px;
-        }
-        @include mq(mobileLandscape) {
-            margin-left:20px;
-            width: 270px;
-            margin-top: 8px;
-            
-        }
-        @include mq(phablet) {
-            margin-top: 10px;
-            width: 430px;
-        }
-        @include mq(tablet) {
-            width: 440px;
-        }
-        @include mq(desktop) {
-            width: 500px;
-        }
-        @include mq(leftCol) {
-            width:510px;
-        }
-        @include mq(wide) {
-            width: 510px;
-            margin-left: 105px;
-        }
-        svg {
-            .grace-name {
-                @include mq(phablet) {
-                    transform: translateX(-100px);
-                }
-                @include mq(tablet) {
-                    transform: translateX(0);
-                }
-                @include mq(desktop) {
-                    transform: translateX(-155px);
-                }
-                @include mq(leftCol) {
-                    transform:translateX(0);
-                }
-                @include mq(wide) {
-                    transform:translateX(0);
-                }
-            }
-        }
+      svg {
+        height: auto;
+      }
     }
-
-    &__description {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        bottom: 0;
-        // width: 93%;
-        // margin: 0 auto;
-
-        @include mq($from:desktop) {
-            flex-direction: row;
-        }
-    }
-
-    &__desktopwrapper {
-
-        @include mq($from:desktop) {
-            display: flex;
-            flex-direction: column;
-            margin-left: 20px;
-            width: 510px;
-            width: 550px;
-            border-left: 1px solid $textColor;
-            overflow: hidden;
-        }
-        @include mq(leftCol) {
-            margin-left: 170px;
-        }
-        @include mq(wide) {
-            margin-left: 250px;
-        }
-    }
-
-    &__ocadologo {
-        height: 68px;
-        position:absolute;
-        bottom:0;
-        left:-10px;
-        margin-bottom: -6px;
-        z-index: 10;
-        bottom: 76px;
-        @include mq(mobileLandscape) {
-            left:0;
-            bottom: 43px;
-        }
-        @include mq(phablet) {
-            left:unset;
-            right:0;
-            bottom: 0;
-        }
-        @include mq(leftCol) {
-            right:unset;
-            left:0;
-        }
-        &-left {
-            display:block;
-            @include mq(phablet){
-                display:none;
-            }
-            @include mq(leftCol) {
-                display:block;
-            }
-        }
-        &-right {
-            display:none;
-            @include mq(phablet) {
-                display:block;
-            }
-            @include mq(leftCol) {
-                display:none;
-            }
-        }
-    }
-
     &__blurb {
-        color: $textColor;
-        font-family: "Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 115%;
-        padding-left: 10px;
-        margin-bottom: 100px;
-        width: 260px;
-
+      margin-top: 0;
+      margin-bottom: 115px;
+      font-weight: 400;
+      width: 250px;
+      @include mq(mobileMedium) {
+        margin-bottom: 125px;
+      }
+      @include mq(mobileLandscape) {
+        margin-bottom: 75px;
+      }
+      @include mq(phablet) {
+        margin-bottom: 10px;
+      }
+      @include mq(desktop) {
+        margin-bottom: 16px;
+        width: 550px;
+      }
+    }
+    &__desktopwrapper {
+      @include mq(desktop) {
+        width: 570px;
+      }
+    }
+    &__links {
+      margin-left: 6px;
+      margin-top: 6px;
+      margin-bottom: 6px;
+      @include mq(mobileLandscape) {
+        margin-left: 10px;
+      }
+      &-wrapper {
         @include mq(mobileMedium) {
-            margin-bottom: 111px;
-        }
-        @include mq(mobileLandscape) {
-            padding-left: 20px;
-            margin-bottom: 70px;
-            width: 260px;
+          font-size: 12px;
         }
         @include mq(phablet) {
-            width: 300px;
-            margin-bottom: 6px;
+          font-size: 13px;
         }
         @include mq(tablet) {
-            width: 310px;
-            margin-bottom: 9px;
+          width: 660px;
         }
-        @include mq(desktop) {
-            width: 550px;
-            margin-bottom: 15px;
-            padding-left: 0;
-            margin-left: 10px;
-        }
-    }
-
-    &__links  {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 6px 0;
-        margin-left: 10px;
-        color: #fff;
-
+      }
+      padding: 2px 0;
+      li {
+        margin-bottom: 17px;
         @include mq(mobileLandscape) {
-            margin-left: 20px;
+          margin-bottom: 0;
         }
-        @include mq(desktop) {
-            padding: 10px 0;
-            margin-left: 10px;
+        &:nth-child(5) {
+          margin-bottom: 0;
         }
-
-        &-wrapper {
-            background-color: $backgroundColor;
-            border-top: 1px solid $textColor;
-            font-family: "GuardianTextSans", "Guardian Text Sans Web", Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
-            font-weight:600;
-            font-size:13px;
-            padding-top: 4px;
-            padding-bottom: 8px;
-            width: 100vw;
-            @include mq(mobileMedium) {
-                // font-size:15px;
-            }
-            @include mq(mobileLandscape) {
-                font-size:12px;
-            }
-            @include mq(phablet) {
-                font-size:13px;
-                width: 100vw;
-            }
-            @include mq(desktop) {
-                width: 550px;
-            }
+        &:nth-child(6) {
+          margin-bottom: 0;
         }
-
-        li {
-            list-style-type: none;
-            margin-bottom: 14px;
-            @include mq(mobileLandscape) {
-                margin-bottom: 0;
-            }
-            &:nth-child(5) {
-                margin-bottom:0;
-            }
-            &:nth-child(6) {
-                margin-bottom:0;
-            }
-            &:nth-child(1) {
-                margin-right:10px;
-            }
-            &:nth-child(6) {
-                @include mq(phablet) {
-                    display:none;
-                }
-                @include mq(tablet) {
-                    display:block;
-                }
-            }
-            
-            a {
-                padding: 5px 8px 6px 8px;
-                border: 1px solid #fff;
-                border-radius: 50px;
-                margin-right: 4px;
-                transition: all 0.3s ease;
-                &:hover {
-                    text-decoration: none;
-                    background-color:$textColor;
-                    color: $backgroundColor;
-                }
-            }
+        a {
+          color: white;
+          text-decoration: none;
+          margin-right: 2px;
         }
+      }
     }
-}
-
-
-
-.interactive, .interactive-atom {
-    margin:0;
-}
-
-.ios, .android {
-    .grace-thrasher {
-        border: none;
-        &__headline {
-            svg {
-                height: auto;
-            }
-        }
-        &__blurb {
-            margin-top: 0;
-            margin-bottom: 115px;
-            font-weight:400;
-            width: 250px;
-            @include mq(mobileMedium) {
-                margin-bottom:125px;
-            }
-            @include mq(mobileLandscape) {
-                margin-bottom: 75px;
-            }
-            @include mq(phablet) {
-                margin-bottom: 10px;
-            }
-            @include mq(desktop) {
-                margin-bottom:16px;
-                width: 550px;
-            }
-        }
-        &__desktopwrapper {
-            @include mq(desktop) {
-                width: 570px;
-            }
-        }
-        &__links {
-            margin-left: 6px;
-            margin-top: 6px;
-            margin-bottom: 6px;
-            @include mq(mobileLandscape) {
-                margin-left:10px;
-            }
-            &-wrapper {
-                @include mq(mobileMedium) {
-                    font-size:12px;
-                }
-                @include mq(phablet) {
-                    font-size:13px;
-                }
-                @include mq(tablet) {
-                    width: 660px;
-                }
-            }
-            padding: 2px 0;
-            li {
-                margin-bottom: 17px;
-                @include mq(mobileLandscape) {
-                    margin-bottom:0;
-                }
-                &:nth-child(5) {
-                    margin-bottom:0;
-                }
-                &:nth-child(6) {
-                    margin-bottom:0;
-                }
-                a {
-                    color:white;
-                    text-decoration: none;
-                    margin-right:2px;
-                }
-            }
-        }
-        &__ocadologo {
-            bottom: 77px;
-            @include mq(mobileMedium) {
-                // bottom: 75px;
-            }
-            @include mq(mobileLandscape) {
-                bottom: 43px;
-            }
-            @include mq(phablet) {
-                bottom:0;
-            }
-        }
+    &__ocadologo {
+      bottom: 77px;
+      @include mq(mobileMedium) {
+        // bottom: 75px;
+      }
+      @include mq(mobileLandscape) {
+        bottom: 43px;
+      }
+      @include mq(phablet) {
+        bottom: 0;
+      }
     }
+  }
 }
