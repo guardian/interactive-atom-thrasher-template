@@ -380,3 +380,9 @@ section#the-100 {
     }
   }
 }
+
+// Fixes for preview on DCR
+.thrasher-atom,
+.thrasher-preview {
+  width:100%
+}
