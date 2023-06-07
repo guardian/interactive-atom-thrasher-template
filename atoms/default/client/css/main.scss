@@ -50,6 +50,7 @@ $yellowColor: #ffe500;
         font-family: $f-serif-headline;
         line-height: 135%;
         font-weight: 800;
+        color: white;
     }
     .mobile-wrapper {
         // display: flex;
@@ -409,6 +410,8 @@ $yellowColor: #ffe500;
                     @include mq(desktop) {
                         width: 90%;
                     }
+                    padding-bottom: 5px;
+                    color: white;
                 }
                 p.title {
                     background-color: $yellowColor;
