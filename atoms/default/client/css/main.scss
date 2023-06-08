@@ -141,42 +141,42 @@ section#the-100 {
   }
 
   &__100text {
-    bottom: 0px;
-    right: 0;
-    z-index: 2;
-    position: absolute;
-    font-family: "GuardianTitlepiece", "Guardian Egyptian Web", Georgia, serif;
-    color: $primaryColor;
-    font-size: 160px;
-    text-align: right;
-    @include mc(mobileMedium) {
-      font-size: 170px;
-      bottom: 0px;
-      right: 10px;
-    }
-    @include mc(mobileLandscape) {
-      font-size: 120px;
-      bottom: 0px;
-      right: 3px;
-    }
-    @include mc(phablet) {
-      font-size: 178px;
-      bottom: 20px;
+      bottom: 0;
       right: 0;
-    }
-    @include mc(desktop) {
-      font-size: 200px;
-      bottom: 8px;
-      right: 110px;
-    }
-    @include mc(leftCol) {
-      font-size: 200px;
-      right: 340px;
-    }
-    @include mc(wide) {
-      font-size: 200px;
-      right: 410px;
-    }
+      z-index: 2;
+      position: absolute;
+      font-family: "GuardianTitlepiece", "Guardian Egyptian Web", Georgia, serif;
+      color: $primaryColor;
+      font-size: 160px;
+      text-align: right;
+      @include mc(mobileMedium) {
+        font-size: 170px;
+        bottom: 0px;
+        right: 10px;
+      }
+      @include mc(mobileLandscape) {
+        font-size: 120px;
+        bottom: 0px;
+        right: 3px;
+      }
+      @include mc(phablet) {
+        font-size: 178px;
+        bottom: 20px;
+        right: 0;
+      }
+      @include mc(desktop) {
+        font-size: 200px;
+        bottom: 8px;
+        right: 110px;
+      }
+      @include mc(leftCol) {
+        font-size: 200px;
+        right: 340px;
+      }
+      @include mc(wide) {
+        font-size: 200px;
+        right: 410px;
+      }
   }
 
   &__roundel {
