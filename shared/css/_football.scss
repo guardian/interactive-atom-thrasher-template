@@ -153,6 +153,7 @@ $textColor: #121212;
             border-radius:17px;
             transition:color 0.3s ease-in-out, background-color 0.3s ease-in-out;
             margin-right:4px;
+            color:inherit;
             &:hover {
                 background-color:#ffffff;
                 text-decoration: none;
