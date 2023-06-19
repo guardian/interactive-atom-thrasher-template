@@ -1,9 +1,14 @@
-#thrasher__thrasher-name.thrasher-inner {
+.thrasher-inner {
+  width: 100%;
+  overflow: hidden;
+}
+#thrasher__us-moment.thrasher-inner {
   position: relative;
   border: 1px solid #dcdcdc;
   border-bottom: 0;
+  background-color: black;
 
-  .thrasher-name {
+  .us-moment {
     &__link,
     &__background,
     &__background img {
@@ -19,7 +24,7 @@
       z-index: 20;
       &:hover {
         // Background hover-effect:
-        ~ .thrasher-name__background {
+        ~ .us-moment__background {
           opacity: 0.95;
         }
 
@@ -70,22 +75,36 @@
       font-size: 24px;
       line-height: 26px;
       padding: 0 10px 24px;
+      color: white;
       @include mq(mobileLandscape) {
         padding-left: 20px;
         padding-right: 20px;
       }
+      @include mq(tablet) {
+        max-width: 400px;
+      }
+      @include mq(desktop) {
+        max-width: 500px;
+      }
       @include mq(leftCol) {
         padding-top: 4px;
         padding-left: 180px;
+        max-width: 638px;
       }
       @include mq(wide) {
         padding-left: 260px;
+        max-width: 798px;
       }
       &__headline {
         font-weight: 700;
       }
       &__subheadline {
-
+        font-family: $font-text;
+        font-size: 17px;
+        line-height: 130%;
+        strong {
+          font-weight: bold;
+        }
       }
       .thrasher-button {
         display: inline-flex;
@@ -95,6 +114,8 @@
         border-radius: 36px;
         margin-top: 12px;
         height: 36px;
+        color: black;
+        font-weight: bold;
         .label {
           display: flex;
           vertical-align: middle;
@@ -106,7 +127,7 @@
         .icon {
           display: flex;
         }
-        .label+.icon {
+        .label + .icon {
           padding: 0 2px 0 4px;
         }
 
@@ -117,14 +138,54 @@
       }
     }
 
-
+    &__image {
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      width: 100%;
+      @include mq(phablet) {
+        width: 50%;
+      }
+      @include mq(tablet) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 368px;
+        right: -20px;
+        top: 9px;
+      }
+      @include mq(desktop) {
+        width: 380px;
+        right: 0px;
+        top: 9px;
+      }
+      @include mq(wide) {
+        width: 368px;
+        right: 70px;
+      }
+    }
 
     &__roundel {
       position: absolute;
       top: 10px;
       right: 10px;
+      @include mq(mobileLandscape) {
+        right: 20px;
+      }
     }
-
   }
+}
 
+#js-context {
+  #thrasher__us-moment {
+    .us-moment__copy {
+      @include mq(tablet) {
+        max-width: 390px;
+      }
+      @include mq(desktop) {
+        max-width: 518px;
+      }
+    }
+  }
 }
