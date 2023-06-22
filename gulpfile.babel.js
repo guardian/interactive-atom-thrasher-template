@@ -7,7 +7,7 @@ const s3 = require("gulp-s3-upload");
 const fs = require("fs");
 const template = require('gulp-template');
 const replace = require('gulp-replace');
-const sass = require("gulp-sass");
+const sass = require('gulp-sass')(require('sass'));
 const file = require("gulp-file");
 sass.compiler = require("node-sass");
 const browserSync = require("browser-sync");
@@ -24,6 +24,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const mkdirp = require("mkdirp")
 const rp = require("request-promise")
 const AWS = require('aws-sdk');
+const git = require('gulp-git');
 
 const isDeploy = gutil.env._.indexOf('deploylive') > -1 || gutil.env._.indexOf('deploypreview') > -1
 const live = gutil.env._.indexOf('deploylive') > -1
@@ -41,12 +42,12 @@ const plugins = (babelrc.plugins || []).concat(babelrc.env.client.plugins);
 
 let webpackPlugins = [
   new webpack.LoaderOptionsPlugin({
-      options: {
-          babel: {
-              presets,
-              plugins
-          }
+    options: {
+      babel: {
+        presets,
+        plugins
       }
+    }
   })
 ];
 
@@ -76,46 +77,46 @@ const render = async (cb) => {
 }
 
 const buildJS = () => {
-    return src("atoms/**/client/js/*.js")
-      .pipe(named((file) => file.relative.replace(/.js/g, "")))
-      .pipe(ws({
-        watch: false,
-        mode: isDeploy ? 'production' : 'development',
-        module: {
-            rules: [
-                {
-                    test: /\.css$/,
-                    loader: 'style!css'
-                },
-                {
-                    test: /\.jsx?$/,
-                    // @guardian libs needs to be transpiled
-                    exclude: /node_modules\/(?!@guardian)/,
-                    use: {
-                      loader: 'babel-loader',
-                      options: {
-                        plugins: [
-                          "@babel/plugin-proposal-optional-chaining",
-                          "@babel/plugin-proposal-nullish-coalescing-operator"
-                        ]
-                      }
-                    }
-                },
-                {
-                    test: /\.html$/,
-                    use: 'raw-loader'
-                }
-            ]
-        },
-        devtool: 'source-map',
-        optimization : { minimizer: [new UglifyJsPlugin()] },
-        plugins: webpackPlugins,
-        resolve: {
-          alias: {
-            "shared": path.resolve(__dirname, 'shared'),
-            "data": path.resolve(__dirname, '../data')
+  return src("atoms/**/client/js/*.js")
+    .pipe(named((file) => file.relative.replace(/.js/g, "")))
+    .pipe(ws({
+      watch: false,
+      mode: isDeploy ? 'production' : 'development',
+      module: {
+        rules: [
+          {
+            test: /\.css$/,
+            use: ["style-loader", "css-loader"],
+          },
+          {
+            test: /\.jsx?$/,
+            // @guardian libs needs to be transpiled
+            exclude: /node_modules\/(?!@guardian)/,
+            use: {
+              loader: 'babel-loader',
+              options: {
+                plugins: [
+                  "@babel/plugin-proposal-optional-chaining",
+                  "@babel/plugin-proposal-nullish-coalescing-operator"
+                ]
+              }
+            }
+          },
+          {
+            test: /\.html$/,
+            use: 'raw-loader'
           }
+        ]
+      },
+      devtool: 'source-map',
+      optimization: { minimizer: [new UglifyJsPlugin()] },
+      plugins: webpackPlugins,
+      resolve: {
+        alias: {
+          "shared": path.resolve(__dirname, 'shared'),
+          "data": path.resolve(__dirname, '../data')
         }
+      }
     }, webpack))
     .on('error', function handleError(e) {
       this.emit('end'); // Recover from errors
@@ -129,7 +130,7 @@ const buildJS = () => {
 
 const buildCSS = () => {
   return src("atoms/**/client/css/*.scss")
-  .pipe(replace('<%= path %>', path))
+    .pipe(replace('<%= path %>', path))
     .pipe(sass({
       includePaths: [
         path.resolve(__dirname, 'shared/css')
@@ -140,9 +141,9 @@ const buildCSS = () => {
     }))
     .pipe(template({
       path: assetPath,
-      atomPath : `<%= atomPath %>`
+      atomPath: `<%= atomPath %>`
     }))
-    .pipe(isDeploy ? cleanCSS({compatibility: 'ie8'}) : gutil.noop())
+    .pipe(isDeploy ? cleanCSS({ compatibility: 'ie8' }) : gutil.noop())
     .pipe(dest(".build"))
     .pipe(browser.stream({
       'match': '**/*.css'
@@ -155,9 +156,9 @@ const assets = () => {
 }
 
 const generate = (atom) => {
-    return src("harness/*")
-      .pipe(template(atom))
-      .pipe(dest(".build/" + atom.atom))
+  return src("harness/*")
+    .pipe(template(atom))
+    .pipe(dest(".build/" + atom.atom))
 }
 
 const _template = (x) => {
@@ -176,7 +177,7 @@ const local = () => {
     const html = _template((fs.readFileSync(`.build/${atom}/main.html`)).toString());
 
     return src(["harness/*", "!harness/_index.html"])
-      .pipe(template({js,css,html,atom,version}))
+      .pipe(template({ js, css, html, atom, version }))
       .pipe(dest(".build/" + atom))
   });
 
@@ -194,27 +195,27 @@ const local = () => {
 
 const serve = () => {
   browser.init({
-      'server': {
-          'baseDir': ".build"
-      },
-      'port': 8000
+    'server': {
+      'baseDir': ".build"
+    },
+    'port': 8000
   });
 
   watch(["atoms/**/*", "shared/**/*", "!**/*.scss"], series(build, local));
-  watch(["atoms/**/*.scss","shared/**/*.scss"], series(buildCSS, local))
+  watch(["atoms/**/*.scss", "shared/**/*.scss"], series(buildCSS, local))
 }
 
 const awsCredentials = new AWS.CredentialProviderChain([
-    function() { return new AWS.EnvironmentCredentials('AWS')},
-    function() { return new AWS.SharedIniFileCredentials({profile: 'interactives'})}
+  function () { return new AWS.EnvironmentCredentials('AWS') },
+  function () { return new AWS.SharedIniFileCredentials({ profile: 'interactives' }) }
 ]);
 
 const s3Upload = (cacheControl, keyPrefix) => {
-  return s3({credentialProvider: awsCredentials})({
-      'Bucket': 'gdn-cdn',
-      'ACL': 'public-read',
-      'CacheControl': cacheControl,
-      'keyTransform': fn => `${keyPrefix}/${fn}`
+  return s3({ credentialProvider: awsCredentials })({
+    'Bucket': 'gdn-cdn',
+    'ACL': 'public-read',
+    'CacheControl': cacheControl,
+    'keyTransform': fn => `${keyPrefix}/${fn}`
   });
 }
 
@@ -235,21 +236,21 @@ const upload = () => {
     }
 
     return src(`.build/${atom}/*`)
-    .pipe(replace('<%= path %>', assetPath))
-    .pipe(replace('&lt;%= path %&gt;', assetPath))
-    .pipe(replace('<%= atomPath %>', `${cdnUrl}/${s3Path}/${atom}/${version}`))
-        .pipe(s3Upload('max-age=31536000', `${s3Path}/${atom}/${version}`))
-        .on("end", () => {
-          return file('config.json', JSON.stringify(atomConfig))
-            .pipe(file('preview', version))
-            .pipe(live ? file('live', version) : gutil.noop())
-            .pipe(s3Upload('max-age=30', `${s3Path}/${atom}`))
-        })
+      .pipe(replace('<%= path %>', assetPath))
+      .pipe(replace('&lt;%= path %&gt;', assetPath))
+      .pipe(replace('<%= atomPath %>', `${cdnUrl}/${s3Path}/${atom}/${version}`))
+      .pipe(s3Upload('max-age=31536000', `${s3Path}/${atom}/${version}`))
+      .on("end", () => {
+        return file('config.json', JSON.stringify(atomConfig))
+          .pipe(file('preview', version))
+          .pipe(live ? file('live', version) : gutil.noop())
+          .pipe(s3Upload('max-age=30', `${s3Path}/${atom}`))
+      })
   });
 
   uploadTasks.push(
     src(`.build/assets/**/*`)
-        .pipe(s3Upload('max-age=31536000', `${s3Path}/assets/${version}`))
+      .pipe(s3Upload('max-age=31536000', `${s3Path}/assets/${version}`))
   );
 
   return mergeStream(uploadTasks)
@@ -268,10 +269,10 @@ const url = (cb) => {
   cb();
 }
 
-const getLogs = async(cb) => {
+const getLogs = async (cb) => {
   const atoms = getAtoms();
 
-  for(let i = 0; i < atoms.length; i++) {
+  for (let i = 0; i < atoms.length; i++) {
     const atom = atoms[i];
     const liveLog = await rp(`${cdnUrl}/atoms/${config.path}/${atom}/live.log`).catch(err => console.log(`LIVE REQUEST ERROR: ${atom}`));
     const previewLog = await rp(`${cdnUrl}/atoms/${config.path}/${atom}/preview.log`).catch(err => console.log(`PREVIEW REQUEST ERROR: ${atom}`));
@@ -285,12 +286,110 @@ const getLogs = async(cb) => {
   cb();
 }
 
+const arg = (argList => {
+  let arg = {}, a, opt, thisOpt, curOpt;
+  for (a = 0; a < argList.length; a++) {
+    thisOpt = argList[a].trim();
+    opt = thisOpt.replace(/^\-+/, '');
+    if (opt === thisOpt) {
+      // argument value
+      if (curOpt) arg[curOpt] = opt;
+      curOpt = null;
+    }
+    else {
+      // argument name
+      curOpt = opt;
+      arg[curOpt] = true;
+    }
+
+  }
+
+  return arg;
+
+})(process.argv);
+
+const handleDefault = async (cb) => {
+  if (arg.new) {
+    newThrasher(arg.new, cb);
+  } else {
+    git.revParse({ args: '--abbrev-ref HEAD' }, function (err, branchName) {
+      if (!arg.main && branchName == 'main') {
+        runOnMainInstructions();
+      } else {
+        runThrasher();
+      }
+    });
+
+  }
+  cb();
+}
+
+const runOnMainInstructions = (cb) => {
+  gutil.log("You're in the main branch! If you want to keep running in main, run:")
+  gutil.log(gutil.colors.yellow("gulp --main"))
+  gutil.log('')
+  gutil.log("If you are starting a new thrasher, run:")
+  gutil.log(gutil.colors.yellow("gulp --new thrasherName"))
+  gutil.log('')
+}
+
+
+const updateDefaultAtom = (thrasherName, branchName, files) => {
+  files.forEach((fileName) => {
+    const folder = fileName.split('/').slice(0, -1).join('/') + '/'
+    src([fileName])
+      .pipe(replace('thrasher-name', thrasherName))
+      .pipe(replace('thrasher-branch', branchName))
+      .pipe(dest(folder));
+  })
+}
+
+
+
+const newThrasher = (name, cb) => {
+  let branchName = name;
+  let thrasherName = name;
+  if (name.split('/').length == 1) {
+    branchName = `thrashers/${name}`;
+  } else {
+    thrasherName = name.split('/')[1];
+  }
+
+  gutil.log('Creating a new thrasher called ' + gutil.colors.green(thrasherName));
+
+  gutil.log('Branch name: ' + gutil.colors.green(branchName));
+  git.checkout(branchName, { args: '-b' }, function (err) {
+    if (err) throw err;
+  });
+
+  gutil.log(`Updating defaults for ${thrasherName}`)
+  const d = new Date();
+  const thrasherYear = d.getFullYear();
+  const thrasherMonth = (((d.getMonth() + 1) < 10) ? `0` : '') + (d.getMonth() + 1);
+
+  src(['config.json'])
+    .pipe(replace('2020/01/...', `${thrasherYear}/${thrasherMonth}/${thrasherName}`))
+    .pipe(dest('./'));
+
+  updateDefaultAtom(thrasherName, branchName, [
+    'atoms/default/client/js/app.js',
+    'atoms/default/client/css/_thrasher.scss',
+    'atoms/default/client/css/_basics.scss',
+    'atoms/default/server/templates/main.html',
+  ]);
+
+
+  cb();
+}
+
 const build = series(clean, parallel(buildJS, buildCSS, render, assets));
 const deploy = series(build, upload)
+const runThrasher = series(build, local, serve);
 
+exports.new = newThrasher;
 exports.build = build;
 exports.deploylive = deploy;
 exports.deploypreview = deploy;
 exports.log = getLogs;
 exports.url = url;
-exports.default = series(build, local, serve);
+exports.default = handleDefault;
