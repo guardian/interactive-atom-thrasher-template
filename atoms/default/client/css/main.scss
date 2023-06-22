@@ -141,42 +141,42 @@ section#the-100 {
   }
 
   &__100text {
-    bottom: 60px;
-    right: 0;
-    z-index: 2;
-    position: absolute;
-    font-family: "GuardianTitlepiece", "Guardian Egyptian Web", Georgia, serif;
-    color: $primaryColor;
-    font-size: 160px;
-    text-align: right;
-    @include mc(mobileMedium) {
-      font-size: 170px;
-      bottom: 51px;
-      right: 10px;
-    }
-    @include mc(mobileLandscape) {
-      font-size: 120px;
-      bottom: 52px;
-      right: 3px;
-    }
-    @include mc(phablet) {
-      font-size: 178px;
-      bottom: 90px;
+      bottom: 0;
       right: 0;
-    }
-    @include mc(desktop) {
-      font-size: 200px;
-      bottom: 88px;
-      right: 110px;
-    }
-    @include mc(leftCol) {
-      font-size: 200px;
-      right: 340px;
-    }
-    @include mc(wide) {
-      font-size: 200px;
-      right: 410px;
-    }
+      z-index: 2;
+      position: absolute;
+      font-family: "GuardianTitlepiece", "Guardian Egyptian Web", Georgia, serif;
+      color: $primaryColor;
+      font-size: 160px;
+      text-align: right;
+      @include mc(mobileMedium) {
+        font-size: 170px;
+        bottom: 0px;
+        right: 10px;
+      }
+      @include mc(mobileLandscape) {
+        font-size: 120px;
+        bottom: 0px;
+        right: 3px;
+      }
+      @include mc(phablet) {
+        font-size: 178px;
+        bottom: 20px;
+        right: 0;
+      }
+      @include mc(desktop) {
+        font-size: 200px;
+        bottom: 8px;
+        right: 110px;
+      }
+      @include mc(leftCol) {
+        font-size: 200px;
+        right: 340px;
+      }
+      @include mc(wide) {
+        font-size: 200px;
+        right: 410px;
+      }
   }
 
   &__roundel {
@@ -199,6 +199,8 @@ section#the-100 {
     position: absolute;
     margin-top: 10px;
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 25px;
     background-color: #fff;
     padding: 8px;
@@ -212,11 +214,11 @@ section#the-100 {
       font-weight: 700;
       margin-top: -2px;
       padding-left: 10px;
-    }
+     }
     svg {
       fill: $backgroundColor;
-      padding-left: 10px;
-      padding-right: 10px;
+      margin-left: 8px;
+      margin-right: 8px;
     }
     @include mc(mobileMedium) {
       margin-top: 8px;
@@ -230,10 +232,6 @@ section#the-100 {
       span {
         padding-left: 8px;
         padding-top: 1px;
-      }
-      svg {
-        padding-left: 8px;
-        padding-right: 8px;
       }
     }
     @include mc(phablet) {
@@ -379,4 +377,10 @@ section#the-100 {
       }
     }
   }
+}
+
+// Fixes for preview on DCR
+.thrasher-atom,
+.thrasher-preview {
+  width:100%
 }
