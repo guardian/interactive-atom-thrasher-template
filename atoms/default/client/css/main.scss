@@ -1,10 +1,10 @@
-@import "_mq";
-@import "_fonts";
-@import "_palette";
-@import "_app-fonts";
-@import "_mixins";
+@import '_mq';
+@import '_fonts';
+@import '_palette';
+@import '_app-fonts';
+@import '_mixins';
 
-#thrasher-atom,
+#thrasher-#thrasher-atom,
 #lakeside,
 #lakeside-header {
   width: 100%;
@@ -18,7 +18,7 @@
     overflow: hidden;
   }
 
-  .facia-snap, 
+  .facia-snap,
   .fc-item {
     padding: 0;
   }
@@ -45,14 +45,13 @@
   }
 }
 
-
 $brandBlue: #052962;
 $brandBluePale: #506991;
-$yellow: #FFE500;
+$yellow: #ffe500;
 $white: #ffffff;
 
-#thrasher-atom, 
-#lakeside, 
+#thrasher-atom,
+#lakeside,
 #lakeside-header {
   background-color: $brandBlue;
   .fc-item--pillar-news {
@@ -69,7 +68,7 @@ $white: #ffffff;
 .ls-wrapper {
   display: flex;
   justify-content: space-between;
-  background-color: $brandBlue; 
+  background-color: $brandBlue;
   width: 100%;
   box-sizing: border-box;
   border: 1px solid $brandBluePale;
@@ -83,7 +82,7 @@ $white: #ffffff;
     position: relative;
     z-index: 10;
     @include mq(mobileLandscape) {
-      padding-left:20px;
+      padding-left: 20px;
     }
     @include mq(leftCol) {
       padding-left: 10px;
@@ -139,7 +138,6 @@ $white: #ffffff;
         @include mq(phablet) {
           display: block;
         }
-        
       }
       height: 70%;
       position: absolute;
@@ -155,7 +153,7 @@ $white: #ffffff;
         bottom: -1px;
         z-index: 0;
         left: 150px;
-          height: 100%;
+        height: 100%;
       }
       @include mq(tablet) {
         height: 100%;
@@ -171,7 +169,6 @@ $white: #ffffff;
         left: 550px;
       }
     }
-
   }
   .story-wrapper {
     width: 220px;
@@ -180,6 +177,7 @@ $white: #ffffff;
     margin-top: 12px;
     display: flex;
     align-items: end;
+    z-index: 5;
     @include mq(mobileLandscape) {
       margin-left: 20px;
     }
@@ -193,10 +191,10 @@ $white: #ffffff;
       width: 220px;
     }
     @include mq(wide) {
-      margin-right:100px;
+      margin-right: 95px;
     }
-    
-    a { 
+
+    a {
       font-family: $f-serif-headline;
       font-weight: 700;
       font-size: 17px;
@@ -204,6 +202,7 @@ $white: #ffffff;
       margin-bottom: 20px;
       border-top: 8px solid $yellow;
       padding-top: 4px;
+      text-decoration: none;
 
       &:hover {
         cursor: pointer;
@@ -213,31 +212,30 @@ $white: #ffffff;
           text-underline-offset: 2px;
         }
       }
-      
+
       h3 {
         font-family: $f-serif-headline;
         font-weight: 700;
         font-size: 20px;
         color: white;
-        // padding-bottom: 8px;
+        padding-bottom: 8px;
         @include mq(tablet) {
           font-size: 24px;
         }
       }
-      
+
       @include mq(tablet) {
-          font-size: 20px;
-        }
+        font-size: 20px;
+      }
       svg {
         background-color: $yellow;
         border-radius: 50%;
         padding: 8px;
-        width: 20px;
-        height: 20px;
+        width: 35px;
+        height: 35px;
         margin-right: 8px;
         transform: translateY(2px);
       }
     }
   }
 }
-
