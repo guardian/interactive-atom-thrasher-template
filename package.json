@@ -60,6 +60,7 @@
     "babel-plugin-transform-import-bangtext-node": "^0.1.4",
     "gulp-git": "^2.10.1",
     "mkdirp": "^0.5.1",
+    "noop": "^1.0.1",
     "request-promise": "^4.2.6",
     "sass": "^1.54.8",
     "uglifyjs-webpack-plugin": "^2.2.0"
