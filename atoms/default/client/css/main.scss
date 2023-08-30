@@ -39,31 +39,31 @@ $tertiary: #f1c8e0;
     // display: flex;
     // justify-content: center;
 
-    @include mq(mobileMedium) {
+    @include mc(mobileMedium) {
       height: 252px;
     }
 
-    @include mq(mobileLandscape) {
+    @include mc(mobileLandscape) {
       height: 290px;
     }
 
-    @include mq(phablet) {
+    @include mc(phablet) {
       height: 400px;
     }
 
-    @include mq(tablet) {
+    @include mc(tablet) {
       right: 0;
       left: unset;
       width: 50%;
     }
-    @include mq(desktop) {
+    @include mc(desktop) {
       width: 47%;
     }
-    @include mq(leftCol) {
+    @include mc(leftCol) {
       width: 43%;
     }
 
-    @include mq(wide) {
+    @include mc(wide) {
       width: 562px;
     }
 
@@ -71,23 +71,23 @@ $tertiary: #f1c8e0;
       width: 100%;
       height: auto;
       position: absolute;
-      @include mq(mobileLandscape) {
+      @include mc(mobileLandscape) {
         left: 20px;
         right: auto;
       }
-      @include mq(tablet) {
+      @include mc(tablet) {
         top: -28px;
         right: -15px;
       }
-      @include mq(desktop) {
+      @include mc(desktop) {
         top: -67px;
       }
-      @include mq(leftCol) {
+      @include mc(leftCol) {
         top: -72px;
         right: 0;
         left: unset;
       }
-      @include mq(wide) {
+      @include mc(wide) {
         top: -91px;
       }
     }
@@ -99,14 +99,14 @@ $tertiary: #f1c8e0;
     float: left;
     color: $tertiary;
 
-    @include mq(desktop) {
+    @include mc(desktop) {
       width: 570px;
     }
-    @include mq(leftCol) {
+    @include mc(leftCol) {
       width: 720px;
     }
 
-    @include mq(wide) {
+    @include mc(wide) {
       width: 900px;
     }
 
@@ -118,12 +118,12 @@ $tertiary: #f1c8e0;
       top: 0;
       bottom: 12px;
 
-      @include mq(leftCol) {
+      @include mc(leftCol) {
         left: 170px;
         content: '';
       }
 
-      @include mq(wide) {
+      @include mc(wide) {
         left: 250px;
       }
     }
@@ -137,30 +137,30 @@ $tertiary: #f1c8e0;
       margin: 190px 0 0;
       padding-right: 10%;
 
-      @include mq(mobileMedium) {
+      @include mc(mobileMedium) {
         margin: 250px 0 0;
       }
 
-      @include mq(mobileLandscape) {
+      @include mc(mobileLandscape) {
         width: 80%;
         margin-top: 274px;
         line-height: 115%;
       }
 
-      @include mq(phablet) {
+      @include mc(phablet) {
         margin-top: 358px;
       }
 
-      @include mq(tablet) {
+      @include mc(tablet) {
         width: 49%;
         margin: 10px 0 20px;
       }
 
-      @include mq(desktop) {
+      @include mc(desktop) {
         width: unset;
       }
 
-      @include mq(wide) {
+      @include mc(wide) {
         width: unset;
         padding-right: 22%;
         font-weight: 500;
@@ -176,11 +176,11 @@ $tertiary: #f1c8e0;
       line-height: 135%;
       margin-bottom: 17px;
 
-      @include mq(tablet) {
+      @include mc(tablet) {
         width: calc(50% - 30px);
       }
 
-      @include mq(leftCol) {
+      @include mc(leftCol) {
         width: 80%;
       }
     }
@@ -239,21 +239,21 @@ $tertiary: #f1c8e0;
           right: 14px;
           top: 8px;
 
-          @include mq(mobileMedium) {
+          @include mc(mobileMedium) {
             right: 20px;
             top: 7px;
           }
 
-          @include mq(tablet) {
+          @include mc(tablet) {
             top: 8px;
           }
 
-          @include mq(desktop) {
+          @include mc(desktop) {
             top: 6px;
             right: 13px;
           }
 
-          @include mq(wide) {
+          @include mc(wide) {
             top: 10px;
           }
         }
@@ -274,13 +274,13 @@ $tertiary: #f1c8e0;
           width: 33px;
         }
 
-        @include mq(leftCol) {
+        @include mc(leftCol) {
           margin-bottom: 0;
         }
 
         &--amazon-music {
           display: none;
-          @include mq(tablet) {
+          @include mc(tablet) {
             display: block;
           }
         }
@@ -304,25 +304,25 @@ $tertiary: #f1c8e0;
       // display: flex;
       // justify-content: center;
 
-      @include mq(mobileMedium) {
+      @include mc(mobileMedium) {
         height: 252px;
       }
 
-      @include mq(mobileLandscape) {
+      @include mc(mobileLandscape) {
         height: 290px;
       }
 
-      @include mq(phablet) {
+      @include mc(phablet) {
         height: 400px;
       }
 
-      @include mq(tablet) {
+      @include mc(tablet) {
         right: 0;
         left: unset;
         width: 50%;
       }
 
-      @include mq(wide) {
+      @include mc(wide) {
         width: 562px;
       }
 
@@ -330,15 +330,15 @@ $tertiary: #f1c8e0;
         width: 100%;
         height: auto;
         position: absolute;
-        @include mq(mobileLandscape) {
+        @include mc(mobileLandscape) {
           left: 20px;
           right: auto;
         }
-        @include mq(tablet) {
+        @include mc(tablet) {
           top: -28px;
           right: -15px;
         }
-        @include mq(wide) {
+        @include mc(wide) {
           top: -85px;
           right: unset;
         }
@@ -351,11 +351,11 @@ $tertiary: #f1c8e0;
       float: left;
       color: $tertiary;
 
-      @include mq(leftCol) {
+      @include mc(leftCol) {
         width: 570px;
       }
 
-      @include mq(wide) {
+      @include mc(wide) {
         width: 570px;
       }
 
@@ -367,12 +367,12 @@ $tertiary: #f1c8e0;
         top: 0;
         bottom: 12px;
 
-        @include mq(leftCol) {
+        @include mc(leftCol) {
           left: 170px;
           content: '';
         }
 
-        @include mq(wide) {
+        @include mc(wide) {
           left: 250px;
         }
       }
@@ -386,31 +386,31 @@ $tertiary: #f1c8e0;
         margin: 190px 0 0;
         padding-right: 10%;
 
-        @include mq(mobileMedium) {
+        @include mc(mobileMedium) {
           margin: 250px 0 0;
         }
 
-        @include mq(mobileLandscape) {
+        @include mc(mobileLandscape) {
           width: 80%;
           margin-top: 274px;
           line-height: 115%;
         }
 
-        @include mq(phablet) {
+        @include mc(phablet) {
           margin-top: 358px;
         }
 
-        @include mq(tablet) {
+        @include mc(tablet) {
           width: 49%;
           margin: 10px 0 20px;
         }
 
-        @include mq(desktop) {
+        @include mc(desktop) {
           width: 53%;
           margin: 65px 0 20px;
         }
 
-        @include mq(wide) {
+        @include mc(wide) {
           width: unset;
           padding-right: 22%;
           font-weight: 500;
@@ -426,11 +426,11 @@ $tertiary: #f1c8e0;
         line-height: 135%;
         margin-bottom: 17px;
 
-        @include mq(tablet) {
+        @include mc(tablet) {
           width: calc(50% - 30px);
         }
 
-        @include mq(leftCol) {
+        @include mc(leftCol) {
           width: 80%;
         }
       }
@@ -489,21 +489,21 @@ $tertiary: #f1c8e0;
             right: 14px;
             top: 8px;
 
-            @include mq(mobileMedium) {
+            @include mc(mobileMedium) {
               right: 20px;
               top: 7px;
             }
 
-            @include mq(tablet) {
+            @include mc(tablet) {
               top: 8px;
             }
 
-            @include mq(desktop) {
+            @include mc(desktop) {
               top: 6px;
               right: 13px;
             }
 
-            @include mq(wide) {
+            @include mc(wide) {
               top: 10px;
             }
           }
@@ -521,13 +521,13 @@ $tertiary: #f1c8e0;
             padding-left: 10px;
           }
 
-          @include mq(leftCol) {
+          @include mc(leftCol) {
             margin-bottom: 0;
           }
 
           &--amazon-music {
             display: none;
-            @include mq(tablet) {
+            @include mc(tablet) {
               display: block;
             }
           }
@@ -549,7 +549,7 @@ $tertiary: #f1c8e0;
       margin-bottom: 4px;
     }
     h3 {
-      @include mq(desktop) {
+      @include mc(desktop) {
         margin-top: 4px;
       }
     }

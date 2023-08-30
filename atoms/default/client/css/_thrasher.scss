@@ -21,16 +21,16 @@
     line-height: 26px;
     padding: 0 10px 12px;
 
-    @include mq(mobileLandscape) {
+    @include mc(mobileLandscape) {
       padding-left: 20px;
       padding-right: 20px;
     }
 
-    @include mq(leftCol) {
+    @include mc(leftCol) {
       padding-left: 180px;
     }
 
-    @include mq(wide) {
+    @include mc(wide) {
       padding-left: 260px;
     }
   }
@@ -42,18 +42,18 @@
     width: max-content;
     height: 64px;
 
-    @include mq(mobileLandscape) {
+    @include mc(mobileLandscape) {
       right: 20px;
     }
 
-    @include mq(desktop) {
+    @include mc(desktop) {
       top: unset;
       bottom: -10px;
       left: unset;
       right: 20px;
     }
 
-    @include mq(leftCol) {
+    @include mc(leftCol) {
       top: 8px;
       bottom: unset;
       left: 10px;
@@ -61,7 +61,7 @@
     }
 
     svg {
-      @include mq(tablet) {
+      @include mc(tablet) {
         width: auto;
         height: 100%;
       }
@@ -69,14 +69,14 @@
 
     .logo-mobile {
       display: block;
-      @include mq(desktop) {
+      @include mc(desktop) {
         display: none;
       }
     }
 
     .logo-desktop {
       display: none;
-      @include mq(desktop) {
+      @include mc(desktop) {
         display: block;
       }
     }
