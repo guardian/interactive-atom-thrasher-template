@@ -112,7 +112,7 @@
 
     &__main-image-container {
       &--tall {
-        svg {
+        svg,img {
           width: 100%;
           height: auto;
         }
@@ -120,7 +120,7 @@
 
       &--wide {
         display: none;
-        svg {
+        svg,img {
           width: 100%;
           height: auto;
         }
@@ -129,7 +129,7 @@
       &--square {
         display: none;
 
-        svg {
+        svg,img {
           height: 164px;
           width: 164px;
         }
