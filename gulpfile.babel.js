@@ -260,10 +260,31 @@ const upload = () => {
 const getAtoms = () => (fs.readdirSync(".build")).filter(n => n !== "assets" && n !== "index.html")
 
 const url = (cb) => {
+
+  const readInfoFile = (atomName) => {
+    const path = `./atoms/${atomName}/info.csv`
+    try {
+      const txt = fs.readFileSync(path).toString()
+      return txt.split(",")
+    } catch {
+      return undefined
+    }
+  }
+
   const atoms = getAtoms();
 
   atoms.forEach(atom => {
-    gutil.log(gutil.colors.yellow(`${atom} url:`));
+
+    const listOfNewletters = readInfoFile(atom)
+    if (listOfNewletters) {
+      gutil.log(
+        gutil.colors.yellow(`${atom} `),
+        gutil.colors.blue.bgRed.bold(listOfNewletters.join("; ")),
+        gutil.colors.yellow(` url:`),
+      );
+    } else {
+      gutil.log(gutil.colors.yellow(`${atom} url:`));
+    }
     gutil.log(gutil.colors.yellow(`https://content.guardianapis.com/atom/interactive/interactives/${config.path}/${atom}`));
   });
 
