@@ -259,8 +259,14 @@ const upload = () => {
 
 const getAtoms = () => (fs.readdirSync(".build")).filter(n => n !== "assets" && n !== "index.html")
 
-const url = (cb) => {
+const sortBySetNumber = (nameA, nameB) => {
+  if (nameA.startsWith("set-") && nameB.startsWith("set-")) {
+    return Number(nameA.substring(4)) < Number(nameB.substring(4)) ? -1:1
+  }
+  return nameA < nameB ? -1:1
+}
 
+const url = (cb) => {
   const readInfoFile = (atomName) => {
     const path = `./atoms/${atomName}/info.csv`
     try {
@@ -271,7 +277,7 @@ const url = (cb) => {
     }
   }
 
-  const atoms = getAtoms();
+  const atoms = getAtoms().sort(sortBySetNumber);
 
   atoms.forEach(atom => {
 
