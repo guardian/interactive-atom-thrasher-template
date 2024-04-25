@@ -81,7 +81,7 @@ To ensure maximum compatibility with apps, ensure the following:
 To push your thrasher to preview (pushes to a bucket in CAPI preview) run:
 
 ```
-gulp deploypreview
+  gulp deploypreview
 ```
 
 
