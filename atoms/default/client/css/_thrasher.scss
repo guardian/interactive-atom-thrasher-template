@@ -266,7 +266,7 @@
   
       &--mobile {
         display: flex;
-        max-width: 480px;
+        max-width: 100% !important;
         width: 100%;
         height: auto;
       }
